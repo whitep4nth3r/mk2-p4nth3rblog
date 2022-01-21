@@ -16,7 +16,7 @@ function ExternalUrl(url) {
       </p>
     </div>`;
   } else {
-    return false;
+    return "";
   }
 }
 

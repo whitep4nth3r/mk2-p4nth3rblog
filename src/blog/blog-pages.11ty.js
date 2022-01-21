@@ -1,10 +1,15 @@
+const Tools = require("../../lib/tools");
+
 const { documentToHtmlString } = require("@contentful/rich-text-html-renderer");
 const { BLOCKS, MARKS, INLINES } = require("@contentful/rich-text-types");
-const Tools = require("../../lib/tools");
+
 const ResponsiveImage = require("../components/responsiveImage");
 const ExternalUrl = require("../components/externalUrl");
 const Topics = require("../components/topics");
 const CodeBlock = require("../components/codeBlock");
+const VideoEmbed = require("../components/videoEmbed");
+const TweetEmbed = require("../components/tweetEmbed");
+const BlogPostEmbed = require("../components/blogPostEmbed");
 
 function getRichTextRenderOptions(links, options) {
   const { renderH2Links, renderNativeImg } = options;
@@ -79,18 +84,16 @@ function getRichTextRenderOptions(links, options) {
 
         switch (__typename) {
           case "BlogPost":
-            return "***BLOG POST EMBED***";
+            return BlogPostEmbed(entry);
           case "TweetEmbed":
             const { tweetId } = entry;
-
-            return "***TWEET EMBED***";
+            return TweetEmbed(tweetId);
           case "VideoEmbed":
             const { embedUrl, title } = entry;
-
-            return "***VIDEO EMBED***";
+            return VideoEmbed(embedUrl, title);
           case "CodeBlock":
-            //TEMPORARY
             const { code } = entry;
+            //TODO: TEMPORARY -- need to do Contentful migration here
             const lang = entry.language === "bash-shell" ? "bash" : entry.language;
             return CodeBlock(code, lang);
           default:
@@ -134,8 +137,6 @@ exports.render = function (data) {
   const { post } = data;
   return `<div>
     <h1>${post.title}</h1>
-
-
 
     ${ExternalUrl(post.externalUrl || "")}
 
