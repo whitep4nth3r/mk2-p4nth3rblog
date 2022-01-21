@@ -1,6 +1,10 @@
 const { documentToHtmlString } = require("@contentful/rich-text-html-renderer");
 const { BLOCKS, MARKS, INLINES } = require("@contentful/rich-text-types");
 const Tools = require("../../lib/tools");
+const ResponsiveImage = require("../components/responsiveImage");
+const ExternalUrl = require("../components/externalUrl");
+const Topics = require("../components/topics");
+const CodeBlock = require("../components/codeBlock");
 
 function getRichTextRenderOptions(links, options) {
   const { renderH2Links, renderNativeImg } = options;
@@ -49,7 +53,6 @@ function getRichTextRenderOptions(links, options) {
       [BLOCKS.HR]: (text) => `<hr />`,
       [BLOCKS.HEADING_1]: (node, next) => `<h1>${next(node.content)}</h1>`,
       [BLOCKS.HEADING_2]: (node, next) => {
-        console.log(next);
         if (renderH2Links) {
           return `<div id="${Tools.slugifyString(next(node.content))}">
               <h2>${next(node.content)}</h2>
@@ -86,8 +89,10 @@ function getRichTextRenderOptions(links, options) {
 
             return "***VIDEO EMBED***";
           case "CodeBlock":
-            const { language, code } = entry;
-            return "*** CODE BLOCK EMBED ***";
+            //TEMPORARY
+            const { code } = entry;
+            const lang = entry.language === "bash-shell" ? "bash" : entry.language;
+            return CodeBlock(code, lang);
           default:
             return null;
         }
@@ -103,7 +108,7 @@ function getRichTextRenderOptions(links, options) {
               <img src="${url}" alt="${description}" height="${height}" width="${width}" />
             </div>`;
         } else {
-          return `<div>RESPONSIVE IMAGE</div>`;
+          return ResponsiveImage(image);
         }
       },
     },
@@ -129,12 +134,13 @@ exports.render = function (data) {
   const { post } = data;
   return `<div>
     <h1>${post.title}</h1>
-    <p>external URL: ${post.externalUrl}</p>
-    <p>TOPICS</p>
-      <ul>
-        ${post.topicsCollection.items.map((topic) => `<li>${topic.name}</li>`).join("")}
-      </ul>
-      <p>TO DO: LINKS IN RICH TEXT</p>
+
+
+
+    ${ExternalUrl(post.externalUrl || "")}
+
+    ${Topics(post.topicsCollection.items)}
+
       <div>${documentToHtmlString(
         post.body.json,
         getRichTextRenderOptions(post.body.links, { renderH2Links: true }),
