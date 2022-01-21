@@ -1,0 +1,19 @@
+{
+  "name": "mk2-p4nth3rblog",
+  "version": "0.0.1",
+  "description": "A simple, accessible, static blog site.",
+  "scripts": {
+    "dev": "npx @11ty/eleventy --serve",
+    "debug": "DEBUG=Eleventy* npx @11ty/eleventy --serve",
+    "debughard": "DEBUG=Dev:Eleventy* npx @11ty/eleventy --serve"
+  },
+  "author": "whitep4nth3r",
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.0",
+    "@contentful/rich-text-html-renderer": "^15.11.1",
+    "dotenv": "^14.2.0",
+    "markdown-it": "^12.3.2",
+    "node-fetch": "^2.6.7"
+  }
+}
