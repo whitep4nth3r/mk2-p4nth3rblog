@@ -15,6 +15,10 @@ exports.data = {
     data: "postSummaries",
     size: Config.pagination.pageSize,
   },
+  permalink: (data) => {
+    const trailing = data.pagination.pageNumber === 0 ? `` : `${data.pagination.pageNumber + 1}/`;
+    return `blog/${trailing}`;
+  },
 };
 
 exports.render = function (data) {
@@ -40,6 +44,7 @@ exports.render = function (data) {
         </li>`;
       })
       .join("")}
+      
       ${Pagination({
         previous: data.pagination.href.previous,
         next: data.pagination.href.next,
