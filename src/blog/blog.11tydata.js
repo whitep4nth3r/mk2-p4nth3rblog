@@ -2,68 +2,7 @@ const ContentfulApi = require("../../lib/api.js");
 const Config = require("../../lib/config.js");
 const GraphQLStringBlocks = require("../../lib/graphQLStringBlocks.js");
 
-const ContentfulBlogPost = {
-  getBySlug: async function (slug, options = ContentfulApi.defaultOptions) {
-    const variables = { slug, preview: options.preview };
-
-    const query = `query GetPostBySlug($slug: String!, $preview: Boolean!) {
-      blogPostCollection(limit: 1, where: {slug: $slug}, preview: $preview) {
-        total
-        items {
-          sys {
-            id
-          }
-          date
-          updatedDate
-          title
-          slug
-          excerpt
-          readingTime
-          externalUrl
-          isSponsored
-          ${GraphQLStringBlocks.topicsCollection()}
-          ${GraphQLStringBlocks.authorFull()}
-          body {
-            json
-            links {
-              entries {
-                inline {
-                  sys {
-                    id
-                  }
-                  __typename
-                  ... on BlogPost {
-                    title
-                    slug
-                    excerpt
-                    ${GraphQLStringBlocks.featuredImage()}
-                  }
-                }
-                block {
-                  sys {
-                    id
-                  }
-                  __typename
-                  ${GraphQLStringBlocks.tweetEmbed()}
-                  ${GraphQLStringBlocks.videoEmbed()}
-                  ${GraphQLStringBlocks.codeBlock()}
-                  ${GraphQLStringBlocks.blogPost()}
-                }
-              }
-              ${GraphQLStringBlocks.linkedAssets()}
-            }
-          }
-        }
-      }
-    }`;
-
-    const response = await ContentfulApi.callContentful(query, variables, options);
-    const post = response.data.blogPostCollection.items
-      ? response.data.blogPostCollection.items
-      : [];
-    return post.pop();
-  },
-
+const ContentfulBlogPosts = {
   /*
    * Get all blog posts
    */
@@ -105,6 +44,7 @@ const ContentfulBlogPost = {
             }
             date
             updatedDate
+            readingTime
             title
             slug
             excerpt
@@ -147,9 +87,7 @@ const ContentfulBlogPost = {
     const response = await ContentfulApi.callContentful(query, variables);
 
     const { total } = response.data.blogPostCollection;
-    const posts = response.data.blogPostCollection.items
-      ? response.data.blogPostCollection.items
-      : [];
+    const posts = response.data.blogPostCollection.items ? response.data.blogPostCollection.items : [];
 
     return { posts, total };
   },
@@ -187,9 +125,7 @@ const ContentfulBlogPost = {
     const response = await ContentfulApi.callContentful(query, variables);
 
     const { total } = response.data.blogPostCollection;
-    const posts = response.data.blogPostCollection.items
-      ? response.data.blogPostCollection.items
-      : [];
+    const posts = response.data.blogPostCollection.items ? response.data.blogPostCollection.items : [];
 
     return { posts, total };
   },
@@ -218,8 +154,8 @@ const ContentfulBlogPost = {
 };
 
 module.exports = async function () {
-  const postSummaries = await ContentfulBlogPost.getAllSummaries();
-  const posts = await ContentfulBlogPost.getAll();
+  const postSummaries = await ContentfulBlogPosts.getAllSummaries();
+  const posts = await ContentfulBlogPosts.getAll();
   return {
     postSummaries,
     posts,

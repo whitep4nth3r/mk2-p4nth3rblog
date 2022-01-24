@@ -2,7 +2,7 @@ function formatUrlForDisplay(url) {
   return new URL(url).hostname;
 }
 
-function ExternalUrl(url) {
+function ExternalUrl({ url }) {
   if (url) {
     return `<div>
       <p>Originally published on

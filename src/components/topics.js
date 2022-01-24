@@ -1,4 +1,4 @@
-function Topics(topics, selected) {
+function Topics({ topics, selected }) {
   return `<ul>
       ${topics
         .map((topic) => {

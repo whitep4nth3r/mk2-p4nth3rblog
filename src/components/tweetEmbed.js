@@ -1,4 +1,4 @@
-function TweetEmbed(tweetId) {
+function TweetEmbed({ tweetId }) {
   return `TWWEEEETTTTT ${tweetId}`;
 }
 

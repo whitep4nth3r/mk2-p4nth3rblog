@@ -1,4 +1,4 @@
-function ResponsiveImage(image) {
+function ResponsiveImage({ image }) {
   const { contentType } = image;
   // Inspect contentType to convert GIF to WebP and not AVIF
   // more info: https://twitter.com/whitep4nth3r/status/1460244790059188226
@@ -27,11 +27,7 @@ function ResponsiveImage(image) {
   }
 
   return `<picture>
-      ${
-        !isGif
-          ? `<source type="image/avif" srcSet="${makeSrcSetString("avif")}" sizes="${sizes}" />`
-          : ""
-      }
+      ${!isGif ? `<source type="image/avif" srcSet="${makeSrcSetString("avif")}" sizes="${sizes}" />` : ""}
       <source type="image/webp" srcSet="${makeSrcSetString("webp")}" sizes="${sizes}" />
       <img
         srcSet="${makeSrcSetString()}"
