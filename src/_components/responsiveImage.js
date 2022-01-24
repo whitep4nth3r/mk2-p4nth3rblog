@@ -11,7 +11,7 @@ function ResponsiveImage({ image }) {
   // Above the maximum container size, serve the image at the width of the container and no bigger
   // The values in "sizes" are layout values, and not device pixel values
   // The actual size of the image resource chosen from the srcset will depend on DPR value
-  const maxContainerSize = 736;
+  const maxContainerSize = 600;
 
   // Note, this could be further optimised by considering padding inside the container
   const sizes = `(max-width: ${maxContainerSize - 1}px) 100vw, ${maxContainerSize}px`;

@@ -4,8 +4,9 @@ var md = require("markdown-it")({
   html: true,
 });
 
-const Topics = require("../components/topics");
-const Pagination = require("../components/pagination");
+const Topics = require("../_components/topics");
+const Pagination = require("../_components/pagination");
+const PublishedDate = require("../_components/publishedDate");
 
 exports.data = {
   layout: "base.html",
@@ -26,9 +27,16 @@ exports.render = function (data) {
           <a href="/talks/${item.slug}">
             <h2>${item.title}</h2>
           </a>
+
+          ${PublishedDate({
+            date: item.date,
+            readingTime: item.watchTime,
+            isTalk: true,
+            updatedDate: item.updatedDate,
+          })}
+
             <p>${md.render(item.excerpt)}</p>
-            <p>${item.date}</p>
-            <p>${item.watchTime}</p>
+
             ${Topics({ topics: item.topicsCollection.items })}
           </div>
         </li>`;

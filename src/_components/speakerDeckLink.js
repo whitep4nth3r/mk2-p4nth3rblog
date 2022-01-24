@@ -1,4 +1,4 @@
-const ResponsiveImage = require("../components/responsiveImage");
+const ResponsiveImage = require("./responsiveImage");
 
 function SpeakerDeckLink({ speakerDeckLink }) {
   return `

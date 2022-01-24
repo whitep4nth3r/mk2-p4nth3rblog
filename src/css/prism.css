@@ -36,6 +36,12 @@ pre[class*="language-"] {
   border-radius: 0.3em;
 }
 
+/* MY FIXES: https://whitep4nth3r.com/blog/how-to-make-your-code-blocks-accessible-on-your-website */
+code[class*="language-"] {
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
   background: #272822;

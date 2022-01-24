@@ -4,9 +4,9 @@ var md = require("markdown-it")({
   html: true,
 });
 
-const Topics = require("../components/topics");
-const Pagination = require("../components/pagination");
-const PublishedDate = require("../components/publishedDate");
+const Topics = require("../_components/topics");
+const Pagination = require("../_components/pagination");
+const PublishedDate = require("../_components/publishedDate");
 
 exports.data = {
   layout: "base.html",
