@@ -1,8 +1,4 @@
 const Topics = require("../_components/topics");
-const RichText = require("../_components/richText");
-const VideoEmbed = require("../_components/videoEmbed");
-const SpeakerDeckLink = require("../_components/speakerDeckLink");
-const PublishedDate = require("../_components/publishedDate");
 
 exports.data = {
   layout: "base.html",
