@@ -4,6 +4,8 @@ var md = require("markdown-it")({
   html: true,
 });
 
+const Pagination = require("../components/pagination");
+
 exports.data = {
   layout: "base.html",
   title: "Articles",
@@ -33,23 +35,6 @@ exports.render = function (data) {
         </li>`;
       })
       .join("")}
-    <nav aria-labelledby="pagination">
-    <ol>
-      <li>${
-        data.pagination.href.previous
-          ? `<a href="${data.pagination.href.previous}">Previous</a>`
-          : `Previous`
-      }</li>
-      ${data.pagination.pages
-        .map(function (item, index) {
-          return `<li><a href="${
-            data.pagination.hrefs[index]
-          }" ${data.pagination.hrefs[index] ? 'aria-current="page"' : ""}>Page ${index + 1}</a></li>`;
-        })
-        .join("")}
-      <li>${
-        data.pagination.href.next ? `<a href="${data.pagination.href.next}">Next</a>` : `Next`
-      }</li>
-    </ol>
-  </nav>`;
+      ${Pagination(data)}
+   `;
 };

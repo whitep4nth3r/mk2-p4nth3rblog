@@ -119,7 +119,7 @@ function getRichTextRenderOptions(links, options) {
 }
 
 exports.data = {
-  layout: "post.html",
+  layout: "base.html",
   pagination: {
     data: "posts",
     alias: "post",

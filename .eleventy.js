@@ -2,10 +2,13 @@ const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const embedYouTube = require("eleventy-plugin-youtube-embed");
 
 module.exports = function (eleventyConfig) {
+  eleventyConfig.addPassthroughCopy("./src/css");
+
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(embedYouTube, {
     lite: true,
   });
+
   return {
     dir: {
       data: "_data",

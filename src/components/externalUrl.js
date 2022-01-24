@@ -5,7 +5,6 @@ function formatUrlForDisplay(url) {
 function ExternalUrl(url) {
   if (url) {
     return `<div>
-      <span>SVG?</span>
       <p>Originally published on
         <a
         href="${url}"
