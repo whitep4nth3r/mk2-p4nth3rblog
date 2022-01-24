@@ -2,7 +2,7 @@ function VideoEmbed({ embedUrl, title }) {
   // the embed URL needs to be in a <p> tag for the youtube plugin!
   return `
   <div>
-  <h3>Click below to play ${title}</h3>
+    <h3>Click below to play ${title}</h3>
     <p>${embedUrl}</p>
   </div>`;
 }
