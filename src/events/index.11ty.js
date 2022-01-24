@@ -1,6 +1,7 @@
 exports.data = {
   layout: "base.html",
   title: "Events",
+  metaDescription: "AAAHHHHHHHHH",
 };
 
 exports.render = function (data) {

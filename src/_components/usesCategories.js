@@ -2,10 +2,7 @@ function UsesCategories({ categories, selected }) {
   return `<ul>
       ${categories
         .map((cat) => {
-          // const isSelectedClass =
-          //   selected !== undefined && cat === selected
-          //     ? TopicsStyles.topics__topicSelected
-          //     : "";
+          // TODO — selected class
 
           return `<li>
               <a href="/uses/${cat}/"

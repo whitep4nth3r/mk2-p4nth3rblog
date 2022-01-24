@@ -11,6 +11,7 @@ const PublishedDate = require("../_components/publishedDate");
 exports.data = {
   layout: "base.html",
   title: "Talks",
+  metaDescription: "AAAHHHHHHHHH",
   pagination: {
     data: "talkSummaries",
     size: Config.pagination.pageSize,

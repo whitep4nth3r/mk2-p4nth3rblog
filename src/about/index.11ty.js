@@ -4,6 +4,7 @@ const ResponsiveImage = require("../_components/responsiveImage");
 exports.data = {
   layout: "base.html",
   title: "About",
+  metaDescription: "AAAHHHHHHHHH",
 };
 
 exports.render = function (data) {

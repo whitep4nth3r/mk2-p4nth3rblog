@@ -11,6 +11,7 @@ const PublishedDate = require("../_components/publishedDate");
 exports.data = {
   layout: "base.html",
   title: "Posts",
+  metaDescription: "Posts about web development, accessibility, Jamstack, JavaScript, and more.",
   pagination: {
     data: "postSummaries",
     size: Config.pagination.pageSize,
@@ -44,7 +45,7 @@ exports.render = function (data) {
         </li>`;
       })
       .join("")}
-      
+
       ${Pagination({
         previous: data.pagination.href.previous,
         next: data.pagination.href.next,

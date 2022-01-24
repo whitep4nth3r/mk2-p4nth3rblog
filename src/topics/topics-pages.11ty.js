@@ -12,6 +12,7 @@ exports.data = {
   },
   eleventyComputed: {
     title: (data) => data.topic.name,
+    metaDescription: "AAAHHHHHHHHH",
   },
 };
 

@@ -16,6 +16,7 @@ exports.data = {
   },
   eleventyComputed: {
     title: (data) => data.talk.title,
+    metaDescription: (data) => data.talk.excerpt,
   },
 };
 

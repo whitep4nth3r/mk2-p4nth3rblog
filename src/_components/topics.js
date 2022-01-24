@@ -2,10 +2,7 @@ function Topics({ topics, selected }) {
   return `<ul>
       ${topics
         .map((topic) => {
-          // const isSelectedClass =
-          //   selected !== undefined && topic.slug === selected.slug
-          //     ? TopicsStyles.topics__topicSelected
-          //     : "";
+          // TODO — selected class
 
           return `<li>
               <a href="/topics/${topic.slug}/"
