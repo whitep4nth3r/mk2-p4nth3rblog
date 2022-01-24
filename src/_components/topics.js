@@ -8,7 +8,7 @@ function Topics({ topics, selected }) {
           //     : "";
 
           return `<li>
-              <a href="/topics/${topic.slug}"
+              <a href="/topics/${topic.slug}/"
                 aria-label="View all ${topic.name} articles">
                 <span>
                   ${
