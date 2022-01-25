@@ -12,16 +12,9 @@ exports.data = {
 };
 
 exports.render = function (data) {
-  const { staticDashboard } = data;
+  // const { staticDashboard } = data;
   return `
     <h1>DASHBOARD</h1>
-    <p>Twitch followers: ${staticDashboard.twitch.followers}</p>
-    <p>Twitch views: ${staticDashboard.twitch.views}</p>
-    <p>Youtube subs: ${staticDashboard.youtube.subscriberCount}</p>
-    <p>Youtube views: ${staticDashboard.youtube.viewCount}</p>
-    <p>GitHub followers: ${staticDashboard.github.followers}</p>
-    <p>GitHub stars: ${staticDashboard.github.stars}</p>
-    <p>Youtube views: ${staticDashboard.youtube.viewCount}</p>
-    <p>Twitter followers: ${staticDashboard.twitter.followers}</p>
+  
   `;
 };
