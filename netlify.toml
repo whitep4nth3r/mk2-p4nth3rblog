@@ -1,6 +1,6 @@
 [build]
   command = "npm run build"
-  functions = "functions/"
+  functions = "src/functions/"
 [[plugins]]
 package = "netlify-plugin-inline-functions-env"
    [plugins.inputs]

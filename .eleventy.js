@@ -11,6 +11,7 @@ module.exports = function (eleventyConfig) {
     align: "center",
     doNotTrack: "true",
   });
+  
   eleventyConfig.addPlugin(embedYouTube, {
     lite: true,
   });
