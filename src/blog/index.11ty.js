@@ -1,5 +1,4 @@
 const Config = require("../../lib/config.js");
-// https://www.npmjs.com/package/markdown-it
 var md = require("markdown-it")({
   html: true,
 });
@@ -7,11 +6,18 @@ var md = require("markdown-it")({
 const Topics = require("../_components/topics");
 const Pagination = require("../_components/pagination");
 const PublishedDate = require("../_components/publishedDate");
+const OpenGraph = require("../../lib/openGraph");
+
+const pageTitle = "Posts about web development, accessibility, Jamstack, JavaScript, and more from whitep4nth3r";
 
 exports.data = {
   layout: "base.html",
-  title: "Posts",
+  title: pageTitle,
   metaDescription: "Posts about web development, accessibility, Jamstack, JavaScript, and more.",
+  openGraphImageUrl: OpenGraph.generateImageUrl(pageTitle),
+  openGraphImageAlt: OpenGraph.generateImageAlt(pageTitle),
+  openGraphImageWidth: OpenGraph.imageWidth,
+  openGraphImageHeight: OpenGraph.imageHeight,
   pagination: {
     data: "postSummaries",
     size: Config.pagination.pageSize,

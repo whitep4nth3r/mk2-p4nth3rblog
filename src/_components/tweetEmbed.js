@@ -1,5 +1,5 @@
-function TweetEmbed({ tweetId }) {
-  return `TO DO TWWEEEETTTTT ${tweetId}`;
+function TweetEmbed({ tweetUrl }) {
+  return `<p>${tweetUrl}</p>`;
 }
 
 module.exports = TweetEmbed;

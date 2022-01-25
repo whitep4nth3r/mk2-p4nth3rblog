@@ -83,7 +83,7 @@ function getRichTextRenderOptions(links, options) {
           case "BlogPost":
             return BlogPostEmbed({ post: entry });
           case "TweetEmbed":
-            return TweetEmbed({ tweetId: entry.tweetId });
+            return TweetEmbed({ tweetUrl: entry.tweetUrl });
           case "VideoEmbed":
             return VideoEmbed({ embedUrl: entry.embedUrl, title: entry.title });
           case "CodeBlock":

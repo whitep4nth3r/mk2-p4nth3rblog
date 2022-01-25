@@ -1,10 +1,17 @@
 const UsesCategories = require("../_components/usesCategories");
+const OpenGraph = require("../../lib/openGraph");
+
+const pageTitle = "Things whitep4nth3r uses for coding, streaming, and everything else";
 
 exports.data = {
   layout: "base.html",
-  title: "Uses",
+  title: pageTitle,
   metaDescription:
     "I receive a lot of questions on stream about my setup and what I use. So here's a list! Click on the filter buttons to view items in that category.",
+  openGraphImageUrl: OpenGraph.generateImageUrl(pageTitle),
+  openGraphImageAlt: OpenGraph.generateImageAlt(pageTitle),
+  openGraphImageWidth: OpenGraph.imageWidth,
+  openGraphImageHeight: OpenGraph.imageHeight,
 };
 
 exports.render = function (data) {

@@ -6,11 +6,11 @@
 
 code[class*="language-"],
 pre[class*="language-"] {
-  color: #f8f8f2;
+  color: #ffffff;
   background: none;
   text-shadow: 0 1px rgba(0, 0, 0, 0.3);
   font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
-  font-size: 1em;
+  font-size: 0.75rem;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
@@ -30,10 +30,10 @@ pre[class*="language-"] {
 
 /* Code blocks */
 pre[class*="language-"] {
-  padding: 1em;
-  margin: 0.5em 0;
+  padding: 1rem;
+  margin: 0.5rem 0;
   overflow: auto;
-  border-radius: 0.3em;
+  border-radius: 0.3rem;
 }
 
 /* MY FIXES: https://whitep4nth3r.com/blog/how-to-make-your-code-blocks-accessible-on-your-website */

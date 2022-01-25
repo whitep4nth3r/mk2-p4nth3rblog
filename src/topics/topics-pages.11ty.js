@@ -1,4 +1,5 @@
 const Topics = require("../_components/topics");
+const OpenGraph = require("../../lib/openGraph");
 
 exports.data = {
   layout: "base.html",
@@ -11,8 +12,13 @@ exports.data = {
     return `topics/${data.topic.slug}/`;
   },
   eleventyComputed: {
-    title: (data) => data.topic.name,
-    metaDescription: "AAAHHHHHHHHH",
+    title: (data) => `Posts about ${data.topic.name} from whitep4nth3r`,
+    metaDescription: (data) => `Explore content about ${data.topic.name} from whitep4nth3r.`,
+    openGraphImageUrl: (data) =>
+      OpenGraph.generateImageUrl(`Posts about ${data.topic.name} from whitep4nth3r`, [data.topic]),
+    openGraphImageAlt: (data) => OpenGraph.generateImageAlt(`Posts about ${data.topic.name} from whitep4nth3r`),
+    openGraphImageWidth: OpenGraph.imageWidth,
+    openGraphImageHeight: OpenGraph.imageHeight,
   },
 };
 

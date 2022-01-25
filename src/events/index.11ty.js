@@ -1,7 +1,14 @@
+const OpenGraph = require("../../lib/openGraph");
+const pageTitle = "What's whitep4nth3r up to? Check out past and future events";
+
 exports.data = {
   layout: "base.html",
-  title: "Events",
-  metaDescription: "AAAHHHHHHHHH",
+  title: pageTitle,
+  metaDescription: "What's whitep4nth3r up to? Check out past and future in-person and virtual events.",
+  openGraphImageUrl: OpenGraph.generateImageUrl(pageTitle),
+  openGraphImageAlt: OpenGraph.generateImageAlt(pageTitle),
+  openGraphImageWidth: OpenGraph.imageWidth,
+  openGraphImageHeight: OpenGraph.imageHeight,
 };
 
 exports.render = function (data) {

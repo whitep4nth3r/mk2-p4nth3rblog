@@ -12,7 +12,7 @@ const ContentfulBlogPosts = {
     const returnPosts = [];
 
     while (shouldQueryMorePosts) {
-      const response = await this.getPaginated(page);
+      const response = await ContentfulBlogPosts.getPaginated(page);
 
       if (response.posts.length > 0) {
         returnPosts.push(...response.posts);
@@ -75,6 +75,7 @@ const ContentfulBlogPosts = {
                     ${GraphQLStringBlocks.videoEmbed()}
                     ${GraphQLStringBlocks.codeBlock()}
                     ${GraphQLStringBlocks.blogPost()}
+                    ${GraphQLStringBlocks.tweetEmbed()}
                   }
                 }
                 ${GraphQLStringBlocks.linkedAssets()}

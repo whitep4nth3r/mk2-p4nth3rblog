@@ -3,6 +3,9 @@ const Topics = require("../_components/topics");
 const RichText = require("../_components/richText");
 const PublishedDate = require("../_components/publishedDate");
 const ResponsiveImage = require("../_components/responsiveImage");
+const OpenGraph = require("../../lib/openGraph");
+
+// TODO - OPEN GRAPH
 
 exports.data = {
   layout: "base.html",
@@ -17,6 +20,13 @@ exports.data = {
   eleventyComputed: {
     title: (data) => data.post.title,
     metaDescription: (data) => data.post.excerpt,
+    // openGraphImageUrl: (data) => {
+    //   console.log(data.post.topicsCollection.items);
+    //   return OpenGraph.generateImageUrl(data.post.title, data.post.topicsCollection.items);
+    // },
+    // openGraphImageAlt: (data) => OpenGraph.generateImageAlt(data.post.title),
+    openGraphImageWidth: OpenGraph.imageWidth,
+    openGraphImageHeight: OpenGraph.imageHeight,
   },
 };
 
@@ -29,8 +39,6 @@ exports.render = function (data) {
 
       ${ExternalUrl({ url: post.externalUrl })}
 
-      ${Topics({ topics: post.topicsCollection.items })}
-
       ${PublishedDate({
         date: post.date,
         readingTime: post.readingTime,
@@ -41,8 +49,10 @@ exports.render = function (data) {
       ${RichText(post.body, { renderH2Links: true })}
     </article>
      <aside>
+     <h2>SIDEBAR</h2>
       ${ResponsiveImage({ image: post.author.image })}
       <p>${post.author.name}</p>
+      ${Topics({ topics: post.topicsCollection.items })}
     </aside>
   <div>`;
 };

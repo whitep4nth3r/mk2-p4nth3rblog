@@ -3,6 +3,8 @@ const RichText = require("../_components/richText");
 const VideoEmbed = require("../_components/videoEmbed");
 const SpeakerDeckLink = require("../_components/speakerDeckLink");
 const PublishedDate = require("../_components/publishedDate");
+const OpenGraph = require("../../lib/openGraph");
+// TODO - OPEN GRAPH
 
 exports.data = {
   layout: "base.html",
@@ -17,6 +19,10 @@ exports.data = {
   eleventyComputed: {
     title: (data) => data.talk.title,
     metaDescription: (data) => data.talk.excerpt,
+    // openGraphImageUrl: (data) => OpenGraph.generateImageUrl(data.talk.title, data.talk.topicsCollection.items),
+    // openGraphImageAlt: (data) => OpenGraph.generateImageAlt(data.talk.title),
+    openGraphImageWidth: OpenGraph.imageWidth,
+    openGraphImageHeight: OpenGraph.imageHeight,
   },
 };
 
