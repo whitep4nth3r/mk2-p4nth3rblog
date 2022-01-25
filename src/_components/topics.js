@@ -22,7 +22,6 @@ function Topics({ topics, selected }) {
                 </span>
                 ${topic.name}
               </a>
-            </Link>
           </li>`;
         })
         .join("")}

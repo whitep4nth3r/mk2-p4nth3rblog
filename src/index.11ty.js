@@ -1,5 +1,11 @@
 const OpenGraph = require("../lib/openGraph");
+const NextTwitchStream = require("./_components/nextTwitchStream");
+const TopicsButton = require("./_components/topicsButton");
 const pageTitle = "Build stuff, learn things and love what you do with whitep4nth3r";
+
+var md = require("markdown-it")({
+  html: true,
+});
 
 exports.data = {
   layout: "base.html",
@@ -13,5 +19,30 @@ exports.data = {
 };
 
 exports.render = function (data) {
-  return `home page content`;
+  const { twitch, latestBlogPost } = data;
+  return `
+  <section>
+    <h2>build stuff</h2>
+    ${NextTwitchStream({ stream: twitch.nextStream, isLive: twitch.isLive, onVacation: twitch.onVacation })}
+
+    <a href="/projects/">See all open source projects</a>
+  </section>
+
+  <section>
+    <h2>learn things</h2>
+
+    <a href="/blog/${latestBlogPost.slug}">
+      <h3>${latestBlogPost.title}</h3>
+      <p>${md.render(latestBlogPost.excerpt)}</p>
+    </a>
+
+    ${TopicsButton({ topics: latestBlogPost.topicsCollection.items })}
+
+    <a href="/blog/">See all blog articles</p>
+  </section>
+
+  <section>
+    <h2>love what you do</h2>
+  </section>
+  `;
 };

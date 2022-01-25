@@ -1,4 +1,4 @@
-const ContentfulApi = require("../../lib/api.js");
+const ContentfulApi = require("../../lib/contentfulApi.js");
 const Config = require("../../lib/config.js");
 const GraphQLStringBlocks = require("../../lib/graphQLStringBlocks.js");
 

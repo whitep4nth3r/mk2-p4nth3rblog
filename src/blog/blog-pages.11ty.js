@@ -1,5 +1,5 @@
 const ExternalUrl = require("../_components/externalUrl");
-const Topics = require("../_components/topics");
+const TopicsButton = require("../_components/topicsButton");
 const RichText = require("../_components/richText");
 const PublishedDate = require("../_components/publishedDate");
 const ResponsiveImage = require("../_components/responsiveImage");
@@ -47,7 +47,7 @@ exports.render = function (data) {
      <h2>SIDEBAR</h2>
       ${ResponsiveImage({ image: post.author.image })}
       <p>${post.author.name}</p>
-      ${Topics({ topics: post.topicsCollection.items })}
+       ${TopicsButton({ topics: post.topicsCollection.items })}
     </aside>
     `;
 };
