@@ -38,7 +38,7 @@ exports.render = function (data) {
 
     ${TopicsButton({ topics: latestBlogPost.topicsCollection.items })}
 
-    <a href="/blog/">See all blog articles</p>
+    <a href="/blog/">See all blog articles</a>
   </section>
 
   <section>
