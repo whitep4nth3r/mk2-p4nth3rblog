@@ -5,8 +5,6 @@ const PublishedDate = require("../_components/publishedDate");
 const ResponsiveImage = require("../_components/responsiveImage");
 const OpenGraph = require("../../lib/openGraph");
 
-// TODO - OPEN GRAPH
-
 exports.data = {
   layout: "base.html",
   pagination: {
@@ -20,11 +18,9 @@ exports.data = {
   eleventyComputed: {
     title: (data) => data.post.title,
     metaDescription: (data) => data.post.excerpt,
-    // openGraphImageUrl: (data) => {
-    //   console.log(data.post.topicsCollection.items);
-    //   return OpenGraph.generateImageUrl(data.post.title, data.post.topicsCollection.items);
-    // },
-    // openGraphImageAlt: (data) => OpenGraph.generateImageAlt(data.post.title),
+    openGraphImageUrl: (data) =>
+      OpenGraph.generateImageUrl({ title: data.post.title, topics: data.post.topicsCollection.items }),
+    openGraphImageAlt: (data) => OpenGraph.generateImageAlt(data.post.title),
     openGraphImageWidth: OpenGraph.imageWidth,
     openGraphImageHeight: OpenGraph.imageHeight,
   },
@@ -33,7 +29,6 @@ exports.data = {
 exports.render = function (data) {
   const { post } = data;
   return `
-  <div>
     <article>
       <h1>${post.title}</h1>
 
@@ -54,5 +49,5 @@ exports.render = function (data) {
       <p>${post.author.name}</p>
       ${Topics({ topics: post.topicsCollection.items })}
     </aside>
-  <div>`;
+    `;
 };

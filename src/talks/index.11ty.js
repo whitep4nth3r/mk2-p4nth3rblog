@@ -14,7 +14,7 @@ exports.data = {
   layout: "base.html",
   title: pageTitle,
   metaDescription: "Talks about web development, accessibility, Jamstack, JavaScript, and more.",
-  openGraphImageUrl: OpenGraph.generateImageUrl(pageTitle),
+  openGraphImageUrl: OpenGraph.generateImageUrl({ title: pageTitle }),
   openGraphImageAlt: OpenGraph.generateImageAlt(pageTitle),
   openGraphImageWidth: OpenGraph.imageWidth,
   openGraphImageHeight: OpenGraph.imageHeight,

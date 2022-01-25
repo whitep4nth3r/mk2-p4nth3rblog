@@ -5,7 +5,7 @@ exports.data = {
   layout: "base.html",
   title: pageTitle,
   metaDescription: "What's whitep4nth3r up to? Check out past and future in-person and virtual events.",
-  openGraphImageUrl: OpenGraph.generateImageUrl(pageTitle),
+  openGraphImageUrl: OpenGraph.generateImageUrl({ title: pageTitle }),
   openGraphImageAlt: OpenGraph.generateImageAlt(pageTitle),
   openGraphImageWidth: OpenGraph.imageWidth,
   openGraphImageHeight: OpenGraph.imageHeight,

@@ -8,7 +8,7 @@ exports.data = {
   title: pageTitle,
   metaDescription:
     "I receive a lot of questions on stream about my setup and what I use. So here's a list! Click on the filter buttons to view items in that category.",
-  openGraphImageUrl: OpenGraph.generateImageUrl(pageTitle),
+  openGraphImageUrl: OpenGraph.generateImageUrl({ title: pageTitle }),
   openGraphImageAlt: OpenGraph.generateImageAlt(pageTitle),
   openGraphImageWidth: OpenGraph.imageWidth,
   openGraphImageHeight: OpenGraph.imageHeight,

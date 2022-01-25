@@ -15,7 +15,7 @@ exports.data = {
     title: (data) => `Things whitep4nth3r uses for ${data.category}`,
     metaDescription:
       "I receive a lot of questions on stream about my setup and what I use. So here's a list! Click on the filter buttons to view items in that category.",
-    openGraphImageUrl: (data) => OpenGraph.generateImageUrl(`Things whitep4nth3r uses for ${data.category}`),
+    openGraphImageUrl: (data) => OpenGraph.generateImageUrl({ title: `Things whitep4nth3r uses for ${data.category}` }),
     openGraphImageAlt: (data) => OpenGraph.generateImageAlt(`Things whitep4nth3r uses for ${data.category}`),
     openGraphImageWidth: OpenGraph.imageWidth,
     openGraphImageHeight: OpenGraph.imageHeight,

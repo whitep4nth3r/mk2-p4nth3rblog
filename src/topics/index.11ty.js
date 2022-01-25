@@ -8,7 +8,7 @@ exports.data = {
   title: pageTitle,
   metaDescription:
     "Explore content about web development, accessibility, Jamstack, JavaScript, and more from whitep4nth3r.",
-  openGraphImageUrl: OpenGraph.generateImageUrl(pageTitle),
+  openGraphImageUrl: OpenGraph.generateImageUrl({ title: pageTitle }),
   openGraphImageAlt: OpenGraph.generateImageAlt(pageTitle),
   openGraphImageWidth: OpenGraph.imageWidth,
   openGraphImageHeight: OpenGraph.imageHeight,

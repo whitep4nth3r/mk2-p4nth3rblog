@@ -5,7 +5,7 @@ exports.data = {
   layout: "base.html",
   title: pageTitle,
   metaDescription: "Track whitep4nth3r's stats in real-time on the Jamstack via serverless functions and magic.",
-  openGraphImageUrl: OpenGraph.generateImageUrl(pageTitle),
+  openGraphImageUrl: OpenGraph.generateImageUrl({ title: pageTitle }),
   openGraphImageAlt: OpenGraph.generateImageAlt(pageTitle),
   openGraphImageWidth: OpenGraph.imageWidth,
   openGraphImageHeight: OpenGraph.imageHeight,

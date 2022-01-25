@@ -15,7 +15,7 @@ exports.data = {
     title: (data) => `Posts about ${data.topic.name} from whitep4nth3r`,
     metaDescription: (data) => `Explore content about ${data.topic.name} from whitep4nth3r.`,
     openGraphImageUrl: (data) =>
-      OpenGraph.generateImageUrl(`Posts about ${data.topic.name} from whitep4nth3r`, [data.topic]),
+      OpenGraph.generateImageUrl({ title: `Posts about ${data.topic.name} from whitep4nth3r`, topics: [data.topic] }),
     openGraphImageAlt: (data) => OpenGraph.generateImageAlt(`Posts about ${data.topic.name} from whitep4nth3r`),
     openGraphImageWidth: OpenGraph.imageWidth,
     openGraphImageHeight: OpenGraph.imageHeight,
