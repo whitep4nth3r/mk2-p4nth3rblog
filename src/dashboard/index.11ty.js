@@ -12,16 +12,53 @@ exports.data = {
 };
 
 exports.render = function (data) {
-  const { staticDashboard } = data;
   return `
     <h1>DASHBOARD</h1>
-    <p>Twitch followers: ${staticDashboard.twitch.followers}</p>
-    <p>Twitch views: ${staticDashboard.twitch.views}</p>
-    <p>Youtube subs: ${staticDashboard.youtube.subscriberCount}</p>
-    <p>Youtube views: ${staticDashboard.youtube.viewCount}</p>
-    <p>GitHub followers: ${staticDashboard.github.followers}</p>
-    <p>GitHub stars: ${staticDashboard.github.stars}</p>
-    <p>Youtube views: ${staticDashboard.youtube.viewCount}</p>
-    <p>Twitter followers: ${staticDashboard.twitter.followers}</p>
+    <p>Twitch followers:</p>
+    <span data-twitchFollowers>-</span>
+    <p>Twitch views:</p>
+    <span data-twitchViews>-</span>
+    <p>Youtube subs:</p>
+    <span data-youtubeSubs>-</span>
+    <p>Youtube views:</p>
+    <span data-youtubeViews>-</span>
+    <p>GitHub followers:</p>
+    <span data-githubFollowers>-</span>
+    <p>GitHub stars:</p>
+    <span data-githubStars>-</span>
+    <p>Twitter followers:</p>
+    <span data-twitterFollowers>-</span>
+
+    <script type="module">
+      async function getDashboard() {
+        const youtube = await fetch("/api/youtube");
+        const youtubeData = await youtube.json();
+
+        const twitch = await fetch("/api/twitch");
+        const twitchData = await twitch.json();
+
+        const github = await fetch("/api/github");
+        const githubData = await github.json();
+
+        const twitter = await fetch("/api/twitter");
+        const twitterData = await twitter.json();
+
+        return {
+          twitchFollowers: twitchData.followers,
+          twitchViews: twitchData.views,
+          youtubeSubs: youtubeData.subscriberCount,
+          youtubeViews: youtubeData.viewCount,
+          githubFollowers: githubData.followers,
+          githubStars: githubData.stars,
+          twitterFollowers: twitterData.followers,
+        };
+      }
+
+      const dashboard = await getDashboard();
+
+      Object.entries(dashboard).forEach(([key, value]) => {
+        document.querySelector("[data-" + key + "]").innerText = value;
+      });
+    </script>
   `;
 };
