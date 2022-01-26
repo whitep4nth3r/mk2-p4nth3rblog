@@ -37,9 +37,7 @@ function getRichTextRenderOptions(links, options) {
 
     renderNode: {
       [INLINES.HYPERLINK]: (node, next) =>
-        `<a href=${node.data.uri} target="_blank" rel="nofollow noreferrer">
-          ${next(node.content)}
-        </a>`,
+        `<a href=${node.data.uri} target="_blank" rel="nofollow noreferrer">${next(node.content)}</a>`,
       [INLINES.EMBEDDED_ENTRY]: (node, next) => {
         const entry = inlineEntryMap.get(node.data.target.sys.id);
         const { __typename } = entry;

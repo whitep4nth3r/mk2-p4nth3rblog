@@ -41,7 +41,7 @@ exports.render = function (data) {
         updatedDate: post.updatedDate,
       })}
 
-      ${RichText(post.body, { renderH2Links: true })}
+      ${RichText(post.body, { renderNativeImg: false, absoluteUrls: false, renderH2Links: true })}
     </article>
      <aside>
      <h2>SIDEBAR</h2>

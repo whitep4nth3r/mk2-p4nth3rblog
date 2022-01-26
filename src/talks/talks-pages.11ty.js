@@ -42,6 +42,6 @@ exports.render = function (data) {
     ${VideoEmbed({ embedUrl: talk.recording.embedUrl, title: talk.recording.title })}
     <h2>Abstract</h2>
     <h2>Transcript</h2>
-    ${RichText(talk.transcript)}
+    ${RichText(talk.transcript, { renderNativeImg: false, absoluteUrls: false, renderH2Links: true })}
   </div>`;
 };
