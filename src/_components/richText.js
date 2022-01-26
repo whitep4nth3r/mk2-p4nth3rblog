@@ -34,7 +34,6 @@ function getRichTextRenderOptions(links, options) {
       [MARKS.BOLD]: (text) => `<b>${text}</b>`,
       [MARKS.CODE]: (text) => `<code>${text}</code>`,
     },
-
     renderNode: {
       [INLINES.HYPERLINK]: (node, next) =>
         `<a href=${node.data.uri} target="_blank" rel="nofollow noreferrer">${next(node.content)}</a>`,
@@ -56,12 +55,11 @@ function getRichTextRenderOptions(links, options) {
       [BLOCKS.HEADING_1]: (node, next) => `<h1>${next(node.content)}</h1>`,
       [BLOCKS.HEADING_2]: (node, next) => {
         if (renderH2Links) {
-          return `<div id="${Tools.slugifyString(next(node.content))}">
-              <h2>${next(node.content)}</h2>
-              <a href="#${Tools.slugifyString(next(node.content))}" aria-label="${next(node.content)}">
-                INLINE LINK ICON
-              </a>
-            </div>`;
+          return /*html*/ `<div id="${Tools.slugifyString(next(node.content))}"><h2>${next(
+            node.content,
+          )}</h2><a href="#${Tools.slugifyString(next(node.content))}" aria-label="${next(
+            node.content,
+          )}">INLINE LINK ICON</a></div>`;
         } else {
           return `<h2>${next(node.content)}</h2>`;
         }
@@ -101,10 +99,8 @@ function getRichTextRenderOptions(links, options) {
         const { url, height, width, description } = image;
 
         if (renderNativeImg) {
-          // Previously this was for RSS feed
-          return `<div>
-              <img src="${url}" alt="${description}" height="${height}" width="${width}" />
-            </div>`;
+          // One image only for RSS feed
+          return `<img src="${url}" alt="${description}" height="${height}" width="${width}" />`;
         } else {
           return ResponsiveImage({ image });
         }
