@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Disallow: /api
+
+# Host
+Host: https://whitep4nth3r.com
+
+# Sitemaps
+Sitemap: https://whitep4nth3r.com/sitemap.xml
