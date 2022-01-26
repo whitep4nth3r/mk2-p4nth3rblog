@@ -113,8 +113,13 @@ function getRichTextRenderOptions(links, options) {
   };
 }
 
-function RichText(postBody, options = { renderH2Links: false }) {
-  return `<div>${documentToHtmlString(postBody.json, getRichTextRenderOptions(postBody.links, options))}</div>`;
+const defaultOptions = {
+  renderNativeImg: false,
+  renderH2Links: false,
+};
+
+function RichText(postBody, options = defaultOptions) {
+  return `${documentToHtmlString(postBody.json, getRichTextRenderOptions(postBody.links, options))}`;
 }
 
 module.exports = RichText;
