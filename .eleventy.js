@@ -4,6 +4,7 @@ const embedYouTube = require("eleventy-plugin-youtube-embed");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/css");
+  eleventyConfig.addPassthroughCopy({ "./src/public": "/" });
 
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(embedTwitter, {
@@ -11,7 +12,7 @@ module.exports = function (eleventyConfig) {
     align: "center",
     doNotTrack: "true",
   });
-  
+
   eleventyConfig.addPlugin(embedYouTube, {
     lite: true,
   });
