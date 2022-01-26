@@ -1,6 +1,7 @@
 const { documentToHtmlString } = require("@contentful/rich-text-html-renderer");
 const { BLOCKS, MARKS, INLINES } = require("@contentful/rich-text-types");
 
+const Config = require("../../lib/config");
 const Tools = require("../../lib/tools");
 const ResponsiveImage = require("./responsiveImage");
 const CodeBlock = require("./codeBlock");
@@ -9,7 +10,7 @@ const TweetEmbed = require("./tweetEmbed");
 const BlogPostEmbed = require("./blogPostEmbed");
 
 function getRichTextRenderOptions(links, options) {
-  const { renderH2Links, renderNativeImg } = options;
+  const { absoluteUrls, renderH2Links, renderNativeImg } = options;
 
   const assetBlockMap = new Map(links?.assets?.block?.map((asset) => [asset.sys.id, asset]));
 
@@ -46,8 +47,9 @@ function getRichTextRenderOptions(links, options) {
         switch (__typename) {
           case "BlogPost":
             const { slug, title, featuredImage, excerpt } = entry;
+            const prefix = absoluteUrls ? `https://${Config.site.domain}` : "";
 
-            return `<a href="/blog/${slug}">{title}</a>`;
+            return `<a href="${prefix}/blog/${slug}">${title}</a>`;
           default:
             return null;
         }
@@ -58,7 +60,7 @@ function getRichTextRenderOptions(links, options) {
         if (renderH2Links) {
           return `<div id="${Tools.slugifyString(next(node.content))}">
               <h2>${next(node.content)}</h2>
-              <a href="#${Tools.slugifyString(next(node.content))}" aria-label={next(node.content)}>
+              <a href="#${Tools.slugifyString(next(node.content))}" aria-label="${next(node.content)}">
                 INLINE LINK ICON
               </a>
             </div>`;
@@ -114,6 +116,7 @@ function getRichTextRenderOptions(links, options) {
 }
 
 const defaultOptions = {
+  absoluteUrls: false,
   renderNativeImg: false,
   renderH2Links: false,
 };
