@@ -20,7 +20,7 @@ exports.data = {
 
 exports.render = function (data) {
   const { twitch, latestBlogPost } = data;
-  return `
+  return /* html */ `
   <section>
     <h2>build stuff</h2>
     ${NextTwitchStream({ stream: twitch.nextStream, isLive: twitch.isLive, onVacation: twitch.onVacation })}

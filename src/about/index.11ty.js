@@ -16,7 +16,7 @@ exports.data = {
 
 exports.render = function (data) {
   const { person } = data;
-  return `
+  return /* html */ `
     <h1>${person.name}</h1>
     ${ResponsiveImage({ image: person.image })}
     ${RichText(person.bioLong)}

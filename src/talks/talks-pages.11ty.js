@@ -28,7 +28,7 @@ exports.data = {
 
 exports.render = function (data) {
   const { talk } = data;
-  return `<div>
+  return /* html */ `<div>
     ${Topics({ topics: talk.topicsCollection.items })}
     
 

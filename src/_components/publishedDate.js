@@ -3,7 +3,7 @@ const DateUtils = require("../../lib/dateUtils");
 function PublishedDate({ date, readingTime, isTalk, updatedDate }) {
   const timeSuffix = isTalk ? "watch time" : "read";
 
-  return ` <div>
+  return /* html */ `<div>
       <time
         dateTime="${DateUtils.formatDateForDateTime(date)}"
       >

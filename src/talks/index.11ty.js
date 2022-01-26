@@ -29,7 +29,7 @@ exports.data = {
 };
 
 exports.render = function (data) {
-  return `<ol>
+  return /* html */ `<ol>
     ${data.pagination.items
       .map(function (item) {
         return `

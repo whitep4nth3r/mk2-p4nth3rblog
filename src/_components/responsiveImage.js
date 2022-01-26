@@ -26,7 +26,7 @@ function ResponsiveImage({ image }) {
     return makeSrcSetArray(format).join(", ");
   }
 
-  return `<picture>
+  return /* html */ `<picture>
       ${!isGif ? `<source type="image/avif" srcSet="${makeSrcSetString("avif")}" sizes="${sizes}" />` : ""}
       <source type="image/webp" srcSet="${makeSrcSetString("webp")}" sizes="${sizes}" />
       <img

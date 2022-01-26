@@ -4,7 +4,7 @@ function formatUrlForDisplay(url) {
 
 function ExternalUrl({ url }) {
   if (url) {
-    return `<div>
+    return /* html */ `<div>
       <p>Originally published on
         <a
         href="${url}"

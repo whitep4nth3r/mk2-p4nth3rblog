@@ -17,7 +17,7 @@ exports.data = {
 exports.render = function (data) {
   const { categories, allThings } = data;
 
-  return `
+  return /* html */ `
   <h1>Things whitep4nth3r uses to build stuff, learn things, and love what she does.</h1>
   
   <h2>I receive a lot of questions on stream about my setup and what I use. So here's a list! ✨ Click on the filter buttons to view items in that category.</h2>

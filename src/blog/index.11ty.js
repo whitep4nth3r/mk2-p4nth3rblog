@@ -29,7 +29,7 @@ exports.data = {
 };
 
 exports.render = function (data) {
-  return `<ol>
+  return /* html */ `<ol>
     ${data.pagination.items
       .map(function (item) {
         return `
@@ -45,6 +45,7 @@ exports.render = function (data) {
               isTalk: false,
               updatedDate: item.updatedDate,
             })}
+
             <p>${md.render(item.excerpt)}</p>
             ${Topics({ topics: item.topicsCollection.items })}
           </div>

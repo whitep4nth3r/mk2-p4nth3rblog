@@ -12,7 +12,7 @@ exports.data = {
 };
 
 exports.render = function (data) {
-  return `
+  return /* html */ `
     <p>FUTURE EVENTS</p>
     ${data.futureEvents
       .map(

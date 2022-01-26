@@ -26,7 +26,7 @@ exports.render = function (data) {
   const { category, categories, allThings } = data;
   const thingsForCategory = allThings.filter((thing) => thing.categories.includes(category));
 
-  return `
+  return /* html */ `
   ${UsesCategories({ categories, selected: category })}
 
   <div>

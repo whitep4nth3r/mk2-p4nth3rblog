@@ -1,5 +1,5 @@
 function TopicsButton({ topics }) {
-  return `
+  return /* html */ `
     <a href="/topics/">
       <ul>
         ${topics

@@ -1,5 +1,5 @@
 function Topics({ topics, selected }) {
-  return `<ul>
+  return /* html */ `<ul>
       ${topics
         .map((topic) => {
           // TODO — selected class

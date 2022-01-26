@@ -12,7 +12,7 @@ exports.data = {
 };
 
 exports.render = function (data) {
-  return `
+  return /* html */ `
     <h1>DASHBOARD</h1>
     <p>Twitch followers:</p>
     <span data-twitchFollowers>-</span>

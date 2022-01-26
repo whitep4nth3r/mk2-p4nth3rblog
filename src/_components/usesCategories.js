@@ -1,5 +1,5 @@
 function UsesCategories({ categories, selected }) {
-  return `<ul>
+  return /* html */ `<ul>
       ${categories
         .map((cat) => {
           // TODO — selected class

@@ -26,7 +26,7 @@ exports.render = function (data) {
   const { topic, topics, allPosts } = data;
   const postsByTopic = Array.from(allPosts.get(topic.slug));
 
-  return `<div>
+  return /* html */ `<div>
     ${Topics({ topics })}
 
     <h1>${topic.name}</h1>

@@ -1,5 +1,5 @@
 function TweetEmbed({ tweetUrl }) {
-  return `<p>${tweetUrl}</p>`;
+  return /* html */ `<p>${tweetUrl}</p>`;
 }
 
 module.exports = TweetEmbed;

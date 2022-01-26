@@ -4,10 +4,8 @@ function NextTwitchStream({ stream, isLive, onVacation }) {
   if (onVacation) {
     return `ON VACATION TO DO`;
   } else {
-    return `
-    
+    return /* html */ `    
     ${isLive ? `<p>LIVE</p>` : ""}
-
       <div>
         <time dateTime="${DateUtils.formatDateForDateTime(stream.start_time)}">
             ${DateUtils.formatDateForTwitchDisplay(stream.start_time)}

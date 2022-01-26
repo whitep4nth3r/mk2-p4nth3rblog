@@ -28,7 +28,7 @@ exports.data = {
 
 exports.render = function (data) {
   const { post } = data;
-  return `
+  return /* html */ `
     <article>
       <h1>${post.title}</h1>
 
