@@ -1,4 +1,5 @@
 const Config = require("../../lib/config");
+const DateUtils = require("../../lib/dateUtils");
 const RichText = require("../_components/richText");
 
 exports.data = {
@@ -37,7 +38,7 @@ function buildRssItems(items) {
           <author>${Config.site.email} (${Config.site.owner})</author>
           <link>https://${Config.site.domain}/${urlSlug}/${item.slug}</link>
           <guid>https://${Config.site.domain}/${urlSlug}/${item.slug}</guid>
-          <pubDate>${item.date}</pubDate>
+          <pubDate>${DateUtils.makeForRss(item.date)}</pubDate>
           ${buildCategories(item.topicsCollection.items)}
           ${buildContent(contentBody)}
         </item>
