@@ -118,7 +118,7 @@ function getRichTextRenderOptions(links, options) {
           // One image only for RSS feed
           return `<img src="${url}" alt="${description}" height="${height}" width="${width}" />`;
         } else {
-          return ResponsiveImage({ image });
+          return `<div class="post__responsiveImage">${ResponsiveImage({ image })}</div>`;
         }
       },
     },

@@ -191,6 +191,15 @@ a.post__linkedHeaderIcon {
   font-weight: var(--font-weight-bold);
 }
 
+.post__responsiveImage {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.post__codeBlock {
+  margin-bottom: 1rem;
+}
+
 .publishedDate {
   margin-top: 1rem;
   margin-bottom: 1rem;
