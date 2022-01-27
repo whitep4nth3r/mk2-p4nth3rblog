@@ -8,7 +8,7 @@
   --white: #ffffff;
   --yellow: #ffb626;
 
-  --font-weight-normal: 400;
+  --font-weight-normal: 300;
   --font-weight-bold: 700;
 
   --font-family-heading: "Work Sans", sans-serif;
@@ -135,7 +135,7 @@ main {
   line-height: 1.4;
   margin-bottom: 2rem;
   padding-top: 2rem;
-  font-weight: var(--font-weight-normal);
+  font-weight: var(--font-weight-bold);
   font-family: var(--font-family-main);
   color: var(--color-highlight);
   word-break: break-word;
@@ -147,7 +147,7 @@ main {
   line-height: 1.4;
   padding-top: 2rem;
   margin-bottom: 2rem;
-  font-weight: var(--font-weight-normal);
+  font-weight: var(--font-weight-bold);
   font-family: var(--font-family-main);
   color: var(--color-highlight);
   word-break: break-word;
@@ -178,8 +178,8 @@ a.post__linkedHeaderIcon {
 }
 
 .post__p {
-  font-size: 1rem;
-  line-height: 1.5;
+  font-size: 1.1rem;
+  line-height: 1.6;
   margin-bottom: 1rem;
   font-weight: var(--font-weight-normal);
   font-family: var(--font-family-main);
