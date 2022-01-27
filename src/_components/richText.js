@@ -9,6 +9,8 @@ const VideoEmbed = require("./videoEmbed");
 const TweetEmbed = require("./tweetEmbed");
 const BlogPostEmbed = require("./blogPostEmbed");
 
+const LinkIcon = require("./svg/linkIcon");
+
 function getRichTextRenderOptions(links, options) {
   const { absoluteUrls, renderHeadingLinks, renderNativeImg } = options;
 
@@ -31,7 +33,7 @@ function getRichTextRenderOptions(links, options) {
 
   return {
     renderMark: {
-      [MARKS.BOLD]: (text) => `<b>${text}</b>`,
+      [MARKS.BOLD]: (text) => `<b class="post__p--bold">${text}</b>`,
       [MARKS.CODE]: (text) => `<code>${text}</code>`,
     },
     renderNode: {
@@ -52,37 +54,37 @@ function getRichTextRenderOptions(links, options) {
         }
       },
       [BLOCKS.HR]: (text) => `<hr />`,
-      [BLOCKS.HEADING_1]: (node, next) => `<h1>${next(node.content)}</h1>`,
+      [BLOCKS.HEADING_1]: (node, next) => `<h1 class="post__h1">${next(node.content)}</h1>`,
       [BLOCKS.HEADING_2]: (node, next) => {
         if (renderHeadingLinks) {
           return /*html*/ `
-          <div id="${Tools.slugifyString(next(node.content))}">
-            <h2>${next(node.content)}</h2>
+          <div id="${Tools.slugifyString(next(node.content))}" class="post__linkedHeaderContainer">
+            <h2 class="post__h2">${next(node.content)}</h2>
             <a href="#${Tools.slugifyString(next(node.content))}" aria-label="${next(
             node.content,
-          )}">INLINE LINK ICON</a>
+          )}" class="post__linkedHeaderIcon">${LinkIcon()}</a>
           </div>`;
         } else {
-          return `<h2>${next(node.content)}</h2>`;
+          return `<h2 class="post__h2">${next(node.content)}</h2>`;
         }
       },
       [BLOCKS.HEADING_3]: (node, next) => {
         if (renderHeadingLinks) {
           return /*html*/ `
-          <div id="${Tools.slugifyString(next(node.content))}">
-            <h3>${next(node.content)}</h3>
+          <div id="${Tools.slugifyString(next(node.content))}" class="post__linkedHeaderContainer">
+            <h3 class="post__h3">${next(node.content)}</h3>
             <a href="#${Tools.slugifyString(next(node.content))}" aria-label="${next(
             node.content,
-          )}">INLINE LINK ICON</a>
+          )}" class="post__linkedHeaderIcon">${LinkIcon()}</a>
           </div>`;
         } else {
-          return `<h3>${next(node.content)}</h3>`;
+          return `<h3 class="post__h3">${next(node.content)}</h3>`;
         }
       },
-      [BLOCKS.HEADING_4]: (node, next) => `<h4>${next(node.content)}</h4>`,
-      [BLOCKS.HEADING_5]: (node, next) => `<h5>${next(node.content)}</h5>`,
-      [BLOCKS.HEADING_6]: (node, next) => `<h6>${next(node.content)}</h6>`,
-      [BLOCKS.PARAGRAPH]: (node, next) => `<p>${next(node.content)}</p>`,
+      [BLOCKS.HEADING_4]: (node, next) => `<h4 class="post__h4">${next(node.content)}</h4>`,
+      [BLOCKS.HEADING_5]: (node, next) => `<h5 class="post__h5">${next(node.content)}</h5>`,
+      [BLOCKS.HEADING_6]: (node, next) => `<h6 class="post__h6">${next(node.content)}</h6>`,
+      [BLOCKS.PARAGRAPH]: (node, next) => `<p class="post__p">${next(node.content)}</p>`,
       [BLOCKS.QUOTE]: (node, next) => `<blockquote>${next(node.content)}</blockquote>`,
       [BLOCKS.UL_LIST]: (node, next) => `<ul>${next(node.content)}</ul>`,
       [BLOCKS.OL_LIST]: (node, next) => `<ol>${next(node.content)}</ol>`,

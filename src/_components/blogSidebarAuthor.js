@@ -4,7 +4,6 @@ var md = require("markdown-it")({
 });
 
 function BlogSidebarAuthor({ author }) {
-  console.log(author);
   return /*html*/ `
   <div class="blogSidebarAuthor">
     <div class="blogSidebarAuthor__imgContainer">

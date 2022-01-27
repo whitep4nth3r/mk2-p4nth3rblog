@@ -8,16 +8,14 @@ const makeList = {
     [BLOCKS.HEADING_1]: (node, next) => "",
     [BLOCKS.HEADING_2]: (node, next) => `
       <li class="tableOfContents__item">
-        <a href="#${Tools.slugifyString(next(node.content))}" aria-label="${next(node.content)}">${next(
-      node.content,
-    )}</a>
+        <a href="#${Tools.slugifyString(next(node.content))}" class="tableOfContents__itemLink"
+        aria-label="${next(node.content)}">${next(node.content)}</a>
       </li>
       `,
     [BLOCKS.HEADING_3]: (node, next) =>
       `<li class="tableOfContents__item tableOfContents__item--nudged">
-        <a href="#${Tools.slugifyString(next(node.content))}" aria-label="${next(node.content)}">${next(
-        node.content,
-      )}</a>
+        <a href="#${Tools.slugifyString(next(node.content))}" class="tableOfContents__itemLink" 
+        aria-label="${next(node.content)}">${next(node.content)}</a>
       </li>
       `,
     [BLOCKS.HEADING_4]: (node, next) => "",

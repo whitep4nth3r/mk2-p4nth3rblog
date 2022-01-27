@@ -6,6 +6,10 @@
 
     <title>{{ title }}</title>
 
+    {% if canonical %}
+    <link rel="canonical" href="{{ canonical }}" />
+    {% endif %}
+
     <!-- extra CSS -->
 
     <link rel="stylesheet" href="/css/main.css" />
@@ -43,6 +47,14 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0f111a" />
     <meta name="msapplication-TileColor" content="#0f111a" />
     <meta name="theme-color" content="#0f111a" />
+
+    <!-- TEMPORARY FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Press+Start+2P&family=Work+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     {% include "header.html" %}

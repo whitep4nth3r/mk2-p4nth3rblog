@@ -27,7 +27,7 @@ function NextTwitchStream({ stream, isLive, onVacation }) {
           href="https://twitch.tv/whitep4nth3r"
           target="_blank"
           title="Watch live on Twitch"
-          rel="nofollow noopener"
+          rel="nofollow noreferrer"
         >watch live</a>
       </div>
 

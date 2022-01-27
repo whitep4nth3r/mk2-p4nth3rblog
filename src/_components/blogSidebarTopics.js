@@ -13,7 +13,7 @@ function BlogSidebarTopics({ topics }) {
                   height="16"
                   width="16"
                   class="blogSidebarTopics__itemIcon">
-                more on ${topic.name.toLowerCase()}
+                More on ${topic.name}
               </a>
           </li>`;
         })

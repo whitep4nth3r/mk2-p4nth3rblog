@@ -5,7 +5,6 @@ var md = require("markdown-it")({
 
 const Topics = require("../_components/topics");
 const Pagination = require("../_components/pagination");
-const PublishedDate = require("../_components/publishedDate");
 const OpenGraph = require("../../lib/openGraph");
 
 const pageTitle = "Posts about web development, accessibility, Jamstack, JavaScript, and more from whitep4nth3r";
@@ -40,14 +39,8 @@ exports.render = function (data) {
               <h2>${item.title}</h2>
             </a>
 
-            ${PublishedDate({
-              date: item.date,
-              readingTime: item.readingTime,
-              isTalk: false,
-              updatedDate: item.updatedDate,
-            })}
+            ${md.render(item.excerpt)}
 
-            <p>${md.render(item.excerpt)}</p>
             ${Topics({ topics: item.topicsCollection.items })}
           </div>
         </li>`;
