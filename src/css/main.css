@@ -179,7 +179,7 @@ a.post__linkedHeaderIcon {
 }
 
 .post__p {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   line-height: 1.6;
   margin-bottom: 1rem;
   font-weight: var(--font-weight-normal);
@@ -207,7 +207,7 @@ a.post__linkedHeaderIcon {
 }
 
 .publishedDate__item {
-  font-size: 0.8rem;
+  font-size: 1rem;
   margin-bottom: 0.5rem;
   color: var(--color-fg);
   display: flex;
@@ -234,7 +234,7 @@ a.post__linkedHeaderIcon {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
 .isSponsored__icon,
@@ -253,7 +253,7 @@ a.post__linkedHeaderIcon {
   list-style: none;
   margin-bottom: 1rem;
   font-weight: var(--font-weight-bold);
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: var(--color-highlight);
 }
 
@@ -262,8 +262,9 @@ a.post__linkedHeaderIcon {
 }
 
 .tableOfContents__itemLink {
-  font-size: 0.8rem;
-  line-height: 1.2;
+  font-weight: var(--font-weight-mid);
+  font-size: 1rem;
+  line-height: 1.4;
   color: var(--color-fg);
 }
 
@@ -293,7 +294,7 @@ a.post__linkedHeaderIcon {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
 .blogSidebarTopics__itemIcon {
@@ -306,7 +307,7 @@ a.post__linkedHeaderIcon {
 }
 
 .blogSidebarAuthor__cta {
-  font-size: 0.9rem;
+  font-size: 1rem;
   margin-bottom: 1rem;
 }
 
