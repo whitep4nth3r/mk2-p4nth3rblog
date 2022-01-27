@@ -40,6 +40,7 @@ exports.render = function (data) {
   return /* html */ `
     <section class="post">
       <aside class="post__aside">
+      ${BlogSidebarAuthor({ author: post.author })}
 
        ${PublishedDate({
          date: post.date,
@@ -50,19 +51,18 @@ exports.render = function (data) {
 
         ${TableOfContents(post.body)}
 
-        ${post.isSponsored ? isSponsored() : ""}
+      
 
         <div class="post__asideGroup">
-          ${ExternalUrl({ url: post.externalUrl })}
           ${BlogSidebarTopics({ topics: post.topicsCollection.items })}
         </div>
         
         <a href="/blog/">See all blog posts</a>
 
-        ${BlogSidebarAuthor({ author: post.author })}
-
       </aside>
       <article class="post__article">
+        ${post.isSponsored ? isSponsored() : ""}
+        ${ExternalUrl({ url: post.externalUrl })}
         <h1 class="post__h1">${post.title}</h1>       
         ${RichText(post.body, { renderNativeImg: false, absoluteUrls: false, renderHeadingLinks: true })}
       </article>

@@ -1,19 +1,21 @@
-// function formatUrlForDisplay(url) {
-//   return new URL(url).hostname;
-// }
+const WavyCheckIcon = require("../_components/svg/wavyCheckIcon");
+
+function formatUrlForDisplay(url) {
+  return new URL(url).hostname;
+}
 
 function ExternalUrl({ url }) {
   if (url) {
     return /* html */ `
-    <div class="externalUrl">
       <a
-      class="externalUrl__link"
-      href="${url}"
-      target="_blank"
-      rel="nofollow noreferrer">
-      Original post
+        class="externalUrl"
+        href="${url}"
+        target="_blank"
+        rel="nofollow noreferrer">
+        <span class="isSponsored__icon">${WavyCheckIcon()}</span>
+        Originally posted on ${formatUrlForDisplay(url)}
       </a>
-    </div>`;
+      `;
   } else {
     return "";
   }
