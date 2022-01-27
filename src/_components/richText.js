@@ -10,7 +10,7 @@ const TweetEmbed = require("./tweetEmbed");
 const BlogPostEmbed = require("./blogPostEmbed");
 
 function getRichTextRenderOptions(links, options) {
-  const { absoluteUrls, renderH2Links, renderNativeImg } = options;
+  const { absoluteUrls, renderHeadingLinks, renderNativeImg } = options;
 
   const assetBlockMap = new Map(links?.assets?.block?.map((asset) => [asset.sys.id, asset]));
 
@@ -54,17 +54,31 @@ function getRichTextRenderOptions(links, options) {
       [BLOCKS.HR]: (text) => `<hr />`,
       [BLOCKS.HEADING_1]: (node, next) => `<h1>${next(node.content)}</h1>`,
       [BLOCKS.HEADING_2]: (node, next) => {
-        if (renderH2Links) {
-          return /*html*/ `<div id="${Tools.slugifyString(next(node.content))}"><h2>${next(
+        if (renderHeadingLinks) {
+          return /*html*/ `
+          <div id="${Tools.slugifyString(next(node.content))}">
+            <h2>${next(node.content)}</h2>
+            <a href="#${Tools.slugifyString(next(node.content))}" aria-label="${next(
             node.content,
-          )}</h2><a href="#${Tools.slugifyString(next(node.content))}" aria-label="${next(
-            node.content,
-          )}">INLINE LINK ICON</a></div>`;
+          )}">INLINE LINK ICON</a>
+          </div>`;
         } else {
           return `<h2>${next(node.content)}</h2>`;
         }
       },
-      [BLOCKS.HEADING_3]: (node, next) => `<h3>${next(node.content)}</h3>`,
+      [BLOCKS.HEADING_3]: (node, next) => {
+        if (renderHeadingLinks) {
+          return /*html*/ `
+          <div id="${Tools.slugifyString(next(node.content))}">
+            <h3>${next(node.content)}</h3>
+            <a href="#${Tools.slugifyString(next(node.content))}" aria-label="${next(
+            node.content,
+          )}">INLINE LINK ICON</a>
+          </div>`;
+        } else {
+          return `<h3>${next(node.content)}</h3>`;
+        }
+      },
       [BLOCKS.HEADING_4]: (node, next) => `<h4>${next(node.content)}</h4>`,
       [BLOCKS.HEADING_5]: (node, next) => `<h5>${next(node.content)}</h5>`,
       [BLOCKS.HEADING_6]: (node, next) => `<h6>${next(node.content)}</h6>`,
@@ -112,7 +126,7 @@ function getRichTextRenderOptions(links, options) {
 const defaultOptions = {
   absoluteUrls: false,
   renderNativeImg: false,
-  renderH2Links: false,
+  renderHeadingLinks: false,
 };
 
 function RichText(postBody, options = defaultOptions) {

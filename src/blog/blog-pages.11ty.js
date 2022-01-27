@@ -1,8 +1,9 @@
 const ExternalUrl = require("../_components/externalUrl");
-const TopicsButton = require("../_components/topicsButton");
+const BlogSidebarTopics = require("../_components/blogSidebarTopics");
+const BlogSidebarAuthor = require("../_components/blogSidebarAuthor");
 const RichText = require("../_components/richText");
 const PublishedDate = require("../_components/publishedDate");
-const ResponsiveImage = require("../_components/responsiveImage");
+const TableOfContents = require("../_components/tableOfContents");
 const OpenGraph = require("../../lib/openGraph");
 
 exports.data = {
@@ -30,25 +31,33 @@ exports.data = {
 exports.render = function (data) {
   const { post } = data;
   return /* html */ `
-    <article>
-      <h1>${post.title}</h1>
+    <section class="post">
+      <aside class="post__aside">
+        ${TableOfContents(post.body)}
 
-      ${ExternalUrl({ url: post.externalUrl })}
+        ${BlogSidebarTopics({ topics: post.topicsCollection.items })}
 
-      ${PublishedDate({
-        date: post.date,
-        readingTime: post.readingTime,
-        isTalk: false,
-        updatedDate: post.updatedDate,
-      })}
+        <a href="/blog/">See all blog posts</a>
 
-      ${RichText(post.body, { renderNativeImg: false, absoluteUrls: false, renderH2Links: true })}
-    </article>
-     <aside>
-     <h2>SIDEBAR</h2>
-      ${ResponsiveImage({ image: post.author.image })}
-      <p>${post.author.name}</p>
-       ${TopicsButton({ topics: post.topicsCollection.items })}
-    </aside>
+        ${BlogSidebarAuthor({ author: post.author })}
+
+     
+
+      </aside>
+      <article class="post__article">
+        <h1>${post.title}</h1>
+
+        ${ExternalUrl({ url: post.externalUrl })}
+
+        ${PublishedDate({
+          date: post.date,
+          readingTime: post.readingTime,
+          isTalk: false,
+          updatedDate: post.updatedDate,
+        })}
+
+        ${RichText(post.body, { renderNativeImg: false, absoluteUrls: false, renderHeadingLinks: true })}
+      </article>
+    </section>
     `;
 };

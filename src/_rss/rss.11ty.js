@@ -20,7 +20,7 @@ function buildCategories(topics) {
 function buildContent(postBody) {
   return `
   <content:encoded><![CDATA[ 
-    ${RichText(postBody, { renderNativeImg: true, absoluteUrls: true, renderH2Links: false })}
+    ${RichText(postBody, { renderNativeImg: true, absoluteUrls: true, renderHeadingLinks: false })}
   ]]></content:encoded>`;
 }
 
