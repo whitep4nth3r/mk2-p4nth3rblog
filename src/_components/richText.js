@@ -53,7 +53,7 @@ function getRichTextRenderOptions(links, options) {
             return null;
         }
       },
-      [BLOCKS.HR]: (text) => `<hr />`,
+      [BLOCKS.HR]: (text) => `<hr class="post__hr" />`,
       [BLOCKS.HEADING_1]: (node, next) => `<h1 class="post__h1">${next(node.content)}</h1>`,
       [BLOCKS.HEADING_2]: (node, next) => {
         if (renderHeadingLinks) {

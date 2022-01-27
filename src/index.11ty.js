@@ -36,7 +36,11 @@ exports.render = function (data) {
       <p>${md.render(latestBlogPost.excerpt)}</p>
     </a>
 
-    ${TopicsButton({ topics: latestBlogPost.topicsCollection.items })}
+    ${TopicsButton({
+      topics: latestBlogPost.topicsCollection.items,
+      url: `/blog/${latestBlogPost.slug}/`,
+      ariaLabel: `Read ${latestBlogPost.title}`,
+    })}
 
     <a href="/blog/">See all blog articles →</a>
   </section>

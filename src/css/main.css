@@ -99,10 +99,15 @@ main {
 .grid__header {
   margin: 4rem auto 2rem auto;
   max-width: var(--grid-max-width);
-  border-bottom-width: 0.25rem;
-  border-bottom-style: solid;
-  border-image: var(--yellow-red-gradient) 1;
-  padding-bottom: 1rem;
+}
+
+.grid__header:after {
+  content: "";
+  width: 100%;
+  height: 0.25rem;
+  display: block;
+  margin-top: 1rem;
+  background: var(--yellow-red-gradient);
 }
 
 .grid__headerTitle {
@@ -184,17 +189,39 @@ main {
   margin-bottom: 2rem;
 }
 
+.post__hr {
+  border-bottom-style: solid;
+  border-bottom-width: 0.25rem;
+  border-image: var(--yellow-red-gradient) 1;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.post__hr:after {
+  content: "";
+  width: 100%;
+  height: 0.25rem;
+  display: block;
+  margin-top: 1rem;
+  background: var(--yellow-red-gradient);
+}
+
 .post__h1 {
   margin-bottom: 2rem;
   font-size: clamp(2.2rem, 3vw, 3rem);
   line-height: 1.2;
-  padding-bottom: 2rem;
   font-weight: var(--font-weight-bold);
   font-family: var(--font-family-main);
   color: var(--color-fg);
-  border-bottom-style: solid;
-  border-bottom-width: 0.25rem;
-  border-image: var(--yellow-red-gradient) 1;
+}
+
+.post__h1:after {
+  content: "";
+  width: 100%;
+  height: 0.25rem;
+  display: block;
+  margin-top: 2rem;
+  background: var(--yellow-red-gradient);
 }
 
 .post__h2 {
@@ -265,6 +292,15 @@ a.post__linkedHeaderIcon {
 
 .post__codeBlock {
   margin-bottom: 1rem;
+}
+
+.videoEmbed__cta {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-weight: var(--font-weight-mid);
+  font-family: var(--font-family-main);
+  color: var(--color-highlight);
 }
 
 .publishedDate {
@@ -408,12 +444,18 @@ a.post__linkedHeaderIcon {
 }
 
 .postCard {
-  border-top-style: solid;
-  border-top-width: 0.25rem;
-  border-image: var(--yellow-red-gradient) 1;
   height: 100%;
   display: flex;
   flex-direction: column;
+}
+
+.postCard:before {
+  content: "";
+  width: 100%;
+  height: 0.25rem;
+  display: block;
+  margin-top: 1rem;
+  background: var(--yellow-red-gradient);
 }
 
 .postCard__meta {

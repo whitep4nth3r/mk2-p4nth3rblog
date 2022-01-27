@@ -4,7 +4,7 @@ const DateUtils = require("../../lib/dateUtils");
 
 function PostCard({ post, baseSlug, isTalk }) {
   const timeSuffix = isTalk ? "watch time" : "read";
-
+  const urlBase = isTalk ? "talks" : "blog";
   return /*html*/ `
     <article class="postCard">
         <p class="postCard__meta">
@@ -19,7 +19,11 @@ function PostCard({ post, baseSlug, isTalk }) {
           ${post.title}
         </a>
         <div class="postCard__topics">
-          ${TopicsButton({ topics: post.topicsCollection.items })}
+          ${TopicsButton({
+            topics: post.topicsCollection.items,
+            url: `/${urlBase}/${post.slug}/`,
+            ariaLabel: `Read ${post.title}`,
+          })}
         </div>
       </article>
   `;

@@ -3,10 +3,8 @@ function VideoEmbed({ embedUrl, title }) {
 
   // TO DO
   return /* html */ `
-  <div>
-    <h3>Click below to play ${title}</h3>
-    <p>${embedUrl}</p>
-  </div>`;
+    <h3 class="videoEmbed__cta">Click below to play ${title}</h3>
+    <p>${embedUrl}</p>`;
 }
 
 module.exports = VideoEmbed;
