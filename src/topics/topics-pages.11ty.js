@@ -28,7 +28,7 @@ exports.render = function (data) {
   const postsByTopic = Array.from(allPosts.get(topic.slug));
 
   return /* html */ `<div>
-    ${Topics({ topics })}
+    ${Topics({ topics, selected: topic.slug })}
 
     <h1>${topic.name}</h1>
     ${postsByTopic.map((post) => `<p>${post.title}</p>`).join("")}

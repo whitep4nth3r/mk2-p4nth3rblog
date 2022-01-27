@@ -24,6 +24,11 @@
 
   --topic-button-bg: var(--grey-dark);
   --topic-button-color: var(--white);
+
+  --post-max-width: 980px;
+  --grid-max-width: 1280px;
+
+  --yellow-red-gradient: linear-gradient(45deg, var(--red), var(--yellow));
 }
 
 * {
@@ -86,14 +91,75 @@ header {
 }
 
 main {
-  max-width: 800px;
   margin: auto;
 }
 
 /* END TEMP */
 
+.grid__header {
+  margin: 4rem auto 2rem auto;
+  max-width: var(--grid-max-width);
+  border-bottom-width: 0.25rem;
+  border-bottom-style: solid;
+  border-image: var(--yellow-red-gradient) 1;
+  padding-bottom: 1rem;
+}
+
+.grid__headerTitle {
+  font-weight: var(--font-weight-mid);
+  font-size: 2rem;
+}
+
+.topics {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: var(--grid-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+}
+
+.topics__listItem {
+}
+
+.topics__listItemLink {
+  font-weight: var(--font-weight-mid);
+  background-color: var(--topic-button-bg);
+  border-radius: var(--border-radius-base);
+  padding: 0.5rem 1rem;
+  color: var(--topic-button-color);
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  width: max-content;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+  border: 0.25rem solid transparent;
+}
+
+.topics__listItemLink--selected {
+  border-color: var(--color-highlight);
+}
+
+.topics__listItemImg {
+  margin-right: 0.5rem;
+  display: flex;
+}
+
+.topics__listItemName {
+  display: flex;
+}
+
 .post {
   display: grid;
+  max-width: var(--post-max-width);
+  margin: auto;
 }
 
 @media screen and (min-width: 768px) {
@@ -128,7 +194,7 @@ main {
   color: var(--color-fg);
   border-bottom-style: solid;
   border-bottom-width: 0.25rem;
-  border-image: linear-gradient(45deg, var(--red), var(--yellow)) 1;
+  border-image: var(--yellow-red-gradient) 1;
 }
 
 .post__h2 {
@@ -318,8 +384,93 @@ a.post__linkedHeaderIcon {
 
 .blogSidebarAuthor__imgContainer img {
   border: 0.25rem solid transparent;
-  border-radius: 80px;
-  background-image: linear-gradient(white, white), linear-gradient(45deg, var(--red), var(--yellow));
+  border-radius: 50%;
+  background-image: linear-gradient(white, white), var(--yellow-red-gradient);
   background-origin: border-box;
   background-clip: content-box, border-box;
+}
+
+.postGrid {
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  max-width: var(--grid-max-width);
+  margin: auto;
+  gap: 1rem 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  align-items: stretch;
+}
+
+.postGrid__item {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.postCard {
+  border-top-style: solid;
+  border-top-width: 0.25rem;
+  border-image: var(--yellow-red-gradient) 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.postCard__meta {
+  padding-top: 1.5rem;
+  margin-bottom: 2rem;
+  font-weight: var(--font-weight-mid);
+  color: var(--color-fg);
+}
+
+.postCard__metaIcon {
+  margin-right: 0.25rem;
+  margin-left: 0.25rem;
+  color: var(--color-highlight);
+}
+
+.postCard__titleLink {
+  text-decoration: none;
+  color: var(--color-fg);
+  font-size: 1.7rem;
+  line-height: 1.2;
+  font-weight: var(--font-weight-mid);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.postCard__topics {
+  display: flex;
+  flex-direction: column;
+}
+
+.topicsButton {
+  font-weight: var(--font-weight-mid);
+  background-color: var(--topic-button-bg);
+  border-radius: var(--border-radius-base);
+  padding: 0.5rem 1rem 0.5rem 0.75rem;
+  color: var(--topic-button-color);
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 1rem;
+  width: max-content;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.topicsButton__list {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.topicsButton__listItem {
+  display: inline-block;
+  margin-right: 0.5rem;
 }
