@@ -291,20 +291,20 @@ a.post__linkedHeaderIcon {
   margin-bottom: 1rem;
 }
 
-.blogSidebarAuthor__header {
-  font-size: 0.75rem;
+.blogSidebarAuthor__cta {
+  font-size: 0.9rem;
   margin-bottom: 1rem;
 }
 
 .blogSidebarAuthor__imgContainer {
-  max-width: 5rem;
+  max-width: 8rem;
   margin-bottom: 1rem;
 }
 
-.blogSidebarAuthor__imgContainer * {
-  border-radius: 50%;
-}
-
-.blogSidebarAuthor__bio {
-  font-size: 0.75rem;
+.blogSidebarAuthor__imgContainer img {
+  border: 0.25rem solid transparent;
+  border-radius: 80px;
+  background-image: linear-gradient(white, white), linear-gradient(45deg, var(--red), var(--yellow));
+  background-origin: border-box;
+  background-clip: content-box, border-box;
 }
