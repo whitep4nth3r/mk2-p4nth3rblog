@@ -57,7 +57,7 @@ exports.render = function (data) {
           ${BlogSidebarTopics({ topics: post.topicsCollection.items })}
         </div>
         
-        <a href="/blog/">See all blog posts</a>
+        <a href="/blog/">See all blog posts →</a>
 
       </aside>
       <article class="post__article">
