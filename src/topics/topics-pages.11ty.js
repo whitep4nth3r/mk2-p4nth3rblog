@@ -1,4 +1,5 @@
 const Topics = require("../_components/topics");
+const PostCard = require("../_components/postCard");
 const OpenGraph = require("../../lib/openGraph");
 
 exports.data = {
@@ -27,10 +28,23 @@ exports.render = function (data) {
   const { topic, topics, allPosts } = data;
   const postsByTopic = Array.from(allPosts.get(topic.slug));
 
-  return /* html */ `<div>
+  return /* html */ `
+   <section>
+    <div class="grid__header">
+      <h1 class="grid__headerTitle">Posts about ${topic.name}</h1>
+    </div>
+
     ${Topics({ topics, selected: topic.slug })}
 
-    <h1>${topic.name}</h1>
-    ${postsByTopic.map((post) => `<p>${post.title}</p>`).join("")}
-  </div>`;
+    <ol class="postGrid">
+    ${postsByTopic
+      .map(function (item) {
+        return `
+        <li class="postGrid__item">
+          ${PostCard({ post: item, baseSlug: "blog", isTalk: false })}
+        </li>`;
+      })
+      .join("")}
+    </ol>
+  </section>`;
 };
