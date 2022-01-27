@@ -9,6 +9,7 @@
   --yellow: #ffb626;
 
   --font-weight-normal: 300;
+  --font-weight-mid: 600;
   --font-weight-bold: 700;
 
   --font-family-heading: "Work Sans", sans-serif;
@@ -188,7 +189,7 @@ a.post__linkedHeaderIcon {
 }
 
 .post__p--bold {
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-mid);
 }
 
 .post__responsiveImage {
@@ -282,6 +283,7 @@ a.post__linkedHeaderIcon {
 }
 
 .blogSidebarTopics__itemLink {
+  font-weight: var(--font-weight-mid);
   background-color: var(--topic-button-bg);
   border-radius: var(--border-radius-base);
   padding: 0.5rem 1rem 0.5rem 0.75rem;
