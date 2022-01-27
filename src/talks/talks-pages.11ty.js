@@ -11,6 +11,7 @@ exports.data = {
     data: "talks",
     alias: "talk",
     size: 1,
+    addAllPagesToCollections: true,
   },
   permalink: (data) => {
     return `talks/${data.talk.slug}/`;

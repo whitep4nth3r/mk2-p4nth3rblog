@@ -21,6 +21,7 @@ exports.data = {
   pagination: {
     data: "postSummaries",
     size: Config.pagination.pageSize,
+    addAllPagesToCollections: true,
   },
   permalink: (data) => {
     const trailing = data.pagination.pageNumber === 0 ? `` : `${data.pagination.pageNumber + 1}/`;

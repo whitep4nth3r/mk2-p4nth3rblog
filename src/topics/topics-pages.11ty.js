@@ -7,6 +7,7 @@ exports.data = {
     data: "topics",
     alias: "topic",
     size: 1,
+    addAllPagesToCollections: true,
   },
   permalink: (data) => {
     return `topics/${data.topic.slug}/`;

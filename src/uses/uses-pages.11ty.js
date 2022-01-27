@@ -7,6 +7,7 @@ exports.data = {
     data: "categories",
     alias: "category",
     size: 1,
+    addAllPagesToCollections: true,
   },
   permalink: (data) => {
     return `uses/${data.category}/`;

@@ -11,6 +11,7 @@ exports.data = {
     data: "posts",
     alias: "post",
     size: 1,
+    addAllPagesToCollections: true,
   },
   permalink: (data) => {
     return `blog/${data.post.slug}/`;
