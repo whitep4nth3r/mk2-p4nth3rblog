@@ -6,7 +6,7 @@ function BlogSidebarAuthor({ author }) {
     <div class="blogSidebarAuthor__imgContainer">
       ${ResponsiveImage({ image: author.image })}
     </div>
-    <a href="/appearances/" class="blogSidebarAuthor__cta">by ${author.name} →</a>
+    <a href="/appearances/" class="blogSidebarAuthor__cta">by ${author.name} <span class="colorHighlight">→</span></a>
   </div>
   `;
 }

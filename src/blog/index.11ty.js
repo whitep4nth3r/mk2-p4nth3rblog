@@ -31,7 +31,7 @@ exports.render = function (data) {
 
   <section>
     <div class="grid__header">
-      <h1 class="grid__headerTitle">learn things</h1>
+      <h1 class="grid__headerTitle">learn <span class="colorHighlight">things</span></h1>
     </div>
 
     ${Topics({ topics: data.topics })}

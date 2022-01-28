@@ -9,13 +9,13 @@ const makeList = {
     [BLOCKS.HEADING_2]: (node, next) => `
       <li class="tableOfContents__item">
         <a href="#${Tools.slugifyString(next(node.content))}" class="tableOfContents__itemLink"
-        aria-label="${next(node.content)}">${next(node.content)}</a>
+        aria-label="${next(node.content)}">${next(node.content)} <span class="colorHighlight">→</span></a>
       </li>
       `,
     [BLOCKS.HEADING_3]: (node, next) =>
       `<li class="tableOfContents__item tableOfContents__item--nudged">
         <a href="#${Tools.slugifyString(next(node.content))}" class="tableOfContents__itemLink" 
-        aria-label="${next(node.content)}">${next(node.content)}</a>
+        aria-label="${next(node.content)}">${next(node.content)} <span class="colorHighlight">→</span></a>
       </li>
       `,
     [BLOCKS.HEADING_4]: (node, next) => "",
@@ -37,9 +37,9 @@ const makeList = {
 
 function TableOfContents(postBody) {
   return `
-  <details open>
+  <details class="tableOfContents" open>
     <summary class="tableOfContents__header">Table of contents</summary>
-    <ol class="tableOfContents">
+    <ol class="tableOfContents__list">
       ${documentToHtmlString(postBody.json, makeList)}
     </ol>
   </details>

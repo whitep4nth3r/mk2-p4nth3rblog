@@ -12,8 +12,8 @@ function ExternalUrl({ url }) {
         href="${url}"
         target="_blank"
         rel="nofollow noreferrer">
-        <span class="isSponsored__icon">${WavyCheckIcon()}</span>
-        Originally posted on ${formatUrlForDisplay(url)}
+          <span class="isSponsored__icon">${WavyCheckIcon()}</span>
+          Originally posted on ${formatUrlForDisplay(url)}
       </a>
       `;
   } else {

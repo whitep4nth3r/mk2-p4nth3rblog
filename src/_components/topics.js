@@ -1,5 +1,6 @@
 function Topics({ topics, selected }) {
-  return /* html */ `<ul class="topics">
+  return /* html */ `
+  <ul class="topics">
       ${topics
         .map((topic) => {
           const highlight = selected === topic.slug;

@@ -33,10 +33,6 @@ exports.data = {
 exports.render = function (data) {
   const { post } = data;
 
-  // todo
-  // external link
-  // sponsored
-
   return /* html */ `
     <section class="post">
       <aside class="post__aside">
@@ -51,20 +47,35 @@ exports.render = function (data) {
 
         ${TableOfContents(post.body)}
 
-      
-
-        <div class="post__asideGroup">
-          ${BlogSidebarTopics({ topics: post.topicsCollection.items })}
-        </div>
+        ${BlogSidebarTopics({ topics: post.topicsCollection.items })}
         
-        <a href="/blog/">See all blog posts →</a>
+          <a href="/blog/" class="post__asideCta">See all blog posts <span class="colorHighlight">→</span></a>
 
       </aside>
       <article class="post__article">
         ${post.isSponsored ? isSponsored() : ""}
         ${ExternalUrl({ url: post.externalUrl })}
-        <h1 class="post__h1">${post.title}</h1>       
-        ${RichText(post.body, { renderNativeImg: false, absoluteUrls: false, renderHeadingLinks: true })}
+        <h1 class="post__h1">${post.title}</h1>
+
+        <aside class="post__inlineAside">
+           ${BlogSidebarAuthor({ author: post.author })}
+           ${PublishedDate({
+             date: post.date,
+             readingTime: post.readingTime,
+             isTalk: false,
+             updatedDate: post.updatedDate,
+           })}
+           ${TableOfContents(post.body)}
+        </aside>
+
+        <div class="post__body">
+          ${RichText(post.body, { renderNativeImg: false, absoluteUrls: false, renderHeadingLinks: true })}
+        </div>
+
+        <div class="post__inlineAside">
+          ${BlogSidebarTopics({ topics: post.topicsCollection.items })}
+          <a href="/blog/" class="post__asideCta">See all blog posts <span class="colorHighlight">→</span></a>
+        <div>
       </article>
     </section>
     `;
