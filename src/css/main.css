@@ -234,7 +234,7 @@ main {
   flex-direction: column;
 }
 
-.seeAllBlogCta {
+.seeAllCta {
   margin-top: 2rem;
   margin-bottom: 4rem;
   font-weight: var(--font-weight-heading);
@@ -644,13 +644,15 @@ a.post__linkedHeaderIcon {
   margin-right: 0.5rem;
 }
 
-.latestBlogPost {
+.latestBlogPost,
+.getInvolved {
   height: 100%;
   display: flex;
   flex-direction: column;
 }
 
-.latestBlogPost__title {
+.latestBlogPost__title,
+.getInvolved__title {
   color: var(--color-fg);
   font-size: 2.2rem;
   line-height: 1.2;
@@ -664,7 +666,8 @@ a.post__linkedHeaderIcon {
   flex-direction: column;
 }
 
-.latestBlogPost__excerpt p {
+.latestBlogPost__excerpt p,
+.getInvolved__excerpt p {
   font-size: 1.2rem;
   line-height: 1.6;
   margin-bottom: 1rem;

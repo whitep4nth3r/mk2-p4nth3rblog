@@ -1,6 +1,6 @@
 const OpenGraph = require("../lib/openGraph");
 const NextTwitchStream = require("./_components/nextTwitchStream");
-const TopicsButton = require("./_components/topicsButton");
+const GetInvolvedOpenSource = require("./_components/getInvolvedOpenSource");
 const LatestBlogPost = require("./_components/latestBlogPost");
 const pageTitle = "Build stuff, learn things and love what you do with whitep4nth3r";
 
@@ -25,10 +25,8 @@ exports.render = function (data) {
   <section class="grid">
     <div class="grid__item">
     <h2 class="grid__itemTitle">build <span class="colorHighlight">stuff</h2>
-     
-      <a href="/projects/">See all open source projects</a>
+     ${GetInvolvedOpenSource()}
     </div>
-  
     <div class="grid__item">
       <h2 class="grid__itemTitle">learn <span class="colorHighlight">things</h2>
       ${LatestBlogPost({ post: latestBlogPost })}

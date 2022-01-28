@@ -1,5 +1,5 @@
 const TopicsButton = require("./topicsButton");
-const SeeAllBlogCta = require("./seeAllBlogCta");
+const SeeAllCta = require("./seeAllCta");
 
 var md = require("markdown-it")({
   html: true,
@@ -22,7 +22,7 @@ function LatestBlogPost({ post }) {
         })}
       </div>
 
-      ${SeeAllBlogCta()}
+      ${SeeAllCta({ things: "blog posts", url: "/blog/" })}
     </article>
   `;
 }
