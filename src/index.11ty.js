@@ -25,7 +25,7 @@ exports.render = function (data) {
   <section class="grid">
     <div class="grid__item">
     <h2 class="grid__itemTitle">build <span class="colorHighlight">stuff</h2>
-      ${NextTwitchStream({ stream: twitch.nextStream, isLive: twitch.isLive, onVacation: twitch.onVacation })}
+     
       <a href="/projects/">See all open source projects</a>
     </div>
   
@@ -35,6 +35,7 @@ exports.render = function (data) {
     </div>
     <div class="grid__item">
       <h2 class="grid__itemTitle">love <span class="colorHighlight">what you do</span></h2>
+       ${NextTwitchStream({ stream: twitch.nextStream, isLive: twitch.isLive, onVacation: twitch.onVacation })}
     </div>
   </section>
   `;
