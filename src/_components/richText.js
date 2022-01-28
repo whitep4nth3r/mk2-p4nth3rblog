@@ -34,6 +34,7 @@ function getRichTextRenderOptions(links, options) {
   return {
     renderMark: {
       [MARKS.BOLD]: (text) => `<b class="post__p--bold">${text}</b>`,
+      [MARKS.ITALIC]: (text) => `<b class="post__p--italic">${text}</b>`,
       [MARKS.CODE]: (text) => `<code>${text}</code>`,
     },
     renderNode: {

@@ -1,3 +1,30 @@
+@font-face {
+  font-family: "Work Sans Light";
+  src: url("/fonts/WorkSans-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Work Sans SemiBold";
+  src: url("/fonts/WorkSans-SemiBold.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Work Sans Bold";
+  src: url("/fonts/WorkSans-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: swap;
+}
+
 :root {
   --white: #ffffff;
   --grey-dark: #2b2e3a;
@@ -8,12 +35,12 @@
   --white: #ffffff;
   --yellow: #ffb626;
 
-  --font-weight-normal: 300;
-  --font-weight-mid: 600;
+  --font-family-bold: "Work Sans Bold", sans-serif;
   --font-weight-bold: 700;
-
-  --font-family-heading: "Work Sans", sans-serif;
-  --font-family-main: "Work Sans", sans-serif;
+  --font-family-heading: "Work Sans SemiBold", sans-serif;
+  --font-weight-heading: 500;
+  --font-family-main: "Work Sans Light", sans-serif;
+  --font-weight-main: 300;
 
   --border-radius-base: 0.375rem;
 
@@ -115,7 +142,8 @@ main {
 }
 
 .grid__headerTitle {
-  font-weight: var(--font-weight-mid);
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-heading);
   font-size: 2rem;
 }
 
@@ -135,7 +163,8 @@ main {
 }
 
 .topics__listItemLink {
-  font-weight: var(--font-weight-mid);
+  font-weight: var(--font-weight-heading);
+  font-family: var(--font-family-heading);
   background-color: var(--topic-button-bg);
   border-radius: var(--border-radius-base);
   padding: 0.5rem 1rem;
@@ -196,7 +225,8 @@ main {
 .post__asideCta {
   margin-top: 2rem;
   margin-bottom: 4rem;
-  font-weight: var(--font-weight-mid);
+  font-weight: var(--font-weight-heading);
+  font-family: var(--font-family-heading);
   font-size: 1rem;
 }
 
@@ -233,8 +263,8 @@ main {
   margin-bottom: 2rem;
   font-size: clamp(2.2rem, 3vw, 3rem);
   line-height: 1.2;
-  font-weight: var(--font-weight-bold);
-  font-family: var(--font-family-main);
+  font-weight: var(--font-weight-heading);
+  font-family: var(--font-family-heading);
   color: var(--color-fg);
 }
 
@@ -252,8 +282,8 @@ main {
   line-height: 1.4;
   margin-bottom: 2rem;
   padding-top: 2rem;
-  font-weight: var(--font-weight-bold);
-  font-family: var(--font-family-main);
+  font-weight: var(--font-weight-heading);
+  font-family: var(--font-family-heading);
   color: var(--color-highlight);
   word-break: break-word;
   hyphens: auto;
@@ -264,8 +294,8 @@ main {
   line-height: 1.4;
   padding-top: 2rem;
   margin-bottom: 2rem;
-  font-weight: var(--font-weight-bold);
-  font-family: var(--font-family-main);
+  font-weight: var(--font-weight-heading);
+  font-family: var(--font-family-heading);
   color: var(--color-highlight);
   word-break: break-word;
   hyphens: auto;
@@ -289,7 +319,7 @@ a.post__linkedHeaderIcon {
   font-size: 1.2rem;
   line-height: 1.4;
   margin-bottom: 2rem;
-  font-weight: var(--font-weight-normal);
+  font-weight: var(--font-weight-main);
   font-family: var(--font-family-main);
   color: var(--color-fg);
 }
@@ -298,14 +328,19 @@ a.post__linkedHeaderIcon {
   font-size: 1.2rem;
   line-height: 1.6;
   margin-bottom: 1rem;
-  font-weight: var(--font-weight-normal);
+  font-weight: var(--font-weight-main);
   font-family: var(--font-family-main);
   color: var(--color-fg);
   word-break: break-word;
 }
 
 .post__p--bold {
-  font-weight: var(--font-weight-mid);
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-heading);
+}
+
+.post__p--italic {
+  font-style: italic;
 }
 
 .post__responsiveImage {
@@ -321,8 +356,8 @@ a.post__linkedHeaderIcon {
   font-size: 1.2rem;
   line-height: 1.6;
   margin-bottom: 1rem;
-  font-weight: var(--font-weight-mid);
-  font-family: var(--font-family-main);
+  font-weight: var(--font-weight-heading);
+  font-family: var(--font-family-heading);
   color: var(--color-highlight);
 }
 
@@ -335,7 +370,8 @@ a.post__linkedHeaderIcon {
   font-size: 1rem;
   margin-bottom: 0.5rem;
   color: var(--color-fg);
-  font-weight: var(--font-weight-mid);
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-heading);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -344,7 +380,8 @@ a.post__linkedHeaderIcon {
 
 @media screen and (min-width: 768px) {
   .publishedDate__item {
-    font-weight: var(--font-weight-normal);
+    font-weight: var(--font-weight-main);
+    font-family: var(--font-family-main);
     justify-content: flex-start;
   }
 }
@@ -363,6 +400,7 @@ a.post__linkedHeaderIcon {
   padding: 0.5rem 1rem 0.5rem 0.75rem;
   color: var(--color-bg) !important;
   font-weight: var(--font-weight-bold);
+  font-family: var(--font-family-bold);
   text-decoration: none;
   display: flex;
   flex-direction: row;
@@ -391,6 +429,7 @@ a.post__linkedHeaderIcon {
 .tableOfContents__header {
   margin-bottom: 1rem;
   font-weight: var(--font-weight-bold);
+  font-family: var(--font-family-bold);
   font-size: 1.2rem;
   color: var(--color-highlight);
 }
@@ -400,7 +439,8 @@ a.post__linkedHeaderIcon {
 }
 
 .tableOfContents__itemLink {
-  font-weight: var(--font-weight-mid);
+  font-weight: var(--font-weight-heading);
+  font-family: var(--font-family-heading);
   font-size: 1rem;
   line-height: 1.4;
   color: var(--color-fg);
@@ -423,7 +463,8 @@ a.post__linkedHeaderIcon {
 }
 
 .blogSidebarTopics__itemLink {
-  font-weight: var(--font-weight-mid);
+  font-weight: var(--font-weight-heading);
+  font-family: var(--font-family-heading);
   background-color: var(--topic-button-bg);
   border-radius: var(--border-radius-base);
   padding: 0.5rem 1rem 0.5rem 0.75rem;
@@ -511,7 +552,8 @@ a.post__linkedHeaderIcon {
 .postCard__meta {
   padding-top: 1.5rem;
   margin-bottom: 2rem;
-  font-weight: var(--font-weight-mid);
+  font-weight: var(--font-weight-heading);
+  font-family: var(--font-family-heading);
   color: var(--color-fg);
 }
 
@@ -526,7 +568,8 @@ a.post__linkedHeaderIcon {
   color: var(--color-fg);
   font-size: 1.7rem;
   line-height: 1.2;
-  font-weight: var(--font-weight-mid);
+  font-weight: var(--font-weight-heading);
+  font-family: var(--font-family-heading);
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -538,7 +581,8 @@ a.post__linkedHeaderIcon {
 }
 
 .topicsButton {
-  font-weight: var(--font-weight-mid);
+  font-weight: var(--font-weight-heading);
+  font-family: var(--font-family-heading);
   background-color: var(--topic-button-bg);
   border-radius: var(--border-radius-base);
   padding: 0.5rem 1rem 0.5rem 0.75rem;
