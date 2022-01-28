@@ -5,6 +5,7 @@ const RichText = require("../_components/richText");
 const PublishedDate = require("../_components/publishedDate");
 const TableOfContents = require("../_components/tableOfContents");
 const isSponsored = require("../_components/isSponsored");
+const SeeAllBlogCta = require("../_components/seeAllBlogCta");
 const OpenGraph = require("../../lib/openGraph");
 
 exports.data = {
@@ -49,7 +50,7 @@ exports.render = function (data) {
 
         ${BlogSidebarTopics({ topics: post.topicsCollection.items })}
         
-          <a href="/blog/" class="post__asideCta">See all blog posts <span class="colorHighlight">→</span></a>
+        ${SeeAllBlogCta()}
 
       </aside>
       <article class="post__article">
@@ -74,7 +75,7 @@ exports.render = function (data) {
 
         <div class="post__inlineAside">
           ${BlogSidebarTopics({ topics: post.topicsCollection.items })}
-          <a href="/blog/" class="post__asideCta">See all blog posts <span class="colorHighlight">→</span></a>
+          <a href="/blog/" class="seeAllBlogCta">See all blog posts <span class="colorHighlight">→</span></a>
         <div>
       </article>
     </section>

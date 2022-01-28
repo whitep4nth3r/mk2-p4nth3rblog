@@ -36,11 +36,11 @@ exports.render = function (data) {
 
     ${Topics({ topics, selected: topic.slug })}
 
-    <ol class="postGrid">
+    <ol class="grid">
     ${postsByTopic
       .map(function (item) {
         return `
-        <li class="postGrid__item">
+        <li class="grid__item">
           ${PostCard({ post: item, baseSlug: "blog", isTalk: false })}
         </li>`;
       })
