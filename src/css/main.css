@@ -418,7 +418,7 @@ a.post__linkedHeaderIcon {
 
 .tableOfContents {
   margin-top: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .tableOfContents__list {
@@ -454,6 +454,7 @@ a.post__linkedHeaderIcon {
 .blogSidebarTopics {
   list-style: none;
   padding-left: 0;
+  margin-top: 1rem;
 }
 
 .blogSidebarTopics__item {

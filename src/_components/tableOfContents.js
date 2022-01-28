@@ -36,14 +36,19 @@ const makeList = {
 };
 
 function TableOfContents(postBody) {
-  return `
-  <details class="tableOfContents" open>
+  const content = documentToHtmlString(postBody.json, makeList);
+  if (content.length) {
+    return `
+    <details class="tableOfContents" open>
     <summary class="tableOfContents__header">Table of contents</summary>
     <ol class="tableOfContents__list">
-      ${documentToHtmlString(postBody.json, makeList)}
+    ${content}
     </ol>
-  </details>
-  `;
+    </details>
+    `;
+  } else {
+    return "";
+  }
 }
 
 module.exports = TableOfContents;
