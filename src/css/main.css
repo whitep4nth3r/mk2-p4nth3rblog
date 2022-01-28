@@ -640,7 +640,7 @@ a.post__linkedHeaderIcon {
 
 .latestBlogPost__title {
   color: var(--color-fg);
-  font-size: 2rem;
+  font-size: 2.2rem;
   line-height: 1.2;
   font-weight: var(--font-weight-heading);
   font-family: var(--font-family-heading);
