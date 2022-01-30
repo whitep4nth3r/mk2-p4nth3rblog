@@ -2,11 +2,10 @@
 }
 
 .nextTwitchStream__meta {
+  @include font-heading;
   display: flex;
   flex-direction: row;
   align-items: center;
-  font-weight: var(--font-weight-heading);
-  font-family: var(--font-family-heading);
   color: var(--color-highlight);
   font-size: 1.4rem;
   margin-bottom: 1rem;
@@ -17,28 +16,25 @@
 }
 
 .nextTwitchStream__title {
+  @include font-heading;
   color: var(--color-fg);
   font-size: 2.2rem;
   line-height: 1.2;
-  font-weight: var(--font-weight-heading);
-  font-family: var(--font-family-heading);
   margin-bottom: 2rem;
 }
 
 .nextTwitchStream__noStream {
+  @include font-bold;
   color: var(--color-highlight);
   text-transform: uppercase;
   font-size: 1.2rem;
-  font-weight: var(--font-weight-bold);
-  font-family: var(--font-family-bold);
 }
 
 .nextTwitchStream__streamInfo {
+  @include font-main;
   font-size: 1.2rem;
   line-height: 1.6;
   margin-bottom: 1rem;
-  font-weight: var(--font-weight-main);
-  font-family: var(--font-family-main);
   color: var(--color-fg);
   word-break: break-word;
   display: flex;
@@ -56,13 +52,12 @@
 }
 
 .nextTwitchStream__liveNow {
+  @include font-bold;
   background-color: var(--color-highlight);
   color: var(--color-bg);
   padding: 0.5rem 1rem;
   border-radius: 1rem;
   text-transform: uppercase;
-  font-weight: var(--font-weight-bold);
-  font-family: var(--font-family-bold);
   font-size: 1.2rem;
   text-decoration: none;
   display: block;

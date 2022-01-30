@@ -37,12 +37,11 @@
 }
 
 .grid__itemTitle {
+  @include font-heading;
   text-decoration: none;
   color: var(--color-fg);
   font-size: 2rem;
   line-height: 1.2;
-  font-weight: var(--font-weight-heading);
-  font-family: var(--font-family-heading);
   margin-bottom: 2rem;
 }
 

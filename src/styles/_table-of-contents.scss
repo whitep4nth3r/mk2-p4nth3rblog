@@ -9,9 +9,8 @@
 }
 
 .tableOfContents__header {
+  @include font-bold;
   margin-bottom: 1rem;
-  font-weight: var(--font-weight-bold);
-  font-family: var(--font-family-bold);
   font-size: 1.2rem;
   color: var(--color-highlight);
 }
@@ -21,8 +20,7 @@
 }
 
 .tableOfContents__itemLink {
-  font-weight: var(--font-weight-heading);
-  font-family: var(--font-family-heading);
+  @include font-heading;
   font-size: 1rem;
   line-height: 1.4;
   color: var(--color-fg);

@@ -2,8 +2,7 @@
 }
 
 .speakerDeckLink__viewCta {
-  font-weight: var(--font-weight-heading);
-  font-family: var(--font-family-heading);
+  @include font-heading;
   background-color: var(--topic-button-bg);
   border-radius: var(--border-radius-base);
   padding: 0.5rem 1rem 0.5rem 0.75rem;

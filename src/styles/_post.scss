@@ -56,11 +56,10 @@
 }
 
 .post__h1 {
+  @include font-heading;
   margin-bottom: 2rem;
   font-size: clamp(2.2rem, 3vw, 3rem);
   line-height: 1.2;
-  font-weight: var(--font-weight-heading);
-  font-family: var(--font-family-heading);
   color: var(--color-fg);
 }
 
@@ -74,24 +73,22 @@
 }
 
 .post__h2 {
+  @include font-heading;
   font-size: clamp(1.8rem, 2.8vw, 2rem);
   line-height: 1.4;
   margin-bottom: 2rem;
   padding-top: 2rem;
-  font-weight: var(--font-weight-heading);
-  font-family: var(--font-family-heading);
   color: var(--color-highlight);
   word-break: break-word;
   hyphens: auto;
 }
 
 .post__h3 {
+  @include font-heading;
   font-size: 1.4rem;
   line-height: 1.4;
   padding-top: 2rem;
   margin-bottom: 2rem;
-  font-weight: var(--font-weight-heading);
-  font-family: var(--font-family-heading);
   color: var(--color-highlight);
   word-break: break-word;
   hyphens: auto;
@@ -112,20 +109,18 @@ a.post__linkedHeaderIcon {
 .post__h4,
 .post__h5,
 .post__h6 {
+  @include font-main;
   font-size: 1.2rem;
   line-height: 1.4;
   margin-bottom: 2rem;
-  font-weight: var(--font-weight-main);
-  font-family: var(--font-family-main);
   color: var(--color-fg);
 }
 
 .post__p {
+  @include font-main;
   font-size: 1.2rem;
   line-height: 1.6;
   margin-bottom: 1rem;
-  font-weight: var(--font-weight-main);
-  font-family: var(--font-family-main);
   color: var(--color-fg);
   word-break: break-word;
 }
@@ -150,14 +145,13 @@ a.post__linkedHeaderIcon {
 
 .post__externalUrl,
 .post__isSponsored {
+  @include font-bold;
   margin-bottom: 2rem;
   max-width: max-content;
   background-color: var(--color-highlight);
   border-radius: var(--border-radius-base);
   padding: 0.5rem 1rem 0.5rem 0.75rem;
   color: var(--color-bg) !important;
-  font-weight: var(--font-weight-bold);
-  font-family: var(--font-family-bold);
   text-decoration: none;
   display: flex;
   flex-direction: row;

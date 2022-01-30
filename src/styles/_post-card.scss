@@ -14,10 +14,9 @@
 }
 
 .postCard__meta {
+  @include font-heading;
   padding-top: 1.5rem;
   margin-bottom: 2rem;
-  font-weight: var(--font-weight-heading);
-  font-family: var(--font-family-heading);
   color: var(--color-fg);
 }
 
@@ -28,12 +27,11 @@
 }
 
 .postCard__titleLink {
+  @include font-heading;
   text-decoration: none;
   color: var(--color-fg);
   font-size: 1.7rem;
   line-height: 1.2;
-  font-weight: var(--font-weight-heading);
-  font-family: var(--font-family-heading);
   display: flex;
   flex-direction: column;
   flex-grow: 1;

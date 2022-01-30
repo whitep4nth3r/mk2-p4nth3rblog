@@ -1,8 +1,7 @@
 .videoEmbed__cta {
+  @include font-heading;
   font-size: 1.2rem;
   line-height: 1.6;
   margin-bottom: 1rem;
-  font-weight: var(--font-weight-heading);
-  font-family: var(--font-family-heading);
   color: var(--color-highlight);
 }

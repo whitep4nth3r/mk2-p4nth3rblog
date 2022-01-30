@@ -24,3 +24,15 @@
   font-stretch: normal;
   font-display: swap;
 }
+
+@mixin font-main {
+  @include font-main;
+}
+
+@mixin font-bold {
+  @include font-bold;
+}
+
+@mixin font-heading {
+  @include font-heading;
+}

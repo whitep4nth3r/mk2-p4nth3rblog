@@ -5,11 +5,10 @@
 }
 
 .homeCard__title {
+  @include font-heading;
   color: var(--color-fg);
   font-size: 2.2rem;
   line-height: 1.2;
-  font-weight: var(--font-weight-heading);
-  font-family: var(--font-family-heading);
   margin-bottom: 2rem;
 }
 
@@ -19,11 +18,10 @@
 }
 
 .homeCard__excerpt p {
+  @include font-main;
   font-size: 1.2rem;
   line-height: 1.6;
   margin-bottom: 1rem;
-  font-weight: var(--font-weight-main);
-  font-family: var(--font-family-main);
   color: var(--color-fg);
   word-break: break-word;
   display: flex;
