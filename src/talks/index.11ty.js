@@ -1,11 +1,6 @@
 const Config = require("../../lib/config.js");
-var md = require("markdown-it")({
-  html: true,
-});
-
-const Topics = require("../_components/topics");
+const PostCard = require("../_components/postCard");
 const Pagination = require("../_components/pagination");
-const PublishedDate = require("../_components/publishedDate");
 const OpenGraph = require("../../lib/openGraph");
 
 const pageTitle = "Talks about web development, accessibility, Jamstack, JavaScript, and more from whitep4nth3r";
@@ -30,35 +25,30 @@ exports.data = {
 };
 
 exports.render = function (data) {
-  return /* html */ `<ol>
-    ${data.pagination.items
-      .map(function (item) {
-        return `
-        <li>
-          <div>
-          <a href="/talks/${item.slug}">
-            <h2>${item.title}</h2>
-          </a>
-
-          ${PublishedDate({
-            date: item.date,
-            readingTime: item.watchTime,
-            isTalk: true,
-            updatedDate: item.updatedDate,
-          })}
-
-            <p>${md.render(item.excerpt)}</p>
-
-            ${Topics({ topics: item.topicsCollection.items })}
-          </div>
-        </li>`;
-      })
-      .join("")}
-       ${Pagination({
-         previous: data.pagination.href.previous,
-         next: data.pagination.href.next,
-         currentPage: data.pagination.pageNumber,
-         totalPages: data.pagination.pages.length,
-       })}
+  return /* html */ `
+  
+   <section>
+      <div class="grid__header">
+        <h1 class="grid__headerTitle">recorded <span class="colorHighlight">talks</span></h1>
+      </div>
+      
+      <ol class="grid">
+        ${data.pagination.items
+          .map(function (item) {
+            return `
+            <li class="grid__item">
+            ${PostCard({ post: item, baseSlug: "talks", isTalk: true })}
+            </li>`;
+          })
+          .join("")}
+      </ol>
+        
+      ${Pagination({
+        previous: data.pagination.href.previous,
+        next: data.pagination.href.next,
+        currentPage: data.pagination.pageNumber,
+        totalPages: data.pagination.pages.length,
+      })}
+    </section>
    `;
 };

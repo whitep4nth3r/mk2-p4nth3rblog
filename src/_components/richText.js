@@ -12,7 +12,7 @@ const BlogPostEmbed = require("./blogPostEmbed");
 const LinkIcon = require("./svg/linkIcon");
 
 function getRichTextRenderOptions(links, options) {
-  const { absoluteUrls, renderHeadingLinks, renderNativeImg } = options;
+  const { absoluteUrls, renderHeadingLinks, renderRssFriendlyImg } = options;
 
   const assetBlockMap = new Map(links?.assets?.block?.map((asset) => [asset.sys.id, asset]));
 
@@ -115,7 +115,7 @@ function getRichTextRenderOptions(links, options) {
 
         const { url, height, width, description } = image;
 
-        if (renderNativeImg) {
+        if (renderRssFriendlyImg) {
           // One image only for RSS feed
           return `<img src="${url}" alt="${description}" height="${height}" width="${width}" />`;
         } else {
@@ -128,7 +128,7 @@ function getRichTextRenderOptions(links, options) {
 
 const defaultOptions = {
   absoluteUrls: false,
-  renderNativeImg: false,
+  renderRssFriendlyImg: false,
   renderHeadingLinks: false,
 };
 

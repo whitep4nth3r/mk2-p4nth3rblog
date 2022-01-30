@@ -19,7 +19,7 @@ exports.render = function (data) {
   return /* html */ `
     <h1>${person.name}</h1>
     ${ResponsiveImage({ image: person.image })}
-    ${RichText(person.bioLong, { renderNativeImg: false, absoluteUrls: false, renderHeadingLinks: false })}
+    ${RichText(person.bioLong, { renderRssFriendlyImg: false, absoluteUrls: false, renderHeadingLinks: false })}
     <p>Twitter: @${person.twitterUsername}</p>
     <p>Twitch: @${person.twitchUsername}</p>
     <p>Github: @${person.gitHubUsername}</p>

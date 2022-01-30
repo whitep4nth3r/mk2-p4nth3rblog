@@ -1,8 +1,10 @@
-const Topics = require("../_components/topics");
+const BlogSidebarAuthor = require("../_components/blogSidebarAuthor");
+const BlogSidebarTopics = require("../_components/blogSidebarTopics");
 const RichText = require("../_components/richText");
 const VideoEmbed = require("../_components/videoEmbed");
 const SpeakerDeckLink = require("../_components/speakerDeckLink");
 const PublishedDate = require("../_components/publishedDate");
+const SeeAllCta = require("../_components/seeAllCta");
 const OpenGraph = require("../../lib/openGraph");
 
 exports.data = {
@@ -29,20 +31,50 @@ exports.data = {
 
 exports.render = function (data) {
   const { talk } = data;
-  return /* html */ `<div>
-    ${Topics({ topics: talk.topicsCollection.items })}
-    
+  return /* html */ `
+  
+  <section class="post">
+      <aside class="post__aside">
+        ${BlogSidebarAuthor({ author: talk.author })}
 
-    <h1>${talk.title}</h1>
+        ${PublishedDate({
+          date: talk.date,
+          readingTime: talk.watchTime,
+          isTalk: true,
+          updatedDate: null,
+        })}
 
-    ${PublishedDate({ date: talk.date, readingTime: talk.watchTime, isTalk: true, updatedDate: talk.updatedDate })}
+        ${BlogSidebarTopics({ topics: talk.topicsCollection.items })}
 
-    <h2>Slides</h2>
-    ${SpeakerDeckLink({ speakerDeckLink: talk.speakerDeckLink })}
-    <h2>Recording</h2>
-    ${VideoEmbed({ embedUrl: talk.recording.embedUrl, title: talk.recording.title })}
-    <h2>Abstract</h2>
-    <h2>Transcript</h2>
-    ${RichText(talk.transcript, { renderNativeImg: false, absoluteUrls: false, renderHeadingLinks: true })}
-  </div>`;
+        ${SeeAllCta({ things: "talks", url: "/talks/" })}
+
+      </aside>
+
+      <article class="post__article">
+         <h1 class="post__h1">${talk.title}</h1>
+
+         <aside class="post__inlineAside">
+           ${BlogSidebarAuthor({ author: talk.author })}
+           ${PublishedDate({
+             date: talk.date,
+             readingTime: talk.watchTime,
+             isTalk: true,
+             updatedDate: null,
+           })}
+        </aside>
+
+        <div class="post__body">
+
+          ${RichText(talk.abstract, { renderRssFriendlyImg: false, absoluteUrls: false, renderHeadingLinks: true })}
+
+          ${VideoEmbed({ embedUrl: talk.recording.embedUrl, title: talk.recording.title })}
+
+          <h2 class="post__h2">Slides</h2>
+          ${SpeakerDeckLink({ speakerDeckLink: talk.speakerDeckLink })}
+
+          <h2 class="post__h2">Transcript</h2>
+          ${RichText(talk.transcript, { renderRssFriendlyImg: false, absoluteUrls: false, renderHeadingLinks: true })}
+        </div>
+      </article>
+  </section>`;
 };

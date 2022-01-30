@@ -13,7 +13,7 @@ function PostCard({ post, baseSlug, isTalk }) {
             ${DateUtils.formatDateForDisplay(post.date)}
           </time>
           <span class="postCard__metaIcon">•</span>
-          <span>${post.readingTime} min ${timeSuffix}</span>
+          <span>${post.readingTime || post.watchTime} min ${timeSuffix}</span>
         </p>
         <a href="/${baseSlug}/${post.slug}" class="postCard__titleLink">
           ${post.title}

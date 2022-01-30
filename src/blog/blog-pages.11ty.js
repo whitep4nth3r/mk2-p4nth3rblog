@@ -70,7 +70,7 @@ exports.render = function (data) {
         </aside>
 
         <div class="post__body">
-          ${RichText(post.body, { renderNativeImg: false, absoluteUrls: false, renderHeadingLinks: true })}
+          ${RichText(post.body, { renderRssFriendlyImg: false, absoluteUrls: false, renderHeadingLinks: true })}
         </div>
 
         <div class="post__inlineAside">

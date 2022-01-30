@@ -7,9 +7,6 @@ function GetInvolvedOpenSource() {
       <div class="getInvolved__excerpt">
         <p>TO DO TO DO</p>
       </div>
-
-      
-      
     ${SeeAllCta({ things: "open source projects", url: "/projects/" })}
     </div>
   `;
