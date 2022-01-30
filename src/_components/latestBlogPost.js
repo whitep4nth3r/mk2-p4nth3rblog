@@ -7,14 +7,14 @@ var md = require("markdown-it")({
 
 function LatestBlogPost({ post }) {
   return /*html*/ `
-    <article class="latestBlogPost">
-      <h3 class="latestBlogPost__title">${post.title}</h3>
+    <article class="homeCard">
+      <h3 class="homeCard__title">${post.title}</h3>
 
-      <div class="latestBlogPost__excerpt">
+      <div class="homeCard__excerpt">
         ${md.render(post.excerpt)}
       </div>
 
-      <div class="latestBlogPost__topics">
+      <div class="homeCard__topics">
         ${TopicsButton({
           topics: post.topicsCollection.items,
           url: `/blog/${post.slug}/`,

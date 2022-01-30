@@ -1,0 +1,45 @@
+.postCard {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.postCard:before {
+  content: "";
+  width: 100%;
+  height: 0.25rem;
+  display: block;
+  margin-top: 1rem;
+  background: var(--yellow-red-gradient);
+}
+
+.postCard__meta {
+  padding-top: 1.5rem;
+  margin-bottom: 2rem;
+  font-weight: var(--font-weight-heading);
+  font-family: var(--font-family-heading);
+  color: var(--color-fg);
+}
+
+.postCard__metaIcon {
+  margin-right: 0.25rem;
+  margin-left: 0.25rem;
+  color: var(--color-highlight);
+}
+
+.postCard__titleLink {
+  text-decoration: none;
+  color: var(--color-fg);
+  font-size: 1.7rem;
+  line-height: 1.2;
+  font-weight: var(--font-weight-heading);
+  font-family: var(--font-family-heading);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.postCard__topics {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,32 @@
+:root {
+  --white: #ffffff;
+  --grey-dark: #2b2e3a;
+
+  --red: #f11012;
+  --green: #82af3a;
+  --black: #0f111a;
+  --white: #ffffff;
+  --yellow: #ffb626;
+
+  --font-family-bold: "Work Sans Bold", sans-serif;
+  --font-weight-bold: 700;
+  --font-family-heading: "Work Sans SemiBold", sans-serif;
+  --font-weight-heading: 500;
+  --font-family-main: "Work Sans Light", sans-serif;
+  --font-weight-main: 300;
+
+  --border-radius-base: 0.375rem;
+
+  --color-bg: var(--black);
+  --color-fg: var(--white);
+  --color-link: var(--color-fg);
+  --color-highlight: var(--yellow);
+
+  --topic-button-bg: var(--grey-dark);
+  --topic-button-color: var(--white);
+
+  --post-max-width: 980px;
+  --grid-max-width: 1280px;
+
+  --yellow-red-gradient: linear-gradient(45deg, var(--red), var(--yellow));
+}

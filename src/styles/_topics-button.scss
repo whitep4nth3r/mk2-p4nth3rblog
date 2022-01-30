@@ -1,0 +1,30 @@
+.topicsButton {
+  font-weight: var(--font-weight-heading);
+  font-family: var(--font-family-heading);
+  background-color: var(--topic-button-bg);
+  border-radius: var(--border-radius-base);
+  padding: 0.5rem 1rem 0.5rem 0.75rem;
+  color: var(--topic-button-color);
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 1rem;
+  max-width: max-content;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.topicsButton__list {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.topicsButton__listItem {
+  display: inline-block;
+  margin-right: 0.5rem;
+}

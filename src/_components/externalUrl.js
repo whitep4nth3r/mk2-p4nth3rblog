@@ -8,11 +8,11 @@ function ExternalUrl({ url }) {
   if (url) {
     return /* html */ `
       <a
-        class="externalUrl"
+        class="post__externalUrl"
         href="${url}"
         target="_blank"
         rel="nofollow noreferrer">
-          <span class="isSponsored__icon">${WavyCheckIcon()}</span>
+          <span class="post__isSponsored__icon">${WavyCheckIcon()}</span>
           Originally posted on ${formatUrlForDisplay(url)}
       </a>
       `;

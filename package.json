@@ -19,6 +19,7 @@
     "eleventy-plugin-youtube-embed": "^1.6.5",
     "googleapis": "^92.0.0",
     "markdown-it": "^12.3.2",
-    "node-fetch": "^2.6.7"
+    "node-fetch": "^2.6.7",
+    "sass": "^1.49.0"
   }
 }

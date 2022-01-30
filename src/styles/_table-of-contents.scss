@@ -1,0 +1,34 @@
+.tableOfContents {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.tableOfContents__list {
+  list-style: none;
+  padding: 0;
+}
+
+.tableOfContents__header {
+  margin-bottom: 1rem;
+  font-weight: var(--font-weight-bold);
+  font-family: var(--font-family-bold);
+  font-size: 1.2rem;
+  color: var(--color-highlight);
+}
+
+.tableOfContents__item {
+  margin-bottom: 0.75rem;
+}
+
+.tableOfContents__itemLink {
+  font-weight: var(--font-weight-heading);
+  font-family: var(--font-family-heading);
+  font-size: 1rem;
+  line-height: 1.4;
+  color: var(--color-fg);
+  text-decoration: none;
+}
+
+.tableOfContents__item--nudged {
+  padding-left: 1rem;
+}
