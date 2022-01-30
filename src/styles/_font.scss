@@ -26,13 +26,16 @@
 }
 
 @mixin font-main {
-  @include font-main;
+  font-weight: var(--font-weight-main);
+  font-family: var(--font-family-main);
 }
 
 @mixin font-bold {
-  @include font-bold;
+  font-weight: var(--font-weight-bold);
+  font-family: var(--font-family-bold);
 }
 
 @mixin font-heading {
-  @include font-heading;
+  font-weight: var(--font-weight-heading);
+  font-family: var(--font-family-heading);
 }
