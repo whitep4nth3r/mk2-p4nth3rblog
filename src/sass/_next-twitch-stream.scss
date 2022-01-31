@@ -1,5 +1,5 @@
-.nextTwitchStream {
-}
+// .nextTwitchStream {
+// }
 
 .nextTwitchStream__meta {
   @include font-heading;
@@ -56,7 +56,7 @@
   background-color: var(--color-highlight);
   color: var(--color-bg);
   padding: 0.5rem 1rem;
-  border-radius: 1rem;
+  border-radius: var(--border-radius-base);
   text-transform: uppercase;
   font-size: 1.2rem;
   text-decoration: none;

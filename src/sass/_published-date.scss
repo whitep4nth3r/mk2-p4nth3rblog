@@ -4,11 +4,10 @@
 }
 
 .publishedDate__item {
+  @include font-heading;
   font-size: 1rem;
   margin-bottom: 0.5rem;
   color: var(--color-fg);
-  font-family: var(--font-family-heading);
-  font-weight: var(--font-weight-heading);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -17,8 +16,7 @@
 
 @media screen and (min-width: 768px) {
   .publishedDate__item {
-    font-weight: var(--font-weight-main);
-    font-family: var(--font-family-main);
+    @include font-main;
     justify-content: flex-start;
   }
 }

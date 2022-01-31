@@ -8,8 +8,8 @@ html {
 }
 
 body {
+  @include font-main;
   font-size: 1rem;
-  font-family: var(--font-family-main);
   background-color: var(--color-bg);
   color: var(--color-fg);
   padding: 2rem;
