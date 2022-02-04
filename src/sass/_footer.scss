@@ -16,6 +16,25 @@
   @include font-bold;
   font-size: 1.2rem;
   color: var(--color-highlight);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.footer__text {
+  @include font-main;
+  font-size: 1rem;
+  color: var(--color-fg);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.footer__links {
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
 .footer__link {
@@ -25,6 +44,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
 }
 
 .footer__linkIcon {

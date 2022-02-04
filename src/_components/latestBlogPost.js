@@ -8,7 +8,9 @@ var md = require("markdown-it")({
 function LatestBlogPost({ post }) {
   return /*html*/ `
     <article class="homeCard">
-      <h3 class="homeCard__title">${post.title}</h3>
+      <a href="/blog/${post.slug}/" class="homeCard__linkForTitle">
+        <h3 class="homeCard__title">${post.title}</h3>
+      </a>
 
       <div class="homeCard__excerpt">
         ${md.render(post.excerpt)}

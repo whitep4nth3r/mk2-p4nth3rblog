@@ -12,8 +12,18 @@
   margin-bottom: 2rem;
 }
 
+.homeCard__linkForTitle {
+  text-decoration: none;
+}
+
 .homeCard__topics {
   display: flex;
+  flex-direction: column;
+}
+
+.homeCard__excerpt {
+  display: flex;
+  flex-grow: 1;
   flex-direction: column;
 }
 
@@ -24,6 +34,20 @@
   margin-bottom: 1rem;
   color: var(--color-fg);
   word-break: break-word;
-  display: flex;
-  flex-direction: column;
+  display: block;
+}
+
+.homeCard__button {
+  @include button-grey;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.homeCard__buttonIcon {
+  margin-right: 0.5rem;
+}
+
+.homeCard__buttonArrow {
+  color: var(--color-highlight);
+  margin-left: 0.5rem;
 }

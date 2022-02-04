@@ -1,17 +1,21 @@
-// .nextTwitchStream {
-// }
+.nextTwitchStream {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
 
 .nextTwitchStream__meta {
   @include font-heading;
   display: flex;
   flex-direction: row;
   align-items: center;
-  color: var(--color-highlight);
   font-size: 1.4rem;
   margin-bottom: 1rem;
+  color: var(--color-fg);
 }
 
 .nextTwitchStream__metaIcon {
+  color: var(--color-highlight);
   margin-right: 0.5rem;
 }
 
@@ -39,6 +43,7 @@
   word-break: break-word;
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
 }
 
 .nextTwitchStream__cta {

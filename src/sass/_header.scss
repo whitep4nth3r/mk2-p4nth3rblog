@@ -1,15 +1,17 @@
 .header__content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   max-width: var(--grid-max-width);
   justify-content: space-between;
   align-items: center;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 2rem;
 }
 
 @media screen and (min-width: 768px) {
   .header__content {
+    margin-bottom: 6rem;
     flex-direction: row;
   }
 }
@@ -28,6 +30,9 @@
   letter-spacing: 1px;
   font-size: 1rem;
   line-height: 1;
+  max-width: var(--grid-max-width);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .header__skipToMainContent:focus {
@@ -42,7 +47,16 @@
 
 .header__logoContainerLink {
   height: 4rem;
-  display: block;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-decoration: none;
+}
+
+.header__logoContainerLinkName {
+  @include font-heading;
+  font-size: 1.2rem;
+  margin-left: 0.5rem;
 }
 
 .header__logoContainerLink svg {

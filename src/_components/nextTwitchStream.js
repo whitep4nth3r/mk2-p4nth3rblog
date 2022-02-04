@@ -2,6 +2,7 @@ const DateUtils = require("../../lib/dateUtils");
 const ClockIcon = require("./svg/clockIcon");
 const CalendarIcon = require("./svg/calendarIcon");
 const TwitchIcon = require("./svg/twitchIcon");
+const SeeAllCta = require("./seeAllCta");
 
 function isLiveIndicator() {
   return /*html*/ `
@@ -53,9 +54,12 @@ function NextTwitchStream({ stream, isLive, onVacation }) {
             ${TwitchIcon()}
           </span>
           <span>
-            Watch live
+            Watch live 
           </span>
+          <span class="homeCard__buttonArrow">→</span>
         </a>
+
+         ${SeeAllCta({ things: "appearances", url: "/appearances/" })}
       </div>
 
       <script>

@@ -3,7 +3,10 @@
 
   <div class="header__content">
     <div class="header__logoContainer">
-      <a href="/" class="header__logoContainerLink" aria-label="Navigate to home page">{% include "logo.html" %}</a>
+      <a href="/" class="header__logoContainerLink" aria-label="Navigate to home page">
+        {% include "logo.html" %}
+        <span class="header__logoContainerLinkName">@whitep4nth3r</span>
+      </a>
     </div>
 
     <nav class="header__nav" aria-label="primary">
@@ -13,6 +16,9 @@
         </li>
         <li class="header__navListItem">
           <a href="/projects/" class="header__navListItemLink">Projects</a>
+        </li>
+        <li class="header__navListItem">
+          <a href="/uses/" class="header__navListItemLink">Uses</a>
         </li>
       </ul>
     </nav>
