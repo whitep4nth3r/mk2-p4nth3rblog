@@ -1,8 +1,20 @@
-<header>
-  <a href="/">PANTHER</a>
+<header class="header">
+  <a href="#main_content" class="header__skipToMainContent">Skip to main content</a>
 
-  <nav aria-labelledby="main">
-    <a href="/blog/">Posts</a>
-    <a href="/uses/">Uses</a>
-  </nav>
+  <div class="header__content">
+    <div class="header__logoContainer">
+      <a href="/" class="header__logoContainerLink" aria-label="Navigate to home page">{% include "logo.html" %}</a>
+    </div>
+
+    <nav class="header__nav" aria-label="primary">
+      <ul class="header__navList">
+        <li class="header__navListItem">
+          <a href="/blog/" class="header__navListItemLink">Posts</a>
+        </li>
+        <li class="header__navListItem">
+          <a href="/projects/" class="header__navListItemLink">Projects</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </header>
