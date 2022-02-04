@@ -42,3 +42,19 @@ main {
 }
 
 /* END TEMP */
+
+/* width */
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 0.5rem;
+  background: var(--grey-dark);
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}

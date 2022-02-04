@@ -48,12 +48,12 @@ exports.render = function (data) {
          updatedDate: post.updatedDate,
        })}
 
-        ${TableOfContents(post.body)}
-
-        ${BlogSidebarTopics({ topics: post.topicsCollection.items })}
+        <div class="post__asideStickyGroup">
+          ${TableOfContents(post.body)}
+          ${BlogSidebarTopics({ topics: post.topicsCollection.items })}
+          ${SeeAllCta({ things: "blog posts", url: "/blog/" })}
+        </div>
         
-        ${SeeAllCta({ things: "blog posts", url: "/blog/" })}
-
       </aside>
       <article class="post__article">
         ${post.isSponsored ? isSponsored() : ""}

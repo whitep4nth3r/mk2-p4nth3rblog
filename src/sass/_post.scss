@@ -1,11 +1,11 @@
 .post {
-  display: grid;
   max-width: var(--post-max-width);
   margin: auto;
 }
 
 @media screen and (min-width: 768px) {
   .post {
+    display: grid;
     grid-template-columns: 1fr 3fr;
     column-gap: 3rem;
   }
@@ -19,6 +19,15 @@
 .post__aside {
   flex-direction: column;
   display: none;
+}
+
+.post__asideStickyGroup {
+  position: sticky;
+  top: 0;
+  overflow-y: scroll;
+  max-height: 100vh;
+  padding-bottom: 4rem;
+  padding-right: 1rem;
 }
 
 .post__inlineAside {
