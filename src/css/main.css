@@ -184,6 +184,11 @@ img {
     flex-direction: row;
   }
 }
+[data-type=post] .header__content,
+[data-type=talk] .header__content {
+  max-width: var(--post-max-width);
+}
+
 .header__skipToMainContent {
   font-weight: var(--font-weight-bold);
   font-family: var(--font-family-bold);

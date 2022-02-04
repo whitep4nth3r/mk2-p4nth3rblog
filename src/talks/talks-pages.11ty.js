@@ -9,6 +9,7 @@ const OpenGraph = require("../../lib/openGraph");
 
 exports.data = {
   layout: "base.html",
+  pageType: "talk",
   pagination: {
     data: "talks",
     alias: "talk",

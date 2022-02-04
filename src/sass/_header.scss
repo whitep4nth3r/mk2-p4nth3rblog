@@ -14,6 +14,11 @@
   }
 }
 
+[data-type="post"] .header__content,
+[data-type="talk"] .header__content {
+  max-width: var(--post-max-width);
+}
+
 .header__skipToMainContent {
   @include font-bold;
   display: flex;
