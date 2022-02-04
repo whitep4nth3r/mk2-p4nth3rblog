@@ -6,6 +6,7 @@ const PublishedDate = require("../_components/publishedDate");
 const TableOfContents = require("../_components/tableOfContents");
 const isSponsored = require("../_components/isSponsored");
 const SeeAllCta = require("../_components/seeAllCta");
+const PostCard = require("../_components/postCard");
 const OpenGraph = require("../../lib/openGraph");
 
 exports.data = {
@@ -72,6 +73,20 @@ exports.render = function (data) {
         <div class="post__body">
           ${RichText(post.body, { renderRssFriendlyImg: false, absoluteUrls: false, renderHeadingLinks: true })}
         </div>
+
+        ${
+          post.relatedPostsCollection?.items.length > 0
+            ? /*html*/ `
+            <div class="post__related">
+              <h4 class="post__relatedHeader">Related posts</h4>
+              <div class="grid">
+                ${post.relatedPostsCollection.items
+                  .map((post) => PostCard({ post, baseSlug: "blog", isTalk: false }))
+                  .join("")}
+              </div>
+            </div>`
+            : ""
+        }
 
         <div class="post__inlineAside">
           ${BlogSidebarTopics({ topics: post.topicsCollection.items })}
