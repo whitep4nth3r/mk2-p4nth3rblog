@@ -288,7 +288,7 @@ strong {
   font-size: 1.2rem;
   color: var(--color-highlight);
   margin-bottom: 1rem;
-  text-align: center;
+  text-align: left;
 }
 
 .footer__text {
@@ -297,7 +297,7 @@ strong {
   font-size: 1rem;
   color: var(--color-fg);
   margin-bottom: 1rem;
-  text-align: center;
+  text-align: left;
 }
 
 .footer__links {
@@ -305,7 +305,7 @@ strong {
   padding-left: 0;
   display: grid;
   gap: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
