@@ -4,10 +4,11 @@ function Topics({ topics, selected, showLinkToBlog }) {
       ${topics
         .map((topic) => {
           const highlight = selected === topic.slug;
+          const ariaCurrent = selected === topic.slug ? ` aria-current="page"` : "";
           return /*html*/ `<li class="topics__listItem">
               <a href="/topics/${topic.slug}/"
                 class="topics__listItemLink${highlight ? " topics__listItemLink--selected" : ""}"
-                aria-label="View all ${topic.name} articles">
+                aria-label="View all ${topic.name} articles"${ariaCurrent}>
                 <span class="topics__listItemImg">
                   ${
                     topic.icon
