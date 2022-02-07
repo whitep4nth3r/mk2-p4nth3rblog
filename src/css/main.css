@@ -218,6 +218,7 @@ strong {
   position: absolute;
   top: -100px;
   left: 1rem;
+  background-color: var(--color-bg);
 }
 .header__skipToMainContent:focus {
   top: 1rem;
