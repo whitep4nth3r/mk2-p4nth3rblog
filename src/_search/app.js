@@ -62,31 +62,11 @@ function TopicsButton({ topics, url, ariaDescribedBy }) {
     `;
 }
 
-function getRandomInt(min, max) {
-  return Math.round(Math.random() * (max - min) + min);
-}
-
-function getRandomEntry(array) {
-  return array[getRandomInt(0, array.length - 1)];
-}
-
 // Create a render function
 const renderSearchBox = (renderOptions, isFirstRender) => {
   const { query, refine, clear, isSearchStalled, widgetParams } = renderOptions;
 
   if (isFirstRender) {
-    const placeholders = [
-      "web accessibility",
-      "css tips",
-      "graphql",
-      "jamstack",
-      "javascript tutorial",
-      "next.js",
-      "nodejs",
-      "serverless functions",
-      "twitch streaming",
-    ];
-
     const label = document.createElement("label");
     label.setAttribute("for", "search");
     label.classList = "ais__label";
@@ -94,7 +74,6 @@ const renderSearchBox = (renderOptions, isFirstRender) => {
 
     const input = document.createElement("input");
     input.setAttribute("id", "search");
-    input.placeholder = getRandomEntry(placeholders);
     input.classList = "ais__input";
 
     const button = document.createElement("button");
