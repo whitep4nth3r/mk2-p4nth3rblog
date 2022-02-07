@@ -14,7 +14,7 @@ function PostCard({ post, baseSlug, isTalk }) {
           <span class="postCard__metaIcon">•</span>
           <span>${post.readingTime || post.watchTime} min ${timeSuffix}</span>
         </p>
-        <a href="/${baseSlug}/${post.slug}" class="postCard__titleLink" id="post-${post.sys.id}">
+        <a href="/${baseSlug}/${post.slug}/" class="postCard__titleLink" id="post-${post.sys.id}">
           ${post.title}
         </a>
         <div>

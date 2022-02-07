@@ -49,7 +49,7 @@ function getRichTextRenderOptions(links, options) {
             const { slug, title, featuredImage, excerpt } = entry;
             const prefix = absoluteUrls ? `https://${Config.site.domain}` : "";
 
-            return `<a href="${prefix}/blog/${slug}">${title}</a>`;
+            return `<a href="${prefix}/blog/${slug}/">${title}</a>`;
           default:
             return null;
         }
