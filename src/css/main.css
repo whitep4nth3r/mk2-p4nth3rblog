@@ -1098,6 +1098,16 @@ a.post__linkedHeaderIcon {
   word-break: break-word;
 }
 
+.ais {
+  max-width: var(--grid-max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ais__hits {
+  display: none;
+}
+
 /**
  * okaidia theme for JavaScript, CSS and HTML
  * Loosely based on Monokai textmate theme by http://www.monokai.nl/

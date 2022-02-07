@@ -30,6 +30,12 @@ exports.render = function (data) {
   return /* html */ `
 
   <section>
+
+   <div class="ais" id="autocomplete">
+      <div id="searchbox"></div>
+      <div id="hits" class="ais__hits"></div>
+    </div>
+
     <div class="grid__header">
       <h1 class="grid__headerTitle">learn <span class="colorHighlight">things</span></h1>
     </div>
@@ -54,5 +60,29 @@ exports.render = function (data) {
       totalPages: data.pagination.pages.length,
     })}
   </section>
-   `;
+
+  <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.5.1/dist/algoliasearch-lite.umd.js" integrity="sha256-EXPXz4W6pQgfYY3yTpnDa3OH8/EPn16ciVsPQ/ypsjk=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.8.3/dist/instantsearch.production.min.js" integrity="sha256-LAGhRRdtVoD6RLo2qDQsU2mp+XVSciKRC8XPOBWmofM=" crossorigin="anonymous"></script>
+
+  <script src="/js/app.js"></script>
+
+  <script type="module">
+    const search = initSearch({
+      appId: "${data.search.ALGOLIA_APP_ID}", 
+      apiKey: "${data.search.ALGOLIA_SEARCH_API_KEY}", 
+      indexName: "${data.search.ALGOLIA_INDEX}"
+    });
+
+    const searchBox = document.getElementById("searchbox");
+    const hits = document.getElementById("hits");
+
+    searchBox.addEventListener("keyup", function(e) { 
+      if (e.target.value.length >= 1) {
+        hits.style.display = "block";
+      } else {
+        hits.style.display = "none";
+      }
+    })
+  </script>
+`;
 };
