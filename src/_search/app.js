@@ -1,3 +1,5 @@
+//THERE IS A LOT OF REPEATED CODE HERE — FIX!
+
 function LightningIcon() {
   return `
     <svg
