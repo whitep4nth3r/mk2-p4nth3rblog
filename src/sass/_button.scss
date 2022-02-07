@@ -1,6 +1,6 @@
 @mixin button-grey() {
   @include font-heading;
-  background-color: var(--grey-dark);
+  background-color: var(--color-bg-lighter);
   border-radius: var(--border-radius-base);
   padding: 0.5rem 1rem 0.5rem 0.75rem;
   color: var(--white);

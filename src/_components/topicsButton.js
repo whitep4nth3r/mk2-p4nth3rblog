@@ -15,7 +15,7 @@ function TopicsButton({ topics, url, ariaLabel }) {
             </li>`;
           })
           .join("")}
-          <li>Learn more <span class="topicsButton__arrow">→</li>
+          <li>Learn more <span class="topicsButton__arrow" aria-hidden="true">→</li>
       </ul>
     </a>
     `;

@@ -25,6 +25,7 @@
 @import "video-embed";
 @import "see-all-cta";
 
+@import "ais";
 @import "prism";
 
 /* START TEMP */
@@ -51,7 +52,7 @@ main {
 /* Handle */
 ::-webkit-scrollbar-thumb {
   border-radius: 0.5rem;
-  background: var(--grey-dark);
+  background: var(--color-bg-lighter);
 }
 
 /* Track */

@@ -1,4 +1,4 @@
-.grid {
+@mixin grid {
   list-style: none;
   padding-left: 0;
   display: grid;
@@ -7,6 +7,17 @@
   gap: 1rem 3rem;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   align-items: stretch;
+}
+
+@mixin grid_item {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.grid {
+  @include grid;
 }
 
 .grid__header {
@@ -30,10 +41,7 @@
 }
 
 .grid__item {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
+  @include grid_item;
 }
 
 .grid__itemTitle {

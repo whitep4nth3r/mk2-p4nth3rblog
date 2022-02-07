@@ -28,6 +28,7 @@ function Topics({ topics, selected }) {
           </li>`;
         })
         .join("")}
+        <li><a href="/blog/" class="topics__listItemLink">View latest <span class="colorHighlight topics__listItemArrow" aria-hidden="true">→</span></a></li>
     </ul>`;
 }
 
