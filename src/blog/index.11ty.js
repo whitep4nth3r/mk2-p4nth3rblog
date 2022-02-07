@@ -30,41 +30,43 @@ exports.render = function (data) {
   return /* html */ `
 
   <section>
-
-   <div class="ais" id="autocomplete">
-      <div id="searchbox"></div>
-      <div id="hits" class="ais__hits"></div>
-    </div>
-
     <div class="grid__header">
       <h1 class="grid__headerTitle">learn <span class="colorHighlight">things</span></h1>
     </div>
 
     ${Topics({ topics: data.topics })}
 
-    <ol class="grid">
-    ${data.pagination.items
-      .map(function (item) {
-        return `
-        <li class="grid__item">
-          ${PostCard({ post: item, baseSlug: "blog", isTalk: false })}
-        </li>`;
-      })
-      .join("")}
-    </ol>
+    <div id="autocomplete">
+      <div id="searchbox"></div>
+    </div>
 
-    ${Pagination({
-      previous: data.pagination.href.previous,
-      next: data.pagination.href.next,
-      currentPage: data.pagination.pageNumber,
-      totalPages: data.pagination.pages.length,
-    })}
+    <div id="hits" class="ais__hitsContainer"></div>
+
+    <div data-static-content>
+      <ol class="grid">
+      ${data.pagination.items
+        .map(function (item) {
+          return `
+          <li class="grid__item">
+            ${PostCard({ post: item, baseSlug: "blog", isTalk: false })}
+          </li>`;
+        })
+        .join("")}
+      </ol>
+
+      ${Pagination({
+        previous: data.pagination.href.previous,
+        next: data.pagination.href.next,
+        currentPage: data.pagination.pageNumber,
+        totalPages: data.pagination.pages.length,
+      })}
+    </div>
   </section>
 
   <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.5.1/dist/algoliasearch-lite.umd.js" integrity="sha256-EXPXz4W6pQgfYY3yTpnDa3OH8/EPn16ciVsPQ/ypsjk=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.8.3/dist/instantsearch.production.min.js" integrity="sha256-LAGhRRdtVoD6RLo2qDQsU2mp+XVSciKRC8XPOBWmofM=" crossorigin="anonymous"></script>
 
-  <script src="/js/app.js"></script>
+  <script src="/js/app_search.js"></script>
 
   <script type="module">
     const search = initSearch({
@@ -75,14 +77,19 @@ exports.render = function (data) {
 
     const searchBox = document.getElementById("searchbox");
     const hits = document.getElementById("hits");
+    const staticContent = document.querySelector("[data-static-content]");
 
     searchBox.addEventListener("keyup", function(e) { 
       if (e.target.value.length >= 1) {
         hits.style.display = "block";
+        staticContent.style.display = "none";
       } else {
         hits.style.display = "none";
+        staticContent.style.display = "block";
       }
     })
+
+
   </script>
 `;
 };
