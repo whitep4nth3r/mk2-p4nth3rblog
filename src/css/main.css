@@ -223,9 +223,10 @@ strong {
 }
 
 .header__logoContainerLink {
-  height: 4rem;
+  height: 3rem;
   display: flex;
   flex-direction: row;
+  align-self: center;
   align-items: center;
   text-decoration: none;
 }
@@ -247,9 +248,18 @@ strong {
   list-style: none;
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
+@media screen and (min-width: 664px) {
+  .header__navList {
+    justify-content: flex-end;
+  }
+
+  .header__logoContainerLink {
+    align-self: flex-start;
+  }
+}
 .header__navListItemLink {
   font-weight: var(--font-weight-heading);
   font-family: var(--font-family-heading);
@@ -1121,7 +1131,7 @@ a.post__linkedHeaderIcon {
 
 .ais__searchbox {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   grid-template-areas: "label label" "input button";
 }
 

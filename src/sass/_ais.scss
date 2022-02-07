@@ -7,7 +7,7 @@
 
 .ais__searchbox {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   grid-template-areas:
     "label label"
     "input button";
