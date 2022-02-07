@@ -1,4 +1,4 @@
-function Topics({ topics, selected }) {
+function Topics({ topics, selected, showLinkToBlog }) {
   return /* html */ `
   <ul class="topics">
       ${topics
@@ -28,7 +28,11 @@ function Topics({ topics, selected }) {
           </li>`;
         })
         .join("")}
-        <li><a href="/blog/" class="topics__listItemLink">View latest <span class="colorHighlight topics__listItemArrow" aria-hidden="true">→</span></a></li>
+        ${
+          showLinkToBlog
+            ? `<li><a href="/blog/" class="topics__listItemLink">View latest <span class="colorHighlight topics__listItemArrow" aria-hidden="true">→</span></a></li>`
+            : ""
+        }
     </ul>`;
 }
 

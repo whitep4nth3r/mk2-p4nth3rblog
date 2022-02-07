@@ -88,6 +88,61 @@ function PostCard({ post, postTitle, baseSlug, isTalk }) {
   `;
 }
 
+function getRandomInt(min, max) {
+  return Math.round(Math.random() * (max - min) + min);
+}
+
+function getRandomEntry(array) {
+  return array[getRandomInt(0, array.length - 1)];
+}
+
+// Create a render function
+const renderSearchBox = (renderOptions, isFirstRender) => {
+  const { query, refine, clear, isSearchStalled, widgetParams } = renderOptions;
+
+  if (isFirstRender) {
+    const placeholders = [
+      "web accessibility",
+      "css tips",
+      "graphql",
+      "jamstack",
+      "javascript tutorial",
+      "next.js",
+      "nodejs",
+      "serverless functions",
+      "twitch streaming",
+    ];
+
+    const label = document.createElement("label");
+    label.setAttribute("for", "search");
+    label.classList = "ais__label";
+    label.innerText = "Search posts";
+
+    const input = document.createElement("input");
+    input.setAttribute("id", "search");
+    input.placeholder = getRandomEntry(placeholders);
+    input.classList = "ais__input";
+
+    const button = document.createElement("button");
+    button.classList = "ais__reset";
+    button.textContent = "reset";
+
+    input.addEventListener("input", (event) => {
+      refine(event.target.value);
+    });
+
+    button.addEventListener("click", () => {
+      clear();
+    });
+
+    widgetParams.container.appendChild(label);
+    widgetParams.container.appendChild(input);
+    widgetParams.container.appendChild(button);
+  }
+
+  widgetParams.container.querySelector("input").value = query;
+};
+
 function initSearch({ appId, apiKey, indexName }) {
   const searchClient = algoliasearch(appId, apiKey);
 
@@ -96,26 +151,12 @@ function initSearch({ appId, apiKey, indexName }) {
     searchClient,
   });
 
+  // create custom widget
+  const customSearchBox = instantsearch.connectors.connectSearchBox(renderSearchBox);
+
   search.addWidgets([
-    instantsearch.widgets.searchBox({
-      container: "#searchbox",
-      showLoadingIndicator: false,
-      placeholder: "Search posts",
-      autofocus: true,
-      showReset: false,
-      searchAsYouType: true,
-      showSubmit: false,
-      cssClasses: {
-        root: "ais",
-        form: "ais__form",
-        input: "ais__input",
-        reset: "ais__reset",
-      },
-      templates: {
-        reset() {
-          return "reset";
-        },
-      },
+    customSearchBox({
+      container: document.querySelector("#searchbox"),
     }),
 
     instantsearch.widgets.hits({

@@ -16,6 +16,6 @@ exports.data = {
 
 exports.render = function (data) {
   const { topics } = data;
-  return `${Topics({ topics })}
+  return `${Topics({ topics, showLinkToBlog: true })}
    `;
 };

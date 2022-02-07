@@ -34,7 +34,7 @@ exports.render = function (data) {
       <h1 class="grid__headerTitle">posts about <span class="colorHighlight">${topic.name}</span></h1>
     </div>
 
-    ${Topics({ topics, selected: topic.slug })}
+    ${Topics({ topics, selected: topic.slug, showLinkToBlog: true })}
 
     <ol class="grid">
     ${postsByTopic
