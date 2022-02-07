@@ -37,7 +37,7 @@ exports.render = function (data) {
     ${Topics({ topics: data.topics })}
 
     <div id="autocomplete" class="ais">
-      <div id="searchbox"></div>
+      <div id="searchbox" class="ais__searchbox"></div>
     </div>
 
     <div id="hits" class="ais__hitsContainer"></div>

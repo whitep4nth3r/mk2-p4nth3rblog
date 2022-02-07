@@ -5,14 +5,19 @@
   margin-bottom: 1rem;
 }
 
+.ais__searchbox {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-areas:
+    "label label"
+    "input button";
+}
+
 .ais__hitsContainer {
   position: relative;
   display: none;
   min-height: 20rem;
 }
-
-// .ais__hits {
-// }
 
 .ais__hits--empty {
   max-width: var(--grid-max-width);
@@ -44,18 +49,19 @@
 
 .ais__form {
   display: block;
-  position: relative;
-  width: 100%;
 }
 
 .ais__label {
+  grid-area: label;
   @include font-heading;
   font-size: 1rem;
   margin-bottom: 1rem;
-  display: block;
+  display: flex;
+  flex-direction: column;
 }
 
 .ais__input {
+  grid-area: input;
   @include font-main;
   background-color: var(--color-bg);
   border: 0.25rem solid var(--color-bg-lighter);
@@ -64,12 +70,6 @@
   font-size: 1rem;
   padding: 0.5rem;
   width: 100%;
-}
-
-@media screen and (min-width: 768px) {
-  .ais__input {
-    width: 50%;
-  }
 }
 
 .ais__input:focus {
@@ -83,6 +83,7 @@
 }
 
 .ais__reset {
+  grid-area: button;
   @include button-grey;
   display: inline;
   border-radius: 0;

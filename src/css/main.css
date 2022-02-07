@@ -209,6 +209,7 @@ strong {
   margin-left: auto;
   margin-right: auto;
   padding: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .header__skipToMainContent:focus {
@@ -1118,6 +1119,12 @@ a.post__linkedHeaderIcon {
   margin-bottom: 1rem;
 }
 
+.ais__searchbox {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-areas: "label label" "input button";
+}
+
 .ais__hitsContainer {
   position: relative;
   display: none;
@@ -1165,19 +1172,20 @@ a.post__linkedHeaderIcon {
 
 .ais__form {
   display: block;
-  position: relative;
-  width: 100%;
 }
 
 .ais__label {
+  grid-area: label;
   font-weight: var(--font-weight-heading);
   font-family: var(--font-family-heading);
   font-size: 1rem;
   margin-bottom: 1rem;
-  display: block;
+  display: flex;
+  flex-direction: column;
 }
 
 .ais__input {
+  grid-area: input;
   font-weight: var(--font-weight-main);
   font-family: var(--font-family-main);
   background-color: var(--color-bg);
@@ -1189,11 +1197,6 @@ a.post__linkedHeaderIcon {
   width: 100%;
 }
 
-@media screen and (min-width: 768px) {
-  .ais__input {
-    width: 50%;
-  }
-}
 .ais__input:focus {
   outline-color: transparent;
   box-shadow: var(--color-highlight) 0 0 0 0.125rem;
@@ -1205,6 +1208,7 @@ a.post__linkedHeaderIcon {
 }
 
 .ais__reset {
+  grid-area: button;
   font-weight: var(--font-weight-heading);
   font-family: var(--font-family-heading);
   background-color: var(--color-bg-lighter);
