@@ -131,7 +131,6 @@ function initSearch({ appId, apiKey, indexName }) {
           return `<p class="ais__emptyMessage">No results found for <q>${results.query}</q>.</p>`;
         },
         item(hit) {
-          console.log(hit);
           const isTalk = hit.watchTime !== undefined;
           const baseSlug = isTalk ? "talks" : "blog";
           const timeSuffix = isTalk ? "watch time" : "read";
@@ -164,6 +163,4 @@ function initSearch({ appId, apiKey, indexName }) {
   ]);
 
   search.start();
-
-  console.log(search.helper);
 }
