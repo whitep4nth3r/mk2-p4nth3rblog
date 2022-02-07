@@ -27,12 +27,12 @@
   justify-content: center;
   color: var(--color-bg);
   text-decoration: none;
-  letter-spacing: 1px;
   font-size: 1rem;
   line-height: 1;
   max-width: var(--grid-max-width);
   margin-left: auto;
   margin-right: auto;
+  padding: 0.5rem;
 }
 
 .header__skipToMainContent:focus {
