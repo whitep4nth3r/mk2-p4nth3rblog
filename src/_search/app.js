@@ -62,32 +62,6 @@ function TopicsButton({ topics, url, ariaLabel }) {
     `;
 }
 
-function PostCard({ post, postTitle, baseSlug, isTalk }) {
-  const timeSuffix = isTalk ? "watch time" : "read";
-  return /*html*/ `
-    <article class="postCard">
-        <p class="postCard__meta">
-          <span class="postCard__metaIcon">${LightningIcon()}</span>
-          <time dateTime="${formatDateForDateTime(post.date)}">
-            ${formatDateForDisplay(post.date)}
-          </time>
-          <span class="postCard__metaIcon">•</span>
-          <span>${post.readingTime || post.watchTime} min ${timeSuffix}</span>
-        </p>
-        <a href="/${baseSlug}/${post.slug}" class="postCard__titleLink">
-          ${instantsearch.highlight({ attribute: "title", post })}
-        </a>
-        <div class="postCard__topics">
-          ${TopicsButton({
-            topics: post.topicsCollection.items,
-            url: `/${baseSlug}/${post.slug}/`,
-            ariaLabel: `Read ${post.title}`,
-          })}
-        </div>
-      </article>
-  `;
-}
-
 function getRandomInt(min, max) {
   return Math.round(Math.random() * (max - min) + min);
 }
@@ -125,7 +99,7 @@ const renderSearchBox = (renderOptions, isFirstRender) => {
 
     const button = document.createElement("button");
     button.classList = "ais__reset";
-    button.textContent = "reset";
+    button.textContent = "clear";
 
     input.addEventListener("input", (event) => {
       refine(event.target.value);

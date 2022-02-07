@@ -41,7 +41,6 @@
   display: block;
 }
 
-.postCard__topics {
-  display: flex;
-  flex-direction: column;
+.postCard__topics a {
+  display: inline-block;
 }
