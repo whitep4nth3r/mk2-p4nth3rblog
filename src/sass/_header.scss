@@ -18,7 +18,7 @@
   @include font-bold;
   display: flex;
   justify-content: center;
-  color: var(--color-bg);
+  color: var(--color-highlight);
   text-decoration: none;
   font-size: 1rem;
   line-height: 1;
@@ -27,6 +27,13 @@
   margin-right: auto;
   padding: 0.5rem;
   margin-bottom: 0.5rem;
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+
+  &:focus {
+    top: 1rem;
+  }
 }
 
 .header__skipToMainContent:focus {

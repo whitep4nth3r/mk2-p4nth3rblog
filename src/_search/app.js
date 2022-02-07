@@ -160,7 +160,7 @@ function initSearch({ appId, apiKey, indexName }) {
           <span class="postCard__metaIcon">•</span>
           <span>${hit.readingTime || hit.watchTime} min ${timeSuffix}</span>
         </p>
-        <a href="/${baseSlug}/${hit.slug}" class="postCard__titleLink postCard__titleLink--ais" id="post-${
+        <a href="/${baseSlug}/${hit.slug}" class="postCard__titleLink postCard__titleLink--ais" id="search-${
             hit.objectID
           }">
           ${instantsearch.highlight({ attribute: "title", hit })}
@@ -169,7 +169,7 @@ function initSearch({ appId, apiKey, indexName }) {
           ${TopicsButton({
             topics: hit.topicsCollection.items,
             url: `/${baseSlug}/${hit.slug}/`,
-            ariaDescribedBy: `post-${hit.objectID}`,
+            ariaDescribedBy: `search-${hit.objectID}`,
           })}
         </div>
       </article>
