@@ -17,7 +17,7 @@ body {
 }
 
 a {
-  color: var(--color-link);
+  color: inherit;
   transition: color 0.2s ease-in-out;
   text-decoration: underline;
   text-underline-offset: 0.125rem;
@@ -35,10 +35,6 @@ summary:focus {
   box-shadow: var(--color-bg) 0 0 0 0.125rem, var(--color-highlight) 0 0 0 0.375rem;
   transition: box-shadow var(--global-transition-time) ease-in-out;
   border-radius: 0;
-}
-
-a:visited {
-  color: var(--color-link);
 }
 
 h1,

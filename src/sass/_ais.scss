@@ -64,7 +64,7 @@
   grid-area: input;
   @include font-main;
   background-color: var(--color-bg);
-  border: 0.25rem solid var(--color-bg-lighter);
+  border: 0.25rem solid var(--grey-dark);
   color: var(--color-fg);
   border-radius: 0;
   font-size: 1rem;
@@ -82,11 +82,11 @@
 
 .ais__reset {
   grid-area: button;
-  @include button-grey;
+  @include button-main;
   display: inline;
   border-radius: 0;
   padding: 0.6rem 1rem;
-  border: 0.125rem solid var(--color-bg-lighter);
+  border: 0.125rem solid var(--grey-dark);
   width: max-content;
 }
 

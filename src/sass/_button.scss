@@ -1,9 +1,9 @@
-@mixin button-grey() {
+@mixin button-main() {
   @include font-heading;
-  background-color: var(--color-bg-lighter);
+  background-color: var(--color-bg-button);
+  color: var(--color-button);
   border-radius: var(--border-radius-base);
   padding: 0.5rem 1rem 0.5rem 0.75rem;
-  color: var(--white);
   text-decoration: none;
   display: inline-flex;
   flex-direction: row;

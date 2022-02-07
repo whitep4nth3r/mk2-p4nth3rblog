@@ -43,7 +43,7 @@
 }
 
 .homeCard__button {
-  @include button-grey;
+  @include button-main;
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
@@ -53,6 +53,5 @@
 }
 
 .homeCard__buttonArrow {
-  color: var(--color-highlight);
   margin-left: 0.5rem;
 }

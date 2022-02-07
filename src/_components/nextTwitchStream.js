@@ -57,7 +57,7 @@ function NextTwitchStream({ stream, isLive, onVacation }) {
             <span>
               Watch live 
             </span>
-            <span class="homeCard__buttonArrow">→</span>
+            <span class="homeCard__buttonArrow" role="presentation">→</span>
           </a>
         </div>
 

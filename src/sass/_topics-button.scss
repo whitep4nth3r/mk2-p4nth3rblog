@@ -1,5 +1,5 @@
 .topicsButton {
-  @include button-grey;
+  @include button-main;
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
@@ -15,8 +15,4 @@
 .topicsButton__listItem {
   display: inline-block;
   margin-right: 0.5rem;
-}
-
-.topicsButton__arrow {
-  color: var(--color-fg);
 }
