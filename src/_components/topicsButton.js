@@ -1,6 +1,6 @@
-function TopicsButton({ topics, url, ariaLabel }) {
+function TopicsButton({ topics, url, ariaDescribedBy }) {
   return /* html */ `
-    <a href="${url}" class="topicsButton" aria-label="${ariaLabel}">
+    <a href="${url}" class="topicsButton" aria-describedby="${ariaDescribedBy}">
       <ul class="topicsButton__list">
         ${topics
           .map((topic) => {

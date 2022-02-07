@@ -8,7 +8,7 @@ var md = require("markdown-it")({
 function LatestBlogPost({ post }) {
   return /*html*/ `
     <article class="homeCard">
-      <a href="/blog/${post.slug}/" class="homeCard__linkForTitle">
+      <a href="/blog/${post.slug}/" class="homeCard__linkForTitle" id="post-${post.sys.id}">
         <h3 class="homeCard__title">${post.title}</h3>
       </a>
 
@@ -20,7 +20,7 @@ function LatestBlogPost({ post }) {
         ${TopicsButton({
           topics: post.topicsCollection.items,
           url: `/blog/${post.slug}/`,
-          ariaLabel: `Read ${post.title}`,
+          ariaDescribedBy: `post-${post.sys.id}`,
         })}
       </div>
 

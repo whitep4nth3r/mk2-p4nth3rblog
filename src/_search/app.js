@@ -39,9 +39,9 @@ function formatDateForDisplay(dateString) {
   return `${date.getDate()} ${getMonthStringFromInt(date.getMonth())} ${date.getFullYear()}`;
 }
 
-function TopicsButton({ topics, url, ariaLabel }) {
+function TopicsButton({ topics, url, ariaDescribedBy }) {
   return /* html */ `
-    <a href="${url}" class="topicsButton" aria-label="${ariaLabel}">
+    <a href="${url}" class="topicsButton" aria-describedby="${ariaDescribedBy}">
       <ul class="topicsButton__list">
         ${topics
           .map((topic) => {
@@ -160,14 +160,16 @@ function initSearch({ appId, apiKey, indexName }) {
           <span class="postCard__metaIcon">•</span>
           <span>${hit.readingTime || hit.watchTime} min ${timeSuffix}</span>
         </p>
-        <a href="/${baseSlug}/${hit.slug}" class="postCard__titleLink postCard__titleLink--ais">
+        <a href="/${baseSlug}/${hit.slug}" class="postCard__titleLink postCard__titleLink--ais" id="post-${
+            hit.objectID
+          }">
           ${instantsearch.highlight({ attribute: "title", hit })}
         </a>
         <div class="postCard__topics">
           ${TopicsButton({
             topics: hit.topicsCollection.items,
             url: `/${baseSlug}/${hit.slug}/`,
-            ariaLabel: `Read ${hit.title}`,
+            ariaDescribedBy: `post-${hit.objectID}`,
           })}
         </div>
       </article>
