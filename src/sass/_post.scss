@@ -3,7 +3,7 @@
   margin: auto;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 48em) {
   .post {
     display: grid;
     grid-template-columns: 1fr 3fr;
@@ -28,6 +28,8 @@
   max-height: 100vh;
   padding-bottom: 4rem;
   padding-right: 1rem;
+  margin-left: -1rem;
+  padding-left: 1rem;
 }
 
 .post__inlineAside {
@@ -35,7 +37,7 @@
   flex-direction: column;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 48em) {
   .post__aside {
     display: flex;
   }
@@ -170,7 +172,7 @@ a.post__linkedHeaderIcon {
   line-height: 1.6;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 37.5em) {
   .post__blockquote {
     margin-inline-start: 4rem;
     margin-inline-end: 4rem;

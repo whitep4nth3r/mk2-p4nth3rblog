@@ -14,7 +14,7 @@
   justify-content: center;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 48em) {
   .publishedDate__item {
     @include font-main;
     justify-content: flex-start;

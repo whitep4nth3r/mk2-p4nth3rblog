@@ -9,3 +9,12 @@
   white-space: nowrap;
   border-width: 0;
 }
+
+@mixin search_focus_style {
+  outline-color: transparent;
+  outline-style: solid;
+  outline-offset: 0.125rem;
+  border-radius: 0;
+  box-shadow: inset var(--color-highlight) 0 0 0 0.125rem;
+  transition: box-shadow var(--global-transition-time) ease-in-out;
+}

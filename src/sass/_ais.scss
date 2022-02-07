@@ -73,9 +73,7 @@
 }
 
 .ais__input:focus {
-  outline-color: transparent;
-  box-shadow: var(--color-highlight) 0 0 0 0.125rem;
-  transition: box-shadow var(--global-transition-time) ease 0.2s;
+  @include search_focus_style;
 }
 
 .ais__input::placeholder {
@@ -93,7 +91,5 @@
 }
 
 .ais__reset:focus {
-  outline-color: transparent;
-  box-shadow: var(--color-highlight) 0 0 0 0.125rem;
-  transition: box-shadow var(--global-transition-time) ease 0.2s;
+  @include search_focus_style;
 }

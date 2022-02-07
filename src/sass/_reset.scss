@@ -5,6 +5,7 @@
 
 html {
   font-size: 100%;
+  scroll-behavior: var(--scroll-behaviour);
 }
 
 body {
@@ -27,11 +28,13 @@ a:hover {
   cursor: pointer;
 }
 
-a:focus {
+a:focus,
+summary:focus {
   outline: transparent;
-  box-shadow: var(--color-link) 0 0 0 0.25rem;
-  transition: box-shadow var(--global-transition-time) ease 0s;
-  border-radius: var(--border-radius-base);
+  outline-style: solid;
+  box-shadow: var(--color-bg) 0 0 0 0.125rem, var(--color-highlight) 0 0 0 0.375rem;
+  transition: box-shadow var(--global-transition-time) ease-in-out;
+  border-radius: 0;
 }
 
 a:visited {
