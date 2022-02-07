@@ -371,7 +371,7 @@ strong {
   padding: 0.5rem 1rem 0.5rem 0.75rem;
   color: var(--white);
   text-decoration: none;
-  display: flex;
+  display: inline-flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
@@ -781,7 +781,7 @@ a.post__linkedHeaderIcon {
   padding: 0.5rem 1rem 0.5rem 0.75rem;
   color: var(--white);
   text-decoration: none;
-  display: flex;
+  display: inline-flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
@@ -873,10 +873,6 @@ a.post__linkedHeaderIcon {
   display: block;
 }
 
-.postCard__topics a {
-  display: inline-block;
-}
-
 .topicsButton {
   font-weight: var(--font-weight-heading);
   font-family: var(--font-family-heading);
@@ -885,7 +881,7 @@ a.post__linkedHeaderIcon {
   padding: 0.5rem 1rem 0.5rem 0.75rem;
   color: var(--white);
   text-decoration: none;
-  display: flex;
+  display: inline-flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
@@ -929,6 +925,10 @@ a.post__linkedHeaderIcon {
 
 .homeCard__linkForTitle {
   text-decoration: none;
+  margin-bottom: 2rem;
+}
+.homeCard__linkForTitle .homeCard__title {
+  margin-bottom: 0;
 }
 
 .homeCard__topics {
@@ -961,7 +961,7 @@ a.post__linkedHeaderIcon {
   padding: 0.5rem 1rem 0.5rem 0.75rem;
   color: var(--white);
   text-decoration: none;
-  display: flex;
+  display: inline-flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
@@ -1040,7 +1040,7 @@ a.post__linkedHeaderIcon {
   padding: 0.5rem 1rem 0.5rem 0.75rem;
   color: var(--white);
   text-decoration: none;
-  display: flex;
+  display: inline-flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
@@ -1237,7 +1237,7 @@ a.post__linkedHeaderIcon {
   padding: 0.5rem 1rem 0.5rem 0.75rem;
   color: var(--white);
   text-decoration: none;
-  display: flex;
+  display: inline-flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;

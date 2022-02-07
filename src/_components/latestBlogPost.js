@@ -16,7 +16,7 @@ function LatestBlogPost({ post }) {
         ${md.render(post.excerpt)}
       </div>
 
-      <div class="homeCard__topics">
+      <div>
         ${TopicsButton({
           topics: post.topicsCollection.items,
           url: `/blog/${post.slug}/`,

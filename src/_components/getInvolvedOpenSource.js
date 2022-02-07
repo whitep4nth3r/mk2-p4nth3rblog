@@ -8,7 +8,9 @@ function GetInvolvedOpenSource() {
       <div class="homeCard__excerpt">
         <p>Join a growing community of developers who are building stuff, learning things, and helping each other grow through the power of <span class="colorHighlight"><strong>open source software</strong></span>.</p>
       </div>
+      <div>
       <a href="https://discord.gg/theclaw" rel="nofollow noreferrer" target="_blank" class="homeCard__button"><span class="homeCard__buttonIcon">${DiscordIcon()}</span> Join Discord <span class="homeCard__buttonArrow">→</span></a>
+      </div>
     ${SeeAllCta({ things: "open source projects", url: "/projects/" })}
     </div>
   `;

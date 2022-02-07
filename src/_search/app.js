@@ -144,7 +144,7 @@ function initSearch({ appId, apiKey, indexName }) {
           }">
           ${instantsearch.highlight({ attribute: "title", hit })}
         </a>
-        <div class="postCard__topics">
+        <div>
           ${TopicsButton({
             topics: hit.topicsCollection.items,
             url: `/${baseSlug}/${hit.slug}/`,

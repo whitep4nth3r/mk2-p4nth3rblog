@@ -47,17 +47,19 @@ function NextTwitchStream({ stream, isLive, onVacation }) {
 
         <p class="nextTwitchStream__streamInfo">Join the chat whilst I stream building stuff and learning things every week. Come hang out!</p>
 
-        <a href="https://twitch.tv/whitep4nth3r" 
-        class="nextTwitchStream__cta"
-        target="_blank" title="Watch live on Twitch" rel="nofollow noreferrer">
-          <span class="nextTwitchStream__ctaIcon">
-            ${TwitchIcon()}
-          </span>
-          <span>
-            Watch live 
-          </span>
-          <span class="homeCard__buttonArrow">→</span>
-        </a>
+        <div>
+          <a href="https://twitch.tv/whitep4nth3r" 
+          class="nextTwitchStream__cta"
+          target="_blank" title="Watch live on Twitch" rel="nofollow noreferrer">
+            <span class="nextTwitchStream__ctaIcon">
+              ${TwitchIcon()}
+            </span>
+            <span>
+              Watch live 
+            </span>
+            <span class="homeCard__buttonArrow">→</span>
+          </a>
+        </div>
 
          ${SeeAllCta({ things: "appearances", url: "/appearances/" })}
       </div>
