@@ -31,19 +31,20 @@ function NextTwitchStream({ stream, isLive, onVacation }) {
 
         ${isLive ? isLiveIndicator() : ""}
         
-        <time class="nextTwitchStream__meta" datetime="${DateUtils.formatDateForDateTime(stream.start_time)}">
-          <span class="nextTwitchStream__metaIcon">${CalendarIcon()}</span>
-          <span class="nextTwitchStream__metaInfo">${DateUtils.formatDateForTwitchDisplay(stream.start_time)}</span>
-        </time>
-    
-        <p class="nextTwitchStream__meta">
-          <span class="nextTwitchStream__metaIcon">${ClockIcon()}</span>
-
-          <span class="nextTwitchStream__metaInfo">
+        <a href="https://www.twitch.tv/whitep4nth3r/schedule" target="_blank" rel="nofollow referrer" class="nextTwitchStream__link">
+          <p class="nextTwitchStream__meta">
+            <span class="nextTwitchStream__metaIcon">${CalendarIcon()}</span>
+            <span class="nextTwitchStream__metaInfo">${DateUtils.formatDateForTwitchDisplay(stream.start_time)}</span>
+            
+            <p class="nextTwitchStream__meta">
+            <span class="nextTwitchStream__metaIcon">${ClockIcon()}</span>
+            
+            <span class="nextTwitchStream__metaInfo">
             ${DateUtils.formatTwitchScheduleTimeSlot(stream.start_time, stream.end_time)}
             <span data-timezone></span>
-          </span>
-        </p>
+            </span>
+          </p>
+        </a>
 
         <p class="nextTwitchStream__streamInfo">Join the chat whilst I stream building stuff and learning things every week. Come hang out!</p>
 

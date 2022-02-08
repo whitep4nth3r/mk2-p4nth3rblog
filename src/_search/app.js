@@ -27,12 +27,6 @@ function addLeadingZero(num) {
   return num;
 }
 
-function formatDateForDateTime(dateString) {
-  const timestamp = Date.parse(dateString);
-  const date = new Date(timestamp);
-  return `${date.getFullYear()}-${addLeadingZero(date.getMonth() + 1)}-${date.getDate()}`;
-}
-
 function formatDateForDisplay(dateString) {
   const timestamp = Date.parse(dateString);
   const date = new Date(timestamp);
@@ -133,9 +127,7 @@ function initSearch({ appId, apiKey, indexName }) {
           <article class="postCard">
         <p class="postCard__meta">
           <span class="postCard__metaIcon">${LightningIcon()}</span>
-          <time dateTime="${formatDateForDateTime(hit.date)}">
-            ${formatDateForDisplay(hit.date)}
-          </time>
+          <span>${formatDateForDisplay(hit.date)}</span>
           <span class="postCard__metaIcon">•</span>
           <span>${hit.readingTime || hit.watchTime} min ${timeSuffix}</span>
         </p>

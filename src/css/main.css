@@ -971,6 +971,11 @@ a.post__linkedHeaderIcon {
   flex-grow: 1;
 }
 
+.nextTwitchStream__link {
+  text-decoration: none;
+  margin-bottom: 1rem;
+}
+
 .nextTwitchStream__meta {
   font-weight: var(--font-weight-heading);
   font-family: var(--font-family-heading);
@@ -979,7 +984,8 @@ a.post__linkedHeaderIcon {
   gap: 0.5rem;
   align-items: center;
   font-size: 1.4rem;
-  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   color: var(--color-fg);
 }
 

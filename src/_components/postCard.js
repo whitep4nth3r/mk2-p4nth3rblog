@@ -8,9 +8,9 @@ function PostCard({ post, baseSlug, isTalk }) {
     <article class="postCard">
         <p class="postCard__meta">
           <span class="postCard__metaIcon">${LightningIcon()}</span>
-          <time dateTime="${DateUtils.formatDateForDateTime(post.date)}">
+          <span>
             ${DateUtils.formatDateForDisplay(post.date)}
-          </time>
+          </span>
           <span class="postCard__metaIcon">•</span>
           <span>${post.readingTime || post.watchTime} min ${timeSuffix}</span>
         </p>

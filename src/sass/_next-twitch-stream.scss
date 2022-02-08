@@ -4,6 +4,11 @@
   flex-grow: 1;
 }
 
+.nextTwitchStream__link {
+  text-decoration: none;
+  margin-bottom: 1rem;
+}
+
 .nextTwitchStream__meta {
   @include font-heading;
   display: flex;
@@ -11,7 +16,8 @@
   gap: 0.5rem;
   align-items: center;
   font-size: 1.4rem;
-  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   color: var(--color-fg);
 }
 

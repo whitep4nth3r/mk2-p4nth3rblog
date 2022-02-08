@@ -8,21 +8,17 @@ function PublishedDate({ date, readingTime, isTalk, updatedDate }) {
 
   return /* html */ `
   <div class="publishedDate">
-      <time
-        class="publishedDate__item"
-        dateTime="${DateUtils.formatDateForDateTime(date)}"
-      >
+      <p class="publishedDate__item">
       <span class="publishedDate__icon">${CalendarIcon()}</span>
       ${DateUtils.formatDateForDisplay(date)}
-      </time>
+      </p>
       ${
         updatedDate
           ? `
-        <time 
-        class="publishedDate__item"
-        dateTime="${DateUtils.formatDateForDateTime(updatedDate)}">
-        <span class="publishedDate__icon">${LightningIcon()}</span>
-        Updated ${DateUtils.formatDateForDisplay(updatedDate)}</time>`
+        <p class="publishedDate__item">
+          <span class="publishedDate__icon">${LightningIcon()}</span>
+          Updated ${DateUtils.formatDateForDisplay(updatedDate)}\
+        </p>`
           : ""
       }
       <p class="publishedDate__item">
