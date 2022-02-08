@@ -334,6 +334,10 @@ strong {
   color: var(--color-fg);
   margin-bottom: 1rem;
   text-align: left;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: center;
 }
 
 .footer__links {
