@@ -54,20 +54,17 @@
   align-self: center;
   align-items: center;
   text-decoration: none;
+  gap: 0.5rem;
 }
 
 .header__logoContainerLinkName {
   @include font-heading;
   font-size: 1.2rem;
-  margin-left: 0.5rem;
 }
 
 .header__logoContainerLink svg {
   height: 100%;
   width: auto;
-}
-
-.header__nav {
 }
 
 .header__navList {

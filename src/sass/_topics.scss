@@ -4,20 +4,20 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  gap: 1rem;
   max-width: var(--grid-max-width);
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 1rem;
 }
 
-// .topics__listItem {
-// }
-
 .topics__listItemLink {
   @include button-main;
   margin-bottom: 1rem;
-  margin-right: 1rem;
   border: 0.25rem solid transparent;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
 }
 
 .topics__listItemLink--selected {
@@ -25,14 +25,9 @@
 }
 
 .topics__listItemImg {
-  margin-right: 0.5rem;
   display: flex;
 }
 
 .topics__listItemName {
   display: flex;
-}
-
-.topics__listItemArrow {
-  margin-left: 0.5rem;
 }

@@ -12,6 +12,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  gap: 0.5rem;
 }
 
 @media screen and (min-width: 48em) {
@@ -22,6 +23,5 @@
 }
 
 .publishedDate__icon {
-  margin-right: 0.5rem;
   color: var(--color-highlight);
 }

@@ -13,8 +13,7 @@
 
 .blogSidebarTopics__itemLink {
   @include button-main;
-}
-
-.blogSidebarTopics__itemIcon {
-  margin-right: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
 }

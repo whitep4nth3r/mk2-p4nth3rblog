@@ -5,7 +5,7 @@ function TopicsButton({ topics, url, ariaDescribedBy }) {
         ${topics
           .map((topic) => {
             return /*html*/ `
-            <li class="topicsButton__listItem">
+            <li>
               <img aria-label="${topic.name}"
                   src="${topic.icon.url}"
                   alt="${topic.icon.description}"
@@ -15,7 +15,7 @@ function TopicsButton({ topics, url, ariaDescribedBy }) {
             </li>`;
           })
           .join("")}
-          <li>Learn more <span class="topicsButton__arrow" aria-hidden="true">→</li>
+          <li>Learn more <span aria-hidden="true">→</li>
       </ul>
     </a>
     `;

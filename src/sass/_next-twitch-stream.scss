@@ -8,6 +8,7 @@
   @include font-heading;
   display: flex;
   flex-direction: row;
+  gap: 0.5rem;
   align-items: center;
   font-size: 1.4rem;
   margin-bottom: 1rem;
@@ -16,7 +17,6 @@
 
 .nextTwitchStream__metaIcon {
   color: var(--color-highlight);
-  margin-right: 0.5rem;
 }
 
 .nextTwitchStream__title {
@@ -50,10 +50,9 @@
   @include button-main;
   margin-top: 2rem;
   margin-bottom: 2rem;
-}
-
-.nextTwitchStream__ctaIcon {
-  margin-right: 0.5rem;
+  display: inline-flex;
+  flex-direction: row;
+  gap: 0.5rem;
 }
 
 .nextTwitchStream__liveNow {

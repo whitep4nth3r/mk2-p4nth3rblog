@@ -10,9 +10,5 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-}
-
-.topicsButton__listItem {
-  display: inline-block;
-  margin-right: 0.5rem;
+  gap: 0.5rem;
 }

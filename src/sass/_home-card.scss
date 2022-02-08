@@ -46,12 +46,8 @@
   @include button-main;
   margin-top: 2rem;
   margin-bottom: 2rem;
-}
-
-.homeCard__buttonIcon {
-  margin-right: 0.5rem;
-}
-
-.homeCard__buttonArrow {
-  margin-left: 0.5rem;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
 }

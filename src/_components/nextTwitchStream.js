@@ -51,13 +51,13 @@ function NextTwitchStream({ stream, isLive, onVacation }) {
           <a href="https://twitch.tv/whitep4nth3r" 
           class="nextTwitchStream__cta"
           target="_blank" title="Watch live on Twitch" rel="nofollow noreferrer">
-            <span class="nextTwitchStream__ctaIcon">
+            <span>
               ${TwitchIcon()}
             </span>
             <span>
               Watch live 
             </span>
-            <span class="homeCard__buttonArrow" role="presentation">→</span>
+            <span role="presentation">→</span>
           </a>
         </div>
 

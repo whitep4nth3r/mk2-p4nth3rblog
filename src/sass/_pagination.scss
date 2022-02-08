@@ -29,6 +29,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  gap: 0.5rem;
 }
 
 .pagination__listItem a:hover {
@@ -43,14 +44,6 @@
 
 .pagination__icon {
   color: var(--color-highlight);
-}
-
-.pagination__icon--prev {
-  margin-right: 0.5rem;
-}
-
-.pagination__icon--next {
-  margin-left: 0.5rem;
 }
 
 .pagination__icon--disabled {

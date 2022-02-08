@@ -18,11 +18,13 @@
   padding-top: 1.5rem;
   margin-bottom: 2rem;
   color: var(--color-fg);
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: center;
 }
 
 .postCard__metaIcon {
-  margin-right: 0.25rem;
-  margin-left: 0.25rem;
   color: var(--color-highlight);
 }
 

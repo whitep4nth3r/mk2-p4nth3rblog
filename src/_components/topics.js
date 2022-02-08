@@ -5,7 +5,7 @@ function Topics({ topics, selected, showLinkToBlog }) {
         .map((topic) => {
           const highlight = selected === topic.slug;
           const ariaCurrent = selected === topic.slug ? ` aria-current="page"` : "";
-          return /*html*/ `<li class="topics__listItem">
+          return /*html*/ `<li>
               <a href="/topics/${topic.slug}/"
                 class="topics__listItemLink${highlight ? " topics__listItemLink--selected" : ""}"
                 aria-label="View all ${topic.name} articles"${ariaCurrent}>
@@ -31,7 +31,7 @@ function Topics({ topics, selected, showLinkToBlog }) {
         .join("")}
         ${
           showLinkToBlog
-            ? `<li><a href="/blog/" class="topics__listItemLink">View latest <span class="colorHighlight topics__listItemArrow" aria-hidden="true">→</span></a></li>`
+            ? `<li><a href="/blog/" class="topics__listItemLink">View latest <span class="colorHighlight" aria-hidden="true">→</span></a></li>`
             : ""
         }
     </ul>`;
