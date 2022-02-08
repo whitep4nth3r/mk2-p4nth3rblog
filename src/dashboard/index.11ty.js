@@ -1,9 +1,15 @@
 const OpenGraph = require("../../lib/openGraph");
-const pageTitle = "whitep4nth3r's serverless stats dashboard";
+const TwitchIcon = require("../_components/svg/twitchIcon");
+const TwitterIcon = require("../_components/svg/twitterIcon");
+const GithubIcon = require("../_components/svg/githubIcon");
+const YoutubeColor = require("../_components/svg/youtubeColor");
+
+const pageTitle = "whitep4nth3r's Stats Dashboard";
 
 exports.data = {
   layout: "base.html",
   title: pageTitle,
+  pageType: "dashboard",
   metaDescription: "Track whitep4nth3r's stats in real-time on the Jamstack via serverless functions and magic.",
   openGraphImageUrl: OpenGraph.generateImageUrl({ title: pageTitle }),
   openGraphImageAlt: OpenGraph.generateImageAlt(pageTitle),
@@ -13,21 +19,61 @@ exports.data = {
 
 exports.render = function (data) {
   return /* html */ `
-    <h1>DASHBOARD</h1>
-    <p>Twitch followers:</p>
-    <span data-twitchFollowers>-</span>
-    <p>Twitch views:</p>
-    <span data-twitchViews>-</span>
-    <p>Youtube subs:</p>
-    <span data-youtubeSubs>-</span>
-    <p>Youtube views:</p>
-    <span data-youtubeViews>-</span>
-    <p>GitHub followers:</p>
-    <span data-githubFollowers>-</span>
-    <p>GitHub stars:</p>
-    <span data-githubStars>-</span>
-    <p>Twitter followers:</p>
-    <span data-twitterFollowers>-</span>
+    <section class="dashboard">
+      <h1 class="dashboard__header">Stats Dashboard</h1>
+
+      <div class="dashboard__grid">
+        <div class="dashboard__gridItem">
+          <div class="dashboard__gridItemStatBlock">
+            <span class="dashboard__gridItemIcon">${TwitchIcon({ height: 32, width: 32 })}</span>
+            <span class="dashboard__gridItemStat" data-twitchFollowers>-</span>
+          </div>
+          <p class="dashboard__gridItemTitle">Twitch followers</p>
+        </div>
+        <div class="dashboard__gridItem">
+          <div class="dashboard__gridItemStatBlock">
+            <span class="dashboard__gridItemIcon">${TwitchIcon({ height: 32, width: 32 })}</span>
+            <span class="dashboard__gridItemStat" data-twitchViews>-</span>
+          </div>
+          <p class="dashboard__gridItemTitle">Twitch views</p>
+        </div>
+        <div class="dashboard__gridItem">
+          <div class="dashboard__gridItemStatBlock">
+            <span class="dashboard__gridItemIcon">${YoutubeColor({ height: 32, width: 32 })}</span>
+            <span class="dashboard__gridItemStat" data-youtubeSubs>-</span>
+          </div>
+          <p class="dashboard__gridItemTitle">Youtube subs</p>
+        </div>
+        <div class="dashboard__gridItem">
+          <div class="dashboard__gridItemStatBlock">
+            <span class="dashboard__gridItemIcon">${YoutubeColor({ height: 32, width: 32 })}</span>
+            <span class="dashboard__gridItemStat" data-youtubeViews>-</span>
+          </div>
+          <p class="dashboard__gridItemTitle">Youtube views</p>
+        </div>
+        <div class="dashboard__gridItem">
+          <div class="dashboard__gridItemStatBlock">
+            <span class="dashboard__gridItemIcon">${GithubIcon({ height: 32, width: 32 })}</span>
+            <span class="dashboard__gridItemStat" data-githubFollowers>-</span>
+          </div>
+          <p class="dashboard__gridItemTitle">GitHub followers</p>
+        </div>
+        <div class="dashboard__gridItem">
+          <div class="dashboard__gridItemStatBlock">
+            <span class="dashboard__gridItemIcon">${GithubIcon({ height: 32, width: 32 })}</span>
+            <span class="dashboard__gridItemStat" data-githubStars>-</span>
+          </div>
+          <p class="dashboard__gridItemTitle">GitHub stars</p>
+        </div>
+        <div class="dashboard__gridItem">
+          <div class="dashboard__gridItemStatBlock">
+            <span class="dashboard__gridItemIcon">${TwitterIcon({ height: 32, width: 32 })}</span>
+            <span class="dashboard__gridItemStat" data-twitterFollowers>-</span>
+          </div>
+          <p class="dashboard__gridItemTitle">Twitter followers</p>
+        </div>
+      </div>
+    </section>
 
     <script type="module">
       async function getDashboard() {
@@ -44,13 +90,13 @@ exports.render = function (data) {
         const twitterData = await twitter.json();
 
         return {
-          twitchFollowers: twitchData.followers,
-          twitchViews: twitchData.views,
-          youtubeSubs: youtubeData.subscriberCount,
-          youtubeViews: youtubeData.viewCount,
-          githubFollowers: githubData.followers,
-          githubStars: githubData.stars,
-          twitterFollowers: twitterData.followers,
+          twitchFollowers: twitchData.followers.toLocaleString('en-US'),
+          twitchViews: twitchData.views.toLocaleString('en-US'),
+          youtubeSubs: youtubeData.subscriberCount.toLocaleString('en-US'),
+          youtubeViews: youtubeData.viewCount.toLocaleString('en-US'),
+          githubFollowers: githubData.followers.toLocaleString('en-US'),
+          githubStars: githubData.stars.toLocaleString('en-US'),
+          twitterFollowers: twitterData.followers.toLocaleString('en-US'),
         };
       }
 

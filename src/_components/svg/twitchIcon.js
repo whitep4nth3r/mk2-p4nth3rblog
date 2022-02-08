@@ -1,9 +1,14 @@
-function TwitchIcon() {
+const defaultOptions = {
+  height: 24,
+  width: 24,
+};
+
+function TwitchIcon({ height, width } = defaultOptions) {
   return /*html*/ `
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24" 
+      width="${height}"
+      height="${width}" 
       viewBox="0 0 28 30"
       role="img"
       aria-label="Twitch icon"
