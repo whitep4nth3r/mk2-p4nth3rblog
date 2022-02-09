@@ -1,4 +1,17 @@
+.projects__header {
+  @include grid_header;
+}
+
+.projects__headerTitle {
+  @include grid_header_title;
+}
+
+.projects__grid {
+  @include grid;
+}
+
 .project {
+  @include grid_item;
 }
 
 .project__image {

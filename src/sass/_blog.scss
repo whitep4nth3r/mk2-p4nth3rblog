@@ -1,0 +1,15 @@
+.blog__header {
+  @include grid_header;
+}
+
+.blog__headerTitle {
+  @include grid_header_title;
+}
+
+.blog__grid {
+  @include grid;
+}
+
+.blog__gridItem {
+  @include grid_item;
+}

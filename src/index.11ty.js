@@ -22,17 +22,17 @@ exports.data = {
 exports.render = function (data) {
   const { twitch, latestBlogPost } = data;
   return /*html*/ `
-  <section class="grid">
-    <div class="grid__item">
-    <h2 class="grid__itemTitle">build <span class="colorHighlight">stuff</h2>
+  <section class="home">
+    <div class="home__item">
+    <h2 class="home__itemTitle">build <span class="colorHighlight">stuff</h2>
      ${GetInvolvedOpenSource()}
     </div>
-    <div class="grid__item">
-      <h2 class="grid__itemTitle">learn <span class="colorHighlight">things</h2>
+    <div class="home__item">
+      <h2 class="home__itemTitle">learn <span class="colorHighlight">things</h2>
       ${LatestBlogPost({ post: latestBlogPost })}
     </div>
-    <div class="grid__item">
-      <h2 class="grid__itemTitle">love <span class="colorHighlight">what you do</span></h2>
+    <div class="home__item">
+      <h2 class="home__itemTitle">love <span class="colorHighlight">what you do</span></h2>
        ${NextTwitchStream({ stream: twitch.nextStream, isLive: twitch.isLive, onVacation: twitch.onVacation })}
     </div>
   </section>

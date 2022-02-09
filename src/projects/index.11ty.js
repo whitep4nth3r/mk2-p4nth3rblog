@@ -21,15 +21,15 @@ exports.render = function (data) {
   const { projects } = data;
   return /* html */ `
   <section>
-     <div class="grid__header">
-        <h1 class="grid__headerTitle">build <span class="colorHighlight">stuff</span></h1>
+     <div class="projects__header">
+        <h1 class="projects__headerTitle">build <span class="colorHighlight">stuff</span></h1>
     </div>
-   <ol class="grid">
+   <ol class="projects__grid">
       ${projects
         .map(
           (project) =>
             /* html */
-            `<li class="grid__item">
+            `<li class="project">
 
               <div class="project__image">
                 ${ResponsiveImage({ image: project.image })}

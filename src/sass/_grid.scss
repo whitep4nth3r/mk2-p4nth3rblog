@@ -16,27 +16,7 @@
   flex-grow: 1;
 }
 
-.grid {
-  @include grid;
-}
-
-.grid__header {
-  margin: 4rem auto 2rem auto;
-  max-width: var(--grid-max-width);
-  @include add_gradient_bottom;
-}
-
-.grid__headerTitle {
-  font-family: var(--font-family-heading);
-  font-weight: var(--font-weight-heading);
-  font-size: 2rem;
-}
-
-.grid__item {
-  @include grid_item;
-}
-
-.grid__itemTitle {
+@mixin grid_item_title {
   @include font-heading;
   text-decoration: none;
   color: var(--color-fg);
@@ -44,4 +24,15 @@
   line-height: 1.2;
   margin-bottom: 2rem;
   @include add_gradient_bottom;
+}
+
+@mixin grid_header {
+  margin: 4rem auto 2rem auto;
+  max-width: var(--grid-max-width);
+  @include add_gradient_bottom;
+}
+
+@mixin grid_header_title {
+  @include font_heading;
+  font-size: 2rem;
 }

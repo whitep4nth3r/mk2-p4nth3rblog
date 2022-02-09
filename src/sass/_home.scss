@@ -1,0 +1,11 @@
+.home {
+  @include grid;
+}
+
+.home__item {
+  @include grid_item;
+}
+
+.home__itemTitle {
+  @include grid_item_title;
+}

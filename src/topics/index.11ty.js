@@ -17,8 +17,8 @@ exports.data = {
 exports.render = function (data) {
   const { topics } = data;
   return /*html*/ `<section>
-      <div class="grid__header">
-        <h1 class="grid__headerTitle">explore posts by <span class="colorHighlight">topic</span></h1>
+      <div class="topics__header">
+        <h1 class="topics__headerTitle">explore posts by <span class="colorHighlight">topic</span></h1>
       </div>
       ${Topics({ topics, showLinkToBlog: true })}
     </section>

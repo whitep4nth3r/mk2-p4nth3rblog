@@ -30,17 +30,17 @@ exports.render = function (data) {
 
   return /* html */ `
    <section>
-    <div class="grid__header">
-      <h1 class="grid__headerTitle">posts about <span class="colorHighlight">${topic.name.toLowerCase()}</span></h1>
+    <div class="topics__header">
+      <h1 class="topics__headerTitle">posts about <span class="colorHighlight">${topic.name.toLowerCase()}</span></h1>
     </div>
 
     ${Topics({ topics, selected: topic.slug, showLinkToBlog: true })}
 
-    <ol class="grid">
+    <ol class="topics__grid">
     ${postsByTopic
       .map(function (item) {
         return `
-        <li class="grid__item">
+        <li class="topics__gridItem">
           ${PostCard({ post: item, baseSlug: "blog", isTalk: false })}
         </li>`;
       })

@@ -30,8 +30,8 @@ exports.render = function (data) {
   return /* html */ `
 
   <section>
-    <div class="grid__header">
-      <h1 class="grid__headerTitle">learn <span class="colorHighlight">things</span></h1>
+    <div class="blog__header">
+      <h1 class="blog__headerTitle">learn <span class="colorHighlight">things</span></h1>
     </div>
 
     ${Topics({ topics: data.topics })}
@@ -43,11 +43,11 @@ exports.render = function (data) {
     <div id="hits" class="ais__hitsContainer"></div>
 
     <div data-static-content>
-      <ol class="grid">
+      <ol class="blog__grid">
       ${data.pagination.items
         .map(function (item) {
           return `
-          <li class="grid__item">
+          <li class="blog__gridItem">
             ${PostCard({ post: item, baseSlug: "blog", isTalk: false })}
           </li>`;
         })
@@ -63,9 +63,10 @@ exports.render = function (data) {
     </div>
   </section>
 
-  <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.5.1/dist/algoliasearch-lite.umd.js" integrity="sha256-EXPXz4W6pQgfYY3yTpnDa3OH8/EPn16ciVsPQ/ypsjk=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.8.3/dist/instantsearch.production.min.js" integrity="sha256-LAGhRRdtVoD6RLo2qDQsU2mp+XVSciKRC8XPOBWmofM=" crossorigin="anonymous"></script>
-  <script src="/js/app_search.js"></script>
+  <script async src="https://cdn.jsdelivr.net/npm/algoliasearch@4.5.1/dist/algoliasearch-lite.umd.js" integrity="sha256-EXPXz4W6pQgfYY3yTpnDa3OH8/EPn16ciVsPQ/ypsjk=" crossorigin="anonymous" importance="low"></script>
+  <script async src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.8.3/dist/instantsearch.production.min.js" integrity="sha256-LAGhRRdtVoD6RLo2qDQsU2mp+XVSciKRC8XPOBWmofM=" crossorigin="anonymous" importance="low"></script>
+  <script async src="/js/app_search.js" importance="low"></script>
+
   <script type="module">
     const search = initSearch({
       appId: "${data.search.ALGOLIA_APP_ID}", 

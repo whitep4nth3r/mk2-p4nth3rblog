@@ -28,15 +28,15 @@ exports.render = function (data) {
   return /* html */ `
   
    <section>
-      <div class="grid__header">
-        <h1 class="grid__headerTitle">recorded <span class="colorHighlight">talks</span></h1>
+      <div class="talks__header">
+        <h1 class="talks__headerTitle">recorded <span class="colorHighlight">talks</span></h1>
       </div>
       
-      <ol class="grid">
+      <ol class="talks__grid">
         ${data.pagination.items
           .map(function (item) {
             return `
-            <li class="grid__item">
+            <li class="talks__gridItem">
             ${PostCard({ post: item, baseSlug: "talks", isTalk: true })}
             </li>`;
           })

@@ -1,3 +1,19 @@
+.topics__header {
+  @include grid_header;
+}
+
+.topics__headerTitle {
+  @include grid_header_title;
+}
+
+.topics__grid {
+  @include grid;
+}
+
+.topics__gridItem {
+  @include grid_item;
+}
+
 .topics {
   list-style: none;
   padding-left: 0;

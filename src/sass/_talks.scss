@@ -1,0 +1,15 @@
+.talks__header {
+  @include grid_header;
+}
+
+.talks__headerTitle {
+  @include grid_header_title;
+}
+
+.talks__grid {
+  @include grid;
+}
+
+.talks__gridItem {
+  @include grid_item;
+}
