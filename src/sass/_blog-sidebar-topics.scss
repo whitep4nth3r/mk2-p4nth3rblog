@@ -12,7 +12,7 @@
 }
 
 .blogSidebarTopics__itemLink {
-  @include button-main;
+  @include button_main;
   display: flex;
   flex-direction: row;
   gap: 0.5rem;

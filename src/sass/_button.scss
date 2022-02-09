@@ -1,4 +1,4 @@
-@mixin button-main() {
+@mixin button_main() {
   @include font-heading;
   background-color: var(--color-bg-button);
   color: var(--color-button);
