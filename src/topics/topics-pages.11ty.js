@@ -31,7 +31,7 @@ exports.render = function (data) {
   return /* html */ `
    <section>
     <div class="grid__header">
-      <h1 class="grid__headerTitle">posts about <span class="colorHighlight">${topic.name}</span></h1>
+      <h1 class="grid__headerTitle">posts about <span class="colorHighlight">${topic.name.toLowerCase()}</span></h1>
     </div>
 
     ${Topics({ topics, selected: topic.slug, showLinkToBlog: true })}
