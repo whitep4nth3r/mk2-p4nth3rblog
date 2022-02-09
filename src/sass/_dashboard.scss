@@ -6,6 +6,7 @@
 
 .dashboard__header {
   @include font_heading;
+  @include add_gradient_bottom;
   font-size: 2rem;
   margin-bottom: 4rem;
   text-align: center;
@@ -32,7 +33,7 @@
 .dashboard__gridItemTitle {
   @include font_bold;
   font-size: 1rem;
-  margin-top: 1rem;;
+  margin-top: 1rem;
 }
 
 .dashboard__gridItemStatBlock {

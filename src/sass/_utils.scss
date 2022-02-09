@@ -18,3 +18,25 @@
   box-shadow: inset var(--color-highlight) 0 0 0 0.125rem;
   transition: box-shadow var(--global-transition-time) ease-in-out;
 }
+
+@mixin add_gradient_bottom($marginTop: 1rem) {
+  &:after {
+    content: "";
+    width: 100%;
+    height: 0.25rem;
+    display: block;
+    margin-top: $marginTop;
+    background: var(--yellow-red-gradient);
+  }
+}
+
+@mixin add_gradient_top($marginTop: 1rem) {
+  &:before {
+    content: "";
+    width: 100%;
+    height: 0.25rem;
+    margin-top: $marginTop;
+    display: block;
+    background: var(--yellow-red-gradient);
+  }
+}
