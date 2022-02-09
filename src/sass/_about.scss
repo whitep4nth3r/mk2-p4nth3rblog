@@ -63,11 +63,10 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 
 .about__socialLinksItem {
   @include button_main;
-  margin-bottom: 1rem;
   gap: 0.5rem;
 }
