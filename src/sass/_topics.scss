@@ -12,7 +12,7 @@
 }
 
 .topics__listItemLink {
-  @include button-main;
+  @include button_main;
   margin-bottom: 1rem;
   border: 0.25rem solid transparent;
   display: flex;

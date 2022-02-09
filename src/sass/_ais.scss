@@ -82,7 +82,7 @@
 
 .ais__reset {
   grid-area: button;
-  @include button-main;
+  @include button_main;
   display: inline;
   border-radius: 0;
   padding: 0.6rem 1rem;

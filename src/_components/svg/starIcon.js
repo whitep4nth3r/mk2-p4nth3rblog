@@ -6,7 +6,7 @@ function StarIcon() {
       height="16"
       width="16"
       role="img"
-      aria-label="Star icon"
+      aria-label="Star"
     >
      <path
         fillRule="evenodd"
