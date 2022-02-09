@@ -17,11 +17,13 @@ exports.data = {
 exports.render = function (data) {
   const { person } = data;
   return /* html */ `
+    <section>
     <h1>${person.name}</h1>
     ${ResponsiveImage({ image: person.image })}
     ${RichText(person.bioLong, { renderRssFriendlyImg: false, absoluteUrls: false, renderHeadingLinks: false })}
-    <p>Twitter: @${person.twitterUsername}</p>
-    <p>Twitch: @${person.twitchUsername}</p>
-    <p>Github: @${person.gitHubUsername}</p>
+      <p>Twitter: @${person.twitterUsername}</p>
+      <p>Twitch: @${person.twitchUsername}</p>
+      <p>Github: @${person.gitHubUsername}</p>
+    </section>
   `;
 };

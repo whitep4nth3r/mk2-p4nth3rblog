@@ -3,7 +3,7 @@ function VideoEmbed({ embedUrl, title }) {
 
   // TO DO
   return /* html */ `
-    <h3 class="videoEmbed__cta">Click below to play ${title}</h3>
+    <p class="videoEmbed__cta">Click below to play ${title}</p>
     <p>${embedUrl}</p>`;
 }
 
