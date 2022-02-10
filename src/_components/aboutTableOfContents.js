@@ -1,19 +1,34 @@
-// const Tools = require("../../lib/tools");
+const defaultOptions = { onUses: false, categories: [] };
 
-function AboutTableOfContents() {
-  return `
+function AboutTableOfContents({ onUses, categories } = defaultOptions) {
+  const aboutMeLink = onUses ? "/about/#about_me" : "#about_me";
+  const eventsLink = onUses ? "/about/#events" : "#events";
+
+  return /*html*/ `
     <details class="tableOfContents" open>
     <summary class="tableOfContents__header">Quick links</summary>
     <ol class="tableOfContents__list">
      <li class="tableOfContents__item">
-        <a href="#about_me" class="tableOfContents__itemLink">About me<span class="tableOfContents__arrow">→</span></a>
+        <a href="${aboutMeLink}" class="tableOfContents__itemLink">About me<span class="tableOfContents__arrow">→</span></a>
       </li>
       <li class="tableOfContents__item">
-        <a href="#about_events" class="tableOfContents__itemLink">Events<span class="tableOfContents__arrow">→</span></a>
+        <a href="${eventsLink}" class="tableOfContents__itemLink">Events<span class="tableOfContents__arrow">→</span></a>
       </li>
       <li class="tableOfContents__item">
         <a href="/uses/" class="tableOfContents__itemLink">Things I use<span class="tableOfContents__arrow">→</span></a>
       </li>
+      ${
+        onUses
+          ? categories
+              .map(
+                (cat) => `
+          <li class="tableOfContents__item tableOfContents__item--nudged tableOfContents__item--cat">
+            <a href="/uses/#${cat}" class="tableOfContents__itemLink">${cat} <span class="tableOfContents__arrow">→</span></a>
+          </li>`,
+              )
+              .join("")
+          : ""
+      }
       <li class="tableOfContents__item">
         <a href="/dashboard/" class="tableOfContents__itemLink">Dashboard<span class="tableOfContents__arrow">→</span></a>
       </li>

@@ -49,7 +49,7 @@ const ContentfulThingsIUse = {
       return thing.categories.forEach((cat) => categories.add(cat));
     });
 
-    return Array.from(categories);
+    return Array.from(categories).sort();
   },
 };
 
@@ -57,8 +57,14 @@ module.exports = async function () {
   const categories = await ContentfulThingsIUse.getCategories();
   const allThings = await ContentfulThingsIUse.getAll();
 
+  const things = {};
+
+  for (let i = 0; i < categories.length; i++) {
+    things[categories[i]] = allThings.filter((thing) => thing.categories.includes(categories[i]));
+  }
+
   return {
     categories,
-    allThings,
+    things,
   };
 };

@@ -20,7 +20,6 @@ exports.data = {
 exports.render = function (data) {
   const { person } = data;
   return /* html */ `
-    <section>
       <div class="about__header">
         <h1 class="about__headerTitle">love <span class="colorHighlight">what you do</span></h1>
       </div>
@@ -33,8 +32,9 @@ exports.render = function (data) {
           </div>
         </aside>
 
-        <div>
-          <section class="about__content">
+        <div class="about__content">
+
+          <section>
             <aside class="about__inlineAside">
               ${AboutTableOfContents()}
             </aside>
@@ -53,7 +53,10 @@ exports.render = function (data) {
             <div>
           </section>
 
-          <section id="about_events" class="about__content">
+          <section id="events" class="about__events">
+            <div class="about__eventsHeader">
+              <h2 class="about__eventsHeaderTitle">events <span class="colorHighlight">and talks</span></h2>
+            </div>
             <p>events here</p>
             <p>events here</p>
             <p>events here</p>
@@ -62,6 +65,7 @@ exports.render = function (data) {
           </section>
 
         </div>
+
       </div>
   `;
 };

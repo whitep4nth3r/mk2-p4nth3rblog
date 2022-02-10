@@ -1,35 +1,35 @@
-.about__header {
+.uses__header {
   @include grid_header;
 }
 
-.about__headerTitle {
+.uses__headerTitle {
   @include grid_header_title;
 }
 
-.about__container {
+.uses__container {
   max-width: var(--grid-max-width);
   margin: auto;
 }
 
 @media screen and (min-width: 48em) {
-  .about__container {
+  .uses__container {
     display: grid;
     grid-template-columns: 1fr 3fr;
     column-gap: 3rem;
   }
 }
 
-.about__content {
+.uses__inner {
   display: flex;
   flex-direction: column;
 }
 
-.about__aside {
+.uses__aside {
   flex-direction: column;
   display: none;
 }
 
-.about__asideStickyGroup {
+.uses__asideStickyGroup {
   position: sticky;
   top: 0;
   overflow-y: scroll;
@@ -40,44 +40,17 @@
   padding-left: 1rem;
 }
 
-.about__inlineAside {
+.uses__inlineAside {
   display: flex;
   flex-direction: column;
 }
 
 @media screen and (min-width: 48em) {
-  .about__aside {
+  .uses__aside {
     display: flex;
   }
 
-  .about__inlineAside {
+  .uses__inlineAside {
     display: none;
   }
-}
-
-.about__socialLinks {
-  max-width: var(--grid-max-width);
-  margin: 2rem auto;
-  list-style: none;
-  padding-left: 0;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.about__socialLinksItem {
-  @include button_main;
-  gap: 0.5rem;
-}
-
-.about__events {
-}
-
-.about__eventsHeader {
-  @include grid_header;
-}
-
-.about__eventsHeaderTitle {
-  @include grid_header_title;
 }

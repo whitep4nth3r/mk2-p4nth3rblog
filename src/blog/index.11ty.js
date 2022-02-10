@@ -45,9 +45,6 @@ exports.render = function (data) {
       </div>
     </div>
 
-
-  
-
     <div id="hits" class="ais__hitsContainer"></div>
 
     <div data-static-content>
