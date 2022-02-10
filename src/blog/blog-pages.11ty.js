@@ -7,6 +7,7 @@ const TableOfContents = require("../_components/tableOfContents");
 const isSponsored = require("../_components/isSponsored");
 const SeeAllCta = require("../_components/seeAllCta");
 const PostCard = require("../_components/postCard");
+const PostStructuredData = require("../_components/postStructuredData");
 const OpenGraph = require("../../lib/openGraph");
 
 exports.data = {
@@ -33,8 +34,13 @@ exports.data = {
   },
 };
 
-exports.render = function (data) {
+exports.render = async function (data) {
   const { post } = data;
+
+  const openGraphImageUrl = await OpenGraph.generateImageUrl({
+    title: post.title,
+    topics: post.topicsCollection.items,
+  });
 
   return /* html */ `
     <section class="post">
@@ -92,7 +98,12 @@ exports.render = function (data) {
         <div class="post__inlineAside">
           ${BlogSidebarTopics({ topics: post.topicsCollection.items })}
           <a href="/blog/" class="seeAllCta">See all blog posts <span class="colorHighlight">→</span></a>
-        <div>
+        </div>
+
+        <script type="application/ld+json" importance="low">${PostStructuredData({
+          post,
+          imageUrl: openGraphImageUrl,
+        })}</script>
       </article>
     </section>
     `;

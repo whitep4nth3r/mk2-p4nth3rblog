@@ -38,6 +38,18 @@ const ContentfulPerson = {
 
 module.exports = async function () {
   const person = await ContentfulPerson.get();
+
+  //get events from contentful
+
+  //twitch events
+  // const twitch = await fetch(`${process.env.DOMAIN}/api/twitch`);
+  // const twitchData = await twitch.json();
+  // const twitchStreams = twitchData.schedule.segments;
+
+  //merge all events
+
+  //sort by date
+
   return {
     person,
   };
