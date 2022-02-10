@@ -1,8 +1,8 @@
-const defaultOptions = { onUses: false, categories: [] };
+const defaultOptions = { onUses: false, onDashboard: false, categories: [] };
 
-function AboutTableOfContents({ onUses, categories } = defaultOptions) {
-  const aboutMeLink = onUses ? "/about/#about_me" : "#about_me";
-  const eventsLink = onUses ? "/about/#events" : "#events";
+function AboutTableOfContents({ onUses, onDashboard, categories } = defaultOptions) {
+  const aboutMeLink = onUses || onDashboard ? "/about/#about_me" : "#about_me";
+  const eventsLink = onUses || onDashboard ? "/about/#events" : "#events";
 
   return /*html*/ `
     <details class="tableOfContents" open>

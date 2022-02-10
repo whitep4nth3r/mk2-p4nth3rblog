@@ -31,7 +31,7 @@ exports.render = function (data) {
 
         <div class="uses__content">
           <aside class="uses__inlineAside">
-            ${AboutTableOfContents()}
+            ${AboutTableOfContents({ onUses: true, categories })}
           </aside>
 
           <div class="uses__inner">

@@ -3,6 +3,7 @@ const TwitchIcon = require("../_components/svg/twitchIcon");
 const TwitterIcon = require("../_components/svg/twitterIcon");
 const GithubIcon = require("../_components/svg/githubIcon");
 const YoutubeColor = require("../_components/svg/youtubeColor");
+const AboutTableOfContents = require("../_components/aboutTableOfContents");
 
 const pageTitle = "whitep4nth3r's Stats Dashboard";
 
@@ -19,61 +20,79 @@ exports.data = {
 
 exports.render = function (data) {
   return /* html */ `
-    <section class="dashboard">
-      <h1 class="dashboard__header">Stats Dashboard</h1>
 
-      <div class="dashboard__grid">
-        <div class="dashboard__gridItem">
-          <div class="dashboard__gridItemStatBlock">
-            <span class="dashboard__gridItemIcon">${TwitchIcon({ height: 32, width: 32 })}</span>
-            <span class="dashboard__gridItemStat" data-twitchFollowers>-</span>
-          </div>
-          <p class="dashboard__gridItemTitle">Twitch followers</p>
+    <div class="dashboard__header">
+        <h1 class="dashboard__headerTitle">stats <span class="colorHighlight">dashboard</span></h1>
+    </div>
+
+    <div class="dashboard__container">
+
+      <aside class="dashboard__aside">
+        <div class="dashboard__asideStickyGroup">
+         ${AboutTableOfContents({ onDashboard: true })}
         </div>
-        <div class="dashboard__gridItem">
-          <div class="dashboard__gridItemStatBlock">
-            <span class="dashboard__gridItemIcon">${TwitchIcon({ height: 32, width: 32 })}</span>
-            <span class="dashboard__gridItemStat" data-twitchViews>-</span>
-          </div>
-          <p class="dashboard__gridItemTitle">Twitch views</p>
-        </div>
-        <div class="dashboard__gridItem">
-          <div class="dashboard__gridItemStatBlock">
-            <span class="dashboard__gridItemIcon">${YoutubeColor({ height: 32, width: 32 })}</span>
-            <span class="dashboard__gridItemStat" data-youtubeSubs>-</span>
-          </div>
-          <p class="dashboard__gridItemTitle">Youtube subs</p>
-        </div>
-        <div class="dashboard__gridItem">
-          <div class="dashboard__gridItemStatBlock">
-            <span class="dashboard__gridItemIcon">${YoutubeColor({ height: 32, width: 32 })}</span>
-            <span class="dashboard__gridItemStat" data-youtubeViews>-</span>
-          </div>
-          <p class="dashboard__gridItemTitle">Youtube views</p>
-        </div>
-        <div class="dashboard__gridItem">
-          <div class="dashboard__gridItemStatBlock">
-            <span class="dashboard__gridItemIcon">${GithubIcon({ height: 32, width: 32 })}</span>
-            <span class="dashboard__gridItemStat" data-githubFollowers>-</span>
-          </div>
-          <p class="dashboard__gridItemTitle">GitHub followers</p>
-        </div>
-        <div class="dashboard__gridItem">
-          <div class="dashboard__gridItemStatBlock">
-            <span class="dashboard__gridItemIcon">${GithubIcon({ height: 32, width: 32 })}</span>
-            <span class="dashboard__gridItemStat" data-githubStars>-</span>
-          </div>
-          <p class="dashboard__gridItemTitle">GitHub stars</p>
-        </div>
-        <div class="dashboard__gridItem">
-          <div class="dashboard__gridItemStatBlock">
-            <span class="dashboard__gridItemIcon">${TwitterIcon({ height: 32, width: 32 })}</span>
-            <span class="dashboard__gridItemStat" data-twitterFollowers>-</span>
-          </div>
-          <p class="dashboard__gridItemTitle">Twitter followers</p>
-        </div>
-      </div>
-    </section>
+      </aside>
+
+      <div class="dashboard__content">
+
+          <section>
+            <aside class="dashboard__inlineAside">
+              ${AboutTableOfContents({ onDashboard: true })}
+          </aside>
+
+          <section class="dashboard__grid">
+            <div class="dashboard__gridItem">
+              <div class="dashboard__gridItemStatBlock">
+                <span class="dashboard__gridItemIcon">${TwitchIcon({ height: 32, width: 32 })}</span>
+                <span class="dashboard__gridItemStat" data-twitchFollowers>-</span>
+              </div>
+              <p class="dashboard__gridItemTitle">Twitch followers</p>
+            </div>
+            <div class="dashboard__gridItem">
+              <div class="dashboard__gridItemStatBlock">
+                <span class="dashboard__gridItemIcon">${TwitchIcon({ height: 32, width: 32 })}</span>
+                <span class="dashboard__gridItemStat" data-twitchViews>-</span>
+              </div>
+              <p class="dashboard__gridItemTitle">Twitch views</p>
+            </div>
+            <div class="dashboard__gridItem">
+              <div class="dashboard__gridItemStatBlock">
+                <span class="dashboard__gridItemIcon">${YoutubeColor({ height: 32, width: 32 })}</span>
+                <span class="dashboard__gridItemStat" data-youtubeSubs>-</span>
+              </div>
+              <p class="dashboard__gridItemTitle">Youtube subs</p>
+            </div>
+            <div class="dashboard__gridItem">
+              <div class="dashboard__gridItemStatBlock">
+                <span class="dashboard__gridItemIcon">${YoutubeColor({ height: 32, width: 32 })}</span>
+                <span class="dashboard__gridItemStat" data-youtubeViews>-</span>
+              </div>
+              <p class="dashboard__gridItemTitle">Youtube views</p>
+            </div>
+            <div class="dashboard__gridItem">
+              <div class="dashboard__gridItemStatBlock">
+                <span class="dashboard__gridItemIcon">${GithubIcon({ height: 32, width: 32 })}</span>
+                <span class="dashboard__gridItemStat" data-githubFollowers>-</span>
+              </div>
+              <p class="dashboard__gridItemTitle">GitHub followers</p>
+            </div>
+            <div class="dashboard__gridItem">
+              <div class="dashboard__gridItemStatBlock">
+                <span class="dashboard__gridItemIcon">${GithubIcon({ height: 32, width: 32 })}</span>
+                <span class="dashboard__gridItemStat" data-githubStars>-</span>
+              </div>
+              <p class="dashboard__gridItemTitle">GitHub stars</p>
+            </div>
+            <div class="dashboard__gridItem">
+              <div class="dashboard__gridItemStatBlock">
+                <span class="dashboard__gridItemIcon">${TwitterIcon({ height: 32, width: 32 })}</span>
+                <span class="dashboard__gridItemStat" data-twitterFollowers>-</span>
+              </div>
+              <p class="dashboard__gridItemTitle">Twitter followers</p>
+            </div>
+          </section>
+      <div>
+    </div>  
 
     <script type="module">
       async function getDashboard() {
