@@ -7,7 +7,7 @@ exports.data = {
   layout: "base.html",
   title: pageTitle,
   metaDescription:
-    "I receive a lot of questions on stream about my setup and what I use. So here's a list! Click on the filter buttons to view items in that category.",
+    "I receive a lot of questions on stream about my setup and what I use. So here's a (probably very incomplete) list!.",
   openGraphImageUrl: OpenGraph.generateImageUrl({ title: pageTitle }),
   openGraphImageAlt: OpenGraph.generateImageAlt(pageTitle),
   openGraphImageWidth: OpenGraph.imageWidth,
