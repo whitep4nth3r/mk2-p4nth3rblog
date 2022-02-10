@@ -34,11 +34,19 @@ exports.render = function (data) {
       <h1 class="blog__headerTitle">learn <span class="colorHighlight">things</span></h1>
     </div>
 
-    ${Topics({ topics: data.topics })}
+    <div class="blog__searchAndFilters">
+      <div id="autocomplete" class="ais">
+        <div id="searchbox" class="ais__searchbox"></div>
+      </div>
 
-    <div id="autocomplete" class="ais">
-      <div id="searchbox" class="ais__searchbox"></div>
+      <div>
+        <p class="blog__filterLabel">Filter posts</p>
+        ${Topics({ topics: data.topics, priorityOnly: true })}
+      </div>
     </div>
+
+
+  
 
     <div id="hits" class="ais__hitsContainer"></div>
 

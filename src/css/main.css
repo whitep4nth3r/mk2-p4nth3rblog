@@ -376,6 +376,29 @@ strong {
   flex-grow: 1;
 }
 
+.blog__searchAndFilters {
+  max-width: var(--grid-max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (min-width: 72em) {
+  .blog__searchAndFilters {
+    justify-content: space-between;
+    gap: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+.blog__filterLabel {
+  font-weight: var(--font-weight-heading);
+  font-family: var(--font-family-heading);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
 .talks__header {
   margin: 4rem auto 2rem auto;
   max-width: var(--grid-max-width);
@@ -571,7 +594,6 @@ strong {
   align-items: center;
   font-size: 1rem;
   border-color: transparent;
-  margin-bottom: 1rem;
   border: 0.25rem solid transparent;
   display: flex;
   flex-direction: row;
@@ -1511,9 +1533,6 @@ a.post__linkedHeaderIcon {
 }
 
 .ais {
-  max-width: var(--grid-max-width);
-  margin-left: auto;
-  margin-right: auto;
   margin-bottom: 1rem;
 }
 

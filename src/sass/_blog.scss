@@ -13,3 +13,24 @@
 .blog__gridItem {
   @include grid_item;
 }
+
+.blog__searchAndFilters {
+  max-width: var(--grid-max-width);
+  margin-left: auto;
+  margin-right: auto;
+
+  @media screen and (min-width: 72em) {
+    justify-content: space-between;
+    gap: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+.blog__filterLabel {
+  @include font-heading;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
