@@ -1,5 +1,5 @@
 const RichText = require("../_components/richText");
-const ResponsiveImage = require("../_components/responsiveImage");
+const BioImage = require("../_components/bioImage");
 const AboutTableOfContents = require("../_components/aboutTableOfContents");
 const AboutSocialLinks = require("../_components/aboutSocialLinks");
 const TabbedBio = require("../_components/tabbedBio");
@@ -47,7 +47,7 @@ exports.render = function (data) {
             <div id="about_me" class="about__me">
 
               <div class="about__meFace">
-                ${ResponsiveImage({ image: person.image })}
+                ${BioImage({ image: person.image })}
               </div>
 
               <div class="about__meBio">
