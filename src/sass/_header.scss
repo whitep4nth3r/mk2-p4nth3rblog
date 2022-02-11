@@ -58,7 +58,7 @@
 }
 
 .header__logoContainerLinkName {
-  @include font-heading;
+  font-family: "Fira Code", monospace;
   font-size: 1.2rem;
 }
 
