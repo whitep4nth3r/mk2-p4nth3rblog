@@ -14,6 +14,22 @@
   gap: 0.5rem;
 }
 
+.about__me {
+  display: block;
+
+  @media screen and (min-width: 48em) {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 2rem;
+  }
+}
+
+.about__meFace {
+}
+
+.about__meBio {
+}
+
 .about__events {
 }
 

@@ -17,6 +17,7 @@ const ContentfulPerson = {
             gitHubUsername
             twitchUsername
             bioShort
+            bioMedium
             image {
               ${GraphQLStringBlocks.imageAsset()}
             }

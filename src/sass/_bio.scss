@@ -1,0 +1,59 @@
+.bio {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.bio__line {
+  width: 100%;
+  z-index: 1;
+  height: 0.375rem;
+  display: block;
+  background: var(--yellow-red-gradient);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.bio__buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+}
+
+.bio__button {
+  height: 2.75rem;
+  width: 2.75rem;
+  border-radius: 50%;
+  background-color: #f8601c;
+  border: 0.25rem solid transparent;
+  font-size: 0;
+  cursor: pointer;
+
+  &:first-of-type {
+    background-color: var(--red);
+  }
+
+  &:last-of-type {
+    background-color: var(--yellow);
+  }
+
+  &:focus {
+    outline: transparent;
+    outline-style: solid;
+    box-shadow: var(--color-bg) 0 0 0 0.125rem, var(--color-highlight) 0 0 0 0.375rem;
+    transition: box-shadow var(--global-transition-time) ease-in-out;
+  }
+}
+
+.bio__block {
+  display: none;
+}
+
+.bio__block--show {
+  display: block;
+}

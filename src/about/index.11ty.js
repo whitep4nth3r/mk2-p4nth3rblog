@@ -2,9 +2,14 @@ const RichText = require("../_components/richText");
 const ResponsiveImage = require("../_components/responsiveImage");
 const AboutTableOfContents = require("../_components/aboutTableOfContents");
 const AboutSocialLinks = require("../_components/aboutSocialLinks");
+const TabbedBio = require("../_components/tabbedBio");
 const OpenGraph = require("../../lib/openGraph");
 
 const pageTitle = "About whitep4nth3r — biographies, links and more.";
+
+var md = require("markdown-it")({
+  html: true,
+});
 
 exports.data = {
   layout: "base.html",
@@ -40,17 +45,24 @@ exports.render = function (data) {
             </aside>
 
             <div id="about_me" class="about__me">
-              <p>About me section</p>
-              <p>main content here</p>
-              <p>main content here</p>
-              <p>main content here</p>
-              <p>main content here</p>
-              <p>main content here</p>
-              <p>main content here</p>
-              <p>main content here</p>
 
-              ${AboutSocialLinks()}
-            <div>
+              <div class="about__meFace">
+                ${ResponsiveImage({ image: person.image })}
+              </div>
+
+              <div class="about__meBio">
+                ${TabbedBio({
+                  shortBio: md.render(person.bioShort),
+                  medBio: md.render(person.bioMedium),
+                  longBio: RichText(person.bioLong),
+                })}
+              </div>
+
+              <div>
+          </section>
+          
+          <section>
+            ${AboutSocialLinks()}
           </section>
 
           <section id="events" class="about__events">
@@ -67,5 +79,8 @@ exports.render = function (data) {
         </div>
 
       </div>
+
+
+      
   `;
 };
