@@ -18,23 +18,22 @@ exports.render = function (data) {
   const { categories, things } = data;
 
   return /* html */ `
-      <div class="uses__header">
-        <h1 class="uses__headerTitle">things <span class="colorHighlight">I use</span></h1>
+      <div class="twoColumnWide__header">
+        <h1 class="twoColumnWide__headerTitle">things <span class="colorHighlight">I use</span></h1>
       </div>
 
-      <div class="uses__container">
-        <aside class="uses__aside">
-          <div class="uses__asideStickyGroup">
+      <div class="twoColumnWide__container">
+        <aside class="twoColumnWide__aside">
+          <div class="twoColumnWide__asideStickyGroup">
             ${AboutTableOfContents({ onUses: true, categories })}
           </div>
         </aside>
 
-        <div class="uses__content">
-          <aside class="uses__inlineAside">
+        <div class="twoColumnWide__content">
+          <aside class="twoColumnWide__inlineAside">
             ${AboutTableOfContents({ onUses: true, categories })}
           </aside>
 
-          <div class="uses__inner">
 
               ${categories
                 .map(
@@ -52,7 +51,7 @@ exports.render = function (data) {
                 </section>`,
                 )
                 .join("")}
-          </div>
+
         </div>
       </div>
   `;

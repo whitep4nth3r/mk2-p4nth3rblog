@@ -20,22 +20,22 @@ exports.data = {
 exports.render = function (data) {
   const { person } = data;
   return /* html */ `
-      <div class="about__header">
-        <h1 class="about__headerTitle">love <span class="colorHighlight">what you do</span></h1>
+      <div class="twoColumnWide__header">
+        <h1 class="twoColumnWide__headerTitle">love <span class="colorHighlight">what you do</span></h1>
       </div>
 
-      <div class="about__container">
+      <div class="twoColumnWide__container">
 
-        <aside class="about__aside">
-          <div class="about__asideStickyGroup">
+        <aside class="twoColumnWide__aside">
+          <div class="twoColumnWide__asideStickyGroup">
             ${AboutTableOfContents()}
           </div>
         </aside>
 
-        <div class="about__content">
+        <div class="twoColumnWide__content">
 
           <section>
-            <aside class="about__inlineAside">
+            <aside class="twoColumnWide__inlineAside">
               ${AboutTableOfContents()}
             </aside>
 

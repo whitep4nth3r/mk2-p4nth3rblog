@@ -436,72 +436,6 @@ strong {
   flex-grow: 1;
 }
 
-.about__header {
-  margin: 4rem auto 2rem auto;
-  max-width: var(--grid-max-width);
-}
-.about__header:after {
-  content: "";
-  width: 100%;
-  height: 0.25rem;
-  display: block;
-  margin-top: 1rem;
-  background: var(--yellow-red-gradient);
-}
-
-.about__headerTitle {
-  font-weight: var(--font-weight-heading);
-  font-family: var(--font-family-heading);
-  font-size: 2rem;
-}
-
-.about__container {
-  max-width: var(--grid-max-width);
-  margin: auto;
-}
-
-@media screen and (min-width: 48em) {
-  .about__container {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    column-gap: 3rem;
-  }
-}
-.about__content {
-  display: flex;
-  flex-direction: column;
-}
-
-.about__aside {
-  flex-direction: column;
-  display: none;
-}
-
-.about__asideStickyGroup {
-  position: sticky;
-  top: 0;
-  overflow-y: scroll;
-  max-height: 100vh;
-  padding-bottom: 4rem;
-  padding-right: 1rem;
-  margin-left: -1rem;
-  padding-left: 1rem;
-}
-
-.about__inlineAside {
-  display: flex;
-  flex-direction: column;
-}
-
-@media screen and (min-width: 48em) {
-  .about__aside {
-    display: flex;
-  }
-
-  .about__inlineAside {
-    display: none;
-  }
-}
 .about__socialLinks {
   max-width: var(--grid-max-width);
   margin: 2rem auto;
@@ -1355,72 +1289,6 @@ a.post__linkedHeaderIcon {
   display: block;
 }
 
-.dashboard__header {
-  margin: 4rem auto 2rem auto;
-  max-width: var(--grid-max-width);
-}
-.dashboard__header:after {
-  content: "";
-  width: 100%;
-  height: 0.25rem;
-  display: block;
-  margin-top: 1rem;
-  background: var(--yellow-red-gradient);
-}
-
-.dashboard__headerTitle {
-  font-weight: var(--font-weight-heading);
-  font-family: var(--font-family-heading);
-  font-size: 2rem;
-}
-
-.dashboard__container {
-  max-width: var(--grid-max-width);
-  margin: auto;
-}
-
-@media screen and (min-width: 48em) {
-  .dashboard__container {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    column-gap: 3rem;
-  }
-}
-.dashboard__content {
-  display: flex;
-  flex-direction: column;
-}
-
-.dashboard__aside {
-  flex-direction: column;
-  display: none;
-}
-
-.dashboard__asideStickyGroup {
-  position: sticky;
-  top: 0;
-  overflow-y: scroll;
-  max-height: 100vh;
-  padding-bottom: 4rem;
-  padding-right: 1rem;
-  margin-left: -1rem;
-  padding-left: 1rem;
-}
-
-.dashboard__inlineAside {
-  display: flex;
-  flex-direction: column;
-}
-
-@media screen and (min-width: 48em) {
-  .dashboard__aside {
-    display: flex;
-  }
-
-  .dashboard__inlineAside {
-    display: none;
-  }
-}
 .dashboard__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1594,11 +1462,11 @@ a.post__linkedHeaderIcon {
   margin-bottom: 1rem;
 }
 
-.uses__header {
+.twoColumnWide__header {
   margin: 4rem auto 2rem auto;
   max-width: var(--grid-max-width);
 }
-.uses__header:after {
+.twoColumnWide__header:after {
   content: "";
   width: 100%;
   height: 0.25rem;
@@ -1607,35 +1475,30 @@ a.post__linkedHeaderIcon {
   background: var(--yellow-red-gradient);
 }
 
-.uses__headerTitle {
+.twoColumnWide__headerTitle {
   font-weight: var(--font-weight-heading);
   font-family: var(--font-family-heading);
   font-size: 2rem;
 }
 
-.uses__container {
+.twoColumnWide__container {
   max-width: var(--grid-max-width);
   margin: auto;
 }
 
 @media screen and (min-width: 48em) {
-  .uses__container {
+  .twoColumnWide__container {
     display: grid;
     grid-template-columns: 1fr 3fr;
     column-gap: 3rem;
   }
 }
-.uses__inner {
-  display: flex;
-  flex-direction: column;
-}
-
-.uses__aside {
+.twoColumnWide__aside {
   flex-direction: column;
   display: none;
 }
 
-.uses__asideStickyGroup {
+.twoColumnWide__asideStickyGroup {
   position: sticky;
   top: 0;
   overflow-y: scroll;
@@ -1646,17 +1509,22 @@ a.post__linkedHeaderIcon {
   padding-left: 1rem;
 }
 
-.uses__inlineAside {
+.twoColumnWide__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.twoColumnWide__inlineAside {
   display: flex;
   flex-direction: column;
 }
 
 @media screen and (min-width: 48em) {
-  .uses__aside {
+  .twoColumnWide__aside {
     display: flex;
   }
 
-  .uses__inlineAside {
+  .twoColumnWide__inlineAside {
     display: none;
   }
 }
