@@ -34,7 +34,7 @@ summary:focus {
   outline-style: solid;
   box-shadow: var(--color-bg) 0 0 0 0.125rem, var(--color-highlight) 0 0 0 0.375rem;
   transition: box-shadow var(--global-transition-time) ease-in-out;
-  border-radius: 0;
+  border-radius: var(--border-radius-base);
 }
 
 h1,

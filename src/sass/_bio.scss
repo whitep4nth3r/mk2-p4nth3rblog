@@ -6,41 +6,16 @@
   position: relative;
 }
 
-.bio__line {
-  width: 100%;
-  z-index: 1;
-  height: 0.375rem;
-  display: block;
-  background: var(--yellow-red-gradient);
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
 .bio__buttons {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  gap: 1rem;
   align-items: center;
-  z-index: 2;
+  z-index: 3;
 }
 
 .bio__button {
-  height: 2.75rem;
-  width: 2.75rem;
-  border-radius: 50%;
-  background-color: #f8601c;
-  border: 0.25rem solid transparent;
-  font-size: 0;
-  cursor: pointer;
-
-  &:first-of-type {
-    background-color: var(--red);
-  }
-
-  &:last-of-type {
-    background-color: var(--yellow);
-  }
+  @include button_main;
 
   &:focus {
     outline: transparent;
@@ -49,6 +24,9 @@
     transition: box-shadow var(--global-transition-time) ease-in-out;
   }
 }
+.bio__button--selected {
+  box-shadow: var(--color-bg) 0 0 0 0.125rem, var(--color-highlight) 0 0 0 0.375rem;
+}
 
 .bio__block {
   display: none;
@@ -56,4 +34,12 @@
 
 .bio__block--show {
   display: block;
+}
+
+.bio__block p {
+  @include font-main;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: var(--color-fg);
 }
