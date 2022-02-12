@@ -1,7 +1,7 @@
 const defaultOptions = { onUses: false, onDashboard: false, categories: [] };
 
 function AboutTableOfContents({ onUses, onDashboard, categories } = defaultOptions) {
-  const aboutMeLink = onUses || onDashboard ? "/about/#about_me" : "#about_me";
+  const aboutMeLink = onUses || onDashboard ? "/about/#bio" : "#bio";
   const eventsLink = onUses || onDashboard ? "/about/#events" : "#events";
 
   return /*html*/ `

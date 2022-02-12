@@ -47,7 +47,7 @@ exports.render = function (data) {
               ${AboutTableOfContents()}
             </aside>
 
-            <div id="about_me" class="about__me">
+            <div id="bio" class="about__me">
 
               <div class="about__meFace">
                 ${BioImage({ image: person.imageBio })}

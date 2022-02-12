@@ -62,7 +62,7 @@ function NextTwitchStream({ stream, isLive, onVacation }) {
           </a>
         </div>
 
-         ${SeeAllCta({ things: "appearances", url: "/appearances/" })}
+         ${SeeAllCta({ things: "events", url: "/about/#events" })}
       </div>
 
       <script>
