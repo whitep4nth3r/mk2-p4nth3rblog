@@ -11,16 +11,11 @@ const ContentfulPerson = {
     const query = `query GetPerson($slug: String!) {
        personCollection(where: { slug: $slug }) {
           items {
-            name
-            description
-            twitterUsername
-            gitHubUsername
-            twitchUsername
-            bioShort
-            bioMedium
-            image {
+            imageBio {
               ${GraphQLStringBlocks.imageAsset()}
             }
+            bioShort
+            bioSpeaker
             bioLong {
               json
             }

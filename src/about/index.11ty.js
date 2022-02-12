@@ -47,13 +47,13 @@ exports.render = function (data) {
             <div id="about_me" class="about__me">
 
               <div class="about__meFace">
-                ${BioImage({ image: person.image })}
+                ${BioImage({ image: person.imageBio })}
               </div>
 
               <div class="about__meBio">
                 ${TabbedBio({
                   shortBio: md.render(person.bioShort),
-                  medBio: md.render(person.bioMedium),
+                  speakerBio: md.render(person.bioSpeaker),
                   longBio: RichText(person.bioLong),
                 })}
               </div>

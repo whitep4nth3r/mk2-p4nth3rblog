@@ -19,13 +19,15 @@
 
   @media screen and (min-width: 48em) {
     display: grid;
-    grid-template-columns: 2fr 3fr;
+    grid-template-columns: 2fr 4fr;
     gap: 2rem;
   }
 }
 
 .about__meFace {
   margin-bottom: 2rem;
+  overflow: hidden;
+  border-radius: var(--border-radius-base);
 }
 
 .about__meBio {

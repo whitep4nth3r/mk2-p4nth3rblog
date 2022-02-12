@@ -1,5 +1,4 @@
 .bio {
-  margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -12,6 +11,7 @@
   gap: 1rem;
   align-items: center;
   z-index: 3;
+  margin-bottom: 2rem;
 }
 
 .bio__button {
@@ -30,16 +30,32 @@
 
 .bio__block {
   display: none;
+
+  h2 {
+    @include font-heading;
+    font-size: clamp(1.8rem, 2.8vw, 2rem);
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    color: var(--color-highlight);
+  }
+
+  h3 {
+    @include font-heading;
+    font-size: 1.4rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    color: var(--color-fg);
+  }
+
+  p {
+    @include font-main;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: var(--color-fg);
+  }
 }
 
 .bio__block--show {
   display: block;
-}
-
-.bio__block p {
-  @include font-main;
-  font-size: 1.2rem;
-  line-height: 1.6;
-  margin-bottom: 1rem;
-  color: var(--color-fg);
 }

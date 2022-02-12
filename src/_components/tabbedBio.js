@@ -1,23 +1,22 @@
-function TabbedBio({ shortBio, medBio, longBio }) {
+function TabbedBio({ shortBio, speakerBio, longBio }) {
   return /*html*/ `
   
   <div class="bio">
-
     <div class="bio__buttons">
       <button type="button" class="bio__button bio__button--selected" data-view="short">Short bio</button>
-      <button type="button" class="bio__button" data-view="med">Medium bio</button>
       <button type="button" class="bio__button" data-view="long">Long bio</button>
+      <button type="button" class="bio__button" data-view="speaker">Speaker bio</button>
     </div>
-  </div>
-
-  <div class="bio__block bio__block--show" data-bio="short">
-    ${shortBio}
-  </div>
-  <div class="bio__block" data-bio="med">
-    ${medBio}
-  </div>
-  <div class="bio__block" data-bio="long">
-    ${longBio}
+  
+    <div class="bio__block bio__block--show" data-bio="short">
+      ${shortBio}
+    </div>
+    <div class="bio__block" data-bio="long">
+      ${longBio}
+    </div>
+    <div class="bio__block" data-bio="speaker">
+      ${speakerBio}
+    </div>
   </div>
   
   <script importance="low">
@@ -35,6 +34,7 @@ function TabbedBio({ shortBio, medBio, longBio }) {
     }
     
     function viewBio(length) {
+
       bios.forEach(bio => {
         if (bio.getAttribute("data-bio") === length) {
           bio.style.display = "block";
