@@ -2,10 +2,12 @@ const RichText = require("../_components/richText");
 const BioImage = require("../_components/bioImage");
 const AboutTableOfContents = require("../_components/aboutTableOfContents");
 const AboutSocialLinks = require("../_components/aboutSocialLinks");
+const TwitchIcon = require("../_components/svg/twitchIcon");
 const TabbedBio = require("../_components/tabbedBio");
+const DateUtils = require("../../lib/dateUtils");
 const OpenGraph = require("../../lib/openGraph");
 
-const pageTitle = "About whitep4nth3r — biographies, links and more.";
+const pageTitle = "About whitep4nth3r — biographies, events, links and more.";
 
 var md = require("markdown-it")({
   html: true,
@@ -23,7 +25,8 @@ exports.data = {
 };
 
 exports.render = function (data) {
-  const { person } = data;
+  const { person, events } = data;
+
   return /* html */ `
       <div class="twoColumnWide__header">
         <h1 class="twoColumnWide__headerTitle">love <span class="colorHighlight">what you do</span></h1>
@@ -69,11 +72,22 @@ exports.render = function (data) {
             <div class="about__eventsHeader">
               <h2 class="about__eventsHeaderTitle">events <span class="colorHighlight">and talks</span></h2>
             </div>
-            <p>events here</p>
-            <p>events here</p>
-            <p>events here</p>
-            <p>events here</p>
-            <p>events here</p>
+            
+
+              <ol>
+                ${events
+                  .map(
+                    (event) => `
+                  <li>
+                    <span>${event.type === "twitch" ? TwitchIcon() : ""} ${event.name}</span>
+                    <span>${DateUtils.formatDateForEventDisplay(event.date)}</span>
+                    <span><a href="${event.link}" target="_blank" rel="nofollow noreferrer">Go to event</a>
+                    <span>(To do, on vacation for Twitch)</span>
+                  </tr>
+                `,
+                  )
+                  .join("")}
+              </ol>
           </section>
 
         </div>
