@@ -1368,6 +1368,20 @@ a.post__linkedHeaderIcon {
   width: 2.5rem;
   height: 2.5rem;
 }
+@media (prefers-reduced-motion: reduce) {
+  .lds__ripple {
+    height: auto;
+    width: auto;
+    display: flex;
+    align-items: center;
+  }
+  .lds__ripple:after {
+    content: "...";
+    font-weight: var(--font-weight-bold);
+    font-family: var(--font-family-bold);
+    font-size: clamp(1.4rem, 4vw, 4rem);
+  }
+}
 
 .lds__ripple div {
   display: block;
@@ -1376,6 +1390,12 @@ a.post__linkedHeaderIcon {
   opacity: 1;
   border-radius: 50%;
   animation: ripple 2s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .lds__ripple div {
+    animation: unset;
+    border: unset;
+  }
 }
 
 .lds__ripple div:nth-child(2) {

@@ -26,9 +26,6 @@
   line-height: 1;
 }
 
-.dashboard__gridItemIcon {
-}
-
 .dashboard__gridItemStat {
   @include font_bold;
   font-size: clamp(1.4rem, 4vw, 4rem);
@@ -59,6 +56,19 @@ $size: 1rem;
   position: relative;
   width: calc($size * 2.5);
   height: calc($size * 2.5);
+
+  @media (prefers-reduced-motion: reduce) {
+    height: auto;
+    width: auto;
+    display: flex;
+    align-items: center;
+
+    &:after {
+      content: "...";
+      @include font_bold;
+      font-size: clamp(1.4rem, 4vw, 4rem);
+    }
+  }
 }
 
 .lds__ripple div {
@@ -68,6 +78,11 @@ $size: 1rem;
   opacity: 1;
   border-radius: 50%;
   animation: ripple 2s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: unset;
+    border: unset;
+  }
 }
 
 .lds__ripple div:nth-child(2) {
