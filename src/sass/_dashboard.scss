@@ -34,3 +34,43 @@
   font-size: clamp(1.4rem, 4vw, 4rem);
   color: var(--color-highlight);
 }
+
+$size: 1rem;
+
+@keyframes ripple {
+  0% {
+    top: $size;
+    left: $size;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    width: calc($size * 2);
+    height: calc($size * 2);
+    opacity: 0;
+  }
+}
+
+.lds__ripple {
+  display: inline-block;
+  position: relative;
+  width: calc($size * 2.5);
+  height: calc($size * 2.5);
+}
+
+.lds__ripple div {
+  display: block;
+  position: absolute;
+  border: 0.125rem solid var(--color-highlight);
+  opacity: 1;
+  border-radius: 50%;
+  animation: ripple 2s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+.lds__ripple div:nth-child(2) {
+  display: block;
+  animation-delay: -0.5s;
+}

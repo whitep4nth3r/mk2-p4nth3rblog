@@ -7,6 +7,10 @@ const AboutTableOfContents = require("../_components/aboutTableOfContents");
 
 const pageTitle = "whitep4nth3r's Stats Dashboard";
 
+function loading() {
+  return `<div class="lds__ripple"><div></div><div></div></div>`;
+}
+
 exports.data = {
   layout: "base.html",
   title: pageTitle,
@@ -44,49 +48,63 @@ exports.render = function (data) {
           <div class="dashboard__gridItem">
             <div class="dashboard__gridItemStatBlock">
               <span class="dashboard__gridItemIcon">${TwitchIcon({ height: 32, width: 32 })}</span>
-              <span class="dashboard__gridItemStat" data-twitchFollowers>-</span>
+              <span class="dashboard__gridItemStat" data-twitchFollowers>
+                ${loading()}
+              </span>
             </div>
             <p class="dashboard__gridItemTitle">Twitch followers</p>
           </div>
           <div class="dashboard__gridItem">
             <div class="dashboard__gridItemStatBlock">
               <span class="dashboard__gridItemIcon">${TwitchIcon({ height: 32, width: 32 })}</span>
-              <span class="dashboard__gridItemStat" data-twitchViews>-</span>
+              <span class="dashboard__gridItemStat" data-twitchViews>
+                ${loading()}
+              </span>
             </div>
             <p class="dashboard__gridItemTitle">Twitch views</p>
           </div>
           <div class="dashboard__gridItem">
             <div class="dashboard__gridItemStatBlock">
               <span class="dashboard__gridItemIcon">${YoutubeColor({ height: 32, width: 32 })}</span>
-              <span class="dashboard__gridItemStat" data-youtubeSubs>-</span>
+              <span class="dashboard__gridItemStat" data-youtubeSubs>
+                ${loading()}
+              </span>
             </div>
             <p class="dashboard__gridItemTitle">Youtube subs</p>
           </div>
           <div class="dashboard__gridItem">
             <div class="dashboard__gridItemStatBlock">
               <span class="dashboard__gridItemIcon">${YoutubeColor({ height: 32, width: 32 })}</span>
-              <span class="dashboard__gridItemStat" data-youtubeViews>-</span>
+              <span class="dashboard__gridItemStat" data-youtubeViews>
+                ${loading()}
+              </span>
             </div>
             <p class="dashboard__gridItemTitle">Youtube views</p>
           </div>
           <div class="dashboard__gridItem">
             <div class="dashboard__gridItemStatBlock">
               <span class="dashboard__gridItemIcon">${GithubIcon({ height: 32, width: 32 })}</span>
-              <span class="dashboard__gridItemStat" data-githubFollowers>-</span>
+              <span class="dashboard__gridItemStat" data-githubFollowers>
+                ${loading()}
+              </span>
             </div>
             <p class="dashboard__gridItemTitle">GitHub followers</p>
           </div>
           <div class="dashboard__gridItem">
             <div class="dashboard__gridItemStatBlock">
               <span class="dashboard__gridItemIcon">${GithubIcon({ height: 32, width: 32 })}</span>
-              <span class="dashboard__gridItemStat" data-githubStars>-</span>
+              <span class="dashboard__gridItemStat" data-githubStars>
+                ${loading()}
+              </span>
             </div>
             <p class="dashboard__gridItemTitle">GitHub stars</p>
           </div>
           <div class="dashboard__gridItem">
             <div class="dashboard__gridItemStatBlock">
               <span class="dashboard__gridItemIcon">${TwitterIcon({ height: 32, width: 32 })}</span>
-              <span class="dashboard__gridItemStat" data-twitterFollowers>-</span>
+              <span class="dashboard__gridItemStat" data-twitterFollowers>
+                ${loading()}
+              </span>
             </div>
             <p class="dashboard__gridItemTitle">Twitter followers</p>
           </div>
@@ -94,36 +112,33 @@ exports.render = function (data) {
       <div>
     </div>  
 
-    <script type="module">
-      async function getDashboard() {
+    <script type="module" defer>
+      async function makeDashboard() {
+         const twitch = await fetch("/api/twitch");
+        const twitchData = await twitch.json().then(res => {
+          document.querySelector("[data-twitchFollowers]").innerText = res.followers.toLocaleString('en-US');
+          document.querySelector("[data-twitchViews]").innerText = res.views.toLocaleString('en-US');
+        });
+
         const youtube = await fetch("/api/youtube");
-        const youtubeData = await youtube.json();
-
-        const twitch = await fetch("/api/twitch");
-        const twitchData = await twitch.json();
-
+        const youtubeData = await youtube.json().then(res => {
+          document.querySelector("[data-youtubeViews]").innerText = res.viewCount.toLocaleString('en-US');
+          document.querySelector("[data-youtubeSubs]").innerText = res.subscriberCount.toLocaleString('en-US');
+        });       
+        
         const github = await fetch("/api/github");
-        const githubData = await github.json();
-
+        const githubData = await github.json().then(res => {
+          document.querySelector("[data-githubFollowers]").innerText = res.followers.toLocaleString('en-US');
+          document.querySelector("[data-githubStars]").innerText = res.stars.toLocaleString('en-US');
+        });
+        
         const twitter = await fetch("/api/twitter");
-        const twitterData = await twitter.json();
-
-        return {
-          twitchFollowers: twitchData.followers.toLocaleString('en-US'),
-          twitchViews: twitchData.views.toLocaleString('en-US'),
-          youtubeSubs: youtubeData.subscriberCount.toLocaleString('en-US'),
-          youtubeViews: youtubeData.viewCount.toLocaleString('en-US'),
-          githubFollowers: githubData.followers.toLocaleString('en-US'),
-          githubStars: githubData.stars.toLocaleString('en-US'),
-          twitterFollowers: twitterData.followers.toLocaleString('en-US'),
-        };
+        const twitterData = await twitter.json().then(res => {
+          document.querySelector("[data-twitterFollowers]").innerText = res.followers.toLocaleString('en-US');
+        });
       }
 
-      const dashboard = await getDashboard();
-
-      Object.entries(dashboard).forEach(([key, value]) => {
-        document.querySelector("[data-" + key + "]").innerText = value;
-      });
+      const dashboard = await makeDashboard();
     </script>
   `;
 };
