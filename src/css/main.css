@@ -818,6 +818,11 @@ a.post__linkedHeaderIcon {
   margin-bottom: 1rem;
 }
 
+.post__tweetEmbed {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
 .pagination {
   margin: 4rem auto;
   max-width: var(--grid-max-width);
