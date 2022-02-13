@@ -28,7 +28,19 @@
   --post-max-width: 980px;
   --grid-max-width: 1280px;
 
-  --yellow-red-gradient: linear-gradient(45deg, var(--red), var(--yellow));
+  --yellow-red-gradient: linear-gradient(
+    90deg,
+    hsl(359deg 89% 50%) 0%,
+    hsl(11deg 92% 50%) 11%,
+    hsl(18deg 98% 49%) 22%,
+    hsl(23deg 100% 49%) 33%,
+    hsl(27deg 100% 49%) 44%,
+    hsl(30deg 100% 49%) 56%,
+    hsl(34deg 100% 50%) 67%,
+    hsl(36deg 99% 52%) 78%,
+    hsl(38deg 100% 55%) 89%,
+    hsl(40deg 100% 57%) 100%
+  );
 
   --global-transition-time: 0.2s;
   --scroll-behaviour: smooth;
