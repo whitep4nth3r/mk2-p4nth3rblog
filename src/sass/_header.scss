@@ -55,16 +55,15 @@
   align-items: center;
   text-decoration: none;
   gap: 0.5rem;
-}
 
-.header__logoContainerLinkName {
-  font-family: "Fira Code", monospace;
-  font-size: 1.2rem;
-}
-
-.header__logoContainerLink svg {
-  height: 100%;
-  width: auto;
+  .header__logoContainerLinkPanther {
+    height: 100%;
+    width: auto;
+  }
+  .header__logoContainerLinkName {
+    height: 50%;
+    width: auto;
+  }
 }
 
 .header__navList {
