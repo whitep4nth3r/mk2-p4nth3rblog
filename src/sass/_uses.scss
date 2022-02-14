@@ -69,3 +69,16 @@
   color: var(--color-fg);
   word-break: break-word;
 }
+
+.uses__listItemLink {
+  @include font-heading;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  padding: 0.5rem 0;
+  display: block;
+}
+
+.uses__listItemLink--sr {
+  @include sr_only;
+}

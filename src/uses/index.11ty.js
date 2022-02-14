@@ -62,6 +62,11 @@ exports.render = function (data) {
                         <div>
                           <h3 class="uses__listItemName uses__listItemName--large">${thing.name}</h3>
                           <div class="uses__listItemDesc">${md.render(thing.description)}</div>
+                          ${
+                            thing.link
+                              ? `<a href="${thing.link}" class="uses__listItemLink" target="_blank" rel="nofollow noreferrer">More <span class="uses__listItemLink--sr">${thing.name}</span> details <span class="colorHighlight" role="presentation">→</span></a>`
+                              : ""
+                          }
                         </div>
                       </li>
                     `,

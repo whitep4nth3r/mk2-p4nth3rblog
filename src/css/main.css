@@ -1656,6 +1656,28 @@ a.post__linkedHeaderIcon {
   word-break: break-word;
 }
 
+.uses__listItemLink {
+  font-weight: var(--font-weight-heading);
+  font-family: var(--font-family-heading);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  padding: 0.5rem 0;
+  display: block;
+}
+
+.uses__listItemLink--sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
 .twoColumnWide__header {
   margin: 4rem auto 2rem auto;
   max-width: var(--grid-max-width);
