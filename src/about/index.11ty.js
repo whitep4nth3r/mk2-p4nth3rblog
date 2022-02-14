@@ -102,9 +102,7 @@ exports.render = function (data) {
                     </time>
                     <span class="about__eventsListItemTime">
                       <span class="about__eventsListItemTimeInner">
-                        ${ClockIcon()} ${DateUtils.getDayFromTime(event.date)} @ ${DateUtils.getTimeFromTime(
-                      event.date,
-                    )} 
+                        ${ClockIcon()} ${DateUtils.getDayFromTime(event.date)} ${DateUtils.getTimeFromTime(event.date)} 
                       </span>
                       <span class="about__eventsListItemTZ" data-timezone></span>
                     </span>
