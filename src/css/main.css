@@ -158,6 +158,7 @@ strong {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 2rem;
+  border-top: 0.125rem solid white;
 }
 
 [data-type=post] .header__content,
