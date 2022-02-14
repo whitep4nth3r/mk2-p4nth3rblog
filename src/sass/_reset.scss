@@ -9,7 +9,7 @@ html {
 }
 
 body {
-  @include font-main;
+  @include font_main;
   font-size: 1rem;
   background-color: var(--color-bg);
   color: var(--color-fg);
@@ -52,5 +52,5 @@ img {
 }
 
 strong {
-  @include font-bold;
+  @include font_bold;
 }

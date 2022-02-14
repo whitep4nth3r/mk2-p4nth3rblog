@@ -23,7 +23,7 @@
 }
 
 .ais__emptyMessage {
-  @include font-heading;
+  @include font_heading;
   font-size: 2rem;
   margin-top: 3rem;
   margin-bottom: 1rem;
@@ -50,7 +50,7 @@
 
 .ais__label {
   grid-area: label;
-  @include font-heading;
+  @include font_heading;
   font-size: 1rem;
   margin-bottom: 1rem;
   display: flex;
@@ -59,7 +59,7 @@
 
 .ais__input {
   grid-area: input;
-  @include font-main;
+  @include font_main;
   background-color: var(--color-bg);
   border: 0.25rem solid var(--grey-dark);
   color: var(--color-fg);

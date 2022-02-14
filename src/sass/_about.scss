@@ -133,7 +133,7 @@
 
 .about__eventsListItemName {
   grid-area: name;
-  @include font-heading;
+  @include font_heading;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -149,4 +149,8 @@
   flex-grow: 0;
   align-self: center;
   width: max-content;
+}
+
+.about__eventsListItemCta--sr {
+  @include sr_only;
 }

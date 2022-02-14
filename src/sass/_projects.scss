@@ -25,7 +25,7 @@
 }
 
 .project__name {
-  @include font-heading;
+  @include font_heading;
   text-decoration: none;
   color: var(--color-fg);
   font-size: 1.8rem;
@@ -36,7 +36,7 @@
 }
 
 .project__description {
-  @include font-main;
+  @include font_main;
   font-size: 1.2rem;
   line-height: 1.6;
   margin-bottom: 1rem;
@@ -71,7 +71,7 @@
 }
 
 .project__link {
-  @include font-heading;
+  @include font_heading;
   margin-top: 2rem;
   margin-bottom: 4rem;
   font-size: 1.2rem;

@@ -17,7 +17,7 @@
 }
 
 .pagination__listItem {
-  @include font-bold;
+  @include font_bold;
   font-size: 1.2rem;
   text-decoration: none;
 }

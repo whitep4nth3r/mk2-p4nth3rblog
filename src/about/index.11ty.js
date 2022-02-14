@@ -111,7 +111,9 @@ exports.render = function (data) {
                       event.link
                     }" class="about__eventsListItemCta" target="_blank" rel="nofollow noreferrer">${calculateIcon(
                       event.type,
-                    )} Go to event <span role="presentation">→</span></a>
+                    )} Go to <span class="about__eventsListItemCta--sr">${
+                      event.name
+                    }</span> event <span role="presentation">→</span></a>
                   </li>
                 `,
                   )

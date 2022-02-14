@@ -17,7 +17,7 @@
 }
 
 @mixin grid_item_title {
-  @include font-heading;
+  @include font_heading;
   text-decoration: none;
   color: var(--color-fg);
   font-size: 2rem;

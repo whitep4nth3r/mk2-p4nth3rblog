@@ -10,7 +10,7 @@
 }
 
 .nextTwitchStream__meta {
-  @include font-heading;
+  @include font_heading;
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
@@ -27,7 +27,7 @@
 }
 
 .nextTwitchStream__title {
-  @include font-heading;
+  @include font_heading;
   color: var(--color-fg);
   font-size: 2.2rem;
   line-height: 1.2;
@@ -35,14 +35,14 @@
 }
 
 .nextTwitchStream__noStream {
-  @include font-bold;
+  @include font_bold;
   color: var(--color-highlight);
   text-transform: uppercase;
   font-size: 1.2rem;
 }
 
 .nextTwitchStream__streamInfo {
-  @include font-main;
+  @include font_main;
   font-size: 1.2rem;
   line-height: 1.6;
   margin-bottom: 1rem;
@@ -63,7 +63,7 @@
 }
 
 .nextTwitchStream__liveNow {
-  @include font-bold;
+  @include font_bold;
   background-color: var(--color-highlight);
   color: var(--color-bg);
   padding: 0.5rem 1rem;

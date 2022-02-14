@@ -301,17 +301,27 @@ strong {
   list-style: none;
   padding-left: 0;
   display: grid;
+  grid-template-columns: 1fr;
   gap: 2rem;
   margin-bottom: 4rem;
   margin-top: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+@media screen and (min-width: 36em) {
+  .footer__links {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (min-width: 48em) {
+  .footer__links {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }
 
 .footer__link {
   font-weight: var(--font-weight-bold);
   font-family: var(--font-family-bold);
   margin-bottom: 1rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -635,6 +645,18 @@ strong {
   flex-grow: 0;
   align-self: center;
   width: max-content;
+}
+
+.about__eventsListItemCta--sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
 
 .topics__header {

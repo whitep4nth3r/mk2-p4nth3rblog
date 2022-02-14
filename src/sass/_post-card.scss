@@ -6,7 +6,7 @@
 }
 
 .postCard__meta {
-  @include font-heading;
+  @include font_heading;
   padding-top: 1.5rem;
   margin-bottom: 2rem;
   color: var(--color-fg);
@@ -26,7 +26,7 @@
 }
 
 .postCard__titleLink {
-  @include font-heading;
+  @include font_heading;
   text-decoration: none;
   color: var(--color-fg);
   font-size: 1.7rem;

@@ -5,7 +5,7 @@
 }
 
 .footer__copyright {
-  @include font-bold;
+  @include font_bold;
   font-size: 1.2rem;
   color: var(--color-highlight);
   margin-bottom: 1rem;
@@ -13,7 +13,7 @@
 }
 
 .footer__text {
-  @include font-main;
+  @include font_main;
   font-size: 1rem;
   color: var(--color-fg);
   margin-bottom: 1rem;
@@ -28,16 +28,24 @@
   list-style: none;
   padding-left: 0;
   display: grid;
+  grid-template-columns: 1fr;
   gap: 2rem;
   margin-bottom: 4rem;
   margin-top: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+  @media screen and (min-width: 36em) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media screen and (min-width: 48em) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }
 
 .footer__link {
-  @include font-bold;
+  @include font_bold;
   margin-bottom: 1rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
   display: flex;
   flex-direction: row;
   align-items: center;

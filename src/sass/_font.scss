@@ -25,17 +25,17 @@
   font-display: swap;
 }
 
-@mixin font-main {
+@mixin font_main {
   font-weight: var(--font-weight-main);
   font-family: var(--font-family-main);
 }
 
-@mixin font-bold {
+@mixin font_bold {
   font-weight: var(--font-weight-bold);
   font-family: var(--font-family-bold);
 }
 
-@mixin font-heading {
+@mixin font_heading {
   font-weight: var(--font-weight-heading);
   font-family: var(--font-family-heading);
 }

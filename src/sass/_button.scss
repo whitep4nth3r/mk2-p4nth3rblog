@@ -1,5 +1,5 @@
 @mixin button_main() {
-  @include font-heading;
+  @include font_heading;
   background-color: var(--color-bg-button);
   color: var(--color-button);
   border-radius: var(--border-radius-base);

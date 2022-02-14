@@ -5,7 +5,7 @@
 }
 
 .homeCard__title {
-  @include font-heading;
+  @include font_heading;
   color: var(--color-fg);
   font-size: 2.2rem;
   line-height: 1.2;
@@ -33,7 +33,7 @@
 }
 
 .homeCard__excerpt p {
-  @include font-main;
+  @include font_main;
   font-size: 1.2rem;
   line-height: 1.6;
   margin-bottom: 1rem;
