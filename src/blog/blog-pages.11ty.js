@@ -47,12 +47,12 @@ exports.render = async function (data) {
       <aside class="post__aside">
       ${BlogSidebarAuthor({ author: post.author })}
 
-       ${PublishedDate({
-         date: post.date,
-         readingTime: post.readingTime,
-         isTalk: false,
-         updatedDate: post.updatedDate,
-       })}
+        ${PublishedDate({
+          date: post.date,
+          readingTime: post.readingTime,
+          isTalk: false,
+          updatedDate: post.updatedDate,
+        })}
 
         <div class="post__asideStickyGroup">
           ${TableOfContents(post.body)}
@@ -67,14 +67,14 @@ exports.render = async function (data) {
         <h1 class="post__h1">${post.title}</h1>
 
         <aside class="post__inlineAside">
-           ${BlogSidebarAuthor({ author: post.author })}
-           ${PublishedDate({
-             date: post.date,
-             readingTime: post.readingTime,
-             isTalk: false,
-             updatedDate: post.updatedDate,
-           })}
-           ${TableOfContents(post.body)}
+            ${BlogSidebarAuthor({ author: post.author })}
+            ${PublishedDate({
+              date: post.date,
+              readingTime: post.readingTime,
+              isTalk: false,
+              updatedDate: post.updatedDate,
+            })}
+            ${TableOfContents(post.body)}
         </aside>
 
         <div class="post__body">

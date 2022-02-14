@@ -15,7 +15,7 @@ function PostStructuredData({ post, imageUrl }) {
       "@type": "Person",
       name: post.author.name,
       description: post.author.description,
-      image: post.author.image.url,
+      image: post.author.imageBio.url,
       url: "https://whitep4nth3r.com",
     },
   });
