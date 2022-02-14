@@ -92,17 +92,20 @@ exports.render = function (data) {
                   .map(
                     (event) => /*html*/ `
                   <li class="about__eventsListItem">
-                    <span class="about__eventsListItemDate">
+                    <time datetime="${event.date}" class="about__eventsListItemDate">
                       <span class="about__eventsListItemDate__month">
                         ${DateUtils.getMonthFromTime(event.date)}
                       </span>
                       <span class="about__eventsListItemDate__day">
                         ${DateUtils.getDateFromTime(event.date)}
                       </span>
-                    </span>
-                    <span class="about__eventsListItemTime">${ClockIcon()} ${DateUtils.getDayFromTime(
+                    </time>
+                    <time datetime="${
+                      event.date
+                    }" class="about__eventsListItemTime">${ClockIcon()} ${DateUtils.getDayFromTime(
                       event.date,
-                    )} @ ${DateUtils.getTimeFromTime(event.date)} <span data-timezone></span></span>
+                    )} @ ${DateUtils.getTimeFromTime(event.date)} <span data-timezone></span>
+                    </time>
                     <span class="about__eventsListItemName">${event.name}</span>
                     <a href="${
                       event.link
