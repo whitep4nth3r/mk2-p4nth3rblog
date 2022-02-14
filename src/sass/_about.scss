@@ -49,3 +49,88 @@
 .about__eventsHeaderTitle {
   @include grid_header_title;
 }
+
+.about__eventsList {
+  padding-left: 0;
+  list-style: none;
+}
+
+.about__eventsListItem {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  gap: 1rem 2rem;
+  grid-template-areas:
+    "date time"
+    "date name"
+    "date cta";
+  margin-bottom: 4rem;
+
+  @media screen and (min-width: 48em) {
+    margin-bottom: 3rem;
+    grid-template-columns: 1fr 6fr 1fr;
+    grid-template-areas:
+      "date time cta"
+      "date name cta";
+  }
+}
+
+.about__eventsListItemDate {
+  grid-area: date;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.about__eventsListItemDate__month {
+  @include font_heading;
+  text-align: center;
+  color: var(--color-highlight);
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  margin-bottom: 0.25rem;
+}
+
+.about__eventsListItemDate__day {
+  @include font_bold;
+  display: block;
+  text-align: center;
+  color: var(--color-fg);
+  text-transform: uppercase;
+  font-size: 2.8rem;
+}
+
+.about__eventsListItemTime {
+  grid-area: time;
+  @include font_main;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  align-items: center;
+
+  svg {
+    color: var(--color-highlight);
+  }
+}
+
+.about__eventsListItemName {
+  grid-area: name;
+  @include font-heading;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-size: clamp(1.2rem, 1.6vw, 1.6rem);
+  line-height: 1.2;
+  color: var(--color-fg);
+}
+
+.about__eventsListItemCta {
+  grid-area: cta;
+  @include button_main;
+  gap: 0.5rem;
+  flex-grow: 0;
+  align-self: center;
+  width: max-content;
+}

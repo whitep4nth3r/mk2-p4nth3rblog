@@ -4,24 +4,25 @@
 }
 
 .publishedDate__item {
-  @include font-heading;
+  @include font_heading;
   font-size: 1rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   color: var(--color-fg);
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-}
 
-@media screen and (min-width: 48em) {
-  .publishedDate__item {
-    @include font-main;
+  @media screen and (min-width: 48em) {
     justify-content: flex-start;
   }
 }
 
 .publishedDate__icon {
   color: var(--color-highlight);
+  display: flex;
+  @media screen and (min-width: 48em) {
+    width: 1.5rem;
+  }
 }

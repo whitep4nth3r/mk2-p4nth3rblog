@@ -1,16 +1,34 @@
 //THERE IS A LOT OF REPEATED CODE HERE — FIX!
 
-function LightningIcon() {
-  return `
+function CalendarIcon() {
+  return /*html*/ `
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 320 512"
-      height="16"
-      width="16"
+      viewBox="0 0 448 512"
+      height="20"
+      width="20"
       role="img"
-      aria-label="Lightening icon"
+      aria-label="Calendar icon"
     >
-    <path fill="currentColor" d="M296 160H180.6l42.6-129.8C227.2 15 215.7 0 200 0H56C44 0 33.8 8.9 32.2 20.8l-32 240C-1.7 275.2 9.5 288 24 288h118.7L96.6 482.5c-3.6 15.2 8 29.5 23.3 29.5 8.4 0 16.4-4.4 20.8-12l176-304c9.3-15.9-2.2-36-20.7-36z"></path>
+      <path fill="currentColor" d="M400 64h-48V12c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v52H160V12c0-6.6-5.4-12-12-12h-40c-6.6 0-12 5.4-12 12v52H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zm-6 400H54c-3.3 0-6-2.7-6-6V160h352v298c0 3.3-2.7 6-6 6z"></path>
+    </svg>
+  `;
+}
+
+function StopwatchIcon() {
+  return /*html*/ `
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      height="24"
+      width="24"
+      role="img"
+      aria-label="Stopwatch"
+    >
+      <path d="M12 21C16.4183 21 20 17.4183 20 13C20 8.58172 16.4183 5 12 5C7.58172 5 4 8.58172 4 13C4 17.4183 7.58172 21 12 21Z" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M11 13C11 13.5523 11.4477 14 12 14C12.5523 14 13 13.5523 13 13H11ZM13 9C13 8.44772 12.5523 8 12 8C11.4477 8 11 8.44772 11 9H13ZM13 13V9H11V13H13Z" fill="currentColor"/>
+      <path d="M21 6L19 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M10 2L14 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
   `;
 }
@@ -126,10 +144,10 @@ function initSearch({ appId, apiKey, indexName }) {
           return `
           <article class="postCard">
         <p class="postCard__meta">
-          <span class="postCard__metaIcon">${LightningIcon()}</span>
-          <span>${formatDateForDisplay(hit.date)}</span>
-          <span class="postCard__metaIcon">•</span>
-          <span>${hit.readingTime || hit.watchTime} min ${timeSuffix}</span>
+          <span class="postCard__metaIcon">${CalendarIcon()}</span>
+          <span class="postCard__metaText">${formatDateForDisplay(hit.date)}</span>
+          <span class="postCard__metaIcon">${StopwatchIcon()}</span>
+          <span class="postCard__metaText">${hit.readingTime || hit.watchTime} min ${timeSuffix}</span>
         </p>
         <a href="/${baseSlug}/${hit.slug}/" class="postCard__titleLink postCard__titleLink--ais" id="search-${
             hit.objectID

@@ -3,8 +3,8 @@ function CalendarIcon() {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 448 512"
-      height="16"
-      width="16"
+      height="20"
+      width="20"
       role="img"
       aria-label="Calendar icon"
     >

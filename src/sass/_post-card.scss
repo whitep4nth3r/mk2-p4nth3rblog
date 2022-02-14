@@ -18,6 +18,11 @@
 
 .postCard__metaIcon {
   color: var(--color-highlight);
+  display: flex;
+}
+
+.postCard__metaText {
+  display: flex;
 }
 
 .postCard__titleLink {

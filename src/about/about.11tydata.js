@@ -100,7 +100,7 @@ module.exports = async function () {
   const futureEvents = await ContentfulEvents.getAll({ future: true });
 
   const dbEvents = futureEvents.map((ev) => {
-    return { ...ev, type: "db" };
+    return { ...ev, type: ev.link.includes("youtube") ? "youtube" : "db" };
   });
 
   const twitch = await fetch(`${process.env.DOMAIN}/api/twitch`);
@@ -108,53 +108,58 @@ module.exports = async function () {
   const twitchStreams = twitchData.schedule.data.segments;
 
   const twitchEvents = twitchStreams.map((ev) => {
+    const buffer = Buffer.from(ev.id, "base64");
+    const segmentInfo = JSON.parse(buffer);
+
     return {
       ...ev,
       date: ev.start_time,
       name: ev.title,
-      link: "https://twitch.tv/whitep4nth3r/schedule",
+      link: `https://www.twitch.tv/whitep4nth3r/schedule?seriesID=${segmentInfo.segmentID}`,
       type: "twitch",
     };
   });
 
-  const testEvents = [
-    {
-      sys: { id: "1UWL3RL6T3tzG8SCZz45ne" },
-      date: "2022-03-16T19:00:00.000+01:00",
-      name: "TEST EVENT - Ecomm & Next.js - Ecommerce on the Jamstack with Colby Fayock",
-      link: "https://www.youtube.com/watch?v=GyXyygeC2RE",
-      description:
-        "I join Colby Fayock to chat about Next.js and how all of its features help enable developers to build great experiences on the web.",
-      timeTbc: false,
-      isVirtual: true,
-      type: "db",
-      image: {
-        url: "https://images.ctfassets.net/56dzm01z6lln/3CPNMiFN8vtrQKfrvTWJPe/bf859c4804f45579be0cce7ced44d4a3/maxresdefault.jpg",
-        description:
-          'A Youtube thumbnail featuring my headshot against a red background on the left, Colby on the right pulling a silly face, and the title in the middle which reads "Ecomm & Next.js. Ecommerce on the Jamstack."',
-        height: 720,
-        width: 1280,
-      },
-    },
-    {
-      sys: { id: "28NyXdVJsoMrBWe1yvw7Uo" },
-      date: "2022-04-01T17:00:00.000+01:00",
-      name: "TEST EVENT - Building with Next.js | Cassidy Williams and Salma Alam-Naylor | Architecting with Next.js 2021",
-      link: "https://www.youtube.com/watch?v=BqQcgHEif5s&t=37s",
-      description:
-        "In this fireside chat, I join Cassidy Williams of Netlify to talk about the performance benefits of Next.js, and how developers can make the most of the framework.",
-      timeTbc: false,
-      isVirtual: true,
-      type: "db",
-      image: {
-        url: "https://images.ctfassets.net/56dzm01z6lln/kQD5RbOGmBwTeERr0ntWj/2358943065d652e9b83dfff1ea037842/architecting_nextjs_aug_2021.jpeg",
-        description:
-          'A thumbnail of Salma Alam-Naylor and Cassidy Williams with the title "Architecting with Next.js" and the Netlify, Next.js and Contentful logos.',
-        height: 1260,
-        width: 2400,
-      },
-    },
-  ];
+  // const testEvents = [
+  //   {
+  //     sys: { id: "1UWL3RL6T3tzG8SCZz45ne" },
+  //     date: "2022-03-16T19:00:00.000+01:00",
+  //     name: "TEST EVENT - Ecomm & Next.js - Ecommerce on the Jamstack with Colby Fayock",
+  //     link: "https://www.youtube.com/watch?v=GyXyygeC2RE",
+  //     description:
+  //       "I join Colby Fayock to chat about Next.js and how all of its features help enable developers to build great experiences on the web.",
+  //     timeTbc: false,
+  //     isVirtual: true,
+  //     type: "youtube",
+  //     image: {
+  //       url: "https://images.ctfassets.net/56dzm01z6lln/3CPNMiFN8vtrQKfrvTWJPe/bf859c4804f45579be0cce7ced44d4a3/maxresdefault.jpg",
+  //       description:
+  //         'A Youtube thumbnail featuring my headshot against a red background on the left, Colby on the right pulling a silly face, and the title in the middle which reads "Ecomm & Next.js. Ecommerce on the Jamstack."',
+  //       height: 720,
+  //       width: 1280,
+  //     },
+  //   },
+  //   {
+  //     sys: { id: "28NyXdVJsoMrBWe1yvw7Uo" },
+  //     date: "2022-04-01T17:00:00.000+01:00",
+  //     name: "TEST EVENT - Building with Next.js | Cassidy Williams and Salma Alam-Naylor | Architecting with Next.js 2021",
+  //     link: "https://www.youtube.com/watch?v=BqQcgHEif5s&t=37s",
+  //     description:
+  //       "In this fireside chat, I join Cassidy Williams of Netlify to talk about the performance benefits of Next.js, and how developers can make the most of the framework.",
+  //     timeTbc: false,
+  //     isVirtual: true,
+  //     type: "youtube",
+  //     image: {
+  //       url: "https://images.ctfassets.net/56dzm01z6lln/kQD5RbOGmBwTeERr0ntWj/2358943065d652e9b83dfff1ea037842/architecting_nextjs_aug_2021.jpeg",
+  //       description:
+  //         'A thumbnail of Salma Alam-Naylor and Cassidy Williams with the title "Architecting with Next.js" and the Netlify, Next.js and Contentful logos.',
+  //       height: 1260,
+  //       width: 2400,
+  //     },
+  //   },
+  // ];
+
+  const testEvents = [];
 
   const allEvents = dbEvents.concat(twitchEvents).concat(testEvents);
   const sortedEvents = allEvents.sort(sortItemsByDateAsc);

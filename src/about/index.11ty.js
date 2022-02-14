@@ -4,6 +4,8 @@ const AboutTableOfContents = require("../_components/aboutTableOfContents");
 const AboutSocialLinks = require("../_components/aboutSocialLinks");
 const TwitchIcon = require("../_components/svg/twitchIcon");
 const TabbedBio = require("../_components/tabbedBio");
+const YoutubeIcon = require("../_components/svg/youtubeColor");
+const ClockIcon = require("../_components/svg/clockIcon");
 const DateUtils = require("../../lib/dateUtils");
 const OpenGraph = require("../../lib/openGraph");
 
@@ -12,6 +14,17 @@ const pageTitle = "About whitep4nth3r — biographies, events, links and more.";
 var md = require("markdown-it")({
   html: true,
 });
+
+function calculateIcon(type) {
+  switch (type) {
+    case "twitch":
+      return TwitchIcon();
+    case "youtube":
+      return YoutubeIcon();
+    default:
+      return "";
+  }
+}
 
 exports.data = {
   layout: "base.html",
@@ -74,27 +87,41 @@ exports.render = function (data) {
             </div>
             
 
-              <ol>
+              <ol class="about__eventsList">
                 ${events
                   .map(
-                    (event) => `
-                  <li>
-                    <span>${event.type === "twitch" ? TwitchIcon() : ""} ${event.name}</span>
-                    <span>${DateUtils.formatDateForEventDisplay(event.date)}</span>
-                    <span><a href="${event.link}" target="_blank" rel="nofollow noreferrer">Go to event</a>
-                    <span>(To do, on vacation for Twitch)</span>
-                  </tr>
+                    (event) => /*html*/ `
+                  <li class="about__eventsListItem">
+                    <span class="about__eventsListItemDate">
+                      <span class="about__eventsListItemDate__month">
+                        ${DateUtils.getMonthFromTime(event.date)}
+                      </span>
+                      <span class="about__eventsListItemDate__day">
+                        ${DateUtils.getDateFromTime(event.date)}
+                      </span>
+                    </span>
+                    <span class="about__eventsListItemTime">${ClockIcon()} ${DateUtils.getDayFromTime(
+                      event.date,
+                    )} @ ${DateUtils.getTimeFromTime(event.date)} <span data-timezone></span></span>
+                    <span class="about__eventsListItemName">${event.name}</span>
+                    <a href="${
+                      event.link
+                    }" class="about__eventsListItemCta" target="_blank" rel="nofollow noreferrer">${calculateIcon(
+                      event.type,
+                    )} Go to event <span role="presentation">→</span></a>
+                  </li>
                 `,
                   )
                   .join("")}
               </ol>
           </section>
-
         </div>
-
       </div>
 
-
-      
+      <script>
+        const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        const els = document.querySelectorAll("[data-timezone]");
+        els.forEach(el => el.innerText = timezone);
+      </script>
   `;
 };
