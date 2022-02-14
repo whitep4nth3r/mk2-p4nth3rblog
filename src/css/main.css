@@ -576,14 +576,31 @@ strong {
   font-weight: var(--font-weight-main);
   font-family: var(--font-family-main);
   font-size: 1rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+  display: grid;
   gap: 0.5rem;
   align-items: center;
+  grid-template-columns: 1fr;
 }
 .about__eventsListItemTime svg {
   color: var(--color-highlight);
+}
+@media screen and (min-width: 48em) {
+  .about__eventsListItemTime {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.about__eventsListItemTimeInner {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.about__eventsListItemTZ {
+  display: flex;
+  flex-direction: column;
 }
 
 .about__eventsListItemName {

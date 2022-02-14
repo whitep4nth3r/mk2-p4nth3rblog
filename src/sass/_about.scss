@@ -104,15 +104,31 @@
   grid-area: time;
   @include font_main;
   font-size: 1rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+  display: grid;
   gap: 0.5rem;
   align-items: center;
+  grid-template-columns: 1fr;
 
   svg {
     color: var(--color-highlight);
   }
+
+  @media screen and (min-width: 48em) {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.about__eventsListItemTimeInner {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.about__eventsListItemTZ {
+  display: flex;
+  flex-direction: column;
 }
 
 .about__eventsListItemName {
