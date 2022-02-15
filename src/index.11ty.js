@@ -36,5 +36,6 @@ exports.render = function (data) {
        ${NextTwitchStream({ stream: twitch.nextStream, isLive: twitch.isLive, onVacation: twitch.onVacation })}
     </div>
   </section>
+
   `;
 };

@@ -967,6 +967,17 @@ a.post__linkedHeaderIcon {
   margin-bottom: 1rem;
 }
 
+.post__relatedGrid {
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  max-width: var(--grid-max-width);
+  margin: auto;
+  gap: 1rem 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  align-items: stretch;
+}
+
 .post__tweetEmbed {
   margin-top: 2rem;
   margin-bottom: 2rem;

@@ -94,15 +94,34 @@ exports.render = function (data) {
                   <li class="about__eventsListItem">
                     <time datetime="${event.date}" class="about__eventsListItemDate">
                       <span class="about__eventsListItemDate__month">
-                        ${DateUtils.getMonthFromTime(event.date)}
+                        <local-time 
+                          datetime="${event.date}"
+                          month="short">
+                          ${DateUtils.getMonthFromTime(event.date)}
+                        </local-time>
                       </span>
                       <span class="about__eventsListItemDate__day">
-                        ${DateUtils.getDateFromTime(event.date)}
+                        <local-time 
+                          datetime="${event.date}"
+                          day="numeric">
+                          ${DateUtils.getDateFromTime(event.date)}
+                        </local-time>
                       </span>
                     </time>
                     <span class="about__eventsListItemTime">
                       <span class="about__eventsListItemTimeInner">
-                        ${ClockIcon()} ${DateUtils.getDayFromTime(event.date)} ${DateUtils.getTimeFromTime(event.date)} 
+                        ${ClockIcon()}  
+                        <local-time 
+                          datetime="${event.date}"
+                          weekday="short"
+                          month="short"
+                          day="numeric"
+                          year="numeric"
+                          hour="numeric"
+                          minute="numeric"
+                          time-zone-name="short">
+                        ${event.date}
+                      </local-time>
                       </span>
                       <span class="about__eventsListItemTZ" data-timezone></span>
                     </span>
@@ -122,11 +141,6 @@ exports.render = function (data) {
           </section>
         </div>
       </div>
-
-      <script>
-        const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-        const els = document.querySelectorAll("[data-timezone]");
-        els.forEach(el => el.innerText = timezone);
-      </script>
+      <script type="module" src="/js/time_elements.js"></script>
   `;
 };

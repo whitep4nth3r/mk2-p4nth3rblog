@@ -86,7 +86,7 @@ exports.render = async function (data) {
             ? /*html*/ `
             <div class="post__related">
               <h4 class="post__relatedHeader">Related posts</h4>
-              <div class="grid">
+              <div class="post__relatedGrid">
                 ${post.relatedPostsCollection.items
                   .map((post) => PostCard({ post, baseSlug: "blog", isTalk: false }))
                   .join("")}

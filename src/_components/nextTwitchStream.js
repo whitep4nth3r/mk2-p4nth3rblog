@@ -34,15 +34,24 @@ function NextTwitchStream({ stream, isLive, onVacation }) {
         <a href="https://www.twitch.tv/whitep4nth3r/schedule" target="_blank" rel="nofollow referrer" class="nextTwitchStream__link">
           <p class="nextTwitchStream__meta">
             <span class="nextTwitchStream__metaIcon">${CalendarIcon()}</span>
-            <span class="nextTwitchStream__metaInfo">${DateUtils.formatDateForTwitchDisplay(stream.start_time)}</span>
-            
-            <p class="nextTwitchStream__meta">
-            <span class="nextTwitchStream__metaIcon">${ClockIcon()}</span>
-            
             <span class="nextTwitchStream__metaInfo">
-            ${DateUtils.formatTwitchScheduleTimeSlot(stream.start_time, stream.end_time)}
-            <span data-timezone></span>
+              <local-time 
+                  datetime="${stream.start_time}"
+                  weekday="short"
+                  month="short"
+                  day="numeric"
+                  year="numeric"
+                  hour="numeric"
+                  minute="numeric"
+                  time-zone-name="short">
+                ${stream.start_time}
+              </local-time>
             </span>
+          </p>
+          <p class="nextTwitchStream__meta">
+            <span class="nextTwitchStream__metaIcon">${ClockIcon()}</span>
+            <span class="nextTwitchStream__metaInfo">
+            <time-until datetime="${stream.start_time}"></time-until>
           </p>
         </a>
 
@@ -62,13 +71,10 @@ function NextTwitchStream({ stream, isLive, onVacation }) {
           </a>
         </div>
 
-         ${SeeAllCta({ things: "events", url: "/about/#events" })}
+        ${SeeAllCta({ things: "events", url: "/about/#events" })}
       </div>
 
-      <script>
-        const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-        document.querySelector("[data-timezone]").innerText = timezone;
-      </script>
+      <script type="module" src="/js/time_elements.js"></script>
     `;
 }
 
