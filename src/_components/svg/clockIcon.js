@@ -5,6 +5,7 @@ function ClockIcon() {
       viewBox="0 0 24 24"
       height="24"
       width="24"
+      fill="none"
       role="img"
       aria-label="Clock"
     >
