@@ -1358,6 +1358,10 @@ a.post__linkedHeaderIcon {
   color: var(--color-fg);
 }
 
+.nextTwitchStream__metaInfo--timeUntil {
+  text-transform: capitalize;
+}
+
 .nextTwitchStream__metaIcon {
   color: var(--color-highlight);
   display: flex;
