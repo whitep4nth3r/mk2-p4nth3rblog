@@ -1207,6 +1207,7 @@ a.post__linkedHeaderIcon {
   padding-top: 1.5rem;
   margin-bottom: 2rem;
   color: var(--color-fg);
+  font-size: 1rem;
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
@@ -1283,7 +1284,7 @@ a.post__linkedHeaderIcon {
 
 .homeCard__linkForTitle {
   text-decoration: none;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 .homeCard__linkForTitle .homeCard__title {
   margin-bottom: 0;
@@ -1352,7 +1353,7 @@ a.post__linkedHeaderIcon {
   flex-direction: row;
   gap: 0.5rem;
   align-items: center;
-  font-size: 1.4rem;
+  font-size: 1rem;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   color: var(--color-fg);
