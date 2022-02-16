@@ -12,7 +12,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "./src/public": "/" });
 
   eleventyConfig.addPassthroughCopy({ "./src/_search/app.js": "/js/app_search.js" });
-
   eleventyConfig.addPassthroughCopy({ "./node_modules/@github/time-elements/dist/index.js": "js/time_elements.js" });
 
   eleventyConfig.addPlugin(syntaxHighlight);
