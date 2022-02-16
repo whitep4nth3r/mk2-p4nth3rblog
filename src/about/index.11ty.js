@@ -121,18 +121,28 @@ exports.render = function (data) {
                           minute="numeric"
                           time-zone-name="short">
                         ${event.date}
-                      </local-time>
+                        </local-time>
                       </span>
                       <span class="about__eventsListItemTZ" data-timezone></span>
+                      ${
+                        event.canceled_until !== null
+                          ? `<span class="about__eventsListItemCancelled">CANCELLED</span>`
+                          : ""
+                      }
                     </span>
                     <span class="about__eventsListItemName">${event.name}</span>
+                    ${
+                      event.canceled_until === null
+                        ? `
                     <a href="${
                       event.link
                     }" class="about__eventsListItemCta" target="_blank" rel="nofollow noreferrer">${calculateIcon(
-                      event.type,
-                    )} Go to <span class="about__eventsListItemCta--sr">${
-                      event.name
-                    }</span> event <span role="presentation">→</span></a>
+                            event.type,
+                          )} Go to <span class="about__eventsListItemCta--sr">${
+                            event.name
+                          }</span> event <span role="presentation">→</span></a>`
+                        : ""
+                    }
                   </li>
                 `,
                   )

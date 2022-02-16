@@ -154,3 +154,13 @@
 .about__eventsListItemCta--sr {
   @include sr_only;
 }
+
+.about__eventsListItemCancelled {
+  background: var(--yellow);
+  color: var(--black);
+  border-radius: var(--border-radius-base);
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  @include font_bold;
+  width: max-content;
+}

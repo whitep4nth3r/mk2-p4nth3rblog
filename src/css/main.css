@@ -659,6 +659,17 @@ strong {
   border-width: 0;
 }
 
+.about__eventsListItemCancelled {
+  background: var(--yellow);
+  color: var(--black);
+  border-radius: var(--border-radius-base);
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: var(--font-weight-bold);
+  font-family: var(--font-family-bold);
+  width: max-content;
+}
+
 .topics__header {
   margin: 4rem auto 2rem auto;
   max-width: var(--grid-max-width);
