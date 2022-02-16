@@ -3,7 +3,7 @@ const DateUtils = require("../../lib/dateUtils");
 const RichText = require("../_components/richText");
 
 exports.data = {
-  permalink: "/rss.xml",
+  permalink: "/feed.xml",
 };
 
 function buildCategories(topics) {
