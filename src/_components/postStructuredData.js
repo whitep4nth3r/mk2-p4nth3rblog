@@ -14,7 +14,7 @@ function PostStructuredData({ post, imageUrl }) {
     author: {
       "@type": "Person",
       name: post.author.name,
-      description: post.author.description,
+      description: post.author.bioShort,
       image: post.author.imageBio.url,
       url: "https://whitep4nth3r.com",
     },

@@ -14,8 +14,6 @@ const ContentfulThingsIUse = {
           categories
           description
           link
-          isAffiliateLink
-          customLinkText
           image {
             ${GraphQLStringBlocks.imageAsset()}
           }

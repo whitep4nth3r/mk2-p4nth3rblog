@@ -44,15 +44,6 @@ const ContentfulEvents = {
           date
           name
           link
-          description
-          timeTbc
-          isVirtual
-          image {
-            url
-            description
-            height
-            width
-          }
         }
       }
     }`;
