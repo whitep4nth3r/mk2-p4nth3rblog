@@ -2,7 +2,7 @@ const fetch = require("node-fetch");
 
 exports.handler = async function (event, context) {
   if (event.queryStringParameters.secret === process.env.DEPLOY_ME_SECRET) {
-    const response = fetch(process.env.DEPLOY_ME_URL, {
+    const response = await fetch(process.env.DEPLOY_ME_URL, {
       method: "POST",
     });
 
