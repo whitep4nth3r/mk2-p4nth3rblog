@@ -5,17 +5,14 @@ const richTextPlainTextRenderer = require("@contentful/rich-text-plain-text-rend
 
 async function callContentful(query, variables) {
   try {
-    const data = await fetch(
-      `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
-      {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${process.env.CONTENTFUL_ACCESS_TOKEN}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ query, variables }),
+    const data = await fetch(`https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${process.env.CONTENTFUL_ACCESS_TOKEN}`,
+        "Content-Type": "application/json",
       },
-    ).then((response) => response.json());
+      body: JSON.stringify({ query, variables }),
+    }).then((response) => response.json());
     return data;
   } catch (error) {
     throw new Error(error);
@@ -77,9 +74,7 @@ async function getPaginatedPosts(page) {
   const response = await callContentful(query, variables);
 
   const { total } = response.data.blogPostCollection;
-  const posts = response.data.blogPostCollection.items
-    ? response.data.blogPostCollection.items
-    : [];
+  const posts = response.data.blogPostCollection.items ? response.data.blogPostCollection.items : [];
 
   return { posts, total };
 }
@@ -169,9 +164,7 @@ async function getPaginatedTalks(page) {
   const response = await callContentful(query, variables);
 
   const { total } = response.data.talkCollection;
-  const talks = response.data.talkCollection.items
-    ? response.data.talkCollection.items
-    : [];
+  const talks = response.data.talkCollection.items ? response.data.talkCollection.items : [];
 
   return { talks, total };
 }
@@ -205,9 +198,7 @@ function transformTalksToSearchObjects(talks) {
       topicsCollection: { items: talk.topicsCollection.items },
       date: talk.date,
       watchTime: talk.watchTime,
-      body: richTextPlainTextRenderer.documentToPlainTextString(
-        talk.transcript.json,
-      ),
+      body: richTextPlainTextRenderer.documentToPlainTextString(talk.transcript.json),
     };
   });
 
@@ -225,10 +216,7 @@ function transformTalksToSearchObjects(talks) {
     const transformed = transformedPosts.concat(transformedTalks);
 
     if (posts.length > 0) {
-      const client = algoliasearch(
-        process.env.NEXT_PUBLIC_ALGOLIA_APP_ID,
-        process.env.ALGOLIA_SEARCH_ADMIN_KEY,
-      );
+      const client = algoliasearch(process.env.ALGOLIA_APP_ID, process.env.ALGOLIA_SEARCH_ADMIN_KEY);
 
       const index = client.initIndex("p4nth3rblog");
       const algoliaResponse = await index.saveObjects(transformed);
@@ -236,9 +224,7 @@ function transformTalksToSearchObjects(talks) {
       console.log(
         `🎉 Sucessfully added ${
           algoliaResponse.objectIDs.length
-        } records to Algolia search. Object IDs:\n${algoliaResponse.objectIDs.join(
-          "\n",
-        )}`,
+        } records to Algolia search. Object IDs:\n${algoliaResponse.objectIDs.join("\n")}`,
       );
     }
   } catch (error) {
