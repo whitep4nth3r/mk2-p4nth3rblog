@@ -7,6 +7,9 @@
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"
+[[redirects]]
+  from = "/faqs"
+  to = "/blog/faqs/"
 [[plugins]]
 package = "netlify-plugin-inline-functions-env"
    [plugins.inputs]
