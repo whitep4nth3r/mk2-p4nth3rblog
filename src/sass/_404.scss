@@ -1,0 +1,26 @@
+.fourohfour__header {
+  @include grid_header;
+}
+
+.fourohfour__headerTitle {
+  @include grid_header_title;
+}
+
+.fourohfour__content {
+  max-width: var(--grid-max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.fourohfour__text {
+  @include font_main;
+  font-size: 1.4rem;
+  line-height: 1.4;
+  margin-bottom: 2rem;
+  color: var(--color-fg);
+}
+
+.fourohfour__img {
+  height: 10rem;
+  transform: rotate(-15deg);
+}

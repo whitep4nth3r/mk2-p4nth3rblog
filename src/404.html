@@ -1,16 +1,46 @@
 ---
-title: Oops! Not Found
+title: This page does not exist 👀
 permalink: 404.html
 ---
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>{{ title }}</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/main.css" />
+
+    <!-- Meta -->
+    <meta name="description" content="This page doesn't exist. Please try another one." />
+
+    <!-- Favicons -->
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0f111a" />
+    <meta name="msapplication-TileColor" content="#0f111a" />
+    <meta name="theme-color" content="#0f111a" />
   </head>
-  <body>
-    <h1>{{ title }}</h1>
-    <p>This is where you should tell the user how to find their content. Maybe on the <a href="{{ "/" | url }}">home page?</a></p>
+  <body data-type="404">
+    {% include "header.html" %}
+    <main id="main_content">
+      <div class="fourohfour__header">
+        <h1 class="fourohfour__headerTitle">{{ title }}</h1>
+      </div>
+      <div class="fourohfour__content">
+        <p class="fourohfour__text">
+          I'll put something fun here one day. Until then, enjoy this picture of the PantherMoth.
+        </p>
+        <img src="/img/panthermoth.svg" alt="Panther Moth" class="fourohfour__img" />
+      </div>
+    </main>
+    {% include "footer.html" %}
   </body>
 </html>
