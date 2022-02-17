@@ -4,6 +4,8 @@ const embedYouTube = require("eleventy-plugin-youtube-embed");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.ignores.add("./src/sass");
+  eleventyConfig.ignores.add("./src/css/main.css.map");
+  eleventyConfig.ignores.add("./src/scripts");
 
   eleventyConfig.addWatchTarget("./src/css");
   eleventyConfig.addPassthroughCopy("./src/css");
