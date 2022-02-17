@@ -7,11 +7,11 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.ignores.add("./src/css/main.css.map");
   eleventyConfig.ignores.add("./src/scripts");
 
-  eleventyConfig.addWatchTarget("./src/css");
-  eleventyConfig.addPassthroughCopy("./src/css");
+  eleventyConfig.addWatchTarget("./src/_css");
+  eleventyConfig.addPassthroughCopy({ "./src/_css": "./src/css" });
 
-  eleventyConfig.addPassthroughCopy("./src/fonts");
-  eleventyConfig.addPassthroughCopy({ "./src/public": "/" });
+  eleventyConfig.addPassthroughCopy({ "./src/_fonts": "./src/fonts" });
+  eleventyConfig.addPassthroughCopy({ "./src/_public": "/" });
 
   eleventyConfig.addPassthroughCopy({ "./src/_search/app.js": "/js/app_search.js" });
   eleventyConfig.addPassthroughCopy({ "./node_modules/@github/time-elements/dist/index.js": "js/time_elements.js" });

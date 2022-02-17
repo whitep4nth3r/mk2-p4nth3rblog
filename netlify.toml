@@ -3,7 +3,7 @@
   command = "npm run dev"
 [build]
   command = "npm run build"
-  functions = "src/functions/"
+  functions = "src/_functions/"
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"

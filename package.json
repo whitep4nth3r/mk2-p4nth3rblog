@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "description": "A simple, accessible, static blog site.",
   "scripts": {
-    "watch:sass": "sass --watch ./src/sass:src/css",
-    "build:sass": "sass ./src/sass:src/css",
+    "watch:sass": "sass --watch ./src/_sass:src/_css",
+    "build:sass": "sass ./src/_sass:src/_css",
     "watch:eleventy": "npx @11ty/eleventy --serve",
     "build:eleventy": "npx @11ty/eleventy",
     "build:search": "node ./src/scripts/build-search.js",
