@@ -8,7 +8,7 @@ const AboutTableOfContents = require("../_components/aboutTableOfContents");
 const pageTitle = "whitep4nth3r's Stats Dashboard";
 
 function loading() {
-  return `<div class="lds__ripple"><div></div><div></div></div>`;
+  return `<span class="dashboard__loading"></span>`;
 }
 
 exports.data = {
@@ -114,7 +114,7 @@ exports.render = function (data) {
 
     <script type="module" defer>
       async function makeDashboard() {
-         const twitch = await fetch("/api/twitch");
+        const twitch = await fetch("/api/twitch");
         const twitchData = await twitch.json().then(res => {
           document.querySelector("[data-twitchFollowers]").innerText = res.followers.toLocaleString('en-US');
           document.querySelector("[data-twitchViews]").innerText = res.views.toLocaleString('en-US');

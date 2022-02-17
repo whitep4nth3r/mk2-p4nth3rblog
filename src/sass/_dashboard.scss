@@ -28,64 +28,30 @@
 
 .dashboard__gridItemStat {
   @include font_bold;
-  font-size: clamp(1.4rem, 4vw, 4rem);
+  font-size: clamp(2rem, 4vw, 4rem);
   color: var(--color-highlight);
 }
 
-$size: 1rem;
+.dashboard__loading {
+  display: flex;
 
-@keyframes ripple {
-  0% {
-    top: $size;
-    left: $size;
-    width: 0;
-    height: 0;
-    opacity: 1;
-  }
-  100% {
-    top: 0px;
-    left: 0px;
-    width: calc($size * 2);
-    height: calc($size * 2);
-    opacity: 0;
-  }
-}
+  &:before,
+  &:after {
+    content: "";
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.5rem;
+    background-color: var(--color-highlight);
+    border-radius: 50%;
+    animation: flash 2s infinite;
 
-.lds__ripple {
-  display: inline-block;
-  position: relative;
-  width: calc($size * 2.5);
-  height: calc($size * 2.5);
-
-  @media (prefers-reduced-motion: reduce) {
-    height: auto;
-    width: auto;
-    display: flex;
-    align-items: center;
-
-    &:after {
-      content: "...";
-      @include font_bold;
-      font-size: clamp(1.4rem, 4vw, 4rem);
+    @media (prefers-reduced-motion: reduce) {
+      animation: unset;
     }
   }
-}
 
-.lds__ripple div {
-  display: block;
-  position: absolute;
-  border: 0.125rem solid var(--color-highlight);
-  opacity: 1;
-  border-radius: 50%;
-  animation: ripple 2s cubic-bezier(0, 0.2, 0.8, 1) infinite;
-
-  @media (prefers-reduced-motion: reduce) {
-    animation: unset;
-    border: unset;
+  &:after {
+    animation-delay: 0.5s;
   }
-}
-
-.lds__ripple div:nth-child(2) {
-  display: block;
-  animation-delay: -0.5s;
 }

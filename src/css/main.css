@@ -1541,65 +1541,30 @@ a.post__linkedHeaderIcon {
 .dashboard__gridItemStat {
   font-weight: var(--font-weight-bold);
   font-family: var(--font-family-bold);
-  font-size: clamp(1.4rem, 4vw, 4rem);
+  font-size: clamp(2rem, 4vw, 4rem);
   color: var(--color-highlight);
 }
 
-@keyframes ripple {
-  0% {
-    top: 1rem;
-    left: 1rem;
-    width: 0;
-    height: 0;
-    opacity: 1;
-  }
-  100% {
-    top: 0px;
-    left: 0px;
-    width: 2rem;
-    height: 2rem;
-    opacity: 0;
-  }
+.dashboard__loading {
+  display: flex;
 }
-.lds__ripple {
+.dashboard__loading:before, .dashboard__loading:after {
+  content: "";
   display: inline-block;
-  position: relative;
-  width: 2.5rem;
-  height: 2.5rem;
-}
-@media (prefers-reduced-motion: reduce) {
-  .lds__ripple {
-    height: auto;
-    width: auto;
-    display: flex;
-    align-items: center;
-  }
-  .lds__ripple:after {
-    content: "...";
-    font-weight: var(--font-weight-bold);
-    font-family: var(--font-family-bold);
-    font-size: clamp(1.4rem, 4vw, 4rem);
-  }
-}
-
-.lds__ripple div {
-  display: block;
-  position: absolute;
-  border: 0.125rem solid var(--color-highlight);
-  opacity: 1;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+  background-color: var(--color-highlight);
   border-radius: 50%;
-  animation: ripple 2s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+  animation: flash 2s infinite;
 }
 @media (prefers-reduced-motion: reduce) {
-  .lds__ripple div {
+  .dashboard__loading:before, .dashboard__loading:after {
     animation: unset;
-    border: unset;
   }
 }
-
-.lds__ripple div:nth-child(2) {
-  display: block;
-  animation-delay: -0.5s;
+.dashboard__loading:after {
+  animation-delay: 0.5s;
 }
 
 .projects__header {
