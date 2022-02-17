@@ -3,9 +3,9 @@ const embedTwitter = require("eleventy-plugin-embed-twitter");
 const embedYouTube = require("eleventy-plugin-youtube-embed");
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.ignores.add("./src/sass");
-  eleventyConfig.ignores.add("./src/css/main.css.map");
-  eleventyConfig.ignores.add("./src/scripts");
+  eleventyConfig.ignores.add("./src/_sass");
+  eleventyConfig.ignores.add("./src/_css/main.css.map");
+  eleventyConfig.ignores.add("./src/_scripts");
 
   eleventyConfig.addWatchTarget("./src/_css");
   eleventyConfig.addPassthroughCopy({ "./src/_css": "./src/css" });
