@@ -902,12 +902,13 @@ a.post__linkedHeaderIcon {
 }
 
 .post__responsiveImage {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .post__codeBlock {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
 }
 
 .post__blockquote {
