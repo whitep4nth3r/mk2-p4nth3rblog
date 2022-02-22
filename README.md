@@ -42,7 +42,7 @@ Directories prefixed with `_` are utility folders, providing global data, layout
 functionality.
 
 Other directories (about, blog, dashboard, projects, talks, topics, uses) act as page-level route directories, resulting
-in e.g. /projects, /dashboard in the site build.
+in e.g. `/projects/`, `/dashboard/` etc in the site build.
 
 The site homepage is built from `/src/index.11ty.js`.
 
