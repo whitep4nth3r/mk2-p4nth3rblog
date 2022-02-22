@@ -6,5 +6,5 @@ module.exports = function () {
   const lastBuildDate = DateUtils.formatDateForDisplay(date);
   const lastBuildTime = DateUtils.getTimeFromTime(date);
 
-  return `${lastBuildDay} ${lastBuildDate} ${lastBuildTime}`;
+  return { fullTime: `${lastBuildDay} ${lastBuildDate} ${lastBuildTime}`, year: date.getFullYear() };
 };
