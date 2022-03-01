@@ -4,10 +4,6 @@ const GetInvolvedOpenSource = require("./_components/getInvolvedOpenSource");
 const LatestBlogPost = require("./_components/latestBlogPost");
 const pageTitle = "Build stuff, learn things and love what you do with whitep4nth3r";
 
-var md = require("markdown-it")({
-  html: true,
-});
-
 exports.data = {
   layout: "base.html",
   title: pageTitle,
@@ -20,7 +16,7 @@ exports.data = {
 };
 
 exports.render = function (data) {
-  const { twitch, latestBlogPost } = data;
+  const { twitch, latestPost } = data;
   return /*html*/ `
   <section class="home">
     <div class="home__item">
@@ -29,7 +25,7 @@ exports.render = function (data) {
     </div>
     <div class="home__item">
       <h2 class="home__itemTitle">learn <span class="colorHighlight">things</h2>
-      ${LatestBlogPost({ post: latestBlogPost })}
+      ${LatestBlogPost({ post: latestPost.post })}
     </div>
     <div class="home__item">
       <h2 class="home__itemTitle">love <span class="colorHighlight">what you do</span></h2>

@@ -1251,6 +1251,22 @@ a.post__linkedHeaderIcon {
   display: block;
 }
 
+.postCard__imageWrap {
+  background: var(--yellow-red-gradient);
+  border-radius: var(--border-radius-base);
+  filter: drop-shadow(0px 0.125rem 0.125rem rgba(0, 0, 0, 0.25));
+  height: 10rem;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.postCard__image {
+  object-fit: cover;
+}
+
 .topicsButton {
   font-weight: var(--font-weight-heading);
   font-family: var(--font-family-heading);
@@ -2024,7 +2040,15 @@ a.post__linkedHeaderIcon {
   font-family: var(--font-family-heading);
   font-size: 2rem;
   margin-top: 3rem;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
+}
+
+.ais__howAbout {
+  font-weight: var(--font-weight-heading);
+  font-family: var(--font-family-heading);
+  color: var(--color-highlight);
+  font-size: 2rem;
+  margin-bottom: 3rem;
 }
 
 .ais__hitsList {
@@ -2122,6 +2146,53 @@ a.post__linkedHeaderIcon {
   border-radius: 0;
   box-shadow: inset var(--color-highlight) 0 0 0 0.125rem;
   transition: box-shadow var(--global-transition-time) ease-in-out;
+}
+
+.ais__recommended {
+  max-width: 20rem;
+  display: inline-block;
+}
+
+.ais__recommendedTitle {
+  font-weight: var(--font-weight-heading);
+  font-family: var(--font-family-heading);
+  text-decoration: none;
+  color: var(--color-fg);
+  font-size: 1.7rem;
+  line-height: 1.2;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.ais__recommendedImage {
+  border-radius: var(--border-radius-base);
+  filter: drop-shadow(0px 0.125rem 0.125rem rgba(0, 0, 0, 0.25));
+  margin-bottom: 1rem;
+}
+
+.ais__recommendedLink {
+  font-weight: var(--font-weight-heading);
+  font-family: var(--font-family-heading);
+  background-color: var(--color-bg-button);
+  color: var(--color-button);
+  border-radius: var(--border-radius-base);
+  padding: 0.5rem 1rem 0.5rem 0.75rem;
+  text-decoration: none;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 1rem;
+  border-color: transparent;
+  cursor: pointer;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  width: max-content;
 }
 
 /**
