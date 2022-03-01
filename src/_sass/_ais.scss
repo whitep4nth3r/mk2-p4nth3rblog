@@ -26,7 +26,7 @@
   @include font_heading;
   font-size: 2rem;
   margin-top: 3rem;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
 }
 
 .ais__hitsList {
@@ -89,4 +89,38 @@
 
 .ais__reset:focus {
   @include search_focus_style;
+}
+
+.ais__recommended {
+  max-width: 20rem;
+  display: inline-block;
+}
+
+.ais__recommendedTitle {
+  @include font_heading;
+  text-decoration: none;
+  color: var(--color-fg);
+  font-size: 1.7rem;
+  line-height: 1.2;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  text-decoration: none;
+}
+
+.ais__recommendedImage {
+  border-radius: var(--border-radius-base);
+  filter: drop-shadow(0px 0.125rem 0.125rem rgba(0, 0, 0, 0.25));
+  margin-bottom: 1rem;
+}
+
+.ais__recommendedLink {
+  @include button_main;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  width: max-content;
 }

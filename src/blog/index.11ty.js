@@ -27,6 +27,7 @@ exports.data = {
 };
 
 exports.render = function (data) {
+  const latestPost = data.latestPost.post;
   return /* html */ `
 
   <section>
@@ -76,7 +77,17 @@ exports.render = function (data) {
     const search = initSearch({
       appId: "${data.search.ALGOLIA_APP_ID}", 
       apiKey: "${data.search.ALGOLIA_SEARCH_API_KEY}", 
-      indexName: "${data.search.ALGOLIA_INDEX}"
+      indexName: "${data.search.ALGOLIA_INDEX}",
+      latestPost: {
+        title:  "${latestPost.title}",
+        slug: "${latestPost.slug}",
+        featuredImage: {
+          url: "${latestPost.featuredImage.url}",
+          description: "${latestPost.featuredImage.description}",
+          width: "${latestPost.featuredImage.width}",
+          height: "${latestPost.featuredImage.height}",
+        }
+      }
     });
 
     const searchBox = document.getElementById("searchbox");
