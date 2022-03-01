@@ -13,6 +13,21 @@ function PostCard({ post, baseSlug, isTalk }) {
           <span class="postCard__metaIcon">${StopwatchIcon()}</span>
           <span class="postCard__metaText">${post.readingTime || post.watchTime} min ${timeSuffix}</span>
         </p>
+
+        <div class="postCard__imageWrap">
+          ${
+            post.featuredImage
+              ? `<img
+            class="postCard__image"
+            src="${post.featuredImage.url}?w=320"
+            alt="${post.featuredImage.description}"
+            height="${post.featuredImage.height}"
+            width="${post.featuredImage.width}"
+            loading="lazy"
+          />`
+              : ""
+          }
+        </div>
         <a href="/${baseSlug}/${post.slug}/" class="postCard__titleLink" id="post-${post.sys.id}">
           ${post.title}
         </a>

@@ -108,7 +108,7 @@ const renderSearchBox = (renderOptions, isFirstRender) => {
   widgetParams.container.querySelector("input").value = query;
 };
 
-function initSearch({ appId, apiKey, indexName }) {
+function initSearch({ appId, apiKey, indexName, latestPost }) {
   const searchClient = algoliasearch(appId, apiKey);
 
   const search = instantsearch({
@@ -134,7 +134,19 @@ function initSearch({ appId, apiKey, indexName }) {
       },
       templates: {
         empty(results) {
-          return `<p class="ais__emptyMessage">No results found for <q>${results.query}</q>.</p>`;
+          return `
+          <p class="ais__emptyMessage">No results found for <q>${results.query}</q>.</p>
+          <p class="ais__howAbout">How about this?</p>
+          <div class="ais__recommended">
+            <img class="ais__recommendedImage" src="${latestPost.featuredImage.url}" alt="${latestPost.featuredImage.description}" height="${latestPost.featuredImage.height}" width="${latestPost.featuredImage.width}" />
+            <a href="/blog/${latestPost.slug}/" class="ais__recommendedTitle" id="post-${latestPost.id}">
+              ${latestPost.title}
+            </a>
+            <a href="/blog/${latestPost.slug}/" class="ais__recommendedLink" aria-describedby="post-${latestPost.id}">
+              <span>Learn more</span><span aria-hidden="true">→</li>
+            </a>
+          </div>
+          `;
         },
         item(hit) {
           const isTalk = hit.watchTime !== undefined;
@@ -149,6 +161,20 @@ function initSearch({ appId, apiKey, indexName }) {
           <span class="postCard__metaIcon">${StopwatchIcon()}</span>
           <span class="postCard__metaText">${hit.readingTime || hit.watchTime} min ${timeSuffix}</span>
         </p>
+        <div class="postCard__imageWrap">
+          ${
+            hit.featuredImage
+              ? `<img
+            class="postCard__image"
+            src="${hit.featuredImage.url}?w=320"
+            alt="${hit.featuredImage.description}"
+            height="${hit.featuredImage.height}"
+            width="${hit.featuredImage.width}"
+            loading="lazy"
+          />`
+              : ""
+          }
+        </div>
         <a href="/${baseSlug}/${hit.slug}/" class="postCard__titleLink postCard__titleLink--ais" id="search-${
             hit.objectID
           }">

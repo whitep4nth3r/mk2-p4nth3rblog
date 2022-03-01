@@ -38,6 +38,17 @@ async function getPaginatedPosts(page) {
           slug
           date
           readingTime
+          featuredImage {
+              sys {
+                id
+              }
+              url
+              title
+              width
+              height
+              description
+              contentType
+          }
           topicsCollection {
             items {
               sys {
@@ -116,6 +127,7 @@ function transformPostsToSearchObjects(posts) {
       readingTime: post.readingTime,
       body: richTextPlainTextRenderer.documentToPlainTextString(post.body.json),
       codeBlocks: transformCodeBlocks(post.body.links?.entries?.block),
+      featuredImage: post.featuredImage,
     };
   });
 
