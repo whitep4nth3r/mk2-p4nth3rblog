@@ -81,6 +81,7 @@ exports.render = function (data) {
       latestPost: {
         title:  "${latestPost.title}",
         slug: "${latestPost.slug}",
+        id: "${latestPost.sys.id}",
         featuredImage: {
           url: "${latestPost.featuredImage.url}",
           description: "${latestPost.featuredImage.description}",

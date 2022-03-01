@@ -29,6 +29,13 @@
   margin-bottom: 3rem;
 }
 
+.ais__howAbout {
+  @include font_heading;
+  color: var(--color-highlight);
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+
 .ais__hitsList {
   @include grid;
   margin-left: auto;
@@ -105,7 +112,6 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  text-decoration: none;
 }
 
 .ais__recommendedImage {

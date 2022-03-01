@@ -2043,6 +2043,14 @@ a.post__linkedHeaderIcon {
   margin-bottom: 3rem;
 }
 
+.ais__howAbout {
+  font-weight: var(--font-weight-heading);
+  font-family: var(--font-family-heading);
+  color: var(--color-highlight);
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+
 .ais__hitsList {
   list-style: none;
   padding-left: 0;
@@ -2155,7 +2163,6 @@ a.post__linkedHeaderIcon {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  text-decoration: none;
 }
 
 .ais__recommendedImage {

@@ -135,11 +135,14 @@ function initSearch({ appId, apiKey, indexName, latestPost }) {
       templates: {
         empty(results) {
           return `
-          <p class="ais__emptyMessage">No results found for <q>${results.query}</q>. How about this?</p>
+          <p class="ais__emptyMessage">No results found for <q>${results.query}</q>.</p>
+          <p class="ais__howAbout">How about this?</p>
           <div class="ais__recommended">
             <img class="ais__recommendedImage" src="${latestPost.featuredImage.url}" alt="${latestPost.featuredImage.description}" height="${latestPost.featuredImage.height}" width="${latestPost.featuredImage.width}" />
-            <h2 class="ais__recommendedTitle">${latestPost.title}</h2>
-            <a href="/blog/${latestPost.slug}/" class="ais__recommendedLink">
+            <a href="/blog/${latestPost.slug}/" class="ais__recommendedTitle" id="post-${latestPost.id}">
+              ${latestPost.title}
+            </a>
+            <a href="/blog/${latestPost.slug}/" class="ais__recommendedLink" aria-describedby="post-${latestPost.id}">
               <span>Learn more</span><span aria-hidden="true">→</li>
             </a>
           </div>
