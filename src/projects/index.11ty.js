@@ -15,6 +15,7 @@ exports.data = {
   openGraphImageAlt: OpenGraph.generateImageAlt(pageTitle),
   openGraphImageWidth: OpenGraph.imageWidth,
   openGraphImageHeight: OpenGraph.imageHeight,
+  openGraphUrl: "https://whitep4nth3r.com/projects/",
 };
 
 exports.render = function (data) {
