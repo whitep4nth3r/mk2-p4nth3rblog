@@ -10,6 +10,11 @@
 [[redirects]]
   from = "/faqs"
   to = "/blog/faqs/"
+  status = 301
+[[redirects]]
+  from = "/discord"
+  to = "https://discord.gg/theclaw"
+  status = 301
 [[plugins]]
 package = "netlify-plugin-inline-functions-env"
    [plugins.inputs]
