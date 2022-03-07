@@ -13,6 +13,7 @@ exports.data = {
   openGraphImageAlt: OpenGraph.generateImageAlt(pageTitle),
   openGraphImageWidth: OpenGraph.imageWidth,
   openGraphImageHeight: OpenGraph.imageHeight,
+  openGraphUrl: "https://whitep4nth3r.com/talks/",
   pagination: {
     data: "talkSummaries",
     size: Config.pagination.pageSize,
