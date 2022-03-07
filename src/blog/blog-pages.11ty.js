@@ -31,6 +31,7 @@ exports.data = {
     openGraphImageAlt: (data) => OpenGraph.generateImageAlt(data.post.title),
     openGraphImageWidth: OpenGraph.imageWidth,
     openGraphImageHeight: OpenGraph.imageHeight,
+    openGraphUrl: (data) => `https://whitep4nth3r.com/blog/${data.post.slug}/`,
   },
 };
 
