@@ -68,8 +68,8 @@
 
 .nextTwitchStream__liveNow {
   @include font_bold;
-  background-color: var(--color-highlight);
-  color: var(--color-bg);
+  background-color: var(--yellow);
+  color: var(--black);
   padding: 0.5rem 1rem;
   border-radius: var(--border-radius-base);
   text-transform: uppercase;
