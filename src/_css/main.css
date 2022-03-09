@@ -70,7 +70,7 @@
     --color-bg-lighter: var(--white);
     --color-fg: var(--black);
     --color-link: var(--color-fg);
-    --color-highlight: var(--red);
+    --color-highlight: var(--black);
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -1451,8 +1451,8 @@ a.post__linkedHeaderIcon {
 .nextTwitchStream__liveNow {
   font-weight: var(--font-weight-bold);
   font-family: var(--font-family-bold);
-  background-color: var(--color-highlight);
-  color: var(--color-bg);
+  background-color: var(--yellow);
+  color: var(--black);
   padding: 0.5rem 1rem;
   border-radius: var(--border-radius-base);
   text-transform: uppercase;
@@ -1520,7 +1520,7 @@ a.post__linkedHeaderIcon {
   margin-bottom: 4rem;
   font-size: 1.2rem;
   line-height: 1.4;
-  padding: 1rem 0.5rem;
+  padding: 1rem 0;
   word-break: break-word;
   display: block;
 }
