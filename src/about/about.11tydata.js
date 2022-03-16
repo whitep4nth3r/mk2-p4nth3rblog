@@ -14,7 +14,7 @@ module.exports = async function () {
   const futureEvents = await ContentfulEvents.getAll({ future: true });
 
   const dbEvents = futureEvents.map((ev) => {
-    return { ...ev, type: ev.link.includes("youtube") ? "youtube" : "db", canceled_until: null };
+    return { ...ev, type: ev.link?.includes("youtube") ? "youtube" : "db", canceled_until: null };
   });
 
   const twitch = await fetch(`${process.env.DOMAIN}/api/twitch`);
