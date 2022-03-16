@@ -20,6 +20,7 @@ function noStreamIndicator(text) {
 
 function NextTwitchStream({ stream, isLive, onVacation }) {
   const heading = isLive ? "I am live on Twitch right now!" : "Next Twitch stream";
+  const buttonText = isLive ? "Watch live" : "Follow on Twitch";
 
   return /*html*/ `
       <div class="nextTwitchStream">
@@ -29,31 +30,37 @@ function NextTwitchStream({ stream, isLive, onVacation }) {
           ${onVacation ? noStreamIndicator("on vacation") : ""}
         </h3>
 
-        ${isLive ? isLiveIndicator() : ""}
-        
-        <a href="https://www.twitch.tv/whitep4nth3r/schedule" target="_blank" rel="nofollow referrer" class="nextTwitchStream__link">
-          <p class="nextTwitchStream__meta">
-            <span class="nextTwitchStream__metaIcon">${CalendarIcon()}</span>
-            <span class="nextTwitchStream__metaInfo">
-              <local-time 
-                  datetime="${stream.start_time}"
-                  weekday="short"
-                  month="short"
-                  day="numeric"
-                  year="numeric"
-                  hour="numeric"
-                  minute="numeric"
-                  time-zone-name="short">
-                ${stream.start_time}
-              </local-time>
-            </span>
-          </p>
-          <p class="nextTwitchStream__meta">
-            <span class="nextTwitchStream__metaIcon">${ClockIcon()}</span>
-            <span class="nextTwitchStream__metaInfo nextTwitchStream__metaInfo--timeUntil">
-            <time-until datetime="${stream.start_time}"></time-until>
-          </p>
-        </a>
+        ${
+          !onVacation
+            ? /*html*/ `
+              ${isLive ? isLiveIndicator() : ""}
+              
+              <a href="https://www.twitch.tv/whitep4nth3r/schedule" target="_blank" rel="nofollow referrer" class="nextTwitchStream__link">
+                <p class="nextTwitchStream__meta">
+                  <span class="nextTwitchStream__metaIcon">${CalendarIcon()}</span>
+                  <span class="nextTwitchStream__metaInfo">
+                    <local-time 
+                        datetime="${stream.start_time}"
+                        weekday="short"
+                        month="short"
+                        day="numeric"
+                        year="numeric"
+                        hour="numeric"
+                        minute="numeric"
+                        time-zone-name="short">
+                      ${stream.start_time}
+                    </local-time>
+                  </span>
+                </p>
+                <p class="nextTwitchStream__meta">
+                  <span class="nextTwitchStream__metaIcon">${ClockIcon()}</span>
+                  <span class="nextTwitchStream__metaInfo nextTwitchStream__metaInfo--timeUntil">
+                  <time-until datetime="${stream.start_time}"></time-until>
+                </p>
+              </a>
+              `
+            : ""
+        }
 
         <p class="nextTwitchStream__streamInfo">Join the chat whilst I stream building stuff and learning things every week. Come hang out!</p>
 
@@ -65,7 +72,7 @@ function NextTwitchStream({ stream, isLive, onVacation }) {
               ${TwitchIcon()}
             </span>
             <span>
-              Watch live 
+              ${buttonText}
             </span>
             <span role="presentation">→</span>
           </a>
