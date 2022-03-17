@@ -1294,6 +1294,10 @@ a.post__linkedHeaderIcon {
   align-items: center;
   gap: 0.5rem;
 }
+.topicsButton__list li {
+  display: flex;
+  gap: 0.5rem;
+}
 
 .homeCard {
   height: 100%;
