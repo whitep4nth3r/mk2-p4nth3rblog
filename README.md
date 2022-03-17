@@ -66,4 +66,4 @@ The Eleventy config file:
 
 ## Build output
 
-Using `ntl dev`, the site is built to and served from `_site`.
+Using `netlify dev`, the site is built to and served from `_site`.

@@ -43,6 +43,8 @@
   color: var(--color-highlight);
   text-transform: uppercase;
   font-size: 1.2rem;
+  display: block;
+  margin-top: 0.5rem;
 }
 
 .nextTwitchStream__streamInfo {
@@ -64,6 +66,10 @@
   display: inline-flex;
   flex-direction: row;
   gap: 0.5rem;
+
+  * {
+    display: flex;
+  }
 }
 
 .nextTwitchStream__liveNow {

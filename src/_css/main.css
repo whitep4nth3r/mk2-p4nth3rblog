@@ -1362,6 +1362,9 @@ a.post__linkedHeaderIcon {
   align-items: center;
   gap: 0.5rem;
 }
+.homeCard__button * {
+  display: flex;
+}
 
 .nextTwitchStream {
   display: flex;
@@ -1411,6 +1414,8 @@ a.post__linkedHeaderIcon {
   color: var(--color-highlight);
   text-transform: uppercase;
   font-size: 1.2rem;
+  display: block;
+  margin-top: 0.5rem;
 }
 
 .nextTwitchStream__streamInfo {
@@ -1446,6 +1451,9 @@ a.post__linkedHeaderIcon {
   display: inline-flex;
   flex-direction: row;
   gap: 0.5rem;
+}
+.nextTwitchStream__cta * {
+  display: flex;
 }
 
 .nextTwitchStream__liveNow {

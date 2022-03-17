@@ -133,7 +133,7 @@ exports.render = function (data) {
                     </span>
                     <span class="about__eventsListItemName">${event.name}</span>
                     ${
-                      event.canceled_until === null
+                      event.canceled_until === null && event.link
                         ? `
                     <a href="${
                       event.link
