@@ -11,7 +11,7 @@ const PostStructuredData = require("../_components/postStructuredData");
 const OpenGraph = require("../../lib/openGraph");
 
 exports.data = {
-  layout: "base.html",
+  layout: "base.njk",
   pageType: "post",
   pagination: {
     data: "posts",

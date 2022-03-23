@@ -8,7 +8,7 @@ const OpenGraph = require("../../lib/openGraph");
 const pageTitle = "Posts about web development, accessibility, Jamstack, JavaScript, and more from whitep4nth3r";
 
 exports.data = {
-  layout: "base.html",
+  layout: "base.njk",
   title: pageTitle,
   metaDescription: "Posts about web development, accessibility, Jamstack, JavaScript, and more.",
   openGraphImageUrl: OpenGraph.generateImageUrl({ title: pageTitle }),
