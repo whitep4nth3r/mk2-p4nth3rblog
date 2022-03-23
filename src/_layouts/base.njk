@@ -10,8 +10,14 @@
     <link rel="canonical" href="{{ canonical }}" />
     {% endif %}
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="/css/main.css" />
+    <!-- capture the CSS content as a Nunjucks variable -->
+    {% set css %}
+      {% include "../_css/main.css" %}
+    {% endset %}
+    <!-- feed it through our cssmin filter to minify -->
+    <style>
+      {{ css | cssmin | safe }}
+    </style>
 
     <!-- Open Graph -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -55,7 +61,7 @@
   </head>
   <body data-type="{{pageType}}">
     {% include "header.html" %}
-    <main id="main_content">{{ content }}</main>
+    <main id="main_content">{{ content | safe }}</main>
     {% include "footer.html" %}
   </body>
 </html>

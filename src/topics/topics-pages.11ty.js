@@ -3,7 +3,7 @@ const PostCard = require("../_components/postCard");
 const OpenGraph = require("../../lib/openGraph");
 
 exports.data = {
-  layout: "base.html",
+  layout: "base.njk",
   pagination: {
     data: "topics",
     alias: "topic",
