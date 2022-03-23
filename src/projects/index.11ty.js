@@ -8,7 +8,7 @@ const GithubIssue = require("../_components/svg/githubIssue");
 const pageTitle = "Open source projects maintained by whitep4nth3r";
 
 exports.data = {
-  layout: "base.njk",
+  layout: "base.html",
   title: pageTitle,
   metaDescription: "Get involved with open source projects built live on Twitch with whitep4nth3r",
   openGraphImageUrl: OpenGraph.generateImageUrl({ title: pageTitle }),
