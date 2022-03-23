@@ -4,7 +4,7 @@ const OpenGraph = require("../../lib/openGraph");
 const pageTitle = "Explore posts about web development and more from whitep4nth3r";
 
 exports.data = {
-  layout: "base.html",
+  layout: "base.njk",
   title: pageTitle,
   metaDescription:
     "Explore content about web development, accessibility, Jamstack, JavaScript, and more from whitep4nth3r.",
