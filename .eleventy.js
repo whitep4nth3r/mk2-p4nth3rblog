@@ -1,7 +1,6 @@
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const embedTwitter = require("eleventy-plugin-embed-twitter");
 const embedYouTube = require("eleventy-plugin-youtube-embed");
-const CleanCSS = require("clean-css");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.ignores.add("./src/_sass");
@@ -24,10 +23,6 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPlugin(embedYouTube, {
     lite: true,
-  });
-
-  eleventyConfig.addFilter("cssmin", function (code) {
-    return new CleanCSS({}).minify(code).styles;
   });
 
   return {

@@ -8,7 +8,7 @@ const SeeAllCta = require("../_components/seeAllCta");
 const OpenGraph = require("../../lib/openGraph");
 
 exports.data = {
-  layout: "base.njk",
+  layout: "base.html",
   pageType: "talk",
   pagination: {
     data: "talks",

@@ -8,7 +8,7 @@ var md = require("markdown-it")({
 });
 
 exports.data = {
-  layout: "base.njk",
+  layout: "base.html",
   title: pageTitle,
   metaDescription:
     "I receive a lot of questions on stream about my setup and what I use. So here's a (probably very incomplete) list!",

@@ -1525,10 +1525,6 @@ a.post__linkedHeaderIcon {
   color: var(--color-highlight);
 }
 
-.eleventy-plugin-youtube-embed {
-  margin-bottom: 1rem;
-}
-
 .seeAllCta {
   font-weight: var(--font-weight-heading);
   font-family: var(--font-family-heading);
