@@ -12,7 +12,7 @@ function loading() {
 }
 
 exports.data = {
-  layout: "base.njk",
+  layout: "base.html",
   title: pageTitle,
   pageType: "dashboard",
   metaDescription: "Track whitep4nth3r's stats in real-time on the Jamstack via serverless functions and magic.",
