@@ -4,10 +4,19 @@
   max-width: 520px;
   padding: 1rem;
   margin-bottom: 3rem;
-  text-align: center;
+  text-align: left;
   border-radius: var(--border-radius-base);
   background-color: var(--lighthouse-container-bg);
   filter: drop-shadow(0px 0.125rem 0.125rem rgba(0, 0, 0, 0.25));
+}
+
+.lighthouse__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  color: var(--color-fg);
 }
 
 .lighthouse__title {
@@ -22,6 +31,8 @@
   font-size: 1.2rem;
   line-height: 1.4;
   margin-bottom: 2rem;
+  word-wrap: break-all;
+  display: block;
 }
 
 .lighthouse__scores {
@@ -79,9 +90,9 @@
 }
 
 .lighthouse__type {
-  @include font_main;
-  text-align: center;
+  @include font_bold;
   font-size: 1.2rem;
+  text-align: center;
   line-height: 1.4;
 }
 
