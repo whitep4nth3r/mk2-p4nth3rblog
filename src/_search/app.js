@@ -143,7 +143,7 @@ function initSearch({ appId, apiKey, indexName, latestPost }) {
               ${latestPost.title}
             </a>
             <a href="/blog/${latestPost.slug}/" class="ais__recommendedLink" aria-describedby="post-${latestPost.id}">
-              <span>Learn more</span><span aria-hidden="true">→</li>
+              <span>Learn more</span><span aria-hidden="true">→</span></li>
             </a>
           </div>
           `;
