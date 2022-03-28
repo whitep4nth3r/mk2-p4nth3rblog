@@ -1,0 +1,98 @@
+.lighthouse {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 520px;
+  padding: 1rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  border-radius: var(--border-radius-base);
+  background-color: var(--lighthouse-container-bg);
+  filter: drop-shadow(0px 0.125rem 0.125rem rgba(0, 0, 0, 0.25));
+}
+
+.lighthouse__title {
+  @include font_heading;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+.lighthouse__subTitle {
+  @include font_main;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  margin-bottom: 2rem;
+}
+
+.lighthouse__scores {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+}
+
+.lighthouse__col {
+  display: flex;
+  flex-direction: column;
+}
+
+.lighthouse__scoresNo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  font-size: 3rem;
+  border-radius: 50%;
+  height: 8rem;
+  width: 8rem;
+  margin-bottom: 1rem;
+
+  &--red {
+    background-color: var(--lighthouse-red-bg);
+    color: var(--lighthouse-red-fg);
+
+    .lighthouse__circle {
+      stroke: var(--lighthouse-red-stroke);
+    }
+  }
+
+  &--orange {
+    background-color: var(--lighthouse-orange-bg);
+    color: var(--lighthouse-orange-fg);
+
+    .lighthouse__circle {
+      stroke: var(--lighthouse-orange-stroke);
+    }
+  }
+
+  &--green {
+    background-color: var(--lighthouse-green-bg);
+    color: var(--lighthouse-green-fg);
+
+    .lighthouse__circle {
+      stroke: var(--lighthouse-green-stroke);
+    }
+  }
+}
+
+.lighthouse__type {
+  @include font_main;
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+
+.lighthouse__circle {
+  border-radius: 50%;
+  height: 8rem;
+  width: 8rem;
+  position: absolute;
+  transform: rotate(-90deg);
+  fill: none;
+  stroke: white;
+  stroke-width: 6;
+  stroke-linecap: round;
+}
