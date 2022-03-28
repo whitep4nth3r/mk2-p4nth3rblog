@@ -8,6 +8,7 @@ const CodeBlock = require("./codeBlock");
 const VideoEmbed = require("./videoEmbed");
 const TweetEmbed = require("./tweetEmbed");
 const BlogPostEmbed = require("./blogPostEmbed");
+const LighthouseComparison = require("./lighthouseComparison");
 
 const LinkIcon = require("./svg/linkIcon");
 
@@ -97,6 +98,14 @@ function getRichTextRenderOptions(links, options) {
         switch (__typename) {
           case "BlogPost":
             return BlogPostEmbed({ post: entry });
+          case "LighthouseComparison":
+            return LighthouseComparison({
+              beforeScore: entry.beforeScore,
+              afterScore: entry.afterScore,
+              url: entry.url,
+              metric: entry.metric,
+              device: entry.device,
+            });
           case "TweetEmbed":
             return TweetEmbed({ tweetUrl: entry.tweetUrl });
           case "VideoEmbed":
