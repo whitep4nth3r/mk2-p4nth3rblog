@@ -99,7 +99,6 @@ function getRichTextRenderOptions(links, options) {
           case "BlogPost":
             return BlogPostEmbed({ post: entry });
           case "LighthouseComparison":
-            console.log("lighthouse");
             return LighthouseComparison({
               beforeScore: entry.beforeScore,
               afterScore: entry.afterScore,
