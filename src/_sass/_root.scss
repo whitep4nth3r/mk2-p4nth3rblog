@@ -58,7 +58,7 @@
   --lighthouse-red-stroke: rgb(250, 40, 52);
   --lighthouse-red-bg: rgb(52, 31, 32);
 
-  --lighthouse-container-bg: rgb(29, 30, 32);
+  --lighthouse-container-bg: var(--grey-dark);
 }
 
 @media (prefers-color-scheme: light) {
