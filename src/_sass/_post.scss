@@ -104,7 +104,7 @@ a.post__linkedHeaderIcon {
 .post__h4,
 .post__h5,
 .post__h6 {
-  @include font_main;
+  @include font_bold;
   font-size: 1.2rem;
   line-height: 1.4;
   margin-bottom: 2rem;
