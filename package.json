@@ -7,7 +7,6 @@
     "build:sass": "sass ./src/_sass:src/_css",
     "watch:eleventy": "npx @11ty/eleventy --serve",
     "build:eleventy": "npx @11ty/eleventy",
-    "build:search": "node ./src/_scripts/build-search.js",
     "dev": "npm-run-all build:sass --parallel watch:*",
     "build": "npm-run-all build:*",
     "debug": "DEBUG=Eleventy* npx @11ty/eleventy --serve",
