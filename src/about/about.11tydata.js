@@ -30,7 +30,7 @@ module.exports = async function () {
       ...ev,
       date: ev.start_time,
       name: ev.title,
-      link: `https://www.twitch.tv/whitep4nth3r/schedule?seriesID=${segmentInfo.segmentID}`,
+      link: `https://www.twitch.tv/whitep4nth3r/schedule?segmentID=${segmentInfo.segmentID}`,
       type: "twitch",
     };
   });

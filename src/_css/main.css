@@ -894,11 +894,11 @@ a.post__linkedHeaderIcon {
 .post__h4,
 .post__h5,
 .post__h6 {
-  font-weight: var(--font-weight-main);
-  font-family: var(--font-family-main);
+  font-weight: var(--font-weight-bold);
+  font-family: var(--font-family-bold);
   font-size: 1.2rem;
   line-height: 1.4;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   color: var(--color-fg);
 }
 
@@ -1144,7 +1144,6 @@ a.post__linkedHeaderIcon {
 
 .tableOfContents__arrow {
   color: var(--color-highlight);
-  margin-left: 0.5rem;
 }
 
 .tableOfContents__item--nudged {
@@ -2011,11 +2010,9 @@ a.post__linkedHeaderIcon {
 }
 
 .lighthouse {
-  margin-left: auto;
-  margin-right: auto;
+  margin: 2rem auto;
   max-width: 520px;
   padding: 1rem;
-  margin-bottom: 3rem;
   text-align: left;
   border-radius: var(--border-radius-base);
   background-color: var(--lighthouse-container-bg);
