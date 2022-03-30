@@ -39,8 +39,10 @@ function getRichTextRenderOptions(links, options) {
       [MARKS.CODE]: (text) => `<code>${text}</code>`,
     },
     renderNode: {
-      [INLINES.HYPERLINK]: (node, next) =>
-        `<a href=${node.data.uri} target="_blank" rel="nofollow noreferrer">${next(node.content)}</a>`,
+      [INLINES.HYPERLINK]: (node, next) => {
+        const openInNewWindow = node.data.uri.includes("https://") ? `target="_blank"` : "";
+        return `<a href="${node.data.uri}" ${openInNewWindow} rel="nofollow noreferrer">${next(node.content)}</a>`;
+      },
       [INLINES.EMBEDDED_ENTRY]: (node, next) => {
         const entry = inlineEntryMap.get(node.data.target.sys.id);
         const { __typename } = entry;
