@@ -34,7 +34,7 @@ exports.render = function (data) {
 
       <aside class="twoColumnWide__aside">
         <div class="twoColumnWide__asideStickyGroup">
-         ${AboutTableOfContents({ onDashboard: true })}
+          ${AboutTableOfContents({ onDashboard: true })}
         </div>
       </aside>
 
@@ -117,25 +117,27 @@ exports.render = function (data) {
       async function makeDashboard() {
         const twitch = await fetch("/api/twitch");
         const twitchData = await twitch.json().then(res => {
-          document.querySelector("[data-twitchFollowers]").innerText = res.followers.toLocaleString('en-US');
-          document.querySelector("[data-twitchViews]").innerText = res.views.toLocaleString('en-US');
+          document.querySelector("[data-twitchFollowers]").innerText = res.followers.toLocaleString('en-GB');
+          document.querySelector("[data-twitchViews]").innerText = res.views.toLocaleString('en-GB');
         });
 
         const youtube = await fetch("/api/youtube");
         const youtubeData = await youtube.json().then(res => {
-          document.querySelector("[data-youtubeViews]").innerText = res.viewCount.toLocaleString('en-US');
-          document.querySelector("[data-youtubeSubs]").innerText = res.subscriberCount.toLocaleString('en-US');
+          const viewCount = parseInt(res.viewCount, 10);
+          const subCount = parseInt(res.subscriberCount, 10)
+          document.querySelector("[data-youtubeViews]").innerText = viewCount.toLocaleString('en-GB');
+          document.querySelector("[data-youtubeSubs]").innerText = subCount.toLocaleString('en-GB');
         });       
         
         const github = await fetch("/api/github");
         const githubData = await github.json().then(res => {
-          document.querySelector("[data-githubFollowers]").innerText = res.followers.toLocaleString('en-US');
-          document.querySelector("[data-githubStars]").innerText = res.stars.toLocaleString('en-US');
+          document.querySelector("[data-githubFollowers]").innerText = res.followers.toLocaleString('en-GB');
+          document.querySelector("[data-githubStars]").innerText = res.stars.toLocaleString('en-GB');
         });
         
         const twitter = await fetch("/api/twitter");
         const twitterData = await twitter.json().then(res => {
-          document.querySelector("[data-twitterFollowers]").innerText = res.followers.toLocaleString('en-US');
+          document.querySelector("[data-twitterFollowers]").innerText = res.followers.toLocaleString('en-GB');
         });
       }
 
