@@ -6,6 +6,7 @@ const Tools = require("../../lib/tools");
 const ResponsiveImage = require("./responsiveImage");
 const CodeBlock = require("./codeBlock");
 const VideoEmbed = require("./videoEmbed");
+const TikTokEmbed = require("./tikTokEmbed");
 const TweetEmbed = require("./tweetEmbed");
 const BlogPostEmbed = require("./blogPostEmbed");
 const LighthouseComparison = require("./lighthouseComparison");
@@ -98,6 +99,8 @@ function getRichTextRenderOptions(links, options) {
         const { __typename } = entry;
 
         switch (__typename) {
+          case "TikTokEmbed":
+            return TikTokEmbed({ url: entry.url, title: entry.title });
           case "BlogPost":
             return BlogPostEmbed({ post: entry });
           case "LighthouseComparison":
