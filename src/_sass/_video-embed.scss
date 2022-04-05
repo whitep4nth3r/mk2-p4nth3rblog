@@ -9,3 +9,14 @@
 .eleventy-plugin-youtube-embed {
   margin-bottom: 1rem;
 }
+
+.videoEmbed__tiktok {
+  max-width: 542px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.eleventy-plugin-embed-tiktok {
+  margin-bottom: 1rem;
+  border-radius: var(--border-radius-base);
+}
