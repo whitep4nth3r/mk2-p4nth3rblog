@@ -33,12 +33,12 @@
   margin-bottom: 4rem;
   margin-top: 2rem;
 
-  @media screen and (min-width: 36em) {
-    grid-template-columns: 1fr 1fr;
+  @media screen and (min-width: 32em) {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   @media screen and (min-width: 48em) {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
 }
 
@@ -47,8 +47,13 @@
   margin-bottom: 1rem;
   font-size: 1rem;
   display: flex;
+  line-height: 1.4;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 0.5rem;
+
+  @media screen and (min-width: 48em) {
+    justify-content: center;
+  }
 }
