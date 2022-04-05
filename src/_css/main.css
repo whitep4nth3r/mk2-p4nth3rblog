@@ -1554,6 +1554,17 @@ a.post__linkedHeaderIcon {
   margin-bottom: 1rem;
 }
 
+.videoEmbed__tiktok {
+  max-width: 542px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.eleventy-plugin-embed-tiktok {
+  margin-bottom: 1rem;
+  border-radius: var(--border-radius-base);
+}
+
 .seeAllCta {
   font-weight: var(--font-weight-heading);
   font-family: var(--font-family-heading);
