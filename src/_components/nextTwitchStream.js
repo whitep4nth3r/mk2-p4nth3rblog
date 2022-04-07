@@ -19,13 +19,13 @@ function noStreamIndicator(text) {
 }
 
 function NextTwitchStream({ stream, isLive, onVacation }) {
-  const heading = isLive ? "I am live on Twitch right now!" : "Next Twitch stream";
+  const heading = isLive ? "I am live on Twitch right now!" : `Next Twitch stream: ${stream.title}`;
   const buttonText = isLive ? "Watch live" : "Follow on Twitch";
 
   return /*html*/ `
       <div class="nextTwitchStream">
         <h3 class="nextTwitchStream__title">
-          ${heading} 
+          ${heading}
           ${stream.canceled_until ? noStreamIndicator("cancelled") : ""}
           ${onVacation ? noStreamIndicator("on vacation") : ""}
         </h3>
