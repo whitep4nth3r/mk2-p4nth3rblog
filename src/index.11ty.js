@@ -22,7 +22,7 @@ exports.render = function (data) {
   <section class="home">
     <div class="home__item">
     <h2 class="home__itemTitle">build <span class="colorHighlight">stuff</h2>
-     ${GetInvolvedOpenSource()}
+      ${GetInvolvedOpenSource()}
     </div>
     <div class="home__item">
       <h2 class="home__itemTitle">learn <span class="colorHighlight">things</h2>
@@ -30,7 +30,12 @@ exports.render = function (data) {
     </div>
     <div class="home__item">
       <h2 class="home__itemTitle">love <span class="colorHighlight">what you do</span></h2>
-       ${NextTwitchStream({ stream: twitch.nextStream, isLive: twitch.isLive, onVacation: twitch.onVacation })}
+        ${NextTwitchStream({
+          stream: twitch.stream,
+          link: twitch.link,
+          isLive: twitch.isLive,
+          onVacation: twitch.onVacation,
+        })}
     </div>
   </section>
 
