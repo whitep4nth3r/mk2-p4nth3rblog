@@ -9,10 +9,13 @@ module.exports = async function () {
   const twitchData = await twitch.json();
 
   const nextNotCancelledStream = twitchData.schedule.data.segments.find(isNotCancelled);
+  const buffer = Buffer.from(nextNotCancelledStream.id, "base64");
+  const segmentInfo = JSON.parse(buffer);
 
   return {
     twitch: {
-      nextStream: nextNotCancelledStream,
+      link: `https://www.twitch.tv/whitep4nth3r/schedule?segmentID=${segmentInfo.segmentID}`,
+      stream: nextNotCancelledStream,
       isLive: twitchData.isLiveOnTwitch,
       onVacation: twitchData.schedule.data.vacation,
     },
