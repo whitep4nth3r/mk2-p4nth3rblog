@@ -18,9 +18,10 @@ function noStreamIndicator(text) {
   return /*html*/ `<span class="nextTwitchStream__noStream">${text}</span>`;
 }
 
-function NextTwitchStream({ stream, isLive, onVacation }) {
+function NextTwitchStream({ stream, link, isLive, onVacation }) {
   const heading = isLive ? "I am live on Twitch right now!" : `Next Twitch stream: ${stream.title}`;
-  const buttonText = isLive ? "Watch live" : "Follow on Twitch";
+  const buttonText = isLive ? "Watch live" : "View stream details";
+  const buttonLink = isLive ? "https://twitch.tv/whitep4nth3r" : link;
 
   return /*html*/ `
       <div class="nextTwitchStream">
@@ -65,7 +66,7 @@ function NextTwitchStream({ stream, isLive, onVacation }) {
         <p class="nextTwitchStream__streamInfo">Join the chat whilst I stream building stuff and learning things every week. Come hang out!</p>
 
         <div>
-          <a href="https://twitch.tv/whitep4nth3r" 
+          <a href="${buttonLink}"
           class="nextTwitchStream__cta"
           target="_blank" title="Watch live on Twitch" rel="nofollow noreferrer">
             <span>
