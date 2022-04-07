@@ -36,7 +36,7 @@ function NextTwitchStream({ stream, link, isLive, onVacation }) {
             ? /*html*/ `
               ${isLive ? isLiveIndicator() : ""}
               
-              <a href="https://www.twitch.tv/whitep4nth3r/schedule" target="_blank" rel="nofollow referrer" class="nextTwitchStream__link">
+              <a href="https://www.twitch.tv/whitep4nth3r/schedule" target="_blank" rel="nofollow noreferrer" class="nextTwitchStream__link">
                 <p class="nextTwitchStream__meta">
                   <span class="nextTwitchStream__metaIcon">${CalendarIcon()}</span>
                   <span class="nextTwitchStream__metaInfo">
