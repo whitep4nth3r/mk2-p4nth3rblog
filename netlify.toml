@@ -19,3 +19,8 @@
 package = "netlify-plugin-inline-functions-env"
    [plugins.inputs]
     include = ["GOOGLE_PRIVATE_KEY"]
+[[plugins]]
+  package = "@netlify/plugin-lighthouse"
+  [[plugins.inputs.audits]]
+    path = ""
+    output_path = "reports/lighthouse.html"
