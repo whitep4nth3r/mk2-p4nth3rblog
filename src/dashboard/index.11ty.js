@@ -45,69 +45,66 @@ exports.render = function (data) {
             ${AboutTableOfContents({ onDashboard: true })}
         </aside>
 
-        <section class="dashboard__grid">
-          <div class="dashboard__gridItem">
-            <div class="dashboard__gridItemStatBlock">
-              <span class="dashboard__gridItemIcon">${TwitchIcon({ height: 32, width: 32 })}</span>
-              <span class="dashboard__gridItemStat" data-twitchFollowers>
-                ${loading()}
-              </span>
+        <section>
+          <div class="dashboard__grid">
+            <div class="dashboard__gridItem">
+              <div class="dashboard__gridItemStatBlock">
+                <span class="dashboard__gridItemIcon">${TwitchIcon({ height: 32, width: 32 })}</span>
+                <span class="dashboard__gridItemStat" data-twitchFollowers>
+                  ${loading()}
+                </span>
+              </div>
+              <p class="dashboard__gridItemTitle">Twitch followers</p>
             </div>
-            <p class="dashboard__gridItemTitle">Twitch followers</p>
+            <div class="dashboard__gridItem">
+              <div class="dashboard__gridItemStatBlock">
+                <span class="dashboard__gridItemIcon">${TwitterIcon({ height: 32, width: 32 })}</span>
+                <span class="dashboard__gridItemStat" data-twitterFollowers>
+                  ${loading()}
+                </span>
+              </div>
+              <p class="dashboard__gridItemTitle">Twitter followers</p>
+            </div>
           </div>
-          <div class="dashboard__gridItem">
-            <div class="dashboard__gridItemStatBlock">
-              <span class="dashboard__gridItemIcon">${TwitchIcon({ height: 32, width: 32 })}</span>
-              <span class="dashboard__gridItemStat" data-twitchViews>
-                ${loading()}
-              </span>
+          <div class="dashboard__grid">
+            <div class="dashboard__gridItem">
+              <div class="dashboard__gridItemStatBlock">
+                <span class="dashboard__gridItemIcon">${YoutubeColor({ height: 32, width: 32 })}</span>
+                <span class="dashboard__gridItemStat" data-youtubeSubs>
+                  ${loading()}
+                </span>
+              </div>
+              <p class="dashboard__gridItemTitle">Youtube subs</p>
             </div>
-            <p class="dashboard__gridItemTitle">Twitch views</p>
+            <div class="dashboard__gridItem">
+              <div class="dashboard__gridItemStatBlock">
+                <span class="dashboard__gridItemIcon">${YoutubeColor({ height: 32, width: 32 })}</span>
+                <span class="dashboard__gridItemStat" data-youtubeViews>
+                  ${loading()}
+                </span>
+              </div>
+              <p class="dashboard__gridItemTitle">Youtube views</p>
+            </div>
           </div>
-          <div class="dashboard__gridItem">
-            <div class="dashboard__gridItemStatBlock">
-              <span class="dashboard__gridItemIcon">${YoutubeColor({ height: 32, width: 32 })}</span>
-              <span class="dashboard__gridItemStat" data-youtubeSubs>
-                ${loading()}
-              </span>
+          <div class="dashboard__grid">
+            <div class="dashboard__gridItem">
+              <div class="dashboard__gridItemStatBlock">
+                <span class="dashboard__gridItemIcon">${GithubIcon({ height: 32, width: 32 })}</span>
+                <span class="dashboard__gridItemStat" data-githubFollowers>
+                  ${loading()}
+                </span>
+              </div>
+              <p class="dashboard__gridItemTitle">GitHub followers</p>
             </div>
-            <p class="dashboard__gridItemTitle">Youtube subs</p>
-          </div>
-          <div class="dashboard__gridItem">
-            <div class="dashboard__gridItemStatBlock">
-              <span class="dashboard__gridItemIcon">${YoutubeColor({ height: 32, width: 32 })}</span>
-              <span class="dashboard__gridItemStat" data-youtubeViews>
-                ${loading()}
-              </span>
+            <div class="dashboard__gridItem">
+              <div class="dashboard__gridItemStatBlock">
+                <span class="dashboard__gridItemIcon">${GithubIcon({ height: 32, width: 32 })}</span>
+                <span class="dashboard__gridItemStat" data-githubStars>
+                  ${loading()}
+                </span>
+              </div>
+              <p class="dashboard__gridItemTitle">GitHub stars</p>
             </div>
-            <p class="dashboard__gridItemTitle">Youtube views</p>
-          </div>
-          <div class="dashboard__gridItem">
-            <div class="dashboard__gridItemStatBlock">
-              <span class="dashboard__gridItemIcon">${GithubIcon({ height: 32, width: 32 })}</span>
-              <span class="dashboard__gridItemStat" data-githubFollowers>
-                ${loading()}
-              </span>
-            </div>
-            <p class="dashboard__gridItemTitle">GitHub followers</p>
-          </div>
-          <div class="dashboard__gridItem">
-            <div class="dashboard__gridItemStatBlock">
-              <span class="dashboard__gridItemIcon">${GithubIcon({ height: 32, width: 32 })}</span>
-              <span class="dashboard__gridItemStat" data-githubStars>
-                ${loading()}
-              </span>
-            </div>
-            <p class="dashboard__gridItemTitle">GitHub stars</p>
-          </div>
-          <div class="dashboard__gridItem">
-            <div class="dashboard__gridItemStatBlock">
-              <span class="dashboard__gridItemIcon">${TwitterIcon({ height: 32, width: 32 })}</span>
-              <span class="dashboard__gridItemStat" data-twitterFollowers>
-                ${loading()}
-              </span>
-            </div>
-            <p class="dashboard__gridItemTitle">Twitter followers</p>
           </div>
         </section>
       <div>
@@ -118,7 +115,6 @@ exports.render = function (data) {
         const twitch = await fetch("/api/twitch");
         const twitchData = await twitch.json().then(res => {
           document.querySelector("[data-twitchFollowers]").innerText = res.followers.toLocaleString('en-GB');
-          document.querySelector("[data-twitchViews]").innerText = res.views.toLocaleString('en-GB');
         });
 
         const youtube = await fetch("/api/youtube");
