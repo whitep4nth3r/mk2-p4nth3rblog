@@ -29,8 +29,6 @@ exports.handler = async function (event, context) {
 
     const userResponse = await fetch(`https://api.twitch.tv/helix/users/follows?to_id=${twitchId}`, fetchOptions);
 
-    const viewCountResponse = await fetch(`https://api.twitch.tv/helix/users?id=${twitchId}`, fetchOptions);
-
     const streamsResponse = await fetch(`https://api.twitch.tv/helix/streams?user_id=${twitchId}`, fetchOptions);
 
     const scheduleResponse = await fetch(
@@ -39,7 +37,6 @@ exports.handler = async function (event, context) {
     );
 
     const user = await userResponse.json();
-    const viewCount = await viewCountResponse.json();
     const streams = await streamsResponse.json();
     const schedule = await scheduleResponse.json();
 
@@ -51,7 +48,6 @@ exports.handler = async function (event, context) {
 
       body: JSON.stringify({
         followers: user.total,
-        views: viewCount.data[0].view_count,
         isLiveOnTwitch: streams.data.length === 1,
         schedule,
       }),
