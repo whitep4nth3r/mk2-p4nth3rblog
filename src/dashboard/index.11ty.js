@@ -122,8 +122,8 @@ exports.render = function (data) {
               document.querySelector("[data-twitchFollowers]").innerText = data.followers.toLocaleString("en-GB");
             break;
             case "github": 
-            document.querySelector("[data-githubFollowers]").innerText = data.followers.toLocaleString("en-GB");
-            document.querySelector("[data-githubStars]").innerText = data.stars.toLocaleString("en-GB");
+              document.querySelector("[data-githubFollowers]").innerText = data.followers.toLocaleString("en-GB");
+              document.querySelector("[data-githubStars]").innerText = data.stars.toLocaleString("en-GB");
             break;
             case "youtube":
               const viewCount = parseInt(data.viewCount, 10);
