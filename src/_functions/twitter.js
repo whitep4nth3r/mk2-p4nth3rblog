@@ -19,6 +19,7 @@ exports.handler = async function (event, context) {
 
     body: JSON.stringify({
       followers: metrics.data[0].public_metrics.followers_count,
+      type: "twitter",
     }),
   };
 };

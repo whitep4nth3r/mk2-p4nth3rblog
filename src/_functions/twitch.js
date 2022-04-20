@@ -50,6 +50,7 @@ exports.handler = async function (event, context) {
         followers: user.total,
         isLiveOnTwitch: streams.data.length === 1,
         schedule,
+        type: "twitch",
       }),
     };
   }
