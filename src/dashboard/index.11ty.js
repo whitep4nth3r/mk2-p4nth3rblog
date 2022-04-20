@@ -111,33 +111,31 @@ exports.render = function (data) {
     </div>  
 
     <script type="module" defer>
-      async function makeDashboard() {
-        const twitch = await fetch("/api/twitch");
-        const twitchData = await twitch.json().then(res => {
-          document.querySelector("[data-twitchFollowers]").innerText = res.followers.toLocaleString('en-GB');
-        });
-
-        const youtube = await fetch("/api/youtube");
-        const youtubeData = await youtube.json().then(res => {
-          const viewCount = parseInt(res.viewCount, 10);
-          const subCount = parseInt(res.subscriberCount, 10)
-          document.querySelector("[data-youtubeViews]").innerText = viewCount.toLocaleString('en-GB');
-          document.querySelector("[data-youtubeSubs]").innerText = subCount.toLocaleString('en-GB');
-        });       
-        
-        const github = await fetch("/api/github");
-        const githubData = await github.json().then(res => {
-          document.querySelector("[data-githubFollowers]").innerText = res.followers.toLocaleString('en-GB');
-          document.querySelector("[data-githubStars]").innerText = res.stars.toLocaleString('en-GB');
-        });
-        
-        const twitter = await fetch("/api/twitter");
-        const twitterData = await twitter.json().then(res => {
-          document.querySelector("[data-twitterFollowers]").innerText = res.followers.toLocaleString('en-GB');
-        });
-      }
-
-      const dashboard = await makeDashboard();
+      const dashboardData = Promise.all([fetch("/api/twitter"), fetch("/api/github"), fetch("/api/youtube"), fetch("/api/twitch")]).then((promises) => {
+        promises.forEach(async (promise) => {
+          const data = await promise.json();
+          switch(data.type) {
+            case "twitter":
+              document.querySelector("[data-twitterFollowers]").innerText = data.followers.toLocaleString("en-GB");
+            break;
+            case "twitch":
+              document.querySelector("[data-twitchFollowers]").innerText = data.followers.toLocaleString("en-GB");
+            break;
+            case "github": 
+            document.querySelector("[data-githubFollowers]").innerText = data.followers.toLocaleString("en-GB");
+            document.querySelector("[data-githubStars]").innerText = data.stars.toLocaleString("en-GB");
+            break;
+            case "youtube":
+              const viewCount = parseInt(data.viewCount, 10);
+              const subCount = parseInt(data.subscriberCount, 10);
+              document.querySelector("[data-youtubeViews]").innerText = viewCount.toLocaleString("en-GB");
+              document.querySelector("[data-youtubeSubs]").innerText = subCount.toLocaleString("en-GB");
+            break;
+            default:
+              return false;
+          }
+        })        
+      });
     </script>
   `;
 };

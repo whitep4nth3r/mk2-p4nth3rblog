@@ -29,6 +29,7 @@ exports.handler = async function (event, context) {
     body: JSON.stringify({
       followers: user.followers,
       stars,
+      type: "github",
     }),
   };
 };
