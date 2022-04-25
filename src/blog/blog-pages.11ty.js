@@ -101,7 +101,7 @@ exports.render = async function (data) {
           <a href="/blog/" class="seeAllCta">See all blog posts <span class="colorHighlight">→</span></a>
         </div>
 
-        <script type="application/ld+json" importance="low">${PostStructuredData({
+        <script type="application/ld+json">${PostStructuredData({
           post,
           imageUrl: openGraphImageUrl,
         })}</script>
