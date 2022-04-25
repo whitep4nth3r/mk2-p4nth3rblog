@@ -208,6 +208,11 @@ a.post__linkedHeaderIcon {
 
 .post__relatedGrid {
   @include grid;
+  grid-template-columns: 1fr;
+
+  @media screen and (min-width: 48em) {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .post__tweetEmbed {

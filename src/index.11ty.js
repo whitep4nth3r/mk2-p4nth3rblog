@@ -21,11 +21,11 @@ exports.render = function (data) {
   return /*html*/ `
   <section class="home">
     <div class="home__item">
-    <h2 class="home__itemTitle">build <span class="colorHighlight">stuff</h2>
+    <h2 class="home__itemTitle">build <span class="colorHighlight">stuff</span></h2>
       ${GetInvolvedOpenSource()}
     </div>
     <div class="home__item">
-      <h2 class="home__itemTitle">learn <span class="colorHighlight">things</h2>
+      <h2 class="home__itemTitle">learn <span class="colorHighlight">things</span></h2>
       ${LatestBlogPost({ post: latestPost.post })}
     </div>
     <div class="home__item">

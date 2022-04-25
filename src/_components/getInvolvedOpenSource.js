@@ -11,7 +11,7 @@ function GetInvolvedOpenSource() {
       <div>
       <a href="https://discord.gg/theclaw" rel="nofollow noreferrer" target="_blank" class="homeCard__button">
         <span>${DiscordIcon()}</span>
-        <span>Join Discord<span>
+        <span>Join Discord</span>
         <span role="presentation">→</span>
       </a>
       </div>

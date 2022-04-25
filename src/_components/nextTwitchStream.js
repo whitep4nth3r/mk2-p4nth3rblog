@@ -56,7 +56,8 @@ function NextTwitchStream({ stream, link, isLive, onVacation }) {
                 <p class="nextTwitchStream__meta">
                   <span class="nextTwitchStream__metaIcon">${ClockIcon()}</span>
                   <span class="nextTwitchStream__metaInfo nextTwitchStream__metaInfo--timeUntil">
-                  <time-until datetime="${stream.start_time}"></time-until>
+                    <time-until datetime="${stream.start_time}"></time-until>
+                  </span>
                 </p>
               </a>
               `

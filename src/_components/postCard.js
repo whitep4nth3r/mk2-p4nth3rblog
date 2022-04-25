@@ -29,7 +29,9 @@ function PostCard({ post, baseSlug, isTalk }) {
           }
         </div>
         <a href="/${baseSlug}/${post.slug}/" class="postCard__titleLink" id="post-${post.sys.id}">
-          ${post.title}
+          <h2>
+            ${post.title}
+          </h2>
         </a>
         <div>
           ${TopicsButton({
