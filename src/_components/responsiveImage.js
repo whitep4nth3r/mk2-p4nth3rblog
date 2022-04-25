@@ -23,7 +23,7 @@ function ResponsiveImage({ image }) {
   }
 
   function makeSrcSetString(format) {
-    return makeSrcSetArray(format).join(", ").trim();
+    return makeSrcSetArray(format).join(", ");
   }
 
   return /* html */ `<picture>
