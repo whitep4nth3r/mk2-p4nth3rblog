@@ -55,14 +55,12 @@ exports.render = function (data) {
         </aside>
 
         <div class="twoColumnWide__content">
-
-          <section>
+          <div>
             <aside class="twoColumnWide__inlineAside">
               ${AboutTableOfContents()}
             </aside>
 
             <div id="bio" class="about__me">
-
               <div class="about__meFace">
                 ${BioImage({ image: person.imageBio })}
               </div>
@@ -74,20 +72,18 @@ exports.render = function (data) {
                   longBio: RichText(person.bioLong),
                 })}
               </div>
-
-              <div>
-          </section>
+            </div>
+          </div>
           
-          <section>
+          <div>
             ${AboutSocialLinks()}
-          </section>
+          </div>
 
           <section id="events" class="about__events">
             <div class="about__eventsHeader">
               <h2 class="about__eventsHeaderTitle">events <span class="colorHighlight">and talks</span></h2>
             </div>
             
-
               <ol class="about__eventsList">
                 ${events
                   .map(
