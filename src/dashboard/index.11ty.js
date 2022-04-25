@@ -31,7 +31,6 @@ exports.render = function (data) {
     </div>
 
     <div class="twoColumnWide__container">
-
       <aside class="twoColumnWide__aside">
         <div class="twoColumnWide__asideStickyGroup">
           ${AboutTableOfContents({ onDashboard: true })}
@@ -39,78 +38,73 @@ exports.render = function (data) {
       </aside>
 
       <div class="twoColumnWide__content">
-
-        <section>
-          <aside class="twoColumnWide__inlineAside">
-            ${AboutTableOfContents({ onDashboard: true })}
+        <aside class="twoColumnWide__inlineAside">
+          ${AboutTableOfContents({ onDashboard: true })}
         </aside>
-
-        <section>
-          <div class="dashboard__grid">
-            <div class="dashboard__gridItem">
-              <div class="dashboard__gridItemStatBlock">
-                <span class="dashboard__gridItemIcon">${TwitchIcon({ height: 32, width: 32 })}</span>
-                <span class="dashboard__gridItemStat" data-twitchFollowers>
-                  ${loading()}
-                </span>
-              </div>
-              <p class="dashboard__gridItemTitle">Twitch followers</p>
+        <div class="dashboard__grid">
+          <div class="dashboard__gridItem">
+            <div class="dashboard__gridItemStatBlock">
+              <span class="dashboard__gridItemIcon">${TwitchIcon({ height: 32, width: 32 })}</span>
+              <span class="dashboard__gridItemStat" data-twitchFollowers>
+                ${loading()}
+              </span>
             </div>
-            <div class="dashboard__gridItem">
-              <div class="dashboard__gridItemStatBlock">
-                <span class="dashboard__gridItemIcon">${TwitterIcon({ height: 32, width: 32 })}</span>
-                <span class="dashboard__gridItemStat" data-twitterFollowers>
-                  ${loading()}
-                </span>
-              </div>
-              <p class="dashboard__gridItemTitle">Twitter followers</p>
-            </div>
+            <p class="dashboard__gridItemTitle">Twitch followers</p>
           </div>
-          <div class="dashboard__grid">
-            <div class="dashboard__gridItem">
-              <div class="dashboard__gridItemStatBlock">
-                <span class="dashboard__gridItemIcon">${YoutubeColor({ height: 32, width: 32 })}</span>
-                <span class="dashboard__gridItemStat" data-youtubeSubs>
-                  ${loading()}
-                </span>
-              </div>
-              <p class="dashboard__gridItemTitle">Youtube subs</p>
+          <div class="dashboard__gridItem">
+            <div class="dashboard__gridItemStatBlock">
+              <span class="dashboard__gridItemIcon">${TwitterIcon({ height: 32, width: 32 })}</span>
+              <span class="dashboard__gridItemStat" data-twitterFollowers>
+                ${loading()}
+              </span>
             </div>
-            <div class="dashboard__gridItem">
-              <div class="dashboard__gridItemStatBlock">
-                <span class="dashboard__gridItemIcon">${YoutubeColor({ height: 32, width: 32 })}</span>
-                <span class="dashboard__gridItemStat" data-youtubeViews>
-                  ${loading()}
-                </span>
-              </div>
-              <p class="dashboard__gridItemTitle">Youtube views</p>
-            </div>
+            <p class="dashboard__gridItemTitle">Twitter followers</p>
           </div>
-          <div class="dashboard__grid">
-            <div class="dashboard__gridItem">
-              <div class="dashboard__gridItemStatBlock">
-                <span class="dashboard__gridItemIcon">${GithubIcon({ height: 32, width: 32 })}</span>
-                <span class="dashboard__gridItemStat" data-githubFollowers>
-                  ${loading()}
-                </span>
-              </div>
-              <p class="dashboard__gridItemTitle">GitHub followers</p>
+        </div>
+        <div class="dashboard__grid">
+          <div class="dashboard__gridItem">
+            <div class="dashboard__gridItemStatBlock">
+              <span class="dashboard__gridItemIcon">${YoutubeColor({ height: 32, width: 32 })}</span>
+              <span class="dashboard__gridItemStat" data-youtubeSubs>
+                ${loading()}
+              </span>
             </div>
-            <div class="dashboard__gridItem">
-              <div class="dashboard__gridItemStatBlock">
-                <span class="dashboard__gridItemIcon">${GithubIcon({ height: 32, width: 32 })}</span>
-                <span class="dashboard__gridItemStat" data-githubStars>
-                  ${loading()}
-                </span>
-              </div>
-              <p class="dashboard__gridItemTitle">GitHub stars</p>
-            </div>
+            <p class="dashboard__gridItemTitle">Youtube subs</p>
           </div>
-        </section>
-      <div>
+          <div class="dashboard__gridItem">
+            <div class="dashboard__gridItemStatBlock">
+              <span class="dashboard__gridItemIcon">${YoutubeColor({ height: 32, width: 32 })}</span>
+              <span class="dashboard__gridItemStat" data-youtubeViews>
+                ${loading()}
+              </span>
+            </div>
+            <p class="dashboard__gridItemTitle">Youtube views</p>
+          </div>
+        </div>
+        <div class="dashboard__grid">
+          <div class="dashboard__gridItem">
+            <div class="dashboard__gridItemStatBlock">
+              <span class="dashboard__gridItemIcon">${GithubIcon({ height: 32, width: 32 })}</span>
+              <span class="dashboard__gridItemStat" data-githubFollowers>
+                ${loading()}
+              </span>
+            </div>
+            <p class="dashboard__gridItemTitle">GitHub followers</p>
+          </div>
+          <div class="dashboard__gridItem">
+            <div class="dashboard__gridItemStatBlock">
+              <span class="dashboard__gridItemIcon">${GithubIcon({ height: 32, width: 32 })}</span>
+              <span class="dashboard__gridItemStat" data-githubStars>
+                ${loading()}
+              </span>
+            </div>
+            <p class="dashboard__gridItemTitle">GitHub stars</p>
+          </div>
+        </div>
+      </div>
     </div>  
 
-    <script type="module" defer>
+    <script>
       const dashboardData = Promise.all([fetch("/api/twitter"), fetch("/api/github"), fetch("/api/youtube"), fetch("/api/twitch")]).then((promises) => {
         promises.forEach(async (promise) => {
           const data = await promise.json();
