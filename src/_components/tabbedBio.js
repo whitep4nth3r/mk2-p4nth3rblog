@@ -19,12 +19,12 @@ function TabbedBio({ shortBio, speakerBio, longBio }) {
     </div>
   </div>
   
-  <script importance="low">
+  <script>
     const buttons = document.querySelectorAll("[data-view]");
     const bios = document.querySelectorAll("[data-bio]");
 
     function selectButton(length) {
-       buttons.forEach(btn => {
+      buttons.forEach(btn => {
         if (btn.getAttribute("data-view") === length) {
           btn.classList = "bio__button bio__button--selected";
         } else {
@@ -34,7 +34,6 @@ function TabbedBio({ shortBio, speakerBio, longBio }) {
     }
     
     function viewBio(length) {
-
       bios.forEach(bio => {
         if (bio.getAttribute("data-bio") === length) {
           bio.style.display = "block";
