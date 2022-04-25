@@ -55,8 +55,7 @@ exports.render = function (data) {
         </aside>
 
         <div class="twoColumnWide__content">
-
-          <section>
+          <div>
             <aside class="twoColumnWide__inlineAside">
               ${AboutTableOfContents()}
             </aside>
@@ -74,7 +73,7 @@ exports.render = function (data) {
                 })}
               </div>
             </div>
-          </section>
+          </div>
           
           <div>
             ${AboutSocialLinks()}
