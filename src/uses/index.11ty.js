@@ -58,7 +58,7 @@ exports.render = function (data) {
                           <h3 class="uses__listItemName uses__listItemName--small">${thing.name}</h3>
                           <img class="uses__listItemImg" src="${thing.image.url}?w=200" alt="${
                           thing.image.description
-                        } height="${thing.image.height}" width="${thing.image.width}" />
+                        }" height="${thing.image.height}" width="${thing.image.width}" />
                         </div>
                         <div>
                           <h3 class="uses__listItemName uses__listItemName--large">${thing.name}</h3>
