@@ -1566,8 +1566,30 @@ a.post__linkedHeaderIcon {
 
 .videoEmbed__tiktok {
   max-width: 542px;
+  min-height: 574px;
   margin-left: auto;
   margin-right: auto;
+  background-color: var(--yellow);
+  z-index: 0;
+  position: relative;
+  border-radius: var(--border-radius-base);
+}
+@media screen and (min-width: 48rem) {
+  .videoEmbed__tiktok {
+    min-height: 728px;
+  }
+}
+
+.videoEmbed__tiktokOverlay {
+  background-color: var(--grey-dark);
+  position: absolute;
+  z-index: 1;
+  display: block;
+  opacity: 1;
+  height: 100%;
+  width: 100%;
+  border-radius: var(--border-radius-base);
+  transition: all 1s ease-in-out;
 }
 
 .eleventy-plugin-embed-tiktok {

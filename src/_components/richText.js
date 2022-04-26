@@ -100,7 +100,7 @@ function getRichTextRenderOptions(links, options) {
 
         switch (__typename) {
           case "TikTokEmbed":
-            return TikTokEmbed({ url: entry.url, title: entry.title });
+            return TikTokEmbed({ embedCode: entry.embedCode, title: entry.title });
           case "BlogPost":
             return BlogPostEmbed({ post: entry });
           case "LighthouseComparison":
