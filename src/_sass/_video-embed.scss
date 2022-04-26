@@ -35,6 +35,7 @@
   width: 100%;
   border-radius: var(--border-radius-base);
   transition: all 1s ease-in-out;
+  pointer-events: none;
 }
 
 .eleventy-plugin-embed-tiktok {
