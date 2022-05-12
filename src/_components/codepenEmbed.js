@@ -1,20 +1,19 @@
-function TikTokEmbed({ embedCode, title }) {
+function CodePenEmbed({ embedCode, title }) {
   return /* html */ `
-    <p class="videoEmbed__cta">On TikTok: ${title}</p>
-    <div class="videoEmbed__tiktok" data-tiktok data-embed-code=${encodeURI(embedCode)}>
-      <span class="videoEmbed__tiktokOverlay" data-overlay></span>
+    <p class="codePenEmbed__title">On CodePen: ${title}</p>
+    <div class="codePenEmbed__container" data-codepen data-embed-code=${encodeURI(embedCode)}>
       <div data-target></div>
     </div>
 
     <script>
-      const tiktok = document.querySelector("[data-tiktok]");
+      const codepen = document.querySelector("[data-codepen]");
       let loaded = false;
       const options = {
         root: null,
         threshold: 0.1
       }
 
-      const loadTikTok = (entries, observer) => {
+      const loadCodePen = (entries, observer) => {
         entries.forEach(entry => {
           if(!loaded && entry.isIntersecting) {
             const overlay = entry.target.querySelector("[data-overlay]")
@@ -23,7 +22,7 @@ function TikTokEmbed({ embedCode, title }) {
 
             target.innerHTML = decodeURI(embedCode);
             const script = document.createElement("script");
-            script.src = "https://www.tiktok.com/embed.js";
+            script.src = "https://cpwebassets.codepen.io/assets/embed/ei.js";
             document.head.append(script);
             overlay.style.opacity = 0;
             loaded = true;
@@ -31,10 +30,10 @@ function TikTokEmbed({ embedCode, title }) {
         });
       };
 
-      const observer = new IntersectionObserver(loadTikTok, options);
-      observer.observe(tiktok);
+      const observer = new IntersectionObserver(loadCodePen, options);
+      observer.observe(codepen);
     </script>
     `;
 }
 
-module.exports = TikTokEmbed;
+module.exports = CodePenEmbed;

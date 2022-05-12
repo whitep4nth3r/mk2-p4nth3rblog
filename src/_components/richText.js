@@ -7,6 +7,7 @@ const ResponsiveImage = require("./responsiveImage");
 const CodeBlock = require("./codeBlock");
 const VideoEmbed = require("./videoEmbed");
 const TikTokEmbed = require("./tikTokEmbed");
+const CodePenEmbed = require("./codePenEmbed");
 const TweetEmbed = require("./tweetEmbed");
 const BlogPostEmbed = require("./blogPostEmbed");
 const LighthouseComparison = require("./lighthouseComparison");
@@ -99,6 +100,8 @@ function getRichTextRenderOptions(links, options) {
         const { __typename } = entry;
 
         switch (__typename) {
+          case "CodePenEmbed":
+            return CodePenEmbed({ embedCode: entry.embedCode, title: entry.title });
           case "TikTokEmbed":
             return TikTokEmbed({ embedCode: entry.embedCode, title: entry.title });
           case "BlogPost":
