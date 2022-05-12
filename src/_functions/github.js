@@ -20,8 +20,6 @@ exports.handler = async function (event, context) {
     return accumulator + repository["stargazers_count"];
   }, 0);
 
-  console.log("1234");
-
   return {
     statusCode: 200,
     headers: {
