@@ -1561,7 +1561,8 @@ a.post__linkedHeaderIcon {
 }
 
 .eleventy-plugin-youtube-embed {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
 }
 
 .videoEmbed__tiktok {
@@ -1593,9 +1594,18 @@ a.post__linkedHeaderIcon {
   pointer-events: none;
 }
 
-.eleventy-plugin-embed-tiktok {
+.codePenEmbed__title {
+  font-weight: var(--font-weight-heading);
+  font-family: var(--font-family-heading);
+  font-size: 1.2rem;
+  line-height: 1.6;
   margin-bottom: 1rem;
-  border-radius: var(--border-radius-base);
+  color: var(--color-highlight);
+}
+
+.codePenEmbed__container {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .seeAllCta {
