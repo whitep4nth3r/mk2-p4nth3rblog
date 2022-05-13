@@ -23,11 +23,10 @@
   font-display: swap;
 }
 :root {
-  --white: #ffffff;
-  --grey-dark: #2b2e3a;
   --red: #f11012;
   --green: #82af3a;
   --black: #0f111a;
+  --grey-dark: #2b2e3a;
   --white: #ffffff;
   --yellow: #ffb626;
   --font-family-bold: "Work Sans Bold", sans-serif;
@@ -1606,6 +1605,7 @@ a.post__linkedHeaderIcon {
 .codePenEmbed__container {
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 2rem;
 }
 
 .seeAllCta {
