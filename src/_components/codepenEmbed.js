@@ -15,8 +15,8 @@ function CodePenEmbed({ embedCode, title }) {
 
       const loadCodePen = (entries, observer) => {
         entries.forEach(entry => {
+          
           if(!loaded && entry.isIntersecting) {
-            const overlay = entry.target.querySelector("[data-overlay]")
             const target = entry.target.querySelector("[data-target]");
             const embedCode = entry.target.dataset.embedCode;
 
@@ -24,7 +24,6 @@ function CodePenEmbed({ embedCode, title }) {
             const script = document.createElement("script");
             script.src = "https://cpwebassets.codepen.io/assets/embed/ei.js";
             document.head.append(script);
-            overlay.style.opacity = 0;
             loaded = true;
           }
         });
