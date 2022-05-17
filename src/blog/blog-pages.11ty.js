@@ -25,7 +25,7 @@ exports.data = {
   eleventyComputed: {
     title: (data) => data.post.title,
     canonical: (data) => data.post.externalUrl || false,
-    metaDescription: (data) => data.post.excerpt,
+    metaDescription: (data) => data.post.metaDescription,
     openGraphImageUrl: (data) =>
       OpenGraph.generateImageUrl({ title: data.post.title, topics: data.post.topicsCollection.items }),
     openGraphImageAlt: (data) => OpenGraph.generateImageAlt(data.post.title),
