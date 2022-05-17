@@ -24,6 +24,10 @@ function buildContent(postBody) {
   ]]></content:encoded>`;
 }
 
+function chooseUrl(item, urlSlug) {
+  return item.externalUrl || `https://${Config.site.domain}/${urlSlug}/${item.slug}/`;
+}
+
 function buildRssItems(items) {
   return items
     .map((item) => {
@@ -36,8 +40,8 @@ function buildRssItems(items) {
           <title>${item.title}</title>
           <description>${item.excerpt}</description>
           <author>${Config.site.email} (${Config.site.owner})</author>
-          <link>https://${Config.site.domain}/${urlSlug}/${item.slug}/</link>
-          <guid>https://${Config.site.domain}/${urlSlug}/${item.slug}/</guid>
+          <link>${chooseUrl(item, urlSlug)}</link>
+          <guid>${chooseUrl(item, urlSlug)}</guid>
           <pubDate>${DateUtils.makeForRss(item.date)}</pubDate>
           ${buildCategories(item.topicsCollection.items)}
           ${buildContent(contentBody)}
