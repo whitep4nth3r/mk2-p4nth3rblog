@@ -15,7 +15,8 @@ exports.data = {
   },
   eleventyComputed: {
     title: (data) => `Posts about ${data.topic.name} from whitep4nth3r`,
-    metaDescription: (data) => `Explore content about ${data.topic.name} from whitep4nth3r.`,
+    metaDescription: (data) =>
+      `Explore content about ${data.topic.name} from Salma Alam-Naylor, Staff Developer Experience Engineer at Netlify.`,
     openGraphImageUrl: (data) =>
       OpenGraph.generateImageUrl({ title: `Posts about ${data.topic.name} from whitep4nth3r`, topics: [data.topic] }),
     openGraphImageAlt: (data) => OpenGraph.generateImageAlt(`Posts about ${data.topic.name} from whitep4nth3r`),
