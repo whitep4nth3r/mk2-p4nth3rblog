@@ -8,6 +8,10 @@
   from = "/api/*"
   to = "/.netlify/functions/:splat"
 [[redirects]]
+  from = "/topics"
+  to = "/topics/webdev/"
+  status = 308
+[[redirects]]
   from = "/faqs"
   to = "/blog/faqs/"
   status = 301
