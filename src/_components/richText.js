@@ -43,7 +43,8 @@ function getRichTextRenderOptions(links, options) {
     renderNode: {
       [INLINES.HYPERLINK]: (node, next) => {
         const openInNewWindow = node.data.uri.includes("https://") ? `target="_blank"` : "";
-        return `<a href="${node.data.uri}" ${openInNewWindow} rel="nofollow noreferrer">${next(node.content)}</a>`;
+        const includeNoFollow = node.data.uri.includes("https://whitep4nth3r.com") ? "" : ` rel="nofollow noreferrer"`;
+        return `<a href="${node.data.uri}" ${openInNewWindow}${includeNoFollow}>${next(node.content)}</a>`;
       },
       [INLINES.EMBEDDED_ENTRY]: (node, next) => {
         const entry = inlineEntryMap.get(node.data.target.sys.id);
