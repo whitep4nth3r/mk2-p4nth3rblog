@@ -10,7 +10,7 @@ const pageTitle = "Posts about web development, accessibility, Jamstack, JavaScr
 exports.data = {
   layout: "base.html",
   title: pageTitle,
-  metaDescription: "Posts about web development, accessibility, Jamstack, JavaScript, and more.",
+  metaDescription: `Learn about web development, accessibility, Jamstack, JavaScript, and more from ${Config.meta.jobDescription}.`,
   openGraphImageUrl: OpenGraph.generateImageUrl({ title: pageTitle }),
   openGraphImageAlt: OpenGraph.generateImageAlt(pageTitle),
   openGraphImageWidth: OpenGraph.imageWidth,

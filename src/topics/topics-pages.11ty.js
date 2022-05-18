@@ -1,3 +1,4 @@
+const Config = require("../../lib/config");
 const Topics = require("../_components/topics");
 const PostCard = require("../_components/postCard");
 const OpenGraph = require("../../lib/openGraph");
@@ -14,9 +15,8 @@ exports.data = {
     return `topics/${data.topic.slug}/`;
   },
   eleventyComputed: {
-    title: (data) => `Posts about ${data.topic.name} from whitep4nth3r`,
-    metaDescription: (data) =>
-      `Explore content about ${data.topic.name} from Salma Alam-Naylor, Staff Developer Experience Engineer at Netlify.`,
+    title: (data) => `Learn about ${data.topic.name} from Salma Alam-Naylor`,
+    metaDescription: (data) => `Learn about ${data.topic.name} and more from ${Config.meta.jobDescription}.`,
     openGraphImageUrl: (data) =>
       OpenGraph.generateImageUrl({ title: `Posts about ${data.topic.name} from whitep4nth3r`, topics: [data.topic] }),
     openGraphImageAlt: (data) => OpenGraph.generateImageAlt(`Posts about ${data.topic.name} from whitep4nth3r`),
