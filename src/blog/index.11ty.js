@@ -15,7 +15,6 @@ exports.data = {
   openGraphImageAlt: OpenGraph.generateImageAlt(pageTitle),
   openGraphImageWidth: OpenGraph.imageWidth,
   openGraphImageHeight: OpenGraph.imageHeight,
-  openGraphUrl: "https://whitep4nth3r.com/blog/",
   pagination: {
     data: "postSummaries",
     size: Config.pagination.pageSize,
@@ -24,6 +23,12 @@ exports.data = {
   permalink: (data) => {
     const trailing = data.pagination.pageNumber === 0 ? `` : `${data.pagination.pageNumber + 1}/`;
     return `blog/${trailing}`;
+  },
+  eleventyComputed: {
+    openGraphUrl: (data) => {
+      const suffix = data.pagination.pageNumber === 0 ? `` : `${data.pagination.pageNumber + 1}/`;
+      return `https://whitep4nth3r.com/blog/${suffix}`;
+    },
   },
 };
 
