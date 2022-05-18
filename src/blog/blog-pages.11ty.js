@@ -23,7 +23,7 @@ exports.data = {
     return `blog/${data.post.slug}/`;
   },
   eleventyComputed: {
-    title: (data) => data.post.title,
+    title: (data) => data.post.metaTitle,
     canonical: (data) => data.post.externalUrl || false,
     metaDescription: (data) => data.post.metaDescription,
     openGraphImageUrl: (data) =>
