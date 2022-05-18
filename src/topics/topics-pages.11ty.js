@@ -1,3 +1,4 @@
+const Config = require("../../lib/config");
 const Topics = require("../_components/topics");
 const PostCard = require("../_components/postCard");
 const OpenGraph = require("../../lib/openGraph");
@@ -15,8 +16,7 @@ exports.data = {
   },
   eleventyComputed: {
     title: (data) => `Learn about ${data.topic.name} from Salma Alam-Naylor`,
-    metaDescription: (data) =>
-      `Learn about ${data.topic.name} and more from Salma Alam-Naylor, Microsoft MVP, Twitch partner and Staff Developer Engineer at Netlify.`,
+    metaDescription: (data) => `Learn about ${data.topic.name} and more from ${Config.meta.jobDescription}.`,
     openGraphImageUrl: (data) =>
       OpenGraph.generateImageUrl({ title: `Posts about ${data.topic.name} from whitep4nth3r`, topics: [data.topic] }),
     openGraphImageAlt: (data) => OpenGraph.generateImageAlt(`Posts about ${data.topic.name} from whitep4nth3r`),

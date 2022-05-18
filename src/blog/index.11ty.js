@@ -10,8 +10,7 @@ const pageTitle = "Posts about web development, accessibility, Jamstack, JavaScr
 exports.data = {
   layout: "base.html",
   title: pageTitle,
-  metaDescription:
-    "Learn about web development, accessibility, Jamstack, JavaScript, and more from Salma Alam-Naylor, Microsoft MVP, Twitch partner and DX Engineer at Netlify.",
+  metaDescription: `Learn about web development, accessibility, Jamstack, JavaScript, and more from ${Config.meta.jobDescription}.`,
   openGraphImageUrl: OpenGraph.generateImageUrl({ title: pageTitle }),
   openGraphImageAlt: OpenGraph.generateImageAlt(pageTitle),
   openGraphImageWidth: OpenGraph.imageWidth,

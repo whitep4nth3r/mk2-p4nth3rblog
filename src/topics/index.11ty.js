@@ -1,3 +1,4 @@
+const Config = require("../../lib/config");
 const Topics = require("../_components/topics");
 const OpenGraph = require("../../lib/openGraph");
 
@@ -6,8 +7,7 @@ const pageTitle = "Explore posts about web development and more from whitep4nth3
 exports.data = {
   layout: "base.html",
   title: pageTitle,
-  metaDescription:
-    "Learn about web development, accessibility, Jamstack, JavaScript, and more from Salma Alam-Naylor, Staff Developer Experience Engineer at Netlify.",
+  metaDescription: `Learn about web development, accessibility, Jamstack, JavaScript, and more from ${Config.meta.jobDescription}.`,
   openGraphImageUrl: OpenGraph.generateImageUrl({ title: pageTitle }),
   openGraphImageAlt: OpenGraph.generateImageAlt(pageTitle),
   openGraphImageWidth: OpenGraph.imageWidth,
