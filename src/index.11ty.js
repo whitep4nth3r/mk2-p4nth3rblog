@@ -2,7 +2,7 @@ const OpenGraph = require("../lib/openGraph");
 const NextTwitchStream = require("./_components/nextTwitchStream");
 const GetInvolvedOpenSource = require("./_components/getInvolvedOpenSource");
 const LatestBlogPost = require("./_components/latestBlogPost");
-const pageTitle = "Build stuff, learn things and love what you do with whitep4nth3r";
+const pageTitle = "Learn web dev, JavaScript and Jamstack from whitep4nth3r";
 
 exports.data = {
   layout: "base.html",
