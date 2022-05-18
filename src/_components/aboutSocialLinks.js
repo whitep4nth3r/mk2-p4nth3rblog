@@ -32,7 +32,7 @@ function AboutSocialLinks() {
       <a href="https://polywork.com/whitep4nth3r" class="about__socialLinksItem" target="_blank" rel="nofollow noreferrer">${PolyworkIcon()} Polywork <span role="presentation">→</span></a>
     </li>
     <li>
-      <a href="/feed.xml" class="about__socialLinksItem" target="_blank" rel="nofollow noreferrer">${FeedIcon()} Feed <span role="presentation">→</span></a>
+      <a href="/feed.xml" class="about__socialLinksItem" target="_blank">${FeedIcon()} Feed <span role="presentation">→</span></a>
     </li>
   </ul>
   `;
