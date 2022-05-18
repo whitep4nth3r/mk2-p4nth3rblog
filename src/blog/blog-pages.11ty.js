@@ -24,14 +24,14 @@ exports.data = {
   },
   eleventyComputed: {
     title: (data) => data.post.metaTitle,
-    canonical: (data) => data.post.externalUrl || false,
+    canonical: (data) => data.post.externalUrl || `https://whitep4nth3r.com/blog/${data.post.slug}/`,
     metaDescription: (data) => data.post.metaDescription,
     openGraphImageUrl: (data) =>
       OpenGraph.generateImageUrl({ title: data.post.title, topics: data.post.topicsCollection.items }),
     openGraphImageAlt: (data) => OpenGraph.generateImageAlt(data.post.title),
     openGraphImageWidth: OpenGraph.imageWidth,
     openGraphImageHeight: OpenGraph.imageHeight,
-    openGraphUrl: (data) => `https://whitep4nth3r.com/blog/${data.post.slug}/`,
+    openGraphUrl: (data) => data.post.externalUrl || `https://whitep4nth3r.com/blog/${data.post.slug}/`,
   },
 };
 

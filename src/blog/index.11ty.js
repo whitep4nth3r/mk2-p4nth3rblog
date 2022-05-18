@@ -5,7 +5,7 @@ const PostCard = require("../_components/postCard");
 const Topics = require("../_components/topics");
 const OpenGraph = require("../../lib/openGraph");
 
-const pageTitle = "Posts about web development, accessibility, Jamstack, JavaScript, and more from whitep4nth3r";
+const pageTitle = "Learn web development, CSS, Jamstack, JavaScript and more";
 
 exports.data = {
   layout: "base.html",
