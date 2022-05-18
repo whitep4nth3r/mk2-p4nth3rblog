@@ -39,7 +39,7 @@ function Topics({ topics, priorityOnly, selected, showLinkToBlog }) {
         }
         ${
           priorityOnly
-            ? `<li><a href="/topics/a11y" class="topics__listItemLink">More filters <span class="colorHighlight" aria-hidden="true">→</span></a></li>`
+            ? `<li><a href="/topics/a11y/" class="topics__listItemLink">More filters <span class="colorHighlight" aria-hidden="true">→</span></a></li>`
             : ""
         }
     </ul>`;
