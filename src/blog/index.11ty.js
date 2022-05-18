@@ -7,6 +7,11 @@ const OpenGraph = require("../../lib/openGraph");
 
 const pageTitle = "Learn web development, CSS, Jamstack, JavaScript and more";
 
+function calculatePageUrl(data) {
+  const suffix = data.pagination.pageNumber === 0 ? `` : `${data.pagination.pageNumber + 1}/`;
+  return `https://whitep4nth3r.com/blog/${suffix}`;
+}
+
 exports.data = {
   layout: "base.html",
   title: pageTitle,
@@ -25,10 +30,8 @@ exports.data = {
     return `blog/${trailing}`;
   },
   eleventyComputed: {
-    openGraphUrl: (data) => {
-      const suffix = data.pagination.pageNumber === 0 ? `` : `${data.pagination.pageNumber + 1}/`;
-      return `https://whitep4nth3r.com/blog/${suffix}`;
-    },
+    canonical: (data) => calculatePageUrl(data),
+    openGraphUrl: (data) => calculatePageUrl(data),
   },
 };
 
