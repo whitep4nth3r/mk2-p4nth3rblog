@@ -14,9 +14,9 @@ exports.data = {
     return `topics/${data.topic.slug}/`;
   },
   eleventyComputed: {
-    title: (data) => `Posts about ${data.topic.name} from whitep4nth3r`,
+    title: (data) => `Learn about ${data.topic.name} from Salma Alam-Naylor`,
     metaDescription: (data) =>
-      `Explore content about ${data.topic.name} from Salma Alam-Naylor, Staff Developer Experience Engineer at Netlify.`,
+      `Learn about ${data.topic.name} and more from Salma Alam-Naylor, Microsoft MVP, Twitch partner and Staff Developer Engineer at Netlify.`,
     openGraphImageUrl: (data) =>
       OpenGraph.generateImageUrl({ title: `Posts about ${data.topic.name} from whitep4nth3r`, topics: [data.topic] }),
     openGraphImageAlt: (data) => OpenGraph.generateImageAlt(`Posts about ${data.topic.name} from whitep4nth3r`),

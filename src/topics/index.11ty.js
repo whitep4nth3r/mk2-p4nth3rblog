@@ -7,7 +7,7 @@ exports.data = {
   layout: "base.html",
   title: pageTitle,
   metaDescription:
-    "Explore content about web development, accessibility, Jamstack, JavaScript, and more from Salma Alam-Naylor, Staff Developer Experience Engineer at Netlify.",
+    "Learn about web development, accessibility, Jamstack, JavaScript, and more from Salma Alam-Naylor, Staff Developer Experience Engineer at Netlify.",
   openGraphImageUrl: OpenGraph.generateImageUrl({ title: pageTitle }),
   openGraphImageAlt: OpenGraph.generateImageAlt(pageTitle),
   openGraphImageWidth: OpenGraph.imageWidth,

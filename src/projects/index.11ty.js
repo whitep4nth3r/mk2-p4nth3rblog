@@ -10,7 +10,8 @@ const pageTitle = "Open source projects maintained by whitep4nth3r";
 exports.data = {
   layout: "base.html",
   title: pageTitle,
-  metaDescription: "Get involved with open source projects built live on Twitch with whitep4nth3r",
+  metaDescription:
+    "Learn about open source projects built on the Jamstack with Eleventy, Next.js, Angular and more. Get involved and open your first PR on GitHub.",
   openGraphImageUrl: OpenGraph.generateImageUrl({ title: pageTitle }),
   openGraphImageAlt: OpenGraph.generateImageAlt(pageTitle),
   openGraphImageWidth: OpenGraph.imageWidth,
