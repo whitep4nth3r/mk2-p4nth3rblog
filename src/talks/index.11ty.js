@@ -3,12 +3,12 @@ const PostCard = require("../_components/postCard");
 const Pagination = require("../_components/pagination");
 const OpenGraph = require("../../lib/openGraph");
 
-const pageTitle = "Talks about web development, accessibility, Jamstack, JavaScript, and more from whitep4nth3r";
+const pageTitle = "Watch talks about web development by Salma Alam-Naylor";
 
 exports.data = {
   layout: "base.html",
   title: pageTitle,
-  metaDescription: `Watch conference and meetup talks about web development, accessibility, Jamstack, JavaScript, and more from ${Config.meta.jobDescription}.`,
+  metaDescription: `Watch talks about web dev, accessibility, Jamstack, JavaScript, and more from ${Config.meta.jobDescription}.`,
   openGraphImageUrl: OpenGraph.generateImageUrl({ title: pageTitle }),
   openGraphImageAlt: OpenGraph.generateImageAlt(pageTitle),
   openGraphImageWidth: OpenGraph.imageWidth,
