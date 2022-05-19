@@ -33,8 +33,8 @@ exports.data = {
     "Salma helps developers build stuff, learn things and love what they do. She works at Netlify, streams coding on Twitch, and loves helping people get into tech.",
   openGraphImageUrl: OpenGraph.generateImageUrl({ title: pageTitle }),
   openGraphImageAlt: OpenGraph.generateImageAlt(pageTitle),
-  openGraphImageWidth: OpenGraph.imageWidth,
-  openGraphImageHeight: OpenGraph.imageHeight,
+  openGraphImageWidth: OpenGraph.imgWidth,
+  openGraphImageHeight: OpenGraph.imgHeight,
   openGraphUrl: "https://whitep4nth3r.com/about/",
 };
 

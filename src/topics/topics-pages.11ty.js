@@ -20,8 +20,8 @@ exports.data = {
     openGraphImageUrl: (data) =>
       OpenGraph.generateImageUrl({ title: `Posts about ${data.topic.name} from whitep4nth3r`, topics: [data.topic] }),
     openGraphImageAlt: (data) => OpenGraph.generateImageAlt(`Posts about ${data.topic.name} from whitep4nth3r`),
-    openGraphImageWidth: OpenGraph.imageWidth,
-    openGraphImageHeight: OpenGraph.imageHeight,
+    openGraphImageWidth: OpenGraph.imgWidth,
+    openGraphImageHeight: OpenGraph.imgHeight,
     openGraphUrl: (data) => `https://whitep4nth3r.com/topics/${data.topic.slug}/`,
   },
 };

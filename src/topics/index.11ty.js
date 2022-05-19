@@ -10,8 +10,8 @@ exports.data = {
   metaDescription: `Learn about web development, accessibility, Jamstack, JavaScript, and more from ${Config.meta.jobDescription}.`,
   openGraphImageUrl: OpenGraph.generateImageUrl({ title: pageTitle }),
   openGraphImageAlt: OpenGraph.generateImageAlt(pageTitle),
-  openGraphImageWidth: OpenGraph.imageWidth,
-  openGraphImageHeight: OpenGraph.imageHeight,
+  openGraphImageWidth: OpenGraph.imgWidth,
+  openGraphImageHeight: OpenGraph.imgHeight,
   openGraphUrl: "https://whitep4nth3r.com/topics/",
 };
 
