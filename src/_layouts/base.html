@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>{{ title }}</title>
+    <meta name="description" content="{{ metaDescription }}" />
 
     {% if canonical %}
     <link rel="canonical" href="{{ canonical }}" />
@@ -19,7 +20,6 @@
     <meta name="twitter:creator" content="@whitep4nth3r" />
 
     <meta property="og:url" content="{{ openGraphUrl }}" />
-    <meta property="og:type" content="website" />
     <meta property="og:title" content="{{ title }}" />
     <meta property="og:description" content="{{ metaDescription }}" />
     <meta property="og:locale" content="en_GB" />
@@ -28,10 +28,21 @@
     <meta property="og:image:alt" content="{{ openGraphImageAlt }}" />
     <meta property="og:image:width" content="{{ openGraphImageWidth }}" />
     <meta property="og:image:height" content="{{ openGraphImageHeight }}" />
+
+    {% if openGraphTimeToRead %}
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Salma Alam-Naylor" />
+    <meta name="twitter:label2" content="Reading time" />
+    <meta name="twitter:data2" content="{{ openGraphTimeToRead }} minutes" />
+    <meta property="og:type" content="article" />
+    <meta property="article:section" content="Technology" />
+    {% for tag in openGraphArticleTags %}
+    <meta property="article:tag" content="{{ tag }}" />
+    {% endfor %} {% else %}
+    <meta property="og:type" content="website" />
+    {% endif %}
     <meta property="og:site_name" content="whitep4nth3r.com" />
 
-    <!-- Meta -->
-    <meta name="description" content="{{ metaDescription }}" />
     <meta name="monetization" content="$ilp.uphold.com/J7y7wkRezRYL" />
 
     <!-- Favicons -->
