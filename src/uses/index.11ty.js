@@ -14,8 +14,8 @@ exports.data = {
     "I receive a lot of questions on stream about my setup and what I use. So here's a (probably very incomplete) list!",
   openGraphImageUrl: OpenGraph.generateImageUrl({ title: pageTitle }),
   openGraphImageAlt: OpenGraph.generateImageAlt(pageTitle),
-  openGraphImageWidth: OpenGraph.imageWidth,
-  openGraphImageHeight: OpenGraph.imageHeight,
+  openGraphImageWidth: OpenGraph.imgWidth,
+  openGraphImageHeight: OpenGraph.imgHeight,
   openGraphUrl: "https://whitep4nth3r.com/uses/",
 };
 

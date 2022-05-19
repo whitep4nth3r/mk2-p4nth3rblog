@@ -25,8 +25,8 @@ exports.data = {
     openGraphImageUrl: (data) =>
       OpenGraph.generateImageUrl({ title: data.talk.title, topics: data.talk.topicsCollection.items }),
     openGraphImageAlt: (data) => OpenGraph.generateImageAlt(data.talk.title),
-    openGraphImageWidth: OpenGraph.imageWidth,
-    openGraphImageHeight: OpenGraph.imageHeight,
+    openGraphImageWidth: OpenGraph.imgWidth,
+    openGraphImageHeight: OpenGraph.imgHeight,
     openGraphUrl: (data) => `https://whitep4nth3r.com/talks/${data.talk.slug}/`,
   },
 };

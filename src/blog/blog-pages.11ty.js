@@ -29,9 +29,11 @@ exports.data = {
     openGraphImageUrl: (data) =>
       OpenGraph.generateImageUrl({ title: data.post.title, topics: data.post.topicsCollection.items }),
     openGraphImageAlt: (data) => OpenGraph.generateImageAlt(data.post.title),
-    openGraphImageWidth: OpenGraph.imageWidth,
-    openGraphImageHeight: OpenGraph.imageHeight,
+    openGraphImageWidth: OpenGraph.imgWidth,
+    openGraphImageHeight: OpenGraph.imgHeight,
     openGraphUrl: (data) => data.post.externalUrl || `https://whitep4nth3r.com/blog/${data.post.slug}/`,
+    openGraphTimeToRead: (data) => data.post.readingTime,
+    openGraphArticleTags: (data) => data.post.topicsCollection.items.map((item) => item.name),
   },
 };
 

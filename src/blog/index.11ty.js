@@ -18,8 +18,8 @@ exports.data = {
   metaDescription: `Learn about web development, accessibility, Jamstack, JavaScript, and more from ${Config.meta.jobDescription}.`,
   openGraphImageUrl: OpenGraph.generateImageUrl({ title: pageTitle }),
   openGraphImageAlt: OpenGraph.generateImageAlt(pageTitle),
-  openGraphImageWidth: OpenGraph.imageWidth,
-  openGraphImageHeight: OpenGraph.imageHeight,
+  openGraphImageWidth: OpenGraph.imgWidth,
+  openGraphImageHeight: OpenGraph.imgHeight,
   pagination: {
     data: "postSummaries",
     size: Config.pagination.pageSize,

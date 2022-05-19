@@ -2,7 +2,7 @@ const OpenGraph = require("../lib/openGraph");
 const NextTwitchStream = require("./_components/nextTwitchStream");
 const GetInvolvedOpenSource = require("./_components/getInvolvedOpenSource");
 const LatestBlogPost = require("./_components/latestBlogPost");
-const pageTitle = "Build stuff, learn things and love what you do with whitep4nth3r";
+const pageTitle = "Learn web dev, JavaScript and Jamstack from whitep4nth3r";
 
 exports.data = {
   layout: "base.html",
@@ -11,8 +11,8 @@ exports.data = {
     "Salma helps developers build stuff, learn things and love what they do. She works at Netlify, streams coding on Twitch, and loves helping people get into tech.",
   openGraphImageUrl: OpenGraph.generateImageUrl({ title: pageTitle }),
   openGraphImageAlt: OpenGraph.generateImageAlt(pageTitle),
-  openGraphImageWidth: OpenGraph.imageWidth,
-  openGraphImageHeight: OpenGraph.imageHeight,
+  openGraphImageWidth: OpenGraph.imgWidth,
+  openGraphImageHeight: OpenGraph.imgHeight,
   openGraphUrl: "https://whitep4nth3r.com/",
 };
 
