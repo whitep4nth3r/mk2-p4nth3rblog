@@ -38,6 +38,7 @@ function ResponsiveImage({ image }) {
         decoding="async"
         width="${image.width}"
         height="${image.height}"
+        class="post__responsiveImage"
       />
     </picture>`;
 }
