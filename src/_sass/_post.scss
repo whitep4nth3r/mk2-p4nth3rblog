@@ -219,3 +219,10 @@ a.post__linkedHeaderIcon {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
+
+.post__responsiveImage {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  border-radius: var(--border-radius-base);
+}
