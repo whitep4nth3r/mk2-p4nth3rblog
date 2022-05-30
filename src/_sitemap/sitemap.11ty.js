@@ -21,12 +21,22 @@ function calculateDate(page) {
   return page.date.toISOString();
 }
 
+function calculateUrl(page) {
+  if (page.data.eleventyComputed && page.data.eleventyComputed.canonical) {
+    return page.data.eleventyComputed.canonical(page.data);
+  }
+
+  return `https://${Config.site.domain}${page.url}`;
+}
+
 function buildItems(items) {
   return `
     ${items
       .map((page) => {
         const date = calculateDate(page);
-        return /*xml*/ `<url><loc>https://${Config.site.domain}${page.url}</loc><changefreq>daily</changefreq><lastmod>${date}</lastmod></url>`;
+        const url = calculateUrl(page);
+
+        return /*xml*/ `<url><loc>${url}</loc><changefreq>daily</changefreq><lastmod>${date}</lastmod></url>`;
       })
       .join("")}
   `;
