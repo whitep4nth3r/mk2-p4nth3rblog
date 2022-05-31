@@ -11,7 +11,7 @@ function AboutSocialLinks() {
   return /*html*/ `
   <ul class="about__socialLinks">
     <li>
-      <a href="https://discord.gg/theclaw" class="about__socialLinksItem" target="_blank" rel="nofollow noreferrer">${DiscordIcon()} Discord <span role="presentation">→</span></a>
+      <a href="/discord" class="about__socialLinksItem" target="_blank" rel="nofollow noreferrer">${DiscordIcon()} Discord <span role="presentation">→</span></a>
     </li>
     <li>
       <a href="https://github.com/whitep4nth3r" class="about__socialLinksItem" target="_blank" rel="nofollow noreferrer">${GithubIcon()} Github <span role="presentation">→</span></a>
