@@ -9,7 +9,7 @@ function GetInvolvedOpenSource() {
         <p>Join a growing community of developers who are building stuff, learning things, and helping each other grow through the power of <span class="colorHighlight"><strong>open source software</strong></span>.</p>
       </div>
       <div>
-      <a href="https://discord.gg/theclaw" rel="nofollow noreferrer" target="_blank" class="homeCard__button">
+      <a href="/discord" rel="nofollow noreferrer" target="_blank" class="homeCard__button">
         <span>${DiscordIcon()}</span>
         <span>Join Discord</span>
         <span role="presentation">→</span>

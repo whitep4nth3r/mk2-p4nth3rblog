@@ -226,3 +226,9 @@ a.post__linkedHeaderIcon {
   display: block;
   border-radius: var(--border-radius-base);
 }
+
+.post__deployToNetlifyButton {
+  margin: 2rem auto;
+  display: block;
+  width: max-content;
+}

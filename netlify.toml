@@ -17,7 +17,7 @@
   status = 301
 [[redirects]]
   from = "/discord"
-  to = "https://discord.gg/theclaw"
+  to = "http://discord.gg/GQbXUVCneJ"
   status = 301
 [[plugins]]
 package = "netlify-plugin-inline-functions-env"
