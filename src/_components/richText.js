@@ -11,6 +11,7 @@ const CodePenEmbed = require("./codepenEmbed");
 const TweetEmbed = require("./tweetEmbed");
 const BlogPostEmbed = require("./blogPostEmbed");
 const LighthouseComparison = require("./lighthouseComparison");
+const DeployToNetlifyButton = require("./deployToNetlifyButton");
 
 const LinkIcon = require("./svg/linkIcon");
 
@@ -101,6 +102,8 @@ function getRichTextRenderOptions(links, options) {
         const { __typename } = entry;
 
         switch (__typename) {
+          case "DeployToNetlifyButton":
+            return DeployToNetlifyButton({ title: entry.title, deployUrl: entry.deployUrl });
           case "CodePenEmbed":
             return CodePenEmbed({ embedCode: entry.embedCode, title: entry.title });
           case "TikTokEmbed":

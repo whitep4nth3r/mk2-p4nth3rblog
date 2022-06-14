@@ -1033,6 +1033,12 @@ a.post__linkedHeaderIcon {
   border-radius: var(--border-radius-base);
 }
 
+.post__deployToNetlifyButton {
+  margin: 2rem auto;
+  display: block;
+  width: max-content;
+}
+
 .pagination {
   margin: 4rem auto;
   max-width: var(--grid-max-width);
