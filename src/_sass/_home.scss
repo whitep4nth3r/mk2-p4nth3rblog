@@ -9,3 +9,7 @@
 .home__itemTitle {
   @include grid_item_title;
 }
+
+.home__twitchClip {
+  aspect-ratio: 16/9;
+}

@@ -390,6 +390,10 @@ strong {
   background: var(--yellow-red-gradient);
 }
 
+.home__twitchClip {
+  aspect-ratio: 16/9;
+}
+
 .blog__header {
   margin: 4rem auto 2rem auto;
   max-width: var(--grid-max-width);

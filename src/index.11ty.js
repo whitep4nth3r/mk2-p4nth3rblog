@@ -43,13 +43,19 @@ exports.render = async function (data) {
         }
     </div>
 
-    <!-- we have global data — twitchClips -->
-    <!-- we want to get a random one -->
-    <!-- do we need to be able to do this in eleventy-edge.js? -->
-
-    <!-- short codes from the eleventy config do not work on the edge -->
-    <!-- cannot use JS here right now to get random at request time -->
-    ${await this.edge(`random twitch clip {{ clips[0].id }}`, "js", data.twitchClips)}
+    ${await this.edge(
+      `{% assign clip = clips | getRandomTwitchClip %}
+      <div class="home__twitchClip">
+        <iframe
+            src="https://clips.twitch.tv/embed?clip={{ clip.id }}&parent=localhost"
+            height="100%"
+            width="100%"
+            allowfullscreen>
+        </iframe>
+      </div>`,
+      "liquid",
+      data.twitchClips,
+    )}
 
   </section>
 
