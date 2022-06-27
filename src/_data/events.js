@@ -2,7 +2,6 @@ require("dotenv").config();
 const fetch = require("node-fetch");
 
 const ContentfulEvents = require("../../lib/contentfulEvents.js");
-const ContentfulPerson = require("../../lib/contentfulPerson");
 const DateUtils = require("../../lib/dateUtils");
 
 function removeTwitchStreamsWhenOnVacation(events, startTime, endTime) {
@@ -10,7 +9,6 @@ function removeTwitchStreamsWhenOnVacation(events, startTime, endTime) {
 }
 
 module.exports = async function () {
-  const person = await ContentfulPerson.get();
   const futureEvents = await ContentfulEvents.getAll({ future: true });
 
   const dbEvents = futureEvents.map((ev) => {
@@ -44,7 +42,7 @@ module.exports = async function () {
   const sortedEvents = allEvents.sort(DateUtils.sortItemsByDateAsc);
 
   return {
-    person,
-    events: sortedEvents,
+    list: sortedEvents,
+    next: sortedEvents[0],
   };
 };

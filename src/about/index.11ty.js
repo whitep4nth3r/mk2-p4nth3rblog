@@ -85,7 +85,7 @@ exports.render = function (data) {
             </div>
             
               <ol class="about__eventsList">
-                ${events
+                ${events.list
                   .map(
                     (event) => /*html*/ `
                   <li class="about__eventsListItem">
