@@ -1,5 +1,6 @@
 const OpenGraph = require("../lib/openGraph");
 const NextTwitchStream = require("./_components/nextTwitchStream");
+const NextNonTwitchEvent = require("./_components/nextNonTwitchEvent");
 const GetInvolvedOpenSource = require("./_components/getInvolvedOpenSource");
 const LatestBlogPost = require("./_components/latestBlogPost");
 const pageTitle = "Learn web dev, JavaScript and Jamstack from whitep4nth3r";
@@ -17,7 +18,8 @@ exports.data = {
 };
 
 exports.render = function (data) {
-  const { twitch, latestPost } = data;
+  const { events, latestPost } = data;
+
   return /*html*/ `
   <section class="home">
     <div class="home__item">
@@ -30,12 +32,15 @@ exports.render = function (data) {
     </div>
     <div class="home__item">
       <h2 class="home__itemTitle">love <span class="colorHighlight">what you do</span></h2>
-        ${NextTwitchStream({
-          stream: twitch.stream,
-          link: twitch.link,
-          isLive: twitch.isLive,
-          onVacation: twitch.onVacation,
-        })}
+        ${
+          events.next.type === "twitch"
+            ? NextTwitchStream({
+                stream: events.next,
+                link: events.next.link,
+                isLive: events.next.isLive,
+              })
+            : NextNonTwitchEvent({ event: events.next })
+        }
     </div>
   </section>
 
