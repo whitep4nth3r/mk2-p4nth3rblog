@@ -16,7 +16,7 @@ function NextNonTwitchEvent({ event }) {
   return /*html*/ `
       <div class="nextTwitchStream">
         <h3 class="nextTwitchStream__title">
-          ${event.name}
+          Next event: ${event.name}
         </h3>
               
           <a href="${event.link}" target="_blank" rel="nofollow noreferrer" class="nextTwitchStream__link">
