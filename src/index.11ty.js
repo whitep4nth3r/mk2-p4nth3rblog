@@ -20,10 +20,6 @@ exports.data = {
 exports.render = function (data) {
   const { events, latestPost } = data;
 
-  console.log("HERERERE");
-
-  console.log(events.next.type);
-
   return /*html*/ `
   <section class="home">
     <div class="home__item">
