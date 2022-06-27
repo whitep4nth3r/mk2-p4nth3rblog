@@ -12,13 +12,13 @@ export default async (request, context) => {
 
     edge.config((eleventyConfig) => {
       eleventyConfig.addFilter("getRandomTwitchClip", (arr) => {
-        // return random Twitch clip created after August 2021
+        // return random Twitch clip created after March 2021
         const validClips = arr
           .sort(() => {
             return 0.5 - Math.random();
           })
           .filter((clip) => {
-            return clip.created_at > "2021-08-01T00:00:00Z";
+            return clip.created_at > "2021-03-01T00:00:00Z";
           });
 
         return validClips.slice(0, 1)[0];

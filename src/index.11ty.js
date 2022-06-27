@@ -41,7 +41,6 @@ exports.render = async function (data) {
               })
             : NextNonTwitchEvent({ event: events.next })
         }
-    </div>
 
     ${await this.edge(
       `{% assign clip = clips | getRandomTwitchClip %}
@@ -56,6 +55,7 @@ exports.render = async function (data) {
       "liquid",
       data.twitchClips,
     )}
+    </div>
 
   </section>
 
