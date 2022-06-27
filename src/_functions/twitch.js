@@ -36,9 +36,12 @@ exports.handler = async function (event, context) {
       fetchOptions,
     );
 
+    const clipsResponse = await fetch(`https://api.twitch.tv/helix/clips?broadcaster_id=${twitchId}`, fetchOptions);
+
     const user = await userResponse.json();
     const streams = await streamsResponse.json();
     const schedule = await scheduleResponse.json();
+    const clips = await clipsResponse.json();
 
     return {
       statusCode: 200,
@@ -51,6 +54,7 @@ exports.handler = async function (event, context) {
         isLiveOnTwitch: streams.data.length === 1,
         schedule,
         type: "twitch",
+        clips,
       }),
     };
   }
