@@ -4,6 +4,9 @@
 [build]
   command = "npm run build"
   functions = "src/_functions/"
+[[edge_functions]]
+  function = "eleventy-edge"
+  path = "/*"
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"

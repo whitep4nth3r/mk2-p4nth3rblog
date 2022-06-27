@@ -17,8 +17,8 @@ exports.data = {
   openGraphUrl: "https://whitep4nth3r.com/",
 };
 
-exports.render = function (data) {
-  const { events, latestPost } = data;
+exports.render = async function (data) {
+  const { events, latestPost, twitchClips } = data;
 
   return /*html*/ `
   <section class="home">
@@ -42,6 +42,15 @@ exports.render = function (data) {
             : NextNonTwitchEvent({ event: events.next })
         }
     </div>
+
+    <!-- we have global data — twitchClips -->
+    <!-- we want to get a random one -->
+    <!-- do we need to be able to do this in eleventy-edge.js? -->
+
+    <!-- short codes from the eleventy config do not work on the edge -->
+    <!-- cannot use JS here right now to get random at request time -->
+    ${await this.edge(`random twitch clip {{ clips[0].id }}`, "js", data.twitchClips)}
+
   </section>
 
   `;

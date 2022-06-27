@@ -1,6 +1,7 @@
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const embedTwitter = require("eleventy-plugin-embed-twitter");
 const embedYouTube = require("eleventy-plugin-youtube-embed");
+const { EleventyEdgePlugin } = require("@11ty/eleventy");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.ignores.add("./src/_sass");
@@ -22,6 +23,15 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPlugin(embedYouTube, {
     lite: true,
+  });
+
+  eleventyConfig.addPlugin(EleventyEdgePlugin);
+
+  eleventyConfig.addFilter("randomItem", (arr) => {
+    arr.sort(() => {
+      return 0.5 - Math.random();
+    });
+    return arr.slice(0, 1);
   });
 
   return {
