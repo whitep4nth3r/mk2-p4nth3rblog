@@ -23,6 +23,7 @@
   font-display: swap;
 }
 :root {
+  color-scheme: dark;
   --red: #f11012;
   --green: #82af3a;
   --black: #0f111a;
@@ -75,6 +76,7 @@
 
 @media (prefers-color-scheme: light) {
   :root {
+    color-scheme: light;
     --color-bg: var(--white);
     --color-bg-lighter: var(--white);
     --color-fg: var(--black);
@@ -111,6 +113,8 @@
 html {
   font-size: 100%;
   scroll-behavior: var(--scroll-behaviour);
+  background: var(--yellow-red-gradient);
+  padding: 0.75rem;
 }
 
 body {
@@ -120,6 +124,7 @@ body {
   background-color: var(--color-bg);
   color: var(--color-fg);
   padding: 1rem 2rem;
+  border-radius: var(--border-radius-base);
 }
 
 a {
@@ -173,6 +178,11 @@ strong {
     opacity: 0;
   }
 }
+.header {
+  margin-bottom: 4rem;
+  margin-top: 2rem;
+}
+
 .header__content {
   display: flex;
   flex-direction: column;
@@ -2537,10 +2547,6 @@ pre[class*=language-] {
 }
 
 /* START TEMP */
-header {
-  margin-bottom: 4rem;
-}
-
 main {
   margin: auto;
 }
@@ -2550,20 +2556,5 @@ main {
 }
 
 /* END TEMP */
-/* width */
-::-webkit-scrollbar {
-  width: 0.5rem;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  border-radius: 0.5rem;
-  background: var(--color-bg-lighter);
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: transparent;
-}
 
 /*# sourceMappingURL=main.css.map */

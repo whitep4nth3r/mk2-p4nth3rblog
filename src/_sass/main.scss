@@ -41,9 +41,6 @@
 @import "prism";
 
 /* START TEMP */
-header {
-  margin-bottom: 4rem;
-}
 
 main {
   margin: auto;
@@ -53,21 +50,4 @@ main {
 .colorHighlight {
   color: var(--color-highlight);
 }
-
 /* END TEMP */
-
-/* width */
-::-webkit-scrollbar {
-  width: 0.5rem;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  border-radius: 0.5rem;
-  background: var(--color-bg-lighter);
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: transparent;
-}
