@@ -1,4 +1,6 @@
 :root {
+  color-scheme: dark;
+
   --red: #f11012;
   --green: #82af3a;
   --black: #0f111a;
@@ -61,6 +63,8 @@
 
 @media (prefers-color-scheme: light) {
   :root {
+    color-scheme: light;
+
     --color-bg: var(--white);
     --color-bg-lighter: var(--white);
     --color-fg: var(--black);
