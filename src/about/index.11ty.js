@@ -129,6 +129,11 @@ exports.render = function (data) {
                     </span>
                     <span class="about__eventsListItemName">${event.name}</span>
                     ${
+                      event.shortDescription
+                        ? `<p class="about__eventsListshortDescription">${event.shortDescription}</p>`
+                        : ""
+                    }
+                    ${
                       event.canceled_until === null && event.link
                         ? `
                     <a href="${

@@ -62,6 +62,7 @@
   grid-template-areas:
     "date time"
     "date name"
+    "date desc"
     "date cta";
   margin-bottom: 4rem;
 
@@ -70,7 +71,8 @@
     grid-template-columns: 1fr 6fr 1fr;
     grid-template-areas:
       "date time cta"
-      "date name cta";
+      "date name cta"
+      "date desc cta";
   }
 }
 
@@ -129,6 +131,14 @@
 .about__eventsListItemTZ {
   display: flex;
   flex-direction: column;
+}
+
+.about__eventsListshortDescription {
+  grid-area: desc;
+  @include font_main;
+  font-size: 1.2rem;
+  line-height: 1.2;
+  max-width: 49ch;
 }
 
 .about__eventsListItemName {
