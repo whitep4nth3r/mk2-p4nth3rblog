@@ -20,7 +20,7 @@ body {
   background-color: var(--color-bg);
   color: var(--color-fg);
   padding: 1rem 2rem;
-  border-radius: var(--border-radius-base);
+  border-radius: calc(var(--border-radius-base) * 2);
 }
 
 a {
