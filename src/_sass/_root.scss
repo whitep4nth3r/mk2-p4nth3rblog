@@ -8,6 +8,9 @@
   --white: #ffffff;
   --yellow: #ffb626;
 
+  --twitch-purple: #9146ff;
+  --cta2-bg: var(--grey-dark);
+
   --font-family-bold: "Work Sans Bold", sans-serif;
   --font-weight-bold: 700;
   --font-family-heading: "Work Sans SemiBold", sans-serif;
@@ -64,6 +67,8 @@
 @media (prefers-color-scheme: light) {
   :root {
     color-scheme: light;
+
+    --cta2-bg: var(--yellow);
 
     --color-bg: var(--white);
     --color-bg-lighter: var(--white);

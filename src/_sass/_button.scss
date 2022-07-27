@@ -13,3 +13,20 @@
   border-color: transparent;
   cursor: pointer;
 }
+
+@mixin button_twitch() {
+  @include font_heading;
+  background-color: var(--twitch-purple);
+  color: #fff;
+  border-radius: var(--border-radius-base);
+  padding: 0.5rem 1rem 0.5rem 0.75rem;
+  text-decoration: none;
+  display: inline-flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  border-color: transparent;
+  cursor: pointer;
+}
