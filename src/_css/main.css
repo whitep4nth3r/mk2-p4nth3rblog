@@ -30,6 +30,8 @@
   --grey-dark: #2b2e3a;
   --white: #ffffff;
   --yellow: #ffb626;
+  --twitch-purple: #9146ff;
+  --cta2-bg: var(--grey-dark);
   --font-family-bold: "Work Sans Bold", sans-serif;
   --font-weight-bold: 700;
   --font-family-heading: "Work Sans SemiBold", sans-serif;
@@ -77,6 +79,7 @@
 @media (prefers-color-scheme: light) {
   :root {
     color-scheme: light;
+    --cta2-bg: var(--yellow);
     --color-bg: var(--white);
     --color-bg-lighter: var(--white);
     --color-fg: var(--black);
@@ -1242,7 +1245,43 @@ a.post__linkedHeaderIcon {
 
 .blogSidebarAuthor__cta {
   font-size: 1rem;
+  margin-bottom: 2rem;
+  display: block;
+}
+
+.blogSidebarAuthor__cta2 {
+  display: block;
+  text-align: left;
+  background-color: var(--cta2-bg);
+  border-radius: calc(var(--border-radius-base) * 2);
+  padding: 0.5rem;
+  filter: drop-shadow(0px 0.125rem 0.125rem rgba(0, 0, 0, 0.25));
+}
+
+.blogSidebarAuthor__cta2__text {
+  font-size: 1rem;
+  line-height: 1.2;
+  color: var(--color-fg);
   margin-bottom: 1rem;
+}
+
+.blogSidebarAuthor__cta2__link {
+  font-weight: var(--font-weight-heading);
+  font-family: var(--font-family-heading);
+  background-color: var(--twitch-purple);
+  color: #fff;
+  border-radius: var(--border-radius-base);
+  padding: 0.5rem 1rem 0.5rem 0.75rem;
+  text-decoration: none;
+  display: inline-flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  border-color: transparent;
+  cursor: pointer;
+  display: flex;
 }
 
 .blogSidebarAuthor__imgContainer {
