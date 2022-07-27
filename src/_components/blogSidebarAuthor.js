@@ -11,7 +11,7 @@ function BlogSidebarAuthor({ author }) {
     } <span class="colorHighlight" role="presentation">→</span></a>
 
     <div class="blogSidebarAuthor__cta2">
-      <p class="blogSidebarAuthor__cta2__text">Do you want more content about web dev, CSS and JavaScript?</p>
+      <p class="blogSidebarAuthor__cta2__text">Want more web dev, CSS and JavaScript?</p>
       <a class="blogSidebarAuthor__cta2__link" href="https://twitch.tv/whitep4nth3r" target="_blank"><svg
           xmlns="http://www.w3.org/2000/svg"
           role="img"
