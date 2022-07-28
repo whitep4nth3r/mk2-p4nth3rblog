@@ -1052,6 +1052,9 @@ a.post__linkedHeaderIcon {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
+.post__tweetEmbed iframe {
+  border-radius: 14px;
+}
 
 .post__responsiveImage {
   margin-left: auto;

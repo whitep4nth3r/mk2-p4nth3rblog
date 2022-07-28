@@ -218,6 +218,10 @@ a.post__linkedHeaderIcon {
 .post__tweetEmbed {
   margin-top: 2rem;
   margin-bottom: 2rem;
+
+  iframe {
+    border-radius: 14px;
+  }
 }
 
 .post__responsiveImage {
