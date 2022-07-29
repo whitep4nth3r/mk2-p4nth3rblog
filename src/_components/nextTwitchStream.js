@@ -70,8 +70,8 @@ function NextTwitchStream({ stream, link, isLive }) {
             </span>
             <span role="presentation">→</span>
           </a>
-          
-          ${SeeAllCta({ things: "events", url: "/about/#events" })}
+
+          <a href="/about/#events" class="homeCard__seeAllCta">See all events <span class="colorHighlight" aria-hidden="true">→</span></a>
         </div>
       </div>
 

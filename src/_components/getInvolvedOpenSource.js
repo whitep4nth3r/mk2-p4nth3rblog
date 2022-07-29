@@ -15,7 +15,7 @@ function GetInvolvedOpenSource() {
           <span>Join Discord</span>
           <span role="presentation">→</span>
         </a>
-        ${SeeAllCta({ things: "open source projects", url: "/projects/" })}
+        <a href="/projects/" class="homeCard__seeAllCta">See all open source projects <span class="colorHighlight" aria-hidden="true">→</span></a>
       </div>
     </div>
   `;

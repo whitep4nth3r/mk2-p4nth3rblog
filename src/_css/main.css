@@ -1505,7 +1505,7 @@ a.post__linkedHeaderIcon {
   font-family: var(--font-family-main);
   font-size: 1rem;
   line-height: 1.5;
-  margin-bottom: 2rem;
+  margin-bottom: 0;
   color: var(--color-fg);
   word-break: break-word;
   display: block;
@@ -1542,14 +1542,10 @@ a.post__linkedHeaderIcon {
   flex-direction: column;
   align-items: flex-start;
   gap: 1rem;
-  /** 
-    this is overriding the base styles of seeAllCta and the button
-    separate the things out probably
-  */
 }
-.homeCard__ctaRow a {
+.homeCard__ctaRow .topicsButton {
+  margin-top: 1rem;
   margin-bottom: 1rem;
-  margin-top: 0;
 }
 @media screen and (min-width: 48em) {
   .homeCard__ctaRow {
@@ -1557,9 +1553,16 @@ a.post__linkedHeaderIcon {
     justify-content: space-between;
     align-items: center;
   }
-  .homeCard__ctaRow a {
-    margin: 0;
-  }
+}
+
+.homeCard__seeAllCta {
+  font-weight: var(--font-weight-heading);
+  font-family: var(--font-family-heading);
+  font-size: 1.2rem;
+  line-height: 1.4;
+  padding: 1rem 0;
+  word-break: break-word;
+  display: block;
 }
 
 .nextTwitchStream {
@@ -1620,7 +1623,7 @@ a.post__linkedHeaderIcon {
   font-family: var(--font-family-main);
   font-size: 1rem;
   line-height: 1.5;
-  margin-bottom: 2rem;
+  margin-bottom: 0;
   color: var(--color-fg);
   word-break: break-word;
   display: block;
@@ -1641,8 +1644,8 @@ a.post__linkedHeaderIcon {
   font-size: 1rem;
   border-color: transparent;
   cursor: pointer;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   display: inline-flex;
   flex-direction: row;
   gap: 0.5rem;

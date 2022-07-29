@@ -45,7 +45,7 @@
   @include font_main;
   font-size: 1rem;
   line-height: 1.5;
-  margin-bottom: 2rem;
+  margin-bottom: 0;
   color: var(--color-fg);
   word-break: break-word;
   display: block;
@@ -75,23 +75,27 @@
   align-items: flex-start;
   gap: 1rem;
 
-  /** 
-    this is overriding the base styles of seeAllCta and the button
-    separate the things out probably
-  */
-
-  a {
+  .topicsButton {
+    margin-top: 1rem;
     margin-bottom: 1rem;
-    margin-top: 0;
   }
 
   @media screen and (min-width: 48em) {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-
-    a {
-      margin: 0;
-    }
   }
+}
+
+@mixin homecard__seeallcta {
+  @include font_semibold;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  padding: 1rem 0;
+  word-break: break-word;
+  display: block;
+}
+
+.homeCard__seeAllCta {
+  @include homecard__seeallcta;
 }
