@@ -1506,7 +1506,7 @@ a.post__linkedHeaderIcon {
   font-family: var(--font-family-main);
   font-size: 1rem;
   line-height: 1.5;
-  margin-bottom: 0;
+  margin-bottom: 1rem;
   color: var(--color-fg);
   word-break: break-word;
   display: block;
@@ -1542,7 +1542,6 @@ a.post__linkedHeaderIcon {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 1rem;
 }
 .homeCard__ctaRow .topicsButton {
   margin-top: 1rem;
@@ -1553,6 +1552,7 @@ a.post__linkedHeaderIcon {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
   }
 }
 
@@ -1624,7 +1624,7 @@ a.post__linkedHeaderIcon {
   font-family: var(--font-family-main);
   font-size: 1rem;
   line-height: 1.5;
-  margin-bottom: 0;
+  margin-bottom: 1rem;
   color: var(--color-fg);
   word-break: break-word;
   display: block;

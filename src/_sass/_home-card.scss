@@ -41,18 +41,18 @@
   flex-direction: column;
 }
 
-@mixin homecard_excerpt {
+@mixin homecard_excerpt_p {
   @include font_main;
   font-size: 1rem;
   line-height: 1.5;
-  margin-bottom: 0;
+  margin-bottom: 1rem;
   color: var(--color-fg);
   word-break: break-word;
   display: block;
 }
 
 .homeCard__excerpt p {
-  @include homecard_excerpt;
+  @include homecard_excerpt_p;
 }
 
 .homeCard__button {
@@ -73,7 +73,6 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 1rem;
 
   .topicsButton {
     margin-top: 1rem;
@@ -84,6 +83,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
   }
 }
 
