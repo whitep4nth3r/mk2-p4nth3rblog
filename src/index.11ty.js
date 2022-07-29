@@ -23,7 +23,7 @@ exports.render = function (data) {
 
   return /*html*/ `
   <section class="home">
-    ${HomeAbout({ person })}
+    ${HomeAbout()}
     <div>
       <div class="home__item">
       <h2 class="home__itemTitle">build <span class="colorHighlight">stuff</span></h2>
