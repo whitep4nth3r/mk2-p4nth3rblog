@@ -16,6 +16,10 @@
   to = "/blog/faqs/"
   status = 301
 [[redirects]]
+  from = "/github"
+  to = "http://github.com/whitep4nth3r"
+  status = 301
+[[redirects]]
   from = "/discord"
   to = "http://discord.gg/GQbXUVCneJ"
   status = 301

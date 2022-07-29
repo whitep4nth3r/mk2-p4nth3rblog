@@ -1,11 +1,24 @@
 .home {
-  @include grid;
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  max-width: var(--grid-max-width);
+  margin: auto;
+  gap: 1rem 4rem;
+  grid-template-columns: 1fr;
+  height: 100%;
+
+  @media screen and (min-width: 48em) {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .home__item {
-  @include grid_item;
+  display: flex;
+  flex-direction: column;
 }
 
 .home__itemTitle {
-  @include grid_item_title;
+  @include grid_item_title($gradientMarginTop: 0.5rem);
+  width: max-content;
 }

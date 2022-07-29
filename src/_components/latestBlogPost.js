@@ -26,15 +26,14 @@ function LatestBlogPost({ post }) {
         ${md.render(post.excerpt)}
       </div>
 
-      <div>
+      <div class="homeCard__ctaRow">
         ${TopicsButton({
           topics: post.topicsCollection.items,
           url: `/blog/${post.slug}/`,
           ariaDescribedBy: `post-${post.sys.id}`,
         })}
+        <a href="/blog/" class="homeCard__seeAllCta">See all blog posts <span class="colorHighlight" aria-hidden="true">→</span></a>
       </div>
-
-      ${SeeAllCta({ things: "blog posts", url: "/blog/" })}
     </article>
   `;
 }

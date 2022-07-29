@@ -96,7 +96,7 @@
 }
 
 .header__navListItemLink {
-  @include font_heading;
+  @include font_semibold;
   font-size: 1.2rem;
   padding: 1rem;
   text-decoration: none;

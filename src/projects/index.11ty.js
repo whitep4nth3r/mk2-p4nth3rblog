@@ -73,7 +73,6 @@ exports.render = function (data) {
                   <span>
                     View source
                   </span>
-                  <span role="presentation">→</span>
               </a>
 
             <a href="${project.link}" class="project__link" target="_blank" rel="noopener noreferrer">

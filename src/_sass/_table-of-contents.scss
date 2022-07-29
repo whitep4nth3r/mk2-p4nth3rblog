@@ -21,16 +21,12 @@
 }
 
 .tableOfContents__itemLink {
-  @include font_heading;
+  @include font_semibold;
   font-size: 1rem;
   line-height: 1.4;
   color: var(--color-fg);
   text-decoration: none;
   display: block;
-}
-
-.tableOfContents__arrow {
-  color: var(--color-highlight);
 }
 
 .tableOfContents__item--nudged {

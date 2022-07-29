@@ -11,28 +11,28 @@ function AboutSocialLinks() {
   return /*html*/ `
   <ul class="about__socialLinks">
     <li>
-      <a href="/discord" class="about__socialLinksItem" target="_blank" rel="nofollow noreferrer">${DiscordIcon()} Discord <span role="presentation">→</span></a>
+      <a href="/discord" class="about__socialLinksItem" target="_blank" rel="nofollow noreferrer">${DiscordIcon()} Discord</a>
     </li>
     <li>
-      <a href="https://github.com/whitep4nth3r" class="about__socialLinksItem" target="_blank" rel="nofollow noreferrer">${GithubIcon()} Github <span role="presentation">→</span></a>
+      <a href="https://github.com/whitep4nth3r" class="about__socialLinksItem" target="_blank" rel="nofollow noreferrer">${GithubIcon()} Github</a>
     </li>
     <li>
-      <a href="https://twitch.tv/whitep4nth3r" class="about__socialLinksItem" target="_blank" rel="nofollow noreferrer">${TwitchIcon()} Twitch <span role="presentation">→</span></a>
+      <a href="https://twitch.tv/whitep4nth3r" class="about__socialLinksItem" target="_blank" rel="nofollow noreferrer">${TwitchIcon()} Twitch</a>
     </li>
     <li>
-      <a href="https://twitter.com/whitep4nth3r" class="about__socialLinksItem" target="_blank" rel="nofollow noreferrer">${TwitterIcon()} Twitter <span role="presentation">→</span></a>
+      <a href="https://twitter.com/whitep4nth3r" class="about__socialLinksItem" target="_blank" rel="nofollow noreferrer">${TwitterIcon()} Twitter</a>
     </li>
     <li>
-      <a href="https://youtube.com/whitep4nth3r" class="about__socialLinksItem" target="_blank" rel="nofollow noreferrer">${YoutubeSquare()} YouTube <span role="presentation">→</span></a>
+      <a href="https://youtube.com/whitep4nth3r" class="about__socialLinksItem" target="_blank" rel="nofollow noreferrer">${YoutubeSquare()} YouTube</a>
     </li>
     <li>
-      <a href="https://dev.to/whitep4nth3r" class="about__socialLinksItem" target="_blank" rel="nofollow noreferrer">${DevIcon()} DEV <span role="presentation">→</span></a>
+      <a href="https://dev.to/whitep4nth3r" class="about__socialLinksItem" target="_blank" rel="nofollow noreferrer">${DevIcon()} DEV</a>
     </li>
     <li>
-      <a href="https://polywork.com/whitep4nth3r" class="about__socialLinksItem" target="_blank" rel="nofollow noreferrer">${PolyworkIcon()} Polywork <span role="presentation">→</span></a>
+      <a href="https://polywork.com/whitep4nth3r" class="about__socialLinksItem" target="_blank" rel="nofollow noreferrer">${PolyworkIcon()} Polywork</a>
     </li>
     <li>
-      <a href="/feed.xml" class="about__socialLinksItem" target="_blank">${FeedIcon()} Feed <span role="presentation">→</span></a>
+      <a href="/feed.xml" class="about__socialLinksItem" target="_blank">${FeedIcon()} Feed</a>
     </li>
   </ul>
   `;

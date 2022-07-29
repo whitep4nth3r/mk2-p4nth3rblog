@@ -59,7 +59,7 @@
 }
 
 .post__h1 {
-  @include font_heading;
+  @include font_semibold;
   margin-bottom: 2rem;
   font-size: clamp(2.2rem, 3vw, 3rem);
   line-height: 1.2;
@@ -68,7 +68,7 @@
 }
 
 .post__h2 {
-  @include font_heading;
+  @include font_semibold;
   font-size: clamp(1.8rem, 2.8vw, 2rem);
   line-height: 1.4;
   margin-bottom: 2rem;
@@ -79,7 +79,7 @@
 }
 
 .post__h3 {
-  @include font_heading;
+  @include font_semibold;
   font-size: 1.4rem;
   line-height: 1.4;
   padding-top: 2rem;

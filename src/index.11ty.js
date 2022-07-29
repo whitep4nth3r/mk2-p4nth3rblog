@@ -1,3 +1,4 @@
+const HomeAbout = require("./_components/homeAbout");
 const OpenGraph = require("../lib/openGraph");
 const NextTwitchStream = require("./_components/nextTwitchStream");
 const NextNonTwitchEvent = require("./_components/nextNonTwitchEvent");
@@ -18,29 +19,32 @@ exports.data = {
 };
 
 exports.render = function (data) {
-  const { events, latestPost } = data;
+  const { events, latestPost, person } = data;
 
   return /*html*/ `
   <section class="home">
-    <div class="home__item">
-    <h2 class="home__itemTitle">build <span class="colorHighlight">stuff</span></h2>
-      ${GetInvolvedOpenSource()}
-    </div>
-    <div class="home__item">
-      <h2 class="home__itemTitle">learn <span class="colorHighlight">things</span></h2>
-      ${LatestBlogPost({ post: latestPost.post })}
-    </div>
-    <div class="home__item">
-      <h2 class="home__itemTitle">love <span class="colorHighlight">what you do</span></h2>
-        ${
-          events.next.type === "twitch"
-            ? NextTwitchStream({
-                stream: events.next,
-                link: events.next.link,
-                isLive: events.next.isLive,
-              })
-            : NextNonTwitchEvent({ event: events.next })
-        }
+    ${HomeAbout()}
+    <div>
+      <div class="home__item">
+      <h2 class="home__itemTitle">build <span class="colorHighlight">stuff</span></h2>
+        ${GetInvolvedOpenSource()}
+      </div>
+      <div class="home__item">
+        <h2 class="home__itemTitle">learn <span class="colorHighlight">things</span></h2>
+        ${LatestBlogPost({ post: latestPost.post })}
+      </div>
+      <div class="home__item">
+        <h2 class="home__itemTitle">love <span class="colorHighlight">what you do</span></h2>
+          ${
+            events.next.type === "twitch"
+              ? NextTwitchStream({
+                  stream: events.next,
+                  link: events.next.link,
+                  isLive: events.next.isLive,
+                })
+              : NextNonTwitchEvent({ event: events.next })
+          }
+      </div>
     </div>
   </section>
 
