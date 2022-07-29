@@ -401,13 +401,14 @@ strong {
   font-size: 2rem;
   line-height: 1.2;
   margin-bottom: 1.75rem;
+  width: max-content;
 }
 .home__itemTitle:after {
   content: "";
   width: 100%;
   height: 0.25rem;
   display: block;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   background: var(--yellow-red-gradient);
 }
 
@@ -1379,7 +1380,7 @@ a.post__linkedHeaderIcon {
   font-weight: var(--font-weight-heading);
   font-family: var(--font-family-heading);
   padding-top: 1.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   color: var(--color-fg);
   font-size: 1rem;
   display: flex;
@@ -1483,7 +1484,7 @@ a.post__linkedHeaderIcon {
 
 .homeCard__linkForTitle {
   text-decoration: none;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
 }
 .homeCard__linkForTitle .homeCard__title {
   margin-bottom: 0;
