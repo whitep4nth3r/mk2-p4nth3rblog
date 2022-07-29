@@ -1,7 +1,5 @@
 .nextTwitchStream {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
+  @include homecard;
 }
 
 .nextTwitchStream__link {
@@ -10,7 +8,7 @@
 }
 
 .nextTwitchStream__meta {
-  @include font_heading;
+  @include font_semibold;
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
@@ -31,11 +29,7 @@
 }
 
 .nextTwitchStream__title {
-  @include font_heading;
-  color: var(--color-fg);
-  font-size: 2.2rem;
-  line-height: 1.2;
-  margin-bottom: 2rem;
+  @include homecard_title;
 }
 
 .nextTwitchStream__noStream {
@@ -48,21 +42,13 @@
 }
 
 .nextTwitchStream__streamInfo {
-  @include font_main;
-  font-size: 1.2rem;
-  line-height: 1.6;
-  margin-bottom: 1rem;
-  color: var(--color-fg);
-  word-break: break-word;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
+  @include homecard_excerpt_p;
 }
 
 .nextTwitchStream__cta {
   @include button_main;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   display: inline-flex;
   flex-direction: row;
   gap: 0.5rem;

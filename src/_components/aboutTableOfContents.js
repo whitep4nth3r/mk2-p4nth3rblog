@@ -9,16 +9,13 @@ function AboutTableOfContents({ onUses, onDashboard, categories } = defaultOptio
     <summary class="tableOfContents__header">Quick links</summary>
     <ol class="tableOfContents__list">
       <li class="tableOfContents__item">
-        <a href="${aboutMeLink}" class="tableOfContents__itemLink">About me 
-        <span class="tableOfContents__arrow">→</span></a>
+        <a href="${aboutMeLink}" class="tableOfContents__itemLink">About me</a>
       </li>
       <li class="tableOfContents__item">
-        <a href="${eventsLink}" class="tableOfContents__itemLink">Events 
-        <span class="tableOfContents__arrow">→</span></a>
+        <a href="${eventsLink}" class="tableOfContents__itemLink">Events</a>
       </li>
       <li class="tableOfContents__item">
-        <a href="/uses/" class="tableOfContents__itemLink">Things I use 
-        <span class="tableOfContents__arrow">→</span></a>
+        <a href="/uses/" class="tableOfContents__itemLink">Things I use </a>
       </li>
       ${
         onUses
@@ -26,21 +23,19 @@ function AboutTableOfContents({ onUses, onDashboard, categories } = defaultOptio
               .map(
                 (cat) => `
           <li class="tableOfContents__item tableOfContents__item--nudged tableOfContents__item--cat">
-            <a href="/uses/#${cat}" class="tableOfContents__itemLink">${cat} <span class="tableOfContents__arrow">→</span></a>
+            <a href="/uses/#${cat}" class="tableOfContents__itemLink">${cat}</a>
           </li>`,
               )
               .join("")
           : ""
       }
       <li class="tableOfContents__item">
-        <a href="/dashboard/" class="tableOfContents__itemLink">Dashboard 
-        <span class="tableOfContents__arrow">→</span></a>
+        <a href="/dashboard/" class="tableOfContents__itemLink">Dashboard </a>
       </li>
       <li class="tableOfContents__item">
         <a href="https://www.bonfire.com/store/p4nth3rshop/"
         rel="nofollow noreferrer"
-        target="_blank" class="tableOfContents__itemLink">Merch 
-        <span class="tableOfContents__arrow">→</span></a>
+        target="_blank" class="tableOfContents__itemLink">Merch</a>
       </li>
     </ol>
     </details>

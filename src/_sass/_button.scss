@@ -1,5 +1,5 @@
 @mixin button_main() {
-  @include font_heading;
+  @include font_semibold;
   background-color: var(--color-bg-button);
   color: var(--color-button);
   border-radius: var(--border-radius-base);
@@ -15,7 +15,7 @@
 }
 
 @mixin button_twitch() {
-  @include font_heading;
+  @include font_semibold;
   background-color: var(--twitch-purple);
   color: #fff;
   border-radius: var(--border-radius-base);

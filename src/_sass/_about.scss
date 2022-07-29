@@ -85,7 +85,7 @@
 }
 
 .about__eventsListItemDate__month {
-  @include font_heading;
+  @include font_semibold;
   text-align: center;
   color: var(--color-highlight);
   text-transform: uppercase;
@@ -143,7 +143,7 @@
 
 .about__eventsListItemName {
   grid-area: name;
-  @include font_heading;
+  @include font_semibold;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

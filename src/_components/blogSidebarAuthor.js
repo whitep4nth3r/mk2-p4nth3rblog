@@ -6,9 +6,7 @@ function BlogSidebarAuthor({ author }) {
     <div class="blogSidebarAuthor__imgContainer">
       ${BioImage({ image: author.imageBio })}
     </div>
-    <a href="/about/" class="blogSidebarAuthor__cta">by ${
-      author.name
-    } <span class="colorHighlight" role="presentation">→</span></a>
+    <a href="/about/" class="blogSidebarAuthor__cta">by ${author.name}</a>
 
     <div class="blogSidebarAuthor__cta2">
       <p class="blogSidebarAuthor__cta2__text">Want more web dev, CSS and JavaScript?</p>

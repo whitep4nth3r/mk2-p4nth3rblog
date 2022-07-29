@@ -10,14 +10,14 @@ const makeList = {
       <li class="tableOfContents__item">
         <a href="#${Tools.slugifyString(next(node.content))}" class="tableOfContents__itemLink">${next(
       node.content,
-    )} <span class="tableOfContents__arrow">→</span></a>
+    )}</a>
       </li>
       `,
     [BLOCKS.HEADING_3]: (node, next) =>
       `<li class="tableOfContents__item tableOfContents__item--nudged">
         <a href="#${Tools.slugifyString(next(node.content))}" class="tableOfContents__itemLink">${next(
         node.content,
-      )} <span class="tableOfContents__arrow">→</span></a>
+      )}</a>
       </li>
       `,
     [BLOCKS.HEADING_4]: (node, next) => "",

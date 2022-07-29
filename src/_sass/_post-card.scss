@@ -6,9 +6,9 @@
 }
 
 .postCard__meta {
-  @include font_heading;
+  @include font_semibold;
   padding-top: 1.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   color: var(--color-fg);
   font-size: 1rem;
   display: flex;
@@ -27,7 +27,7 @@
 }
 
 .postCard__titleLink {
-  @include font_heading;
+  @include font_semibold;
   text-decoration: none;
   color: var(--color-fg);
   font-size: 1.5rem;

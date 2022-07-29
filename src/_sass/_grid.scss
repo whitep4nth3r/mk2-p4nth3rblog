@@ -16,14 +16,14 @@
   flex-grow: 1;
 }
 
-@mixin grid_item_title {
-  @include font_heading;
+@mixin grid_item_title($gradientMarginTop: 1rem) {
+  @include font_semibold;
   text-decoration: none;
   color: var(--color-fg);
   font-size: 2rem;
   line-height: 1.2;
-  margin-bottom: 2rem;
-  @include add_gradient_bottom;
+  margin-bottom: 1.75rem;
+  @include add_gradient_bottom($marginTop: $gradientMarginTop);
 }
 
 @mixin grid_header {
@@ -33,6 +33,6 @@
 }
 
 @mixin grid_header_title {
-  @include font_heading;
+  @include font_semibold;
   font-size: 2rem;
 }

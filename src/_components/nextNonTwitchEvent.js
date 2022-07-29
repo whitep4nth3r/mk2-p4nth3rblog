@@ -52,7 +52,6 @@ function NextNonTwitchEvent({ event }) {
           target="_blank" title="Watch live on Twitch" rel="nofollow noreferrer">
             ${calculateIcon(event.type)} 
             <span>Go to event</span>
-            <span role="presentation">→</span>
           </a>
         </div>
 

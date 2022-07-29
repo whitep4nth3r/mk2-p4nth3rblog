@@ -8,7 +8,7 @@
 }
 
 .uses__intro {
-  @include font_heading;
+  @include font_semibold;
   font-size: 1.4rem;
   line-height: 1.4;
   color: var(--color-fg);
@@ -30,7 +30,7 @@
 }
 
 .uses__listItemName {
-  @include font_heading;
+  @include font_semibold;
   font-size: 1.4rem;
   line-height: 1.4;
   margin-bottom: 1rem;
@@ -71,7 +71,7 @@
 }
 
 .uses__listItemLink {
-  @include font_heading;
+  @include font_semibold;
   margin-bottom: 1rem;
   font-size: 1.2rem;
   line-height: 1.4;
