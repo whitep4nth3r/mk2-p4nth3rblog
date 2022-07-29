@@ -1,8 +1,11 @@
 .homeAbout {
-  position: sticky;
-  top: 2rem;
-  max-height: 100vh;
   margin-bottom: 4rem;
+
+  @media screen and (min-width: 48em) {
+    position: sticky;
+    top: 2rem;
+    max-height: 100vh;
+  }
 }
 
 .homeAbout__name {
