@@ -1249,10 +1249,6 @@ a.post__linkedHeaderIcon {
   display: block;
 }
 
-.tableOfContents__arrow {
-  color: var(--color-highlight);
-}
-
 .tableOfContents__item--nudged {
   padding-left: 1rem;
 }
@@ -1547,7 +1543,7 @@ a.post__linkedHeaderIcon {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
-@media screen and (min-width: 48em) {
+@media screen and (min-width: 72em) {
   .homeCard__ctaRow {
     flex-direction: row;
     justify-content: space-between;

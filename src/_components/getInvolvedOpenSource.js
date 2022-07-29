@@ -13,7 +13,6 @@ function GetInvolvedOpenSource() {
         <a href="/discord" rel="nofollow noreferrer" target="_blank" class="homeCard__button">
           <span>${DiscordIcon()}</span>
           <span>Join Discord</span>
-          <span role="presentation">→</span>
         </a>
         <a href="/projects/" class="homeCard__seeAllCta">See all open source projects <span class="colorHighlight" aria-hidden="true">→</span></a>
       </div>
