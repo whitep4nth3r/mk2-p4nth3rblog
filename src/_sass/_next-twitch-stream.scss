@@ -10,7 +10,7 @@
 }
 
 .nextTwitchStream__meta {
-  @include font_heading;
+  @include font_semibold;
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
@@ -31,7 +31,7 @@
 }
 
 .nextTwitchStream__title {
-  @include font_heading;
+  @include font_semibold;
   color: var(--color-fg);
   font-size: 2.2rem;
   line-height: 1.2;

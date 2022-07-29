@@ -1,0 +1,49 @@
+.homeAbout {
+  position: sticky;
+  top: 2rem;
+  max-height: 100vh;
+  margin-bottom: 4rem;
+}
+
+.homeAbout__name {
+  font-size: clamp(3rem, 4vw, 4rem);
+  margin-bottom: 0.5rem;
+
+  span {
+    display: block;
+  }
+}
+
+.homeAbout__subtitle {
+  font-size: 1.4rem;
+  line-height: 1.3;
+  margin-bottom: 2rem;
+}
+
+.homeAbout_minibio {
+  font-size: 1.4rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+  max-width: 40ch;
+
+  a {
+    color: var(--color-highlight);
+    text-decoration: underline;
+    text-underline-offset: 0.25rem;
+    @include font_semibold;
+  }
+}
+
+.homeAbout__banner {
+}
+
+.homeAbout__banner__imgContainer {
+  overflow: hidden;
+  aspect-ratio: 1/1;
+  border-radius: calc(var(--border-radius-base) * 2);
+  width: 12.5rem;
+
+  img {
+    width: auto;
+  }
+}

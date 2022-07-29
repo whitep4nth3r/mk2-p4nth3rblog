@@ -4,7 +4,7 @@
 }
 
 .publishedDate__item {
-  @include font_heading;
+  @include font_semibold;
   font-size: 1rem;
   margin-bottom: 1rem;
   color: var(--color-fg);

@@ -28,7 +28,7 @@
 }
 
 .blog__filterLabel {
-  @include font_heading;
+  @include font_semibold;
   font-size: 1rem;
   margin-bottom: 1rem;
   display: flex;

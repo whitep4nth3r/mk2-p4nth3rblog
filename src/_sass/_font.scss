@@ -35,7 +35,7 @@
   font-family: var(--font-family-bold);
 }
 
-@mixin font_heading {
+@mixin font_semibold {
   font-weight: var(--font-weight-heading);
   font-family: var(--font-family-heading);
 }

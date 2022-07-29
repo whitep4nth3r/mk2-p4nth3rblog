@@ -32,7 +32,7 @@
   display: none;
 
   h2 {
-    @include font_heading;
+    @include font_semibold;
     font-size: clamp(1.8rem, 2.8vw, 2rem);
     line-height: 1.4;
     margin-bottom: 1rem;
@@ -40,7 +40,7 @@
   }
 
   h3 {
-    @include font_heading;
+    @include font_semibold;
     font-size: 1.4rem;
     line-height: 1.4;
     margin-bottom: 1rem;
