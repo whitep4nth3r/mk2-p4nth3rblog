@@ -1,15 +1,24 @@
-.homeCard {
+@mixin homecard {
   height: 100%;
   display: flex;
   flex-direction: column;
+  margin-bottom: 4rem;
+}
+
+.homeCard {
+  @include homecard;
+}
+
+@mixin homecard_title {
+  @include font_semibold;
+  color: var(--color-fg);
+  font-size: 1.5rem;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
 }
 
 .homeCard__title {
-  @include font_semibold;
-  color: var(--color-fg);
-  font-size: 2.2rem;
-  line-height: 1.2;
-  margin-bottom: 2rem;
+  @include homecard_title;
 }
 
 .homeCard__linkForTitle {
@@ -32,14 +41,18 @@
   flex-direction: column;
 }
 
-.homeCard__excerpt p {
+@mixin homecard_excerpt {
   @include font_main;
-  font-size: 1.2rem;
-  line-height: 1.6;
-  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
   color: var(--color-fg);
   word-break: break-word;
   display: block;
+}
+
+.homeCard__excerpt p {
+  @include homecard_excerpt;
 }
 
 .homeCard__button {
@@ -53,5 +66,32 @@
 
   * {
     display: flex;
+  }
+}
+
+.homeCard__ctaRow {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+
+  /** 
+    this is overriding the base styles of seeAllCta and the button
+    separate the things out probably
+  */
+
+  a {
+    margin-bottom: 1rem;
+    margin-top: 0;
+  }
+
+  @media screen and (min-width: 48em) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    a {
+      margin: 0;
+    }
   }
 }

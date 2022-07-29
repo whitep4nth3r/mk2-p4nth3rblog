@@ -400,7 +400,7 @@ strong {
   color: var(--color-fg);
   font-size: 2rem;
   line-height: 1.2;
-  margin-bottom: 2rem;
+  margin-bottom: 1.75rem;
 }
 .home__itemTitle:after {
   content: "";
@@ -1469,15 +1469,16 @@ a.post__linkedHeaderIcon {
   height: 100%;
   display: flex;
   flex-direction: column;
+  margin-bottom: 4rem;
 }
 
 .homeCard__title {
   font-weight: var(--font-weight-heading);
   font-family: var(--font-family-heading);
   color: var(--color-fg);
-  font-size: 2.2rem;
+  font-size: 1.5rem;
   line-height: 1.2;
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
 }
 
 .homeCard__linkForTitle {
@@ -1502,9 +1503,9 @@ a.post__linkedHeaderIcon {
 .homeCard__excerpt p {
   font-weight: var(--font-weight-main);
   font-family: var(--font-family-main);
-  font-size: 1.2rem;
-  line-height: 1.6;
-  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
   color: var(--color-fg);
   word-break: break-word;
   display: block;
@@ -1536,10 +1537,36 @@ a.post__linkedHeaderIcon {
   display: flex;
 }
 
-.nextTwitchStream {
+.homeCard__ctaRow {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
+  align-items: flex-start;
+  gap: 1rem;
+  /** 
+    this is overriding the base styles of seeAllCta and the button
+    separate the things out probably
+  */
+}
+.homeCard__ctaRow a {
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+@media screen and (min-width: 48em) {
+  .homeCard__ctaRow {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .homeCard__ctaRow a {
+    margin: 0;
+  }
+}
+
+.nextTwitchStream {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4rem;
 }
 
 .nextTwitchStream__link {
@@ -1573,9 +1600,9 @@ a.post__linkedHeaderIcon {
   font-weight: var(--font-weight-heading);
   font-family: var(--font-family-heading);
   color: var(--color-fg);
-  font-size: 2.2rem;
+  font-size: 1.5rem;
   line-height: 1.2;
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
 }
 
 .nextTwitchStream__noStream {
@@ -1591,14 +1618,12 @@ a.post__linkedHeaderIcon {
 .nextTwitchStream__streamInfo {
   font-weight: var(--font-weight-main);
   font-family: var(--font-family-main);
-  font-size: 1.2rem;
-  line-height: 1.6;
-  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
   color: var(--color-fg);
   word-break: break-word;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
+  display: block;
 }
 
 .nextTwitchStream__cta {

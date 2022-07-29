@@ -58,7 +58,7 @@ function NextTwitchStream({ stream, link, isLive }) {
 
         <p class="nextTwitchStream__streamInfo">Join the chat whilst I stream building stuff and learning things every week. Come hang out!</p>
 
-        <div>
+        <div class="homeCard__ctaRow">
           <a href="${buttonLink}"
           class="nextTwitchStream__cta"
           target="_blank" title="Watch live on Twitch" rel="nofollow noreferrer">
@@ -70,9 +70,9 @@ function NextTwitchStream({ stream, link, isLive }) {
             </span>
             <span role="presentation">→</span>
           </a>
+          
+          ${SeeAllCta({ things: "events", url: "/about/#events" })}
         </div>
-
-        ${SeeAllCta({ things: "events", url: "/about/#events" })}
       </div>
 
       <script type="module" src="/js/time_elements.js"></script>
