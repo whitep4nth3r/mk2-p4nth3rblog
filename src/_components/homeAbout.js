@@ -18,7 +18,7 @@ function homeAbout({ person }) {
         </h1>
         <h2 class="homeAbout__subtitle">Staff Developer Experience Engineer at Netlify</h2>
 
-        <p class="homeAbout_minibio">I'm a <a href="https://github.com/whitep4nth3r" target="_blank">software engineer</a>, <a href="/blog/">writer</a>, and <a href="https://twitch.tv/whitep4nth3r">live streamer</a>. I help developers build stuff, learn things, and love what they do through blog posts and live streaming about tech and building open source projects.</p>
+        <p class="homeAbout_minibio">I'm a <a href="https://github.com/whitep4nth3r" target="_blank">software engineer</a>, <a href="/blog/">writer</a>, and <a href="https://twitch.tv/whitep4nth3r">live streamer</a>. I help developers build stuff, learn things, and love what they do through blog posts, tutorial videos, live streaming about tech and building open source projects.</p>
 
 
 
