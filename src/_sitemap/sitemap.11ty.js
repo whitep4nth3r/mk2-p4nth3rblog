@@ -29,6 +29,10 @@ function calculateUrl(page) {
   return `https://${Config.site.domain}${page.url}`;
 }
 
+function removeUrlParamsFromLink(url) {
+  return url.split("?")[0];
+}
+
 function buildItems(items) {
   return `
     ${items
@@ -36,7 +40,9 @@ function buildItems(items) {
         const date = calculateDate(page);
         const url = calculateUrl(page);
 
-        return /*xml*/ `<url><loc>${url}</loc><changefreq>daily</changefreq><lastmod>${date}</lastmod></url>`;
+        return /*xml*/ `<url><loc>${removeUrlParamsFromLink(
+          url,
+        )}</loc><changefreq>daily</changefreq><lastmod>${date}</lastmod></url>`;
       })
       .join("")}
   `;
