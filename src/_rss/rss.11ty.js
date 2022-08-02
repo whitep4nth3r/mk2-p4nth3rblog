@@ -28,6 +28,10 @@ function chooseUrl(item, urlSlug) {
   return item.externalUrl || `https://${Config.site.domain}/${urlSlug}/${item.slug}/`;
 }
 
+function removeUrlParamsFromLink(url) {
+  return url.split("?")[0];
+}
+
 function buildRssItems(items) {
   return items
     .map((item) => {
@@ -40,8 +44,8 @@ function buildRssItems(items) {
           <title>${item.title}</title>
           <description>${item.excerpt}</description>
           <author>${Config.site.email} (${Config.site.owner})</author>
-          <link>${chooseUrl(item, urlSlug)}</link>
-          <guid>${chooseUrl(item, urlSlug)}</guid>
+          <link>${removeUrlParamsFromLink(chooseUrl(item, urlSlug))}</link>
+          <guid>${removeUrlParamsFromLink(chooseUrl(item, urlSlug))}</guid>
           <pubDate>${DateUtils.makeForRss(item.date)}</pubDate>
           ${buildCategories(item.topicsCollection.items)}
           ${buildContent(contentBody)}
