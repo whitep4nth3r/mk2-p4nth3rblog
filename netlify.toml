@@ -23,6 +23,10 @@
   from = "/discord"
   to = "http://discord.gg/GQbXUVCneJ"
   status = 301
+[[redirects]]
+  from = "/old"
+  to = "https://p4nth3rblog.netlify.app/"
+  status = 301
 [[plugins]]
 package = "netlify-plugin-inline-functions-env"
    [plugins.inputs]
