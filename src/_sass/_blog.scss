@@ -39,15 +39,17 @@
 .ais__hitsListItem {
   @include grid_item;
 
+  &:first-of-type {
+    .postCard,
+    .postCard__topicsGroup {
+      opacity: 1;
+      background-color: var(--cta2-bg);
+    }
+  }
+
   @media screen and (min-width: 48em) {
     &:first-of-type {
       grid-row: 1 / span 2;
-
-      .postCard,
-      .postCard__topicsGroup {
-        opacity: 1;
-        background-color: var(--cta2-bg);
-      }
 
       .postCard__imageWrap {
         aspect-ratio: 1 / 1;
