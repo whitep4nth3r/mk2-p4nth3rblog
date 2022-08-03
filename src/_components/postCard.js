@@ -7,13 +7,6 @@ function PostCard({ post, baseSlug, isTalk }) {
   const timeSuffix = isTalk ? "watch time" : "read";
   return /*html*/ `
     <article class="postCard">
-        <p class="postCard__meta">
-          <span class="postCard__metaIcon">${CalendarIcon()}</span>
-          <span class="postCard__metaText">${DateUtils.formatDateForDisplay(post.date)}</span>
-          <span class="postCard__metaIcon">${StopwatchIcon()}</span>
-          <span class="postCard__metaText">${post.readingTime || post.watchTime} min ${timeSuffix}</span>
-        </p>
-
         <div class="postCard__imageWrap">
           ${
             post.featuredImage
@@ -28,6 +21,14 @@ function PostCard({ post, baseSlug, isTalk }) {
               : ""
           }
         </div>
+
+        <p class="postCard__meta">
+          <span class="postCard__metaIcon">${CalendarIcon()}</span>
+          <span class="postCard__metaText">${DateUtils.formatDateForDisplay(post.date)}</span>
+          <span class="postCard__metaIcon">${StopwatchIcon()}</span>
+          <span class="postCard__metaText">${post.readingTime || post.watchTime} min ${timeSuffix}</span>
+        </p>
+
         <a href="/${baseSlug}/${post.slug}/" class="postCard__titleLink" id="post-${post.sys.id}">
           <h2>
             ${post.title}

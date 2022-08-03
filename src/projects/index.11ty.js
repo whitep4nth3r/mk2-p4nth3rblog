@@ -22,7 +22,7 @@ exports.data = {
 exports.render = function (data) {
   const { projects } = data;
   return /* html */ `
-  <section>
+  <section class="projects__index">
      <div class="projects__header">
         <h1 class="projects__headerTitle">build <span class="colorHighlight">stuff</span></h1>
     </div>
