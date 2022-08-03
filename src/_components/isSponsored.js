@@ -4,7 +4,7 @@ function isSponsored() {
   return /*html*/ `
     <span class="post__isSponsored">
       <span class="post__isSponsoredIcon">${StarIcon()}</span>
-      Sponsored
+      Sponsored post
     </span>
   `;
 }

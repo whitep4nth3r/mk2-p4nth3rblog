@@ -47,28 +47,8 @@ exports.render = async function (data) {
 
   return /* html */ `
     <section class="post">
-      <aside class="post__aside">
-      ${BlogSidebarAuthor({ author: post.author })}
-
-        ${PublishedDate({
-          date: post.date,
-          readingTime: post.readingTime,
-          isTalk: false,
-          updatedDate: post.updatedDate,
-        })}
-
-        <div class="post__asideStickyGroup">
-          ${TableOfContents(post.body)}
-          ${BlogSidebarTopics({ topics: post.topicsCollection.items })}
-          ${SeeAllCta({ things: "blog posts", url: "/blog/" })}
-        </div>
-        
-      </aside>
       <article class="post__article">
-        ${post.isSponsored ? isSponsored() : ""}
-        ${ExternalUrl({ url: post.externalUrl })}
         <h1 class="post__h1">${post.title}</h1>
-
         <aside class="post__inlineAside">
             ${BlogSidebarAuthor({ author: post.author })}
             ${PublishedDate({
@@ -83,6 +63,9 @@ exports.render = async function (data) {
         <div class="post__body">
           ${RichText(post.body, { renderRssFriendlyImg: false, absoluteUrls: false, renderHeadingLinks: true })}
         </div>
+
+        ${post.isSponsored ? isSponsored() : ""}
+        ${ExternalUrl({ url: post.externalUrl })}
 
         ${
           post.relatedPostsCollection?.items.length > 0
@@ -108,6 +91,22 @@ exports.render = async function (data) {
           imageUrl: openGraphImageUrl,
         })}</script>
       </article>
+      <aside class="post__aside">
+      ${BlogSidebarAuthor({ author: post.author })}
+
+        ${PublishedDate({
+          date: post.date,
+          readingTime: post.readingTime,
+          isTalk: false,
+          updatedDate: post.updatedDate,
+        })}
+
+        <div class="post__asideStickyGroup">
+          ${TableOfContents(post.body)}
+          ${BlogSidebarTopics({ topics: post.topicsCollection.items })}
+          ${SeeAllCta({ things: "blog posts", url: "/blog/" })}
+        </div>
+      </aside>
     </section>
     `;
 };
