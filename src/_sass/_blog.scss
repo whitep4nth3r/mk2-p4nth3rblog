@@ -15,7 +15,7 @@
 .blog__intro {
   background-color: var(--cta2-bg);
   border-radius: var(--border-radius-base);
-  padding: 3.75rem;
+  padding: clamp(1.5rem, 3vw, 3.5rem);
   margin-bottom: 2rem;
 }
 
@@ -35,8 +35,25 @@
   @include grid;
 }
 
-.blog__gridItem {
+.blog__gridItem,
+.ais__hitsListItem {
   @include grid_item;
+
+  @media screen and (min-width: 48em) {
+    &:first-of-type {
+      grid-row: 1 / span 2;
+
+      .postCard,
+      .postCard__topicsGroup {
+        opacity: 1;
+        background-color: var(--cta2-bg);
+      }
+
+      .postCard__imageWrap {
+        aspect-ratio: 1 / 1;
+      }
+    }
+  }
 }
 
 .blog__searchAndFilters {

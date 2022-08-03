@@ -46,7 +46,7 @@ exports.render = function (data) {
 
     <div class="blog__intro">
       <h2 class="blog__introTitle">Blog posts and tutorials</h2>
-      <p class="blog__introText">I write and live stream about front end development. Find tutorials and quick tips on HTML, CSS, JavaScript and Jamstack.</p>
+      <p class="blog__introText">I write and live stream about front end development. Read tutorials and quick tips on HTML, CSS, JavaScript and Jamstack.</p>
     </div>
 
     <div class="blog__searchAndFilters">

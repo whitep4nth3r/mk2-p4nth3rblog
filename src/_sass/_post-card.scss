@@ -3,13 +3,48 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  @include add_gradient_top;
+  text-decoration: none;
+  padding: 0.5rem;
+  border-radius: calc(var(--border-radius-base) * 1.5);
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  opacity: 0.8;
+
+  &:hover,
+  &:focus {
+    background-color: var(--cta2-bg);
+    opacity: 1;
+
+    .postCard__topicsGroup {
+      background-color: var(--cta2-bg);
+    }
+  }
+}
+
+.postCard__topicsGroup {
+  list-style: none;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.25rem 1rem 0.75rem 1rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: var(--black);
+  border-radius: 0 calc(var(--border-radius-base) * 1.5) 0 calc(var(--border-radius-base) * 1.5);
+  padding: 0.5rem;
+  z-index: 1;
+  transition: all 0.2s ease-in-out;
+
+  li {
+    display: flex;
+  }
 }
 
 .postCard__meta {
   @include font_semibold;
   padding-top: calc(var(--spacing) * 1);
-  margin-bottom: var(--spacing);
   color: var(--color-fg);
   font-size: 1rem;
   display: flex;
@@ -19,7 +54,7 @@
 }
 
 .postCard__metaIcon {
-  color: var(--color-highlight);
+  color: var(--color-fg);
   display: flex;
 }
 
@@ -27,20 +62,15 @@
   display: flex;
 }
 
-.postCard__titleLink {
+.postCard__title {
   @include font_semibold;
   text-decoration: none;
   color: var(--color-fg);
   font-size: 1.5rem;
-  line-height: 1.2;
+  line-height: 1.5;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-
-  h2 {
-    font-size: 1.5rem;
-    line-height: 1.2;
-  }
 }
 
 .postCard__titleLink--ais {
@@ -49,10 +79,9 @@
 
 .postCard__imageWrap {
   background: var(--yellow-red-gradient);
-  border-radius: 0 0 var(--border-radius-base) var(--border-radius-base);
-  filter: drop-shadow(0px 0.125rem 0.125rem rgba(0, 0, 0, 0.25));
-  height: 7.5rem;
-  margin-bottom: calc(var(--spacing) * 0.5);
+  border-radius: calc(var(--border-radius-base) / 2);
+  aspect-ratio: 3 / 1;
+  margin-bottom: calc(var(--spacing) * 0.25);
   overflow: hidden;
   display: flex;
   justify-content: center;
