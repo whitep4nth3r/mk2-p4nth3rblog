@@ -11,7 +11,8 @@
   opacity: 0.8;
 
   &:hover,
-  &:focus {
+  &:focus,
+  &:active {
     background-color: var(--cta2-bg);
     opacity: 1;
 
