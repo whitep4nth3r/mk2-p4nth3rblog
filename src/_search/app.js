@@ -23,6 +23,7 @@ function StopwatchIcon() {
       height="24"
       width="24"
       role="img"
+      fill="none"
       aria-label="Stopwatch"
     >
       <path d="M12 21C16.4183 21 20 17.4183 20 13C20 8.58172 16.4183 5 12 5C7.58172 5 4 8.58172 4 13C4 17.4183 7.58172 21 12 21Z" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
@@ -51,14 +52,13 @@ function formatDateForDisplay(dateString) {
   return `${date.getDate()} ${getMonthStringFromInt(date.getMonth())} ${date.getFullYear()}`;
 }
 
-function TopicsButton({ topics, url, ariaDescribedBy }) {
+function TopicsGroup({ topics }) {
   return /* html */ `
-    <a href="${url}" class="topicsButton" aria-describedby="${ariaDescribedBy}">
-      <ul class="topicsButton__list">
+      <ul class="postCard__topicsGroup">
         ${topics
           .map((topic) => {
             return /*html*/ `
-            <li class="topicsButton__listItem">
+            <li>
               <img aria-label="${topic.name}"
                   src="${topic.icon.url}"
                   alt="${topic.icon.description}"
@@ -68,9 +68,7 @@ function TopicsButton({ topics, url, ariaDescribedBy }) {
             </li>`;
           })
           .join("")}
-          <li>Learn more <span class="topicsButton__arrow" aria-hidden="true">→</li>
       </ul>
-    </a>
     `;
 }
 
@@ -154,40 +152,36 @@ function initSearch({ appId, apiKey, indexName, latestPost }) {
           const timeSuffix = isTalk ? "watch time" : "read";
 
           return `
-          <article class="postCard">
+          <a href="${`/${baseSlug}/${hit.slug}/`}" 
+            aria-label="${hit.title}"
+            id="search-${hit.objectID}"
+            class="postCard">
+          <div class="postCard__imageWrap">
+            ${TopicsGroup({ topics: hit.topicsCollection.items })}
+            ${
+              hit.featuredImage
+                ? `<img
+              class="postCard__image"
+              src="${hit.featuredImage.url}?w=320"
+              alt="${hit.featuredImage.description}"
+              height="${hit.featuredImage.height}"
+              width="${hit.featuredImage.width}"
+              loading="lazy"
+            />`
+                : ""
+            }
+          </div>
+        <h2 class="postCard__title">
+          ${instantsearch.highlight({ attribute: "title", hit })}
+        </h2>
+
         <p class="postCard__meta">
           <span class="postCard__metaIcon">${CalendarIcon()}</span>
           <span class="postCard__metaText">${formatDateForDisplay(hit.date)}</span>
           <span class="postCard__metaIcon">${StopwatchIcon()}</span>
           <span class="postCard__metaText">${hit.readingTime || hit.watchTime} min ${timeSuffix}</span>
         </p>
-        <div class="postCard__imageWrap">
-          ${
-            hit.featuredImage
-              ? `<img
-            class="postCard__image"
-            src="${hit.featuredImage.url}?w=320"
-            alt="${hit.featuredImage.description}"
-            height="${hit.featuredImage.height}"
-            width="${hit.featuredImage.width}"
-            loading="lazy"
-          />`
-              : ""
-          }
-        </div>
-        <a href="/${baseSlug}/${hit.slug}/" class="postCard__titleLink postCard__titleLink--ais" id="search-${
-            hit.objectID
-          }">
-          ${instantsearch.highlight({ attribute: "title", hit })}
-        </a>
-        <div>
-          ${TopicsButton({
-            topics: hit.topicsCollection.items,
-            url: `/${baseSlug}/${hit.slug}/`,
-            ariaDescribedBy: `search-${hit.objectID}`,
-          })}
-        </div>
-      </article>
+      </a>
           `;
         },
       },

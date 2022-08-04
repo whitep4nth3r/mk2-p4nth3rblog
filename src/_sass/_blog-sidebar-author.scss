@@ -45,6 +45,9 @@
     max-width: unset;
   }
 }
+.blogSidebarAuthor__imgContainer {
+  filter: grayscale(1);
+}
 
 .blogSidebarAuthor__imgContainer img {
   border-radius: var(--border-radius-base);

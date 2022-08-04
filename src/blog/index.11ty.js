@@ -15,7 +15,7 @@ function calculatePageUrl(data) {
 exports.data = {
   layout: "base.html",
   title: pageTitle,
-  metaDescription: `Learn about web development, accessibility, Jamstack, JavaScript, and more from ${Config.meta.jobDescription}.`,
+  metaDescription: `Salma Alam-Naylor writes and live streams about front end development. Read tutorials and quick tips on HTML, CSS, JavaScript and Jamstack.`,
   openGraphImageUrl: OpenGraph.generateImageUrl({ title: pageTitle }),
   openGraphImageAlt: OpenGraph.generateImageAlt(pageTitle),
   openGraphImageWidth: OpenGraph.imgWidth,
@@ -39,9 +39,14 @@ exports.render = function (data) {
   const latestPost = data.latestPost.post;
   return /* html */ `
 
-  <section>
+  <section class="blog__index">
     <div class="blog__header">
       <h1 class="blog__headerTitle">learn <span class="colorHighlight">things</span></h1>
+    </div>
+
+    <div class="blog__intro">
+      <h2 class="blog__introTitle">Blog posts and tutorials</h2>
+      <p class="blog__introText">I write and live stream about front end development. Read tutorials and quick tips on HTML, CSS, JavaScript and Jamstack.</p>
     </div>
 
     <div class="blog__searchAndFilters">
