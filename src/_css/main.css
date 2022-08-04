@@ -1435,11 +1435,11 @@ a.post__linkedHeaderIcon {
   position: relative;
   opacity: 0.8;
 }
-.postCard:hover, .postCard:focus {
+.postCard:hover, .postCard:focus, .postCard:active {
   background-color: var(--cta2-bg);
   opacity: 1;
 }
-.postCard:hover .postCard__topicsGroup, .postCard:focus .postCard__topicsGroup {
+.postCard:hover .postCard__topicsGroup, .postCard:focus .postCard__topicsGroup, .postCard:active .postCard__topicsGroup {
   background-color: var(--cta2-bg);
 }
 
@@ -1860,6 +1860,12 @@ a.post__linkedHeaderIcon {
   padding: 1rem 0;
   word-break: break-word;
   display: block;
+}
+
+.dashboard__index {
+  max-width: var(--grid-max-width);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .dashboard__grid {

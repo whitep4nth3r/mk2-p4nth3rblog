@@ -27,6 +27,7 @@ exports.data = {
 exports.render = function (data) {
   return /* html */ `
 
+  <section class="dashboard__index">
     <div class="twoColumnWide__header">
         <h1 class="twoColumnWide__headerTitle">stats <span class="colorHighlight">dashboard</span></h1>
     </div>
@@ -103,7 +104,8 @@ exports.render = function (data) {
           </div>
         </div>
       </div>
-    </div>  
+    </div>
+  </section>
 
     <script>
       const dashboardData = Promise.all([fetch("/api/twitter"), fetch("/api/github"), fetch("/api/youtube"), fetch("/api/twitch")]).then((promises) => {
