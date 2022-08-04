@@ -27,6 +27,7 @@ exports.data = {
 exports.render = function (data) {
   return /* html */ `
 
+  <section class="dashboard__index">
     <div class="twoColumnWide__header">
         <h1 class="twoColumnWide__headerTitle">stats <span class="colorHighlight">dashboard</span></h1>
     </div>
@@ -43,6 +44,7 @@ exports.render = function (data) {
           ${AboutTableOfContents({ onDashboard: true })}
         </aside>
         <div class="dashboard__grid">
+
           <div class="dashboard__gridItem">
             <div class="dashboard__gridItemStatBlock">
               <span class="dashboard__gridItemIcon">${TwitchIcon({ height: 32, width: 32 })}</span>
@@ -52,6 +54,7 @@ exports.render = function (data) {
             </div>
             <p class="dashboard__gridItemTitle">Twitch followers</p>
           </div>
+
           <div class="dashboard__gridItem">
             <div class="dashboard__gridItemStatBlock">
               <span class="dashboard__gridItemIcon">${TwitterIcon({ height: 32, width: 32 })}</span>
@@ -61,8 +64,7 @@ exports.render = function (data) {
             </div>
             <p class="dashboard__gridItemTitle">Twitter followers</p>
           </div>
-        </div>
-        <div class="dashboard__grid">
+
           <div class="dashboard__gridItem">
             <div class="dashboard__gridItemStatBlock">
               <span class="dashboard__gridItemIcon">${YoutubeColor({ height: 32, width: 32 })}</span>
@@ -72,6 +74,7 @@ exports.render = function (data) {
             </div>
             <p class="dashboard__gridItemTitle">Youtube subs</p>
           </div>
+
           <div class="dashboard__gridItem">
             <div class="dashboard__gridItemStatBlock">
               <span class="dashboard__gridItemIcon">${YoutubeColor({ height: 32, width: 32 })}</span>
@@ -81,8 +84,7 @@ exports.render = function (data) {
             </div>
             <p class="dashboard__gridItemTitle">Youtube views</p>
           </div>
-        </div>
-        <div class="dashboard__grid">
+
           <div class="dashboard__gridItem">
             <div class="dashboard__gridItemStatBlock">
               <span class="dashboard__gridItemIcon">${GithubIcon({ height: 32, width: 32 })}</span>
@@ -92,6 +94,7 @@ exports.render = function (data) {
             </div>
             <p class="dashboard__gridItemTitle">GitHub followers</p>
           </div>
+
           <div class="dashboard__gridItem">
             <div class="dashboard__gridItemStatBlock">
               <span class="dashboard__gridItemIcon">${GithubIcon({ height: 32, width: 32 })}</span>
@@ -101,9 +104,9 @@ exports.render = function (data) {
             </div>
             <p class="dashboard__gridItemTitle">GitHub stars</p>
           </div>
-        </div>
       </div>
-    </div>  
+    </div>
+  </section>
 
     <script>
       const dashboardData = Promise.all([fetch("/api/twitter"), fetch("/api/github"), fetch("/api/youtube"), fetch("/api/twitch")]).then((promises) => {

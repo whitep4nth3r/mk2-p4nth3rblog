@@ -42,6 +42,7 @@ exports.render = function (data) {
   const { person, events } = data;
 
   return /* html */ `
+    <div class="about__index">
       <div class="twoColumnWide__header">
         <h1 class="twoColumnWide__headerTitle">love <span class="colorHighlight">what you do</span></h1>
       </div>
@@ -151,6 +152,7 @@ exports.render = function (data) {
           </section>
         </div>
       </div>
-      <script type="module" src="/js/time_elements.js"></script>
+    </div>
+    <script type="module" src="/js/time_elements.js"></script>
   `;
 };

@@ -1,7 +1,7 @@
 .topicsButton {
   @include button_main;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-top: calc(var(--spacing, 1rem) * 2);
+  margin-bottom: calc(var(--spacing, 1rem) * 2);
 }
 
 .topicsButton__list {
