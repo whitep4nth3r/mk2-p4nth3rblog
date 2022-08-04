@@ -23,6 +23,7 @@ exports.render = function (data) {
   const { categories, things } = data;
 
   return /* html */ `
+    <section class="uses__index">
       <div class="twoColumnWide__header">
         <h1 class="twoColumnWide__headerTitle">things <span class="colorHighlight">I use</span></h1>
       </div>
@@ -39,7 +40,10 @@ exports.render = function (data) {
             ${AboutTableOfContents({ onUses: true, categories })}
           </aside>
 
-              <p class="uses__intro">I receive a lot of questions on stream about my setup and what I use. Here's a (probably very incomplete) list to make it easier to share.</p>
+           <div class="blog__intro">
+            <h2 class="blog__introTitle">Coding & streaming setup</h2>
+            <p class="blog__introText">I receive a lot of questions on stream about my setup and what I use. Here's a (very incomplete) list to make it easier to share.</p>
+          </div>
 
               ${categories
                 .map(
@@ -80,5 +84,6 @@ exports.render = function (data) {
 
         </div>
       </div>
+    </section>
   `;
 };

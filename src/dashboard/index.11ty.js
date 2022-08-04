@@ -44,6 +44,7 @@ exports.render = function (data) {
           ${AboutTableOfContents({ onDashboard: true })}
         </aside>
         <div class="dashboard__grid">
+
           <div class="dashboard__gridItem">
             <div class="dashboard__gridItemStatBlock">
               <span class="dashboard__gridItemIcon">${TwitchIcon({ height: 32, width: 32 })}</span>
@@ -53,6 +54,7 @@ exports.render = function (data) {
             </div>
             <p class="dashboard__gridItemTitle">Twitch followers</p>
           </div>
+
           <div class="dashboard__gridItem">
             <div class="dashboard__gridItemStatBlock">
               <span class="dashboard__gridItemIcon">${TwitterIcon({ height: 32, width: 32 })}</span>
@@ -62,8 +64,7 @@ exports.render = function (data) {
             </div>
             <p class="dashboard__gridItemTitle">Twitter followers</p>
           </div>
-        </div>
-        <div class="dashboard__grid">
+
           <div class="dashboard__gridItem">
             <div class="dashboard__gridItemStatBlock">
               <span class="dashboard__gridItemIcon">${YoutubeColor({ height: 32, width: 32 })}</span>
@@ -73,6 +74,7 @@ exports.render = function (data) {
             </div>
             <p class="dashboard__gridItemTitle">Youtube subs</p>
           </div>
+
           <div class="dashboard__gridItem">
             <div class="dashboard__gridItemStatBlock">
               <span class="dashboard__gridItemIcon">${YoutubeColor({ height: 32, width: 32 })}</span>
@@ -82,8 +84,7 @@ exports.render = function (data) {
             </div>
             <p class="dashboard__gridItemTitle">Youtube views</p>
           </div>
-        </div>
-        <div class="dashboard__grid">
+
           <div class="dashboard__gridItem">
             <div class="dashboard__gridItemStatBlock">
               <span class="dashboard__gridItemIcon">${GithubIcon({ height: 32, width: 32 })}</span>
@@ -93,6 +94,7 @@ exports.render = function (data) {
             </div>
             <p class="dashboard__gridItemTitle">GitHub followers</p>
           </div>
+
           <div class="dashboard__gridItem">
             <div class="dashboard__gridItemStatBlock">
               <span class="dashboard__gridItemIcon">${GithubIcon({ height: 32, width: 32 })}</span>
@@ -102,7 +104,6 @@ exports.render = function (data) {
             </div>
             <p class="dashboard__gridItemTitle">GitHub stars</p>
           </div>
-        </div>
       </div>
     </div>
   </section>
