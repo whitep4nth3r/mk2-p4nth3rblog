@@ -31,18 +31,18 @@ exports.render = function (data) {
   const postsByTopic = Array.from(allPosts.get(topic.slug));
 
   return /* html */ `
-   <section>
-    <div class="topics__header">
-      <h1 class="topics__headerTitle">posts about <span class="colorHighlight">${topic.name.toLowerCase()}</span></h1>
+   <section class="topics__index">
+    <div class="blog__header">
+      <h1 class="blog__headerTitle">posts about <span class="colorHighlight">${topic.name.toLowerCase()}</span></h1>
     </div>
 
     ${Topics({ topics, selected: topic.slug, showLinkToBlog: true })}
 
-    <ol class="topics__grid">
+    <ol class="blog__grid">
     ${postsByTopic
       .map(function (item) {
         return `
-        <li class="topics__gridItem">
+        <li class="blog__gridItem">
           ${PostCard({ post: item, baseSlug: "blog", isTalk: false })}
         </li>`;
       })

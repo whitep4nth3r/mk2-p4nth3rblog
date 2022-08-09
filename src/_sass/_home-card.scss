@@ -53,6 +53,7 @@
 
 .homeCard__excerpt p {
   @include homecard_excerpt_p;
+  margin-top: 1rem;
 }
 
 .homeCard__button {
@@ -98,4 +99,26 @@
 
 .homeCard__seeAllCta {
   @include homecard__seeallcta;
+}
+
+.homeCard__meta {
+  @include font_semibold;
+  padding-top: calc(var(--spacing) * 1);
+  color: var(--color-fg);
+  font-size: 1rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0.25rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.homeCard__metaIcon {
+  color: var(--color-fg);
+  display: flex;
+}
+
+.homeCard__metaText {
+  display: flex;
+  margin-right: 1rem;
 }

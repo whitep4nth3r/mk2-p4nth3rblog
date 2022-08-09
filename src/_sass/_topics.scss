@@ -1,17 +1,7 @@
-.topics__header {
-  @include grid_header;
-}
-
-.topics__headerTitle {
-  @include grid_header_title;
-}
-
-.topics__grid {
-  @include grid;
-}
-
-.topics__gridItem {
-  @include grid_item;
+.topics__index {
+  max-width: var(--grid-max-width);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .topics {
