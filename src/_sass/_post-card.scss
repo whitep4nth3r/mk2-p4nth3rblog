@@ -50,7 +50,7 @@
   font-size: 1rem;
   display: flex;
   flex-direction: row;
-  gap: calc(var(--spacing) * 0.5);
+  gap: 0.25rem;
   align-items: center;
 }
 
@@ -61,6 +61,7 @@
 
 .postCard__metaText {
   display: flex;
+  margin-right: 1rem;
 }
 
 .postCard__title {

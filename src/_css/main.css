@@ -1439,7 +1439,7 @@ a.post__linkedHeaderIcon {
   font-size: 1rem;
   display: flex;
   flex-direction: row;
-  gap: calc(var(--spacing) * 0.5);
+  gap: 0.25rem;
   align-items: center;
 }
 
@@ -1450,6 +1450,7 @@ a.post__linkedHeaderIcon {
 
 .postCard__metaText {
   display: flex;
+  margin-right: 1rem;
 }
 
 .postCard__title {
@@ -1559,6 +1560,7 @@ a.post__linkedHeaderIcon {
   color: var(--color-fg);
   word-break: break-word;
   display: block;
+  margin-top: 1rem;
 }
 
 .homeCard__button {
@@ -1613,6 +1615,29 @@ a.post__linkedHeaderIcon {
   padding: 1rem 0;
   word-break: break-word;
   display: block;
+}
+
+.homeCard__meta {
+  font-weight: var(--font-weight-heading);
+  font-family: var(--font-family-heading);
+  padding-top: calc(var(--spacing) * 1);
+  color: var(--color-fg);
+  font-size: 1rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0.25rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.homeCard__metaIcon {
+  color: var(--color-fg);
+  display: flex;
+}
+
+.homeCard__metaText {
+  display: flex;
+  margin-right: 1rem;
 }
 
 .nextTwitchStream {

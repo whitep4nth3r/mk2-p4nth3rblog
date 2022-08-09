@@ -15,16 +15,17 @@ function LatestBlogPost({ post }) {
         <h3 class="homeCard__title">${post.title}</h3>
       </a>
 
-      <p class="postCard__meta">
-        <span class="postCard__metaIcon">${CalendarIcon()}</span>
-        <span class="postCard__metaText">${DateUtils.formatDateForDisplay(post.date)}</span>
-        <span class="postCard__metaIcon">${StopwatchIcon()}</span>
-        <span class="postCard__metaText">${post.readingTime} min read</span>
+      <p class="homeCard__meta">
+        <span class="homeCard__metaIcon">${CalendarIcon()}</span>
+        <span class="homeCard__metaText">${DateUtils.formatDateForDisplay(post.date)}</span>
+        <span class="homeCard__metaIcon">${StopwatchIcon()}</span>
+        <span class="homeCard__metaText">${post.readingTime} min read</span>
       </p>
 
       <div class="homeCard__excerpt">
         ${md.render(post.excerpt)}
       </div>
+
 
       <div class="homeCard__ctaRow">
         ${TopicsButton({
