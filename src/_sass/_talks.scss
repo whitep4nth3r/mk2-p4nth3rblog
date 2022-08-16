@@ -1,3 +1,9 @@
+.talks__index {
+  max-width: var(--grid-max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .talks__header {
   @include grid_header;
 }
