@@ -36,22 +36,6 @@ exports.render = function (data) {
   return /* html */ `
   
   <section class="post">
-      <aside class="post__aside">
-        ${BlogSidebarAuthor({ author: talk.author })}
-
-        ${PublishedDate({
-          date: talk.date,
-          readingTime: talk.watchTime,
-          isTalk: true,
-          updatedDate: null,
-        })}
-
-        ${BlogSidebarTopics({ topics: talk.topicsCollection.items })}
-
-        ${SeeAllCta({ things: "talks", url: "/talks/" })}
-
-      </aside>
-
       <article class="post__article">
          <h1 class="post__h1">${talk.title}</h1>
 
@@ -78,5 +62,19 @@ exports.render = function (data) {
           ${RichText(talk.transcript, { renderRssFriendlyImg: false, absoluteUrls: false, renderHeadingLinks: true })}
         </div>
       </article>
+      <aside class="post__aside">
+        ${BlogSidebarAuthor({ author: talk.author })}
+
+        ${PublishedDate({
+          date: talk.date,
+          readingTime: talk.watchTime,
+          isTalk: true,
+          updatedDate: null,
+        })}
+
+        ${BlogSidebarTopics({ topics: talk.topicsCollection.items })}
+
+        ${SeeAllCta({ things: "talks", url: "/talks/" })}
+      </aside>
   </section>`;
 };

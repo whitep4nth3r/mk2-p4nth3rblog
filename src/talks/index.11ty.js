@@ -28,7 +28,7 @@ exports.data = {
 exports.render = function (data) {
   return /* html */ `
   
-   <section>
+   <section class="talks__index">
       <div class="talks__header">
         <h1 class="talks__headerTitle">recorded <span class="colorHighlight">talks</span></h1>
       </div>
