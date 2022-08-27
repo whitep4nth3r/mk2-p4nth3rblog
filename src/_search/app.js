@@ -168,18 +168,14 @@ function initSearch({ appId, apiKey, indexName, latestPost }) {
             class="postCard">
           <div class="postCard__imageWrap">
             ${TopicsGroup({ topics: hit.topicsCollection.items })}
-            ${
-              hit.featuredImage
-                ? `<img
+            <img
               class="postCard__image"
               src="${hit.featuredImage.url}?w=320"
               alt="${hit.featuredImage.description}"
               height="${hit.featuredImage.height}"
               width="${hit.featuredImage.width}"
               loading="lazy"
-            />`
-                : ""
-            }
+            />
           </div>
         <h2 class="postCard__title">
           ${instantsearch.highlight({ attribute: "title", hit })}
