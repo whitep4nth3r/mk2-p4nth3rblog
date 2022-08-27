@@ -31,22 +31,26 @@ exports.render = function (data) {
   const postsByTopic = Array.from(allPosts.get(topic.slug));
 
   return /* html */ `
-   <section class="topics__index">
-    <div class="blog__header">
-      <h1 class="blog__headerTitle">posts about <span class="colorHighlight">${topic.name.toLowerCase()}</span></h1>
-    </div>
+    <section class="page__index">
+      <div class="page__header">
+        <h1 class="page__headerTitle">posts about <span class="colorHighlight">${topic.name.toLowerCase()}</span></h1>
+      </div>
+      <div class="page__intro">
+        <h2 class="page__introTitle">Blog posts and tutorials</h2>
+        <p class="page__introText">I write and live stream about front end development. Read tutorials and quick tips on HTML, CSS, JavaScript and Jamstack. Click on the categories to filter posts by topic.</p>
+      </div>
 
-    ${Topics({ topics, selected: topic.slug, showLinkToBlog: true })}
+      ${Topics({ topics, selected: topic.slug, showLinkToBlog: true })}
 
-    <ol class="blog__grid">
-    ${postsByTopic
-      .map(function (item) {
-        return `
-        <li class="blog__gridItem">
-          ${PostCard({ post: item, baseSlug: "blog", isTalk: false })}
-        </li>`;
-      })
-      .join("")}
-    </ol>
+      <ol class="grid">
+        ${postsByTopic
+          .map(function (item) {
+            return `
+          <li class="grid__item blog__item">
+            ${PostCard({ post: item, baseSlug: "blog", isTalk: false })}
+          </li>`;
+          })
+          .join("")}
+      </ol>
   </section>`;
 };

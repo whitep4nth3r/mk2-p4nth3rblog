@@ -23,26 +23,26 @@ exports.render = function (data) {
   const { categories, things } = data;
 
   return /* html */ `
-    <section class="uses__index">
-      <div class="twoColumnWide__header">
-        <h1 class="twoColumnWide__headerTitle">things <span class="colorHighlight">I use</span></h1>
+    <section class="page__index">
+      <div class="twoColumn__header">
+        <h1 class="twoColumn__headerTitle">things <span class="colorHighlight">I use</span></h1>
       </div>
 
-      <div class="twoColumnWide__container">
-        <aside class="twoColumnWide__aside">
-          <div class="twoColumnWide__asideStickyGroup">
+      <div class="twoColumn">
+        <aside class="twoColumn__aside">
+          <div class="twoColumn__asideStickyGroup">
             ${AboutTableOfContents({ onUses: true, categories })}
           </div>
         </aside>
 
-        <div class="twoColumnWide__content">
-          <aside class="twoColumnWide__inlineAside">
+        <div class="twoColumn__content">
+          <aside class="twoColumn__inlineAside">
             ${AboutTableOfContents({ onUses: true, categories })}
           </aside>
 
-           <div class="blog__intro">
-            <h2 class="blog__introTitle">Coding & streaming setup</h2>
-            <p class="blog__introText">I receive a lot of questions on stream about my setup and what I use. Here's a (very incomplete) list to make it easier to share.</p>
+          <div class="page__intro">
+            <h2 class="page__introTitle">Coding & streaming setup</h2>
+            <p class="page__introText">I receive a lot of questions on stream about my setup and what I use. Here's a (very incomplete) list to make it easier to share.</p>
           </div>
 
               ${categories
@@ -56,8 +56,7 @@ exports.render = function (data) {
                   ${things[cat]
                     .map(
                       (thing) =>
-                        `
-                      <li class="uses__listItem">
+                        `<li class="uses__listItem">
                         <div>
                           <h3 class="uses__listItemName uses__listItemName--small">${thing.name}</h3>
                           <img class="uses__listItemImg" src="${thing.image.url}?w=200" alt="${
@@ -81,7 +80,6 @@ exports.render = function (data) {
                 </section>`,
                 )
                 .join("")}
-
         </div>
       </div>
     </section>

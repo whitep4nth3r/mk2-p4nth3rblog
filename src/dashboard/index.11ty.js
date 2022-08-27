@@ -27,20 +27,20 @@ exports.data = {
 exports.render = function (data) {
   return /* html */ `
 
-  <section class="dashboard__index">
-    <div class="twoColumnWide__header">
-        <h1 class="twoColumnWide__headerTitle">stats <span class="colorHighlight">dashboard</span></h1>
+  <section class="page__index">
+    <div class="twoColumn__header">
+        <h1 class="twoColumn__headerTitle">stats <span class="colorHighlight">dashboard</span></h1>
     </div>
 
-    <div class="twoColumnWide__container">
-      <aside class="twoColumnWide__aside">
-        <div class="twoColumnWide__asideStickyGroup">
+    <div class="twoColumn">
+      <aside class="twoColumn__aside">
+        <div class="twoColumn__asideStickyGroup">
           ${AboutTableOfContents({ onDashboard: true })}
         </div>
       </aside>
 
-      <div class="twoColumnWide__content">
-        <aside class="twoColumnWide__inlineAside">
+      <div class="twoColumn__content">
+        <aside class="twoColumn__inlineAside">
           ${AboutTableOfContents({ onDashboard: true })}
         </aside>
         <div class="dashboard__grid">

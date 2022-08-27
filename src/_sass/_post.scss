@@ -193,17 +193,15 @@ a.post__linkedHeaderIcon {
 }
 
 .post__related {
-  margin-top: 2rem;
   margin-bottom: 2rem;
 }
 
 .post__relatedHeader {
-  @include font_bold;
-  font-size: 1.2rem;
-  line-height: 1.4;
-  margin-bottom: 2rem;
-  color: var(--color-highlight);
-  margin-bottom: 1rem;
+  @include grid_header;
+}
+
+.post__relatedHeaderTitle {
+  @include grid_header_title;
 }
 
 .post__relatedGrid {

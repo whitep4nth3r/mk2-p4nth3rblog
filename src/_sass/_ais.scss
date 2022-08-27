@@ -36,21 +36,6 @@
   margin-bottom: 3rem;
 }
 
-.ais__hitsList {
-  @include grid;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.ais__hitsListItem {
-  @include grid_item;
-}
-
-.ais__hitsListItem mark {
-  color: var(--color-bg);
-  background-color: var(--color-highlight);
-}
-
 .ais__form {
   display: block;
 }
@@ -96,37 +81,4 @@
 
 .ais__reset:focus {
   @include search_focus_style;
-}
-
-.ais__recommended {
-  max-width: 20rem;
-  display: inline-block;
-}
-
-.ais__recommendedTitle {
-  @include font_semibold;
-  text-decoration: none;
-  color: var(--color-fg);
-  font-size: 1.7rem;
-  line-height: 1.2;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-
-.ais__recommendedImage {
-  border-radius: var(--border-radius-base);
-  filter: drop-shadow(0px 0.125rem 0.125rem rgba(0, 0, 0, 0.25));
-  margin-bottom: 1rem;
-}
-
-.ais__recommendedLink {
-  @include button_main;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 0.5rem;
-  width: max-content;
 }

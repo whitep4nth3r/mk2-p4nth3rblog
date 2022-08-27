@@ -1,9 +1,3 @@
-.uses__index {
-  max-width: var(--grid-max-width);
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .uses__sectionHeader {
   @include grid_header;
   width: max-content;

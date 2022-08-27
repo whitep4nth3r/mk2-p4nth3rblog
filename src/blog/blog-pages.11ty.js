@@ -71,7 +71,9 @@ exports.render = async function (data) {
           post.relatedPostsCollection?.items.length > 0
             ? /*html*/ `
             <div class="post__related">
-              <p class="post__relatedHeader">Related posts</p>
+              <div class="post__relatedHeader">
+                <p class="post__relatedHeaderTitle">Read next 👇</p>
+              </div>
               <div class="post__relatedGrid">
                 ${post.relatedPostsCollection.items
                   .map((post) => PostCard({ post, baseSlug: "blog", isTalk: false }))

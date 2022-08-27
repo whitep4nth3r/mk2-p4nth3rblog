@@ -166,6 +166,19 @@ async function getPaginatedTalks(page) {
               }
             }
           }
+          speakerDeckLink {
+            image {
+              sys {
+                id
+              }
+              url
+              title
+              width
+              height
+              description
+              contentType
+            }
+          }
           transcript {
             json
           }
@@ -211,6 +224,7 @@ function transformTalksToSearchObjects(talks) {
       date: talk.date,
       watchTime: talk.watchTime,
       body: richTextPlainTextRenderer.documentToPlainTextString(talk.transcript.json),
+      featuredImage: talk.speakerDeckLink.image,
     };
   });
 

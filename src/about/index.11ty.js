@@ -42,22 +42,21 @@ exports.render = function (data) {
   const { person, events } = data;
 
   return /* html */ `
-    <div class="about__index">
-      <div class="twoColumnWide__header">
-        <h1 class="twoColumnWide__headerTitle">love <span class="colorHighlight">what you do</span></h1>
+    <div class="page__index">
+      <div class="page__header">
+        <h1 class="page__headerTitle">love <span class="colorHighlight">what you do</span></h1>
       </div>
 
-      <div class="twoColumnWide__container">
-
-        <aside class="twoColumnWide__aside">
-          <div class="twoColumnWide__asideStickyGroup">
+      <div class="twoColumn">
+        <aside class="twoColumn__aside">
+          <div class="twoColumn__asideStickyGroup">
             ${AboutTableOfContents()}
           </div>
         </aside>
 
-        <div class="twoColumnWide__content">
+        <div class="twoColumn__content">
           <div>
-            <aside class="twoColumnWide__inlineAside">
+            <aside class="twoColumn__inlineAside">
               ${AboutTableOfContents()}
             </aside>
 
@@ -72,14 +71,13 @@ exports.render = function (data) {
                   speakerBio: md.render(person.bioSpeaker),
                   longBio: RichText(person.bioLong),
                 })}
+                
+                ${AboutSocialLinks()}
               </div>
+              
             </div>
           </div>
           
-          <div>
-            ${AboutSocialLinks()}
-          </div>
-
           <section id="events" class="about__events">
             <div class="about__eventsHeader">
               <h2 class="about__eventsHeaderTitle">events <span class="colorHighlight">and talks</span></h2>

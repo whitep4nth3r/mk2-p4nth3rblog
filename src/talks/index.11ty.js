@@ -28,28 +28,29 @@ exports.data = {
 exports.render = function (data) {
   return /* html */ `
   
-   <section class="talks__index">
-      <div class="talks__header">
-        <h1 class="talks__headerTitle">recorded <span class="colorHighlight">talks</span></h1>
-      </div>
-      
-      <ol class="talks__grid">
-        ${data.pagination.items
-          .map(function (item) {
-            return `
-            <li class="talks__gridItem">
+  <section class="page__index">
+    <div class="page__header">
+      <h1 class="page__headerTitle">recorded <span class="colorHighlight">talks</span></h1>
+    </div>
+    <div class="page__intro">
+      <h2 class="page__introTitle">Conference and meetup talks</h2>
+      <p class="page__introText">I give live talks about front end development, Jamstack, serverless and more. Here's a selection of recorded talks complete with recordings, slides and transcripts.</p>
+    </div>
+    <ol class="grid">
+      ${data.pagination.items
+        .map(function (item) {
+          return `
+            <li class="grid__item blog__item">
             ${PostCard({ post: item, baseSlug: "talks", isTalk: true })}
             </li>`;
-          })
-          .join("")}
-      </ol>
-        
-      ${Pagination({
-        previous: data.pagination.href.previous,
-        next: data.pagination.href.next,
-        currentPage: data.pagination.pageNumber,
-        totalPages: data.pagination.pages.length,
-      })}
-    </section>
-   `;
+        })
+        .join("")}
+    </ol>
+    ${Pagination({
+      previous: data.pagination.href.previous,
+      next: data.pagination.href.next,
+      currentPage: data.pagination.pageNumber,
+      totalPages: data.pagination.pages.length,
+    })}
+    </section>`;
 };
