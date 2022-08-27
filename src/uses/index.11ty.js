@@ -40,9 +40,9 @@ exports.render = function (data) {
             ${AboutTableOfContents({ onUses: true, categories })}
           </aside>
 
-           <div class="blog__intro">
-            <h2 class="blog__introTitle">Coding & streaming setup</h2>
-            <p class="blog__introText">I receive a lot of questions on stream about my setup and what I use. Here's a (very incomplete) list to make it easier to share.</p>
+          <div class="page__intro">
+            <h2 class="page__introTitle">Coding & streaming setup</h2>
+            <p class="page__introText">I receive a lot of questions on stream about my setup and what I use. Here's a (very incomplete) list to make it easier to share.</p>
           </div>
 
               ${categories

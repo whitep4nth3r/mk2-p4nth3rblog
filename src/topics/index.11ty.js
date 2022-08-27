@@ -22,9 +22,9 @@ exports.render = function (data) {
       <div class="page__header">
         <h1 class="page__headerTitle">explore posts by <span class="colorHighlight">topic</span></h1>
       </div>
-      <div class="blog__intro">
-        <h2 class="blog__introTitle">Blog posts and tutorials</h2>
-        <p class="blog__introText">I write and live stream about front end development. Read tutorials and quick tips on HTML, CSS, JavaScript and Jamstack. Click on the categories to filter posts by topic.</p>
+      <div class="page__intro">
+        <h2 class="page__introTitle">Blog posts and tutorials</h2>
+        <p class="page__introText">I write and live stream about front end development. Read tutorials and quick tips on HTML, CSS, JavaScript and Jamstack. Click on the categories to filter posts by topic.</p>
       </div>
       ${Topics({ topics, showLinkToBlog: true })}
     </section>

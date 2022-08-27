@@ -1,11 +1,3 @@
-.projects__grid {
-  @include grid;
-}
-
-.project {
-  @include grid_item;
-}
-
 .project__image {
   margin-bottom: 2rem;
   border-radius: var(--border-radius-base);

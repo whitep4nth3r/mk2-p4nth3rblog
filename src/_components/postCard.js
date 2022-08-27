@@ -5,6 +5,8 @@ const DateUtils = require("../../lib/dateUtils");
 
 function PostCard({ post, baseSlug, isTalk }) {
   const timeSuffix = isTalk ? "watch time" : "read";
+  const image = post.featuredImage || post.speakerDeckLink.image;
+
   return /*html*/ `
     <a href="${`/${baseSlug}/${post.slug}/`}"
       aria-label="${post.title}"
@@ -12,18 +14,14 @@ function PostCard({ post, baseSlug, isTalk }) {
       class="postCard">
         <div class="postCard__imageWrap">
           ${TopicsGroup({ topics: post.topicsCollection.items })}
-          ${
-            post.featuredImage
-              ? `<img
+          <img
             class="postCard__image"
-            src="${post.featuredImage.url}?w=320"
-            alt="${post.featuredImage.description}"
-            height="${post.featuredImage.height}"
-            width="${post.featuredImage.width}"
+            src="${image.url}?w=320"
+            alt="${image.description}"
+            height="${image.height}"
+            width="${image.width}"
             loading="lazy"
-          />`
-              : ""
-          }
+          />
         </div>
         <h2 class="postCard__title">
           ${post.title}

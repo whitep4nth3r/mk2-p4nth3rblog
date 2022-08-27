@@ -33,11 +33,11 @@ exports.render = function (data) {
         <h1 class="page__headerTitle">recorded <span class="colorHighlight">talks</span></h1>
       </div>
       
-      <ol class="talks__grid">
+      <ol class="grid">
         ${data.pagination.items
           .map(function (item) {
             return `
-            <li class="talks__gridItem">
+            <li class="grid__item blog__item">
             ${PostCard({ post: item, baseSlug: "talks", isTalk: true })}
             </li>`;
           })

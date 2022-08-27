@@ -70,8 +70,6 @@
   color: var(--color-fg);
   font-size: 1.5rem;
   line-height: 1.2;
-  display: flex;
-  flex-direction: column;
   flex-grow: 1;
 }
 
@@ -92,5 +90,4 @@
 
 .postCard__image {
   object-fit: cover;
-  height: 100%;
 }

@@ -44,9 +44,9 @@ exports.render = function (data) {
       <h1 class="page__headerTitle">learn <span class="colorHighlight">things</span></h1>
     </div>
 
-    <div class="blog__intro">
-      <h2 class="blog__introTitle">Blog posts and tutorials</h2>
-      <p class="blog__introText">I write and live stream about front end development. Read tutorials and quick tips on HTML, CSS, JavaScript and Jamstack.</p>
+    <div class="page__intro">
+      <h2 class="page__introTitle">Blog posts and tutorials</h2>
+      <p class="page__introText">I write and live stream about front end development. Read tutorials and quick tips on HTML, CSS, JavaScript and Jamstack.</p>
     </div>
 
     <div class="blog__searchAndFilters">
@@ -63,11 +63,11 @@ exports.render = function (data) {
     <div id="hits" class="ais__hitsContainer"></div>
 
     <div data-static-content>
-      <ol class="blog__grid">
+      <ol class="grid">
       ${data.pagination.items
         .map(function (item) {
           return `
-          <li class="blog__gridItem">
+          <li class="grid__item blog__item">
             ${PostCard({ post: item, baseSlug: "blog", isTalk: false })}
           </li>`;
         })
@@ -96,6 +96,8 @@ exports.render = function (data) {
         title:  "${latestPost.title}",
         slug: "${latestPost.slug}",
         id: "${latestPost.sys.id}",
+        date:  "${latestPost.date}",
+        readingTime:  "${latestPost.readingTime}",
         featuredImage: {
           url: "${latestPost.featuredImage.url}",
           description: "${latestPost.featuredImage.description}",

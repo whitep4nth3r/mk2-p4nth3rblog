@@ -127,21 +127,31 @@ function initSearch({ appId, apiKey, indexName, latestPost }) {
       cssClasses: {
         root: "ais__hits",
         emptyRoot: "ais__hits--empty",
-        list: "ais__hitsList",
-        item: "ais__hitsListItem",
+        list: "grid",
+        item: "blog__item",
       },
       templates: {
         empty(results) {
           return `
-          <p class="ais__emptyMessage">No results found for <q>${results.query}</q>.</p>
-          <p class="ais__howAbout">How about this?</p>
-          <div class="ais__recommended">
-            <img class="ais__recommendedImage" src="${latestPost.featuredImage.url}" alt="${latestPost.featuredImage.description}" height="${latestPost.featuredImage.height}" width="${latestPost.featuredImage.width}" />
-            <a href="/blog/${latestPost.slug}/" class="ais__recommendedTitle" id="post-${latestPost.id}">
-              ${latestPost.title}
-            </a>
-            <a href="/blog/${latestPost.slug}/" class="ais__recommendedLink" aria-describedby="post-${latestPost.id}">
-              <span>Learn more</span><span aria-hidden="true">→</span></li>
+          <p class="ais__emptyMessage">No results found for <q>${results.query}</q>!</p>
+          <p class="ais__howAbout">How about this? 👇</p>
+          <div class="blog__item blog__item-ais">
+            <a href="/blog/${latestPost.slug}/" aria-label="${latestPost.title}" class="postCard">
+            <div class="postCard__imageWrap">
+            <img class="postCard__image" src="${latestPost.featuredImage.url}" alt="${
+            latestPost.featuredImage.description
+          }" height="${latestPost.featuredImage.height}" width="${latestPost.featuredImage.width}" />
+            </div>
+            <h2 class="postCard__title">
+            ${latestPost.title}
+            </h2>
+
+            <p class="postCard__meta">
+              <span class="postCard__metaIcon">${CalendarIcon()}</span>
+              <span class="postCard__metaText">${formatDateForDisplay(latestPost.date)}</span>
+              <span class="postCard__metaIcon">${StopwatchIcon()}</span>
+              <span class="postCard__metaText">${latestPost.readingTime} min read</span>
+            </p>
             </a>
           </div>
           `;

@@ -48,7 +48,6 @@ exports.render = function (data) {
       </div>
 
       <div class="twoColumn">
-
         <aside class="twoColumn__aside">
           <div class="twoColumn__asideStickyGroup">
             ${AboutTableOfContents()}

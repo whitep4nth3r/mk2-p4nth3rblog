@@ -26,12 +26,12 @@ exports.render = function (data) {
      <div class="page__header">
         <h1 class="page__headerTitle">build <span class="colorHighlight">stuff</span></h1>
     </div>
-   <ol class="projects__grid">
+   <ol class="grid">
       ${projects
         .map(
           (project) =>
             /* html */
-            `<li class="project">
+            `<li class="grid__item">
               <div class="project__image">
                 ${ResponsiveImage({ image: project.image })}
               </div>
