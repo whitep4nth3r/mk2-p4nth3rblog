@@ -36,30 +36,27 @@ exports.render = function (data) {
   return /* html */ `
   
   <section class="post">
-      <article class="post__article">
-         <h1 class="post__h1">${talk.title}</h1>
+    <article class="post__article">
+      <h1 class="post__h1">${talk.title}</h1>
+      <aside class="post__inlineAside">
+        ${BlogSidebarAuthor({ author: talk.author })}
+        ${PublishedDate({
+          date: talk.date,
+          readingTime: talk.watchTime,
+          isTalk: true,
+          updatedDate: null,
+        })}
+      </aside>
+      <div class="post__body">
+        ${RichText(talk.abstract, { renderRssFriendlyImg: false, absoluteUrls: false, renderHeadingLinks: true })}
 
-         <aside class="post__inlineAside">
-           ${BlogSidebarAuthor({ author: talk.author })}
-           ${PublishedDate({
-             date: talk.date,
-             readingTime: talk.watchTime,
-             isTalk: true,
-             updatedDate: null,
-           })}
-        </aside>
+        ${VideoEmbed({ embedUrl: talk.recording.embedUrl, title: talk.recording.title })}
 
-        <div class="post__body">
+        <h2 class="post__h2">Slides</h2>
+        ${SpeakerDeckLink({ speakerDeckLink: talk.speakerDeckLink })}
 
-          ${RichText(talk.abstract, { renderRssFriendlyImg: false, absoluteUrls: false, renderHeadingLinks: true })}
-
-          ${VideoEmbed({ embedUrl: talk.recording.embedUrl, title: talk.recording.title })}
-
-          <h2 class="post__h2">Slides</h2>
-          ${SpeakerDeckLink({ speakerDeckLink: talk.speakerDeckLink })}
-
-          <h2 class="post__h2">Transcript</h2>
-          ${RichText(talk.transcript, { renderRssFriendlyImg: false, absoluteUrls: false, renderHeadingLinks: true })}
+        <h2 class="post__h2">Transcript</h2>
+        ${RichText(talk.transcript, { renderRssFriendlyImg: false, absoluteUrls: false, renderHeadingLinks: true })}
         </div>
       </article>
       <aside class="post__aside">
