@@ -22,9 +22,9 @@ exports.data = {
 exports.render = function (data) {
   const { projects } = data;
   return /* html */ `
-  <section class="projects__index">
-     <div class="projects__header">
-        <h1 class="projects__headerTitle">build <span class="colorHighlight">stuff</span></h1>
+  <section class="page__index">
+     <div class="page__header">
+        <h1 class="page__headerTitle">build <span class="colorHighlight">stuff</span></h1>
     </div>
    <ol class="projects__grid">
       ${projects
@@ -32,7 +32,6 @@ exports.render = function (data) {
           (project) =>
             /* html */
             `<li class="project">
-
               <div class="project__image">
                 ${ResponsiveImage({ image: project.image })}
               </div>

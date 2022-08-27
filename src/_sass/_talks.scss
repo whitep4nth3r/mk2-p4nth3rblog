@@ -1,17 +1,3 @@
-.talks__index {
-  max-width: var(--grid-max-width);
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.talks__header {
-  @include grid_header;
-}
-
-.talks__headerTitle {
-  @include grid_header_title;
-}
-
 .talks__grid {
   @include grid;
 }

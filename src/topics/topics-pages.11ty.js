@@ -31,9 +31,9 @@ exports.render = function (data) {
   const postsByTopic = Array.from(allPosts.get(topic.slug));
 
   return /* html */ `
-   <section class="topics__index">
-    <div class="blog__header">
-      <h1 class="blog__headerTitle">posts about <span class="colorHighlight">${topic.name.toLowerCase()}</span></h1>
+   <section class="page__index">
+    <div class="page__header">
+      <h1 class="page__headerTitle">posts about <span class="colorHighlight">${topic.name.toLowerCase()}</span></h1>
     </div>
 
     ${Topics({ topics, selected: topic.slug, showLinkToBlog: true })}

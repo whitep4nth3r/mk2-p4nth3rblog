@@ -1,17 +1,3 @@
-.blog__index {
-  max-width: var(--grid-max-width);
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.blog__header {
-  @include grid_header;
-}
-
-.blog__headerTitle {
-  @include grid_header_title;
-}
-
 .blog__intro {
   background-color: var(--cta2-bg);
   border-radius: var(--border-radius-base);

@@ -1,0 +1,13 @@
+.page__index {
+  max-width: var(--grid-max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page__header {
+  @include grid_header;
+}
+
+.page__headerTitle {
+  @include grid_header_title;
+}

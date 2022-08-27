@@ -18,9 +18,9 @@ exports.data = {
 exports.render = function (data) {
   const { topics } = data;
   return /*html*/ `
-    <section class="topics__index">
-      <div class="blog__header">
-        <h1 class="blog__headerTitle">explore posts by <span class="colorHighlight">topic</span></h1>
+    <section class="page__index">
+      <div class="page__header">
+        <h1 class="page__headerTitle">explore posts by <span class="colorHighlight">topic</span></h1>
       </div>
       <div class="blog__intro">
         <h2 class="blog__introTitle">Blog posts and tutorials</h2>

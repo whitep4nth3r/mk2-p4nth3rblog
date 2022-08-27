@@ -39,9 +39,9 @@ exports.render = function (data) {
   const latestPost = data.latestPost.post;
   return /* html */ `
 
-  <section class="blog__index">
-    <div class="blog__header">
-      <h1 class="blog__headerTitle">learn <span class="colorHighlight">things</span></h1>
+  <section class="page__index">
+    <div class="page__header">
+      <h1 class="page__headerTitle">learn <span class="colorHighlight">things</span></h1>
     </div>
 
     <div class="blog__intro">

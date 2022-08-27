@@ -23,20 +23,20 @@ exports.render = function (data) {
   const { categories, things } = data;
 
   return /* html */ `
-    <section class="uses__index">
-      <div class="twoColumnWide__header">
-        <h1 class="twoColumnWide__headerTitle">things <span class="colorHighlight">I use</span></h1>
+    <section class="page__index">
+      <div class="twoColumn__header">
+        <h1 class="twoColumn__headerTitle">things <span class="colorHighlight">I use</span></h1>
       </div>
 
-      <div class="twoColumnWide__container">
-        <aside class="twoColumnWide__aside">
-          <div class="twoColumnWide__asideStickyGroup">
+      <div class="twoColumn">
+        <aside class="twoColumn__aside">
+          <div class="twoColumn__asideStickyGroup">
             ${AboutTableOfContents({ onUses: true, categories })}
           </div>
         </aside>
 
-        <div class="twoColumnWide__content">
-          <aside class="twoColumnWide__inlineAside">
+        <div class="twoColumn__content">
+          <aside class="twoColumn__inlineAside">
             ${AboutTableOfContents({ onUses: true, categories })}
           </aside>
 
