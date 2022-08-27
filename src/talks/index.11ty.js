@@ -31,7 +31,11 @@ exports.render = function (data) {
   <section class="page__index">
     <div class="page__header">
       <h1 class="page__headerTitle">recorded <span class="colorHighlight">talks</span></h1>
-    </div>  
+    </div>
+    <div class="page__intro">
+      <h2 class="page__introTitle">Conference and meetup talks</h2>
+      <p class="page__introText">I give live talks about front end development, Jamstack, serverless and more. Here's a selection of recorded talks complete with recordings, slides and transcripts.</p>
+    </div>
     <ol class="grid">
       ${data.pagination.items
         .map(function (item) {

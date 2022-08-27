@@ -35,6 +35,10 @@ exports.render = function (data) {
       <div class="page__header">
         <h1 class="page__headerTitle">posts about <span class="colorHighlight">${topic.name.toLowerCase()}</span></h1>
       </div>
+      <div class="page__intro">
+        <h2 class="page__introTitle">Blog posts and tutorials</h2>
+        <p class="page__introText">I write and live stream about front end development. Read tutorials and quick tips on HTML, CSS, JavaScript and Jamstack. Click on the categories to filter posts by topic.</p>
+      </div>
 
       ${Topics({ topics, selected: topic.slug, showLinkToBlog: true })}
 
