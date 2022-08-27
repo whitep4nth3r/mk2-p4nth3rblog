@@ -135,7 +135,7 @@ function initSearch({ appId, apiKey, indexName, latestPost }) {
           return `
           <p class="ais__emptyMessage">No results found for <q>${results.query}</q>!</p>
           <p class="ais__howAbout">How about this? 👇</p>
-          <div class="blog__item blog__item-ais">
+          <div class="blog__item blog__item--ais">
             <a href="/blog/${latestPost.slug}/" aria-label="${latestPost.title}" class="postCard">
             <div class="postCard__imageWrap">
             <img class="postCard__image" src="${latestPost.featuredImage.url}" alt="${

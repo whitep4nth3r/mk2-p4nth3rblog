@@ -71,14 +71,13 @@ exports.render = function (data) {
                   speakerBio: md.render(person.bioSpeaker),
                   longBio: RichText(person.bioLong),
                 })}
+                
+                ${AboutSocialLinks()}
               </div>
+              
             </div>
           </div>
           
-          <div>
-            ${AboutSocialLinks()}
-          </div>
-
           <section id="events" class="about__events">
             <div class="about__eventsHeader">
               <h2 class="about__eventsHeaderTitle">events <span class="colorHighlight">and talks</span></h2>

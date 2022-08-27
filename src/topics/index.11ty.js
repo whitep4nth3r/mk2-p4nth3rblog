@@ -27,6 +27,5 @@ exports.render = function (data) {
         <p class="page__introText">I write and live stream about front end development. Read tutorials and quick tips on HTML, CSS, JavaScript and Jamstack. Click on the categories to filter posts by topic.</p>
       </div>
       ${Topics({ topics, showLinkToBlog: true })}
-    </section>
-   `;
+    </section>`;
 };

@@ -28,28 +28,25 @@ exports.data = {
 exports.render = function (data) {
   return /* html */ `
   
-   <section class="page__index">
-      <div class="page__header">
-        <h1 class="page__headerTitle">recorded <span class="colorHighlight">talks</span></h1>
-      </div>
-      
-      <ol class="grid">
-        ${data.pagination.items
-          .map(function (item) {
-            return `
+  <section class="page__index">
+    <div class="page__header">
+      <h1 class="page__headerTitle">recorded <span class="colorHighlight">talks</span></h1>
+    </div>  
+    <ol class="grid">
+      ${data.pagination.items
+        .map(function (item) {
+          return `
             <li class="grid__item blog__item">
             ${PostCard({ post: item, baseSlug: "talks", isTalk: true })}
             </li>`;
-          })
-          .join("")}
-      </ol>
-        
-      ${Pagination({
-        previous: data.pagination.href.previous,
-        next: data.pagination.href.next,
-        currentPage: data.pagination.pageNumber,
-        totalPages: data.pagination.pages.length,
-      })}
-    </section>
-   `;
+        })
+        .join("")}
+    </ol>
+    ${Pagination({
+      previous: data.pagination.href.previous,
+      next: data.pagination.href.next,
+      currentPage: data.pagination.pageNumber,
+      totalPages: data.pagination.pages.length,
+    })}
+    </section>`;
 };

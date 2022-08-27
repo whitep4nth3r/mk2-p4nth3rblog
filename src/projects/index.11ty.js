@@ -23,10 +23,10 @@ exports.render = function (data) {
   const { projects } = data;
   return /* html */ `
   <section class="page__index">
-     <div class="page__header">
-        <h1 class="page__headerTitle">build <span class="colorHighlight">stuff</span></h1>
+    <div class="page__header">
+      <h1 class="page__headerTitle">build <span class="colorHighlight">stuff</span></h1>
     </div>
-   <ol class="grid">
+    <ol class="grid">
       ${projects
         .map(
           (project) =>
@@ -82,6 +82,5 @@ exports.render = function (data) {
         )
         .join("")}
     </ol>
-    </section>
-   `;
+    </section>`;
 };

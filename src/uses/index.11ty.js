@@ -56,8 +56,7 @@ exports.render = function (data) {
                   ${things[cat]
                     .map(
                       (thing) =>
-                        `
-                      <li class="uses__listItem">
+                        `<li class="uses__listItem">
                         <div>
                           <h3 class="uses__listItemName uses__listItemName--small">${thing.name}</h3>
                           <img class="uses__listItemImg" src="${thing.image.url}?w=200" alt="${
@@ -81,7 +80,6 @@ exports.render = function (data) {
                 </section>`,
                 )
                 .join("")}
-
         </div>
       </div>
     </section>
