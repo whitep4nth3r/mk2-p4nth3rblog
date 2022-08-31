@@ -1,30 +1,17 @@
-export default (request, context) => {
-  const controlBranch = "main";
-  const testBranch = "blog-sidebar-left";
+export default async (request, context) => {
+  // Get the nf_ab cookie
+  let cookieValue = context.cookies.get("nf_ab");
 
-  // look for existing "nf_ab" cookie
-  const bucketName = "nf_ab";
-  const bucket = context.cookies.get(bucketName);
-
-  // return here if we find a cookie
-  if (bucket) {
-    context.log(`${bucketName} ${bucket} already assigned!`);
-  }
-
-  // if no "nf_ab" cookie is found, assign the user to a bucket
-  // in this example we're using two buckets (a, b) with an equal weighting of 50/50
-  const weighting = 0.5;
-
-  // get a random number between (0-1)
-  // this is a basic example and you may want to experiment
-  const random = Math.random();
-  const newBucketValue = random <= weighting ? controlBranch : testBranch;
-
-  // set the new "nf_ab" cookie
-  context.cookies.set({
-    name: bucketName,
-    value: newBucketValue,
+  //TODO — DOMAIN ENV VAR
+  const sendToAirtable = await fetch("http://localhost:8888/api/airtable", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      cookieValue,
+    }),
   });
 
-  context.log(`You have been assigned ${bucketName} ${newBucketValue}.`);
+  await sendToAirtable.json();
 };
