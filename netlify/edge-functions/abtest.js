@@ -1,5 +1,8 @@
 export default (request, context) => {
-  // look for existing "test_bucket" cookie
+  const controlBranch = "main";
+  const testBranch = "blog-sidebar-left";
+
+  // look for existing "nf_ab" cookie
   const bucketName = "nf_ab";
   const bucket = context.cookies.get(bucketName);
 
@@ -8,16 +11,16 @@ export default (request, context) => {
     context.log(`${bucketName} ${bucket} already assigned!`);
   }
 
-  // if no "test_bucket" cookie is found, assign the user to a bucket
+  // if no "nf_ab" cookie is found, assign the user to a bucket
   // in this example we're using two buckets (a, b) with an equal weighting of 50/50
   const weighting = 0.5;
 
   // get a random number between (0-1)
   // this is a basic example and you may want to experiment
   const random = Math.random();
-  const newBucketValue = random <= weighting ? "main" : "blog-sidebar-left";
+  const newBucketValue = random <= weighting ? controlBranch : testBranch;
 
-  // set the new "test_bucket" cookie
+  // set the new "nf_ab" cookie
   context.cookies.set({
     name: bucketName,
     value: newBucketValue,
