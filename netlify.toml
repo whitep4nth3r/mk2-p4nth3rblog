@@ -6,10 +6,6 @@
   command = "npm run build"
   functions = "src/_functions/"
 
-[[edge_functions]]
-  path = "/abtest"
-  function = "abtest"
-
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"
