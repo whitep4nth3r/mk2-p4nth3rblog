@@ -1,14 +1,11 @@
-const fetch = require("node-fetch");
 var Airtable = require("airtable");
 
 exports.handler = async function (event, context, callback) {
-  const blogPageLayoutId = "tbl88pesgQivFFgtm";
+  let statusCode = 200;
+  const airtable_name = "blog_page_layout";
 
   // get cookie value from POST
-  const { cookieValue } = event.body;
-
-  // get branch from env
-  const branch = process.env.BRANCH;
+  const { cookieValue } = JSON.parse(event.body);
 
   Airtable.configure({
     endpointUrl: "https://api.airtable.com",
@@ -17,44 +14,71 @@ exports.handler = async function (event, context, callback) {
 
   var base = Airtable.base(process.env.AIRTABLE_BASE_ID);
 
-  // console.log(base);
-
   // get record from DB if exists
-  // const record = base("blog_page_layout")
-  //   .select({
-  //     // Selecting the first 3 records in Grid view:
-  //     maxRecords: 1,
-  //     view: "Grid view",
-  //     filterByFormula: ({ nf_ab_value } = "0.567"),
-  //   })
-  //   .eachPage(
-  //     function page(records, fetchNextPage) {
-  //       // This function (`page`) will get called for each page of records.
+  const record = await base(airtable_name)
+    .select({
+      maxRecords: 1,
+      view: "Grid view",
+      filterByFormula: `{nf_ab_value} = ${cookieValue}`,
+      fields: ["nf_ab_value", "branch", "page_views"],
+    })
+    .all()
+    .then(async (results) => {
+      if (results.length > 0) {
+        // if record exists, increment page view and save
+        const row = results[0];
+        const currentPageViews = row.fields.page_views;
 
-  //       records.forEach(function (record) {
-  //         console.log("Retrieved", record.get("nf_ab_value"));
-  //       });
+        const update = await base(airtable_name).update(
+          [
+            {
+              id: row.id,
+              fields: {
+                page_views: currentPageViews + 1,
+              },
+            },
+          ],
+          function (err, records) {
+            if (err) {
+              console.error(err);
+              return;
+            }
+            records.forEach(function (record) {
+              console.log(`Page views updated to ${record.get("page_views")} for record ID: ${record.getId()}`);
+            });
+          },
+        );
+      } else {
+        // add new record with 1 page view
+        statusCode = 201;
 
-  //       fetchNextPage();
-  //     },
-  //     function done(err) {
-  //       if (err) {
-  //         console.error(err);
-  //         return;
-  //       }
-  //     },
-  //   );
-
-  // console.log(record);
-
-  // if exists, incrememnt page view
-
-  // if !exists, add record with 1 page view
+        const create = await base(airtable_name).create(
+          [
+            {
+              fields: {
+                nf_ab_value: cookieValue,
+                branch: process.env.BRANCH,
+                page_views: 1,
+              },
+            },
+          ],
+          function (err, records) {
+            if (err) {
+              console.error(err);
+              return;
+            }
+            records.forEach(function (record) {
+              console.log(`Record created for record ID: ${record.getId()}`);
+            });
+          },
+        );
+      }
+    });
 
   return {
-    statusCode: 200,
+    statusCode,
     body: JSON.stringify({
-      called: true,
+      message: "Tracked in Airtable",
     }),
   };
 };
