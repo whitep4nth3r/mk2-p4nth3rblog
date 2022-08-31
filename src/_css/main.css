@@ -289,11 +289,9 @@ strong {
   .header__navList {
     justify-content: flex-end;
   }
-
   .header__logoContainerLink {
     align-self: flex-start;
   }
-
   .header__content {
     margin-bottom: 6rem;
     flex-direction: row;
@@ -388,6 +386,11 @@ strong {
   .footer__link {
     justify-content: center;
   }
+}
+
+.footer__sneaky {
+  display: none;
+  visibility: hidden;
 }
 
 .home {
@@ -885,7 +888,6 @@ strong {
   .post__aside {
     display: flex;
   }
-
   .post__inlineAside {
     display: none;
   }
@@ -2160,7 +2162,6 @@ a.post__linkedHeaderIcon {
   .twoColumn__aside {
     display: flex;
   }
-
   .twoColumn__inlineAside {
     display: none;
   }
