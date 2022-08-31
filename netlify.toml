@@ -7,7 +7,7 @@
   functions = "src/_functions/"
 
 [[edge_functions]]
-  path = "/edge-api/abtest"
+  path = "/abtest"
   function = "abtest"
 
 [[redirects]]
