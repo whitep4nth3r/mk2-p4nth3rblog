@@ -1,29 +1,40 @@
 [dev]
   publish = "_site"
   command = "npm run dev"
+
 [build]
   command = "npm run build"
   functions = "src/_functions/"
+
+[[edge_functions]]
+  path = "/edge-api/abtest"
+  function = "abtest"
+
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"
+
 [[redirects]]
   from = "/topics"
   to = "/topics/webdev/"
   status = 308
+
 [[redirects]]
   from = "/faqs"
   to = "/blog/faqs/"
   status = 301
+
 [[redirects]]
   from = "/github"
   to = "http://github.com/whitep4nth3r"
   status = 301
+
 [[redirects]]
   from = "/discord"
   to = "http://discord.gg/GQbXUVCneJ"
   status = 301
+
 [[plugins]]
 package = "netlify-plugin-inline-functions-env"
-   [plugins.inputs]
+  [plugins.inputs]
     include = ["GOOGLE_PRIVATE_KEY"]
