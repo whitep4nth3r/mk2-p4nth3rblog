@@ -1,5 +1,6 @@
 export default async (request, context) => {
   let cookieValue = context.cookies.get("nf_ab");
+  context.log("Hello, there from abtest: ", cookieValue);
 
   if (cookieValue) {
     const domain = Deno.env.get("DOMAIN");
