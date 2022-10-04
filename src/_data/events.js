@@ -44,5 +44,6 @@ module.exports = async function () {
   return {
     list: sortedEvents,
     next: sortedEvents[0],
+    isLive: twitchData.isLiveOnTwitch,
   };
 };

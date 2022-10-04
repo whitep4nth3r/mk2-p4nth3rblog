@@ -24,7 +24,7 @@ exports.render = function (data) {
   return /*html*/ `
   <section class="home">
     <div class="home__sticky">
-      ${HomeAbout()}
+      ${HomeAbout({ person })}
     </div>
     <div>
       <div class="home__item">
@@ -42,7 +42,7 @@ exports.render = function (data) {
               ? NextTwitchStream({
                   stream: events.next,
                   link: events.next.link,
-                  isLive: events.next.isLive,
+                  isLive: events.isLive,
                 })
               : NextNonTwitchEvent({ event: events.next })
           }
