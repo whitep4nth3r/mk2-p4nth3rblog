@@ -249,12 +249,6 @@ a.post__linkedHeaderIcon {
   line-height: 1.6;
   margin-bottom: 1rem;
   color: var(--color-fg);
-
-  &:before {
-    content: "💡";
-    display: inline;
-    margin-right: 0.5rem;
-  }
 }
 
 .post__calloutContent {
