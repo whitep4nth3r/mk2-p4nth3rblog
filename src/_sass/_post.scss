@@ -234,3 +234,34 @@ a.post__linkedHeaderIcon {
   display: block;
   width: max-content;
 }
+
+.post__callout {
+  padding: 1rem;
+  border-radius: var(--border-radius-base);
+  background-color: var(--cta2-bg);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.post__calloutTitle {
+  @include font_bold;
+  font-size: 1.4rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: var(--color-fg);
+
+  &:before {
+    content: "💡";
+    display: inline;
+    margin-right: 0.5rem;
+  }
+}
+
+.post__calloutContent {
+  @include font_main;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: var(--color-fg);
+  word-break: break-word;
+}
