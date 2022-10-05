@@ -4,6 +4,7 @@ const { BLOCKS, MARKS, INLINES } = require("@contentful/rich-text-types");
 const Config = require("../../lib/config");
 const Tools = require("../../lib/tools");
 const ResponsiveImage = require("./responsiveImage");
+const Callout = require("./callout");
 const CodeBlock = require("./codeBlock");
 const VideoEmbed = require("./videoEmbed");
 const TikTokEmbed = require("./tikTokEmbed");
@@ -122,6 +123,8 @@ function getRichTextRenderOptions(links, options) {
             return TweetEmbed({ tweetUrl: entry.tweetUrl });
           case "VideoEmbed":
             return VideoEmbed({ embedUrl: entry.embedUrl, title: entry.title });
+          case "Callout":
+            return Callout({ title: entry.title, content: entry.content });
           case "CodeBlock":
             const { code } = entry;
             //TODO: TEMPORARY -- need to do Contentful migration here
