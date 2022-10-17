@@ -124,7 +124,7 @@ function getRichTextRenderOptions(links, options) {
           case "VideoEmbed":
             return VideoEmbed({ embedUrl: entry.embedUrl, title: entry.title });
           case "Callout":
-            return Callout({ title: entry.title, content: entry.content });
+            return Callout({ title: entry.title, content: entry.content, emoji: entry.emoji });
           case "CodeBlock":
             const { code } = entry;
             //TODO: TEMPORARY -- need to do Contentful migration here

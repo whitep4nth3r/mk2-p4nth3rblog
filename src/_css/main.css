@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @font-face {
   font-family: "Work Sans Light";
   src: url("/fonts/WorkSans-Light.woff2") format("woff2");
@@ -1135,18 +1134,12 @@ a.post__linkedHeaderIcon {
   margin-bottom: 1rem;
   color: var(--color-fg);
 }
-.post__calloutTitle:before {
-  content: "💡";
-  display: inline;
-  margin-right: 0.5rem;
-}
 
 .post__calloutContent {
   font-weight: var(--font-weight-main);
   font-family: var(--font-family-main);
   font-size: 1.2rem;
   line-height: 1.6;
-  margin-bottom: 1rem;
   color: var(--color-fg);
   word-break: break-word;
 }
