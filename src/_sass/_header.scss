@@ -104,3 +104,14 @@
   text-align: left;
   @include add_gradient_bottom($marginTop: 0.25rem);
 }
+
+.header__referer {
+  @include font_semibold;
+  font-size: 2rem;
+  padding: 1rem;
+  border-radius: var(--border-radius-base);
+  background: var(--yellow-red-gradient);
+  margin: 0 auto 2rem auto;
+  color: var(--white);
+  text-align: center;
+}

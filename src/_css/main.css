@@ -315,6 +315,18 @@ strong {
   background: var(--yellow-red-gradient);
 }
 
+.header__referer {
+  font-weight: var(--font-weight-heading);
+  font-family: var(--font-family-heading);
+  font-size: 2rem;
+  padding: 1rem;
+  border-radius: var(--border-radius-base);
+  background: var(--yellow-red-gradient);
+  margin: 0 auto 2rem auto;
+  color: var(--white);
+  text-align: center;
+}
+
 .footer {
   max-width: var(--grid-max-width);
   margin: 4rem auto;
