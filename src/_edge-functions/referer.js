@@ -33,7 +33,7 @@ export default async (request, context) => {
   // if we do have a referer match, rewrite the element
   // in the response HTML with a friendly message
   return new HTMLRewriter()
-    .on("p[data-referer]", {
+    .on("aside[data-referer]", {
       element(element) {
         element.setInnerContent(messages[findRefererKey], { html: true });
         element.setAttribute("class", "header__referer");
