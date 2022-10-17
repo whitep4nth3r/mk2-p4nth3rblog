@@ -4,6 +4,7 @@ const messages = {
   "localhost:8888": `✨ Happy developing ✨`,
   "netlify.com": `🎉 You found my site via netlify.com! <a href="/blog/add-personalization-to-static-html-with-edge-functions-no-browser-javascript/">Learn how to show this banner using Netlify Edge Functions</a>`,
   "reddit.com": "👀 Hello there, Redditor! I see you. Please be nice.",
+  "news.ycombinator.com": "👀 Hello there, Orange Site user! I see you. Please be nice.",
 };
 
 export default async (request, context) => {
@@ -13,7 +14,7 @@ export default async (request, context) => {
   // get the next HTTP response in the chain
   const response = await context.next();
 
-  // if no referer, continue
+  // if no referer, return the response
   if (referer === null) {
     return response;
   }
