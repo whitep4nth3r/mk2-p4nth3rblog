@@ -30,7 +30,7 @@ export default async (request, context) => {
   }
 
   // if we do have a referer match, rewrite the element
-  // in the DOM with a friendly message
+  // in the response HTML with a friendly message
   return new HTMLRewriter()
     .on("p[data-referer]", {
       element(element) {
