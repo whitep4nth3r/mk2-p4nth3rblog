@@ -1,11 +1,9 @@
 import { HTMLRewriter } from "https://ghuc.cc/worker-tools/html-rewriter/index.ts";
 
 const messages = {
-  "localhost:8888": "Hi there, friendly local developer!",
-  "netlify.app": "This is a test message to see if this works!",
-  "netlify.com":
-    "Hey, there! Thanks for finding my site on netlify.com. I made this banner with a Netlify Edge Function!",
-  "localhost:8888": "👀 Hello there, Redditor! I see you.",
+  "localhost:8888": `✨ Happy developing ✨`,
+  "netlify.com": `🎉 You found my site via netlify.com! <a href="/blog/add-personalization-to-static-html-with-edge-functions-no-browser-javascript/">Learn how to show this banner using Netlify Edge Functions</a>`,
+  "reddit.com": "👀 Hello there, Redditor! I see you. Please be nice.",
 };
 
 export default async (request, context) => {
@@ -36,7 +34,7 @@ export default async (request, context) => {
   return new HTMLRewriter()
     .on("p[data-referer]", {
       element(element) {
-        element.setInnerContent(messages[findRefererKey]);
+        element.setInnerContent(messages[findRefererKey], { html: true });
         element.setAttribute("class", "header__referer");
       },
     })
