@@ -2,9 +2,10 @@ import { HTMLRewriter } from "https://ghuc.cc/worker-tools/html-rewriter/index.t
 
 const messages = {
   "localhost:8888": "Hi there, friendly local developer!",
+  "netlify.app": "This is a test message to see if this works!",
   "netlify.com":
     "Hey, there! Thanks for finding my site on netlify.com. I made this banner with a Netlify Edge Function!",
-  "reddit.com": "👀 Hello there, Redditor! I see you.",
+  "localhost:8888": "👀 Hello there, Redditor! I see you.",
 };
 
 export default async (request, context) => {
