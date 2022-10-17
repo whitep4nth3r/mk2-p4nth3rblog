@@ -8,7 +8,7 @@
   edge_functions = "src/_edge-functions/"
 
 [[edge_functions]]
-  path = "/*"
+  path = "/blog/*"
   function = "referer"
 
 [[redirects]]
