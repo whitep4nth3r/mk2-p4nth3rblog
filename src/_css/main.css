@@ -2378,7 +2378,7 @@ a.post__linkedHeaderIcon {
 
 .webmentions__likes {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));
   gap: 0.25rem;
 }
 
@@ -2390,6 +2390,7 @@ a.post__linkedHeaderIcon {
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
+  justify-content: flex-start;
   align-items: center;
 }
 

@@ -86,7 +86,7 @@ exports.render = async function (data) {
 
         <div class="post__inlineAside">
           ${BlogSidebarTopics({ topics: post.topicsCollection.items })}
-          ${WebMentions({ likes: post.likes })}
+          ${WebMentions({ likes: post.likes, reposts: post.reposts })}
         </div>
 
         <script type="application/ld+json">${PostStructuredData({
@@ -107,7 +107,7 @@ exports.render = async function (data) {
         <div class="post__asideStickyGroup">
           ${TableOfContents(post.body)}
           ${BlogSidebarTopics({ topics: post.topicsCollection.items })}
-          ${WebMentions({ likes: post.likes })}
+          ${WebMentions({ likes: post.likes, reposts: post.reposts })}
         </div>
       </aside>
     </section>

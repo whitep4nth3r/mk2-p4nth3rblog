@@ -17,6 +17,16 @@ function getLikesForPost(allMentions, postSlug) {
   return likes;
 }
 
+// TODO: comments are mention.content
+
+function getRepostsForPost(allMentions, postSlug) {
+  const reposts = allMentions.filter(
+    (mention) => mention["repost-of"] === `https://whitep4nth3r.com/blog/${postSlug}/`,
+  );
+
+  return reposts;
+}
+
 module.exports = async function () {
   const topics = await ContentfulTopics.getAll();
   const postSummaries = await ContentfulBlogPosts.getAllSummaries();
@@ -25,8 +35,9 @@ module.exports = async function () {
 
   const posts = postsRaw.map((post) => {
     const likes = getLikesForPost(mentions, post.slug);
+    const reposts = getRepostsForPost(mentions, post.slug);
 
-    return { ...post, likes };
+    return { ...post, likes, reposts };
   });
 
   return {
