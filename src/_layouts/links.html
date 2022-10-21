@@ -7,10 +7,6 @@
     <title>{{ title }}</title>
     <meta name="description" content="{{ metaDescription }}" />
 
-    {% if canonical %}
-    <link rel="canonical" href="{{ canonical }}" />
-    {% endif %}
-
     <!-- CSS -->
     <link rel="stylesheet" href="/css/main.css" />
 
@@ -29,18 +25,7 @@
     <meta property="og:image:width" content="{{ openGraphImageWidth }}" />
     <meta property="og:image:height" content="{{ openGraphImageHeight }}" />
 
-    {% if openGraphTimeToRead %}
-    <meta name="twitter:label1" content="Written by" />
-    <meta name="twitter:data1" content="Salma Alam-Naylor" />
-    <meta name="twitter:label2" content="Reading time" />
-    <meta name="twitter:data2" content="{{ openGraphTimeToRead }} minutes" />
-    <meta property="og:type" content="article" />
-    <meta property="article:section" content="Technology" />
-    {% for tag in openGraphArticleTags %}
-    <meta property="article:tag" content="{{ tag }}" />
-    {% endfor %} {% else %}
     <meta property="og:type" content="website" />
-    {% endif %}
     <meta property="og:site_name" content="whitep4nth3r.com" />
 
     <meta name="monetization" content="$ilp.uphold.com/J7y7wkRezRYL" />
