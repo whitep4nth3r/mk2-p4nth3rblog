@@ -5,9 +5,7 @@ const RichText = require("../_components/richText");
 const PublishedDate = require("../_components/publishedDate");
 const TableOfContents = require("../_components/tableOfContents");
 const isSponsored = require("../_components/isSponsored");
-const SeeAllCta = require("../_components/seeAllCta");
 const PostCard = require("../_components/postCard");
-const WebMentions = require("../_components/webMentions");
 const PostStructuredData = require("../_components/postStructuredData");
 const OpenGraph = require("../../lib/openGraph");
 
@@ -86,7 +84,6 @@ exports.render = async function (data) {
 
         <div class="post__inlineAside">
           ${BlogSidebarTopics({ topics: post.topicsCollection.items })}
-          ${WebMentions({ likes: post.likes, reposts: post.reposts })}
         </div>
 
         <script type="application/ld+json">${PostStructuredData({
@@ -107,7 +104,6 @@ exports.render = async function (data) {
         <div class="post__asideStickyGroup">
           ${TableOfContents(post.body)}
           ${BlogSidebarTopics({ topics: post.topicsCollection.items })}
-          ${WebMentions({ likes: post.likes, reposts: post.reposts })}
         </div>
       </aside>
     </section>
