@@ -1,10 +1,10 @@
 const OpenGraph = require("../../lib/openGraph");
-const pageTitle = "Salma's links";
+const pageTitle = "Salma's fake linktree";
 
 exports.data = {
   layout: "links.html",
   title: pageTitle,
-  metaDescription: `This is my linktree.`,
+  metaDescription: `I write code for your entertainment`,
   openGraphImageUrl: OpenGraph.generateImageUrl({ title: pageTitle }),
   openGraphImageAlt: OpenGraph.generateImageAlt(pageTitle),
   openGraphImageWidth: OpenGraph.imgWidth,
