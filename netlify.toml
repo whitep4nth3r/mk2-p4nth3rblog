@@ -5,6 +5,11 @@
 [build]
   command = "npm run build"
   functions = "src/_functions/"
+  edge_functions = "src/_edge-functions/"
+
+[[edge_functions]]
+  path = "/blog/*"
+  function = "referer"
 
 [[redirects]]
   from = "/api/*"
