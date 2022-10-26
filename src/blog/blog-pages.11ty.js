@@ -23,6 +23,7 @@ exports.data = {
   },
   eleventyComputed: {
     title: (data) => data.post.metaTitle,
+    slug: (data) => data.post.slug,
     canonical: (data) => data.post.externalUrl || `https://whitep4nth3r.com/blog/${data.post.slug}/`,
     metaDescription: (data) => data.post.metaDescription,
     openGraphImageUrl: (data) =>
