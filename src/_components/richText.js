@@ -129,7 +129,7 @@ function getRichTextRenderOptions(links, options) {
             const { code } = entry;
             //TODO: TEMPORARY -- need to do Contentful migration here
             const lang = entry.language === "bash-shell" ? "bash" : entry.language;
-            return CodeBlock({ code, lang });
+            return CodeBlock({ code, lang, isDiff: entry.isDiff });
           default:
             return null;
         }
