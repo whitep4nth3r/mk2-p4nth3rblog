@@ -127,3 +127,25 @@ pre[class*="language-"] {
 .token.entity {
   cursor: help;
 }
+
+.token.deleted {
+  background-color: rgba(255, 0, 0, 0.2);
+}
+.token.inserted {
+  background-color: rgba(0, 255, 128, 0.1);
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+  -webkit-user-select: none;
+  user-select: none;
+  background-color: transparent;
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+  display: block;
+}
