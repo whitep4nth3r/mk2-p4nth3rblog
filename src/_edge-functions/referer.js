@@ -2,7 +2,7 @@ import { HTMLRewriter } from "https://ghuc.cc/worker-tools/html-rewriter/index.t
 
 const messages = {
   "localhost:8888": `✨ Happy developing ✨`,
-  "netlify.com": `🎉 You found my site via netlify.com! <a href="/blog/add-personalization-to-static-html-with-edge-functions-no-browser-javascript/">Learn how to show this banner using Netlify Edge Functions</a>`,
+  "netlify.com": `🎉 You found my site via netlify.com! <a href="/blog/personalize-static-site-based-on-previous-site-referral/">Learn how to show this banner using Netlify Edge Functions</a>`,
   "reddit.com": "👀 Hello there, Redditor! I see you. Please be nice.",
   "news.ycombinator.com": "👀 Hello there, Orange Site user! I see you. Please be nice.",
 };
