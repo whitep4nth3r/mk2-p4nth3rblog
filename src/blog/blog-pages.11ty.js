@@ -5,7 +5,6 @@ const RichText = require("../_components/richText");
 const PublishedDate = require("../_components/publishedDate");
 const TableOfContents = require("../_components/tableOfContents");
 const isSponsored = require("../_components/isSponsored");
-const SeeAllCta = require("../_components/seeAllCta");
 const PostCard = require("../_components/postCard");
 const PostStructuredData = require("../_components/postStructuredData");
 const OpenGraph = require("../../lib/openGraph");
@@ -85,7 +84,6 @@ exports.render = async function (data) {
 
         <div class="post__inlineAside">
           ${BlogSidebarTopics({ topics: post.topicsCollection.items })}
-          <a href="/blog/" class="seeAllCta">See all blog posts <span class="colorHighlight">→</span></a>
         </div>
 
         <script type="application/ld+json">${PostStructuredData({
@@ -94,7 +92,7 @@ exports.render = async function (data) {
         })}</script>
       </article>
       <aside class="post__aside">
-      ${BlogSidebarAuthor({ author: post.author })}
+        ${BlogSidebarAuthor({ author: post.author })}
 
         ${PublishedDate({
           date: post.date,
@@ -106,7 +104,6 @@ exports.render = async function (data) {
         <div class="post__asideStickyGroup">
           ${TableOfContents(post.body)}
           ${BlogSidebarTopics({ topics: post.topicsCollection.items })}
-          ${SeeAllCta({ things: "blog posts", url: "/blog/" })}
         </div>
       </aside>
     </section>

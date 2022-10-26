@@ -1,5 +1,6 @@
 const ContentfulBlogPosts = require("../../lib/contentfulBlogPosts");
 const ContentfulTopics = require("../../lib/contentfulTopics");
+const fetch = require("node-fetch");
 
 module.exports = async function () {
   const topics = await ContentfulTopics.getAll();

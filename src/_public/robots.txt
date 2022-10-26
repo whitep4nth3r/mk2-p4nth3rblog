@@ -2,6 +2,7 @@
 User-agent: *
 Disallow: /api
 Disallow: /404
+Disallow: /key.pub
 
 # Host
 Host: https://whitep4nth3r.com
