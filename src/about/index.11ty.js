@@ -44,7 +44,7 @@ exports.render = function (data) {
   return /* html */ `
     <div class="page__index">
       <div class="page__header">
-        <h1 class="page__headerTitle">love <span class="colorHighlight">what you do</span></h1>
+        <h1 class="page__headerTitle">All about <span class="colorHighlight">me</span></h1>
       </div>
 
       <div class="twoColumn">
@@ -80,7 +80,7 @@ exports.render = function (data) {
           
           <section id="events" class="about__events">
             <div class="about__eventsHeader">
-              <h2 class="about__eventsHeaderTitle">events <span class="colorHighlight">and talks</span></h2>
+              <h2 class="about__eventsHeaderTitle">Events and <span class="colorHighlight">live streams</span></h2>
             </div>
             
               <ol class="about__eventsList">
