@@ -1,5 +1,5 @@
 const OpenGraph = require("../../lib/openGraph");
-const pageTitle = "Salma's fake linktree";
+const pageTitle = "My fake Linktree";
 
 exports.data = {
   layout: "links.html",

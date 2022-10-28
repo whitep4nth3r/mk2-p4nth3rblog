@@ -9,7 +9,7 @@ const ClockIcon = require("../_components/svg/clockIcon");
 const DateUtils = require("../../lib/dateUtils");
 const OpenGraph = require("../../lib/openGraph");
 
-const pageTitle = "About whitep4nth3r — biographies, events, links and more.";
+const pageTitle = "All about me";
 
 var md = require("markdown-it")({
   html: true,

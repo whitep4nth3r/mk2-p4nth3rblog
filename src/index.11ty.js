@@ -4,13 +4,13 @@ const NextTwitchStream = require("./_components/nextTwitchStream");
 const NextNonTwitchEvent = require("./_components/nextNonTwitchEvent");
 const GetInvolvedOpenSource = require("./_components/getInvolvedOpenSource");
 const LatestBlogPost = require("./_components/latestBlogPost");
-const pageTitle = "Learn web dev, JavaScript and Jamstack from whitep4nth3r";
+const pageTitle = "Tech streams, blogs and code tutorials";
 
 exports.data = {
   layout: "base.html",
   title: pageTitle,
   metaDescription:
-    "Salma helps developers build stuff, learn things and love what they do. She works at Netlify, streams coding on Twitch, and loves helping people get into tech.",
+    "I write code for your entertainment. I work at Netlify, stream coding on Twitch, and love helping people get into tech.",
   openGraphImageUrl: OpenGraph.generateImageUrl({ title: pageTitle }),
   openGraphImageAlt: OpenGraph.generateImageAlt(pageTitle),
   openGraphImageWidth: OpenGraph.imgWidth,

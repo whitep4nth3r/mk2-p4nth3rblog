@@ -5,7 +5,7 @@ const GithubIcon = require("../_components/svg/githubIcon");
 const YoutubeColor = require("../_components/svg/youtubeColor");
 const AboutTableOfContents = require("../_components/aboutTableOfContents");
 
-const pageTitle = "whitep4nth3r's Stats Dashboard";
+const pageTitle = "My Stats Dashboard";
 
 function loading() {
   return `<span class="dashboard__loading"></span>`;
