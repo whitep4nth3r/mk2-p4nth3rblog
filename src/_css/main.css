@@ -408,16 +408,16 @@ strong {
 .home {
   list-style: none;
   padding-left: 0;
-  display: grid;
+  display: block;
   max-width: var(--grid-max-width);
   margin: auto;
   gap: 1rem 4rem;
-  grid-template-columns: 1fr;
   height: 100%;
 }
 @media screen and (min-width: 48em) {
   .home {
     grid-template-columns: 1fr 1fr;
+    display: grid;
   }
 }
 
@@ -435,7 +435,7 @@ strong {
   font-family: var(--font-family-heading);
   text-decoration: none;
   color: var(--color-fg);
-  font-size: 2rem;
+  font-size: clamp(1.2rem, 2vw, 2rem);
   line-height: 1.2;
   margin-bottom: 1.75rem;
   width: max-content;
@@ -476,7 +476,7 @@ strong {
 }
 
 .homeAbout__name {
-  font-size: clamp(3rem, 4vw, 4rem);
+  font-size: clamp(2rem, 4vw, 4rem);
 }
 .homeAbout__name span {
   display: block;

@@ -28,7 +28,7 @@
   @include font_semibold;
   text-decoration: none;
   color: var(--color-fg);
-  font-size: 2rem;
+  font-size: clamp(1.2rem, 2vw, 2rem);
   line-height: 1.2;
   margin-bottom: 1.75rem;
   @include add_gradient_bottom($marginTop: $gradientMarginTop);

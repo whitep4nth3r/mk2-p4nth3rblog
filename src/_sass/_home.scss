@@ -1,15 +1,15 @@
 .home {
   list-style: none;
   padding-left: 0;
-  display: grid;
+  display: block;
   max-width: var(--grid-max-width);
   margin: auto;
   gap: 1rem 4rem;
-  grid-template-columns: 1fr;
   height: 100%;
 
   @media screen and (min-width: 48em) {
     grid-template-columns: 1fr 1fr;
+    display: grid;
   }
 }
 
