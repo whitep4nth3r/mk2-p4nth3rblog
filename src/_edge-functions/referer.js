@@ -5,7 +5,7 @@ const messages = {
   "reddit.com": "👀 Hello there, Redditor! I see you. Please be nice.",
   "news.ycombinator.com": "👀 Hello there, Orange Site user! I see you. Please be nice.",
   "localhost:8888": `✨ Happy developing ✨`,
-  "to.co": `✨ You found this post on Twitter ✨ <a href="https://twitter.com/intent/tweet?text=Hey%20@whitep4nth3r%21%20I%20found%20your%20blog%20post%20%22{INSERT_TITLE}%22%20on%20Twitter%20and%20I%20love%20it%21%0a%0a{INSERT_LINK}" target="_blank">Say hi!</a>`,
+  "t.co": `✨ You found this post on Twitter ✨ <a href="https://twitter.com/intent/tweet?text=Hey%20@whitep4nth3r%21%20I%20found%20your%20blog%20post%20%22{INSERT_TITLE}%22%20on%20Twitter%20and%20I%20love%20it%21%0a%0a{INSERT_LINK}" target="_blank">Say hi!</a>`,
 };
 
 export default async (request, context) => {
