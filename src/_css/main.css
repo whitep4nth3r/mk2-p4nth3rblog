@@ -2022,6 +2022,7 @@ a.post__linkedHeaderIcon {
   font-weight: var(--font-weight-heading);
   font-family: var(--font-family-heading);
   font-size: 2rem;
+  text-transform: capitalize;
 }
 
 .uses__intro {

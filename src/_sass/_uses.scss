@@ -7,6 +7,7 @@
 
 .uses__sectionHeaderTitle {
   @include grid_header_title;
+  text-transform: capitalize;
 }
 
 .uses__intro {
