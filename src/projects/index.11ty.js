@@ -5,7 +5,7 @@ const GithubStar = require("../_components/svg/githubStar");
 const GithubFork = require("../_components/svg/githubFork");
 const GithubIssue = require("../_components/svg/githubIssue");
 
-const pageTitle = "Open source projects maintained by whitep4nth3r";
+const pageTitle = "Open source projects maintained by Salma Alam-Naylor";
 
 exports.data = {
   layout: "base.html",

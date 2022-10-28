@@ -3,7 +3,7 @@ const Topics = require("../_components/topics");
 const OpenGraph = require("../../lib/openGraph");
 const PageBanner = require("../_components/pageBanner");
 
-const pageTitle = "Explore posts about web development and more from whitep4nth3r";
+const pageTitle = "Explore posts about web development and more from Salma Alam-Naylor";
 
 exports.data = {
   layout: "base.html",

@@ -6,7 +6,7 @@ const Topics = require("../_components/topics");
 const OpenGraph = require("../../lib/openGraph");
 const PageBanner = require("../_components/pageBanner");
 
-const pageTitle = "Learn web development, CSS, Jamstack, JavaScript and more";
+const pageTitle = "Learn web development, CSS, Serverless, JavaScript and more";
 
 function calculatePageUrl(data) {
   const suffix = data.pagination.pageNumber === 0 ? `` : `${data.pagination.pageNumber + 1}/`;
