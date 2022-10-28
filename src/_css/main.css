@@ -49,6 +49,7 @@
   --color-logo: var(--color-fg);
   --post-max-width: 980px;
   --grid-max-width: 1280px;
+  --base-shadow-filter: drop-shadow(0px 0.125rem 0.125rem rgba(0, 0, 0, 0.25));
   --yellow-red-gradient: linear-gradient(
     90deg,
     hsl(359deg 89% 50%) 0%,
@@ -332,7 +333,7 @@ strong {
   width: max-content;
   text-align: center;
   line-height: 1.4;
-  filter: drop-shadow(0px 0.125rem 0.125rem rgba(0, 0, 0, 0.25));
+  filter: var(--base-shadow-filter);
 }
 .header__referer a {
   display: block;
@@ -468,7 +469,7 @@ strong {
 
 .homeAbout__imageBio {
   width: 100%;
-  filter: drop-shadow(0px 0.125rem 0.125rem rgba(0, 0, 0, 0.25));
+  filter: var(--base-shadow-filter);
 }
 .homeAbout__imageBio img {
   border-radius: calc(var(--border-radius-base) * 2);
@@ -605,7 +606,7 @@ strong {
   margin-bottom: 2rem;
   overflow: hidden;
   border-radius: calc(var(--border-radius-base) * 2);
-  filter: drop-shadow(0px 0.125rem 0.125rem rgba(0, 0, 0, 0.25));
+  filter: var(--base-shadow-filter);
 }
 
 .about__meFace img {
@@ -1360,7 +1361,7 @@ a.post__linkedHeaderIcon {
   background-color: var(--cta2-bg);
   border-radius: calc(var(--border-radius-base) * 2);
   padding: 0.5rem;
-  filter: drop-shadow(0px 0.125rem 0.125rem rgba(0, 0, 0, 0.25));
+  filter: var(--base-shadow-filter);
 }
 
 .blogSidebarAuthor__cta2__text {
@@ -1396,7 +1397,7 @@ a.post__linkedHeaderIcon {
   margin-right: auto;
   border-radius: calc(var(--border-radius-base) * 2);
   max-width: 8rem;
-  filter: drop-shadow(0px 0.125rem 0.125rem rgba(0, 0, 0, 0.25));
+  filter: var(--base-shadow-filter);
 }
 @media screen and (min-width: 48em) {
   .blogSidebarAuthor__imgContainer {
@@ -2075,7 +2076,7 @@ a.post__linkedHeaderIcon {
   max-width: 10rem;
   margin-bottom: 1rem;
   border-radius: var(--border-radius-base);
-  filter: drop-shadow(0px 0.125rem 0.125rem rgba(0, 0, 0, 0.25));
+  filter: var(--base-shadow-filter);
 }
 @media screen and (min-width: 600px) {
   .uses__listItemImg {
@@ -2263,7 +2264,7 @@ a.post__linkedHeaderIcon {
   text-align: left;
   border-radius: var(--border-radius-base);
   background-color: var(--lighthouse-container-bg);
-  filter: drop-shadow(0px 0.125rem 0.125rem rgba(0, 0, 0, 0.25));
+  filter: var(--base-shadow-filter);
 }
 
 .lighthouse__header {
@@ -2662,12 +2663,19 @@ pre[class*=language-] {
   display: block;
 }
 
+.links__html {
+  display: grid;
+  place-items: center;
+  height: 100vmin;
+}
+
 .links__body {
   padding: 2rem;
   max-width: 400px;
-  background-color: transparent;
-  margin: auto;
   text-align: center;
+  border-radius: calc(var(--border-radius-base) * 4);
+  filter: var(--base-shadow-filter);
+  margin-bottom: 2rem;
 }
 
 .links__title {
@@ -2686,7 +2694,7 @@ pre[class*=language-] {
 
 .links__image {
   border-radius: 100%;
-  filter: drop-shadow(0px 0.125rem 0.125rem rgba(0, 0, 0, 0.25));
+  filter: var(--base-shadow-filter);
   margin-bottom: 2rem;
 }
 
@@ -2709,8 +2717,13 @@ pre[class*=language-] {
   text-decoration: none;
   padding: 1rem 2rem;
   display: block;
-  border-radius: calc(var(--border-radius-base) * 4);
-  background-color: var(--black);
+  border-radius: 0.75rem;
+  background-color: var(--grey-dark);
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
 }
 
 .links__listItemLink:focus {

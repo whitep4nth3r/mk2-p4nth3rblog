@@ -28,15 +28,7 @@ exports.render = function (data) {
     </div>
     <div>
       <div class="home__item">
-      <h2 class="home__itemTitle">build <span class="colorHighlight">stuff</span></h2>
-        ${GetInvolvedOpenSource()}
-      </div>
-      <div class="home__item">
-        <h2 class="home__itemTitle">learn <span class="colorHighlight">things</span></h2>
-        ${LatestBlogPost({ post: latestPost.post })}
-      </div>
-      <div class="home__item">
-        <h2 class="home__itemTitle">love <span class="colorHighlight">what you do</span></h2>
+        <h2 class="home__itemTitle">Watch <span class="colorHighlight">live streams</span></h2>
           ${
             events.next.type === "twitch"
               ? NextTwitchStream({
@@ -46,6 +38,14 @@ exports.render = function (data) {
                 })
               : NextNonTwitchEvent({ event: events.next })
           }
+      </div>
+      <div class="home__item">
+        <h2 class="home__itemTitle">Read <span class="colorHighlight">blogs and tutorials</span></h2>
+        ${LatestBlogPost({ post: latestPost.post })}
+      </div>
+      <div class="home__item">
+        <h2 class="home__itemTitle">Join the <span class="colorHighlight">community</span></h2>
+        ${GetInvolvedOpenSource()}
       </div>
     </div>
   </section>

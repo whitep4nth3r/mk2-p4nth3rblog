@@ -44,7 +44,7 @@ exports.render = function (data) {
   return /* html */ `
     <div class="page__index">
       <div class="page__header">
-        <h1 class="page__headerTitle">love <span class="colorHighlight">what you do</span></h1>
+        <h1 class="page__headerTitle">All about <span class="colorHighlight">me</span></h1>
       </div>
 
       <div class="twoColumn">

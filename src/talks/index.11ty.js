@@ -2,7 +2,6 @@ const Config = require("../../lib/config.js");
 const PostCard = require("../_components/postCard");
 const Pagination = require("../_components/pagination");
 const OpenGraph = require("../../lib/openGraph");
-const PageBanner = require("../_components/pageBanner");
 
 const pageTitle = "Watch talks about web development by Salma Alam-Naylor";
 
@@ -31,13 +30,8 @@ exports.render = function (data) {
   
   <section class="page__index">
     <div class="page__header">
-      <h1 class="page__headerTitle">recorded <span class="colorHighlight">talks</span></h1>
+      <h1 class="page__headerTitle">Conference and meetup <span class="colorHighlight">talks</span></h1>
     </div>
-
-    ${PageBanner({
-      title: "Conference and meetup talks",
-      copy: "I give live talks about front end development, Jamstack, serverless and more. Here's a selection of recorded talks complete with recordings, slides and transcripts.",
-    })}
 
     <ol class="grid">
       ${data.pagination.items

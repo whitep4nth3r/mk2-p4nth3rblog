@@ -24,7 +24,7 @@ exports.render = function (data) {
   return /* html */ `
   <section class="page__index">
     <div class="page__header">
-      <h1 class="page__headerTitle">build <span class="colorHighlight">stuff</span></h1>
+      <h1 class="page__headerTitle">Open source <span class="colorHighlight">projects</span></h1>
     </div>
     <ol class="grid">
       ${projects

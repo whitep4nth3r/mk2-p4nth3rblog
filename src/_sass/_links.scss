@@ -1,9 +1,16 @@
+.links__html {
+  display: grid;
+  place-items: center;
+  height: 100vmin;
+}
+
 .links__body {
   padding: 2rem;
   max-width: 400px;
-  background-color: transparent;
-  margin: auto;
   text-align: center;
+  border-radius: calc(var(--border-radius-base) * 4);
+  filter: var(--base-shadow-filter);
+  margin-bottom: 2rem;
 }
 
 .links {
@@ -23,7 +30,7 @@
 
 .links__image {
   border-radius: 100%;
-  filter: drop-shadow(0px 0.125rem 0.125rem rgba(0, 0, 0, 0.25));
+  filter: var(--base-shadow-filter);
   margin-bottom: 2rem;
 }
 
@@ -45,8 +52,13 @@
   text-decoration: none;
   padding: 1rem 2rem;
   display: block;
-  border-radius: calc(var(--border-radius-base) * 4);
-  background-color: var(--black);
+  border-radius: 0.75rem;
+  background-color: var(--grey-dark);
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
 }
 
 .links__listItemLink:focus {

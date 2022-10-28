@@ -1,7 +1,6 @@
 const Config = require("../../lib/config");
 const Topics = require("../_components/topics");
 const OpenGraph = require("../../lib/openGraph");
-const PageBanner = require("../_components/pageBanner");
 
 const pageTitle = "Explore posts about web development and more from Salma Alam-Naylor";
 
@@ -21,13 +20,8 @@ exports.render = function (data) {
   return /*html*/ `
     <section class="page__index">
       <div class="page__header">
-        <h1 class="page__headerTitle">explore posts by <span class="colorHighlight">topic</span></h1>
+        <h1 class="page__headerTitle">Explore posts by <span class="colorHighlight">topic</span></h1>
       </div>
-
-      ${PageBanner({
-        title: "Blog posts and tutorials",
-        copy: "I write and live stream about front end development. Read tutorials and quick tips on HTML, CSS, JavaScript and Jamstack. Click on the categories to filter posts by topic.",
-      })}
 
       ${Topics({ topics, showLinkToBlog: true })}
     </section>`;
