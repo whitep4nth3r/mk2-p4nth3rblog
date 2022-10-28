@@ -4,7 +4,6 @@ const Pagination = require("../_components/pagination");
 const PostCard = require("../_components/postCard");
 const Topics = require("../_components/topics");
 const OpenGraph = require("../../lib/openGraph");
-const PageBanner = require("../_components/pageBanner");
 
 const pageTitle = "Learn web development, CSS, Serverless, JavaScript and more";
 
@@ -42,13 +41,8 @@ exports.render = function (data) {
 
   <section class="page__index">
     <div class="page__header">
-      <h1 class="page__headerTitle">learn <span class="colorHighlight">things</span></h1>
+      <h1 class="page__headerTitle">Blogs and <span class="colorHighlight">tutorials</span></h1>
     </div>
-
-    ${PageBanner({
-      title: "Blog posts and tutorials",
-      copy: "I write and live stream about front end development. Read tutorials and quick tips on HTML, CSS, JavaScript and Jamstack.",
-    })}
 
     <div class="blog__searchAndFilters">
       <div id="autocomplete" class="ais">

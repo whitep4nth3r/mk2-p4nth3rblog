@@ -1,55 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="links__html">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>{{ title }}</title>
-    <meta name="description" content="{{ metaDescription }}" />
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="/css/main.css" />
-
-    <!-- Open Graph -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@whitep4nth3r" />
-    <meta name="twitter:creator" content="@whitep4nth3r" />
-
-    <meta property="og:url" content="{{ openGraphUrl }}" />
-    <meta property="og:title" content="{{ title }}" />
-    <meta property="og:description" content="{{ metaDescription }}" />
-    <meta property="og:locale" content="en_GB" />
-
-    <meta property="og:image" content="{{ openGraphImageUrl }}" />
-    <meta property="og:image:alt" content="{{ openGraphImageAlt }}" />
-    <meta property="og:image:width" content="{{ openGraphImageWidth }}" />
-    <meta property="og:image:height" content="{{ openGraphImageHeight }}" />
-
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="whitep4nth3r.com" />
-
-    <meta name="monetization" content="$ilp.uphold.com/J7y7wkRezRYL" />
-
-    <!-- Favicons -->
-    <link rel="icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0f111a" />
-    <meta name="msapplication-TileColor" content="#0f111a" />
-    <meta name="theme-color" content="#0f111a" />
-
-    <!-- RSS -->
-    <link
-      rel="alternate"
-      type="application/rss+xml"
-      title="RSS Feed for whitep4nth3r.com"
-      href="https://whitep4nth3r.com/feed.xml"
-    />
-
-    <meta name="ahrefs-site-verification" content="94d7e941da97f60c01de0a2e8983b05fb5194a63bd79cad02f6ef7da26ee87c3" />
+    {% include "head_base.html" %}
   </head>
   <body class="links__body">
     <main id="main_content">{{ content }}</main>

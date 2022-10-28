@@ -26,7 +26,7 @@ exports.render = function (data) {
   return /* html */ `
     <section class="page__index">
       <div class="twoColumn__header">
-        <h1 class="twoColumn__headerTitle">things <span class="colorHighlight">I use</span></h1>
+        <h1 class="twoColumn__headerTitle">Things <span class="colorHighlight">I use</span></h1>
       </div>
 
       <div class="twoColumn">

@@ -29,7 +29,7 @@ exports.render = function (data) {
 
   <section class="page__index">
     <div class="twoColumn__header">
-        <h1 class="twoColumn__headerTitle">stats <span class="colorHighlight">dashboard</span></h1>
+        <h1 class="twoColumn__headerTitle">Stats <span class="colorHighlight">dashboard</span></h1>
     </div>
 
     <div class="twoColumn">
