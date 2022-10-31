@@ -23,29 +23,33 @@ exports.render = function (data) {
 
   return /*html*/ `
   <section class="home">
-    <div class="home__sticky">
-      ${HomeAbout({ person })}
+    <div>
+      <div class="home__sticky">
+        ${HomeAbout({ person })}
+      </div>
     </div>
 
-    <div class="home__item">
-      <h2 class="home__itemTitle">Watch <span class="colorHighlight">live streams</span></h2>
-        ${
-          events.next.type === "twitch"
-            ? NextTwitchStream({
-                stream: events.next,
-                link: events.next.link,
-                isLive: events.isLive,
-              })
-            : NextNonTwitchEvent({ event: events.next })
-        }
-      </div>
+    <div>
       <div class="home__item">
-        <h2 class="home__itemTitle">Read <span class="colorHighlight">blogs and tutorials</span></h2>
-        ${LatestBlogPost({ post: latestPost.post })}
-      </div>
-      <div class="home__item">
-        <h2 class="home__itemTitle">Join the <span class="colorHighlight">community</span></h2>
-        ${GetInvolvedOpenSource()}
+        <h2 class="home__itemTitle">Watch <span class="colorHighlight">live streams</span></h2>
+          ${
+            events.next.type === "twitch"
+              ? NextTwitchStream({
+                  stream: events.next,
+                  link: events.next.link,
+                  isLive: events.isLive,
+                })
+              : NextNonTwitchEvent({ event: events.next })
+          }
+        </div>
+        <div class="home__item">
+          <h2 class="home__itemTitle">Read <span class="colorHighlight">blogs and tutorials</span></h2>
+          ${LatestBlogPost({ post: latestPost.post })}
+        </div>
+        <div class="home__item">
+          <h2 class="home__itemTitle">Join the <span class="colorHighlight">community</span></h2>
+          ${GetInvolvedOpenSource()}
+        </div>
       </div>
   </section>
 
