@@ -1,38 +1,46 @@
 const DateUtils = require("../../lib/dateUtils.js");
+const VideoEmbed = require("../_components/videoEmbed");
+const TweetEmbed = require("../_components/tweetEmbed");
 
 var md = require("markdown-it")({
   html: true,
 });
 
-//big to do on image optimisation }
+//big to do on image optimisation
 
-const ActivityFeedItem = ({ title, date, description, image, link, type }) => {
+const ActivityFeedItem = ({ item }) => {
+  const heading = item.title || item.name;
+
   return `<div class="activityFeedItem">
-      <h2>${title}</h2>
-      <time>${DateUtils.formatDateForDisplay(date)}</time>
+      <h2>${heading}</h2>
+      <time>${DateUtils.formatDateForDisplay(item.date)}</time>
+
+      ${item.type === "tweet" ? TweetEmbed({ tweetUrl: item.tweetEmbed.tweetUrl }) : ""}
+      ${item.type === "youtube" ? VideoEmbed({ embedUrl: item.videoEmbed.embedUrl, title: item.videoEmbed.title }) : ""}
+
 
       ${
-        description
+        item.description
           ? `
-      ${md.render(description)}
+      ${md.render(item.description)}
       `
           : ""
       }
       ${
-        link
+        item.link
           ? `
-      <a href="${link}" target="_blank">here is the link</a>`
+      <a href="${item.link}" target="_blank">here is the link</a>`
           : ""
       }
         
       ${
-        image
+        item.image
           ? `
-    <img src="${image.url}" alt"${image.description}" />`
+    <img src="${item.image.url}" alt"${item.image.description}" />`
           : ""
       }
 
-  </div>`;
+  </div><hr />`;
 };
 
 module.exports = ActivityFeedItem;

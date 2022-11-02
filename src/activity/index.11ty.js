@@ -1,7 +1,5 @@
 const OpenGraph = require("../../lib/openGraph");
 const pageTitle = "My activity feed";
-const VideoEmbed = require("../_components/videoEmbed");
-const TweetEmbed = require("../_components/tweetEmbed");
 const ActivityFeedItem = require("../_components/activityFeedItem");
 
 exports.data = {
@@ -31,26 +29,6 @@ exports.render = function (data) {
   return /* html */ `
   
   <section>
-    <div>
-      ${activityFeed
-        .map((item) => {
-          switch (item.type) {
-            case "youtube":
-              return VideoEmbed({ embedUrl: item.videoEmbed.embedUrl, title: item.videoEmbed.title });
-            case "tweet":
-              return TweetEmbed({ tweetUrl: item.tweetEmbed.tweetUrl });
-            default:
-              return ActivityFeedItem({
-                title: item.title || item.name,
-                date: item.date,
-                description: item.description,
-                image: item.image,
-                link: item.link,
-                type: item.type,
-              });
-          }
-        })
-        .join("")}
-    </div>
+      ${activityFeed.map((item) => ActivityFeedItem({ item })).join("")}
   </section>`;
 };
