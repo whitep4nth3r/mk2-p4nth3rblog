@@ -47,6 +47,7 @@
   --color-link: var(--color-fg);
   --color-highlight: var(--yellow);
   --color-logo: var(--color-fg);
+  --feed-max-width: 600px;
   --post-max-width: 980px;
   --grid-max-width: 1280px;
   --base-shadow-filter: drop-shadow(0px 0.125rem 0.125rem rgba(0, 0, 0, 0.25));
@@ -2731,6 +2732,48 @@ pre[class*=language-] {
   --box-shadow-bg: var(--white);
   --box-shadow-highlight: var(--black);
   border-radius: calc(var(--border-radius-base) * 4);
+}
+
+.activityFeed {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--feed-max-width);
+}
+
+.activityFeed__header {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  max-width: max-content;
+}
+.activityFeed__header:after {
+  content: "";
+  width: 100%;
+  height: 0.125rem;
+  display: block;
+  margin-top: 1rem;
+  background: var(--yellow-red-gradient);
+}
+
+.activityFeed__meta {
+  font-weight: var(--font-weight-heading);
+  font-family: var(--font-family-heading);
+  color: var(--color-fg);
+  font-size: 1rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0.25rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.activity__metaIcon {
+  color: var(--color-fg);
+  display: flex;
+}
+
+.activity__metaText {
+  display: flex;
+  margin-right: 1rem;
 }
 
 /* START TEMP */

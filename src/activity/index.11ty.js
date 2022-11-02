@@ -28,7 +28,8 @@ exports.render = function (data) {
 
   return /* html */ `
   
-  <section>
+  <section class="activityFeed">
+      <h1 class="activityFeed__header">Activity feed</h1>
       ${activityFeed.map((item) => ActivityFeedItem({ item })).join("")}
   </section>`;
 };
