@@ -13,14 +13,36 @@ exports.data = {
 };
 
 exports.render = function (data) {
-  const { postSummaries } = data;
-  const activityFeed = [...postSummaries];
+  const { postSummaries, talkSummaries, feedEvents } = data;
+
+  const orderByDate = (a, b) => {
+    if (a.date < b.date) {
+      return 1;
+    }
+
+    return -1;
+  };
+
+  const activityFeed = [...postSummaries, ...talkSummaries, ...feedEvents].sort(orderByDate);
 
   return /* html */ `
   
   <section>
     <div>
-      ${activityFeed.map((item) => `<div>${item.title}</div>`).join("")}
+      ${activityFeed
+        .map((item) => {
+          switch (item.type) {
+            case "event":
+              return `<p>${item.name}</p>`;
+            case "postSummary":
+              return `<p>${item.title}</p>`;
+            case "talkSummary":
+              return `<p>${item.title}</p>`;
+            default:
+              return "";
+          }
+        })
+        .join("")}
     </div>
   </section>`;
 };

@@ -1,7 +1,8 @@
 const ContentfulBlogPosts = require("../../lib/contentfulBlogPosts");
 
 module.exports = async function () {
-  const postSummaries = await ContentfulBlogPosts.getAllSummaries();
+  const data = await ContentfulBlogPosts.getAllSummaries();
+  const postSummaries = data.map((item) => ({ ...item, type: "postSummary" }));
 
   return postSummaries;
 };
