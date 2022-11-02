@@ -1,6 +1,7 @@
 const OpenGraph = require("../../lib/openGraph");
 const pageTitle = "My activity feed";
 const VideoEmbed = require("../_components/videoEmbed");
+const ActivityFeedItem = require("../_components/activityFeedItem.js");
 
 exports.data = {
   layout: "base.html",
@@ -33,22 +34,17 @@ exports.render = function (data) {
       ${activityFeed
         .map((item) => {
           switch (item.type) {
-            case "podcast":
-              return `<p>${item.title}</p><img src="${item.image.url}" alt="${item.image.description}" />`;
-            case "award":
-              return `<p>${item.title}</p><img src="${item.image.url}" alt="${item.image.description}" />`;
-            case "link":
-              return `<p>${item.title}</p>`;
             case "youtube":
               return VideoEmbed({ embedUrl: item.videoEmbed.embedUrl, title: item.videoEmbed.title });
-            case "event":
-              return `<p>${item.name}</p>`;
-            case "postSummary":
-              return `<p>${item.title}</p>`;
-            case "talkSummary":
-              return `<p>${item.title}</p>`;
             default:
-              return "";
+              return ActivityFeedItem({
+                title: item.title,
+                date: item.date,
+                description: item.description,
+                image: item.image,
+                link: item.link,
+                type: item.type,
+              });
           }
         })
         .join("")}
