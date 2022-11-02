@@ -1,5 +1,6 @@
 const OpenGraph = require("../../lib/openGraph");
 const pageTitle = "My activity feed";
+const VideoEmbed = require("../_components/videoEmbed");
 
 exports.data = {
   layout: "base.html",
@@ -13,7 +14,7 @@ exports.data = {
 };
 
 exports.render = function (data) {
-  const { postSummaries, talkSummaries, feedEvents } = data;
+  const { postSummaries, talkSummaries, activityFeedItems } = data;
 
   const orderByDate = (a, b) => {
     if (a.date < b.date) {
@@ -23,7 +24,7 @@ exports.render = function (data) {
     return -1;
   };
 
-  const activityFeed = [...postSummaries, ...talkSummaries, ...feedEvents].sort(orderByDate);
+  const activityFeed = [...postSummaries, ...talkSummaries, ...activityFeedItems].sort(orderByDate);
 
   return /* html */ `
   
@@ -32,6 +33,14 @@ exports.render = function (data) {
       ${activityFeed
         .map((item) => {
           switch (item.type) {
+            case "podcast":
+              return `<p>${item.title}</p><img src="${item.image.url}" alt="${item.image.description}" />`;
+            case "award":
+              return `<p>${item.title}</p><img src="${item.image.url}" alt="${item.image.description}" />`;
+            case "link":
+              return `<p>${item.title}</p>`;
+            case "youtube":
+              return VideoEmbed({ embedUrl: item.videoEmbed.embedUrl, title: item.videoEmbed.title });
             case "event":
               return `<p>${item.name}</p>`;
             case "postSummary":
