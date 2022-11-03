@@ -4,6 +4,7 @@ const NextTwitchStream = require("./_components/nextTwitchStream");
 const NextNonTwitchEvent = require("./_components/nextNonTwitchEvent");
 const GetInvolvedOpenSource = require("./_components/getInvolvedOpenSource");
 const LatestBlogPost = require("./_components/latestBlogPost");
+const ActivityFeedItem = require("./_components/activityFeedItem");
 const pageTitle = "Tech streams, blogs and code tutorials";
 
 exports.data = {
@@ -19,33 +20,41 @@ exports.data = {
 };
 
 exports.render = function (data) {
-  const { events, latestPost, person } = data;
+  const { events, latestPost, person, activityFeed } = data;
 
   return /*html*/ `
   <section class="home">
-    <div class="home__sticky">
-      ${HomeAbout({ person })}
+    <div>
+      <div class="home__sticky">
+        ${HomeAbout({ person })}
+      </div>
     </div>
 
-    <div class="home__item">
-      <h2 class="home__itemTitle">Watch <span class="colorHighlight">live streams</span></h2>
-        ${
-          events.next.type === "twitch"
-            ? NextTwitchStream({
-                stream: events.next,
-                link: events.next.link,
-                isLive: events.isLive,
-              })
-            : NextNonTwitchEvent({ event: events.next })
-        }
-      </div>
+    <div>
       <div class="home__item">
-        <h2 class="home__itemTitle">Read <span class="colorHighlight">blogs and tutorials</span></h2>
-        ${LatestBlogPost({ post: latestPost.post })}
-      </div>
-      <div class="home__item">
-        <h2 class="home__itemTitle">Join the <span class="colorHighlight">community</span></h2>
-        ${GetInvolvedOpenSource()}
+        <h2 class="home__itemTitle">Watch <span class="colorHighlight">live streams</span></h2>
+          ${
+            events.next.type === "twitch"
+              ? NextTwitchStream({
+                  stream: events.next,
+                  link: events.next.link,
+                  isLive: events.isLive,
+                })
+              : NextNonTwitchEvent({ event: events.next })
+          }
+        </div>
+        <div class="home__item">
+          <h2 class="home__itemTitle">Latest <span class="colorHighlight">activity</span></h2>
+          ${ActivityFeedItem({ item: activityFeed[0] })}
+        </div>
+        <div class="home__item">
+          <h2 class="home__itemTitle">Read <span class="colorHighlight">blogs and tutorials</span></h2>
+          ${LatestBlogPost({ post: latestPost.post })}
+        </div>
+        <div class="home__item">
+          <h2 class="home__itemTitle">Join the <span class="colorHighlight">community</span></h2>
+          ${GetInvolvedOpenSource()}
+        </div>
       </div>
   </section>
 
