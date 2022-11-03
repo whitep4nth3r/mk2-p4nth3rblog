@@ -25,14 +25,6 @@ exports.data = {
 };
 
 exports.render = function (data) {
-  // const orderByDate = (a, b) => {
-  //   if (a.date < b.date) {
-  //     return 1;
-  //   }
-
-  //   return -1;
-  // };
-
   return /* html */ `
   <section class="activityFeed">
     <h1 class="activityFeed__header">Activity feed</h1>

@@ -44,7 +44,7 @@ function NextNonTwitchEvent({ event }) {
             </p>
           </a>
 
-        <p class="nextTwitchStream__streamInfo">${event.shortDescription}</p>
+        <p class="nextTwitchStream__streamInfo">${event.description}</p>
 
         <div>
           <a href="${event.link}"

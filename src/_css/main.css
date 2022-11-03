@@ -47,7 +47,7 @@
   --color-link: var(--color-fg);
   --color-highlight: var(--yellow);
   --color-logo: var(--color-fg);
-  --feed-max-width: 600px;
+  --feed-max-width: 510px;
   --post-max-width: 980px;
   --grid-max-width: 1280px;
   --base-shadow-filter: drop-shadow(0px 0.125rem 0.125rem rgba(0, 0, 0, 0.25));
@@ -2754,6 +2754,22 @@ pre[class*=language-] {
   background: var(--yellow-red-gradient);
 }
 
+.activityFeed__item {
+  margin-bottom: 4rem;
+}
+
+.activityFeed__type {
+  --feed-badge-bg: var(--yellow);
+  --feed-badge-fg: var(--black);
+  font-weight: var(--font-weight-heading);
+  font-family: var(--font-family-heading);
+  background-color: var(--feed-badge-bg);
+  color: var(--feed-badge-fg);
+  padding: 0.5rem 0.75rem;
+  font-size: 0.75rem;
+  border-radius: calc(var(--border-radius-base) * 2.5);
+}
+
 .activityFeed__meta {
   font-weight: var(--font-weight-heading);
   font-family: var(--font-family-heading);
@@ -2764,16 +2780,57 @@ pre[class*=language-] {
   gap: 0.25rem;
   align-items: center;
   margin-bottom: 1rem;
+  justify-content: space-between;
+}
+
+.activityFeed__metaDate {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  align-items: center;
 }
 
 .activity__metaIcon {
   color: var(--color-fg);
-  display: flex;
 }
 
-.activity__metaText {
-  display: flex;
-  margin-right: 1rem;
+.activityFeed__title {
+  font-weight: var(--font-weight-heading);
+  font-family: var(--font-family-heading);
+  font-size: 1.6rem;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.activityFeed__titleLink {
+  display: block;
+  text-decoration: none;
+}
+.activityFeed__titleLink:hover, .activityFeed__titleLink:active {
+  color: var(--color-highlight);
+}
+
+.activityFeed__description {
+  margin-bottom: 2rem;
+}
+
+.activityFeed__description--withImage {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 1rem;
+}
+
+.activityFeed__description p {
+  font-weight: var(--font-weight-main);
+  font-family: var(--font-family-main);
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+.activityFeed__description__image {
+  border-radius: calc(var(--border-radius-base) * 2);
+  filter: var(--base-shadow-filter);
 }
 
 /* START TEMP */

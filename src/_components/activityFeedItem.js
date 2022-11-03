@@ -9,47 +9,98 @@ var md = require("markdown-it")({
 
 //big to do on image optimisation
 
-function title({ title, link }) {
-  if (link) {
-    return `<a href="${link}" target="_blank"><h2>${title}</h2></a>`;
+function title(item) {
+  const heading = item.title || item.name;
+  let href = false;
+
+  if (item.type === "talk") {
+    href = `/talks/${item.slug}/`;
+  }
+
+  if (item.type === "post") {
+    href = `/blog/${item.slug}/`;
+  }
+
+  if (item.link) {
+    href = item.link;
+  }
+
+  if (href) {
+    return `<a href="${href}" target="_blank" class="activityFeed__titleLink"><h2 class="activityFeed__title">${heading}</h2></a>`;
   } else {
-    return `<h2>${title}</h2>`;
+    return `<h2 class="activityFeed__title">${heading}</h2>`;
   }
 }
 
-const ActivityFeedItem = ({ item }) => {
-  const heading = item.title || item.name;
+function description(item) {
+  if (item.description) {
+    return `<div class="activityFeed__description">${md.render(item.description)}</div>`;
+  }
 
+  if (item.excerpt) {
+    const image = item.featuredImage || item.speakerDeckLink.image;
+    return `<div class="activityFeed__description activityFeed__description--withImage">
+      <div>  
+        ${md.render(item.excerpt)}
+      </div>
+      <img src="${image.url}?w=150" 
+          alt="${image.description}"
+          height="${image.height}"
+          width="${image.width}"
+          class="activityFeed__description__image"
+          loading="lazy"/>
+    </div> 
+    `;
+  }
+
+  return "";
+}
+
+function image(image) {
+  if (image) {
+    return `<img src="${image.url}" alt"${image.description}" />`;
+  }
+
+  return "";
+}
+
+function embed(item) {
+  switch (item.type) {
+    case "tweet":
+      return TweetEmbed({ tweetUrl: item.tweetEmbed.tweetUrl });
+    case "youtube":
+      return VideoEmbed({ embedUrl: item.videoEmbed.embedUrl, title: item.videoEmbed.title, showTitle: false });
+    default:
+      return "";
+  }
+}
+
+const activityType = {
+  award: "Award",
+  event: "Event",
+  link: "Did a thing",
+  podcast: "Podcast",
+  post: "Blog post",
+  talk: "Gave a talk",
+  tweet: "Twitter",
+  youtube: "YouTube video",
+};
+
+const ActivityFeedItem = ({ item }) => {
   return `<div class="activityFeed__item">
     <div class="activityFeed__meta">
-      <span class="activity__metaIcon">${CalendarIcon()}</span>
-      <span class="activity__metaText">${DateUtils.formatDateForDisplay(item.date)}</span>
+      <span class="activityFeed__metaDate">
+        <span class="activity__metaIcon">${CalendarIcon()}</span>
+        <span class="activity__metaText">${DateUtils.formatDateForDisplay(item.date)}</span>
+      </span>
+      <span class="activityFeed__type">${activityType[item.type]}</span>
     </div>
-    ${title({ title: heading, link: item.link })}
 
-      ${item.type === "tweet" ? TweetEmbed({ tweetUrl: item.tweetEmbed.tweetUrl }) : ""}
-      ${
-        item.type === "youtube"
-          ? VideoEmbed({ embedUrl: item.videoEmbed.embedUrl, title: item.videoEmbed.title, showTitle: false })
-          : ""
-      }
-
-      ${
-        item.description
-          ? `
-      ${md.render(item.description)}
-      `
-          : ""
-      }
-    
-      ${
-        item.image
-          ? `
-    <img src="${item.image.url}" alt"${item.image.description}" />`
-          : ""
-      }
-
-  </div><hr />`;
+      ${title(item)}
+      ${description(item)}
+      ${embed(item)}
+      ${image(item.image)}
+    </div>`;
 };
 
 module.exports = ActivityFeedItem;
