@@ -27,7 +27,6 @@ exports.render = function (data) {
     <div>
       <div class="home__sticky">
         ${HomeAbout({ person })}
-        <a href="/activity" class="seeAllCta">👀 See my new activity feed <span class="colorHighlight" aria-hidden="true">→</span></a>
       </div>
     </div>
 

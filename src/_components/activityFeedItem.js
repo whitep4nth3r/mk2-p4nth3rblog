@@ -58,7 +58,13 @@ function description(item) {
 
 function image(image) {
   if (image) {
-    return `<img src="${image.url}" alt"${image.description}" />`;
+    return `<img 
+          src="${image.url}?w=510" 
+          alt="${image.description}"
+          height="${image.height}"
+          width="${image.width}"
+          class="activityFeed__description__image"
+          loading="lazy" />`;
   }
 
   return "";

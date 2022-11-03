@@ -512,6 +512,18 @@ strong {
   width: auto;
 }
 
+.homeAbout__seeAllCta {
+  font-weight: var(--font-weight-heading);
+  font-family: var(--font-family-heading);
+  margin-top: 3rem;
+  margin-bottom: 4rem;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  padding: 1rem 0;
+  word-break: break-word;
+  display: block;
+}
+
 .blog__item:first-of-type .postCard,
 .blog__item:first-of-type .postCard__topicsGroup, .blog__item:only-of-type .postCard,
 .blog__item:only-of-type .postCard__topicsGroup {
@@ -1784,6 +1796,7 @@ a.post__linkedHeaderIcon {
 .eleventy-plugin-youtube-embed {
   margin-bottom: 2rem;
   margin-top: 2rem;
+  filter: var(--base-shadow-filter);
 }
 
 .videoEmbed__tiktok {
