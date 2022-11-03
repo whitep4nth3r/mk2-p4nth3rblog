@@ -87,7 +87,7 @@ const activityType = {
   link: "Did a thing",
   podcast: "Podcast",
   post: "Blog post",
-  talk: "Gave a talk",
+  talk: "Published a talk",
   tweet: "Twitter",
   youtube: "YouTube video",
 };
