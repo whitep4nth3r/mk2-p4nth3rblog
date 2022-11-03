@@ -46,8 +46,7 @@
 
   a {
     color: var(--color-highlight);
-    text-decoration: underline;
-    text-underline-offset: 0.25rem;
+    text-decoration: none;
     @include font_semibold;
   }
 }

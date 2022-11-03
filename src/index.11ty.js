@@ -4,6 +4,7 @@ const NextTwitchStream = require("./_components/nextTwitchStream");
 const NextNonTwitchEvent = require("./_components/nextNonTwitchEvent");
 const GetInvolvedOpenSource = require("./_components/getInvolvedOpenSource");
 const LatestBlogPost = require("./_components/latestBlogPost");
+const ActivityFeedItem = require("./_components/activityFeedItem");
 const pageTitle = "Tech streams, blogs and code tutorials";
 
 exports.data = {
@@ -19,13 +20,14 @@ exports.data = {
 };
 
 exports.render = function (data) {
-  const { events, latestPost, person } = data;
+  const { events, latestPost, person, activityFeed } = data;
 
   return /*html*/ `
   <section class="home">
     <div>
       <div class="home__sticky">
         ${HomeAbout({ person })}
+        <a href="/activity" class="seeAllCta">👀 See my new activity feed <span class="colorHighlight" aria-hidden="true">→</span></a>
       </div>
     </div>
 
@@ -41,6 +43,10 @@ exports.render = function (data) {
                 })
               : NextNonTwitchEvent({ event: events.next })
           }
+        </div>
+        <div class="home__item">
+          <h2 class="home__itemTitle">Latest <span class="colorHighlight">activity</span></h2>
+          ${ActivityFeedItem({ item: activityFeed[0] })}
         </div>
         <div class="home__item">
           <h2 class="home__itemTitle">Read <span class="colorHighlight">blogs and tutorials</span></h2>
