@@ -46,8 +46,7 @@
 
   a {
     color: var(--color-highlight);
-    text-decoration: underline;
-    text-underline-offset: 0.25rem;
+    text-decoration: none;
     @include font_semibold;
   }
 }
@@ -61,4 +60,15 @@
   img {
     width: auto;
   }
+}
+
+.homeAbout__seeAllCta {
+  @include font_semibold;
+  margin-top: 3rem;
+  margin-bottom: 4rem;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  padding: 1rem 0;
+  word-break: break-word;
+  display: block;
 }

@@ -9,6 +9,7 @@
 .eleventy-plugin-youtube-embed {
   margin-bottom: 2rem;
   margin-top: 2rem;
+  filter: var(--base-shadow-filter);
 }
 
 .videoEmbed__tiktok {
