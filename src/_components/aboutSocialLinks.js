@@ -4,7 +4,6 @@ const TwitchIcon = require("./svg/twitchIcon");
 const TwitterIcon = require("./svg/twitterIcon");
 const YoutubeSquare = require("./svg/youtubeSquare");
 const DevIcon = require("./svg/devIcon");
-const PolyworkIcon = require("./svg/polyworkIcon");
 const FeedIcon = require("./svg/feedIcon");
 
 function AboutSocialLinks() {
@@ -27,9 +26,6 @@ function AboutSocialLinks() {
     </li>
     <li>
       <a href="https://dev.to/whitep4nth3r" class="about__socialLinksItem" target="_blank" rel="nofollow noreferrer">${DevIcon()} DEV</a>
-    </li>
-    <li>
-      <a href="https://polywork.com/whitep4nth3r" class="about__socialLinksItem" target="_blank" rel="nofollow noreferrer">${PolyworkIcon()} Polywork</a>
     </li>
     <li>
       <a href="/feed.xml" class="about__socialLinksItem" target="_blank">${FeedIcon()} Feed</a>

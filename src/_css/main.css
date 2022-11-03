@@ -76,6 +76,7 @@
   --lighthouse-red-stroke: rgb(250, 40, 52);
   --lighthouse-red-bg: rgb(52, 31, 32);
   --lighthouse-container-bg: rgb(29, 30, 32);
+  --youtube-red: #ff0000;
 }
 
 @media (prefers-color-scheme: light) {
@@ -2778,7 +2779,7 @@ pre[class*=language-] {
   background-color: var(--feed-badge-bg);
   color: var(--feed-badge-fg);
   padding: 0.5rem 0.75rem;
-  font-size: 0.75rem;
+  font-size: 1rem;
   border-radius: calc(var(--border-radius-base) * 2.5);
 }
 

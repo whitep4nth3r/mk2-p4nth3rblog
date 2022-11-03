@@ -89,7 +89,7 @@ const activityType = {
   post: "Blog post",
   talk: "Published a talk",
   tweet: "Twitter",
-  youtube: "YouTube video",
+  youtube: "YouTube",
 };
 
 const ActivityFeedItem = ({ item }) => {
@@ -99,7 +99,7 @@ const ActivityFeedItem = ({ item }) => {
         <span class="activity__metaIcon">${CalendarIcon()}</span>
         <span class="activity__metaText">${DateUtils.formatDateForDisplay(item.date)}</span>
       </span>
-      <span class="activityFeed__type">${activityType[item.type]}</span>
+      <span class="activityFeed__type activityFeed__type--${item.type}">${activityType[item.type]}</span>
     </div>
 
       ${title(item)}
