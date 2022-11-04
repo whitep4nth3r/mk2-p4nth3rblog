@@ -6,14 +6,14 @@
 
 .activityFeed__header {
   @include grid_header;
-  padding: 0 0.5rem;
+  padding: 0 1rem;
 }
 
 .activityFeed__item {
   margin-bottom: 3rem;
   transition: all 0.2s ease-in-out;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
+  padding: 1rem;
+  border-radius: 0.75rem;
 
   &:hover,
   &:focus,
