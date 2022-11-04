@@ -6,10 +6,27 @@
 
 .activityFeed__header {
   @include grid_header;
+  padding: 0 0.75rem;
 }
 
 .activityFeed__item {
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
+  transition: all 0.2s ease-in-out;
+  padding: 0.75rem;
+  border-radius: calc(var(--border-radius-base) * 1.5);
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: var(--cta2-bg);
+    filter: var(--base-shadow-filter);
+  }
+
+  .post__tweetEmbed,
+  .twitter-tweet,
+  .eleventy-plugin-youtube-embed {
+    margin-bottom: 0 !important;
+  }
 }
 
 .activityFeed__type {
@@ -51,22 +68,17 @@
 .activityFeed__title {
   @include font_semibold;
   font-size: 1.6rem;
-  line-height: 1.2;
+  line-height: 1.4;
   margin-bottom: 1.5rem;
+  letter-spacing: 0.02em;
 }
 
-.activityFeed__titleLink {
+.activityFeed__link {
   display: block;
   text-decoration: none;
-
-  &:hover,
-  &:active {
-    color: var(--color-highlight);
-  }
 }
 
 .activityFeed__description {
-  margin-bottom: 2rem;
 }
 
 .activityFeed__description--withImage {
@@ -78,10 +90,11 @@
 .activityFeed__description p {
   @include font_main;
   font-size: 1rem;
-  line-height: 1.2;
+  line-height: 1.6;
 }
 
 .activityFeed__description__image {
   border-radius: calc(var(--border-radius-base) * 2);
   filter: var(--base-shadow-filter);
+  margin-top: 1rem;
 }

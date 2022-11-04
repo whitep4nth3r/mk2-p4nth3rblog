@@ -1798,6 +1798,8 @@ a.post__linkedHeaderIcon {
   margin-bottom: 2rem;
   margin-top: 2rem;
   filter: var(--base-shadow-filter);
+  border-radius: calc(var(--border-radius-base) * 2);
+  overflow: hidden;
 }
 
 .videoEmbed__tiktok {
@@ -2757,6 +2759,7 @@ pre[class*=language-] {
   margin-top: 4rem;
   margin-bottom: 2rem;
   max-width: max-content;
+  padding: 0 0.75rem;
 }
 .activityFeed__header:after {
   content: "";
@@ -2768,7 +2771,19 @@ pre[class*=language-] {
 }
 
 .activityFeed__item {
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
+  transition: all 0.2s ease-in-out;
+  padding: 0.75rem;
+  border-radius: calc(var(--border-radius-base) * 1.5);
+}
+.activityFeed__item:hover, .activityFeed__item:focus, .activityFeed__item:active {
+  background-color: var(--cta2-bg);
+  filter: var(--base-shadow-filter);
+}
+.activityFeed__item .post__tweetEmbed,
+.activityFeed__item .twitter-tweet,
+.activityFeed__item .eleventy-plugin-youtube-embed {
+  margin-bottom: 0 !important;
 }
 
 .activityFeed__type {
@@ -2779,7 +2794,7 @@ pre[class*=language-] {
   background-color: var(--feed-badge-bg);
   color: var(--feed-badge-fg);
   padding: 0.5rem 0.75rem;
-  font-size: 1rem;
+  font-size: 0.75rem;
   border-radius: calc(var(--border-radius-base) * 2.5);
 }
 
@@ -2812,20 +2827,14 @@ pre[class*=language-] {
   font-weight: var(--font-weight-heading);
   font-family: var(--font-family-heading);
   font-size: 1.6rem;
-  line-height: 1.2;
+  line-height: 1.4;
   margin-bottom: 1.5rem;
+  letter-spacing: 0.02em;
 }
 
-.activityFeed__titleLink {
+.activityFeed__link {
   display: block;
   text-decoration: none;
-}
-.activityFeed__titleLink:hover, .activityFeed__titleLink:active {
-  color: var(--color-highlight);
-}
-
-.activityFeed__description {
-  margin-bottom: 2rem;
 }
 
 .activityFeed__description--withImage {
@@ -2838,12 +2847,13 @@ pre[class*=language-] {
   font-weight: var(--font-weight-main);
   font-family: var(--font-family-main);
   font-size: 1rem;
-  line-height: 1.2;
+  line-height: 1.6;
 }
 
 .activityFeed__description__image {
   border-radius: calc(var(--border-radius-base) * 2);
   filter: var(--base-shadow-filter);
+  margin-top: 1rem;
 }
 
 /* START TEMP */
