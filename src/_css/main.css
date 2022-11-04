@@ -1560,7 +1560,7 @@ a.post__linkedHeaderIcon {
   font-family: var(--font-family-heading);
   color: var(--color-fg);
   font-size: 1.5rem;
-  line-height: 1.2;
+  line-height: 1.4;
   margin-bottom: 0.5rem;
 }
 
@@ -1587,7 +1587,7 @@ a.post__linkedHeaderIcon {
   font-weight: var(--font-weight-main);
   font-family: var(--font-family-main);
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: 1.6;
   margin-bottom: 1rem;
   color: var(--color-fg);
   word-break: break-word;
@@ -1711,7 +1711,7 @@ a.post__linkedHeaderIcon {
   font-family: var(--font-family-heading);
   color: var(--color-fg);
   font-size: 1.5rem;
-  line-height: 1.2;
+  line-height: 1.4;
   margin-bottom: 0.5rem;
 }
 
@@ -1729,7 +1729,7 @@ a.post__linkedHeaderIcon {
   font-weight: var(--font-weight-main);
   font-family: var(--font-family-main);
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: 1.6;
   margin-bottom: 1rem;
   color: var(--color-fg);
   word-break: break-word;
@@ -2759,7 +2759,7 @@ pre[class*=language-] {
   margin-top: 4rem;
   margin-bottom: 2rem;
   max-width: max-content;
-  padding: 0 0.75rem;
+  padding: 0 0.5rem;
 }
 .activityFeed__header:after {
   content: "";
@@ -2773,8 +2773,8 @@ pre[class*=language-] {
 .activityFeed__item {
   margin-bottom: 3rem;
   transition: all 0.2s ease-in-out;
-  padding: 0.75rem;
-  border-radius: calc(var(--border-radius-base) * 1.5);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
 }
 .activityFeed__item:hover, .activityFeed__item:focus, .activityFeed__item:active {
   background-color: var(--cta2-bg);

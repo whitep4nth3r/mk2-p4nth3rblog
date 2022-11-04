@@ -13,7 +13,7 @@
   @include font_semibold;
   color: var(--color-fg);
   font-size: 1.5rem;
-  line-height: 1.2;
+  line-height: 1.4;
   margin-bottom: 0.5rem;
 }
 
@@ -44,7 +44,7 @@
 @mixin homecard_excerpt_p {
   @include font_main;
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: 1.6;
   margin-bottom: 1rem;
   color: var(--color-fg);
   word-break: break-word;
