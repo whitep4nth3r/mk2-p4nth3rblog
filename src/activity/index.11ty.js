@@ -12,7 +12,7 @@ exports.data = {
   layout: "base.html",
   pageType: "activityFeed",
   title: pageTitle,
-  metaDescription: `Catch up with what I've been doing on the internet and in real life.`,
+  metaDescription: `Catch up with what I've been doing on the internet and in real life. Video releases, blog posts, talks events, and more.`,
   openGraphImageUrl: OpenGraph.generateImageUrl({ title: pageTitle }),
   openGraphImageAlt: OpenGraph.generateImageAlt(pageTitle),
   openGraphImageWidth: OpenGraph.imgWidth,

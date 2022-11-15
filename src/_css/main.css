@@ -2759,7 +2759,7 @@ pre[class*=language-] {
   margin-top: 4rem;
   margin-bottom: 2rem;
   max-width: max-content;
-  padding: 0 0.5rem;
+  padding: 0 1rem;
 }
 .activityFeed__header:after {
   content: "";
@@ -2773,8 +2773,8 @@ pre[class*=language-] {
 .activityFeed__item {
   margin-bottom: 3rem;
   transition: all 0.2s ease-in-out;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
+  padding: 1rem;
+  border-radius: 0.75rem;
 }
 .activityFeed__item:hover, .activityFeed__item:focus, .activityFeed__item:active {
   background-color: var(--cta2-bg);
