@@ -126,10 +126,7 @@ function getRichTextRenderOptions(links, options) {
           case "Callout":
             return Callout({ title: entry.title, content: entry.content, emoji: entry.emoji });
           case "CodeBlock":
-            const { code } = entry;
-            //TODO: TEMPORARY -- need to do Contentful migration here
-            const lang = entry.language === "bash-shell" ? "bash" : entry.language;
-            return CodeBlock({ code, lang, isDiff: entry.isDiff });
+            return CodeBlock({ code: entry.code, lang: entry.language, isDiff: entry.isDiff });
           default:
             return null;
         }
