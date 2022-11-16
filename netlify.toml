@@ -33,7 +33,7 @@
 
 [[redirects]]
   from = "/github"
-  to = "http://github.com/whitep4nth3r"
+  to = "https://github.com/whitep4nth3r"
   status = 301
 
 [[redirects]]

@@ -59,8 +59,8 @@ exports.render = function (data) {
 
   return /* xml */ `<?xml version="1.0" encoding="UTF-8"?>
   <rss version="2.0"
-  xmlns:atom="http://www.w3.org/2005/Atom"
-  xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  xmlns:atom="https://www.w3.org/2005/Atom"
+  xmlns:content="https://purl.org/rss/1.0/modules/content/">
   <channel>
   <title>${Config.site.title} RSS Feed</title>
   <atom:link href="https://${Config.site.domain}/feed.xml" rel="self" type="application/rss+xml" />
