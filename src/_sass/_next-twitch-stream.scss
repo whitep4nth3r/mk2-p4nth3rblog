@@ -62,4 +62,11 @@
   aspect-ratio: 16/9;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  overflow: hidden;
+  filter: var(--base-shadow-filter);
+  border-radius: calc(var(--border-radius-base) * 2);
+
+  iframe {
+    border-width: 0 !important;
+  }
 }

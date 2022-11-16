@@ -1765,6 +1765,12 @@ a.post__linkedHeaderIcon {
   aspect-ratio: 16/9;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  overflow: hidden;
+  filter: var(--base-shadow-filter);
+  border-radius: calc(var(--border-radius-base) * 2);
+}
+.nextTwitchStream__player iframe {
+  border-width: 0 !important;
 }
 
 .speakerDeckLink__viewCta {
@@ -2684,6 +2690,11 @@ pre[class*=language-] {
 .activityFeed__item .twitter-tweet,
 .activityFeed__item .eleventy-plugin-youtube-embed {
   margin-bottom: 0 !important;
+}
+
+.activityFeed__item--forceActive {
+  background-color: var(--cta2-bg);
+  filter: var(--base-shadow-filter);
 }
 
 .activityFeed__type {

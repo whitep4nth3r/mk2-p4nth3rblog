@@ -29,6 +29,11 @@
   }
 }
 
+.activityFeed__item--forceActive {
+  background-color: var(--cta2-bg);
+  filter: var(--base-shadow-filter);
+}
+
 .activityFeed__type {
   --feed-badge-bg: var(--yellow);
   --feed-badge-fg: var(--black);
