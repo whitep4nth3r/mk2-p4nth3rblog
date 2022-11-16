@@ -4,7 +4,7 @@ function CalendarIcon() {
       height="24" 
       viewBox="0 0 24 24" 
       fill="none" 
-      xmlns="https://www.w3.org/2000/svg" 
+      xmlns="http://www.w3.org/2000/svg" 
       role="img"
       aria-label="Calendar">
       <path d="M4 8H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
