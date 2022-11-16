@@ -58,8 +58,9 @@ function embed(item) {
   }
 }
 
-function openingTag(item) {
+function openingTag(item, forceActiveState) {
   let href = false;
+  const forceActiveClass = forceActiveState ? " activityFeed__item--forceActive" : "";
 
   if (item.type === "talk") {
     href = `/talks/${item.slug}/`;
@@ -74,10 +75,10 @@ function openingTag(item) {
   }
 
   if (href) {
-    return `<a href="${href}" target="_blank" class="activityFeed__item activityFeed__link">`;
+    return `<a href="${href}" target="_blank" class="activityFeed__item activityFeed__link${forceActiveClass}">`;
   }
 
-  return `<div class="activityFeed__item">`;
+  return `<div class="activityFeed__item${forceActiveClass}">`;
 }
 
 function closingTag(item) {
@@ -99,11 +100,11 @@ const activityType = {
   youtube: "YouTube",
 };
 
-const ActivityFeedItem = ({ item }) => {
+const ActivityFeedItem = ({ item, forceActiveState = false }) => {
   const heading = item.title || item.name;
 
   return `
-  ${openingTag(item)}
+  ${openingTag(item, forceActiveState)}
     <div class="activityFeed__meta">
       <span class="activityFeed__metaDate">
         <span class="activity__metaIcon">${CalendarIcon()}</span>

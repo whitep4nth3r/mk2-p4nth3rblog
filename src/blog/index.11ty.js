@@ -36,7 +36,7 @@ exports.data = {
 };
 
 exports.render = function (data) {
-  const latestPost = data.latestPost.post;
+  const latestPost = data.latestPost;
   return /* html */ `
 
   <section class="page__index">
