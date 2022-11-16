@@ -9,7 +9,7 @@ const ClockIcon = require("../_components/svg/clockIcon");
 const DateUtils = require("../../lib/dateUtils");
 const OpenGraph = require("../../lib/openGraph");
 
-const pageTitle = "All about me";
+const pageTitle = "About Salma Alam-Naylor: software engineer, writer and live streamer";
 
 var md = require("markdown-it")({
   html: true,

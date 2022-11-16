@@ -9,29 +9,6 @@ var md = require("markdown-it")({
 
 //big to do on image optimisation
 
-function title(item) {
-  const heading = item.title || item.name;
-  let href = false;
-
-  if (item.type === "talk") {
-    href = `/talks/${item.slug}/`;
-  }
-
-  if (item.type === "post") {
-    href = `/blog/${item.slug}/`;
-  }
-
-  if (item.link) {
-    href = item.link;
-  }
-
-  if (href) {
-    return `<a href="${href}" target="_blank" class="activityFeed__titleLink"><h2 class="activityFeed__title">${heading}</h2></a>`;
-  } else {
-    return `<h2 class="activityFeed__title">${heading}</h2>`;
-  }
-}
-
 function description(item) {
   if (item.description) {
     return `<div class="activityFeed__description">${md.render(item.description)}</div>`;
@@ -81,6 +58,36 @@ function embed(item) {
   }
 }
 
+function openingTag(item) {
+  let href = false;
+
+  if (item.type === "talk") {
+    href = `/talks/${item.slug}/`;
+  }
+
+  if (item.type === "post") {
+    href = `/blog/${item.slug}/`;
+  }
+
+  if (item.link) {
+    href = item.link;
+  }
+
+  if (href) {
+    return `<a href="${href}" target="_blank" class="activityFeed__item activityFeed__link">`;
+  }
+
+  return `<div class="activityFeed__item">`;
+}
+
+function closingTag(item) {
+  if (item.type === "talk" || item.type === "post" || item.link) {
+    return `</a>`;
+  }
+
+  return `</div>`;
+}
+
 const activityType = {
   award: "Award",
   event: "Event",
@@ -89,24 +96,27 @@ const activityType = {
   post: "Blog post",
   talk: "Published a talk",
   tweet: "Twitter",
-  youtube: "YouTube video",
+  youtube: "YouTube",
 };
 
 const ActivityFeedItem = ({ item }) => {
-  return `<div class="activityFeed__item">
+  const heading = item.title || item.name;
+
+  return `
+  ${openingTag(item)}
     <div class="activityFeed__meta">
       <span class="activityFeed__metaDate">
         <span class="activity__metaIcon">${CalendarIcon()}</span>
         <span class="activity__metaText">${DateUtils.formatDateForDisplay(item.date)}</span>
       </span>
-      <span class="activityFeed__type">${activityType[item.type]}</span>
+      <span class="activityFeed__type activityFeed__type--${item.type}">${activityType[item.type]}</span>
     </div>
 
-      ${title(item)}
-      ${description(item)}
-      ${embed(item)}
-      ${image(item.image)}
-    </div>`;
+    <h2 class="activityFeed__title">${heading}</h2>
+    ${description(item)}
+    ${embed(item)}
+    ${image(item.image)}
+  ${closingTag(item)}`;
 };
 
 module.exports = ActivityFeedItem;

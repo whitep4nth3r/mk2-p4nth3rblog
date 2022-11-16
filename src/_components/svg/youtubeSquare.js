@@ -5,7 +5,7 @@ const defaultOptions = {
 
 function YoutubeSquare({ height, width } = defaultOptions) {
   return /*html*/ `
-   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" height="${height}" width="${width}" role="img" aria-label="Youtube logo">
+   <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 512 512" height="${height}" width="${width}" role="img" aria-label="Youtube logo">
       <rect x="20" y="30" width="380" height="380" fill="#ff0000" />
       <path
         fill="currentColor"

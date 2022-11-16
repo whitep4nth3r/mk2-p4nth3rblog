@@ -1,18 +1,22 @@
 const OpenGraph = require("../../lib/openGraph");
-const pageTitle = "My activity feed";
+const pageTitle = "My activity feed — videos, blogs, events, podcasts and more";
 const ActivityFeedItem = require("../_components/activityFeedItem");
 const Pagination = require("../_components/pagination");
+
+function calculatePageUrl(data) {
+  const suffix = data.pagination.pageNumber === 0 ? `` : `${data.pagination.pageNumber + 1}/`;
+  return `https://whitep4nth3r.com/activity/${suffix}`;
+}
 
 exports.data = {
   layout: "base.html",
   pageType: "activityFeed",
   title: pageTitle,
-  metaDescription: `TO DO`,
+  metaDescription: `Catch up with what I've been doing on the internet and in real life. Video releases, blog posts, talks events, and more.`,
   openGraphImageUrl: OpenGraph.generateImageUrl({ title: pageTitle }),
   openGraphImageAlt: OpenGraph.generateImageAlt(pageTitle),
   openGraphImageWidth: OpenGraph.imgWidth,
   openGraphImageHeight: OpenGraph.imgHeight,
-  openGraphUrl: "https://whitep4nth3r.com/activity/",
   pagination: {
     data: "activityFeed",
     size: 10,
@@ -21,6 +25,10 @@ exports.data = {
   permalink: (data) => {
     const trailing = data.pagination.pageNumber === 0 ? `` : `${data.pagination.pageNumber + 1}/`;
     return `activity/${trailing}`;
+  },
+  eleventyComputed: {
+    canonical: (data) => calculatePageUrl(data),
+    openGraphUrl: (data) => calculatePageUrl(data),
   },
 };
 

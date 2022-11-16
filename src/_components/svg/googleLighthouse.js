@@ -1,7 +1,7 @@
 function GoogleLighthouse() {
   return /*html*/ `
     <svg
-      xmlns="http://www.w3.org/2000/svg"
+      xmlns="https://www.w3.org/2000/svg"
       role="img"
       aria-label="Google Lighthouse logo"
       height="60"

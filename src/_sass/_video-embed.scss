@@ -10,6 +10,8 @@
   margin-bottom: 2rem;
   margin-top: 2rem;
   filter: var(--base-shadow-filter);
+  border-radius: calc(var(--border-radius-base) * 2);
+  overflow: hidden;
 }
 
 .videoEmbed__tiktok {
