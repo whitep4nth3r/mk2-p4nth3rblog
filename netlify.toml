@@ -17,6 +17,11 @@
   status = 200
 
 [[redirects]]
+  from = "/projects/"
+  to = "https://github.com/whitep4nth3r?tab=repositories"
+  status = 301
+
+[[redirects]]
   from = "/topics"
   to = "/topics/webdev/"
   status = 308
