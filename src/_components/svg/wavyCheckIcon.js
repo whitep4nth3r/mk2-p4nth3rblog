@@ -1,7 +1,7 @@
 function WavyCheckIcon() {
   return /*html*/ `
     <svg
-      xmlns="https://www.w3.org/2000/svg"
+      xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 26 26"
       height="16"
       width="16"
