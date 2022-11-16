@@ -38,7 +38,7 @@
 
 [[redirects]]
   from = "/discord"
-  to = "http://discord.gg/GQbXUVCneJ"
+  to = "https://discord.gg/GQbXUVCneJ"
   status = 301
 
 [[plugins]]
