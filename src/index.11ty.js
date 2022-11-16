@@ -3,7 +3,7 @@ const OpenGraph = require("../lib/openGraph");
 const NextTwitchStream = require("./_components/nextTwitchStream");
 const NextNonTwitchEvent = require("./_components/nextNonTwitchEvent");
 const GetInvolvedOpenSource = require("./_components/getInvolvedOpenSource");
-const LatestBlogPost = require("./_components/latestBlogPost");
+const RandomBlogPost = require("./_components/randomBlogPost");
 const ActivityFeedItem = require("./_components/activityFeedItem");
 const pageTitle = "Tech streams, blogs and code tutorials";
 
@@ -20,7 +20,7 @@ exports.data = {
 };
 
 exports.render = function (data) {
-  const { events, latestPost, person, activityFeed } = data;
+  const { events, randomBlogPost, person, activityFeed } = data;
 
   return /*html*/ `
   <section class="home">
@@ -45,11 +45,11 @@ exports.render = function (data) {
         </div>
         <div class="home__item">
           <h2 class="home__itemTitle">Latest <span class="colorHighlight">activity</span></h2>
-          ${ActivityFeedItem({ item: activityFeed[0] })}
+          ${ActivityFeedItem({ item: activityFeed[0], forceActiveState: true })}
         </div>
         <div class="home__item">
           <h2 class="home__itemTitle">Read <span class="colorHighlight">blogs and tutorials</span></h2>
-          ${LatestBlogPost({ post: latestPost.post })}
+          ${RandomBlogPost({ post: randomBlogPost })}
         </div>
         <div class="home__item">
           <h2 class="home__itemTitle">Join the <span class="colorHighlight">community</span></h2>

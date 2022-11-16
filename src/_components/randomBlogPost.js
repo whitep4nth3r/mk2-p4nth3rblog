@@ -1,14 +1,14 @@
 const TopicsButton = require("./topicsButton");
 const SeeAllCta = require("./seeAllCta");
-const StopwatchIcon = require("../_components/svg/stopwatchIcon");
-const CalendarIcon = require("../_components/svg/calendarIcon");
+const StopwatchIcon = require("./svg/stopwatchIcon");
+const CalendarIcon = require("./svg/calendarIcon");
 const DateUtils = require("../../lib/dateUtils");
 
 var md = require("markdown-it")({
   html: true,
 });
 
-function LatestBlogPost({ post }) {
+function RandomBlogPost({ post }) {
   return /*html*/ `
     <article class="homeCard">
       <a href="/blog/${post.slug}/" class="homeCard__linkForTitle" id="post-${post.sys.id}">
@@ -39,4 +39,4 @@ function LatestBlogPost({ post }) {
   `;
 }
 
-module.exports = LatestBlogPost;
+module.exports = RandomBlogPost;

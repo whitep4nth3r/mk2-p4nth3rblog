@@ -31,5 +31,5 @@ async function getLatestBlogPost() {
 module.exports = async function () {
   const latestPost = await getLatestBlogPost();
 
-  return { post: latestPost };
+  return latestPost;
 };
