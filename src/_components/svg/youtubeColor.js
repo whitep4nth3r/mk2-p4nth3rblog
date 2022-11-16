@@ -5,7 +5,7 @@ const defaultOptions = {
 
 function YoutubeColor({ height, width } = defaultOptions) {
   return /*html*/ `
-   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" height="${height}" width="${width}" role="img" aria-label="Youtube logo">
+   <svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 576 512" height="${height}" width="${width}" role="img" aria-label="Youtube logo">
       <rect x="150" y="150" width="300" height="200" fill="#ffffff" />
       <path
         fill="#ff0000"

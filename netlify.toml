@@ -17,6 +17,11 @@
   status = 200
 
 [[redirects]]
+  from = "/projects"
+  to = "https://github.com/whitep4nth3r?tab=repositories"
+  status = 301
+
+[[redirects]]
   from = "/topics"
   to = "/topics/webdev/"
   status = 308
@@ -28,12 +33,12 @@
 
 [[redirects]]
   from = "/github"
-  to = "http://github.com/whitep4nth3r"
+  to = "https://github.com/whitep4nth3r"
   status = 301
 
 [[redirects]]
   from = "/discord"
-  to = "http://discord.gg/GQbXUVCneJ"
+  to = "https://discord.gg/GQbXUVCneJ"
   status = 301
 
 [[plugins]]
