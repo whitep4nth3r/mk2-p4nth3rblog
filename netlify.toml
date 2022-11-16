@@ -17,7 +17,7 @@
   status = 200
 
 [[redirects]]
-  from = "/projects/"
+  from = "/projects"
   to = "https://github.com/whitep4nth3r?tab=repositories"
   status = 301
 
