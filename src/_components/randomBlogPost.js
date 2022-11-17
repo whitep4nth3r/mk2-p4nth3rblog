@@ -33,7 +33,6 @@ function RandomBlogPost({ post }) {
           url: `/blog/${post.slug}/`,
           ariaDescribedBy: `post-${post.sys.id}`,
         })}
-        <a href="/blog/" class="homeCard__seeAllCta">See all blog posts <span class="colorHighlight" aria-hidden="true">→</span></a>
       </div>
     </article>
   `;
