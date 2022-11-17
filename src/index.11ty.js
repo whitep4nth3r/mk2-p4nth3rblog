@@ -32,7 +32,7 @@ exports.render = function (data) {
 
     <div>
       <div class="home__item">
-        <h2 class="home__itemTitle">Watch <span class="colorHighlight">live streams</span></h2>
+        <a href="/about/#events" class="home__itemTitle">Watch <span class="colorHighlight">live streams</span></a>
           ${
             events.next.type === "twitch"
               ? NextTwitchStream({
@@ -43,12 +43,12 @@ exports.render = function (data) {
               : NextNonTwitchEvent({ event: events.next })
           }
         </div>
-        <div class="home__item">
-          <h2 class="home__itemTitle">Latest <span class="colorHighlight">activity</span></h2>
+        <div class="home__item home__item--activity">
+          <a href="/activity/" class="home__itemTitle">Check out my <span class="colorHighlight">latest activity</span></a>
           ${ActivityFeedItem({ item: activityFeed[0], forceActiveState: true })}
         </div>
         <div class="home__item">
-          <h2 class="home__itemTitle">Read <span class="colorHighlight">blogs and tutorials</span></h2>
+          <a href="/blog/" class="home__itemTitle">Read <span class="colorHighlight">blogs and tutorials</span></a>
           ${RandomBlogPost({ post: randomBlogPost })}
         </div>
         <div class="home__item">
