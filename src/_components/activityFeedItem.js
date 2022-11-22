@@ -75,7 +75,7 @@ function openingTag(item, forceActiveState) {
   }
 
   if (href) {
-    return `<a href="${href}" target="_blank" class="activityFeed__item activityFeed__link${forceActiveClass}">`;
+    return `<a href="${href}" class="activityFeed__item activityFeed__link${forceActiveClass}">`;
   }
 
   return `<div class="activityFeed__item${forceActiveClass}">`;
