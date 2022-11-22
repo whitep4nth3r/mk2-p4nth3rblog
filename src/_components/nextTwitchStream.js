@@ -82,8 +82,6 @@ function NextTwitchStream({ stream, link, isLive }) {
               ${buttonText}
             </span>
           </a>
-
-          <a href="/about/#events" class="homeCard__seeAllCta">See all events <span class="colorHighlight" aria-hidden="true">→</span></a>
         </div>
       </div>
 
