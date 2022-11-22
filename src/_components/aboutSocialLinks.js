@@ -5,6 +5,7 @@ const TwitterIcon = require("./svg/twitterIcon");
 const YoutubeSquare = require("./svg/youtubeSquare");
 const DevIcon = require("./svg/devIcon");
 const FeedIcon = require("./svg/feedIcon");
+const MastodonIcon = require("./svg/mastodonIcon");
 
 function AboutSocialLinks() {
   return /*html*/ `
@@ -17,6 +18,9 @@ function AboutSocialLinks() {
     </li>
     <li>
       <a href="https://twitch.tv/whitep4nth3r" class="about__socialLinksItem" target="_blank" rel="nofollow noreferrer">${TwitchIcon()} Twitch</a>
+    </li>
+    <li>
+      <a href="https://indieweb.social/@whitep4nth3r" class="about__socialLinksItem" target="_blank" rel="nofollow noreferrer">${MastodonIcon()} Mastodon</a>
     </li>
     <li>
       <a href="https://twitter.com/whitep4nth3r" class="about__socialLinksItem" target="_blank" rel="nofollow noreferrer">${TwitterIcon()} Twitter</a>
