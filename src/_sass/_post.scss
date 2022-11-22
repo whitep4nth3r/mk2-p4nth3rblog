@@ -263,6 +263,10 @@ a.post__linkedHeaderIcon {
   margin-bottom: 1rem;
 }
 
+.post__calloutContent blockquote {
+  margin-inline-start: 1rem;
+}
+
 .post__calloutContent blockquote p {
   @include font_semibold;
   margin-bottom: 1.75rem;
