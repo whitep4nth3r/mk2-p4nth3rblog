@@ -33,9 +33,9 @@ function NextTwitchStream({ stream, link, isLive }) {
             : ""
         }
               
-         ${
-           !isLive
-             ? `
+      ${
+        !isLive
+          ? `
           <a href="${buttonLink}" target="_blank" rel="nofollow noreferrer" class="nextTwitchStream__link">
             <p class="nextTwitchStream__meta">
               <span class="nextTwitchStream__metaIcon">${CalendarIcon()}</span>
@@ -60,13 +60,13 @@ function NextTwitchStream({ stream, link, isLive }) {
               </span>
             </p>
           </a>`
-             : ""
-         }
+          : ""
+      }
 
         ${
           !isLive
             ? `<p class="nextTwitchStream__streamInfo">
-              Join the chat whilst I stream building stuff and learning things every week. Come hang out!
+              Join the stream whilst I build weird websites, roast your code, and chat about the tech industry.
             </p>`
             : ""
         }
