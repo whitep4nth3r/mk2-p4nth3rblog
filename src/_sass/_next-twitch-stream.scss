@@ -2,6 +2,10 @@
   @include homecard;
 }
 
+.nextTwitchStream img {
+  margin: 0 auto 1rem auto;
+}
+
 .nextTwitchStream__link {
   text-decoration: none;
   margin-bottom: 1rem;
