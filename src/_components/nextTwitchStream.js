@@ -7,7 +7,6 @@ function noStreamIndicator(text) {
 }
 
 function NextTwitchStream({ stream, link, isLive }) {
-  isLive = false;
   const heading = isLive ? "I'm live on Twitch right now" : `Next Twitch stream`;
   const buttonText = isLive ? "Watch live" : "View stream details";
   const buttonLink = isLive ? "https://twitch.tv/whitep4nth3r" : link;
