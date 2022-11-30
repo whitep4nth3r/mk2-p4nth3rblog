@@ -1,5 +1,4 @@
 const ClockIcon = require("./svg/clockIcon");
-const CalendarIcon = require("./svg/calendarIcon");
 const TwitchIcon = require("./svg/twitchIcon");
 const ResponsiveImage = require("./responsiveImage");
 
@@ -8,6 +7,7 @@ function noStreamIndicator(text) {
 }
 
 function NextTwitchStream({ stream, link, isLive }) {
+  isLive = false;
   const heading = isLive ? "I'm live on Twitch right now" : `Next Twitch stream`;
   const buttonText = isLive ? "Watch live" : "View stream details";
   const buttonLink = isLive ? "https://twitch.tv/whitep4nth3r" : link;
@@ -30,9 +30,9 @@ function NextTwitchStream({ stream, link, isLive }) {
           ${stream.canceled_until ? noStreamIndicator("cancelled") : ""}
         </h3>
 
-        ${
-          isLive
-            ? `<div class="nextTwitchStream__player">
+      ${
+        isLive
+          ? `<div class="nextTwitchStream__player">
                 <iframe
                   src="https://player.twitch.tv/?channel=whitep4nth3r&parent=${process.env.TWITCH_HOST}"
                   height="100%"
@@ -42,34 +42,16 @@ function NextTwitchStream({ stream, link, isLive }) {
                   allowfullscreen>
                 </iframe>
               </div>`
-            : ""
-        }
+          : ""
+      }
               
       ${
         !isLive
           ? `
           <a href="${buttonLink}" target="_blank" rel="nofollow noreferrer" class="nextTwitchStream__link">
             <p class="nextTwitchStream__meta">
-              <span class="nextTwitchStream__metaIcon">${CalendarIcon()}</span>
-              <span class="nextTwitchStream__metaInfo">
-                <local-time 
-                    datetime="${stream.start_time}"
-                    weekday="short"
-                    month="short"
-                    day="numeric"
-                    year="numeric"
-                    hour="numeric"
-                    minute="numeric"
-                    time-zone-name="short">
-                  ${stream.start_time}
-                </local-time>
-              </span>
-            </p>
-            <p class="nextTwitchStream__meta">
               <span class="nextTwitchStream__metaIcon">${ClockIcon()}</span>
-              <span class="nextTwitchStream__metaInfo nextTwitchStream__metaInfo--timeUntil">
-                <time-until datetime="${stream.start_time}"></time-until>
-              </span>
+              <span class="nextTwitchStream__metaInfo" data-time="${stream.start_time}"></span>
             </p>
           </a>`
           : ""
@@ -96,8 +78,6 @@ function NextTwitchStream({ stream, link, isLive }) {
           </a>
         </div>
       </div>
-
-      <script type="module" src="/js/time_elements.js"></script>
     `;
 }
 
