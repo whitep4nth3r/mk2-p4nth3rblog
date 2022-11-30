@@ -25,4 +25,17 @@
 .home__itemTitle {
   @include grid_item_title($gradientMarginTop: 0.5rem);
   width: max-content;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.home__item__onAir {
+  @include font_bold;
+  text-transform: uppercase;
+  background-color: var(--red);
+  color: var(--white);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--border-radius-base);
+  font-size: 1.75rem;
 }
