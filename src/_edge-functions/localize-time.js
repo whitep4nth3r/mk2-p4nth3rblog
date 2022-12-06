@@ -20,7 +20,7 @@ export default async (request, context) => {
           month: "short",
         });
 
-        element.setInnerContent(`${localizedTime} ${timezone}`);
+        element.setInnerContent(`${localizedTime}`);
       },
     })
     .transform(response);
