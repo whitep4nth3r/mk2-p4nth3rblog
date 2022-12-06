@@ -12,6 +12,7 @@ export default async (request, context) => {
         const date = new Date(dateString);
         const localizedTime = date.toLocaleString(locale, {
           timeZone: timezone,
+          timeZoneName: "short",
           hour: "numeric",
           minute: "numeric",
           day: "numeric",
