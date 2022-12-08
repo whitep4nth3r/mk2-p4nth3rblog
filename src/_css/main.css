@@ -1732,6 +1732,10 @@ a.post__linkedHeaderIcon {
   color: var(--color-fg);
 }
 
+.nextTwitchStream__metaInfo {
+  font-size: 2rem;
+}
+
 .nextTwitchStream__metaInfo--timeUntil {
   text-transform: capitalize;
 }

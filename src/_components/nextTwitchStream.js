@@ -16,7 +16,7 @@ function notLive({ link, image, stream }) {
     <a href="${link}" target="_blank" rel="nofollow noreferrer" class="nextTwitchStream__link">
       <p class="nextTwitchStream__meta">
         <span class="nextTwitchStream__metaIcon">${ClockIcon()}</span>
-        <span class="nextTwitchStream__metaInfo" data-time="${stream.start_time}"></span>
+        <span class="nextTwitchStream__metaInfo" data-time="${stream.start_time}">${stream.start_time}</span>
       </p>
     </a>
     <p class="nextTwitchStream__streamInfo">

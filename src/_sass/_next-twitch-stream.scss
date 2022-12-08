@@ -23,6 +23,11 @@
   color: var(--color-fg);
 }
 
+.nextTwitchStream__metaInfo {
+  font-size: 2rem;
+}
+
+// remove when next non twitch event is localised
 .nextTwitchStream__metaInfo--timeUntil {
   text-transform: capitalize;
 }
