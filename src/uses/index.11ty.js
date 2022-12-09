@@ -2,7 +2,7 @@ const AboutTableOfContents = require("../_components/aboutTableOfContents");
 const OpenGraph = require("../../lib/openGraph");
 const PageBanner = require("../_components/pageBanner");
 
-const pageTitle = "Learn what whitep4nth3r uses for coding and streaming";
+const pageTitle = "What whitep4nth3r uses for coding and streaming";
 
 var md = require("markdown-it")({
   html: true,
