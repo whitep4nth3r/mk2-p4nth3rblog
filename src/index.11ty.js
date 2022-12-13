@@ -19,8 +19,21 @@ exports.data = {
   openGraphUrl: "https://whitep4nth3r.com/",
 };
 
+function onAir() {
+  return `<span class="home__item__onAir">ON AIR</span>`;
+}
+
+function getHeading({ isLive }) {
+  if (isLive) {
+    return `Join <span class="colorHighlight">the stream</span>`;
+  }
+
+  return `Watch <span class="colorHighlight">live streams</span>`;
+}
+
 exports.render = function (data) {
   const { events, randomBlogPost, person, activityFeed } = data;
+  const { isLive } = events;
 
   return /*html*/ `
   <section class="home">
@@ -32,13 +45,15 @@ exports.render = function (data) {
 
     <div>
       <div class="home__item">
-        <a href="/about/#events" class="home__itemTitle">Watch <span class="colorHighlight">live streams</span></a>
+        <a href="/about/#events" class="home__itemTitle">${isLive ? onAir() : ""} <span>${getHeading({
+    isLive,
+  })}</span></a>
           ${
             events.next.type === "twitch"
               ? NextTwitchStream({
                   stream: events.next,
                   link: events.next.link,
-                  isLive: events.isLive,
+                  isLive,
                 })
               : NextNonTwitchEvent({ event: events.next })
           }
@@ -49,7 +64,7 @@ exports.render = function (data) {
         </div>
         <div class="home__item">
           <a href="/blog/" class="home__itemTitle">Read <span class="colorHighlight">blogs and tutorials</span></a>
-           ${RandomBlogPost({ post: randomBlogPost })}
+          ${RandomBlogPost({ post: randomBlogPost })}
         </div>
         <div class="home__item">
           <h2 class="home__itemTitle">Join the <span class="colorHighlight">community</span></h2>

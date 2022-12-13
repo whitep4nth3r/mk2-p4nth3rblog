@@ -23,6 +23,11 @@
   color: var(--color-fg);
 }
 
+.nextTwitchStream__metaInfo {
+  font-size: 2rem;
+}
+
+// remove when next non twitch event is localised
 .nextTwitchStream__metaInfo--timeUntil {
   text-transform: capitalize;
 }
@@ -64,7 +69,6 @@
 
 .nextTwitchStream__player {
   aspect-ratio: 16/9;
-  margin-top: 1rem;
   margin-bottom: 1rem;
   overflow: hidden;
   filter: var(--base-shadow-filter);

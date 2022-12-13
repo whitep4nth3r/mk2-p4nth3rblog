@@ -11,6 +11,10 @@
   path = "/blog/*"
   function = "referer"
 
+[[edge_functions]]
+  path = "/"
+  function = "localize-time"
+
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"

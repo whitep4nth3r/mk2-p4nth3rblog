@@ -25,4 +25,36 @@
 .home__itemTitle {
   @include grid_item_title($gradientMarginTop: 0.5rem);
   width: max-content;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.home__item__onAir {
+  @include font_bold;
+  text-transform: uppercase;
+  background-color: var(--pink);
+  color: var(--white);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--border-radius-base);
+  font-size: 1.75rem;
+  position: relative;
+  z-index: 1;
+  border: 0.125rem solid var(--yellow);
+  // text-shadow: 0 0 2px #fff, 0 0 6px #fff, 0 0 16px #fff;
+
+  // &::after {
+  //   --start-color: var(--red);
+  //   --end-color: var(--yellow);
+  //   content: "";
+  //   filter: blur(1.5rem);
+  //   position: absolute;
+  //   height: 90%;
+  //   width: 90%;
+  //   inset: 0;
+  //   z-index: -1;
+  //   background-image: linear-gradient(90deg, var(--start-color), var(--end-color));
+  //   display: block;
+  //   margin: auto;
+  // }
 }
