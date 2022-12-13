@@ -45,6 +45,11 @@
   to = "https://discord.gg/GQbXUVCneJ"
   status = 301
 
+[[redirects]]
+  from = "/.well-known/webfinger"
+  to = "https://indieweb.social/.well-known/webfinger?resource=acct:whitep4nth3r@indieweb.social"
+  status = 200
+
 [[plugins]]
 package = "netlify-plugin-inline-functions-env"
   [plugins.inputs]
