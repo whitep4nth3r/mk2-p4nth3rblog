@@ -50,6 +50,19 @@
     hsl(40deg 100% 57%) 100%
   );
 
+  --yellow-pink-gradient: linear-gradient(
+    90deg,
+    hsl(328deg 97% 48%) 0%,
+    hsl(338deg 98% 57%) 12%,
+    hsl(348deg 100% 62%) 25%,
+    hsl(359deg 100% 66%) 37%,
+    hsl(10deg 100% 64%) 50%,
+    hsl(20deg 100% 62%) 62%,
+    hsl(28deg 100% 60%) 74%,
+    hsl(34deg 100% 58%) 87%,
+    hsl(40deg 100% 57%) 100%
+  );
+
   --global-transition-time: 0.2s;
   --scroll-behaviour: smooth;
 

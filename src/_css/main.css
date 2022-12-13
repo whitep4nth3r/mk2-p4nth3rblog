@@ -65,6 +65,18 @@
     hsl(38deg 100% 55%) 89%,
     hsl(40deg 100% 57%) 100%
   );
+  --yellow-pink-gradient: linear-gradient(
+    90deg,
+    hsl(328deg 97% 48%) 0%,
+    hsl(338deg 98% 57%) 12%,
+    hsl(348deg 100% 62%) 25%,
+    hsl(359deg 100% 66%) 37%,
+    hsl(10deg 100% 64%) 50%,
+    hsl(20deg 100% 62%) 62%,
+    hsl(28deg 100% 60%) 74%,
+    hsl(34deg 100% 58%) 87%,
+    hsl(40deg 100% 57%) 100%
+  );
   --global-transition-time: 0.2s;
   --scroll-behaviour: smooth;
   --lighthouse-green-fg: rgb(27, 195, 106);
@@ -120,7 +132,7 @@
 html {
   font-size: 100%;
   scroll-behavior: var(--scroll-behaviour);
-  background: var(--yellow-red-gradient);
+  background: var(--yellow-pink-gradient);
   padding: 0.5rem;
 }
 @media screen and (min-width: 900px) {
@@ -527,7 +539,7 @@ strong {
   font-weight: var(--font-weight-heading);
   font-family: var(--font-family-heading);
   margin-top: 3rem;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
   font-size: 1.2rem;
   line-height: 1.4;
   padding: 1rem 0;
