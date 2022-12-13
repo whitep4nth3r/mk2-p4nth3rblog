@@ -488,7 +488,7 @@ strong {
   display: grid;
   grid-template-columns: 1fr 3fr;
   gap: 1rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 2rem;
 }
 
 .homeAbout__imageBio {
@@ -500,16 +500,24 @@ strong {
 }
 
 .homeAbout__name {
-  font-size: clamp(2rem, 4vw, 4rem);
+  font-size: clamp(2rem, 3.8vw, 3.8rem);
 }
 .homeAbout__name span {
   display: block;
 }
 
 .homeAbout__subtitle {
-  font-size: 1.4rem;
-  line-height: 1.3;
+  text-align: center;
+  font-size: clamp(1.2rem, 1.6vw, 1.6rem);
+  line-height: 1.4;
   margin-bottom: 2rem;
+  border: 0.125rem solid var(--yellow);
+  background: var(--pink);
+  color: var(--white);
+  display: block;
+  padding: 0.5rem;
+  border-radius: var(--border-radius-base);
+  text-shadow: 2px 2px var(--black);
 }
 
 .homeAbout_minibio {
@@ -538,7 +546,7 @@ strong {
 .homeAbout__seeAllCta {
   font-weight: var(--font-weight-heading);
   font-family: var(--font-family-heading);
-  margin-top: 3rem;
+  margin-top: 2rem;
   margin-bottom: 2rem;
   font-size: 1.2rem;
   line-height: 1.4;
