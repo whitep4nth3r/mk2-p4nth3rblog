@@ -90,34 +90,18 @@ exports.render = function (data) {
                   <li class="about__eventsListItem">
                     <time datetime="${event.date}" class="about__eventsListItemDate">
                       <span class="about__eventsListItemDate__month">
-                        <local-time 
-                          datetime="${event.date}"
-                          month="short">
-                          ${DateUtils.getMonthFromTime(event.date)}
-                        </local-time>
+                        ${DateUtils.getMonthFromTime(event.date)}
                       </span>
                       <span class="about__eventsListItemDate__day">
-                        <local-time 
-                          datetime="${event.date}"
-                          day="numeric">
-                          ${DateUtils.getDateFromTime(event.date)}
-                        </local-time>
+                        ${DateUtils.getDateFromTime(event.date)}
                       </span>
                     </time>
                     <span class="about__eventsListItemTime">
                       <span class="about__eventsListItemTimeInner">
                         ${ClockIcon()}  
-                        <local-time 
-                          datetime="${event.date}"
-                          weekday="short"
-                          month="short"
-                          day="numeric"
-                          year="numeric"
-                          hour="numeric"
-                          minute="numeric"
-                          time-zone-name="short">
-                        ${event.date}
-                        </local-time>
+                        <span data-time="${event.date}">
+                          ${event.date}
+                        </span>
                       </span>
                       <span class="about__eventsListItemTZ" data-timezone></span>
                       ${
@@ -147,6 +131,5 @@ exports.render = function (data) {
         </div>
       </div>
     </div>
-    <script type="module" src="/js/time_elements.js"></script>
   `;
 };

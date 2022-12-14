@@ -15,6 +15,10 @@
   path = "/"
   function = "localize-time"
 
+[[edge_functions]]
+  path = "/about"
+  function = "localize-time"
+
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"
