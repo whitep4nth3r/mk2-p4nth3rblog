@@ -24,7 +24,9 @@
 
 .home__itemTitle {
   @include grid_item_title($gradientMarginTop: 0.5rem);
-  width: max-content;
+}
+
+.home__itemTitle--twitch {
   display: flex;
   align-items: center;
   gap: 0.5rem;
