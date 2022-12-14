@@ -19,46 +19,15 @@ function homeAbout({ person }) {
     <script src="https://the-claw-webring-widget.netlify.app/the-claw-webring-widget.mjs" type="module"></script>
     <the-claw-webring-widget>
       <!-- fallback content in the case of no JavaScript -->
-      <style>
-        .tcww__inner {
-          color: inherit;
-          font-family: system-ui;
-          padding: 1rem;
-          font-size: 1rem;
-        }
-        .tcww__header {
-          display: grid;
-          gap: 0.5rem 1rem;
-          align-items: center;
-          margin-bottom: 1rem;
-          justify-content: flex-start;
-          grid-template-areas: "image title" "image view";
-        }
-        .tcww__title {
-          grid-area: title;
-          font-size: 1.4rem;
-          margin: 0;
-        }
-        .tcww__image {
-          grid-area: image;
-          height: 4rem;
-          transform: rotate(-8deg);
-        }
-        .tcww__view {
-          grid-area: view;
-          margin: 0;
-          color: inherit;
-        }
-      </style>
-      <div class="tcww__inner">
-        <div class="tcww__header">
+      <div style="color: inherit; font-family: system-ui; padding: 1rem; font-size: 1rem;">
+        <div style="display: grid; gap: 0.5rem 1rem; align-items: center; margin-bottom: 1rem; justify-content: flex-start; grid-template-areas: 'image title' 'image view';">
           <img
-          src="https://the-claw-webring.netlify.app/img/theclaw.png"
-          alt="The Claw Webring"
-          class="tcww__image"
+            src="https://the-claw-webring.netlify.app/img/theclaw.png"
+            alt="The Claw Webring"
+            style="grid-area: image; height: 4rem; transform: rotate(-8deg);"
           />
-          <h2 class="tcww__title">The Claw Webring</h2>
-          <a href="https://github.com/whitep4nth3r/the-claw-webring" class="tcww__view">View on GitHub</a>
+          <h2 style="grid-area: title; font-size: 1.4rem; margin: 0;">The Claw Webring</h2>
+          <a href="https://github.com/whitep4nth3r/the-claw-webring" style="grid-area: view; margin: 0; color: inherit;">View on GitHub</a>
         </div>
       </div>
     </the-claw-webring-widget>
