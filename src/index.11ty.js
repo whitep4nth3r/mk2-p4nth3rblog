@@ -34,7 +34,6 @@ function getHeading({ isLive }) {
 exports.render = function (data) {
   const { events, randomBlogPost, person, activityFeed } = data;
   const { isLive } = events;
-
   return /*html*/ `
   <section class="home">
     <div>
