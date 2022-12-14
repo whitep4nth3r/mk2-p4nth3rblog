@@ -19,18 +19,6 @@ exports.data = {
   openGraphUrl: "https://whitep4nth3r.com/",
 };
 
-function onAir() {
-  return `<span class="home__item__onAir">ON AIR</span>`;
-}
-
-function getHeading({ isLive }) {
-  if (isLive) {
-    return `Join <span class="colorHighlight">the stream</span>`;
-  }
-
-  return `Watch <span class="colorHighlight">live streams</span>`;
-}
-
 exports.render = function (data) {
   const { events, randomBlogPost, person, activityFeed } = data;
   const { isLive } = events;
@@ -44,9 +32,6 @@ exports.render = function (data) {
 
     <div>
       <div class="home__item">
-        <a href="/about/#events" class="home__itemTitle">${isLive ? onAir() : ""} <span>${getHeading({
-    isLive,
-  })}</span></a>
           ${
             events.next.type === "twitch"
               ? NextTwitchStream({

@@ -15,8 +15,8 @@ function calculateIcon(type) {
 function NextNonTwitchEvent({ event }) {
   return /*html*/ `
       <div class="nextTwitchStream">
-        <h3 class="nextTwitchStream__title">
-          Next event: ${event.name}
+        <h3 class="home__itemTitle">
+          Next event: <span class="colorHighlight">${event.name}</span>
         </h3>
         <a href="${event.link}" target="_blank" rel="nofollow noreferrer" class="nextTwitchStream__link">
           <p class="nextTwitchStream__meta">

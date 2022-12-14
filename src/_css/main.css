@@ -453,7 +453,9 @@ strong {
   font-size: clamp(1.2rem, 2vw, 2rem);
   line-height: 1.2;
   margin-bottom: 1.75rem;
-  width: max-content;
+}
+
+.home__itemTitle--twitch {
   display: flex;
   align-items: center;
   gap: 0.5rem;

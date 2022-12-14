@@ -6,6 +6,18 @@ function noStreamIndicator(text) {
   return /*html*/ `<span class="nextTwitchStream__noStream">${text}</span>`;
 }
 
+function onAir() {
+  return `<span class="home__item__onAir">ON AIR</span>`;
+}
+
+function getHeading({ isLive }) {
+  if (isLive) {
+    return `Join <span class="colorHighlight">the stream</span>`;
+  }
+
+  return `Watch <span class="colorHighlight">live streams</span>`;
+}
+
 function notLive({ link, image, stream }) {
   return /* html */ `
     ${ResponsiveImage({ image })}
@@ -38,6 +50,11 @@ function notLive({ link, image, stream }) {
 
 function live() {
   return /* html */ `
+   <a href="/about/#events" class="home__itemTitle home__itemTitle--twitch">${isLive ? onAir() : ""} <span>${getHeading(
+    {
+      isLive,
+    },
+  )}</span></a>
     <div class="nextTwitchStream__player">
       <iframe
         src="https://player.twitch.tv/?channel=whitep4nth3r&parent=${process.env.TWITCH_HOST}"
