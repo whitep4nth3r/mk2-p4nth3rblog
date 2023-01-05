@@ -54,7 +54,6 @@ exports.render = function (data) {
           <h2 class="home__itemTitle">Join the <span class="colorHighlight">community</span></h2>
           ${GetInvolvedOpenSource()}
         </div>
-
         <script src="https://the-claw-webring-widget.netlify.app/the-claw-webring-widget.mjs" type="module"></script>
         <the-claw-webring-widget>
           <!-- fallback content in the case of no JavaScript -->
