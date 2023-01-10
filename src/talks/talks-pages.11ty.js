@@ -32,14 +32,15 @@ exports.data = {
 };
 
 exports.render = function (data) {
-  const { talk } = data;
+  const { talk, events } = data;
+  const { isLive } = events;
+
   return /* html */ `
-  
   <section class="post">
     <article class="post__article">
       <h1 class="post__h1">${talk.title}</h1>
       <aside class="post__inlineAside">
-        ${BlogSidebarAuthor({ author: talk.author })}
+        ${BlogSidebarAuthor({ author: talk.author, isLive })}
         ${PublishedDate({
           date: talk.date,
           readingTime: talk.watchTime,
@@ -60,7 +61,7 @@ exports.render = function (data) {
         </div>
       </article>
       <aside class="post__aside">
-        ${BlogSidebarAuthor({ author: talk.author })}
+        ${BlogSidebarAuthor({ author: talk.author, isLive })}
 
         ${PublishedDate({
           date: talk.date,

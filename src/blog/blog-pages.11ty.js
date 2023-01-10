@@ -38,7 +38,8 @@ exports.data = {
 };
 
 exports.render = async function (data) {
-  const { post } = data;
+  const { post, events } = data;
+  const { isLive } = events;
 
   const openGraphImageUrl = await OpenGraph.generateImageUrl({
     title: post.title,
@@ -50,7 +51,7 @@ exports.render = async function (data) {
       <article class="post__article">
         <h1 class="post__h1">${post.title}</h1>
         <aside class="post__inlineAside">
-            ${BlogSidebarAuthor({ author: post.author })}
+            ${BlogSidebarAuthor({ author: post.author, isLive })}
             ${PublishedDate({
               date: post.date,
               readingTime: post.readingTime,
@@ -93,7 +94,7 @@ exports.render = async function (data) {
         })}</script>
       </article>
       <aside class="post__aside">
-        ${BlogSidebarAuthor({ author: post.author })}
+        ${BlogSidebarAuthor({ author: post.author, isLive })}
 
         ${PublishedDate({
           date: post.date,
