@@ -38,12 +38,12 @@ function notLive({ link, image, stream }) {
 
 function live() {
   return /* html */ `
-   <a href="/about/#events" class="home__itemTitle home__itemTitle--twitch">
-   <span class="home__item__onAir">ON AIR</span>
-   <span>
-    Join <span class="colorHighlight">the stream</span>
-   </span>
-   </a>
+    <a href="/about/#events" class="home__itemTitle home__itemTitle--twitch">
+    <span class="home__item__onAir">ON AIR</span>
+    <span>
+      Join <span class="colorHighlight">the stream</span>
+    </span>
+    </a>
     <div class="nextTwitchStream__player">
       <iframe
         src="https://player.twitch.tv/?channel=whitep4nth3r&parent=${process.env.TWITCH_HOST}"
