@@ -25,7 +25,6 @@
 @import "post-card";
 @import "topics-button";
 @import "home-card";
-@import "next-twitch-stream";
 @import "speaker-deck-link";
 @import "video-embed";
 @import "codepen-embed";
@@ -39,9 +38,9 @@
 @import "prism";
 @import "links";
 @import "activity-feed";
+@import "twitch-info";
 
 /* START TEMP */
-
 main {
   margin: auto;
 }
