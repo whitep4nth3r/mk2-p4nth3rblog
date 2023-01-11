@@ -58,7 +58,7 @@ export default async (request, context) => {
       })
       .on("[data-twitchinfo-thumbnail]", {
         element(element) {
-          const thumb_url = latestVod.thumbnail_url.replace("{width}x{height}", "1920x1080");
+          const thumb_url = latestVod.thumbnail_url.replace("%{width}x%{height}", "1920x1080");
           element.setAttribute("src", thumb_url);
         },
       })
