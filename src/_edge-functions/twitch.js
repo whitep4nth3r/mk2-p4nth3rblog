@@ -32,8 +32,18 @@ export default async (request, context) => {
       })
       .on("[data-twitchinfo-live]", {
         element(element) {
-          // todo - maybe add how long ago the stream was
-          element.remove();
+          const today = new Date();
+          const createdOn = new Date(latestVod.created_at);
+          const msInDay = 24 * 60 * 60 * 1000;
+
+          createdOn.setHours(0, 0, 0, 0);
+          today.setHours(0, 0, 0, 0);
+
+          const diff = (+today - +createdOn) / msInDay;
+          const days = diff > 1 ? "days" : "day";
+          const text = diff === 0 ? "Earlier today" : `${diff} ${days} ago`;
+
+          element.setInnerContent(text);
         },
       })
       .on("[data-twitchinfo-link]", {
