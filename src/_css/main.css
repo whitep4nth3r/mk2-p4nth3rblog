@@ -534,17 +534,11 @@ strong {
 }
 
 .homeAbout__subtitle {
-  text-align: center;
   font-size: clamp(1.2rem, 1.6vw, 1.6rem);
   line-height: 1.4;
   margin-bottom: 2rem;
-  border: 0.125rem solid var(--yellow);
-  background: var(--pink);
-  color: var(--white);
+  color: var(--color-fg);
   display: block;
-  padding: 0.5rem;
-  border-radius: var(--border-radius-base);
-  text-shadow: 2px 2px var(--black);
 }
 
 .homeAbout_minibio {
