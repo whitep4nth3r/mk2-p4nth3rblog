@@ -27,7 +27,7 @@ export default async (request, context) => {
     return new HTMLRewriter()
       .on("[data-twitchinfo-headline]", {
         element(element) {
-          element.setInnerContent("Catch up on my latest stream");
+          element.setInnerContent('Catch up on the <span class="colorHighlight">latest stream</span>', { html: true });
         },
       })
       .on("[data-twitchinfo-live]", {
