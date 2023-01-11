@@ -10,7 +10,7 @@ function TwitchInfo() {
         </span>
       </span>
       <p class="twitchInfo__streamTitle" data-twitchinfo-title></p>
-      <img src="" alt="" class="twitchInfo__thumbnail" height="334" width="600" data-twitchinfo-thumbnail />
+      <img src="" alt="Latest screenshot of my Twitch stream. It's dynamic so I have no idea what's happening I'm afraid." class="twitchInfo__thumbnail" height="334" width="600" data-twitchinfo-thumbnail />
     </a>
   </div>
   `;
