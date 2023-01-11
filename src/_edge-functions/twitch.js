@@ -4,7 +4,7 @@ export default async (request, context) => {
   const response = await context.next();
   const data = await fetch("https://whitep4nth3r.com/api/twitch").then((res) => res.json());
 
-  if (data.isLiveOnTwitch) {
+  if (data.isLive) {
     // rewrite HTML using data.streams
     const currentStream = data.streams.data[0];
     return new HTMLRewriter()
