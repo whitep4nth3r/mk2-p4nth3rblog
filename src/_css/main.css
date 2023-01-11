@@ -1942,65 +1942,6 @@ a.post__linkedHeaderIcon {
   display: block;
 }
 
-.dashboard__grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-}
-@media screen and (min-width: 48em) {
-  .dashboard__grid {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
-.dashboard__gridItem {
-  margin-bottom: 2rem;
-}
-
-.dashboard__gridItemTitle {
-  font-weight: var(--font-weight-bold);
-  font-family: var(--font-family-bold);
-  font-size: 1rem;
-  margin-top: 1rem;
-}
-
-.dashboard__gridItemStatBlock {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 1rem;
-  line-height: 1;
-}
-
-.dashboard__gridItemStat {
-  font-weight: var(--font-weight-bold);
-  font-family: var(--font-family-bold);
-  font-size: clamp(2rem, 4vw, 4rem);
-  color: var(--color-highlight);
-}
-
-.dashboard__loading {
-  display: flex;
-}
-.dashboard__loading:before, .dashboard__loading:after {
-  content: "";
-  display: inline-block;
-  width: 1rem;
-  height: 1rem;
-  margin-right: 0.5rem;
-  background-color: var(--color-highlight);
-  border-radius: 50%;
-  animation: flash 2s infinite;
-}
-@media (prefers-reduced-motion: reduce) {
-  .dashboard__loading:before, .dashboard__loading:after {
-    animation: unset;
-  }
-}
-.dashboard__loading:after {
-  animation-delay: 0.5s;
-}
-
 .uses__sectionHeader {
   margin-top: 4rem;
   margin-bottom: 2rem;

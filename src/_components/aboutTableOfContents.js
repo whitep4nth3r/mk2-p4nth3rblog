@@ -1,8 +1,8 @@
-const defaultOptions = { onUses: false, onDashboard: false, categories: [] };
+const defaultOptions = { onUses: false, categories: [] };
 
-function AboutTableOfContents({ onUses, onDashboard, categories } = defaultOptions) {
-  const aboutMeLink = onUses || onDashboard ? "/about/#bio" : "#bio";
-  const eventsLink = onUses || onDashboard ? "/about/#events" : "#events";
+function AboutTableOfContents({ onUses, categories } = defaultOptions) {
+  const aboutMeLink = onUses ? "/about/#bio" : "#bio";
+  const eventsLink = onUses ? "/about/#events" : "#events";
 
   return /*html*/ `
     <details class="tableOfContents" open>
@@ -29,9 +29,6 @@ function AboutTableOfContents({ onUses, onDashboard, categories } = defaultOptio
               .join("")
           : ""
       }
-      <li class="tableOfContents__item">
-        <a href="/dashboard/" class="tableOfContents__itemLink">Dashboard </a>
-      </li>
       <li class="tableOfContents__item">
         <a href="https://www.bonfire.com/store/p4nth3rshop/"
         rel="nofollow noreferrer"
