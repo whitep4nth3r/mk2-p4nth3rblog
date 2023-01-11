@@ -13,7 +13,7 @@
 
 [[edge_functions]]
   path = "/"
-  function = "localize-time"
+  function = "twitch"
 
 [[edge_functions]]
   path = "/about"
