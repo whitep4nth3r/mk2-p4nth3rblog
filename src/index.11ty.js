@@ -1,7 +1,6 @@
 const HomeAbout = require("./_components/homeAbout");
 const OpenGraph = require("../lib/openGraph");
-const NextTwitchStream = require("./_components/nextTwitchStream");
-const NextNonTwitchEvent = require("./_components/nextNonTwitchEvent");
+const TwitchInfo = require("./_components/twitchInfo");
 const GetInvolvedOpenSource = require("./_components/getInvolvedOpenSource");
 const RandomBlogPost = require("./_components/randomBlogPost");
 const ActivityFeedItem = require("./_components/activityFeedItem");
@@ -32,15 +31,7 @@ exports.render = function (data) {
 
     <div>
       <div class="home__item">
-          ${
-            events.next.type === "twitch"
-              ? NextTwitchStream({
-                  stream: events.next,
-                  link: events.next.link,
-                  isLive,
-                })
-              : NextNonTwitchEvent({ event: events.next })
-          }
+          ${TwitchInfo()}
         </div>
         <div class="home__item home__item--activity">
           <a href="/activity/" class="home__itemTitle">Check out my <span class="colorHighlight">latest activity</span></a>
