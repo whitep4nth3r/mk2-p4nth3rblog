@@ -2,7 +2,7 @@ import { HTMLRewriter } from "https://ghuc.cc/worker-tools/html-rewriter/index.t
 
 export default async (request, context) => {
   const response = await context.next();
-  const data = await fetch("https://whitep4nth3r.com/api/twitch").then((res) => res.json());
+  const data = await fetch(`${Deno.env.get("DOMAIN")}/api/twitch`).then((res) => res.json());
 
   if (data.isLive) {
     // rewrite HTML using data.streams
