@@ -54,7 +54,7 @@ exports.handler = async function (event, context) {
 
       body: JSON.stringify({
         followers: user.total,
-        isLiveOnTwitch: streams.data.length === 1,
+        isLive: streams.data.length === 1,
         streams,
         schedule,
         latestVod: vods.data[0],

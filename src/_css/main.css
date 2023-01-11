@@ -455,26 +455,6 @@ strong {
   margin-bottom: 1.75rem;
 }
 
-.home__itemTitle--twitch {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.home__item__onAir {
-  font-weight: var(--font-weight-bold);
-  font-family: var(--font-family-bold);
-  text-transform: uppercase;
-  background-color: var(--pink);
-  color: var(--white);
-  padding: 0.25rem 0.5rem;
-  border-radius: var(--border-radius-base);
-  font-size: 1.75rem;
-  position: relative;
-  z-index: 1;
-  border: 0.125rem solid var(--yellow);
-}
-
 @keyframes shake {
   0% {
     transform: rotate(0deg) scale(1);
@@ -2711,6 +2691,7 @@ pre[class*=language-] {
   aspect-ratio: 16/9;
   border-radius: 1rem;
   border: 0.25rem solid var(--twitch-purple);
+  background-color: var(--twitch-purple);
   filter: var(--base-shadow-filter);
   z-index: 0;
   position: relative;

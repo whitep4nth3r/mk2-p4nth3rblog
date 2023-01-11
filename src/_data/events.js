@@ -44,14 +44,7 @@ module.exports = async function () {
   const nonCancelledEvents = sortedEvents.filter((event) => !event.canceled_until);
   const now = new Date();
 
-  const nextNonCancelledEvent = nonCancelledEvents.find((event) => {
-    const thisDate = new Date(event.date);
-    return thisDate > now;
-  });
-
   return {
     list: sortedEvents,
-    next: nextNonCancelledEvent,
-    isLive: twitchData.isLiveOnTwitch,
   };
 };
