@@ -36,9 +36,15 @@ exports.handler = async function (event, context) {
       fetchOptions,
     );
 
+    const vodsResponse = await fetch(
+      `https://api.twitch.tv/helix/videos?user_id=${twitchId}&type=archive&first=1`,
+      fetchOptions,
+    );
+
     const user = await userResponse.json();
     const streams = await streamsResponse.json();
     const schedule = await scheduleResponse.json();
+    const vods = await vodsResponse.json();
 
     return {
       statusCode: 200,
@@ -51,6 +57,7 @@ exports.handler = async function (event, context) {
         isLiveOnTwitch: streams.data.length === 1,
         streams,
         schedule,
+        latestVod: vods.data[0],
       }),
     };
   }
