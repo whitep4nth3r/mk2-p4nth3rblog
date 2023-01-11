@@ -1,9 +1,79 @@
-.twitchInfo {}
+.twitchInfo {
+  --twitch-purple: #9146ff;
 
-.twitchInfo__thumnbnail {}
+  margin-bottom: 2rem;
+  display: block;
+}
 
-.twitchInfo__streamTitle {}
+.twitchInfo__title {
+  @include grid_item_title($gradientMarginTop: 0.5rem);
+}
 
-.twitchInfo__live {}
+.twitchInfo__link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-.twitchInfo__timeAgo {}
+  &::after {
+    content: "";
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+    background-color: var(--twitch-purple);
+    border-radius: 100%;
+    border: 0.25rem solid var(--twitch-purple);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M512 256c0 141.4-114.6 256-256 256S0 397.4 0 256S114.6 0 256 0S512 114.6 512 256zM188.3 147.1c-7.6 4.2-12.3 12.3-12.3 20.9V344c0 8.7 4.7 16.7 12.3 20.9s16.8 4.1 24.3-.5l144-88c7.1-4.4 11.5-12.1 11.5-20.5s-4.4-16.1-11.5-20.5l-144-88c-7.4-4.5-16.7-4.7-24.3-.5z' fill='%23ffffff'/%3E%3C/svg%3E");
+    position: absolute;
+    height: 4rem;
+    width: 4rem;
+  }
+}
+
+.twitchInfo__thumbnail {
+  aspect-ratio: 16/9;
+  border-radius: 1rem;
+  border: 0.25rem solid var(--twitch-purple);
+  filter: var(--base-shadow-filter);
+  z-index: 0;
+  position: relative;
+  width: 100%;
+}
+
+.twitchInfo__streamTitle {
+  @include font_main;
+  font-size: 1.3rem;
+  bottom: 0.5rem;
+  left: 0.5rem;
+  position: absolute;
+  z-index: 1;
+  background-color: var(--twitch-purple);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  filter: var(--base-shadow-filter);
+}
+
+.twitchInfo__live {
+  svg {
+    height: 1.25rem;
+    width: 1.25rem;
+  }
+
+  @include font_semibold;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.3rem;
+  right: 0.5rem;
+  top: 0.5rem;
+  padding: 0.5rem 1rem;
+  position: absolute;
+  z-index: 1;
+  background-color: var(--pink);
+  border: 0.125rem solid var(--yellow);
+  color: #fff;
+  border-radius: 0.5rem;
+  filter: var(--base-shadow-filter);
+}
