@@ -33,15 +33,15 @@ exports.render = function (data) {
           ${TwitchInfo()}
         </div>
         <div class="home__item home__item--activity">
-          <a href="/activity/" class="home__itemTitle">Check out my <span class="colorHighlight">latest activity</span></a>
+          <a href="/activity/" class="home__itemTitle">🪴 Check out my <span class="colorHighlight">latest activity</span></a>
           ${ActivityFeedItem({ item: activityFeed[0], forceActiveState: true })}
         </div>
         <div class="home__item">
-          <a href="/blog/" class="home__itemTitle">Read <span class="colorHighlight">blogs and tutorials</span></a>
+          <a href="/blog/" class="home__itemTitle">📕 Read <span class="colorHighlight">blogs and tutorials</span></a>
           ${RandomBlogPost({ post: randomBlogPost })}
         </div>
         <div class="home__item">
-          <h2 class="home__itemTitle">Join the <span class="colorHighlight">community</span></h2>
+          <h2 class="home__itemTitle">🌍 Join the <span class="colorHighlight">community</span></h2>
           ${GetInvolvedOpenSource()}
         </div>
         <script src="https://the-claw-webring-widget.netlify.app/the-claw-webring-widget.mjs" type="module"></script>
