@@ -24,21 +24,48 @@ exports.data = {
   eleventyComputed: {
     title: (data) => data.post.metaTitle,
     slug: (data) => data.post.slug,
-    canonical: (data) => data.post.externalUrl || `https://whitep4nth3r.com/blog/${data.post.slug}/`,
+    canonical: (data) =>
+      data.post.externalUrl || `https://whitep4nth3r.com/blog/${data.post.slug}/`,
     metaDescription: (data) => data.post.metaDescription,
     openGraphImageUrl: (data) =>
-      OpenGraph.generateImageUrl({ title: data.post.title, topics: data.post.topicsCollection.items }),
+      OpenGraph.generateImageUrl({
+        title: data.post.title,
+        topics: data.post.topicsCollection.items,
+      }),
     openGraphImageAlt: (data) => OpenGraph.generateImageAlt(data.post.title),
     openGraphImageWidth: OpenGraph.imgWidth,
     openGraphImageHeight: OpenGraph.imgHeight,
-    openGraphUrl: (data) => data.post.externalUrl || `https://whitep4nth3r.com/blog/${data.post.slug}/`,
+    openGraphUrl: (data) =>
+      data.post.externalUrl || `https://whitep4nth3r.com/blog/${data.post.slug}/`,
     openGraphTimeToRead: (data) => data.post.readingTime,
     openGraphArticleTags: (data) => data.post.topicsCollection.items.map((item) => item.name),
   },
 };
 
+function outOfDateWarning({ post }) {
+  if (post.hideOutOfDateWarning) {
+    return "";
+  }
+
+  const today = new Date();
+  const createdOn = new Date(post.date);
+  const msInDay = 24 * 60 * 60 * 1000;
+
+  createdOn.setHours(0, 0, 0, 0);
+  today.setHours(0, 0, 0, 0);
+
+  const diff = (+today - +createdOn) / msInDay;
+  const outOfDate = diff > 730;
+
+  if (outOfDate) {
+    return `<p class="post__outOfDate">⚠️ This post is over two years old and may contain some outdated technical information. Please proceed with caution!</p>`;
+  }
+
+  return "";
+}
+
 exports.render = async function (data) {
-  const { post, events } = data;
+  const { post } = data;
 
   const openGraphImageUrl = await OpenGraph.generateImageUrl({
     title: post.title,
@@ -61,7 +88,12 @@ exports.render = async function (data) {
         </aside>
 
         <div class="post__body">
-          ${RichText(post.body, { renderRssFriendlyImg: false, absoluteUrls: false, renderHeadingLinks: true })}
+          ${outOfDateWarning({ post })}
+          ${RichText(post.body, {
+            renderRssFriendlyImg: false,
+            absoluteUrls: false,
+            renderHeadingLinks: true,
+          })}
         </div>
 
         ${post.isSponsored ? isSponsored() : ""}
