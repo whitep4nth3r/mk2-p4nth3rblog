@@ -41,9 +41,6 @@ module.exports = async function () {
   const allEvents = dbEvents.concat(filteredTwitchEvents);
   const sortedEvents = allEvents.sort(DateUtils.sortItemsByDateAsc);
 
-  const nonCancelledEvents = sortedEvents.filter((event) => !event.canceled_until);
-  const now = new Date();
-
   return {
     list: sortedEvents,
   };

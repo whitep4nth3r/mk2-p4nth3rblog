@@ -15,7 +15,7 @@ exports.data = {
     return `topics/${data.topic.slug}/`;
   },
   eleventyComputed: {
-    title: (data) => `Learn about ${data.topic.name} from Salma Alam-Naylor`,
+    title: (data) => `Learn ${data.topic.name} from Salma Alam-Naylor`,
     metaDescription: (data) => `Learn about ${data.topic.name} and more from ${Config.meta.jobDescription}.`,
     openGraphImageUrl: (data) =>
       OpenGraph.generateImageUrl({ title: `Posts about ${data.topic.name} from whitep4nth3r`, topics: [data.topic] }),
