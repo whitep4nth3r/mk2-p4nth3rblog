@@ -25,9 +25,15 @@ exports.handler = async function (event, context) {
       },
     };
 
-    const userResponse = await fetch(`https://api.twitch.tv/helix/users/follows?to_id=${twitchId}`, fetchOptions);
+    const userResponse = await fetch(
+      `https://api.twitch.tv/helix/users/follows?to_id=${twitchId}`,
+      fetchOptions,
+    );
 
-    const streamsResponse = await fetch(`https://api.twitch.tv/helix/streams?user_id=${twitchId}`, fetchOptions);
+    const streamsResponse = await fetch(
+      `https://api.twitch.tv/helix/streams?user_id=${twitchId}`,
+      fetchOptions,
+    );
 
     const scheduleResponse = await fetch(
       `https://api.twitch.tv/helix/schedule?broadcaster_id=${twitchId}`,
@@ -39,10 +45,16 @@ exports.handler = async function (event, context) {
       fetchOptions,
     );
 
+    const clipsResponse = await fetch(
+      `https://api.twitch.tv/helix/clips?broadcaster_id=${twitchId}&first=100`,
+      fetchOptions,
+    );
+
     const user = await userResponse.json();
     const streams = await streamsResponse.json();
     const schedule = await scheduleResponse.json();
     const vods = await vodsResponse.json();
+    const clips = await clipsResponse.json();
 
     return {
       statusCode: 200,
@@ -56,6 +68,7 @@ exports.handler = async function (event, context) {
         streams,
         schedule,
         latestVod: vods.data[0],
+        clips,
       }),
     };
   }
