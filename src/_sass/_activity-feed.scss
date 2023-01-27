@@ -96,6 +96,10 @@
   @include font_main;
   font-size: 1rem;
   line-height: 1.6;
+
+  &:not(:first-of-type) {
+    margin-top: 1rem;
+  }
 }
 
 .activityFeed__description__image {

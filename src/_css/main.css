@@ -2653,6 +2653,9 @@ pre[class*=language-] {
   font-size: 1rem;
   line-height: 1.6;
 }
+.activityFeed__description p:not(:first-of-type) {
+  margin-top: 1rem;
+}
 
 .activityFeed__description__image {
   border-radius: calc(var(--border-radius-base) * 2);
