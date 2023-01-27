@@ -1,16 +1,27 @@
 <aside data-referer data-slug="{{ slug }}" data-title="{{ title }}"></aside>
+
 <header class="header">
   <a href="#main_content" class="header__skipToMainContent">Skip to main content</a>
 
+  <button type="button" class="header__themeToggle" data-theme-toggle aria-hidden="true">
+    Theme
+  </button>
+
   <div class="header__content">
     <div class="header__logoContainer">
-      <a href="/" class="header__logoContainerLink" aria-label="Navigate to home page">{% include "logo.html" %}</a>
+      <a href="/" class="header__logoContainerLink" aria-label="Navigate to home page">
+        {% include "logo.html" %}
+      </a>
     </div>
 
     <nav aria-label="primary">
       <ul class="header__navList">
         <li class="header__navListItem">
-          <a href="https://github.com/whitep4nth3r?tab=repositories" target="_blank" class="header__navListItemLink">
+          <a
+            href="https://github.com/whitep4nth3r?tab=repositories"
+            target="_blank"
+            class="header__navListItemLink"
+          >
             Projects
           </a>
         </li>
@@ -24,3 +35,49 @@
     </nav>
   </div>
 </header>
+
+<script>
+  function updateButton({ buttonEl, isDark }) {
+    buttonEl.innerText = isDark ? "🌑 Theme" : "🌞 Theme";
+  }
+
+  function updateLocalStorage({ theme }) {
+    localStorage.setItem("theme", theme);
+  }
+
+  function calculateSettingAsThemeString({ localStorageTheme, systemSettingDark }) {
+    if (localStorageTheme !== null) {
+      return localStorageTheme;
+    }
+
+    if (systemSettingDark.matches) {
+      return "dark";
+    }
+
+    return "light";
+  }
+
+  function updateThemeOnHtmlEl({ theme }) {
+    document.querySelector("html").setAttribute("color-mode", theme);
+  }
+
+  const button = document.querySelector("[data-theme-toggle]");
+  const localStorageTheme = localStorage.getItem("theme");
+  const systemSettingDark = window.matchMedia("(prefers-color-scheme: dark)");
+
+  let currentThemeSetting = calculateSettingAsThemeString({ localStorageTheme, systemSettingDark });
+
+  // update on page load
+  updateButton({ buttonEl: button, isDark: currentThemeSetting === "dark" });
+  updateThemeOnHtmlEl({ theme: currentThemeSetting });
+
+  button.addEventListener("click", () => {
+    const newTheme = currentThemeSetting === "dark" ? "light" : "dark";
+
+    updateLocalStorage({ theme: newTheme });
+    updateButton({ buttonEl: button, isDark: newTheme === "dark" });
+    updateThemeOnHtmlEl({ theme: newTheme });
+
+    currentThemeSetting = newTheme;
+  });
+</script>

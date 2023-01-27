@@ -1,6 +1,7 @@
 .header {
   margin-bottom: 4rem;
   margin-top: 2rem;
+  position: relative;
 }
 
 .header__content {
@@ -125,5 +126,35 @@
     display: block;
     line-height: inherit;
     text-align: center;
+  }
+}
+
+.header__themeToggle {
+  @include button_main;
+  border-radius: var(--border-radius-base);
+  font-size: 1rem;
+  line-height: 1;
+  padding: 0.5rem;
+  background-color: var(--toggle-button-bg);
+  color: var(--toggle-button-color);
+  border-color: transparent;
+  filter: var(--base-shadow-filter);
+  margin-bottom: 1rem;
+  transition: box-shadow 0.2s ease-in-out;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+  &:focus {
+    outline: transparent;
+    outline-style: solid;
+    box-shadow: var(--color-bg) 0 0 0 0.125rem, var(--color-highlight) 0 0 0 0.375rem;
+    transition: box-shadow var(--global-transition-time) ease-in-out;
+  }
+
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    top: -1.5rem;
+    right: -0.5rem;
   }
 }

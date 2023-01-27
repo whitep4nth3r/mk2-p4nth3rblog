@@ -23,7 +23,6 @@
   font-display: swap;
 }
 :root {
-  color-scheme: dark;
   --red: #f11012;
   --pink: #f00480;
   --green: #82af3a;
@@ -32,7 +31,6 @@
   --white: #ffffff;
   --yellow: #ffb626;
   --twitch-purple: #9146ff;
-  --cta2-bg: var(--grey-dark);
   --font-family-bold: "Work Sans Bold", sans-serif;
   --font-weight-bold: 700;
   --font-family-heading: "Work Sans SemiBold", sans-serif;
@@ -40,14 +38,6 @@
   --font-family-main: "Work Sans Light", sans-serif;
   --font-weight-main: 300;
   --border-radius-base: 0.375rem;
-  --color-bg: var(--black);
-  --color-bg-lighter: var(--grey-dark);
-  --color-bg-button: var(--grey-dark);
-  --color-button: var(--white);
-  --color-fg: var(--white);
-  --color-link: var(--color-fg);
-  --color-highlight: var(--yellow);
-  --color-logo: var(--color-fg);
   --feed-max-width: 510px;
   --post-max-width: 980px;
   --grid-max-width: 1280px;
@@ -79,6 +69,21 @@
   );
   --global-transition-time: 0.2s;
   --scroll-behaviour: smooth;
+}
+
+[color-mode=dark] {
+  color-scheme: dark;
+  --toggle-button-bg: #000;
+  --toggle-button-color: var(--white);
+  --cta2-bg: var(--grey-dark);
+  --color-bg: var(--black);
+  --color-bg-lighter: var(--grey-dark);
+  --color-bg-button: var(--grey-dark);
+  --color-button: var(--white);
+  --color-fg: var(--white);
+  --color-link: var(--color-fg);
+  --color-highlight: var(--yellow);
+  --color-logo: var(--color-fg);
   --lighthouse-green-fg: rgb(27, 195, 106);
   --lighthouse-green-stroke: rgb(27, 195, 106);
   --lighthouse-green-bg: rgb(30, 46, 47);
@@ -89,30 +94,30 @@
   --lighthouse-red-stroke: rgb(250, 40, 52);
   --lighthouse-red-bg: rgb(52, 31, 32);
   --lighthouse-container-bg: rgb(29, 30, 32);
-  --youtube-red: #ff0000;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color-scheme: light;
-    --cta2-bg: var(--yellow);
-    --color-bg: var(--white);
-    --color-bg-lighter: var(--white);
-    --color-fg: var(--black);
-    --color-link: var(--color-fg);
-    --color-highlight: var(--black);
-    --lighthouse-green-fg: rgb(15, 123, 38);
-    --lighthouse-green-stroke: rgb(27, 195, 106);
-    --lighthouse-green-bg: rgb(233, 249, 240);
-    --lighthouse-orange-fg: rgb(184, 42, 22);
-    --lighthouse-orange-stroke: rgb(251, 157, 70);
-    --lighthouse-orange-bg: rgb(255, 246, 237);
-    --lighthouse-red-fg: rgb(193, 0, 19);
-    --lighthouse-red-stroke: rgb(250, 40, 52);
-    --lighthouse-red-bg: rgb(255, 234, 235);
-    --lighthouse-container-bg: #ffffff;
-  }
+[color-mode=light] {
+  color-scheme: light;
+  --toggle-button-bg: var(--white);
+  --toggle-button-color: var(--black);
+  --cta2-bg: var(--yellow);
+  --color-bg: var(--white);
+  --color-bg-lighter: var(--white);
+  --color-fg: var(--black);
+  --color-link: var(--color-fg);
+  --color-highlight: var(--black);
+  --lighthouse-green-fg: rgb(15, 123, 38);
+  --lighthouse-green-stroke: rgb(27, 195, 106);
+  --lighthouse-green-bg: rgb(233, 249, 240);
+  --lighthouse-orange-fg: rgb(184, 42, 22);
+  --lighthouse-orange-stroke: rgb(251, 157, 70);
+  --lighthouse-orange-bg: rgb(255, 246, 237);
+  --lighthouse-red-fg: rgb(193, 0, 19);
+  --lighthouse-red-stroke: rgb(250, 40, 52);
+  --lighthouse-red-bg: rgb(255, 234, 235);
+  --lighthouse-container-bg: #ffffff;
 }
+
 @media (prefers-reduced-motion: reduce) {
   :root {
     --global-transition-time: 0;
@@ -225,6 +230,7 @@ strong {
 .header {
   margin-bottom: 4rem;
   margin-top: 2rem;
+  position: relative;
 }
 
 .header__content {
@@ -354,6 +360,49 @@ strong {
   display: block;
   line-height: inherit;
   text-align: center;
+}
+
+.header__themeToggle {
+  font-weight: var(--font-weight-heading);
+  font-family: var(--font-family-heading);
+  background-color: var(--color-bg-button);
+  color: var(--color-button);
+  border-radius: var(--border-radius-base);
+  padding: 0.5rem 1rem 0.5rem 0.75rem;
+  text-decoration: none;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 1rem;
+  border-color: transparent;
+  cursor: pointer;
+  border-radius: var(--border-radius-base);
+  font-size: 1rem;
+  line-height: 1;
+  padding: 0.5rem;
+  background-color: var(--toggle-button-bg);
+  color: var(--toggle-button-color);
+  border-color: transparent;
+  filter: var(--base-shadow-filter);
+  margin-bottom: 1rem;
+  transition: box-shadow 0.2s ease-in-out;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.header__themeToggle:focus {
+  outline: transparent;
+  outline-style: solid;
+  box-shadow: var(--color-bg) 0 0 0 0.125rem, var(--color-highlight) 0 0 0 0.375rem;
+  transition: box-shadow var(--global-transition-time) ease-in-out;
+}
+@media screen and (min-width: 768px) {
+  .header__themeToggle {
+    position: absolute;
+    top: -1.5rem;
+    right: -0.5rem;
+  }
 }
 
 .footer {

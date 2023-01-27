@@ -1,23 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" color-mode="dark">
   <head>
-    {% include "head_base.html" %} 
-    {% if openGraphTimeToRead %}
-      <meta name="twitter:label1" content="Written by" />
-      <meta name="twitter:data1" content="Salma Alam-Naylor" />
-      <meta name="twitter:label2" content="Reading time" />
-      <meta name="twitter:data2" content="{{ openGraphTimeToRead }} minutes" />
-      <meta property="og:type" content="article" />
-      <meta property="article:section" content="Technology" />
+    {% include "head_base.html" %} {% if openGraphTimeToRead %}
+    <meta name="twitter:label1" content="Written by" />
+    <meta name="twitter:data1" content="Salma Alam-Naylor" />
+    <meta name="twitter:label2" content="Reading time" />
+    <meta name="twitter:data2" content="{{ openGraphTimeToRead }} minutes" />
+    <meta property="og:type" content="article" />
+    <meta property="article:section" content="Technology" />
     {% for tag in openGraphArticleTags %}
-      <meta property="article:tag" content="{{ tag }}" />
+    <meta property="article:tag" content="{{ tag }}" />
     {% endfor %} {% else %}
-      <meta property="og:type" content="website" />
+    <meta property="og:type" content="website" />
     {% endif %}
   </head>
   <body data-type="{{pageType}}">
     {% include "header.html" %}
-      <main id="main_content">{{ content }}</main>
+    <main id="main_content">{{ content }}</main>
     {% include "footer.html" %}
   </body>
 </html>
