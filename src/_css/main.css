@@ -501,8 +501,11 @@ strong {
   border-radius: calc(var(--border-radius-base) * 2);
 }
 @media (prefers-reduced-motion: no-preference) {
-  .homeAbout__imageBio:hover img {
+  .homeAbout__imageBio img {
     animation: shake 0.75s forwards ease-in-out;
+  }
+  .homeAbout__imageBio:hover img {
+    animation: shake 0.75s infinite ease-in-out;
   }
 }
 
