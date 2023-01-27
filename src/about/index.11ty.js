@@ -87,7 +87,7 @@ exports.render = function (data) {
                 ${events.list
                   .map(
                     (event) => /*html*/ `
-                  <li class="about__eventsListItem">
+                  <li class="about__eventsListItem" event-date="${event.date}">
                     <time datetime="${event.date}" class="about__eventsListItemDate">
                       <span class="about__eventsListItemDate__month">
                         ${DateUtils.getMonthFromTime(event.date)}
@@ -111,7 +111,11 @@ exports.render = function (data) {
                       }
                     </span>
                     <span class="about__eventsListItemName">${event.name}</span>
-                    ${event.description ? `<p class="about__eventsListshortDescription">${event.description}</p>` : ""}
+                    ${
+                      event.description
+                        ? `<p class="about__eventsListshortDescription">${event.description}</p>`
+                        : ""
+                    }
                     ${
                       event.canceled_until === null && event.link
                         ? `
@@ -119,7 +123,9 @@ exports.render = function (data) {
                       event.link
                     }" class="about__eventsListItemCta" target="_blank" rel="nofollow noreferrer">${calculateIcon(
                             event.type,
-                          )} Go to <span class="about__eventsListItemCta--sr">${event.name}</span> event</a>`
+                          )} Go to <span class="about__eventsListItemCta--sr">${
+                            event.name
+                          }</span> event</a>`
                         : ""
                     }
                   </li>
