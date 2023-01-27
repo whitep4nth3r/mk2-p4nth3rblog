@@ -23,7 +23,10 @@ exports.data = {
     title: (data) => data.talk.title,
     metaDescription: (data) => data.talk.metaDescription,
     openGraphImageUrl: (data) =>
-      OpenGraph.generateImageUrl({ title: data.talk.title, topics: data.talk.topicsCollection.items }),
+      OpenGraph.generateImageUrl({
+        title: data.talk.title,
+        topics: data.talk.topicsCollection.items,
+      }),
     openGraphImageAlt: (data) => OpenGraph.generateImageAlt(data.talk.title),
     openGraphImageWidth: OpenGraph.imgWidth,
     openGraphImageHeight: OpenGraph.imgHeight,
@@ -48,15 +51,26 @@ exports.render = function (data) {
         })}
       </aside>
       <div class="post__body">
-        ${RichText(talk.abstract, { renderRssFriendlyImg: false, absoluteUrls: false, renderHeadingLinks: true })}
+        ${RichText(talk.abstract, {
+          renderRssFriendlyImg: false,
+          absoluteUrls: false,
+          renderHeadingLinks: true,
+        })}
 
-        ${VideoEmbed({ embedUrl: talk.recording.embedUrl, title: talk.recording.title })}
-
+        ${
+          talk.recording !== null
+            ? VideoEmbed({ embedUrl: talk.recording.embedUrl, title: talk.recording.title })
+            : ""
+        }
         <h2 class="post__h2">Slides</h2>
         ${SpeakerDeckLink({ speakerDeckLink: talk.speakerDeckLink })}
 
         <h2 class="post__h2">Transcript</h2>
-        ${RichText(talk.transcript, { renderRssFriendlyImg: false, absoluteUrls: false, renderHeadingLinks: true })}
+        ${RichText(talk.transcript, {
+          renderRssFriendlyImg: false,
+          absoluteUrls: false,
+          renderHeadingLinks: true,
+        })}
         </div>
       </article>
       <aside class="post__aside">
