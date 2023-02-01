@@ -1,6 +1,4 @@
 :root {
-  color-scheme: dark;
-
   --red: #f11012;
   --pink: #f00480;
   --green: #82af3a;
@@ -8,9 +6,7 @@
   --grey-dark: #2b2e3a;
   --white: #ffffff;
   --yellow: #ffb626;
-
   --twitch-purple: #9146ff;
-  --cta2-bg: var(--grey-dark);
 
   --font-family-bold: "Work Sans Bold", sans-serif;
   --font-weight-bold: 700;
@@ -20,15 +16,6 @@
   --font-weight-main: 300;
 
   --border-radius-base: 0.375rem;
-
-  --color-bg: var(--black);
-  --color-bg-lighter: var(--grey-dark);
-  --color-bg-button: var(--grey-dark);
-  --color-button: var(--white);
-  --color-fg: var(--white);
-  --color-link: var(--color-fg);
-  --color-highlight: var(--yellow);
-  --color-logo: var(--color-fg);
 
   --feed-max-width: 510px;
   --post-max-width: 980px;
@@ -65,6 +52,24 @@
 
   --global-transition-time: 0.2s;
   --scroll-behaviour: smooth;
+}
+
+[color-mode="dark"] {
+  color-scheme: dark;
+
+  --toggle-button-bg: #000;
+  --toggle-button-color: var(--white);
+
+  --cta2-bg: var(--grey-dark);
+
+  --color-bg: var(--black);
+  --color-bg-lighter: var(--grey-dark);
+  --color-bg-button: var(--grey-dark);
+  --color-button: var(--white);
+  --color-fg: var(--white);
+  --color-link: var(--color-fg);
+  --color-highlight: var(--yellow);
+  --color-logo: var(--color-fg);
 
   --lighthouse-green-fg: rgb(27, 195, 106);
   --lighthouse-green-stroke: rgb(27, 195, 106);
@@ -79,36 +84,35 @@
   --lighthouse-red-bg: rgb(52, 31, 32);
 
   --lighthouse-container-bg: rgb(29, 30, 32);
-
-  --youtube-red: #ff0000;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color-scheme: light;
+[color-mode="light"] {
+  color-scheme: light;
 
-    --cta2-bg: var(--yellow);
+  --toggle-button-bg: var(--white);
+  --toggle-button-color: var(--black);
 
-    --color-bg: var(--white);
-    --color-bg-lighter: var(--white);
-    --color-fg: var(--black);
-    --color-link: var(--color-fg);
-    --color-highlight: var(--black);
+  --cta2-bg: var(--yellow);
 
-    --lighthouse-green-fg: rgb(15, 123, 38);
-    --lighthouse-green-stroke: rgb(27, 195, 106);
-    --lighthouse-green-bg: rgb(233, 249, 240);
+  --color-bg: var(--white);
+  --color-bg-lighter: var(--white);
+  --color-fg: var(--black);
+  --color-link: var(--color-fg);
+  --color-highlight: var(--black);
 
-    --lighthouse-orange-fg: rgb(184, 42, 22);
-    --lighthouse-orange-stroke: rgb(251, 157, 70);
-    --lighthouse-orange-bg: rgb(255, 246, 237);
+  --lighthouse-green-fg: rgb(15, 123, 38);
+  --lighthouse-green-stroke: rgb(27, 195, 106);
+  --lighthouse-green-bg: rgb(233, 249, 240);
 
-    --lighthouse-red-fg: rgb(193, 0, 19);
-    --lighthouse-red-stroke: rgb(250, 40, 52);
-    --lighthouse-red-bg: rgb(255, 234, 235);
+  --lighthouse-orange-fg: rgb(184, 42, 22);
+  --lighthouse-orange-stroke: rgb(251, 157, 70);
+  --lighthouse-orange-bg: rgb(255, 246, 237);
 
-    --lighthouse-container-bg: #ffffff;
-  }
+  --lighthouse-red-fg: rgb(193, 0, 19);
+  --lighthouse-red-stroke: rgb(250, 40, 52);
+  --lighthouse-red-bg: rgb(255, 234, 235);
+
+  --lighthouse-container-bg: #ffffff;
 }
 
 @media (prefers-reduced-motion: reduce) {

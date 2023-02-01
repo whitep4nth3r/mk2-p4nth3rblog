@@ -1,8 +1,6 @@
 # whitep4nth3r.com | PREVIEW BRANCH
 
-This site is built with [Eleventy](https://www.11ty.dev/docs/) and [Netlify](https://netlify.com).
-
-![A screenshot of a blog post on whitep4nth3r.com](screenshot.png)
+This site is built with [Eleventy](https://www.11ty.dev/docs/) and [Netlify](https://netlify.com)
 
 ---
 

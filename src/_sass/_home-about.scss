@@ -45,9 +45,12 @@
   }
 
   @media (prefers-reduced-motion: no-preference) {
+    img {
+      animation: shake 0.75s forwards ease-in-out;
+    }
     &:hover {
       img {
-        animation: shake 0.75s forwards ease-in-out;
+        animation: shake 0.75s infinite ease-in-out;
       }
     }
   }

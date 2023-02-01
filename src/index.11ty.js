@@ -45,7 +45,7 @@ exports.render = function (data) {
           ${GetInvolvedOpenSource()}
         </div>
         <script src="https://the-claw-webring-widget.netlify.app/the-claw-webring-widget.mjs" type="module"></script>
-        <the-claw-webring-widget>
+        <the-claw-webring-widget fullWidth="true">
           <!-- fallback content in the case of no JavaScript -->
           <div style="color: inherit; font-family: system-ui; padding: 1rem; font-size: 1rem;">
             <div style="display: grid; gap: 0.5rem 1rem; align-items: center; margin-bottom: 1rem; justify-content: flex-start; grid-template-areas: 'image title' 'image view';">
