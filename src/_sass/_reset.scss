@@ -41,7 +41,8 @@ summary:focus {
   --box-shadow-highlight: var(--color-highlight);
   outline: transparent;
   outline-style: solid;
-  box-shadow: var(--box-shadow-bg) 0 0 0 0.125rem, var(--box-shadow-highlight) 0 0 0 0.375rem;
+  /* 2nd value is 3x 1st */
+  box-shadow: var(--box-shadow-bg) 0 0 0 0.08rem, var(--box-shadow-highlight) 0 0 0 0.24rem;
   transition: box-shadow var(--global-transition-time) ease-in-out;
   border-radius: var(--border-radius-base);
 }
