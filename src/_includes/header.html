@@ -50,10 +50,6 @@
     buttonEl.setAttribute("aria-label", newAriaLabel);
   }
 
-  function updateLocalStorage({ theme }) {
-    localStorage.setItem("theme", theme);
-  }
-
   function calculateSettingAsThemeString({ localStorageTheme, systemSettingDark }) {
     if (localStorageTheme !== null) {
       return localStorageTheme;
@@ -84,7 +80,7 @@
   button.addEventListener("click", () => {
     const newTheme = currentThemeSetting === "dark" ? "light" : "dark";
 
-    updateLocalStorage({ theme: newTheme });
+    localStorage.setItem("theme", newTheme);
     updateButton({ buttonEl: button, isDark: newTheme === "dark" });
     updateThemeOnHtmlEl({ theme: newTheme });
 
