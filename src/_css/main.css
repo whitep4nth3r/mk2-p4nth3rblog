@@ -31,6 +31,9 @@
   --white: #ffffff;
   --yellow: #ffb626;
   --twitch-purple: #9146ff;
+  --color-bg-button: var(--grey-dark);
+  --color-button: var(--white);
+  --color-logo: var(--color-fg);
   --font-family-bold: "Work Sans Bold", sans-serif;
   --font-weight-bold: 700;
   --font-family-heading: "Work Sans SemiBold", sans-serif;
@@ -77,13 +80,10 @@
   --toggle-button-color: var(--white);
   --cta2-bg: var(--grey-dark);
   --color-bg: var(--black);
-  --color-bg-lighter: var(--grey-dark);
-  --color-bg-button: var(--grey-dark);
-  --color-button: var(--white);
   --color-fg: var(--white);
+  --color-bg-lighter: var(--grey-dark);
   --color-link: var(--color-fg);
   --color-highlight: var(--yellow);
-  --color-logo: var(--color-fg);
   --lighthouse-green-fg: rgb(27, 195, 106);
   --lighthouse-green-stroke: rgb(27, 195, 106);
   --lighthouse-green-bg: rgb(30, 46, 47);
@@ -102,8 +102,8 @@
   --toggle-button-color: var(--black);
   --cta2-bg: var(--yellow);
   --color-bg: var(--white);
-  --color-bg-lighter: var(--white);
   --color-fg: var(--black);
+  --color-bg-lighter: var(--white);
   --color-link: var(--color-fg);
   --color-highlight: var(--black);
   --lighthouse-green-fg: rgb(15, 123, 38);
