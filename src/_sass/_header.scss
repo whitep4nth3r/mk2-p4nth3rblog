@@ -1,7 +1,6 @@
 .header {
   margin-bottom: 4rem;
   margin-top: 2rem;
-  position: relative;
 }
 
 .header__content {
@@ -76,13 +75,16 @@
 .header__navList {
   padding-left: 0;
   list-style: none;
-  display: flex;
-  flex-direction: row;
+  display: grid;
   justify-content: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 0.25rem;
+  margin-top: 1rem;
 }
 
 @media screen and (min-width: 48em) {
   .header__navList {
+    margin-top: 0;
     justify-content: flex-end;
   }
 
@@ -98,12 +100,13 @@
 
 .header__navListItemLink {
   @include font_semibold;
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
   padding: 1rem;
   text-decoration: none;
   display: block;
-  text-align: left;
-  @include add_gradient_bottom($marginTop: 0.25rem);
+  text-align: center;
+  text-transform: uppercase;
+  background: var(--color-bg);
 }
 
 .header__referer {
@@ -130,31 +133,33 @@
 }
 
 .header__themeToggle {
-  @include button_main;
-  border-radius: var(--border-radius-base);
-  font-size: 1rem;
-  line-height: 1;
   padding: 0.5rem;
-  background-color: var(--toggle-button-bg);
-  color: var(--toggle-button-color);
   border-color: transparent;
-  filter: var(--base-shadow-filter);
   margin-bottom: 1rem;
-  transition: box-shadow 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   display: block;
   margin-left: auto;
   margin-right: auto;
+  background-image: url("/img/theme-dark.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 44px;
+  width: 44px;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  border-radius: 100%;
+  background-color: transparent;
+  cursor: pointer;
+
+  &.header__themeToggle--light {
+    background-image: url("/img/theme-light.svg");
+  }
 
   &:focus {
     outline: transparent;
     outline-style: solid;
-    box-shadow: var(--color-bg) 0 0 0 0.125rem, var(--color-highlight) 0 0 0 0.375rem;
+    box-shadow: var(--pink) 0 0 0 0.175rem;
     transition: box-shadow var(--global-transition-time) ease-in-out;
-  }
-
-  @media screen and (min-width: 768px) {
-    position: absolute;
-    top: -1.5rem;
-    right: -0.5rem;
   }
 }

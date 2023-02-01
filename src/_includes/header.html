@@ -1,8 +1,15 @@
+<a href="#main_content" class="header__skipToMainContent">Skip to main content</a>
+
+<button
+  type="button"
+  class="header__themeToggle"
+  data-theme-toggle
+  aria-label="Change to light theme"
+></button>
+
 <aside data-referer data-slug="{{ slug }}" data-title="{{ title }}"></aside>
 
 <header class="header">
-  <a href="#main_content" class="header__skipToMainContent">Skip to main content</a>
-
   <div class="header__content">
     <div class="header__logoContainer">
       <a href="/" class="header__logoContainerLink" aria-label="Navigate to home page">
@@ -29,15 +36,18 @@
         </li>
       </ul>
     </nav>
-    <button type="button" class="header__themeToggle" data-theme-toggle aria-hidden="true">
-      Theme
-    </button>
   </div>
 </header>
 
 <script>
   function updateButton({ buttonEl, isDark }) {
-    buttonEl.innerText = isDark ? "🌑 Theme" : "🌞 Theme";
+    buttonEl.classList = isDark
+      ? "header__themeToggle"
+      : "header__themeToggle header__themeToggle--light";
+
+    const newAriaLabel = isDark ? "Change to light theme" : "Change to dark theme";
+
+    buttonEl.setAttribute("aria-label", newAriaLabel);
   }
 
   function updateLocalStorage({ theme }) {
@@ -70,6 +80,7 @@
   updateButton({ buttonEl: button, isDark: currentThemeSetting === "dark" });
   updateThemeOnHtmlEl({ theme: currentThemeSetting });
 
+  // update on theme button click
   button.addEventListener("click", () => {
     const newTheme = currentThemeSetting === "dark" ? "light" : "dark";
 
