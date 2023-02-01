@@ -19,7 +19,7 @@ body {
   font-size: 1rem;
   background-color: var(--color-bg);
   color: var(--color-fg);
-  padding: 1rem 2rem;
+  padding: 0 2rem 1rem 2rem;
   border-radius: calc(var(--border-radius-base) * 2);
 }
 
@@ -41,8 +41,7 @@ summary:focus {
   --box-shadow-highlight: var(--color-highlight);
   outline: transparent;
   outline-style: solid;
-  /* 2nd value is 3x 1st */
-  box-shadow: var(--box-shadow-bg) 0 0 0 0.08rem, var(--box-shadow-highlight) 0 0 0 0.24rem;
+  box-shadow: var(--box-shadow-bg) 0 0 0 0.125rem, var(--box-shadow-highlight) 0 0 0 0.375rem;
   transition: box-shadow var(--global-transition-time) ease-in-out;
   border-radius: var(--border-radius-base);
 }
