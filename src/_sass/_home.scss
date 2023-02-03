@@ -2,18 +2,8 @@
   list-style: none;
   padding-left: 0;
   display: block;
-  max-width: var(--grid-max-width);
+  max-width: var(--feed-max-width);
   margin: auto;
-  gap: 1rem 4rem;
-  height: 100%;
-
-  @media screen and (min-width: 48em) {
-    grid-template-columns: 1fr 1fr;
-    display: grid;
-  }
-}
-
-.home__sticky {
   height: 100%;
 }
 

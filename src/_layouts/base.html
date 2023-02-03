@@ -16,6 +16,7 @@
   </head>
   <body data-type="{{pageType}}">
     {% include "header.html" %}
+    <aside data-referer data-slug="{{ slug }}" data-title="{{ title }}"></aside>
     <main id="main_content">{{ content }}</main>
     {% include "footer.html" %}
   </body>

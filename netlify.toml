@@ -12,7 +12,7 @@
   function = "referer"
 
 [[edge_functions]]
-  path = "/"
+  path = "/*"
   function = "twitch"
 
 [[edge_functions]]

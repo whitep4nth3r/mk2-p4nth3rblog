@@ -1,4 +1,3 @@
-const BlogSidebarAuthor = require("../_components/blogSidebarAuthor");
 const BlogSidebarTopics = require("../_components/blogSidebarTopics");
 const RichText = require("../_components/richText");
 const VideoEmbed = require("../_components/videoEmbed");
@@ -42,7 +41,6 @@ exports.render = function (data) {
     <article class="post__article">
       <h1 class="post__h1">${talk.title}</h1>
       <aside class="post__inlineAside">
-        ${BlogSidebarAuthor({ author: talk.author })}
         ${PublishedDate({
           date: talk.date,
           readingTime: talk.watchTime,
@@ -74,8 +72,6 @@ exports.render = function (data) {
         </div>
       </article>
       <aside class="post__aside">
-        ${BlogSidebarAuthor({ author: talk.author })}
-
         ${PublishedDate({
           date: talk.date,
           readingTime: talk.watchTime,

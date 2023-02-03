@@ -22,7 +22,7 @@ exports.render = function (data) {
   return /* html */ `
   
   <section class="links">
-    <img src="${person.imageBio.url}?w=200" alt="Salma Alam-Naylor" class="links__image" />
+    <img src="${person.data.imageBio.url}?w=200" alt="Salma Alam-Naylor" class="links__image" />
     <h1 class="links__title">Salma Alam-Naylor</h1>
     <h2 class="links__subtitle">I write code for your entertainment</h2>
 

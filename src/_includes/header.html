@@ -8,14 +8,34 @@
 ></button>
 
 <header class="header">
-  <aside data-referer data-slug="{{ slug }}" data-title="{{ title }}"></aside>
+  <div class="header__banner"></div>
+
   <div class="header__content">
-    <!-- <a href="/" class="header__logoContainerLink" aria-label="Navigate to home page">
-      {% include "logo.html" %}
-    </a> -->
+    <div class="headerProfile">
+      <div class="headerProfile__imageBio">
+        <img src="{{person.headerImage}}" alt="Salma Alam-Naylor" />
+      </div>
+      <a href="https://twitch.tv/whitep4nth3r" class="headerProfile__follow" data-header-profile-follow>Follow</a>
+      <h1 class="headerProfile__name" data-header-profile-name>Salma Alam-Naylor</h1>
+      <h2 class="headerProfile__subtitle">@whitep4nth3r</h2>
+      <p class="headerProfile_minibio">
+        ✨ I write code for your entertainment ✨</br>
+        👉 <a href="http://twitch.tv/whitep4nth3r">http://twitch.tv/whitep4nth3r</a></br>
+        💻 I work at <a href="https://ntl.fyi/3vA7krR">@Netlify</a>
+      </p>
+    </div>
 
     <nav aria-label="primary">
       <ul class="header__navList">
+        <li class="header__navListItem">
+          <a href="/about/" class="header__navListItemLink">About</a>
+        </li>
+        <li class="header__navListItem">
+          <a href="/blog/" class="header__navListItemLink">Posts</a>
+        </li>
+        <li class="header__navListItem">
+          <a href="/activity/" class="header__navListItemLink">Activity</a>
+        </li>
         <li class="header__navListItem">
           <a
             href="https://github.com/whitep4nth3r?tab=repositories"
@@ -24,12 +44,6 @@
           >
             Projects
           </a>
-        </li>
-        <li class="header__navListItem">
-          <a href="/blog/" class="header__navListItemLink">Posts</a>
-        </li>
-        <li class="header__navListItem">
-          <a href="/about/" class="header__navListItemLink">About</a>
         </li>
       </ul>
     </nav>

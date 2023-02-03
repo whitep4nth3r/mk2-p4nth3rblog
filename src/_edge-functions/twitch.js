@@ -19,6 +19,16 @@ export default async (request, context) => {
           element.setAttribute("src", thumb_url);
         },
       })
+      .on("[data-header-profile-name]", {
+        element(element) {
+          element.setInnerContent("Salma Alam-Naylor 🔴 LIVE ON TWITCH");
+        },
+      })
+      .on("[data-header-profile-follow]", {
+        element(element) {
+          element.setInnerContent("Watch live");
+        },
+      })
       .transform(response);
   } else {
     //rewrite HTML using data.latestVod data
@@ -27,7 +37,10 @@ export default async (request, context) => {
     return new HTMLRewriter()
       .on("[data-twitchinfo-headline]", {
         element(element) {
-          element.setInnerContent('📺 Catch up on the <span class="colorHighlight">latest stream</span>', { html: true });
+          element.setInnerContent(
+            '📺 Catch up on the <span class="colorHighlight">latest stream</span>',
+            { html: true },
+          );
         },
       })
       .on("[data-twitchinfo-live]", {

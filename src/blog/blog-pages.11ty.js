@@ -1,6 +1,5 @@
 const ExternalUrl = require("../_components/externalUrl");
 const BlogSidebarTopics = require("../_components/blogSidebarTopics");
-const BlogSidebarAuthor = require("../_components/blogSidebarAuthor");
 const RichText = require("../_components/richText");
 const PublishedDate = require("../_components/publishedDate");
 const TableOfContents = require("../_components/tableOfContents");
@@ -77,7 +76,6 @@ exports.render = async function (data) {
       <article class="post__article">
         <h1 class="post__h1">${post.title}</h1>
         <aside class="post__inlineAside">
-            ${BlogSidebarAuthor({ author: post.author })}
             ${PublishedDate({
               date: post.date,
               readingTime: post.readingTime,
@@ -125,8 +123,6 @@ exports.render = async function (data) {
         })}</script>
       </article>
       <aside class="post__aside">
-        ${BlogSidebarAuthor({ author: post.author })}
-
         ${PublishedDate({
           date: post.date,
           readingTime: post.readingTime,

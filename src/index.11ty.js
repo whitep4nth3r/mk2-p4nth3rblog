@@ -1,4 +1,3 @@
-const HomeAbout = require("./_components/homeAbout");
 const OpenGraph = require("../lib/openGraph");
 const TwitchInfo = require("./_components/twitchInfo");
 const GetInvolvedOpenSource = require("./_components/getInvolvedOpenSource");
@@ -19,15 +18,9 @@ exports.data = {
 };
 
 exports.render = function (data) {
-  const { events, randomBlogPost, person, activityFeed } = data;
+  const { randomBlogPost, activityFeed } = data;
   return /*html*/ `
   <section class="home">
-    <div>
-      <div class="home__sticky">
-        ${HomeAbout({ person })}
-      </div>
-    </div>
-
     <div>
         <div class="home__item">
           ${TwitchInfo()}
