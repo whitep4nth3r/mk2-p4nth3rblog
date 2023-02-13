@@ -432,9 +432,18 @@ strong {
   height: 100%;
 }
 
+.home__items {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
 .home__item {
   display: flex;
   flex-direction: column;
+}
+.home__item .activityFeed__item {
+  margin-bottom: 0;
 }
 
 .home__itemTitle {
@@ -445,6 +454,10 @@ strong {
   font-size: clamp(1.2rem, 2vw, 2rem);
   line-height: 1.2;
   margin-bottom: 1.75rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.75rem;
 }
 
 @keyframes shake {
@@ -1517,7 +1530,6 @@ a.post__linkedHeaderIcon {
   height: 100%;
   display: flex;
   flex-direction: column;
-  margin-bottom: 2rem;
 }
 
 .homeCard__title {
@@ -1557,7 +1569,7 @@ a.post__linkedHeaderIcon {
   color: var(--color-fg);
   word-break: break-word;
   display: block;
-  margin-top: 1rem;
+  margin-bottom: 0;
 }
 
 .homeCard__button {
@@ -1586,24 +1598,6 @@ a.post__linkedHeaderIcon {
   display: flex;
 }
 
-.homeCard__ctaRow {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-.homeCard__ctaRow .topicsButton {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-@media screen and (min-width: 72em) {
-  .homeCard__ctaRow {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-  }
-}
-
 .homeCard__seeAllCta {
   font-weight: var(--font-weight-heading);
   font-family: var(--font-family-heading);
@@ -1625,6 +1619,7 @@ a.post__linkedHeaderIcon {
   gap: 0.25rem;
   align-items: center;
   margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .homeCard__metaIcon {
@@ -2584,7 +2579,6 @@ pre[class*=language-] {
 
 .twitchInfo {
   --twitch-purple: #9146ff;
-  margin-bottom: 2rem;
   display: block;
 }
 

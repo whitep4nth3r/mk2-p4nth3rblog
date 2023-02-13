@@ -1,6 +1,6 @@
 const OpenGraph = require("../lib/openGraph");
 const TwitchInfo = require("./_components/twitchInfo");
-const GetInvolvedOpenSource = require("./_components/getInvolvedOpenSource");
+const DiscordIcon = require("./_components/svg/discordIcon");
 const RandomBlogPost = require("./_components/randomBlogPost");
 const ActivityFeedItem = require("./_components/activityFeedItem");
 const pageTitle = "Tech streams, blogs and code tutorials";
@@ -21,7 +21,7 @@ exports.render = function (data) {
   const { randomBlogPost, activityFeed } = data;
   return /*html*/ `
   <section class="home">
-    <div>
+    <div class="home__items">
         <div class="home__item">
           ${TwitchInfo()}
         </div>
@@ -34,8 +34,12 @@ exports.render = function (data) {
           ${RandomBlogPost({ post: randomBlogPost })}
         </div>
         <div class="home__item">
-          <h2 class="home__itemTitle">🌍 Join the <span class="colorHighlight">community</span></h2>
-          ${GetInvolvedOpenSource()}
+          <a href="/discord" class="home__itemTitle">${DiscordIcon()} Join <span class="colorHighlight">The Claw Discord server</span></a>
+            <div class="homeCard">
+              <div class="homeCard__excerpt">
+                <p>Join a growing community of developers who are building stuff, learning things, and helping each other grow through the power of open source software.</p>
+              </div>
+            </div>
         </div>
         <script src="https://the-claw-webring-widget.netlify.app/the-claw-webring-widget.mjs" type="module"></script>
         <the-claw-webring-widget fullWidth="true">

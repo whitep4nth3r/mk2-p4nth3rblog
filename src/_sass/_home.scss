@@ -7,11 +7,25 @@
   height: 100%;
 }
 
+.home__items {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
 .home__item {
   display: flex;
   flex-direction: column;
+
+  .activityFeed__item {
+    margin-bottom: 0;
+  }
 }
 
 .home__itemTitle {
   @include grid_item_title($gradientMarginTop: 0.5rem);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.75rem;
 }
