@@ -52,7 +52,18 @@ function embed(item) {
     case "tweet":
       return TweetEmbed({ tweetUrl: item.tweetEmbed.tweetUrl });
     case "youtube":
-      return VideoEmbed({ embedUrl: item.videoEmbed.embedUrl, title: item.videoEmbed.title, showTitle: false });
+      return VideoEmbed({
+        embedUrl: item.videoEmbed.embedUrl,
+        title: item.videoEmbed.title,
+        showTitle: false,
+      });
+    case "youtube-short":
+      return VideoEmbed({
+        embedUrl: item.videoEmbed.embedUrl,
+        title: item.videoEmbed.title,
+        showTitle: false,
+        isShort: true,
+      });
     default:
       return "";
   }
@@ -110,7 +121,9 @@ const ActivityFeedItem = ({ item, forceActiveState = false }) => {
         <span class="activity__metaIcon">${CalendarIcon()}</span>
         <span class="activity__metaText">${DateUtils.formatDateForDisplay(item.date)}</span>
       </span>
-      <span class="activityFeed__type activityFeed__type--${item.type}">${activityType[item.type]}</span>
+      <span class="activityFeed__type activityFeed__type--${item.type}">${
+    activityType[item.type]
+  }</span>
     </div>
 
     <h2 class="activityFeed__title">${heading}</h2>

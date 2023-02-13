@@ -1796,6 +1796,13 @@ a.post__linkedHeaderIcon {
   overflow: hidden;
 }
 
+.videoEmbed__ytShort .eleventy-plugin-youtube-embed lite-youtube {
+  aspect-ratio: 9/16;
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
 .videoEmbed__tiktok {
   max-width: 542px;
   min-height: 574px;
