@@ -11,7 +11,7 @@ var md = require("markdown-it")({
 function RandomBlogPost({ post }) {
   return /*html*/ `
     <article class="homeCard">
-      <a href="/blog/${post.slug}/" class="homeCard__linkForTitle" id="post-${post.sys.id}">
+      <a href="/blog/${post.slug}/" class="homeCard__linkForTitle">
         <h3 class="homeCard__title">${post.title}</h3>
       </a>
 
@@ -24,15 +24,6 @@ function RandomBlogPost({ post }) {
 
       <div class="homeCard__excerpt">
         ${md.render(post.excerpt)}
-      </div>
-
-
-      <div class="homeCard__ctaRow">
-        ${TopicsButton({
-          topics: post.topicsCollection.items,
-          url: `/blog/${post.slug}/`,
-          ariaDescribedBy: `post-${post.sys.id}`,
-        })}
       </div>
     </article>
   `;

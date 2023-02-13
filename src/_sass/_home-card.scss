@@ -2,7 +2,6 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  margin-bottom: 2rem;
 }
 
 .homeCard {
@@ -53,7 +52,7 @@
 
 .homeCard__excerpt p {
   @include homecard_excerpt_p;
-  margin-top: 1rem;
+  margin-bottom: 0;
 }
 
 .homeCard__button {
@@ -67,24 +66,6 @@
 
   * {
     display: flex;
-  }
-}
-
-.homeCard__ctaRow {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-
-  .topicsButton {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  @media screen and (min-width: 72em) {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
   }
 }
 
@@ -111,6 +92,7 @@
   gap: 0.25rem;
   align-items: center;
   margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .homeCard__metaIcon {
