@@ -1,12 +1,11 @@
 .header {
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
   margin-top: 1rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
+  width: 100%;
 
   @media screen and (min-width: 768px) {
     flex-direction: row;

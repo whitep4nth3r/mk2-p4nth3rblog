@@ -25,11 +25,6 @@ export default async (request, context) => {
     const { latestVod } = data;
 
     return new HTMLRewriter()
-      .on("[data-twitchinfo-headline]", {
-        element(element) {
-          element.setInnerContent('📺 Catch up on the <span class="colorHighlight">latest stream</span>', { html: true });
-        },
-      })
       .on("[data-twitchinfo-live]", {
         element(element) {
           const today = new Date();

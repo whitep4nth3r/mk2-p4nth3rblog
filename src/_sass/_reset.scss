@@ -14,6 +14,11 @@ body {
   background-color: var(--color-bg);
   color: var(--color-fg);
   padding: 1rem;
+  position: relative;
+
+  @media screen and (min-width: 48rem) {
+    padding: 1rem 2.5rem;
+  }
 }
 
 a {
@@ -57,3 +62,7 @@ img {
 strong {
   @include font_bold;
 }
+
+// * {
+//   outline: 1px solid pink;
+// }
