@@ -22,6 +22,8 @@ exports.render = function (data) {
   const { events, randomBlogPost, person, activityFeed } = data;
   return /*html*/ `
   <section class="home">
+
+    <!--
     <div>
       <div class="home__sticky">
         ${HomeAbout({ person })}
@@ -50,7 +52,6 @@ exports.render = function (data) {
         </div>
         <script src="https://the-claw-webring-widget.netlify.app/the-claw-webring-widget.mjs" type="module"></script>
         <the-claw-webring-widget fullWidth="true">
-          <!-- fallback content in the case of no JavaScript -->
           <div style="color: inherit; font-family: system-ui; padding: 1rem; font-size: 1rem;">
             <div style="display: grid; gap: 0.5rem 1rem; align-items: center; margin-bottom: 1rem; justify-content: flex-start; grid-template-areas: 'image title' 'image view';">
               <img
@@ -63,7 +64,7 @@ exports.render = function (data) {
             </div>
           </div>
         </the-claw-webring-widget>
-      </div>
+      </div> -->
   </section>
 
   `;

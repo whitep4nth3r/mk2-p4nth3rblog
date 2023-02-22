@@ -1,24 +1,13 @@
 <a href="#main_content" class="header__skipToMainContent">Skip to main content</a>
 
-<button
-  type="button"
-  class="header__themeToggle"
-  data-theme-toggle
-  aria-label="Change to light theme"
-></button>
-
-<aside data-referer data-slug="{{ slug }}" data-title="{{ title }}"></aside>
-
 <header class="header">
-  <div class="header__content">
-    <div class="header__logoContainer">
-      <a href="/" class="header__logoContainerLink" aria-label="Navigate to home page">
-        {% include "logo.html" %}
-      </a>
-    </div>
-
+  <div class="header__navGroup">
+    <div class="header__logoContainer">{% include "logo.html" %}</div>
     <nav aria-label="primary">
       <ul class="header__navList">
+        <li class="header__navListItem">
+          <a href="/" class="header__navListItemLink">Home</a>
+        </li>
         <li class="header__navListItem">
           <a
             href="https://github.com/whitep4nth3r?tab=repositories"
@@ -37,7 +26,16 @@
       </ul>
     </nav>
   </div>
+
+  <button
+    type="button"
+    class="header__themeToggle"
+    data-theme-toggle
+    aria-label="Change to light theme"
+  ></button>
 </header>
+
+<aside data-referer data-slug="{{ slug }}" data-title="{{ title }}"></aside>
 
 <script>
   function updateButton({ buttonEl, isDark }) {
