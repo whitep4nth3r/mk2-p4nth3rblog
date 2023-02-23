@@ -16,22 +16,17 @@
   function = "twitch"
 
 [[edge_functions]]
-  path = "/about"
+  path = "/about/"
   function = "clean-up-past-events"
 
 [[edge_functions]]
-  path = "/about"
+  path = "/about/"
   function = "localize-time"
 
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"
   status = 200
-
-[[redirects]]
-  from = "/projects"
-  to = "https://github.com/whitep4nth3r?tab=repositories"
-  status = 301
 
 [[redirects]]
   from = "/topics"
