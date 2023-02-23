@@ -27,7 +27,10 @@ export default async (request, context) => {
     return new HTMLRewriter()
       .on("[data-twitchinfo-headline]", {
         element(element) {
-          element.setInnerContent('📺 Catch up on the <span class="colorHighlight">latest stream</span>', { html: true });
+          element.setInnerContent(
+            '📺 Catch up on the <span class="colorHighlight">latest stream</span>',
+            { html: true },
+          );
         },
       })
       .on("[data-twitchinfo-live]", {
@@ -40,8 +43,15 @@ export default async (request, context) => {
           today.setHours(0, 0, 0, 0);
 
           const diff = (+today - +createdOn) / msInDay;
-          const days = diff > 1 ? "days" : "day";
-          const text = diff === 0 ? "Earlier today" : `${diff} ${days} ago`;
+          let text;
+
+          if (diff === 0) {
+            text = "Earlier today";
+          } else if (diff === 1) {
+            text = "Yesterday";
+          } else {
+            text = `${diff} days ago`;
+          }
 
           element.setInnerContent(text);
         },
