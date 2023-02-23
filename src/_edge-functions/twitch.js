@@ -4,6 +4,8 @@ export default async (request, context) => {
   const response = await context.next();
   const data = await fetch(`${Deno.env.get("DOMAIN")}/api/twitch`).then((res) => res.json());
 
+  console.log(data);
+
   if (data.isLive) {
     // rewrite HTML using data.streams
     const currentStream = data.streams.data[0];
