@@ -4,8 +4,6 @@ export default async (request, context) => {
   const response = await context.next();
   const data = await fetch(`${Deno.env.get("DOMAIN")}/api/twitch`).then((res) => res.json());
 
-  console.log(data);
-
   if (data.isLive) {
     // rewrite HTML using data.streams
     const currentStream = data.streams.data[0];
@@ -58,6 +56,7 @@ export default async (request, context) => {
       .on("[data-twitchinfo-title]", {
         element(element) {
           element.setInnerContent(latestVod.title);
+          element.setAttribute("class", "twitchInfo__live--offline");
         },
       })
       .on("[data-twitchinfo-thumbnail]", {

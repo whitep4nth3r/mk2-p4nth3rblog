@@ -32,6 +32,9 @@ exports.render = function (data) {
       <div class="home__twitch">
         ${TwitchInfo()}
       </div>
+      <div class="home__activity">
+        
+      </div>
 
     </div>
 
