@@ -36,11 +36,13 @@
   @include font_semibold;
   color: var(--color-fg);
   font-size: 1rem;
+  margin-bottom: 1rem;
 }
 
 .activityFeed__title {
   @include font_bold;
   font-size: 1.5rem;
+  margin-bottom: 6rem;
 }
 
 // .activityFeed__description {

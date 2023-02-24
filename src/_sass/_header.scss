@@ -128,7 +128,7 @@
   &:focus {
     outline: transparent;
     outline-style: solid;
-    box-shadow: var(--pink) 0 0 0 0.175rem;
+    box-shadow: var(--color-fg) 0 0 0 0.175rem;
     transition: box-shadow var(--global-transition-time) ease-in-out;
   }
 }

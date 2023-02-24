@@ -38,7 +38,7 @@ exports.render = function (data) {
       <div class="home__activity">
       ${feedItems.map((item) => ActivityFeedItem({ item })).join("")}
       </div>
-
+      <h2 class="home__heading"><a href="/activity/">See more stuff</a></h2>
     </div>
 
   </section>

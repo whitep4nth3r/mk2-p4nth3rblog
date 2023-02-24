@@ -360,7 +360,7 @@ strong {
 .header__themeToggle:focus {
   outline: transparent;
   outline-style: solid;
-  box-shadow: var(--pink) 0 0 0 0.175rem;
+  box-shadow: var(--color-fg) 0 0 0 0.175rem;
   transition: box-shadow var(--global-transition-time) ease-in-out;
 }
 
@@ -484,8 +484,6 @@ strong {
   margin-bottom: 2rem;
 }
 .homeAbout_minibio a {
-  color: var(--color-highlight);
-  text-decoration: none;
   font-weight: var(--font-weight-heading);
   font-family: var(--font-family-heading);
 }
@@ -2457,12 +2455,14 @@ pre[class*=language-] {
   font-family: var(--font-family-heading);
   color: var(--color-fg);
   font-size: 1rem;
+  margin-bottom: 1rem;
 }
 
 .activityFeed__title {
   font-weight: var(--font-weight-bold);
   font-family: var(--font-family-bold);
   font-size: 1.5rem;
+  margin-bottom: 6rem;
 }
 
 .twitchInfo {
