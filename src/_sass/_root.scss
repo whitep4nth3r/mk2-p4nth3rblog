@@ -86,6 +86,9 @@
   --lighthouse-red-bg: rgb(52, 31, 32);
 
   --lighthouse-container-bg: rgb(29, 30, 32);
+
+  --activity-feed-bg: linear-gradient(180deg, rgba(0, 0, 0, 0.16) 0%, rgba(0, 0, 0, 0.064) 100%);
+  --activity-feed-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.16);
 }
 
 [color-mode="light"] {
@@ -116,6 +119,10 @@
   --lighthouse-red-bg: rgb(255, 234, 235);
 
   --lighthouse-container-bg: #ffffff;
+
+  --activity-feed-bg: linear-gradient(180deg, rgba(0, 0, 0, 0.16) 0%, rgba(0, 0, 0, 0.064) 100%);
+  --activity-feed-box-shadow: 0px 0px 0px -16px rgba(27, 27, 27, 0.01),
+    inset 0px 1px 0px rgba(255, 255, 255, 0.16);
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -19,6 +19,8 @@ exports.data = {
 
 exports.render = function (data) {
   const { events, randomBlogPost, person, activityFeed } = data;
+  const feedItems = activityFeed.slice(0, 10);
+
   return /*html*/ `
   <section class="home">
 
@@ -32,8 +34,9 @@ exports.render = function (data) {
       <div class="home__twitch">
         ${TwitchInfo()}
       </div>
+      <h2 class="home__heading">Check out my latest activity</h2>
       <div class="home__activity">
-        
+      ${feedItems.map((item) => ActivityFeedItem({ item })).join("")}
       </div>
 
     </div>

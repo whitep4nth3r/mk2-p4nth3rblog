@@ -52,12 +52,14 @@ function embed(item) {
     case "tweet":
       return TweetEmbed({ tweetUrl: item.tweetEmbed.tweetUrl });
     case "youtube":
+      //TODO — update activity feed content model to include just a link to YT video
       return VideoEmbed({
         embedUrl: item.videoEmbed.embedUrl,
         title: item.videoEmbed.title,
         showTitle: false,
       });
     case "youtube-short":
+      //TODO — update activity feed content model to include just a link to YT video
       return VideoEmbed({
         embedUrl: item.videoEmbed.embedUrl,
         title: item.videoEmbed.title,
@@ -69,9 +71,8 @@ function embed(item) {
   }
 }
 
-function openingTag(item, forceActiveState) {
+function openingTag(item) {
   let href = false;
-  const forceActiveClass = forceActiveState ? " activityFeed__item--forceActive" : "";
 
   if (item.type === "talk") {
     href = `/talks/${item.slug}/`;
@@ -86,10 +87,10 @@ function openingTag(item, forceActiveState) {
   }
 
   if (href) {
-    return `<a href="${href}" class="activityFeed__item activityFeed__link${forceActiveClass}">`;
+    return `<a href="${href}" class="activityFeed__item">`;
   }
 
-  return `<div class="activityFeed__item${forceActiveClass}">`;
+  return `<div class="activityFeed__item">`;
 }
 
 function closingTag(item) {
@@ -111,26 +112,24 @@ const activityType = {
   youtube: "YouTube",
 };
 
-const ActivityFeedItem = ({ item, forceActiveState = false }) => {
+const ActivityFeedItem = ({ item }) => {
   const heading = item.title || item.name;
 
   return `
-  ${openingTag(item, forceActiveState)}
-    <div class="activityFeed__meta">
-      <span class="activityFeed__metaDate">
-        <span class="activity__metaIcon">${CalendarIcon()}</span>
-        <span class="activity__metaText">${DateUtils.formatDateForDisplay(item.date)}</span>
-      </span>
-      <span class="activityFeed__type activityFeed__type--${item.type}">${
-    activityType[item.type]
-  }</span>
-    </div>
+  ${openingTag(item)}
+    <p class="activityFeed__date">
+      ${DateUtils.formatDateForDisplay(item.date)}
+    </p>
 
     <h2 class="activityFeed__title">${heading}</h2>
-    ${description(item)}
-    ${embed(item)}
-    ${image(item.image)}
-  ${closingTag(item)}`;
+    <span class="activityFeed__type activityFeed__type--${item.type}">${
+    activityType[item.type]
+  }</span>
+    ${closingTag(item)}`;
 };
 
 module.exports = ActivityFeedItem;
+
+// ${description(item)}
+// ${embed(item)}
+// ${image(item.image)}

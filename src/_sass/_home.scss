@@ -42,6 +42,8 @@ $layout_height: 70vh;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  max-width: 1080px;
+  margin: auto;
 }
 
 .home__twitch {
@@ -51,6 +53,31 @@ $layout_height: 70vh;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: $layout_height;
+  }
+
+  margin-bottom: 6rem;
+}
+
+.home__heading {
+  @include font_semibold;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.home__activity {
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+
+  @media screen and (min-width: $layout_breakpoint) {
+    grid-template-columns: 1fr 1fr;
+
+    .activityFeed__item:nth-child(7),
+    .activityFeed__item:nth-child(8),
+    .activityFeed__item:nth-child(9),
+    .activityFeed__item:nth-child(10) {
+      grid-column: 1 / span 2;
+    }
   }
 }
