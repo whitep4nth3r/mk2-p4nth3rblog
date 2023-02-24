@@ -46,6 +46,7 @@ export default async (request, context) => {
           }
 
           element.setInnerContent(text);
+          element.setAttribute("class", "twitchInfo__live twitchInfo__live--offline");
         },
       })
       .on("[data-twitchinfo-link]", {
@@ -56,7 +57,6 @@ export default async (request, context) => {
       .on("[data-twitchinfo-title]", {
         element(element) {
           element.setInnerContent(latestVod.title);
-          element.setAttribute("class", "twitchInfo__live--offline");
         },
       })
       .on("[data-twitchinfo-thumbnail]", {
