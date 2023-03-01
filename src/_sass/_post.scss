@@ -55,7 +55,6 @@
   border-color: transparent;
   margin-top: 1rem;
   margin-bottom: 1rem;
-  @include add_gradient_bottom;
 }
 
 .post__h1 {
@@ -64,7 +63,6 @@
   font-size: clamp(2.2rem, 3vw, 3rem);
   line-height: 1.2;
   color: var(--color-fg);
-  @include add_gradient_bottom;
 }
 
 .post__h2 {

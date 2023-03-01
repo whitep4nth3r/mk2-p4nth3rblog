@@ -29,6 +29,7 @@ function calculateIcon(type) {
 exports.data = {
   layout: "base.html",
   title: pageTitle,
+  activeNav: "about",
   metaDescription:
     "Salma helps developers build stuff, learn things and love what they do. She works at Netlify, streams coding on Twitch, and loves helping people get into tech.",
   openGraphImageUrl: OpenGraph.generateImageUrl({ title: pageTitle }),

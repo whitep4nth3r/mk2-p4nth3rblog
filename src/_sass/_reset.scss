@@ -6,13 +6,13 @@
 html {
   font-size: 100%;
   scroll-behavior: var(--scroll-behaviour);
+  background-color: var(--color-bg);
+  background: var(--page-background);
 }
 
 body {
   @include font_main;
   font-size: 1rem;
-  background-color: var(--color-bg);
-  background: var(--page-background);
   color: var(--color-fg);
   padding: 1rem;
   position: relative;

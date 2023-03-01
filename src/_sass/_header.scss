@@ -6,6 +6,8 @@
   align-items: center;
   flex-direction: column;
   width: 100%;
+  z-index: 10;
+  position: relative;
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
@@ -78,6 +80,20 @@
   padding: 1rem;
   text-decoration: none;
   display: block;
+  text-transform: uppercase;
+}
+
+[data-active="home"] [data-link="home"],
+[data-active="blog"] [data-link="blog"],
+[data-active="about"] [data-link="about"] {
+  &:after {
+    content: "";
+    height: 0.25rem;
+    margin-top: 0.25rem;
+    width: 100%;
+    background: var(--red);
+    display: block;
+  }
 }
 
 .header__referer {

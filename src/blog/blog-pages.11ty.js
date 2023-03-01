@@ -12,6 +12,7 @@ const OpenGraph = require("../../lib/openGraph");
 exports.data = {
   layout: "base.html",
   pageType: "post",
+  activeNav: "blog",
   pagination: {
     data: "posts",
     alias: "post",

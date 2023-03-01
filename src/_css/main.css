@@ -70,7 +70,7 @@
     hsl(34deg 100% 58%) 87%,
     hsl(40deg 100% 57%) 100%
   );
-  --global-transition-time: 0.2s;
+  --global-transition-time: 0.21s;
   --scroll-behaviour: smooth;
 }
 
@@ -149,14 +149,14 @@
 html {
   font-size: 100%;
   scroll-behavior: var(--scroll-behaviour);
+  background-color: var(--color-bg);
+  background: var(--page-background);
 }
 
 body {
   font-weight: var(--font-weight-main);
   font-family: var(--font-family-main);
   font-size: 1rem;
-  background-color: var(--color-bg);
-  background: var(--page-background);
   color: var(--color-fg);
   padding: 1rem;
   position: relative;
@@ -243,6 +243,8 @@ strong {
   align-items: center;
   flex-direction: column;
   width: 100%;
+  z-index: 10;
+  position: relative;
 }
 @media screen and (min-width: 768px) {
   .header {
@@ -313,6 +315,18 @@ strong {
   font-size: 1rem;
   padding: 1rem;
   text-decoration: none;
+  display: block;
+  text-transform: uppercase;
+}
+
+[data-active=home] [data-link=home]:after,
+[data-active=blog] [data-link=blog]:after,
+[data-active=about] [data-link=about]:after {
+  content: "";
+  height: 0.25rem;
+  margin-top: 0.25rem;
+  width: 100%;
+  background: var(--red);
   display: block;
 }
 
@@ -598,14 +612,6 @@ strong {
   margin-bottom: 2rem;
   max-width: max-content;
 }
-.about__eventsHeader:after {
-  content: "";
-  width: 100%;
-  height: 0.125rem;
-  display: block;
-  margin-top: 1rem;
-  background: var(--yellow-red-gradient);
-}
 
 .about__eventsHeaderTitle {
   font-weight: var(--font-weight-heading);
@@ -816,14 +822,6 @@ strong {
   margin-bottom: 2rem;
   max-width: max-content;
 }
-.page__header:after {
-  content: "";
-  width: 100%;
-  height: 0.125rem;
-  display: block;
-  margin-top: 1rem;
-  background: var(--yellow-red-gradient);
-}
 
 .page__headerTitle {
   font-weight: var(--font-weight-heading);
@@ -907,14 +905,6 @@ strong {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
-.post__hr:after {
-  content: "";
-  width: 100%;
-  height: 0.125rem;
-  display: block;
-  margin-top: 1rem;
-  background: var(--yellow-red-gradient);
-}
 
 .post__h1 {
   font-weight: var(--font-weight-heading);
@@ -923,14 +913,6 @@ strong {
   font-size: clamp(2.2rem, 3vw, 3rem);
   line-height: 1.2;
   color: var(--color-fg);
-}
-.post__h1:after {
-  content: "";
-  width: 100%;
-  height: 0.125rem;
-  display: block;
-  margin-top: 1rem;
-  background: var(--yellow-red-gradient);
 }
 
 .post__h2 {
@@ -1070,14 +1052,6 @@ a.post__linkedHeaderIcon {
   margin-top: 4rem;
   margin-bottom: 2rem;
   max-width: max-content;
-}
-.post__relatedHeader:after {
-  content: "";
-  width: 100%;
-  height: 0.125rem;
-  display: block;
-  margin-top: 1rem;
-  background: var(--yellow-red-gradient);
 }
 
 .post__relatedHeaderTitle {
@@ -1759,14 +1733,6 @@ a.post__linkedHeaderIcon {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
-.uses__sectionHeader:after {
-  content: "";
-  width: 100%;
-  height: 0.125rem;
-  display: block;
-  margin-top: 1rem;
-  background: var(--yellow-red-gradient);
-}
 
 .uses__sectionHeaderTitle {
   font-weight: var(--font-weight-heading);
@@ -1871,14 +1837,6 @@ a.post__linkedHeaderIcon {
   margin-top: 4rem;
   margin-bottom: 2rem;
   max-width: max-content;
-}
-.twoColumn__header:after {
-  content: "";
-  width: 100%;
-  height: 0.125rem;
-  display: block;
-  margin-top: 1rem;
-  background: var(--yellow-red-gradient);
 }
 
 .twoColumn__headerTitle {
@@ -2117,14 +2075,6 @@ a.post__linkedHeaderIcon {
   margin-top: 4rem;
   margin-bottom: 2rem;
   max-width: max-content;
-}
-.fourohfour__header:after {
-  content: "";
-  width: 100%;
-  height: 0.125rem;
-  display: block;
-  margin-top: 1rem;
-  background: var(--yellow-red-gradient);
 }
 
 .fourohfour__headerTitle {
@@ -2426,14 +2376,6 @@ pre[class*=language-] {
   max-width: max-content;
   padding: 0 1rem;
 }
-.activityFeed__header:after {
-  content: "";
-  width: 100%;
-  height: 0.125rem;
-  display: block;
-  margin-top: 1rem;
-  background: var(--yellow-red-gradient);
-}
 
 .activityFeed__item {
   overflow: hidden;
@@ -2446,7 +2388,7 @@ pre[class*=language-] {
   display: flex;
   flex-direction: column;
   text-decoration: none;
-  transition: all 0.21s ease-in-out !important;
+  transition: all var(--global-transition-time) ease-in-out !important;
 }
 .activityFeed__item:hover, .activityFeed__item:focus, .activityFeed__item:active {
   background: var(--activity-feed-bg-hover);
@@ -2483,6 +2425,8 @@ pre[class*=language-] {
   --title-font-size: clamp(1rem, 1.5vw, 1.5rem);
   --title-padding: 0.75rem;
   display: block;
+  height: 100%;
+  width: 100%;
 }
 
 .twitchInfo__link {
@@ -2503,10 +2447,10 @@ pre[class*=language-] {
   height: 100%;
   box-shadow: 0px 1.5rem 2rem -1rem rgba(0, 0, 0, 0.4), inset 0px 1px 0px rgba(255, 255, 255, 0.48);
   filter: grayscale(1);
-  transition: all 0.3s ease-in-out;
+  transition: all var(--global-transition-time) ease-in-out;
 }
 .twitchInfo__thumbnail:hover {
-  filter: grayscale(0) contrast(1.2);
+  filter: grayscale(0);
 }
 
 .twitchInfo__deets {

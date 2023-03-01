@@ -24,21 +24,19 @@
   @include grid_item;
 }
 
-@mixin grid_item_title($gradientMarginTop: 1rem) {
+@mixin grid_item_title() {
   @include font_semibold;
   text-decoration: none;
   color: var(--color-fg);
   font-size: clamp(1.2rem, 2vw, 2rem);
   line-height: 1.2;
   margin-bottom: 1.75rem;
-  // @include add_gradient_bottom($marginTop: $gradientMarginTop);
 }
 
 @mixin grid_header {
   margin-top: 4rem;
   margin-bottom: 2rem;
   max-width: max-content;
-  @include add_gradient_bottom;
 }
 
 @mixin grid_header_title {

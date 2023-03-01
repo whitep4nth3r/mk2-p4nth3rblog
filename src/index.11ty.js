@@ -8,6 +8,7 @@ const pageTitle = "Tech streams, blogs and code tutorials";
 exports.data = {
   layout: "base.html",
   title: pageTitle,
+  activeNav: "home",
   metaDescription:
     "I write code for your entertainment. I work at Netlify, stream coding on Twitch, and love helping people get into tech.",
   openGraphImageUrl: OpenGraph.generateImageUrl({ title: pageTitle }),
@@ -38,7 +39,7 @@ exports.render = function (data) {
       <div class="home__activity">
       ${feedItems.map((item) => ActivityFeedItem({ item })).join("")}
       </div>
-      <h2 class="home__heading"><a href="/activity/">See more stuff</a></h2>
+      <!-- <h2 class="home__heading"><a href="/activity/">See more stuff</a></h2> -->
     </div>
 
   </section>

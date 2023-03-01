@@ -5,8 +5,9 @@
   --title-bottom-left-radius: calc(var(--thumbnail-outer-radius) - var(--thumbnail-inner-padding));
   --title-font-size: clamp(1rem, 1.5vw, 1.5rem);
   --title-padding: 0.75rem;
-  // max-width: var(--home-feed-max-width);
   display: block;
+  height: 100%;
+  width: 100%;
 }
 
 .twitchInfo__link {
@@ -30,7 +31,7 @@
   transition: all var(--global-transition-time) ease-in-out;
 
   &:hover {
-    filter: grayscale(0) contrast(1.2);
+    filter: grayscale(0);
   }
 }
 
