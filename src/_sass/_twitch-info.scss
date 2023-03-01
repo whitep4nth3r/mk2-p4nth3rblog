@@ -14,6 +14,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  aspect-ratio: 16/9;
 }
 
 .twitchInfo__thumbnail {
@@ -25,6 +26,12 @@
   width: auto;
   height: 100%;
   box-shadow: 0px 1.5rem 2rem -1rem rgba(0, 0, 0, 0.4), inset 0px 1px 0px rgba(255, 255, 255, 0.48);
+  filter: grayscale(1);
+  transition: all var(--global-transition-time) ease-in-out;
+
+  &:hover {
+    filter: grayscale(0) contrast(1.2);
+  }
 }
 
 .twitchInfo__deets {

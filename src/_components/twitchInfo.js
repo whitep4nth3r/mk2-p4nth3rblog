@@ -12,8 +12,8 @@ function TwitchInfo() {
           Earlier today ${PlayIcon()}
         </p>
       </div>
-      <img src="" alt="Latest screenshot of my Twitch stream. It's dynamic so I have no idea what's happening I'm afraid." class="twitchInfo__thumbnail" height="334" width="600" data-twitchinfo-thumbnail />
-    </a>
+      <img src="" alt="Latest screenshot of my Twitch stream. It's dynamic so I have no idea what's happening I'm afraid." class="twitchInfo__thumbnail" height="1080" width="1920" data-twitchinfo-thumbnail />
+      </a>
   </div>
   `;
 }

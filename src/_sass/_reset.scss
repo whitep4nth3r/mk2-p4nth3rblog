@@ -12,6 +12,7 @@ body {
   @include font_main;
   font-size: 1rem;
   background-color: var(--color-bg);
+  background: var(--page-background);
   color: var(--color-fg);
   padding: 1rem;
   position: relative;
@@ -29,10 +30,6 @@ a {
   text-decoration-thickness: 0.125rem;
 }
 
-a:hover {
-  cursor: pointer;
-}
-
 a:focus,
 summary:focus {
   --box-shadow-bg: var(--color-bg);
@@ -41,8 +38,8 @@ summary:focus {
   outline-style: solid;
   /* 2nd value is 3x 1st */
   box-shadow: var(--box-shadow-bg) 0 0 0 0.08rem, var(--box-shadow-highlight) 0 0 0 0.24rem;
-  transition: box-shadow var(--global-transition-time) ease-in-out;
   border-radius: var(--border-radius-base);
+  transition: box-shadow var(--global-transition-time) ease-in-out;
 }
 
 h1,

@@ -26,7 +26,7 @@
   --red: #f11012;
   --pink: #f00480;
   --green: #82af3a;
-  --black: #0f111a;
+  --black: #1b1b1b;
   --grey-dark: #2b2e3a;
   --white: #ffffff;
   --yellow: #ffb626;
@@ -79,6 +79,7 @@
   --toggle-button-bg: #000;
   --toggle-button-color: var(--white);
   --cta2-bg: var(--grey-dark);
+  --page-background: linear-gradient(153.07deg, #353535 50%, #1b1b1b 100%);
   --color-bg: var(--black);
   --color-fg: var(--white);
   --color-bg-lighter: var(--grey-dark);
@@ -94,8 +95,10 @@
   --lighthouse-red-stroke: rgb(250, 40, 52);
   --lighthouse-red-bg: rgb(52, 31, 32);
   --lighthouse-container-bg: rgb(29, 30, 32);
-  --activity-feed-bg: linear-gradient(180deg, rgba(0, 0, 0, 0.16) 0%, rgba(0, 0, 0, 0.064) 100%);
+  --activity-feed-bg: rgba(0, 0, 0, 0.16);
+  --activity-feed-bg-hover: rgba(0, 0, 0, 0.4);
   --activity-feed-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.16);
+  --activity-feed-box-shadow-hover: inset 0px 1px 0px rgba(255, 255, 255, 0.16);
 }
 
 [color-mode=light] {
@@ -103,6 +106,7 @@
   --toggle-button-bg: var(--white);
   --toggle-button-color: var(--black);
   --cta2-bg: var(--yellow);
+  --page-background: linear-gradient(145.04deg, #f0f0f0 60.34%, #d3c9c9 98.77%);
   --color-bg: var(--white);
   --color-fg: var(--black);
   --color-bg-lighter: var(--white);
@@ -118,8 +122,11 @@
   --lighthouse-red-stroke: rgb(250, 40, 52);
   --lighthouse-red-bg: rgb(255, 234, 235);
   --lighthouse-container-bg: #ffffff;
-  --activity-feed-bg: linear-gradient(180deg, rgba(0, 0, 0, 0.16) 0%, rgba(0, 0, 0, 0.064) 100%);
+  --activity-feed-bg: rgba(255, 255, 255, 0.32);
+  --activity-feed-bg-hover: rgba(255, 255, 255, 0.72);
   --activity-feed-box-shadow: 0px 0px 0px -16px rgba(27, 27, 27, 0.01),
+    inset 0px 1px 0px rgba(255, 255, 255, 0.16);
+  --activity-feed-box-shadow-hover: 0px 24px 32px -16px rgba(27, 27, 27, 0.16),
     inset 0px 1px 0px rgba(255, 255, 255, 0.16);
 }
 
@@ -149,6 +156,7 @@ body {
   font-family: var(--font-family-main);
   font-size: 1rem;
   background-color: var(--color-bg);
+  background: var(--page-background);
   color: var(--color-fg);
   padding: 1rem;
   position: relative;
@@ -167,10 +175,6 @@ a {
   text-decoration-thickness: 0.125rem;
 }
 
-a:hover {
-  cursor: pointer;
-}
-
 a:focus,
 summary:focus {
   --box-shadow-bg: var(--color-bg);
@@ -179,8 +183,8 @@ summary:focus {
   outline-style: solid;
   /* 2nd value is 3x 1st */
   box-shadow: var(--box-shadow-bg) 0 0 0 0.08rem, var(--box-shadow-highlight) 0 0 0 0.24rem;
-  transition: box-shadow var(--global-transition-time) ease-in-out;
   border-radius: var(--border-radius-base);
+  transition: box-shadow var(--global-transition-time) ease-in-out;
 }
 
 h1,
@@ -2432,6 +2436,7 @@ pre[class*=language-] {
 }
 
 .activityFeed__item {
+  overflow: hidden;
   transition: all 0.2s ease-in-out;
   padding: 2rem 2.5rem;
   border-radius: 0.75rem;
@@ -2441,6 +2446,11 @@ pre[class*=language-] {
   display: flex;
   flex-direction: column;
   text-decoration: none;
+  transition: all 0.21s ease-in-out !important;
+}
+.activityFeed__item:hover, .activityFeed__item:focus, .activityFeed__item:active {
+  background: var(--activity-feed-bg-hover);
+  box-shadow: var(--activity-feed-box-shadow-hover);
 }
 
 .activityFeed__type {
@@ -2480,6 +2490,7 @@ pre[class*=language-] {
   display: flex;
   align-items: center;
   justify-content: center;
+  aspect-ratio: 16/9;
 }
 
 .twitchInfo__thumbnail {
@@ -2491,6 +2502,11 @@ pre[class*=language-] {
   width: auto;
   height: 100%;
   box-shadow: 0px 1.5rem 2rem -1rem rgba(0, 0, 0, 0.4), inset 0px 1px 0px rgba(255, 255, 255, 0.48);
+  filter: grayscale(1);
+  transition: all 0.3s ease-in-out;
+}
+.twitchInfo__thumbnail:hover {
+  filter: grayscale(0) contrast(1.2);
 }
 
 .twitchInfo__deets {

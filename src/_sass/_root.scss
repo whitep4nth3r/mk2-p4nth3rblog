@@ -2,7 +2,7 @@
   --red: #f11012;
   --pink: #f00480;
   --green: #82af3a;
-  --black: #0f111a;
+  --black: #1b1b1b;
   --grey-dark: #2b2e3a;
   --white: #ffffff;
   --yellow: #ffb626;
@@ -54,7 +54,7 @@
     hsl(40deg 100% 57%) 100%
   );
 
-  --global-transition-time: 0.2s;
+  --global-transition-time: 0.21s;
   --scroll-behaviour: smooth;
 }
 
@@ -66,6 +66,7 @@
 
   --cta2-bg: var(--grey-dark);
 
+  --page-background: linear-gradient(153.07deg, #353535 50%, #1b1b1b 100%);
   --color-bg: var(--black);
   --color-fg: var(--white);
   --color-bg-lighter: var(--grey-dark);
@@ -87,8 +88,10 @@
 
   --lighthouse-container-bg: rgb(29, 30, 32);
 
-  --activity-feed-bg: linear-gradient(180deg, rgba(0, 0, 0, 0.16) 0%, rgba(0, 0, 0, 0.064) 100%);
+  --activity-feed-bg: rgba(0, 0, 0, 0.16);
+  --activity-feed-bg-hover: rgba(0, 0, 0, 0.4);
   --activity-feed-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.16);
+  --activity-feed-box-shadow-hover: inset 0px 1px 0px rgba(255, 255, 255, 0.16);
 }
 
 [color-mode="light"] {
@@ -99,6 +102,7 @@
 
   --cta2-bg: var(--yellow);
 
+  --page-background: linear-gradient(145.04deg, #f0f0f0 60.34%, #d3c9c9 98.77%);
   --color-bg: var(--white);
   --color-fg: var(--black);
   --color-bg-lighter: var(--white);
@@ -120,8 +124,11 @@
 
   --lighthouse-container-bg: #ffffff;
 
-  --activity-feed-bg: linear-gradient(180deg, rgba(0, 0, 0, 0.16) 0%, rgba(0, 0, 0, 0.064) 100%);
+  --activity-feed-bg: rgba(255, 255, 255, 0.32);
+  --activity-feed-bg-hover: rgba(255, 255, 255, 0.72);
   --activity-feed-box-shadow: 0px 0px 0px -16px rgba(27, 27, 27, 0.01),
+    inset 0px 1px 0px rgba(255, 255, 255, 0.16);
+  --activity-feed-box-shadow-hover: 0px 24px 32px -16px rgba(27, 27, 27, 0.16),
     inset 0px 1px 0px rgba(255, 255, 255, 0.16);
 }
 

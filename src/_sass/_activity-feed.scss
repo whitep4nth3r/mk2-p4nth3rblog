@@ -10,6 +10,7 @@
 }
 
 .activityFeed__item {
+  overflow: hidden;
   transition: all 0.2s ease-in-out;
   padding: 2rem 2.5rem;
   border-radius: 0.75rem;
@@ -19,11 +20,14 @@
   display: flex;
   flex-direction: column;
   text-decoration: none;
+  transition: all var(--global-transition-time) ease-in-out !important;
 
-  // &:hover,
-  // &:focus,
-  // &:active {
-  // }
+  &:hover,
+  &:focus,
+  &:active {
+    background: var(--activity-feed-bg-hover);
+    box-shadow: var(--activity-feed-box-shadow-hover);
+  }
 }
 
 .activityFeed__type {
