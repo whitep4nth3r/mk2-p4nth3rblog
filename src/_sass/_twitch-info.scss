@@ -82,13 +82,9 @@
   align-items: center;
   gap: 0.5rem;
 
-  background-color: var(--red);
+  background: linear-gradient(145.04deg, #f0047f 60.34%, #fc814a 98.77%);
   color: var(--white);
   padding: var(--title-padding);
   border-radius: calc(var(--border-radius-base) * 0.75);
   border-bottom-right-radius: var(--title-bottom-left-radius);
-}
-
-.twitchInfo__live--offline {
-  background-color: var(--twitch-purple);
 }

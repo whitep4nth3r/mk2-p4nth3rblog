@@ -7,7 +7,6 @@ html {
   font-size: 100%;
   scroll-behavior: var(--scroll-behaviour);
   background-color: var(--color-bg);
-  background: var(--page-background);
 }
 
 body {
@@ -17,9 +16,18 @@ body {
   padding: 1rem;
   position: relative;
 
+  background: var(--color-bg);
+  background-image: var(--page-bg);
+  background-attachment: fixed !important;
+
   @media screen and (min-width: 48rem) {
     padding: 1rem 2.5rem;
   }
+}
+
+* {
+  // this is to ensure everything is on top of the whitep4nth3r bg SVG
+  z-index: 1;
 }
 
 a {
@@ -60,6 +68,13 @@ strong {
   @include font_bold;
 }
 
-// * {
-//   outline: 1px solid pink;
-// }
+main {
+  &:after {
+    content: var(--svg-bg);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 0;
+  }
+}

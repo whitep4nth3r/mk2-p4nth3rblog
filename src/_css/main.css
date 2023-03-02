@@ -22,18 +22,26 @@
   font-stretch: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: "Atomic Marker";
+  src: url("/fonts/AtomicMarker.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: swap;
+}
 :root {
   --red: #f11012;
-  --pink: #f00480;
+  --pink: #f0047f;
   --green: #82af3a;
-  --black: #1b1b1b;
+  --black: #0e0016;
+  --black-alt: #1f1823;
   --grey-dark: #2b2e3a;
-  --white: #ffffff;
+  --white: #faefff;
+  --white-alt: #f7d9ff;
   --yellow: #ffb626;
+  --orange: #fc814a;
   --twitch-purple: #9146ff;
-  --color-bg-button: var(--grey-dark);
-  --color-button: var(--white);
-  --color-logo: var(--color-fg);
   --font-family-bold: "Work Sans Bold", sans-serif;
   --font-weight-bold: 700;
   --font-family-heading: "Work Sans SemiBold", sans-serif;
@@ -45,31 +53,6 @@
   --post-max-width: 980px;
   --grid-max-width: 1280px;
   --base-shadow-filter: drop-shadow(0px 0.125rem 0.125rem rgba(0, 0, 0, 0.25));
-  --yellow-red-gradient: linear-gradient(
-    90deg,
-    hsl(359deg 89% 50%) 0%,
-    hsl(11deg 92% 50%) 11%,
-    hsl(18deg 98% 49%) 22%,
-    hsl(23deg 100% 49%) 33%,
-    hsl(27deg 100% 49%) 44%,
-    hsl(30deg 100% 49%) 56%,
-    hsl(34deg 100% 50%) 67%,
-    hsl(36deg 99% 52%) 78%,
-    hsl(38deg 100% 55%) 89%,
-    hsl(40deg 100% 57%) 100%
-  );
-  --yellow-pink-gradient: linear-gradient(
-    90deg,
-    hsl(328deg 97% 48%) 0%,
-    hsl(338deg 98% 57%) 12%,
-    hsl(348deg 100% 62%) 25%,
-    hsl(359deg 100% 66%) 37%,
-    hsl(10deg 100% 64%) 50%,
-    hsl(20deg 100% 62%) 62%,
-    hsl(28deg 100% 60%) 74%,
-    hsl(34deg 100% 58%) 87%,
-    hsl(40deg 100% 57%) 100%
-  );
   --global-transition-time: 0.21s;
   --scroll-behaviour: smooth;
 }
@@ -79,7 +62,8 @@
   --toggle-button-bg: #000;
   --toggle-button-color: var(--white);
   --cta2-bg: var(--grey-dark);
-  --page-background: linear-gradient(153.07deg, #353535 50%, #1b1b1b 100%);
+  --page-bg: radial-gradient(farthest-corner at 100% 100%, var(--black-alt) 0%, var(--black) 50%);
+  --svg-bg: url("/img/whitep4nth3r-darkmode.svg");
   --color-bg: var(--black);
   --color-fg: var(--white);
   --color-bg-lighter: var(--grey-dark);
@@ -106,7 +90,8 @@
   --toggle-button-bg: var(--white);
   --toggle-button-color: var(--black);
   --cta2-bg: var(--yellow);
-  --page-background: linear-gradient(145.04deg, #f0f0f0 60.34%, #d3c9c9 98.77%);
+  --page-bg: radial-gradient(farthest-corner at 100% 100%, var(--white-alt) 0%, var(--white) 50%);
+  --svg-bg: url("/img/whitep4nth3r-lightmode.svg");
   --color-bg: var(--white);
   --color-fg: var(--black);
   --color-bg-lighter: var(--white);
@@ -150,7 +135,6 @@ html {
   font-size: 100%;
   scroll-behavior: var(--scroll-behaviour);
   background-color: var(--color-bg);
-  background: var(--page-background);
 }
 
 body {
@@ -160,11 +144,18 @@ body {
   color: var(--color-fg);
   padding: 1rem;
   position: relative;
+  background: var(--color-bg);
+  background-image: var(--page-bg);
+  background-attachment: fixed !important;
 }
 @media screen and (min-width: 48rem) {
   body {
     padding: 1rem 2.5rem;
   }
+}
+
+* {
+  z-index: 1;
 }
 
 a {
@@ -204,6 +195,15 @@ img {
 strong {
   font-weight: var(--font-weight-bold);
   font-family: var(--font-family-bold);
+}
+
+main:after {
+  content: var(--svg-bg);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 0;
 }
 
 @keyframes flash {
@@ -326,7 +326,7 @@ strong {
   height: 0.25rem;
   margin-top: 0.25rem;
   width: 100%;
-  background: var(--red);
+  background: var(--pink);
   display: block;
 }
 
@@ -480,16 +480,32 @@ strong {
 }
 
 .homeAbout__name {
-  font-size: 4rem;
+  position: relative;
   margin-bottom: 2rem;
-  line-height: 1;
+  text-transform: uppercase;
 }
-.homeAbout__name span {
+
+.homeAbout__nameFirst {
   display: block;
+  font-size: clamp(2rem, 8vw, 8rem);
+  color: var(--color-fg);
+  background: linear-gradient(180deg, var(--pink) 0%, var(--orange) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.homeAbout__nameLast {
+  font-weight: normal;
+  font-family: "Atomic Marker";
+  display: block;
+  font-size: clamp(2rem, 4.5vw, 4.5rem);
+  text-align: right;
+  color: var(--color-fg);
 }
 
 .homeAbout__subtitle {
-  font-size: clamp(1.2rem, 1.6vw, 1.6rem);
+  font-size: 1.4rem;
   line-height: 1;
   margin-bottom: 2rem;
   color: var(--color-fg);
@@ -569,8 +585,8 @@ strong {
 .about__socialLinksItem {
   font-weight: var(--font-weight-heading);
   font-family: var(--font-family-heading);
-  background-color: var(--color-bg-button);
-  color: var(--color-button);
+  background-color: var(--grey-dark);
+  color: var(--white);
   border-radius: var(--border-radius-base);
   padding: 0.5rem 1rem 0.5rem 0.75rem;
   text-decoration: none;
@@ -724,8 +740,8 @@ strong {
   grid-area: cta;
   font-weight: var(--font-weight-heading);
   font-family: var(--font-family-heading);
-  background-color: var(--color-bg-button);
-  color: var(--color-button);
+  background-color: var(--grey-dark);
+  color: var(--white);
   border-radius: var(--border-radius-base);
   padding: 0.5rem 1rem 0.5rem 0.75rem;
   text-decoration: none;
@@ -781,8 +797,8 @@ strong {
 .topics__listItemLink {
   font-weight: var(--font-weight-heading);
   font-family: var(--font-family-heading);
-  background-color: var(--color-bg-button);
-  color: var(--color-button);
+  background-color: var(--grey-dark);
+  color: var(--white);
   border-radius: var(--border-radius-base);
   padding: 0.5rem 1rem 0.5rem 0.75rem;
   text-decoration: none;
@@ -1309,8 +1325,8 @@ a.post__linkedHeaderIcon {
 .blogSidebarTopics__itemLink {
   font-weight: var(--font-weight-heading);
   font-family: var(--font-family-heading);
-  background-color: var(--color-bg-button);
-  color: var(--color-button);
+  background-color: var(--grey-dark);
+  color: var(--white);
   border-radius: var(--border-radius-base);
   padding: 0.5rem 1rem 0.5rem 0.75rem;
   text-decoration: none;
@@ -1492,8 +1508,8 @@ a.post__linkedHeaderIcon {
 .topicsButton {
   font-weight: var(--font-weight-heading);
   font-family: var(--font-family-heading);
-  background-color: var(--color-bg-button);
-  color: var(--color-button);
+  background-color: var(--grey-dark);
+  color: var(--white);
   border-radius: var(--border-radius-base);
   padding: 0.5rem 1rem 0.5rem 0.75rem;
   text-decoration: none;
@@ -1570,8 +1586,8 @@ a.post__linkedHeaderIcon {
 .homeCard__button {
   font-weight: var(--font-weight-heading);
   font-family: var(--font-family-heading);
-  background-color: var(--color-bg-button);
-  color: var(--color-button);
+  background-color: var(--grey-dark);
+  color: var(--white);
   border-radius: var(--border-radius-base);
   padding: 0.5rem 1rem 0.5rem 0.75rem;
   text-decoration: none;
@@ -1910,8 +1926,8 @@ a.post__linkedHeaderIcon {
 .bio__button {
   font-weight: var(--font-weight-heading);
   font-family: var(--font-family-heading);
-  background-color: var(--color-bg-button);
-  color: var(--color-button);
+  background-color: var(--grey-dark);
+  color: var(--white);
   border-radius: var(--border-radius-base);
   padding: 0.5rem 1rem 0.5rem 0.75rem;
   text-decoration: none;
@@ -2185,8 +2201,8 @@ a.post__linkedHeaderIcon {
   grid-area: button;
   font-weight: var(--font-weight-heading);
   font-family: var(--font-family-heading);
-  background-color: var(--color-bg-button);
-  color: var(--color-button);
+  background-color: var(--grey-dark);
+  color: var(--white);
   border-radius: var(--border-radius-base);
   padding: 0.5rem 1rem 0.5rem 0.75rem;
   text-decoration: none;
@@ -2495,7 +2511,7 @@ pre[class*=language-] {
   justify-content: space-between;
   align-items: center;
   gap: 0.5rem;
-  background-color: var(--red);
+  background: linear-gradient(145.04deg, #f0047f 60.34%, #fc814a 98.77%);
   color: var(--white);
   padding: var(--title-padding);
   border-radius: calc(var(--border-radius-base) * 0.75);
@@ -2504,10 +2520,6 @@ pre[class*=language-] {
 .twitchInfo__live svg {
   height: 1.25rem;
   width: 1.25rem;
-}
-
-.twitchInfo__live--offline {
-  background-color: var(--twitch-purple);
 }
 
 /* START TEMP */

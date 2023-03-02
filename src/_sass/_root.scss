@@ -1,16 +1,15 @@
 :root {
   --red: #f11012;
-  --pink: #f00480;
+  --pink: #f0047f;
   --green: #82af3a;
-  --black: #1b1b1b;
+  --black: #0e0016;
+  --black-alt: #1f1823;
   --grey-dark: #2b2e3a;
-  --white: #ffffff;
+  --white: #faefff;
+  --white-alt: #f7d9ff;
   --yellow: #ffb626;
+  --orange: #fc814a;
   --twitch-purple: #9146ff;
-
-  --color-bg-button: var(--grey-dark);
-  --color-button: var(--white);
-  --color-logo: var(--color-fg);
 
   --font-family-bold: "Work Sans Bold", sans-serif;
   --font-weight-bold: 700;
@@ -27,33 +26,6 @@
 
   --base-shadow-filter: drop-shadow(0px 0.125rem 0.125rem rgba(0, 0, 0, 0.25));
 
-  --yellow-red-gradient: linear-gradient(
-    90deg,
-    hsl(359deg 89% 50%) 0%,
-    hsl(11deg 92% 50%) 11%,
-    hsl(18deg 98% 49%) 22%,
-    hsl(23deg 100% 49%) 33%,
-    hsl(27deg 100% 49%) 44%,
-    hsl(30deg 100% 49%) 56%,
-    hsl(34deg 100% 50%) 67%,
-    hsl(36deg 99% 52%) 78%,
-    hsl(38deg 100% 55%) 89%,
-    hsl(40deg 100% 57%) 100%
-  );
-
-  --yellow-pink-gradient: linear-gradient(
-    90deg,
-    hsl(328deg 97% 48%) 0%,
-    hsl(338deg 98% 57%) 12%,
-    hsl(348deg 100% 62%) 25%,
-    hsl(359deg 100% 66%) 37%,
-    hsl(10deg 100% 64%) 50%,
-    hsl(20deg 100% 62%) 62%,
-    hsl(28deg 100% 60%) 74%,
-    hsl(34deg 100% 58%) 87%,
-    hsl(40deg 100% 57%) 100%
-  );
-
   --global-transition-time: 0.21s;
   --scroll-behaviour: smooth;
 }
@@ -66,7 +38,8 @@
 
   --cta2-bg: var(--grey-dark);
 
-  --page-background: linear-gradient(153.07deg, #353535 50%, #1b1b1b 100%);
+  --page-bg: radial-gradient(farthest-corner at 100% 100%, var(--black-alt) 0%, var(--black) 50%);
+  --svg-bg: url("/img/whitep4nth3r-darkmode.svg");
 
   --color-bg: var(--black);
   --color-fg: var(--white);
@@ -103,7 +76,9 @@
 
   --cta2-bg: var(--yellow);
 
-  --page-background: linear-gradient(145.04deg, #f0f0f0 60.34%, #d3c9c9 98.77%);
+  --page-bg: radial-gradient(farthest-corner at 100% 100%, var(--white-alt) 0%, var(--white) 50%);
+  --svg-bg: url("/img/whitep4nth3r-lightmode.svg");
+
   --color-bg: var(--white);
   --color-fg: var(--black);
   --color-bg-lighter: var(--white);

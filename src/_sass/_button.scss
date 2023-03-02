@@ -1,7 +1,7 @@
 @mixin button_main() {
   @include font_semibold;
-  background-color: var(--color-bg-button);
-  color: var(--color-button);
+  background-color: var(--grey-dark);
+  color: var(--white);
   border-radius: var(--border-radius-base);
   padding: 0.5rem 1rem 0.5rem 0.75rem;
   text-decoration: none;

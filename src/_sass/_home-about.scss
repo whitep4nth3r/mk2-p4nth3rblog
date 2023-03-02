@@ -2,17 +2,31 @@
 }
 
 .homeAbout__name {
-  font-size: 4rem;
+  position: relative;
   margin-bottom: 2rem;
-  line-height: 1;
+  text-transform: uppercase;
+}
 
-  span {
-    display: block;
-  }
+.homeAbout__nameFirst {
+  display: block;
+  font-size: clamp(2rem, 8vw, 8rem);
+  color: var(--color-fg);
+  background: linear-gradient(180deg, var(--pink) 0%, var(--orange) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.homeAbout__nameLast {
+  @include font_graffiti;
+  display: block;
+  font-size: clamp(2rem, 4.5vw, 4.5rem);
+  text-align: right;
+  color: var(--color-fg);
 }
 
 .homeAbout__subtitle {
-  font-size: clamp(1.2rem, 1.6vw, 1.6rem);
+  font-size: 1.4rem;
   line-height: 1;
   margin-bottom: 2rem;
   color: var(--color-fg);
