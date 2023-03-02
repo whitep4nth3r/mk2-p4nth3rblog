@@ -1,28 +1,44 @@
 .homeAbout {
+  width: 100%;
 }
 
 .homeAbout__name {
   position: relative;
-  margin-bottom: 2rem;
+  margin-bottom: 6rem;
   text-transform: uppercase;
 }
 
 .homeAbout__nameFirst {
-  display: block;
-  font-size: clamp(2rem, 8vw, 8rem);
+  @include font_highrise;
   color: var(--color-fg);
   background: linear-gradient(180deg, var(--pink) 0%, var(--orange) 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-align: center;
+  display: block;
+
+  font-size: 49.5vw;
+
+  @media screen and (min-width: $layout_breakpoint_home) {
+    font-size: 14.25rem;
+  }
 }
 
 .homeAbout__nameLast {
-  @include font_graffiti;
+  @include font_atomic;
   display: block;
-  font-size: clamp(2rem, 4.5vw, 4.5rem);
   text-align: right;
   color: var(--color-fg);
+  position: absolute;
+  right: 0;
+  bottom: -2rem;
+  font-size: 3.5rem;
+
+  @media screen and (min-width: $layout_breakpoint_home) {
+    font-size: 4rem;
+    bottom: -3rem;
+  }
 }
 
 .homeAbout__subtitle {

@@ -30,6 +30,14 @@
   font-stretch: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: "Highrise Bold";
+  src: url("/fonts/Highrise-bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: swap;
+}
 :root {
   --red: #f11012;
   --pink: #f0047f;
@@ -121,11 +129,6 @@
     --scroll-behaviour: auto;
   }
 }
-::selection {
-  background: var(--color-highlight);
-  color: var(--color-bg);
-}
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -204,6 +207,11 @@ main:after {
   left: 0;
   width: 100%;
   z-index: 0;
+}
+
+::selection {
+  background: var(--pink);
+  color: #ffffff;
 }
 
 @keyframes flash {
@@ -479,29 +487,50 @@ main:after {
   }
 }
 
+.homeAbout {
+  width: 100%;
+}
+
 .homeAbout__name {
   position: relative;
-  margin-bottom: 2rem;
+  margin-bottom: 6rem;
   text-transform: uppercase;
 }
 
 .homeAbout__nameFirst {
-  display: block;
-  font-size: clamp(2rem, 8vw, 8rem);
+  font-weight: bold;
+  font-family: "Highrise Bold";
   color: var(--color-fg);
   background: linear-gradient(180deg, var(--pink) 0%, var(--orange) 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-align: center;
+  display: block;
+  font-size: 49.5vw;
+}
+@media screen and (min-width: 60em) {
+  .homeAbout__nameFirst {
+    font-size: 14.25rem;
+  }
 }
 
 .homeAbout__nameLast {
   font-weight: normal;
   font-family: "Atomic Marker";
   display: block;
-  font-size: clamp(2rem, 4.5vw, 4.5rem);
   text-align: right;
   color: var(--color-fg);
+  position: absolute;
+  right: 0;
+  bottom: -2rem;
+  font-size: 3.5rem;
+}
+@media screen and (min-width: 60em) {
+  .homeAbout__nameLast {
+    font-size: 4rem;
+    bottom: -3rem;
+  }
 }
 
 .homeAbout__subtitle {

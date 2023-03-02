@@ -34,6 +34,15 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Highrise Bold";
+  src: url("/fonts/Highrise-bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: swap;
+}
+
 @mixin font_main {
   font-weight: var(--font-weight-main);
   font-family: var(--font-family-main);
@@ -49,7 +58,12 @@
   font-family: var(--font-family-heading);
 }
 
-@mixin font_graffiti {
+@mixin font_atomic {
   font-weight: normal;
   font-family: "Atomic Marker";
+}
+
+@mixin font_highrise {
+  font-weight: bold;
+  font-family: "Highrise Bold";
 }

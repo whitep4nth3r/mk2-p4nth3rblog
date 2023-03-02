@@ -1,4 +1,4 @@
-$layout_breakpoint: 60em;
+$layout_breakpoint_home: 60em;
 $layout_height: 70vh;
 
 .home {
@@ -8,14 +8,14 @@ $layout_height: 70vh;
   margin: auto;
   gap: 2rem;
 
-  @media screen and (min-width: $layout_breakpoint) {
+  @media screen and (min-width: $layout_breakpoint_home) {
     display: flex;
     flex-direction: row;
   }
 }
 
 .home__left {
-  @media screen and (min-width: $layout_breakpoint) {
+  @media screen and (min-width: $layout_breakpoint_home) {
     width: 26.25rem;
     flex-grow: 0;
     flex-shrink: 0;
@@ -28,7 +28,7 @@ $layout_height: 70vh;
 }
 
 .home__fixed {
-  @media screen and (min-width: $layout_breakpoint) {
+  @media screen and (min-width: $layout_breakpoint_home) {
     position: fixed;
     height: $layout_height;
     max-width: 26.25rem;
@@ -47,7 +47,7 @@ $layout_height: 70vh;
 }
 
 .home__twitch {
-  @media screen and (min-width: $layout_breakpoint) {
+  @media screen and (min-width: $layout_breakpoint_home) {
     display: flex;
     flex-grow: 1;
     justify-content: center;
@@ -70,7 +70,7 @@ $layout_height: 70vh;
   grid-template-columns: 1fr;
   gap: 1rem;
 
-  @media screen and (min-width: $layout_breakpoint) {
+  @media screen and (min-width: $layout_breakpoint_home) {
     grid-template-columns: 1fr 1fr;
 
     .activityFeed__item:nth-child(7),

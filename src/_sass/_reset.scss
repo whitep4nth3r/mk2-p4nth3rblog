@@ -78,3 +78,8 @@ main {
     z-index: 0;
   }
 }
+
+::selection {
+  background: var(--pink);
+  color: #ffffff;
+}
