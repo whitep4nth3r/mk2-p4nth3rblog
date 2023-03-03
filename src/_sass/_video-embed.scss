@@ -49,6 +49,6 @@
   height: 100%;
   width: 100%;
   border-radius: var(--border-radius-base);
-  transition: all 1s ease-in-out;
+  transition: all var(--global-transition-time) ease-in-out;
   pointer-events: none;
 }

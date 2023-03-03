@@ -130,7 +130,7 @@
   z-index: 2;
   padding: 0.5rem;
   border-color: transparent;
-  transition: all 0.2s ease-in-out;
+  transition: all var(--global-transition-time) ease-in-out;
   background-image: url("/img/theme-dark.svg");
   background-repeat: no-repeat;
   background-position: center;

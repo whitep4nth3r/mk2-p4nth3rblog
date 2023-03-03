@@ -39,17 +39,14 @@
   font-display: swap;
 }
 :root {
-  --red: #f11012;
   --pink: #f0047f;
-  --green: #82af3a;
   --black: #0e0016;
   --black-alt: #1f1823;
   --grey-dark: #2b2e3a;
   --white: #faefff;
   --white-alt: #f7d9ff;
-  --yellow: #ffb626;
   --orange: #fc814a;
-  --twitch-purple: #9146ff;
+  --yellow: #ffb626;
   --body-horizontal-padding-lg: 2.5rem;
   --font-family-bold: "Work Sans Bold", sans-serif;
   --font-weight-bold: 700;
@@ -380,7 +377,7 @@ main:after {
   z-index: 2;
   padding: 0.5rem;
   border-color: transparent;
-  transition: all 0.2s ease-in-out;
+  transition: all var(--global-transition-time) ease-in-out;
   background-image: url("/img/theme-dark.svg");
   background-repeat: no-repeat;
   background-position: center;
@@ -1446,7 +1443,7 @@ a.post__linkedHeaderIcon {
   text-decoration: none;
   padding: 0.5rem;
   border-radius: calc(var(--border-radius-base) * 1.5);
-  transition: all 0.2s ease-in-out;
+  transition: all var(--global-transition-time) ease-in-out;
   position: relative;
   opacity: 0.8;
   max-width: 384px;
@@ -1473,7 +1470,7 @@ a.post__linkedHeaderIcon {
   border-radius: 0 calc(var(--border-radius-base) * 1.5) 0 calc(var(--border-radius-base) * 1.5);
   padding: 0.5rem;
   z-index: 1;
-  transition: all 0.2s ease-in-out;
+  transition: all var(--global-transition-time) ease-in-out;
 }
 .postCard__topicsGroup li {
   display: flex;
@@ -1735,7 +1732,7 @@ a.post__linkedHeaderIcon {
   height: 100%;
   width: 100%;
   border-radius: var(--border-radius-base);
-  transition: all 1s ease-in-out;
+  transition: all var(--global-transition-time) ease-in-out;
   pointer-events: none;
 }
 
@@ -2407,7 +2404,6 @@ pre[class*=language-] {
 
 .card {
   overflow: hidden;
-  transition: all 0.2s ease-in-out;
   border-radius: 0.75rem;
   background: var(--card-bg);
   backdrop-filter: blur(1rem);
@@ -2471,7 +2467,6 @@ pre[class*=language-] {
 }
 
 .twitchInfo {
-  --twitch-purple: #9146ff;
   --thumbnail-outer-radius: calc(var(--border-radius-base) * 2);
   --thumbnail-inner-padding: calc(var(--border-radius-base) / 2);
   --title-bottom-left-radius: calc(var(--thumbnail-outer-radius) - var(--thumbnail-inner-padding));

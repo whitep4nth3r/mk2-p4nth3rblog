@@ -6,7 +6,7 @@
   text-decoration: none;
   padding: 0.5rem;
   border-radius: calc(var(--border-radius-base) * 1.5);
-  transition: all 0.2s ease-in-out;
+  transition: all var(--global-transition-time) ease-in-out;
   position: relative;
   opacity: 0.8;
   max-width: 384px;
@@ -37,7 +37,7 @@
   border-radius: 0 calc(var(--border-radius-base) * 1.5) 0 calc(var(--border-radius-base) * 1.5);
   padding: 0.5rem;
   z-index: 1;
-  transition: all 0.2s ease-in-out;
+  transition: all var(--global-transition-time) ease-in-out;
 
   li {
     display: flex;
