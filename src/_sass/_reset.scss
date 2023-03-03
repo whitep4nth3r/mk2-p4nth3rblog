@@ -71,8 +71,18 @@ strong {
 main {
   margin: 10rem auto auto auto;
 
+  &:before {
+    content: var(--brush-bg-svg);
+    position: fixed;
+    bottom: 0;
+    right: -10rem;
+    z-index: 0;
+    width: 80%;
+    mix-blend-mode: overlay;
+  }
+
   &:after {
-    content: var(--svg-bg);
+    content: var(--whitep4nth3r-bg-svg);
     position: fixed;
     bottom: 0;
     left: 0;

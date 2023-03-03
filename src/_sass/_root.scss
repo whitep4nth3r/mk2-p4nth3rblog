@@ -7,7 +7,6 @@
   --white-alt: #f7d9ff;
   --orange: #fc814a;
 
-  
   --yellow: #ffb626;
 
   --body-horizontal-padding-lg: 2.5rem;
@@ -40,7 +39,8 @@
   --cta2-bg: var(--grey-dark);
 
   --page-bg: radial-gradient(farthest-corner at 100% 100%, var(--black-alt) 0%, var(--black) 50%);
-  --svg-bg: url("/img/whitep4nth3r-darkmode.svg");
+  --whitep4nth3r-bg-svg: url("/img/whitep4nth3r-darkmode.svg");
+  --brush-bg-svg: url("/img/brush-darkmode.svg");
 
   --color-bg: var(--black);
   --color-fg: var(--white);
@@ -81,7 +81,8 @@
   --cta2-bg: var(--yellow);
 
   --page-bg: radial-gradient(farthest-corner at 100% 100%, var(--white-alt) 0%, var(--white) 50%);
-  --svg-bg: url("/img/whitep4nth3r-lightmode.svg");
+  --whitep4nth3r-bg-svg: url("/img/whitep4nth3r-lightmode.svg");
+  --brush-bg-svg: url("/img/brush-lightmode.svg");
 
   --color-bg: var(--white);
   --color-fg: var(--black);
