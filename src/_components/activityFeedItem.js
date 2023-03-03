@@ -1,7 +1,6 @@
 const DateUtils = require("../../lib/dateUtils.js");
 const VideoEmbed = require("../_components/videoEmbed");
 const TweetEmbed = require("../_components/tweetEmbed");
-const CalendarIcon = require("../_components/svg/calendarIcon");
 
 var md = require("markdown-it")({
   html: true,
@@ -11,12 +10,12 @@ var md = require("markdown-it")({
 
 function description(item) {
   if (item.description) {
-    return `<div class="activityFeed__description">${md.render(item.description)}</div>`;
+    return `<div class="card__description">${md.render(item.description)}</div>`;
   }
 
   if (item.excerpt) {
     const image = item.featuredImage || item.speakerDeckLink.image;
-    return `<div class="activityFeed__description activityFeed__description--withImage">
+    return `<div class="card__description card__description--withImage">
       <div>  
         ${md.render(item.excerpt)}
       </div>
@@ -24,7 +23,7 @@ function description(item) {
           alt="${image.description}"
           height="${image.height}"
           width="${image.width}"
-          class="activityFeed__description__image"
+          class="card__description__image"
           loading="lazy"/>
     </div> 
     `;
@@ -34,14 +33,16 @@ function description(item) {
 }
 
 function image(image) {
+  // empty alt because purely decorative
+  // todo — optimize image types here
   if (image) {
-    return `<img 
+    return `<div class="card__imageContainer"><img 
           src="${image.url}?w=510" 
-          alt="${image.description}"
+          alt="" 
           height="${image.height}"
           width="${image.width}"
-          class="activityFeed__description__image"
-          loading="lazy" />`;
+          class="card__image"
+          loading="lazy" /></div>`;
   }
 
   return "";
@@ -87,10 +88,10 @@ function openingTag(item) {
   }
 
   if (href) {
-    return `<a href="${href}" class="activityFeed__item">`;
+    return `<a href="${href}" class="card">`;
   }
 
-  return `<div class="activityFeed__item">`;
+  return `<div class="card">`;
 }
 
 function closingTag(item) {
@@ -104,32 +105,31 @@ function closingTag(item) {
 const activityType = {
   award: "Award",
   event: "Event",
-  link: "Did a thing",
+  link: "Misc.",
   podcast: "Podcast",
-  post: "Blog post",
-  talk: "Published a talk",
-  tweet: "Twitter",
+  post: "Blog",
+  talk: "Talk",
   youtube: "YouTube",
 };
 
 const ActivityFeedItem = ({ item }) => {
   const heading = item.title || item.name;
+  const itemImage = item.image || item.featuredImage;
 
   return `
   ${openingTag(item)}
-    <p class="activityFeed__date">
-      ${DateUtils.formatDateForDisplay(item.date)}
-    </p>
+    ${image(itemImage)}
+    <div class="card__inner">
+      <p class="card__date">
+        ${DateUtils.formatDateForDisplay(item.date)}
+      </p>
 
-    <h2 class="activityFeed__title">${heading}</h2>
-    <span class="activityFeed__type activityFeed__type--${item.type}">${
-    activityType[item.type]
-  }</span>
+      <h2 class="card__title">${heading}</h2>
+      <span class="card__type card__type--${item.type}">${activityType[item.type]}</span>
+  </div>
     ${closingTag(item)}`;
 };
 
 module.exports = ActivityFeedItem;
 
-// ${description(item)}
 // ${embed(item)}
-// ${image(item.image)}

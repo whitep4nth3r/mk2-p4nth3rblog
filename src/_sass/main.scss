@@ -9,7 +9,6 @@
 @import "grid";
 
 @import "header";
-@import "footer";
 @import "home";
 @import "home-about";
 @import "blog";
@@ -36,13 +35,10 @@
 @import "404";
 @import "ais";
 @import "prism";
-@import "activity-feed";
+@import "card";
 @import "twitch-info";
+@import "activity-feed";
 
-/* START TEMP */
-main {
-  margin: auto;
-}
 
 // convert to mixin or something
 .colorHighlight {

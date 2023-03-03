@@ -9,7 +9,7 @@ function TwitchInfo() {
           <p class="twitchInfo__streamTitle" data-twitchinfo-title></p>
         </span>
         <p class="twitchInfo__live" data-twitchinfo-live>
-          Earlier today ${PlayIcon()}
+          Live now ${PlayIcon()}
         </p>
       </div>
       <!-- todo - placeholder image -->

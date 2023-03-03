@@ -21,7 +21,7 @@ body {
   background-attachment: fixed !important;
 
   @media screen and (min-width: 48rem) {
-    padding: 1rem 2.5rem;
+    padding: 1rem var(--body-horizontal-padding-lg);
   }
 }
 
@@ -69,6 +69,8 @@ strong {
 }
 
 main {
+  margin: 10rem auto auto auto;
+
   &:after {
     content: var(--svg-bg);
     position: fixed;
@@ -83,3 +85,7 @@ main {
   background: var(--pink);
   color: #ffffff;
 }
+
+// * {
+//   outline: 2px solid var(--pink);
+// }

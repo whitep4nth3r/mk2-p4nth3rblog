@@ -1,0 +1,80 @@
+.card {
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
+  border-radius: 0.75rem;
+  background: var(--card-bg);
+  backdrop-filter: blur(1rem);
+  box-shadow: var(--card-box-shadow);
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  flex-grow: 0;
+  flex-shrink: 1;
+  transition: all var(--global-transition-time) ease-in-out !important;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: var(--card-bg-hover);
+    box-shadow: var(--card-box-shadow-hover);
+
+    .card__image {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.card__imageContainer {
+  aspect-ratio: 3/1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.card__inner {
+  padding: 0.75rem;
+}
+
+.card__image {
+  transition: all var(--global-transition-time) ease-in-out;
+}
+
+.card__type {
+  @include font_semibold;
+  color: var(--color-fg);
+  font-size: 1rem;
+  background-color: var(--card-tag-bg-base);
+  color: var(--card-tag-color-base);
+  border-radius: 0.25rem;
+  line-height: 1.6;
+  padding: 0.125rem 0.5rem;
+}
+
+.card__type--award {
+}
+.card__type--event {
+}
+.card__type--link {
+}
+.card__type--podcast {
+}
+.card__type--post {
+}
+.card__type--talk {
+}
+.card__type--event {
+}
+
+.card__date {
+  @include font_main;
+  color: var(--color-fg);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.card__title {
+  @include font_bold;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}

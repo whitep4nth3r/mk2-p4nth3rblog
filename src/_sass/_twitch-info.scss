@@ -41,9 +41,10 @@
   bottom: var(--thumbnail-inner-padding);
   left: var(--thumbnail-inner-padding);
   right: var(--thumbnail-inner-padding);
-  display: grid;
-  grid-template-columns: 4fr 1fr;
+  display: flex;
+  flex-direction: row;
   gap: 0.25rem;
+  justify-content: space-between;
 }
 
 .twitchInfo__streamTitleContainer {
@@ -55,6 +56,8 @@
   overflow: hidden;
   display: flex;
   align-items: center;
+  width: 100%;
+  flex-grow: 1;
 }
 
 .twitchInfo__streamTitle {
@@ -75,6 +78,8 @@
   @include font_semibold;
   font-size: var(--title-font-size);
   font-style: italic;
+
+  min-width: max-content;
 
   display: flex;
   flex-direction: row;

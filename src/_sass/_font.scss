@@ -60,10 +60,10 @@
 
 @mixin font_atomic {
   font-weight: normal;
-  font-family: "Atomic Marker";
+  font-family: "Atomic Marker", Arial, sans-serif;
 }
 
 @mixin font_highrise {
   font-weight: bold;
-  font-family: "Highrise Bold";
+  font-family: "Highrise Bold", Arial, sans-serif;
 }

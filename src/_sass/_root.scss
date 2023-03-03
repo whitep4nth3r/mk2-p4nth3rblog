@@ -11,6 +11,8 @@
   --orange: #fc814a;
   --twitch-purple: #9146ff;
 
+  --body-horizontal-padding-lg: 2.5rem;
+
   --font-family-bold: "Work Sans Bold", sans-serif;
   --font-weight-bold: 700;
   --font-family-heading: "Work Sans SemiBold", sans-serif;
@@ -62,10 +64,13 @@
 
   --lighthouse-container-bg: rgb(29, 30, 32);
 
-  --activity-feed-bg: rgba(0, 0, 0, 0.16);
-  --activity-feed-bg-hover: rgba(0, 0, 0, 0.4);
-  --activity-feed-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.16);
-  --activity-feed-box-shadow-hover: inset 0px 1px 0px rgba(255, 255, 255, 0.16);
+  --card-bg: rgba(255, 255, 255, 0.02);
+  --card-bg-hover: rgba(255, 255, 255, 0.08);
+  --card-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.16);
+  --card-box-shadow-hover: inset 0px 1px 0px rgba(255, 255, 255, 0.16);
+
+  --card-tag-bg-base: rgba(204, 135, 0, 0.16);
+  --card-tag-color-base: #ffd37d;
 }
 
 [color-mode="light"] {
@@ -100,12 +105,15 @@
 
   --lighthouse-container-bg: #ffffff;
 
-  --activity-feed-bg: rgba(255, 255, 255, 0.32);
-  --activity-feed-bg-hover: rgba(255, 255, 255, 0.72);
-  --activity-feed-box-shadow: 0px 0px 0px -16px rgba(27, 27, 27, 0.01),
+  --card-bg: rgba(255, 255, 255, 0.32);
+  --card-bg-hover: rgba(255, 255, 255, 0.72);
+  --card-box-shadow: 0px 0px 0px -16px rgba(27, 27, 27, 0.01),
     inset 0px 1px 0px rgba(255, 255, 255, 0.16);
-  --activity-feed-box-shadow-hover: 0px 24px 32px -16px rgba(27, 27, 27, 0.16),
+  --card-box-shadow-hover: 0px 24px 32px -16px rgba(27, 27, 27, 0.16),
     inset 0px 1px 0px rgba(255, 255, 255, 0.16);
+
+  --card-tag-bg-base: rgba(255, 204, 102, 0.16);
+  --card-tag-color-base: #cc921e;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -1,4 +1,4 @@
-$layout_breakpoint_home: 60em;
+$layout_breakpoint_home: 62.5em;
 $layout_height: 70vh;
 
 .home {
@@ -72,12 +72,5 @@ $layout_height: 70vh;
 
   @media screen and (min-width: $layout_breakpoint_home) {
     grid-template-columns: 1fr 1fr;
-
-    .activityFeed__item:nth-child(7),
-    .activityFeed__item:nth-child(8),
-    .activityFeed__item:nth-child(9),
-    .activityFeed__item:nth-child(10) {
-      grid-column: 1 / span 2;
-    }
   }
 }
