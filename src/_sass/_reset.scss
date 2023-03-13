@@ -68,21 +68,34 @@ strong {
   @include font_bold;
 }
 
+@keyframes fadeInBrush {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 main {
   margin: 10rem auto auto auto;
 
   &:before {
-    content: ""; // use atomic font
+    animation: fadeInBrush 0.42s ease-in-out;
+    @include font_atomic_extras_two;
+    content: "M";
+    color: var(--color-brush-bg);
     position: fixed;
-    bottom: 0;
-    right: -10rem;
     z-index: 0;
-    width: 80%;
     mix-blend-mode: overlay;
+    font-size: 1000px;
+    line-height: 1;
+    right: -10%;
+    top: 5%;
   }
 
   &:after {
-    content: ""; // use atomic font
+    content: var(--whitep4nth3r-bg-svg);
     position: fixed;
     bottom: 0;
     left: 0;

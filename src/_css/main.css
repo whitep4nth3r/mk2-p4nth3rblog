@@ -31,6 +31,22 @@
   font-display: swap;
 }
 @font-face {
+  font-family: "Atomic Marker Extras";
+  src: url("/fonts/AtomicMarkerExtras.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Atomic Marker Extras Two";
+  src: url("/fonts/AtomicMarkerExtrasTwo.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  font-display: swap;
+}
+@font-face {
   font-family: "Highrise Bold";
   src: url("/fonts/Highrise-bold.woff2") format("woff2");
   font-weight: bold;
@@ -77,6 +93,7 @@
   --color-bg-lighter: var(--grey-dark);
   --color-link: var(--color-fg);
   --color-highlight: var(--yellow);
+  --color-brush-bg: rgba(255, 255, 255, 0.72);
   --header-bg: rgba(14, 0, 22, 0.6);
   --lighthouse-green-fg: rgb(27, 195, 106);
   --lighthouse-green-stroke: rgb(27, 195, 106);
@@ -109,6 +126,7 @@
   --color-bg-lighter: var(--white);
   --color-link: var(--color-fg);
   --color-highlight: var(--black);
+  --color-brush-bg: rgba(0, 0, 0, 0.72);
   --header-bg: rgba(250, 239, 255, 0.8);
   --lighthouse-green-fg: rgb(15, 123, 38);
   --lighthouse-green-stroke: rgb(27, 195, 106);
@@ -195,20 +213,34 @@ strong {
   font-family: var(--font-family-bold);
 }
 
+@keyframes fadeInBrush {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 main {
   margin: 10rem auto auto auto;
 }
 main:before {
-  content: "";
+  animation: fadeInBrush 0.42s ease-in-out;
+  font-weight: normal;
+  font-style: normal;
+  font-family: "Atomic Marker Extras Two";
+  content: "M";
+  color: var(--color-brush-bg);
   position: fixed;
-  bottom: 0;
-  right: -10rem;
   z-index: 0;
-  width: 80%;
   mix-blend-mode: overlay;
+  font-size: 1000px;
+  line-height: 1;
+  right: -10%;
+  top: 5%;
 }
 main:after {
-  content: "";
+  content: var(--whitep4nth3r-bg-svg);
   position: fixed;
   bottom: 0;
   left: 0;
@@ -557,7 +589,7 @@ main:after {
 
 .homeAbout__nameFirst {
   font-weight: bold;
-  font-family: "Highrise Bold", Arial, sans-serif;
+  font-family: "Highrise Bold", "Arial Black", sans-serif;
   color: var(--color-fg);
   background: linear-gradient(180deg, var(--pink) 0%, var(--orange) 100%);
   background-clip: text;
@@ -575,6 +607,7 @@ main:after {
 
 .homeAbout__nameLast {
   font-weight: normal;
+  font-style: normal;
   font-family: "Atomic Marker", Arial, sans-serif;
   display: block;
   text-align: right;

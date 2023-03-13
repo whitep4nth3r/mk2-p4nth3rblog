@@ -171,12 +171,26 @@ $header_bp: 768px;
 [data-active="blog"] [data-link="blog"],
 [data-active="about"] [data-link="about"] {
   &::after {
-    content: url("/img/active_nav.svg"); //TODO - change to atomic font
+    // using SVG here to avoid the font flash
+    content: url("/img/active_nav.svg");
     width: 100%;
     display: block;
     position: absolute;
     bottom: 0rem;
     z-index: -1;
+
+    // if we want to use the font
+    // @include font_atomic_extras;
+    // text-transform: lowercase;
+    // content: "d";
+    // color: var(--pink);
+    // width: 100%;
+    // display: block;
+    // position: absolute;
+    // bottom: -1.6rem;
+    // font-size: 2.75rem;
+    // left: 0.4rem;
+    // z-index: -1;
   }
 }
 
