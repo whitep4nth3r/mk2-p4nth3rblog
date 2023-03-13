@@ -109,6 +109,7 @@ const activityType = {
   talk: "Published a talk",
   tweet: "Twitter",
   youtube: "YouTube",
+  "youtube-short": "YouTube",
 };
 
 const ActivityFeedItem = ({ item, forceActiveState = false }) => {
