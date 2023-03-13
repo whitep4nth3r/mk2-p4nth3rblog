@@ -9,6 +9,7 @@
 
   --yellow: #ffb626;
 
+  --body-horizontal-padding-sm: 1rem;
   --body-horizontal-padding-lg: 2.5rem;
 
   --font-family-bold: "Work Sans Bold", sans-serif;
@@ -48,6 +49,8 @@
 
   --color-link: var(--color-fg);
   --color-highlight: var(--yellow);
+
+  --header-bg: rgba(14, 0, 22, 0.6);
 
   --lighthouse-green-fg: rgb(27, 195, 106);
   --lighthouse-green-stroke: rgb(27, 195, 106);
@@ -90,6 +93,8 @@
 
   --color-link: var(--color-fg);
   --color-highlight: var(--black);
+
+  --header-bg: rgba(250, 239, 255, 0.8);
 
   --lighthouse-green-fg: rgb(15, 123, 38);
   --lighthouse-green-stroke: rgb(27, 195, 106);

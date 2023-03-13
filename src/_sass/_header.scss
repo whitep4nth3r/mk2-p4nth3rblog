@@ -1,32 +1,32 @@
+$header_bp: 768px;
+
 .header {
-  margin-bottom: 4rem;
+  margin-bottom: 1rem;
   margin-top: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
   z-index: 10;
-  position: relative;
-  width: 100%;
+  position: fixed;
+  justify-self: center;
+  width: calc(100vw - calc(var(--body-horizontal-padding-sm) * 2));
+  border-radius: 2.5rem;
+  background: var(--header-bg);
+  backdrop-filter: blur(6px);
+  padding: 0.25rem 0.5rem;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $header_bp) {
     width: calc(100vw - calc(var(--body-horizontal-padding-lg) * 2));
-    flex-direction: row;
-    position: fixed;
   }
 }
 
 .header__navGroup {
   display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  justify-self: center;
+  gap: 1rem;
   align-items: center;
-
-  @media screen and (min-width: 768px) {
-    flex-direction: row;
-    justify-self: flex-start;
-  }
+  flex-direction: row;
+  justify-self: flex-start;
 }
 
 .header__skipToMainContent {
@@ -57,15 +57,16 @@
 }
 
 .header__logoContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  svg {
-    height: 3rem;
-    width: auto;
-  }
+  display: none;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $header_bp) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    svg {
+      height: 3rem;
+      width: auto;
+    }
   }
 }
 
@@ -76,26 +77,105 @@
   align-items: center;
   justify-content: flex-start;
   gap: 0.25rem;
+
+  @media screen and (min-width: $header_bp) {
+    gap: 1rem;
+  }
 }
 
-.header__navListItemLink {
-  @include font_semibold;
-  font-size: 1rem;
-  padding: 1rem;
+.header__navListDetails {
+  position: relative;
+}
+
+.header__navListMoreLinks {
+  position: absolute;
+  background: var(--header-bg);
+  border-radius: 0 0 0.5rem 0.5rem;
+  top: 2.625rem;
+  width: max-content;
+
+  @media screen and (min-width: $header_bp) {
+    top: 2.8125rem;
+  }
+
+  a {
+    margin-bottom: 0.5rem;
+  }
+
+  // backdrop filter doesn't work if parent element has one!
+  // so we do this instead on the dropdown
+  &::before {
+    background-color: var(--header-bg);
+    content: "";
+    filter: blur(6px);
+    position: absolute;
+    inset: 6%;
+    z-index: -1;
+    display: block;
+  }
+}
+
+.header__navListSummary {
+  cursor: pointer;
+}
+
+.header__navListItemLink,
+.header__navListSummary {
+  @include font_bold;
+  padding: 1rem 0.5rem;
   text-decoration: none;
   display: block;
   text-transform: uppercase;
+  position: relative;
+  font-size: 0.875rem;
+
+  @media screen and (min-width: $header_bp) {
+    font-size: 1rem;
+    padding: 0.5rem 0.5rem;
+  }
+
+  &:active,
+  &:focus {
+    outline: transparent;
+    transition: clip-path var(--global-transition-time) ease-in-out;
+
+    &::before {
+      --s: 0.2rem; /* spread-radius */
+      --x: 0px; /* X offset */
+      --y: 0px; /* Y offset */
+      --b: 0px; /* blur-radius*/
+      content: "";
+      border-radius: 0.25rem;
+      position: absolute;
+      inset: calc(-1 * var(--s) + 0.125rem);
+      transform: translate(var(--x), var(--y));
+      clip-path: polygon(
+        -100vmax -100vmax,
+        100vmax -100vmax,
+        100vmax 100vmax,
+        -100vmax 100vmax,
+        -100vmax -100vmax,
+        calc(0px + var(--s) - var(--x)) calc(0px + var(--s) - var(--y)),
+        calc(0px + var(--s) - var(--x)) calc(100% - var(--s) - var(--y)),
+        calc(100% - var(--s) - var(--x)) calc(100% - var(--s) - var(--y)),
+        calc(100% - var(--s) - var(--x)) calc(0px + var(--s) - var(--y)),
+        calc(0px + var(--s) - var(--x)) calc(0px + var(--s) - var(--y))
+      );
+      filter: blur(var(--b));
+      background: linear-gradient(145.04deg, var(--pink) 60.34%, var(--orange) 98.77%);
+    }
+  }
 }
 
 [data-active="home"] [data-link="home"],
 [data-active="blog"] [data-link="blog"],
 [data-active="about"] [data-link="about"] {
-  &:after {
-    content: url("/img/active_nav.svg");
+  &::after {
+    content: url("/img/active_nav.svg"); //TODO - change to atomic font
     width: 100%;
     display: block;
     position: absolute;
-    bottom: 0;
+    bottom: 0rem;
     z-index: -1;
   }
 }
@@ -124,10 +204,6 @@
 }
 
 .header__themeToggle {
-  position: absolute;
-  top: 2.25rem;
-  right: 1rem;
-  z-index: 2;
   padding: 0.5rem;
   border-color: transparent;
   transition: all var(--global-transition-time) ease-in-out;
@@ -139,10 +215,6 @@
   border-radius: 100%;
   background-color: transparent;
   cursor: pointer;
-
-  @media screen and (min-width: 768px) {
-    position: fixed;
-  }
 
   &.header__themeToggle--light {
     background-image: url("/img/theme-light.svg");

@@ -13,7 +13,7 @@ body {
   @include font_main;
   font-size: 1rem;
   color: var(--color-fg);
-  padding: 1rem;
+  padding: var(--body-horizontal-padding-sm);
   position: relative;
 
   background: var(--color-bg);
@@ -40,14 +40,14 @@ a {
 
 a:focus,
 summary:focus {
-  --box-shadow-bg: var(--color-bg);
-  --box-shadow-highlight: var(--color-highlight);
-  outline: transparent;
-  outline-style: solid;
-  /* 2nd value is 3x 1st */
-  box-shadow: var(--box-shadow-bg) 0 0 0 0.08rem, var(--box-shadow-highlight) 0 0 0 0.24rem;
-  border-radius: var(--border-radius-base);
-  transition: box-shadow var(--global-transition-time) ease-in-out;
+  // --box-shadow-bg: var(--color-bg);
+  // --box-shadow-highlight: var(--color-highlight);
+  // outline: transparent;
+  // outline-style: solid;
+  // /* 2nd value is 3x 1st */
+  // box-shadow: var(--box-shadow-bg) 0 0 0 0.08rem, var(--box-shadow-highlight) 0 0 0 0.24rem;
+  // border-radius: var(--border-radius-base);
+  // transition: box-shadow var(--global-transition-time) ease-in-out;
 }
 
 h1,
@@ -72,7 +72,7 @@ main {
   margin: 10rem auto auto auto;
 
   &:before {
-    content: var(--brush-bg-svg);
+    content: ""; // use atomic font
     position: fixed;
     bottom: 0;
     right: -10rem;
@@ -82,7 +82,7 @@ main {
   }
 
   &:after {
-    content: var(--whitep4nth3r-bg-svg);
+    content: ""; // use atomic font
     position: fixed;
     bottom: 0;
     left: 0;

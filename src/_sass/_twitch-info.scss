@@ -86,7 +86,7 @@
   align-items: center;
   gap: 0.5rem;
 
-  background: linear-gradient(145.04deg, #f0047f 60.34%, #fc814a 98.77%);
+  background: linear-gradient(145.04deg, var(--pink) 60.34%, var(--orange) 98.77%);
   color: var(--white);
   padding: var(--title-padding);
   border-radius: calc(var(--border-radius-base) * 0.75);
