@@ -9,6 +9,11 @@
   text-decoration: none;
   height: 100%;
   transition: all var(--global-transition-time) ease-in-out !important;
+  position: relative;
+
+  &:focus {
+    outline: 0.25rem solid var(--pink);
+  }
 
   &:hover,
   &:focus,

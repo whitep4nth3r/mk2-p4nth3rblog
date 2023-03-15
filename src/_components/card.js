@@ -86,7 +86,7 @@ function itemMeta(item) {
     return `
     <div class="card__meta">
       <span class="card__metaCat">${item.topicsCollection.items[0].name}</span>
-      <span class="card__metaRead">${item.readingTime} min read</span>
+      <span class="card__metaRead">${item.readingTime} min read →</span>
     </div>`;
   }
 
@@ -94,7 +94,7 @@ function itemMeta(item) {
     return `
     <div class="card__meta">
       <span class="card__metaLabel">${item.topicsCollection.items[0].name}</span>
-      <span class="card__metaRead">${item.watchTime} min watch time</span>
+      <span class="card__metaRead">${item.watchTime} min watch time →</span>
     </div>
     `;
   }

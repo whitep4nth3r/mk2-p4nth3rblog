@@ -40,23 +40,14 @@
     color: inherit;
     padding: 1rem;
     text-decoration: none;
-    display: flex;
+    display: inline-flex;
     flex-direction: row;
     align-items: center;
     gap: 0.5rem;
+    position: relative;
+
+    &:focus {
+      @include link_focus;
+    }
   }
-}
-
-.pagination__listItem a:hover {
-  color: var(--color-highlight);
-  transition: color var(--global-transition-time) ease-in-out;
-}
-
-.pagination__listItem a:active {
-  outline: none;
-  box-shadow: unset;
-}
-
-.pagination__icon {
-  color: var(--color-highlight);
 }
