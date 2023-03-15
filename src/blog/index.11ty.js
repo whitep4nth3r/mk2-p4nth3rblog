@@ -1,7 +1,6 @@
 const Config = require("../../lib/config.js");
 const Card = require("../_components/card");
 const Pagination = require("../_components/pagination");
-const PostCard = require("../_components/postCard");
 const Topics = require("../_components/topics");
 const OpenGraph = require("../../lib/openGraph");
 

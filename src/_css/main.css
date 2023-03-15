@@ -2360,14 +2360,15 @@ pre[class*=language-] {
   font-weight: var(--font-weight-main);
   font-family: var(--font-family-main);
   color: var(--color-fg);
-  font-size: 1rem;
-  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+  line-height: 1;
 }
 
 .card__title {
-  font-weight: var(--font-weight-bold);
-  font-family: var(--font-family-bold);
-  font-size: 1.5rem;
+  font-weight: var(--font-weight-heading);
+  font-family: var(--font-family-heading);
+  font-size: 1.25rem;
   line-height: 1.6;
   margin-bottom: 0.5rem;
 }
@@ -2384,6 +2385,32 @@ pre[class*=language-] {
   text-overflow: ellipsis;
   -webkit-box-orient: vertical;
   display: -webkit-box;
+}
+
+.card__meta {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.card__metaCat {
+  font-weight: var(--font-weight-heading);
+  font-family: var(--font-family-heading);
+  font-size: 0.875rem;
+  line-height: 1.125;
+  color: var(--color-fg);
+  background-color: var(--color-bg);
+  border-radius: 1rem;
+  padding: 0.125rem 0.5rem;
+}
+
+.card__metaRead {
+  font-weight: var(--font-weight-heading);
+  font-family: var(--font-family-heading);
+  font-size: 0.875rem;
+  line-height: 1.125;
+  color: var(--color-fg);
 }
 
 .twitchInfo {

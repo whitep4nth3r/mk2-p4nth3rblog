@@ -5,7 +5,7 @@ const RichText = require("../_components/richText");
 const PublishedDate = require("../_components/publishedDate");
 const TableOfContents = require("../_components/tableOfContents");
 const isSponsored = require("../_components/isSponsored");
-const PostCard = require("../_components/postCard");
+const Card = require("../_components/card");
 const PostStructuredData = require("../_components/postStructuredData");
 const OpenGraph = require("../../lib/openGraph");
 
@@ -109,7 +109,7 @@ exports.render = async function (data) {
               </div>
               <div class="post__relatedGrid">
                 ${post.relatedPostsCollection.items
-                  .map((post) => PostCard({ post, baseSlug: "blog", isTalk: false }))
+                  .map((post) => Card({ item: post, showType: false }))
                   .join("")}
               </div>
             </div>`

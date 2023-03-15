@@ -1,6 +1,6 @@
 const Config = require("../../lib/config");
 const Topics = require("../_components/topics");
-const PostCard = require("../_components/postCard");
+const Card = require("../_components/card");
 const OpenGraph = require("../../lib/openGraph");
 
 exports.data = {
@@ -16,10 +16,15 @@ exports.data = {
   },
   eleventyComputed: {
     title: (data) => `Learn ${data.topic.name} from Salma Alam-Naylor`,
-    metaDescription: (data) => `Learn about ${data.topic.name} and more from ${Config.meta.jobDescription}.`,
+    metaDescription: (data) =>
+      `Learn about ${data.topic.name} and more from ${Config.meta.jobDescription}.`,
     openGraphImageUrl: (data) =>
-      OpenGraph.generateImageUrl({ title: `Posts about ${data.topic.name} from whitep4nth3r`, topics: [data.topic] }),
-    openGraphImageAlt: (data) => OpenGraph.generateImageAlt(`Posts about ${data.topic.name} from whitep4nth3r`),
+      OpenGraph.generateImageUrl({
+        title: `Posts about ${data.topic.name} from whitep4nth3r`,
+        topics: [data.topic],
+      }),
+    openGraphImageAlt: (data) =>
+      OpenGraph.generateImageAlt(`Posts about ${data.topic.name} from whitep4nth3r`),
     openGraphImageWidth: OpenGraph.imgWidth,
     openGraphImageHeight: OpenGraph.imgHeight,
     openGraphUrl: (data) => `https://whitep4nth3r.com/topics/${data.topic.slug}/`,
@@ -43,7 +48,7 @@ exports.render = function (data) {
           .map(function (item) {
             return `
           <li class="grid__item blog__item">
-            ${PostCard({ post: item, baseSlug: "blog", isTalk: false })}
+            ${Card({ item, showType: false })}
           </li>`;
           })
           .join("")}

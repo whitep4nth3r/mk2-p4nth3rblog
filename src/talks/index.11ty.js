@@ -1,5 +1,5 @@
 const Config = require("../../lib/config.js");
-const PostCard = require("../_components/postCard");
+const Card = require("../_components/card");
 const Pagination = require("../_components/pagination");
 const OpenGraph = require("../../lib/openGraph");
 
@@ -38,7 +38,7 @@ exports.render = function (data) {
         .map(function (item) {
           return `
             <li class="grid__item blog__item">
-            ${PostCard({ post: item, baseSlug: "talks", isTalk: true })}
+            ${Card({ item, showType: false })}
             </li>`;
         })
         .join("")}

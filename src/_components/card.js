@@ -31,7 +31,7 @@ function findImage(item) {
     case "post":
       return item.featuredImage;
     case "talk":
-      return item.speakerDeckLink.image;
+      return item.screenshot || item.speakerDeckLink.image;
     default:
       return item.image;
   }
@@ -81,9 +81,22 @@ const activityType = {
   youtube: "YouTube",
 };
 
-function blogMeta(item) {
+function itemMeta(item) {
   if (item.type === "post") {
-    return "show cat and reading time";
+    return `
+    <div class="card__meta">
+      <span class="card__metaCat">${item.topicsCollection.items[0].name}</span>
+      <span class="card__metaRead">${item.readingTime} min read</span>
+    </div>`;
+  }
+
+  if (item.type === "talk") {
+    return `
+    <div class="card__meta">
+      <span class="card__metaCat">${item.topicsCollection.items[0].name}</span>
+      <span class="card__metaRead">${item.watchTime} min watch time</span>
+    </div>
+    `;
   }
 }
 
@@ -104,7 +117,7 @@ const Card = ({ item, showType = true }) => {
       
       ${
         showType === false
-          ? blogMeta(item)
+          ? itemMeta(item)
           : `<span class="card__type card__type--${item.type}">${activityType[item.type]}</span>`
       }
   </div>
