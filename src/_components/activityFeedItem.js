@@ -7,7 +7,14 @@ var md = require("markdown-it")({
   html: true,
 });
 
-//big to do on image optimisation
+function findImage(item) {
+  switch (item.type) {
+    case "talk":
+      return item.speakerDeckLink.image;
+    case "post":
+      return item.image || null;
+  }
+}
 
 function description(item) {
   if (item.description) {
@@ -15,19 +22,22 @@ function description(item) {
   }
 
   if (item.excerpt) {
-    const image = item.featuredImage || item.speakerDeckLink.image;
-    return `<div class="activityFeed__description activityFeed__description--withImage">
+    const image = findImage(item);
+
+    if (image !== null) {
+      return `<div class="activityFeed__description activityFeed__description--withImage">
       <div>  
-        ${md.render(item.excerpt)}
+      ${md.render(item.excerpt)}
       </div>
       <img src="${image.url}?w=150" 
-          alt="${image.description}"
-          height="${image.height}"
-          width="${image.width}"
-          class="activityFeed__description__image"
-          loading="lazy"/>
-    </div> 
-    `;
+      alt="${image.description}"
+      height="${image.height}"
+      width="${image.width}"
+      class="activityFeed__description__image"
+      loading="lazy"/>
+      </div> 
+      `;
+    }
   }
 
   return "";
@@ -130,7 +140,7 @@ const ActivityFeedItem = ({ item, forceActiveState = false }) => {
     <h2 class="activityFeed__title">${heading}</h2>
     ${description(item)}
     ${embed(item)}
-    ${image(item.image)}
+    ${item.image ? image(item.image) : ""}
   ${closingTag(item)}`;
 };
 
