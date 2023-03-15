@@ -2316,8 +2316,7 @@ pre[class*=language-] {
   display: flex;
   flex-direction: column;
   text-decoration: none;
-  flex-grow: 0;
-  flex-shrink: 1;
+  height: 100%;
   transition: all var(--global-transition-time) ease-in-out !important;
 }
 .card:hover, .card:focus, .card:active {
@@ -2338,22 +2337,14 @@ pre[class*=language-] {
 
 .card__inner {
   padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex-grow: 1;
 }
 
 .card__image {
   transition: all var(--global-transition-time) ease-in-out;
-}
-
-.card__type {
-  font-weight: var(--font-weight-heading);
-  font-family: var(--font-family-heading);
-  color: var(--color-fg);
-  font-size: 1rem;
-  background-color: var(--card-tag-bg-base);
-  color: var(--card-tag-color-base);
-  border-radius: 0.25rem;
-  line-height: 1.6;
-  padding: 0.125rem 0.5rem;
 }
 
 .card__date {
@@ -2385,6 +2376,14 @@ pre[class*=language-] {
   text-overflow: ellipsis;
   -webkit-box-orient: vertical;
   display: -webkit-box;
+  flex-grow: 1;
+}
+.card__description p {
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
 }
 
 .card__meta {
@@ -2394,7 +2393,7 @@ pre[class*=language-] {
   gap: 0.5rem;
 }
 
-.card__metaCat {
+.card__metaLabel {
   font-weight: var(--font-weight-heading);
   font-family: var(--font-family-heading);
   font-size: 0.875rem;
@@ -2403,6 +2402,7 @@ pre[class*=language-] {
   background-color: var(--color-bg);
   border-radius: 1rem;
   padding: 0.125rem 0.5rem;
+  width: max-content;
 }
 
 .card__metaRead {
