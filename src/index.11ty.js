@@ -2,7 +2,7 @@ const HomeAbout = require("./_components/homeAbout");
 const OpenGraph = require("../lib/openGraph");
 const TwitchInfo = require("./_components/twitchInfo");
 const DiscordIcon = require("./_components/svg/discordIcon");
-const ActivityFeedItem = require("./_components/activityFeedItem");
+const ActivityFeedItem = require("./_components/card");
 const pageTitle = "Tech streams, blogs and code tutorials";
 
 exports.data = {
@@ -19,7 +19,7 @@ exports.data = {
 };
 
 exports.render = function (data) {
-  const { events, randomBlogPost, person, activityFeed } = data;
+  const { activityFeed } = data;
   const feedItems = activityFeed.slice(0, 10);
 
   return /*html*/ `

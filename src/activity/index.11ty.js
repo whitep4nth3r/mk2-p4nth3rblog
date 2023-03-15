@@ -1,6 +1,6 @@
 const OpenGraph = require("../../lib/openGraph");
 const pageTitle = "My activity feed — videos, blogs, events, podcasts and more";
-const ActivityFeedItem = require("../_components/activityFeedItem");
+const ActivityFeedItem = require("../_components/card");
 const Pagination = require("../_components/pagination");
 
 function calculatePageUrl(data) {

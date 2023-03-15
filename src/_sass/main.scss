@@ -21,9 +21,7 @@
 @import "table-of-contents";
 @import "blog-sidebar-topics";
 @import "blog-sidebar-author";
-@import "post-card";
 @import "topics-button";
-@import "home-card";
 @import "speaker-deck-link";
 @import "video-embed";
 @import "codepen-embed";
@@ -38,7 +36,6 @@
 @import "card";
 @import "twitch-info";
 @import "activity-feed";
-
 
 // convert to mixin or something
 .colorHighlight {
