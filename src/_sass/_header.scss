@@ -33,7 +33,7 @@ $header_bp: 768px;
   @include font_bold;
   display: flex;
   justify-content: center;
-  color: var(--color-highlight);
+  color: var(--color-fg);
   text-decoration: none;
   font-size: 1rem;
   line-height: 1;
@@ -44,16 +44,17 @@ $header_bp: 768px;
   margin-bottom: 0.5rem;
   position: absolute;
   top: -100px;
-  left: 1rem;
+  transform: translateX(-50%);
+  left: 50%;
   background-color: var(--color-bg);
+  z-index: 15;
+  position: absolute;
+
+  @include link_focus;
 
   &:focus {
     top: 1rem;
   }
-}
-
-.header__skipToMainContent:focus {
-  color: var(--color-highlight);
 }
 
 .header__logoContainer {
@@ -91,15 +92,15 @@ $header_bp: 768px;
   position: absolute;
   background: var(--header-bg);
   border-radius: 0 0 0.5rem 0.5rem;
-  top: 2.625rem;
+  top: 3.25rem;
   width: max-content;
 
   @media screen and (min-width: $header_bp) {
     top: 2.8125rem;
-  }
 
-  a {
-    margin-bottom: 0.5rem;
+    a {
+      padding: 0.5rem;
+    }
   }
 
   // backdrop filter doesn't work if parent element has one!
@@ -134,37 +135,7 @@ $header_bp: 768px;
     padding: 0.5rem 0.5rem;
   }
 
-  &:active,
-  &:focus {
-    outline: transparent;
-    transition: clip-path var(--global-transition-time) ease-in-out;
-
-    &::before {
-      --s: 0.2rem; /* spread-radius */
-      --x: 0px; /* X offset */
-      --y: 0px; /* Y offset */
-      --b: 0px; /* blur-radius*/
-      content: "";
-      border-radius: 0.25rem;
-      position: absolute;
-      inset: calc(-1 * var(--s) + 0.125rem);
-      transform: translate(var(--x), var(--y));
-      clip-path: polygon(
-        -100vmax -100vmax,
-        100vmax -100vmax,
-        100vmax 100vmax,
-        -100vmax 100vmax,
-        -100vmax -100vmax,
-        calc(0px + var(--s) - var(--x)) calc(0px + var(--s) - var(--y)),
-        calc(0px + var(--s) - var(--x)) calc(100% - var(--s) - var(--y)),
-        calc(100% - var(--s) - var(--x)) calc(100% - var(--s) - var(--y)),
-        calc(100% - var(--s) - var(--x)) calc(0px + var(--s) - var(--y)),
-        calc(0px + var(--s) - var(--x)) calc(0px + var(--s) - var(--y))
-      );
-      filter: blur(var(--b));
-      background: linear-gradient(145.04deg, var(--pink) 60.34%, var(--orange) 98.77%);
-    }
-  }
+  @include link_focus;
 }
 
 [data-active="home"] [data-link="home"],
@@ -229,6 +200,7 @@ $header_bp: 768px;
   border-radius: 100%;
   background-color: transparent;
   cursor: pointer;
+  display: inline;
 
   &.header__themeToggle--light {
     background-image: url("/img/theme-light.svg");
