@@ -7,7 +7,7 @@ function findImage(item) {
   switch (item.type) {
     case "talkSummary":
       return item.speakerDeckLink.image;
-    case "postSummary":
+    default:
       return item.featuredImage || null;
   }
 }
