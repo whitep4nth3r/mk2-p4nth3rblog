@@ -1,5 +1,5 @@
 function Topics({ topics, priorityOnly, selected, showLinkToBlog }) {
-  const priority = ["jamstack", "javascript", "a11y", "webdev", "css"];
+  const priority = ["tutorials", "javascript", "webdev", "css"];
   const topicsToShow = priorityOnly === true ? topics.filter((topic) => priority.includes(topic.slug)) : topics;
 
   return /* html */ `
