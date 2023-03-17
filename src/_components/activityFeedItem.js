@@ -9,10 +9,14 @@ var md = require("markdown-it")({
 
 function findImage(item) {
   switch (item.type) {
+    case "talkSummary":
+      return item.speakerDeckLink.image;
     case "talk":
       return item.speakerDeckLink.image;
+    case "postSummary":
+      return item.featuredImage || null;
     case "post":
-      return item.image || null;
+      return item.featuredImage || null;
   }
 }
 
@@ -22,22 +26,10 @@ function description(item) {
   }
 
   if (item.excerpt) {
-    const image = findImage(item);
-
-    if (image !== null) {
-      return `<div class="activityFeed__description activityFeed__description--withImage">
-      <div>  
+    return `<div class="activityFeed__description"> 
       ${md.render(item.excerpt)}
       </div>
-      <img src="${image.url}?w=150" 
-      alt="${image.description}"
-      height="${image.height}"
-      width="${image.width}"
-      class="activityFeed__description__image"
-      loading="lazy"/>
-      </div> 
       `;
-    }
   }
 
   return "";
