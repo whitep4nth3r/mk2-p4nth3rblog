@@ -9,7 +9,7 @@ const ClockIcon = require("../_components/svg/clockIcon");
 const DateUtils = require("../../lib/dateUtils");
 const OpenGraph = require("../../lib/openGraph");
 
-const pageTitle = "About Salma Alam-Naylor: software engineer, writer and live streamer";
+const pageTitle = "About Salma Alam-Naylor";
 
 var md = require("markdown-it")({
   html: true,
@@ -45,7 +45,7 @@ exports.render = function (data) {
   return /* html */ `
     <div class="page__index">
       <div class="page__header">
-        <h1 class="page__headerTitle">All about <span class="colorHighlight">me</span></h1>
+        <h1 class="page__headerTitle">About <span class="colorHighlight">Salma Alam-Naylor</span></h1>
       </div>
 
       <div class="twoColumn">

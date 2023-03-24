@@ -24,7 +24,7 @@ exports.data = {
     return `blog/${data.post.slug}/`;
   },
   eleventyComputed: {
-    title: (data) => data.post.metaTitle,
+    title: (data) => `${data.post.metaTitle} - Salma Alam-Naylor`,
     slug: (data) => data.post.slug,
     canonical: (data) =>
       data.post.externalUrl || `https://whitep4nth3r.com/blog/${data.post.slug}/`,

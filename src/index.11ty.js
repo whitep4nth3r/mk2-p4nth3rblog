@@ -1,9 +1,8 @@
 const HomeAbout = require("./_components/homeAbout");
 const OpenGraph = require("../lib/openGraph");
 const TwitchInfo = require("./_components/twitchInfo");
-const DiscordIcon = require("./_components/svg/discordIcon");
 const ActivityFeedItem = require("./_components/card");
-const pageTitle = "Tech streams, blogs and code tutorials";
+const pageTitle = "Salma Alam-Naylor — live streamer, software engineer and writer ";
 
 exports.data = {
   layout: "base.html",
