@@ -1,6 +1,7 @@
 const ExternalUrl = require("../_components/externalUrl");
 const BlogSidebarTopics = require("../_components/blogSidebarTopics");
 const BlogSidebarAuthor = require("../_components/blogSidebarAuthor");
+const BlogSidebarSocialLinks = require("../_components/blogSidebarSocialLinks");
 const RichText = require("../_components/richText");
 const PublishedDate = require("../_components/publishedDate");
 const TableOfContents = require("../_components/tableOfContents");
@@ -74,20 +75,26 @@ exports.render = async function (data) {
   });
 
   return /* html */ `
+    <div class="post__meta">
+      <p class="post__meta__topic">${post.topicsCollection.items[0].name}</p>
+      ${PublishedDate({
+        date: post.date,
+        readingTime: post.readingTime,
+        isTalk: false,
+        updatedDate: post.updatedDate,
+      })}
+    </div>
+    <h1 class="post__h1">${post.title}</h1>
     <section class="post">
+      <aside class="post__aside">
+        ${BlogSidebarAuthor({ author: post.author })}
+        ${BlogSidebarSocialLinks()}
+        <div class="post__asideStickyGroup">
+          ${TableOfContents(post.body)}
+          ${BlogSidebarTopics({ topics: post.topicsCollection.items })}
+        </div>
+      </aside>
       <article class="post__article">
-        <h1 class="post__h1">${post.title}</h1>
-        <aside class="post__inlineAside">
-            ${BlogSidebarAuthor({ author: post.author })}
-            ${PublishedDate({
-              date: post.date,
-              readingTime: post.readingTime,
-              isTalk: false,
-              updatedDate: post.updatedDate,
-            })}
-            ${TableOfContents(post.body)}
-        </aside>
-
         <div class="post__body">
           ${outOfDateWarning({ post })}
           ${RichText(post.body, {
@@ -125,21 +132,6 @@ exports.render = async function (data) {
           imageUrl: openGraphImageUrl,
         })}</script>
       </article>
-      <aside class="post__aside">
-        ${BlogSidebarAuthor({ author: post.author })}
-
-        ${PublishedDate({
-          date: post.date,
-          readingTime: post.readingTime,
-          isTalk: false,
-          updatedDate: post.updatedDate,
-        })}
-
-        <div class="post__asideStickyGroup">
-          ${TableOfContents(post.body)}
-          ${BlogSidebarTopics({ topics: post.topicsCollection.items })}
-        </div>
-      </aside>
     </section>
     `;
 };

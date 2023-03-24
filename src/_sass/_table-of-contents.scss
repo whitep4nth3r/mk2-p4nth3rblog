@@ -1,5 +1,4 @@
 .tableOfContents {
-  margin-top: 1rem;
   margin-bottom: 2rem;
 }
 
@@ -12,7 +11,7 @@
   @include font_bold;
   margin-bottom: 1rem;
   font-size: 1.2rem;
-  color: var(--color-highlight);
+  color: var(--color-fg);
   cursor: pointer;
 }
 

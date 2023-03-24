@@ -1,4 +1,9 @@
 .post {
+  --container-padding: 0.5rem;
+
+  @media screen and (min-width: 48em) {
+    --container-padding: 0.75rem;
+  }
   max-width: var(--post-max-width);
   margin: auto;
 }
@@ -6,45 +11,62 @@
 @media screen and (min-width: 48em) {
   .post {
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 1fr 3fr;
     column-gap: 3rem;
   }
+}
+
+.post__meta {
+  --container-padding: 0.5rem;
+
+  @media screen and (min-width: 48em) {
+    --container-padding: 0.75rem;
+  }
+
+  max-width: var(--post-max-width);
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  padding: var(--container-padding);
+  background: var(--card-bg); // todo — different gradient due to longer content
+  backdrop-filter: blur(1rem);
+  border-radius: 0.75rem;
+
+  @media screen and (min-width: 48em) {
+    align-items: center;
+    flex-direction: row;
+  }
+}
+
+.post__meta__topic {
+  @include meta_label;
 }
 
 .post__article {
   display: flex;
   flex-direction: column;
+  padding: var(--container-padding);
+  background: var(--card-bg);
+  backdrop-filter: blur(1rem);
+  border-radius: 0.75rem;
 }
 
 .post__aside {
   flex-direction: column;
-  display: none;
+  display: flex;
+  padding: var(--container-padding);
+  background: var(--card-bg); // todo — different gradient due to longer content
+  backdrop-filter: blur(1rem);
+  border-radius: 0.75rem;
 }
 
 .post__asideStickyGroup {
   position: sticky;
-  top: 0;
+  top: 10rem;
   overflow-y: scroll;
   max-height: 100vh;
-  padding-bottom: 4rem;
-  padding-right: 1rem;
-  margin-left: -1rem;
-  padding-left: 1rem;
-}
-
-.post__inlineAside {
-  display: flex;
-  flex-direction: column;
-}
-
-@media screen and (min-width: 48em) {
-  .post__aside {
-    display: flex;
-  }
-
-  .post__inlineAside {
-    display: none;
-  }
 }
 
 .post__body {
@@ -59,10 +81,11 @@
 
 .post__h1 {
   @include font_semibold;
-  margin-bottom: 2rem;
+  margin: 0 auto 2rem auto;
   font-size: clamp(2.2rem, 3vw, 3rem);
   line-height: 1.2;
   color: var(--color-fg);
+  max-width: var(--post-max-width);
 }
 
 .post__h2 {

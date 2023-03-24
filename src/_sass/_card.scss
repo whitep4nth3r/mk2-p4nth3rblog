@@ -92,14 +92,7 @@
 }
 
 .card__metaLabel {
-  @include font_semibold;
-  font-size: 0.875rem;
-  line-height: 1.125;
-  color: var(--color-fg);
-  background-color: var(--color-bg);
-  border-radius: 1rem;
-  padding: 0.125rem 0.5rem;
-  width: max-content;
+  @include meta_label;
 }
 
 .card__metaRead {

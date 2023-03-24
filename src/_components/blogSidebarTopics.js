@@ -13,7 +13,7 @@ function BlogSidebarTopics({ topics }) {
                   height="16"
                   width="16"
                   class="blogSidebarTopics__itemIcon">
-                More on ${topic.name}
+                More ${topic.name}
               </a>
           </li>`;
         })
