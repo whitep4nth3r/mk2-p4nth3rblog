@@ -38,7 +38,7 @@ exports.render = function (data) {
   return /* html */ `
     <section class="page__index">
       <div class="page__header">
-        <h1 class="page__headerTitle">Topic: <span class="colorHighlight">${topic.name}</span></h1>
+        <h1 class="page__headerTitle">${topic.name}</h1>
       </div>
 
       ${Topics({ topics, selected: topic.slug, showLinkToBlog: true })}

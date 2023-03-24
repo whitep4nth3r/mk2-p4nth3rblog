@@ -37,9 +37,3 @@
 @import "card";
 @import "twitch-info";
 @import "activity-feed";
-
-// convert to mixin or something
-.colorHighlight {
-  color: var(--color-highlight);
-}
-/* END TEMP */

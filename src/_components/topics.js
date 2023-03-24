@@ -1,6 +1,7 @@
 function Topics({ topics, priorityOnly, selected, showLinkToBlog }) {
   const priority = ["jamstack", "javascript", "a11y", "webdev", "css"];
-  const topicsToShow = priorityOnly === true ? topics.filter((topic) => priority.includes(topic.slug)) : topics;
+  const topicsToShow =
+    priorityOnly === true ? topics.filter((topic) => priority.includes(topic.slug)) : topics;
 
   return /* html */ `
   <ul class="topics">
@@ -34,12 +35,12 @@ function Topics({ topics, priorityOnly, selected, showLinkToBlog }) {
         .join("")}
         ${
           showLinkToBlog
-            ? `<li><a href="/blog/" class="topics__listItemLink">View latest <span class="colorHighlight" aria-hidden="true">→</span></a></li>`
+            ? `<li><a href="/blog/" class="topics__listItemLink">View latest <span aria-hidden="true">→</span></a></li>`
             : ""
         }
         ${
           priorityOnly
-            ? `<li><a href="/topics/a11y/" class="topics__listItemLink">More filters <span class="colorHighlight" aria-hidden="true">→</span></a></li>`
+            ? `<li><a href="/topics/a11y/" class="topics__listItemLink">More filters <span aria-hidden="true">→</span></a></li>`
             : ""
         }
     </ul>`;

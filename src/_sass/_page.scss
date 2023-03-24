@@ -13,20 +13,20 @@
 }
 
 .page__intro {
-  background-color: var(--cta2-bg);
+  background-color: var(--card-bg);
   border-radius: var(--border-radius-base);
-  padding: clamp(1.5rem, 2.5vw, 2.5rem);
+  padding: clamp(0.75rem, 2.5vw, 1rem);
   margin-bottom: 2rem;
 }
 
 .page__introTitle {
   @include font_semibold;
-  font-size: clamp(2rem, 4vw, 4rem);
+  font-size: clamp(2rem, 3vw, 3rem);
   margin-bottom: 1rem;
 }
 
 .page__introText {
   @include font_main;
-  font-size: clamp(1.4rem, 2vw, 2rem);
+  font-size: clamp(1rem, 1.4vw, 1.4rem);
   line-height: 1.4;
 }

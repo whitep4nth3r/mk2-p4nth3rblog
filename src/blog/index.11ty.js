@@ -41,7 +41,7 @@ exports.render = function (data) {
 
   <section class="page__index">
     <div class="page__header">
-      <h1 class="page__headerTitle">Blogs and <span class="colorHighlight">tutorials</span></h1>
+      <h1 class="page__headerTitle">Blogs and tutorials</h1>
     </div>
 
     <div class="blog__searchAndFilters">

@@ -10,6 +10,10 @@ const Card = require("../_components/card");
 const PostStructuredData = require("../_components/postStructuredData");
 const OpenGraph = require("../../lib/openGraph");
 
+var md = require("markdown-it")({
+  html: true,
+});
+
 exports.data = {
   layout: "base.html",
   pageType: "post",
@@ -95,6 +99,8 @@ exports.render = async function (data) {
         </div>
       </aside>
       <article class="post__article">
+        <div class="post__excerpt">${md.render(post.excerpt)}</div>
+        <hr class="post__excerpt__separator" />
         <div class="post__body">
           ${outOfDateWarning({ post })}
           ${RichText(post.body, {
@@ -112,11 +118,11 @@ exports.render = async function (data) {
             ? /*html*/ `
             <div class="post__related">
               <div class="post__relatedHeader">
-                <p class="post__relatedHeaderTitle">Read next 👇</p>
+                <p class="post__relatedHeaderTitle">Related posts</p>
               </div>
               <div class="post__relatedGrid">
                 ${post.relatedPostsCollection.items
-                  .map((post) => Card({ item: post, showType: false }))
+                  .map((post) => Card({ item: { ...post, type: "post" }, showType: false }))
                   .join("")}
               </div>
             </div>`

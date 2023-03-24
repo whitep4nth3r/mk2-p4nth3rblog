@@ -87,7 +87,7 @@
 .about__eventsListItemDate__month {
   @include font_semibold;
   text-align: center;
-  color: var(--color-highlight);
+  color: var(--color-fg);
   text-transform: uppercase;
   font-size: 1.2rem;
   margin-bottom: 0.25rem;
@@ -112,7 +112,7 @@
   grid-template-columns: 1fr;
 
   svg {
-    color: var(--color-highlight);
+    color: var(--color-fg);
   }
 
   @media screen and (min-width: 48em) {

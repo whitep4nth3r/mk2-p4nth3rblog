@@ -85,7 +85,7 @@ function itemMeta(item) {
   if (item.type === "post") {
     return `
     <div class="card__meta">
-      <span class="card__metaCat">${item.topicsCollection.items[0].name}</span>
+      <span class="card__metaLabel">${item.topicsCollection.items[0].name}</span>
       <span class="card__metaRead">${item.readingTime} min read →</span>
     </div>`;
   }

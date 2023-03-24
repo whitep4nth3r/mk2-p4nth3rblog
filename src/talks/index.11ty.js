@@ -30,7 +30,7 @@ exports.render = function (data) {
   
   <section class="page__index">
     <div class="page__header">
-      <h1 class="page__headerTitle">Conference and meetup <span class="colorHighlight">talks</span></h1>
+      <h1 class="page__headerTitle">Conference and meetup talks</h1>
     </div>
 
     <ol class="grid">
