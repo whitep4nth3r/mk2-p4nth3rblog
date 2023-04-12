@@ -8,9 +8,9 @@ export default async (request, context) => {
   const response = await context.next();
 
   return new HTMLRewriter()
-    .on("[event-date]", {
+    .on("[data-event-date]", {
       element(element) {
-        const dateString = element.getAttribute("event-date");
+        const dateString = element.getAttribute("data-event-date");
         const date = new Date(dateString);
         const now = new Date();
 

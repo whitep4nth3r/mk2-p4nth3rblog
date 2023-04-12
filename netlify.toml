@@ -20,7 +20,7 @@
   function = "clean-up-past-events"
 
 [[edge_functions]]
-  path = "/about/"
+  path = "/events/"
   function = "localize-time"
 
 [[redirects]]

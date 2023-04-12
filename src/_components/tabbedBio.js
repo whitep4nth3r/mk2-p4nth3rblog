@@ -4,8 +4,8 @@ function TabbedBio({ shortBio, speakerBio, longBio }) {
   <div class="bio">
     <div class="bio__buttons">
       <button type="button" class="bio__button bio__button--selected" data-view="short">Short bio</button>
-      <button type="button" class="bio__button" data-view="long">Long bio</button>
       <button type="button" class="bio__button" data-view="speaker">Speaker bio</button>
+      <button type="button" class="bio__button" data-view="long">Long bio</button>
     </div>
   
     <div class="bio__block bio__block--show" data-bio="short">
