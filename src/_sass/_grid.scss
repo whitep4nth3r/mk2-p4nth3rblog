@@ -42,4 +42,5 @@
 @mixin grid_header_title {
   @include font_semibold;
   font-size: 2rem;
+  margin-bottom: 2rem;
 }

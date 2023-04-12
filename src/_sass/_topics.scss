@@ -1,32 +1,37 @@
 .topics {
   list-style: none;
   padding-left: 0;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 1rem;
-  max-width: var(--grid-max-width);
-  margin-left: auto;
-  margin-right: auto;
+  display: block;
+}
+
+.topics__title {
+  @include font_semibold;
+  font-size: 1rem;
   margin-bottom: 1rem;
 }
 
 .topics__listItemLink {
-  @include button_main;
-  border: 0.25rem solid transparent;
-  display: flex;
-  flex-direction: row;
-  gap: 0.5rem;
+  display: block;
+  @include font_semibold;
+  color: var(--color-fg);
+  font-size: 1rem;
+  line-height: 1.5rem;
+  text-decoration: none;
+  padding: 0.635rem 0.875rem;
+  border-radius: var(--border-radius-base);
+  transition: background-color var(--global-transition-time) ease-in-out;
+
+  &:hover {
+    background-color: var(--blog-cat-hover-bg);
+  }
 }
 
 .topics__listItemLink--selected {
-  border-color: var(--color-fg);
-}
+  background-color: var(--pink);
+  color: var(--white);
 
-.topics__listItemImg {
-  display: flex;
-}
-
-.topics__listItemName {
-  display: flex;
+  &:hover {
+    background-color: var(--pink);
+    color: var(--white);
+  }
 }

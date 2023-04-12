@@ -1,34 +1,43 @@
-.blog__item {
+.blog {
+  display: block;
+
+  @media screen and (min-width: 48em) {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: 1.5rem;
+  }
 }
 
-.blog__item--ais {
-  max-width: 33%;
+.blog__searchAndCats {
+  --container-padding: 0.5rem;
+
+  @media screen and (min-width: 48em) {
+    --container-padding: 0.75rem;
+  }
+
+  height: max-content;
+  padding: var(--container-padding);
+  background: var(--card-bg); // todo — different gradient due to longer content
+  backdrop-filter: blur(1rem);
+  border-radius: 0.75rem;
+}
+
+.blog__cards {
+}
+
+.blog__cardsGrid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  list-style: none;
+  padding-left: 0;
+}
+
+.blog__emptySearchCard {
+  max-width: 320px;
 }
 
 .blog__item mark {
   color: var(--color-bg);
   background-color: var(--color-fg);
-}
-
-.blog__searchAndFilters {
-  max-width: var(--grid-max-width);
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 4rem;
-  margin-bottom: 4rem;
-
-  @media screen and (min-width: 72em) {
-    justify-content: space-between;
-    gap: 1rem;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-  }
-}
-
-.blog__filterLabel {
-  @include font_semibold;
-  font-size: 1rem;
-  margin-bottom: 1rem;
-  display: flex;
-  flex-direction: column;
 }

@@ -36,22 +36,26 @@ exports.render = function (data) {
   const postsByTopic = Array.from(allPosts.get(topic.slug));
 
   return /* html */ `
-    <section class="page__index">
-      <div class="page__header">
-        <h1 class="page__headerTitle">${topic.name}</h1>
+
+      <h1 class="page__headerTitle">${topic.name}</h1>
+
+      <div class="blog">
+        <aside class="blog__searchAndCats">   
+          ${Topics({ topics, selected: topic.slug, showLinkToBlog: true })}
+        </aside>
+        
+        <section class="blog__cards">
+          <ol class="grid">
+          ${postsByTopic
+            .map(function (item) {
+              return `
+              <li class="grid__item blog__item">
+              ${Card({ item: { ...item, type: "post" }, showType: false })}
+              </li>`;
+            })
+            .join("")}
+            </ol>
+          </section>
       </div>
-
-      ${Topics({ topics, selected: topic.slug, showLinkToBlog: true })}
-
-      <ol class="grid">
-        ${postsByTopic
-          .map(function (item) {
-            return `
-          <li class="grid__item blog__item">
-            ${Card({ item, showType: false })}
-          </li>`;
-          })
-          .join("")}
-      </ol>
-  </section>`;
+      `;
 };

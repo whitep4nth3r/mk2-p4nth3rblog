@@ -39,44 +39,41 @@ exports.render = function (data) {
   const latestPost = data.latestPost;
   return /* html */ `
 
-  <section class="page__index">
-    <div class="page__header">
-      <h1 class="page__headerTitle">Blogs and tutorials</h1>
-    </div>
+  <h1 class="page__headerTitle">Blogs and tutorials</h1>
 
-    <div class="blog__searchAndFilters">
+  <div class="blog">
+    <aside class="blog__searchAndCats">      
       <div id="autocomplete" class="ais">
         <div id="searchbox" class="ais__searchbox"></div>
       </div>
 
-      <div>
-        <p class="blog__filterLabel">Filter posts</p>
-        ${Topics({ topics: data.topics, priorityOnly: true })}
+      ${Topics({ topics: data.topics, onBlogIndex: true })}
+    </aside>
+
+    <section class="blog__cards">
+      <div id="hits" class="ais__hitsContainer"></div>
+
+      <div data-static-content>
+        <ol class="blog__cardsGrid">
+        ${data.pagination.items
+          .map(function (item) {
+            return `
+            <li>
+              ${Card({ item, showType: false })}
+            </li>`;
+          })
+          .join("")}
+        </ol>
+
+        ${Pagination({
+          previous: data.pagination.href.previous,
+          next: data.pagination.href.next,
+          currentPage: data.pagination.pageNumber,
+          totalPages: data.pagination.pages.length,
+        })}
       </div>
-    </div>
-
-    <div id="hits" class="ais__hitsContainer"></div>
-
-    <div data-static-content>
-      <ol class="grid">
-      ${data.pagination.items
-        .map(function (item) {
-          return `
-          <li class="">
-            ${Card({ item, showType: false })}
-          </li>`;
-        })
-        .join("")}
-      </ol>
-
-      ${Pagination({
-        previous: data.pagination.href.previous,
-        next: data.pagination.href.next,
-        currentPage: data.pagination.pageNumber,
-        totalPages: data.pagination.pages.length,
-      })}
-    </div>
-  </section>
+    </section>
+  </div>
 
   <script defer src="https://cdn.jsdelivr.net/npm/algoliasearch@4.5.1/dist/algoliasearch-lite.umd.js" integrity="sha256-EXPXz4W6pQgfYY3yTpnDa3OH8/EPn16ciVsPQ/ypsjk=" crossorigin="anonymous"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.8.3/dist/instantsearch.production.min.js" integrity="sha256-LAGhRRdtVoD6RLo2qDQsU2mp+XVSciKRC8XPOBWmofM=" crossorigin="anonymous"></script>
@@ -93,6 +90,7 @@ exports.render = function (data) {
         id: "${latestPost.sys.id}",
         date:  "${latestPost.date}",
         readingTime:  "${latestPost.readingTime}",
+        topic: "${latestPost.topicsCollection.items[0].name}",
         featuredImage: {
           url: "${latestPost.featuredImage.url}",
           description: "${latestPost.featuredImage.description}",

@@ -4,7 +4,6 @@
 
 .ais__searchbox {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   grid-template-areas:
     "label label"
     "input button";
@@ -17,7 +16,6 @@
 }
 
 .ais__hits--empty {
-  max-width: var(--grid-max-width);
   margin-left: auto;
   margin-right: auto;
 }
@@ -52,10 +50,10 @@
 .ais__input {
   grid-area: input;
   @include font_main;
-  background-color: var(--color-bg);
-  border: 0.25rem solid var(--grey-dark);
+  background-color: var(--search-input-bg);
   color: var(--color-fg);
-  border-radius: 0;
+  border: var(--search-input-border);
+  border-radius: var(--border-radius-base) 0 0 var(--border-radius-base);
   font-size: 1rem;
   padding: 0.5rem;
   width: 100%;
@@ -65,18 +63,17 @@
   @include search_focus_style;
 }
 
-.ais__input::placeholder {
-  color: #bbb;
-}
-
 .ais__reset {
+  @include font_main;
   grid-area: button;
-  @include button_main;
+  background-color: var(--search-input-bg);
   display: inline;
   border-radius: 0;
   padding: 0.6rem 1rem;
-  border: 0.125rem solid var(--grey-dark);
+  border: var(--search-input-border);
+  border-left-width: 0;
   width: max-content;
+  border-radius: 0 var(--border-radius-base) var(--border-radius-base) 0;
 }
 
 .ais__reset:focus {
