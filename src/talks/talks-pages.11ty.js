@@ -1,10 +1,10 @@
 const BlogSidebarAuthor = require("../_components/blogSidebarAuthor");
+const BlogSidebarSocialLinks = require("../_components/blogSidebarSocialLinks");
 const BlogSidebarTopics = require("../_components/blogSidebarTopics");
 const RichText = require("../_components/richText");
 const VideoEmbed = require("../_components/videoEmbed");
 const SpeakerDeckLink = require("../_components/speakerDeckLink");
 const PublishedDate = require("../_components/publishedDate");
-const SeeAllCta = require("../_components/seeAllCta");
 const OpenGraph = require("../../lib/openGraph");
 
 exports.data = {
@@ -20,7 +20,7 @@ exports.data = {
     return `talks/${data.talk.slug}/`;
   },
   eleventyComputed: {
-    title: (data) => data.talk.title,
+    title: (data) => `${data.talk.title} - Salma Alam-Naylor`,
     metaDescription: (data) => data.talk.metaDescription,
     openGraphImageUrl: (data) =>
       OpenGraph.generateImageUrl({
@@ -35,28 +35,37 @@ exports.data = {
 };
 
 exports.render = function (data) {
-  const { talk, events } = data;
+  const { talk } = data;
 
   return /* html */ `
+  <div class="post__meta">
+    <p class="post__meta__topic">${talk.topicsCollection.items[0].name}</p>
+      ${PublishedDate({
+        date: talk.date,
+        readingTime: talk.watchTime,
+        isTalk: true,
+        updatedDate: null,
+      })}
+    </div>
+  <h1 class="post__h1">${talk.title}</h1>
   <section class="post">
+    <aside class="post__aside">
+      ${BlogSidebarAuthor({ author: talk.author })}
+      ${BlogSidebarSocialLinks()}
+      <div class="post__asideStickyGroup">
+        ${BlogSidebarTopics({ topics: talk.topicsCollection.items })}
+      </div>
+    </aside>
     <article class="post__article">
-      <h1 class="post__h1">${talk.title}</h1>
-      <aside class="post__inlineAside">
-        ${BlogSidebarAuthor({ author: talk.author })}
-        ${PublishedDate({
-          date: talk.date,
-          readingTime: talk.watchTime,
-          isTalk: true,
-          updatedDate: null,
-        })}
-      </aside>
-      <div class="post__body">
+      <div class="post__excerpt">
         ${RichText(talk.abstract, {
           renderRssFriendlyImg: false,
           absoluteUrls: false,
           renderHeadingLinks: true,
         })}
-
+      </div>
+      <hr class="post__excerpt__separator" />
+      <div class="post__body">
         ${
           talk.recording !== null
             ? VideoEmbed({ embedUrl: talk.recording.embedUrl, title: talk.recording.title })
@@ -73,19 +82,5 @@ exports.render = function (data) {
         })}
         </div>
       </article>
-      <aside class="post__aside">
-        ${BlogSidebarAuthor({ author: talk.author })}
-
-        ${PublishedDate({
-          date: talk.date,
-          readingTime: talk.watchTime,
-          isTalk: true,
-          updatedDate: null,
-        })}
-
-        ${BlogSidebarTopics({ topics: talk.topicsCollection.items })}
-
-        ${SeeAllCta({ things: "talks", url: "/talks/" })}
-      </aside>
   </section>`;
 };
