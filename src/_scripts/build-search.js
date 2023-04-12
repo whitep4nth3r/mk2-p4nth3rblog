@@ -5,14 +5,17 @@ const richTextPlainTextRenderer = require("@contentful/rich-text-plain-text-rend
 
 async function callContentful(query, variables) {
   try {
-    const data = await fetch(`https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${process.env.CONTENTFUL_ACCESS_TOKEN}`,
-        "Content-Type": "application/json",
+    const data = await fetch(
+      `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${process.env.CONTENTFUL_ACCESS_TOKEN}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ query, variables }),
       },
-      body: JSON.stringify({ query, variables }),
-    }).then((response) => response.json());
+    ).then((response) => response.json());
     return data;
   } catch (error) {
     throw new Error(error);
@@ -85,7 +88,9 @@ async function getPaginatedPosts(page) {
   const response = await callContentful(query, variables);
 
   const { total } = response.data.blogPostCollection;
-  const posts = response.data.blogPostCollection.items ? response.data.blogPostCollection.items : [];
+  const posts = response.data.blogPostCollection.items
+    ? response.data.blogPostCollection.items
+    : [];
 
   return { posts, total };
 }
@@ -166,6 +171,17 @@ async function getPaginatedTalks(page) {
               }
             }
           }
+          screenshot {
+              sys {
+                id
+              }
+              url
+              title
+              width
+              height
+              description
+              contentType
+          }
           speakerDeckLink {
             image {
               sys {
@@ -242,7 +258,10 @@ function transformTalksToSearchObjects(talks) {
     const transformed = transformedPosts.concat(transformedTalks);
 
     if (posts.length > 0) {
-      const client = algoliasearch(process.env.ALGOLIA_APP_ID, process.env.ALGOLIA_SEARCH_ADMIN_KEY);
+      const client = algoliasearch(
+        process.env.ALGOLIA_APP_ID,
+        process.env.ALGOLIA_SEARCH_ADMIN_KEY,
+      );
 
       const index = client.initIndex("p4nth3rblog");
       const algoliaResponse = await index.saveObjects(transformed);
