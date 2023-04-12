@@ -240,7 +240,7 @@ function transformTalksToSearchObjects(talks) {
       date: talk.date,
       watchTime: talk.watchTime,
       body: richTextPlainTextRenderer.documentToPlainTextString(talk.transcript.json),
-      featuredImage: talk.speakerDeckLink.image,
+      featuredImage: talk.screenshot.image,
     };
   });
 
