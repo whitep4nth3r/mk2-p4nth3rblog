@@ -140,7 +140,7 @@ function transformPostsToSearchObjects(posts) {
 }
 
 async function getPaginatedTalks(page) {
-  const queryLimit = 10;
+  const queryLimit = 8;
   const skipMultiplier = page === 1 ? 0 : page - 1;
   const skip = skipMultiplier > 0 ? queryLimit * skipMultiplier : 0;
 
@@ -240,7 +240,7 @@ function transformTalksToSearchObjects(talks) {
       date: talk.date,
       watchTime: talk.watchTime,
       body: richTextPlainTextRenderer.documentToPlainTextString(talk.transcript.json),
-      featuredImage: talk.screenshot.image,
+      featuredImage: talk.screenshot,
     };
   });
 
