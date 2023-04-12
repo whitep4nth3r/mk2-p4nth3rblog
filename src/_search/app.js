@@ -121,9 +121,6 @@ function initSearch({ appId, apiKey, indexName, latestPost }) {
           const isTalk = hit.watchTime !== undefined;
           const baseSlug = isTalk ? "talks" : "blog";
           const timeSuffix = isTalk ? "min watch time" : "min read";
-          const image = hit.featuredImage || hit.screenshot;
-
-          console.log(hit);
 
           return `
           <a href="${`/${baseSlug}/${hit.slug}/`}" 
@@ -131,15 +128,19 @@ function initSearch({ appId, apiKey, indexName, latestPost }) {
             id="search-${hit.objectID}"
             class="card">
 
-            <div class="card__imageContainer">
+            ${
+              hit.featuredImage
+                ? `<div class="card__imageContainer">
               <img 
-                src="${image.url}?w=300" 
+                src="${hit.featuredImage.url}?w=300" 
                 alt="" 
-                height="${image.height}"
-                width="${image.width}"
+                height="${hit.featuredImage.height}"
+                width="${hit.featuredImage.width}"
                 class="card__image"
                 loading="lazy" />
-            </div>
+            </div>`
+                : ``
+            }
 
             <div class="card__inner">
               <p class="card__date">${formatDateForDisplay(hit.date)}</p>

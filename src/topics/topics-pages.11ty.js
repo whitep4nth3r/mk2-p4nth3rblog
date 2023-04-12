@@ -15,16 +15,16 @@ exports.data = {
     return `topics/${data.topic.slug}/`;
   },
   eleventyComputed: {
-    title: (data) => `Learn ${data.topic.name} from Salma Alam-Naylor`,
+    title: (data) => `Posts about ${data.topic.name} from Salma Alam-Naylor`,
     metaDescription: (data) =>
       `Learn about ${data.topic.name} and more from ${Config.meta.jobDescription}.`,
     openGraphImageUrl: (data) =>
       OpenGraph.generateImageUrl({
-        title: `Posts about ${data.topic.name} from whitep4nth3r`,
+        title: `Posts about ${data.topic.name} from Salma Alam-Naylor`,
         topics: [data.topic],
       }),
     openGraphImageAlt: (data) =>
-      OpenGraph.generateImageAlt(`Posts about ${data.topic.name} from whitep4nth3r`),
+      OpenGraph.generateImageAlt(`Posts about ${data.topic.name} from Salma Alam-Naylor`),
     openGraphImageWidth: OpenGraph.imgWidth,
     openGraphImageHeight: OpenGraph.imgHeight,
     openGraphUrl: (data) => `https://whitep4nth3r.com/topics/${data.topic.slug}/`,
@@ -37,6 +37,7 @@ exports.render = function (data) {
 
   return /* html */ `
 
+      <span>Posts tagged</span>
       <h1 class="page__headerTitle">${topic.name}</h1>
 
       <div class="blog">

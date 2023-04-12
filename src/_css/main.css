@@ -1988,8 +1988,8 @@ a.post__linkedHeaderIcon {
 }
 
 .ais__reset {
-  font-weight: var(--font-weight-main);
-  font-family: var(--font-family-main);
+  font-weight: var(--font-weight-heading);
+  font-family: var(--font-family-heading);
   grid-area: button;
   background-color: var(--search-input-bg);
   display: inline;
@@ -2007,6 +2007,11 @@ a.post__linkedHeaderIcon {
   outline-offset: 0.125rem;
   box-shadow: inset var(--color-fg) 0 0 0 0.125rem;
   transition: box-shadow var(--global-transition-time) ease-in-out;
+}
+
+.ais-Highlight-highlighted {
+  background-color: var(--pink);
+  color: var(--white);
 }
 
 /**
