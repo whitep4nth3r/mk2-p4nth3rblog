@@ -5,11 +5,14 @@
 }
 
 .page__header {
-  @include grid_header;
 }
 
 .page__headerTitle {
-  @include grid_header_title;
+  @include font_bold;
+  margin: 0 auto 3rem auto;
+  font-size: clamp(2.5rem, 3.5vw, 3.5rem);
+  line-height: 1.4;
+  color: var(--color-fg);
 }
 
 .page__intro {

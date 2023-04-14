@@ -5,6 +5,7 @@ const OpenGraph = require("../../lib/openGraph");
 
 exports.data = {
   layout: "base.html",
+  activeNav: "blog",
   pagination: {
     data: "topics",
     alias: "topic",
@@ -46,11 +47,11 @@ exports.render = function (data) {
         </aside>
         
         <section class="blog__cards">
-          <ol class="grid">
+          <ol class="blog__cardsGrid">
           ${postsByTopic
             .map(function (item) {
               return `
-              <li class="grid__item blog__item">
+              <li>
               ${Card({ item: { ...item, type: "post" }, showType: false })}
               </li>`;
             })

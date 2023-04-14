@@ -26,7 +26,7 @@
 }
 
 .post__meta__topic {
-  @include meta_label;
+  @include meta_label_alt;
 }
 
 .post__excerpt {
@@ -209,18 +209,25 @@ a.post__linkedHeaderIcon {
 }
 
 .post__relatedHeader {
-  @include grid_header;
+  @include font_heading;
+  font-size: clamp(1.8rem, 2.8vw, 2rem);
+  line-height: 1.4;
+  margin-bottom: 2rem;
+  padding-top: 2rem;
+  word-break: break-word;
+  hyphens: auto;
+  color: var(--color-fg);
 }
 
 .post__relatedHeaderTitle {
-  @include grid_header_title;
 }
 
 .post__relatedGrid {
-  @include grid;
+  display: grid;
   grid-template-columns: 1fr;
+  gap: 1.5rem;
 
-  @media screen and (min-width: 48em) {
+  @media screen and (min-width: 54em) {
     grid-template-columns: 1fr 1fr;
   }
 }

@@ -1,12 +1,10 @@
 .uses__sectionHeader {
-  @include grid_header;
   width: max-content;
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
 
 .uses__sectionHeaderTitle {
-  @include grid_header_title;
   text-transform: capitalize;
 }
 

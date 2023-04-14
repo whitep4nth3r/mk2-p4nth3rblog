@@ -33,11 +33,11 @@ exports.render = function (data) {
       <h1 class="page__headerTitle">Conference and meetup talks</h1>
     </div>
 
-    <ol class="grid">
+    <ol class="blog__cardsGrid">
       ${data.pagination.items
         .map(function (item) {
           return `
-            <li class="grid__item blog__item">
+            <li>
             ${Card({ item, showType: false })}
             </li>`;
         })
