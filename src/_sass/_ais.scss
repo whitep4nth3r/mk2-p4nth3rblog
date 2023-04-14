@@ -1,9 +1,16 @@
 .ais {
   margin-bottom: 1rem;
+
+  --form-height: 48px;
+
+  @media screen and (min-width: 48rem) {
+    --form-height: 44px;
+  }
 }
 
 .ais__searchbox {
   display: grid;
+  grid-template-columns: 5fr 1fr;
   grid-template-areas:
     "label label"
     "input button";
@@ -57,6 +64,7 @@
   font-size: 1rem;
   padding: 0.5rem;
   width: 100%;
+  height: var(--form-height);
 }
 
 .ais__input:focus {
@@ -73,6 +81,7 @@
   border: var(--search-input-border);
   border-left-width: 0;
   width: 100%;
+  height: var(--form-height);
   border-radius: 0 var(--border-radius-base) var(--border-radius-base) 0;
 }
 

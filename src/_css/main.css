@@ -12,7 +12,7 @@
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
-  font-display: swap;
+  font-display: block;
 }
 @font-face {
   font-family: "Atomic Marker Extras";
@@ -20,7 +20,7 @@
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
-  font-display: swap;
+  font-display: block;
 }
 @font-face {
   font-family: "Atomic Marker Extras Two";
@@ -28,7 +28,7 @@
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
-  font-display: swap;
+  font-display: block;
 }
 @font-face {
   font-family: "Highrise Bold";
@@ -36,7 +36,7 @@
   font-weight: bold;
   font-style: normal;
   font-stretch: normal;
-  font-display: swap;
+  font-display: block;
 }
 :root {
   --pink: #f0047f;
@@ -233,11 +233,6 @@ main:after {
   left: 0;
   width: 100%;
   z-index: 0;
-}
-
-::selection {
-  background: var(--pink);
-  color: #ffffff;
 }
 
 @keyframes flash {
@@ -655,8 +650,13 @@ main:after {
 @media screen and (min-width: 48em) {
   .blog {
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 1fr 2fr;
     gap: 1.5rem;
+  }
+}
+@media screen and (min-width: 70em) {
+  .blog {
+    grid-template-columns: 1fr 4fr;
   }
 }
 
@@ -1860,10 +1860,17 @@ a.post__linkedHeaderIcon {
 
 .ais {
   margin-bottom: 1rem;
+  --form-height: 48px;
+}
+@media screen and (min-width: 48rem) {
+  .ais {
+    --form-height: 44px;
+  }
 }
 
 .ais__searchbox {
   display: grid;
+  grid-template-columns: 5fr 1fr;
   grid-template-areas: "label label" "input button";
 }
 
@@ -1919,6 +1926,7 @@ a.post__linkedHeaderIcon {
   font-size: 1rem;
   padding: 0.5rem;
   width: 100%;
+  height: var(--form-height);
 }
 
 .ais__input:focus {
@@ -1940,6 +1948,7 @@ a.post__linkedHeaderIcon {
   border: var(--search-input-border);
   border-left-width: 0;
   width: 100%;
+  height: var(--form-height);
   border-radius: 0 var(--border-radius-base) var(--border-radius-base) 0;
 }
 

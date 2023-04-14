@@ -14,7 +14,7 @@
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
@@ -23,7 +23,7 @@
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
@@ -32,7 +32,7 @@
   font-weight: normal;
   font-style: normal;
   font-stretch: normal;
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
@@ -41,7 +41,7 @@
   font-weight: bold;
   font-style: normal;
   font-stretch: normal;
-  font-display: swap;
+  font-display: block;
 }
 
 @mixin font_main {
