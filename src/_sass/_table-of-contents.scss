@@ -20,7 +20,7 @@
 }
 
 .tableOfContents__itemLink {
-  @include font_semibold;
+  @include font_main;
   font-size: 1rem;
   line-height: 1.4;
   color: var(--color-fg);

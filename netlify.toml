@@ -7,6 +7,12 @@
   functions = "src/_functions/"
   edge_functions = "src/_edge-functions/"
 
+[[plugins]]
+  package = "@netlify/plugin-lighthouse"
+
+  [plugins.inputs]
+    run_on_success = "true"
+
 [[edge_functions]]
   path = "/blog/*"
   function = "referer"

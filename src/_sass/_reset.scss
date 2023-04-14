@@ -87,6 +87,7 @@ main {
     color: var(--color-brush-bg);
     position: fixed;
     z-index: 0;
+    opacity: 50%;
     mix-blend-mode: overlay;
     font-size: 1000px;
     line-height: 1;

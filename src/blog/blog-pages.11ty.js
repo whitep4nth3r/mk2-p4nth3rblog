@@ -1,7 +1,5 @@
 const ExternalUrl = require("../_components/externalUrl");
-const BlogSidebarTopics = require("../_components/blogSidebarTopics");
 const BlogSidebarAuthor = require("../_components/blogSidebarAuthor");
-const BlogSidebarSocialLinks = require("../_components/blogSidebarSocialLinks");
 const RichText = require("../_components/richText");
 const PublishedDate = require("../_components/publishedDate");
 const TableOfContents = require("../_components/tableOfContents");
@@ -92,15 +90,13 @@ exports.render = async function (data) {
     <section class="post">
       <aside class="post__aside">
         ${BlogSidebarAuthor({ author: post.author })}
-        ${BlogSidebarSocialLinks()}
         <div class="post__asideStickyGroup">
           ${TableOfContents(post.body)}
-          ${BlogSidebarTopics({ topics: post.topicsCollection.items })}
         </div>
       </aside>
       <article class="post__article">
         <div class="post__excerpt">${md.render(post.excerpt)}</div>
-        <hr class="post__excerpt__separator" />
+        <hr class="post__excerpt__separator" aria-hidden="true" />
         <div class="post__body">
           ${outOfDateWarning({ post })}
           ${RichText(post.body, {
@@ -128,10 +124,6 @@ exports.render = async function (data) {
             </div>`
             : ""
         }
-
-        <div class="post__inlineAside">
-          ${BlogSidebarTopics({ topics: post.topicsCollection.items })}
-        </div>
 
         <script type="application/ld+json">${PostStructuredData({
           post,

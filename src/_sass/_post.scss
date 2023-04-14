@@ -1,9 +1,4 @@
 .post {
-  --container-padding: 0.5rem;
-
-  @media screen and (min-width: 48em) {
-    --container-padding: 0.75rem;
-  }
   max-width: var(--post-max-width);
   margin: auto;
 }
@@ -12,27 +7,17 @@
   .post {
     display: grid;
     grid-template-columns: 1fr 3fr;
-    column-gap: 3rem;
+    column-gap: 4rem;
   }
 }
 
 .post__meta {
-  --container-padding: 0.5rem;
-
-  @media screen and (min-width: 48em) {
-    --container-padding: 0.75rem;
-  }
-
-  max-width: var(--post-max-width);
   margin: auto;
+  max-width: var(--post-max-width);
   display: flex;
   flex-direction: column;
   gap: 2rem;
   margin-bottom: 2rem;
-  padding: var(--container-padding);
-  background: var(--card-bg); // todo — different gradient due to longer content
-  backdrop-filter: blur(1rem);
-  border-radius: 0.75rem;
 
   @media screen and (min-width: 48em) {
     align-items: center;
@@ -47,9 +32,11 @@
 .post__excerpt {
   p {
     @include font_main;
-    font-size: 1.4rem;
-    line-height: 1.6;
+    font-weight: var(--font-weight-heading);
+    font-size: 1.25rem;
+    line-height: 1.5;
     margin-bottom: 2rem;
+    color: var(--color-blog-copy);
   }
 }
 
@@ -62,19 +49,11 @@
 .post__article {
   display: flex;
   flex-direction: column;
-  padding: var(--container-padding);
-  background: var(--card-bg);
-  backdrop-filter: blur(1rem);
-  border-radius: 0.75rem;
 }
 
 .post__aside {
   flex-direction: column;
   display: flex;
-  padding: var(--container-padding);
-  background: var(--card-bg); // todo — different gradient due to longer content
-  backdrop-filter: blur(1rem);
-  border-radius: 0.75rem;
 }
 
 .post__asideStickyGroup {
@@ -95,16 +74,16 @@
 }
 
 .post__h1 {
-  @include font_semibold;
-  margin: 0 auto 2rem auto;
-  font-size: clamp(2.2rem, 3vw, 3rem);
-  line-height: 1.2;
+  @include font_bold;
+  margin: 0 auto 3rem auto;
+  font-size: clamp(2.5rem, 3.5vw, 3.5rem);
+  line-height: 1.4;
   color: var(--color-fg);
   max-width: var(--post-max-width);
 }
 
 .post__h2 {
-  @include font_semibold;
+  @include font_heading;
   font-size: clamp(1.8rem, 2.8vw, 2rem);
   line-height: 1.4;
   margin-bottom: 2rem;
@@ -115,7 +94,7 @@
 }
 
 .post__h3 {
-  @include font_semibold;
+  @include font_heading;
   font-size: 1.4rem;
   line-height: 1.4;
   padding-top: 2rem;
@@ -140,7 +119,7 @@ a.post__linkedHeaderIcon {
 .post__h4,
 .post__h5,
 .post__h6 {
-  @include font_bold;
+  @include font_heading;
   font-size: 1.2rem;
   line-height: 1.4;
   margin-bottom: 1rem;
@@ -149,16 +128,16 @@ a.post__linkedHeaderIcon {
 
 .post__p {
   @include font_main;
-  font-size: 1.2rem;
-  line-height: 1.6;
+  font-size: 1.125rem;
+  line-height: 1.75;
   margin-bottom: 1rem;
-  color: var(--color-fg);
+  color: var(--color-blog-copy);
   word-break: break-word;
 }
 
 .post__p--bold {
-  font-family: var(--font-family-heading);
-  font-weight: var(--font-weight-heading);
+  font-family: var(--font-family-bold);
+  font-weight: var(--font-weight-bold);
 }
 
 .post__p--italic {
@@ -177,28 +156,18 @@ a.post__linkedHeaderIcon {
 
 .post__blockquote {
   display: block;
-  background-color: var(--color-fg);
-  margin-block-start: 4rem;
-  margin-block-end: 4rem;
-  margin-inline-start: 2rem;
-  margin-inline-end: 2rem;
+  margin-block-start: 2rem;
+  margin-block-end: 2rem;
   padding: 1rem 1.5rem;
-  border-radius: 0.75rem;
-  border: 0.25rem solid var(--orange);
+  border-left: 0.25rem solid var(--orange);
 }
 
 .post__blockquote p {
-  color: var(--color-bg);
   font-style: italic;
-  font-size: 1.2rem;
-  line-height: 1.6;
-}
-
-@media screen and (min-width: 37.5em) {
-  .post__blockquote {
-    margin-inline-start: 4rem;
-    margin-inline-end: 4rem;
-  }
+  font-size: 1.5rem;
+  line-height: 1.5;
+  font-weight: 500;
+  color: var(--color-fg);
 }
 
 .post__blockquote:before {
@@ -269,7 +238,7 @@ a.post__linkedHeaderIcon {
   margin-left: auto;
   margin-right: auto;
   display: block;
-  border-radius: var(--border-radius-base);
+  border-radius: calc(var(--border-radius-base) * 2);
 }
 
 .post__deployToNetlifyButton {

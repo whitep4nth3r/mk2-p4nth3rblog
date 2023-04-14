@@ -1,6 +1,4 @@
 const BlogSidebarAuthor = require("../_components/blogSidebarAuthor");
-const BlogSidebarSocialLinks = require("../_components/blogSidebarSocialLinks");
-const BlogSidebarTopics = require("../_components/blogSidebarTopics");
 const RichText = require("../_components/richText");
 const VideoEmbed = require("../_components/videoEmbed");
 const SpeakerDeckLink = require("../_components/speakerDeckLink");
@@ -51,10 +49,6 @@ exports.render = function (data) {
   <section class="post">
     <aside class="post__aside">
       ${BlogSidebarAuthor({ author: talk.author })}
-      ${BlogSidebarSocialLinks()}
-      <div class="post__asideStickyGroup">
-        ${BlogSidebarTopics({ topics: talk.topicsCollection.items })}
-      </div>
     </aside>
     <article class="post__article">
       <div class="post__excerpt">
@@ -64,7 +58,7 @@ exports.render = function (data) {
           renderHeadingLinks: true,
         })}
       </div>
-      <hr class="post__excerpt__separator" />
+      <hr class="post__excerpt__separator" aria-hidden="true" />
       <div class="post__body">
         ${
           talk.recording !== null

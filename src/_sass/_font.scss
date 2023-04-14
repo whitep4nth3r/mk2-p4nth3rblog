@@ -1,25 +1,8 @@
 @font-face {
-  font-family: "Work Sans Light";
-  src: url("/fonts/WorkSans-Light.woff2") format("woff2");
-  font-weight: 300;
-  font-style: normal;
-  font-stretch: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Work Sans SemiBold";
-  src: url("/fonts/WorkSans-SemiBold.woff2") format("woff2");
-  font-weight: 500;
-  font-style: normal;
-  font-stretch: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Work Sans Bold";
-  src: url("/fonts/WorkSans-Bold.woff2") format("woff2");
-  font-weight: 700;
+  font-family: "Inter UI var";
+  font-weight: 400 900; /* safe weight range */
+  src: url("Inter-UI.var.woff2") format("woff2-variations"),
+    url("Inter-UI.var.woff2") format("woff2");
   font-style: normal;
   font-stretch: normal;
   font-display: swap;
@@ -71,8 +54,13 @@
   font-family: var(--font-family-bold);
 }
 
-@mixin font_semibold {
+@mixin font_heading {
   font-weight: var(--font-weight-heading);
+  font-family: var(--font-family-heading);
+}
+
+@mixin font_semibold {
+  font-weight: var(--font-weight-bold);
   font-family: var(--font-family-heading);
 }
 

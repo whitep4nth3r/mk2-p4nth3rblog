@@ -12,12 +12,14 @@
   --body-horizontal-padding-sm: 1rem;
   --body-horizontal-padding-lg: 2.5rem;
 
-  --font-family-bold: "Work Sans Bold", sans-serif;
-  --font-weight-bold: 700;
-  --font-family-heading: "Work Sans SemiBold", sans-serif;
-  --font-weight-heading: 500;
-  --font-family-main: "Work Sans Light", sans-serif;
-  --font-weight-main: 300;
+  --font-family-main: "Inter UI var", Helvetica, Arial, sans-serif;
+
+  --font-family-bold: var(--font-family-main);
+  --font-family-heading: var(--font-family-main);
+
+  --font-weight-bold: 900;
+  --font-weight-heading: 700;
+  --font-weight-main: 500;
 
   --border-radius-base: 0.375rem;
 
@@ -43,7 +45,8 @@
 
   --color-bg: var(--black);
   --color-fg: var(--white);
-  --color-bg-lighter: var(--grey-dark);
+
+  --color-blog-copy: rgba(255, 255, 255, 0.92);
 
   --color-link: var(--color-fg);
 
@@ -91,7 +94,8 @@
 
   --color-bg: var(--white);
   --color-fg: var(--black);
-  --color-bg-lighter: var(--white);
+
+  --color-blog-copy: rgba(0, 0, 0, 0.72);
 
   --color-link: var(--color-fg);
 

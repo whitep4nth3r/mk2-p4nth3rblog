@@ -1,21 +1,47 @@
 .blogSidebarAuthor {
+  display: grid;
+  gap: 1rem;
+  grid-template-areas: "face about" "face social";
+  grid-template-columns: 1fr 2fr;
+  margin-bottom: 4rem;
+  align-items: center;
 }
 
 .blogSidebarAuthor__cta {
+  @include font_main;
+  color: var(--color-blog-copy);
+  grid-area: about;
   font-size: 1rem;
-  margin-bottom: 2rem;
   display: block;
 }
 
 .blogSidebarAuthor__imgContainer {
-  margin-bottom: 1rem;
+  grid-area: face;
   border-radius: 100%;
-  max-width: 8rem;
   filter: var(--base-shadow-filter);
   overflow: hidden;
+  width: 100%;
+  aspect-ratio: 1/1;
+  display: flex;
+  flex-direction: column;
+  min-width: 6rem;
 
-  * {
+  img {
     height: 100%;
-    display: block;
+    width: auto;
   }
 }
+
+.blogSidebarAuthor_social {
+  grid-area: social;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: flex-start;
+}
+
+.blogSidebarAuthor_socialLink {
+  display: block;
+}
+
+//todo link focus styles
