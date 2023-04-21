@@ -6,15 +6,24 @@
   @include tc_layout_left($width: 28rem);
 }
 
-// * {
-//   outline: 1px solid var(--pink);
-// }
+.about__name {
+  z-index: 10;
+  margin-top: -6.6rem;
+
+  @media screen and (min-width: $tc_layout_breakpoint) {
+    margin-top: 0;
+  }
+}
 
 .about__fixed {
-  @include tc_layout_fixed($height: 42rem);
+  @include tc_layout_fixed($height: 100vh);
+
+  @media screen and (min-width: $tc_layout_breakpoint) {
+    align-items: flex-start;
+  }
 
   * {
-    height: 100%;
+    height: calc(100% - 6.5rem);
     object-fit: cover;
     border-radius: var(--border-radius-base);
   }

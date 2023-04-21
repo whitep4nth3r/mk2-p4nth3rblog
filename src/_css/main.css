@@ -480,6 +480,7 @@ main:after {
   display: block;
   margin: auto;
   gap: 2rem;
+  min-height: 100vh;
 }
 @media screen and (min-width: 62.5em) {
   .home {
@@ -622,6 +623,7 @@ main:after {
   display: block;
   margin: auto;
   gap: 2rem;
+  min-height: 100vh;
 }
 @media screen and (min-width: 62.5em) {
   .about {
@@ -643,18 +645,33 @@ main:after {
   }
 }
 
+.about__name {
+  z-index: 10;
+  margin-top: -6.6rem;
+}
+@media screen and (min-width: 62.5em) {
+  .about__name {
+    margin-top: 0;
+  }
+}
+
 @media screen and (min-width: 62.5em) {
   .about__fixed {
     position: fixed;
-    height: 42rem;
+    height: 100vh;
     max-width: 26.25rem;
     display: flex;
     justify-content: center;
     align-items: center;
   }
 }
+@media screen and (min-width: 62.5em) {
+  .about__fixed {
+    align-items: flex-start;
+  }
+}
 .about__fixed * {
-  height: 100%;
+  height: calc(100% - 6.5rem);
   object-fit: cover;
   border-radius: var(--border-radius-base);
 }
