@@ -1,6 +1,6 @@
 const ClockIcon = require("../_components/svg/clockIcon");
 const TwitchIcon = require("../_components/svg/twitchIcon");
-const YoutubeIcon = require("../_components/svg/youtubeColor");
+const YouTubeIcon = require("../_components/svg/youtubeIcon");
 const DateUtils = require("../../lib/dateUtils");
 const OpenGraph = require("../../lib/openGraph");
 
@@ -11,7 +11,7 @@ function calculateIcon(type) {
     case "twitch":
       return TwitchIcon();
     case "youtube":
-      return YoutubeIcon();
+      return YouTubeIcon();
     default:
       return "";
   }

@@ -4,10 +4,8 @@
 
 .homeAbout__name {
   position: relative;
-
-  img {
-    width: 100%;
-  }
+  color: var(--color-fg);
+  display: block;
 }
 
 .homeAbout__subtitle {

@@ -1,10 +1,8 @@
 const RichText = require("../_components/richText");
 const BioImage = require("../_components/bioImage");
-const AboutSocialLinks = require("../_components/aboutSocialLinks");
-const TwitchIcon = require("../_components/svg/twitchIcon");
 const TabbedBio = require("../_components/tabbedBio");
-const YoutubeIcon = require("../_components/svg/youtubeColor");
 const OpenGraph = require("../../lib/openGraph");
+const NameLogo = require("../_components/svg/nameLogo");
 
 const pageTitle = "About Salma Alam-Naylor";
 
@@ -29,23 +27,20 @@ exports.render = function (data) {
   const { person } = data;
 
   return /* html */ `
-    <div class="page__index">
-      <div class="page__header">
-        <h1 class="page__headerTitle">About Salma Alam-Naylor</h1>
+    <div class="about">
+      <div class="about__image">
+        <div class="about__fixed">
+          ${BioImage({ image: person.imageBio })}
+        </div>
       </div>
 
-      <div class="about">
-        <div>
-          <div class="about__meFace">
-            ${BioImage({ image: person.imageBio })}
-          </div>
-          <div class="about__meLinks">
-            <p>these should not be buttons 🔽</p>
-            ${AboutSocialLinks()}
-          </div>
+      <div class="about__details">
+        <div class="about__name">
+          <h1>
+            ${NameLogo()}
+          </h1>
         </div>
-
-        <div>
+        <div class="about__bio">
           ${TabbedBio({
             shortBio: md.render(person.bioShort),
             speakerBio: md.render(person.bioSpeaker),
@@ -53,5 +48,6 @@ exports.render = function (data) {
           })}
         </div>
       </div>
+    </div>
   `;
 };

@@ -25,11 +25,6 @@ body {
   }
 }
 
-* {
-  // this is to ensure everything is on top of the whitep4nth3r bg SVG
-  z-index: 1;
-}
-
 a {
   color: inherit;
   transition: color 0.2s ease-in-out;
@@ -86,7 +81,7 @@ main {
     content: "M" / "";
     color: var(--color-brush-bg);
     position: fixed;
-    z-index: 0;
+    z-index: -1;
     opacity: 50%;
     mix-blend-mode: overlay;
     font-size: 1000px;
@@ -101,7 +96,7 @@ main {
     bottom: 0;
     left: 0;
     width: 100%;
-    z-index: 0;
+    z-index: -1;
   }
 }
 

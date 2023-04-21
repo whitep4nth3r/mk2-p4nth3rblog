@@ -1,44 +1,30 @@
-$about_layout_break: 52em;
-
 .about {
-  display: block;
+  @include tc_layout_container;
+}
 
-  @media screen and (min-width: $about_layout_break) {
-    display: grid;
-    grid-template-columns: 2fr 4fr;
-    gap: 2rem;
+.about__image {
+  @include tc_layout_left($width: 28rem);
+}
+
+// * {
+//   outline: 1px solid var(--pink);
+// }
+
+.about__fixed {
+  @include tc_layout_fixed($height: 42rem);
+
+  * {
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--border-radius-base);
   }
 }
 
-.about__socialLinks {
-  margin: 2rem auto;
-  list-style: none;
-  padding-left: 0;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 1rem;
+.about__details {
+  @include tc_layout_scroll;
+
+  margin: unset;
 }
 
-.about__socialLinksItem {
-  @include button_main;
-  gap: 0.5rem;
-}
-
-.about__meFace {
-  overflow: hidden;
-  border-radius: 100%;
-  aspect-ratio: 1/1;
-  filter: var(--base-shadow-filter);
-  max-height: 20rem;
-}
-
-.about__meFace img {
-  border-radius: 100%;
-}
-
-.about__meBio {
-}
-
-.about__meLinks {
+.about__bio {
 }

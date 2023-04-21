@@ -1,53 +1,21 @@
-$layout_breakpoint_home: 62.5em;
-$layout_height: 70vh;
-
 .home {
-  list-style: none;
-  padding-left: 0;
-  display: block;
-  margin: auto;
-  gap: 2rem;
-
-  @media screen and (min-width: $layout_breakpoint_home) {
-    display: flex;
-    flex-direction: row;
-  }
+  @include tc_layout_container;
 }
 
 .home__left {
-  @media screen and (min-width: $layout_breakpoint_home) {
-    width: 26.25rem;
-    flex-grow: 0;
-    flex-shrink: 0;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-direction: column;
-    min-height: $layout_height;
-  }
+  @include tc_layout_left;
 }
 
 .home__fixed {
-  @media screen and (min-width: $layout_breakpoint_home) {
-    position: fixed;
-    height: $layout_height;
-    max-width: 26.25rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  @include tc_layout_fixed;
 }
 
 .home__scroll {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  max-width: 1080px;
-  margin: auto;
+  @include tc_layout_scroll;
 }
 
 .home__twitch {
-  @media screen and (min-width: $layout_breakpoint_home) {
+  @media screen and (min-width: $tc_layout_breakpoint) {
     display: flex;
     flex-grow: 1;
     justify-content: center;
@@ -70,7 +38,7 @@ $layout_height: 70vh;
   grid-template-columns: 1fr;
   gap: 1rem;
 
-  @media screen and (min-width: $layout_breakpoint_home) {
+  @media screen and (min-width: $tc_layout_breakpoint) {
     grid-template-columns: 1fr 1fr;
   }
 }
