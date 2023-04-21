@@ -17,6 +17,8 @@ export default async (request, context) => {
         element(element) {
           const thumb_url = currentStream.thumbnail_url.replace("{width}x{height}", "1920x1080");
           element.setAttribute("src", thumb_url);
+          element.removeAttribute("class");
+          element.setAttribute("class", "twitchInfo__thumbnail twitchInfo__thumbnail--live");
         },
       })
       .transform(response);

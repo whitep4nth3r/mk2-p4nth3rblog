@@ -83,7 +83,7 @@ main {
   &:before {
     animation: fadeInBrush 0.42s ease-in-out;
     @include font_atomic_extras_two;
-    content: "M";
+    content: "M" / "";
     color: var(--color-brush-bg);
     position: fixed;
     z-index: 0;
@@ -96,7 +96,7 @@ main {
   }
 
   &:after {
-    content: var(--whitep4nth3r-bg-svg);
+    content: var(--whitep4nth3r-bg-svg) / "";
     position: fixed;
     bottom: 0;
     left: 0;

@@ -34,6 +34,10 @@
   }
 }
 
+.twitchInfo__thumbnail--live {
+  filter: grayscale(0);
+}
+
 .twitchInfo__deets {
   position: absolute;
   z-index: 1;

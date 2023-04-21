@@ -30,14 +30,6 @@
   font-stretch: normal;
   font-display: block;
 }
-@font-face {
-  font-family: "Highrise Bold";
-  src: url("/fonts/Highrise-bold.woff2") format("woff2");
-  font-weight: bold;
-  font-style: normal;
-  font-stretch: normal;
-  font-display: block;
-}
 :root {
   --pink: #f0047f;
   --black: #0e0016;
@@ -215,7 +207,7 @@ main:before {
   font-weight: normal;
   font-style: normal;
   font-family: "Atomic Marker Extras Two";
-  content: "M";
+  content: "M"/"";
   color: var(--color-brush-bg);
   position: fixed;
   z-index: 0;
@@ -227,7 +219,7 @@ main:before {
   top: 5%;
 }
 main:after {
-  content: var(--whitep4nth3r-bg-svg);
+  content: var(--whitep4nth3r-bg-svg)/"";
   position: fixed;
   bottom: 0;
   left: 0;
@@ -567,45 +559,9 @@ main:after {
 
 .homeAbout__name {
   position: relative;
-  margin-bottom: 6rem;
-  text-transform: uppercase;
 }
-
-.homeAbout__nameFirst {
-  font-weight: bold;
-  font-family: "Highrise Bold", "Arial Black", sans-serif;
-  color: var(--color-fg);
-  background: linear-gradient(180deg, var(--pink) 0%, var(--orange) 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-align: center;
-  display: block;
-  font-size: 49.5vw;
-}
-@media screen and (min-width: 62.5em) {
-  .homeAbout__nameFirst {
-    font-size: 14.25rem;
-  }
-}
-
-.homeAbout__nameLast {
-  font-weight: normal;
-  font-style: normal;
-  font-family: "Atomic Marker", Arial, sans-serif;
-  display: block;
-  text-align: right;
-  color: var(--color-fg);
-  position: absolute;
-  right: 0;
-  bottom: -2rem;
-  font-size: 3.5rem;
-}
-@media screen and (min-width: 62.5em) {
-  .homeAbout__nameLast {
-    font-size: 4rem;
-    bottom: -3rem;
-  }
+.homeAbout__name img {
+  width: 100%;
 }
 
 .homeAbout__subtitle {
@@ -2197,6 +2153,10 @@ pre[class*=language-] {
   transition: all var(--global-transition-time) ease-in-out;
 }
 .twitchInfo__thumbnail:hover {
+  filter: grayscale(0);
+}
+
+.twitchInfo__thumbnail--live {
   filter: grayscale(0);
 }
 

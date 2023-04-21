@@ -4,8 +4,10 @@
 
 .homeAbout__name {
   position: relative;
-  margin-bottom: 6rem;
-  text-transform: uppercase;
+
+  img {
+    width: 100%;
+  }
 }
 
 .homeAbout__subtitle {
