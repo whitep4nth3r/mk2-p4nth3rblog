@@ -35,15 +35,6 @@
   font-display: block;
 }
 
-@font-face {
-  font-family: "Highrise Bold";
-  src: url("/fonts/Highrise-bold.woff2") format("woff2");
-  font-weight: bold;
-  font-style: normal;
-  font-stretch: normal;
-  font-display: block;
-}
-
 @mixin font_main {
   font-weight: var(--font-weight-main);
   font-family: var(--font-family-main);
@@ -80,9 +71,4 @@
   font-weight: normal;
   font-style: normal;
   font-family: "Atomic Marker Extras Two";
-}
-
-@mixin font_highrise {
-  font-weight: bold;
-  font-family: "Highrise Bold", "Arial Black", sans-serif;
 }

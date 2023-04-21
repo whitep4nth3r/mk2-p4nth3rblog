@@ -8,39 +8,6 @@
   text-transform: uppercase;
 }
 
-.homeAbout__nameFirst {
-  @include font_highrise;
-  color: var(--color-fg);
-  background: linear-gradient(180deg, var(--pink) 0%, var(--orange) 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-align: center;
-  display: block;
-
-  font-size: 49.5vw;
-
-  @media screen and (min-width: $layout_breakpoint_home) {
-    font-size: 14.25rem;
-  }
-}
-
-.homeAbout__nameLast {
-  @include font_atomic;
-  display: block;
-  text-align: right;
-  color: var(--color-fg);
-  position: absolute;
-  right: 0;
-  bottom: -2rem;
-  font-size: 3.5rem;
-
-  @media screen and (min-width: $layout_breakpoint_home) {
-    font-size: 4rem;
-    bottom: -3rem;
-  }
-}
-
 .homeAbout__subtitle {
   font-size: 1.4rem;
   line-height: 1;
