@@ -1,5 +1,6 @@
 :root {
   --pink: #f0047f;
+  --pink-light: #f890c6;
   --black: #0e0016;
   --black-alt: #1f1823;
   --grey-dark: #2b2e3a;
@@ -48,11 +49,8 @@
 
   --color-bg: var(--black);
   --color-fg: var(--white);
-
+  --color-link: var(--pink-light);
   --color-blog-copy: rgba(255, 255, 255, 0.92);
-
-  --color-link: var(--color-fg);
-
   --color-brush-bg: rgba(255, 255, 255, 0.72);
 
   --header-bg: rgba(14, 0, 22, 0.6);
@@ -100,11 +98,9 @@
 
   --color-bg: var(--white);
   --color-fg: var(--black);
+  --color-link: var(--pink);
 
   --color-blog-copy: rgba(0, 0, 0, 0.72);
-
-  --color-link: var(--color-fg);
-
   --color-brush-bg: rgba(0, 0, 0, 0.72);
 
   --header-bg: rgba(250, 239, 255, 0.8);

@@ -16,12 +16,6 @@
   display: block;
 }
 
-.homeAbout_minibio {
-  font-size: 1.4rem;
-  line-height: 1.5;
-  margin-bottom: 2rem;
-
-  a {
-    @include font_semibold;
-  }
+.homeAbout__bio {
+  @include short_bio;
 }

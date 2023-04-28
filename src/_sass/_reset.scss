@@ -39,18 +39,6 @@ a {
   text-decoration-thickness: 0.125rem;
 }
 
-a:focus,
-summary:focus {
-  // --box-shadow-bg: var(--color-bg);
-  // --box-shadow-highlight: var(--color-fg);
-  // outline: transparent;
-  // outline-style: solid;
-  // /* 2nd value is 3x 1st */
-  // box-shadow: var(--box-shadow-bg) 0 0 0 0.08rem, var(--box-shadow-highlight) 0 0 0 0.24rem;
-  // border-radius: var(--border-radius-base);
-  // transition: box-shadow var(--global-transition-time) ease-in-out;
-}
-
 h1,
 h2,
 h3,

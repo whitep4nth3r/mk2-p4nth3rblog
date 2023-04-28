@@ -18,7 +18,7 @@ exports.data = {
 };
 
 exports.render = function (data) {
-  const { activityFeed } = data;
+  const { activityFeed, person } = data;
   const feedItems = activityFeed.slice(0, 10);
 
   return /*html*/ `
@@ -26,7 +26,7 @@ exports.render = function (data) {
 
     <div class="home__left">
       <div class="home__fixed">
-        ${HomeAbout()}
+        ${HomeAbout({ bio: person.bioShort })}
       </div>
     </div>
 

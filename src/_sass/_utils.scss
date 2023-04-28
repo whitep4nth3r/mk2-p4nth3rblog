@@ -42,8 +42,7 @@
 }
 
 @mixin link_focus {
-  &:active,
-  &:focus {
+  &:focus-visible {
     outline: transparent;
     outline-style: solid;
     transition: clip-path var(--global-transition-time) ease-in-out;
@@ -72,6 +71,40 @@
       );
       filter: blur(var(--b));
       background: linear-gradient(145deg, var(--pink) 60%, var(--orange) 98%);
+    }
+  }
+}
+
+@mixin short_bio {
+  max-width: 62ch;
+
+  h2 {
+    @include font_semibold;
+    font-size: clamp(1.8rem, 2.8vw, 2rem);
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    color: var(--color-fg);
+  }
+
+  h3 {
+    @include font_semibold;
+    font-size: 1.4rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    color: var(--color-fg);
+  }
+
+  p {
+    @include font_main;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: var(--color-fg);
+
+    a {
+      @include font_semibold;
+      color: var(--color-link);
+      text-decoration: none;
     }
   }
 }

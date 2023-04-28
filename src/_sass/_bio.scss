@@ -61,31 +61,7 @@ $bio_breakpoint: 1237px;
 
 .bio__block {
   display: none;
-  max-width: 62ch;
-
-  h2 {
-    @include font_semibold;
-    font-size: clamp(1.8rem, 2.8vw, 2rem);
-    line-height: 1.4;
-    margin-bottom: 1rem;
-    color: var(--color-fg);
-  }
-
-  h3 {
-    @include font_semibold;
-    font-size: 1.4rem;
-    line-height: 1.4;
-    margin-bottom: 1rem;
-    color: var(--color-fg);
-  }
-
-  p {
-    @include font_main;
-    font-size: 1.25rem;
-    line-height: 1.6;
-    margin-bottom: 1rem;
-    color: var(--color-fg);
-  }
+  @include short_bio;
 }
 
 .bio__block--show {
