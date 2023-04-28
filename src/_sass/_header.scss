@@ -1,3 +1,11 @@
+[color-mode="light"] {
+  --external-arrow-svg: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.66663 11.3334L11.3333 4.66675M11.3333 4.66675H4.66663M11.3333 4.66675V11.3334' stroke='black' stroke-opacity='0.72' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+[color-mode="dark"] {
+  --external-arrow-svg: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.66663 11.3334L11.3333 4.66675M11.3333 4.66675H4.66663M11.3333 4.66675V11.3334' stroke='white' stroke-opacity='0.72' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
 $header_bp: 768px;
 
 .header {
@@ -92,11 +100,17 @@ $header_bp: 768px;
 }
 
 .header__navListMoreLinks {
-  position: absolute;
   background: var(--header-bg);
-  border-radius: 0 0 0.5rem 0.5rem;
+  border-radius: 0 0 var(--border-radius-base) var(--border-radius-base);
+  position: absolute;
   top: 3.25rem;
   width: max-content;
+  left: 50%;
+  transform: translateX(-50%);
+
+  a {
+    padding: 0.9rem;
+  }
 
   @media screen and (min-width: $header_bp) {
     top: 2.8125rem;
@@ -119,6 +133,22 @@ $header_bp: 768px;
   }
 }
 
+.header__navListItemLInk--external {
+  transition: text-shadow var(--global-transition-time) ease-in-out;
+
+  &:hover {
+    text-shadow: 0 0 0.25rem rgba(245, 88, 170, 0.7);
+  }
+
+  &::after {
+    content: "";
+    display: inline-block;
+    background-image: var(--external-arrow-svg);
+    height: 1rem;
+    width: 1rem;
+  }
+}
+
 .header__navListSummary {
   cursor: pointer;
 }
@@ -128,10 +158,16 @@ $header_bp: 768px;
   @include font_bold;
   padding: 1rem 0.5rem;
   text-decoration: none;
-  display: block;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: space-between;
   text-transform: uppercase;
   position: relative;
   font-size: 0.875rem;
+  line-height: 1;
+  letter-spacing: 1px;
 
   @media screen and (min-width: $header_bp) {
     font-size: 1rem;
@@ -156,7 +192,7 @@ $header_bp: 768px;
     // if we want to use the font
     // @include font_atomic_extras;
     // text-transform: lowercase;
-    // content: "d";
+    // content: "d" / "";
     // color: var(--pink);
     // width: 100%;
     // display: block;
