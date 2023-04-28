@@ -1,8 +1,8 @@
 @font-face {
   font-family: "Inter UI var";
   font-weight: 400 900; /* safe weight range */
-  src: url("Inter-UI.var.woff2") format("woff2-variations"),
-    url("Inter-UI.var.woff2") format("woff2");
+  src: url("/fonts/Inter-UI.var.woff2") format("woff2-variations"),
+    url("/fonts/Inter-UI.var.woff2") format("woff2");
   font-style: normal;
   font-stretch: normal;
   font-display: swap;
@@ -42,17 +42,12 @@
 
 @mixin font_bold {
   font-weight: var(--font-weight-bold);
-  font-family: var(--font-family-bold);
-}
-
-@mixin font_heading {
-  font-weight: var(--font-weight-heading);
-  font-family: var(--font-family-heading);
+  font-family: var(--font-family-main);
 }
 
 @mixin font_semibold {
-  font-weight: var(--font-weight-bold);
-  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-mid);
+  font-family: var(--font-family-main);
 }
 
 @mixin font_atomic {

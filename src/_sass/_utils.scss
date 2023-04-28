@@ -20,6 +20,7 @@
 
 @mixin meta_label {
   @include font_semibold;
+  font-weight: 500;
   font-size: 0.875rem;
   line-height: 1.5;
   color: var(--color-fg);
@@ -79,7 +80,7 @@
   max-width: 62ch;
 
   h2 {
-    @include font_semibold;
+    @include font_main;
     font-size: clamp(1.8rem, 2.8vw, 2rem);
     line-height: 1.4;
     margin-bottom: 1rem;
@@ -87,7 +88,7 @@
   }
 
   h3 {
-    @include font_semibold;
+    @include font_main;
     font-size: 1.4rem;
     line-height: 1.4;
     margin-bottom: 1rem;

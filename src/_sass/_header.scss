@@ -1,9 +1,12 @@
 [color-mode="light"] {
   --external-arrow-svg: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.66663 11.3334L11.3333 4.66675M11.3333 4.66675H4.66663M11.3333 4.66675V11.3334' stroke='black' stroke-opacity='0.72' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+
+  --selected-link-decoration-color: var(--pink-light);
 }
 
 [color-mode="dark"] {
   --external-arrow-svg: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.66663 11.3334L11.3333 4.66675M11.3333 4.66675H4.66663M11.3333 4.66675V11.3334' stroke='white' stroke-opacity='0.72' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  --selected-link-decoration-color: var(--pink);
 }
 
 $header_bp: 768px;
@@ -133,7 +136,7 @@ $header_bp: 768px;
   }
 }
 
-.header__navListItemLInk--external {
+.header__navListItemLink--external {
   transition: text-shadow var(--global-transition-time) ease-in-out;
 
   &:hover {
@@ -155,6 +158,8 @@ $header_bp: 768px;
 
 .header__navListItemLink,
 .header__navListSummary {
+  transition: opacity var(--global-transition-time) ease-in-out;
+  opacity: 0.72;
   @include font_bold;
   padding: 1rem 0.5rem;
   text-decoration: none;
@@ -175,32 +180,59 @@ $header_bp: 768px;
   }
 
   @include link_focus;
+
+  &:hover {
+    opacity: 1;
+  }
 }
 
 [data-active="home"] [data-link="home"],
 [data-active="blog"] [data-link="blog"],
 [data-active="about"] [data-link="about"] {
+  opacity: 1;
+  position: relative;
   &::after {
     // using SVG here to avoid the font flash
-    content: url("/img/active_nav.svg");
-    width: 100%;
-    display: block;
-    position: absolute;
-    bottom: 0rem;
-    z-index: -1;
-
-    // if we want to use the font
-    // @include font_atomic_extras;
-    // text-transform: lowercase;
-    // content: "d" / "";
-    // color: var(--pink);
+    // content: url("/img/active_nav.svg");
     // width: 100%;
     // display: block;
     // position: absolute;
-    // bottom: -1.6rem;
-    // font-size: 2.75rem;
-    // left: 0.4rem;
+    // bottom: 0rem;
     // z-index: -1;
+
+    // if we want to use the font
+    @include font_atomic_extras;
+    text-transform: lowercase;
+    color: var(--selected-link-decoration-color);
+    width: 100%;
+    display: block;
+    position: absolute;
+    font-size: 3rem;
+    z-index: -1;
+  }
+}
+
+[data-active="home"] [data-link="home"] {
+  &::after {
+    content: "d" / "";
+    left: -1px;
+    top: -1px;
+  }
+}
+
+[data-active="blog"] [data-link="blog"] {
+  &::after {
+    content: "j" / "";
+    top: -2px;
+    left: 2px;
+  }
+}
+
+[data-active="about"] [data-link="about"] {
+  &::after {
+    content: "l" / "";
+    left: 0;
+    top: -2px;
   }
 }
 

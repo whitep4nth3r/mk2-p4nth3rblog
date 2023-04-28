@@ -58,7 +58,7 @@
 }
 
 .card__title {
-  @include font_semibold;
+  @include font_bold;
   font-size: 1.25rem;
   line-height: 1.6;
   margin-bottom: 0.5rem;
