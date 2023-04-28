@@ -42,12 +42,18 @@ exports.render = function (data) {
   <h1 class="page__headerTitle">Blogs and tutorials</h1>
 
   <div class="blog">
-    <aside class="blog__searchAndCats">      
-      <div id="autocomplete" class="ais">
-        <div id="searchbox" class="ais__searchbox"></div>
+    <aside class="blog__searchAndCats">
+      <div class="blog__searchBoxAndFilterToggle">
+        <div id="autocomplete" class="ais">
+          <div id="searchbox" class="ais__searchbox"></div>
+        </div>
+        <!-- add aria stuff here -->
+        <button type="button" class="blog__filterToggle" data-toggle>Filters</button>
       </div>
 
-      ${Topics({ topics: data.topics, onBlogIndex: true })}
+      <div class="blog__cats" data-cats>
+        ${Topics({ topics: data.topics, onBlogIndex: true })}
+      </div>
     </aside>
 
     <section class="blog__cards">
@@ -113,6 +119,52 @@ exports.render = function (data) {
         staticContent.style.display = "block";
       }
     })
+
+    // mobile filter toggle stuff
+    let catsVisible = false; 
+
+    const toggle = document.querySelector("[data-toggle]");
+    const cats = document.querySelector("[data-cats]");
+    const body = document.querySelector("body");
+    const close = document.querySelector("[data-close]");
+
+    function closeCats() {
+      cats.style.display = "none";
+      catsVisible = false;
+      body.style.position = "relative";
+    }
+
+    function showCats() {
+      cats.style.display = "block";
+      catsVisible = true;
+      body.style.position = "fixed";
+    }
+
+    function toggleCats() {
+      if (catsVisible) {
+        closeCats();
+      } else {
+        showCats();
+      }
+    }
+
+    toggle.addEventListener("click", () => {
+      toggleCats();
+    })
+
+    close.addEventListener("click", () => {
+      closeCats();
+    })
+
+    window.addEventListener("resize", (event) => {
+      if(event.target.window.innerWidth > 768) {
+        cats.style.display = "block";
+        catsVisible = true;
+      } else {
+        cats.style.display = "none";
+        catsVisible = false;
+      }
+    });
   </script>
 `;
 };

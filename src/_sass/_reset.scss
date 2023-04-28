@@ -67,8 +67,12 @@ strong {
 }
 
 main {
-  margin: 10rem auto auto auto;
+  margin: 4rem auto auto auto;
   max-width: var(--global-max-width);
+
+  @media screen and (min-width: $global_md_breakpoint) {
+    margin-top: 10rem;
+  }
 
   &:before {
     animation: fadeInBrush 0.42s ease-in-out;

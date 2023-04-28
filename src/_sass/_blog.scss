@@ -1,7 +1,9 @@
+$blog_mobile_layout_break: 48em;
+
 .blog {
   display: block;
 
-  @media screen and (min-width: 48em) {
+  @media screen and (min-width: $blog_mobile_layout_break) {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 1.5rem;
@@ -15,6 +17,52 @@
 .blog__searchAndCats {
   height: max-content;
   border-radius: 0.75rem;
+}
+
+.blog__filterToggle {
+  display: block;
+
+  @media screen and (min-width: $blog_mobile_layout_break) {
+    display: none;
+  }
+}
+
+.blog__searchBoxAndFilterToggle {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.blog__cats {
+  display: none;
+  background-color: green;
+  padding: 1rem;
+
+  z-index: 10;
+  position: fixed;
+  bottom: 0;
+
+  width: 100vw; /* viewport width */
+  height: 70vh; /* viewport height */
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  margin-left: -1rem;
+
+  @media screen and (min-width: $blog_mobile_layout_break) {
+    display: block;
+    padding: unset;
+
+    z-index: 1;
+    position: relative;
+    bottom: unset;
+
+    width: unset;
+    height: 100%;
+    overflow: auto;
+    margin-left: 0;
+  }
 }
 
 .blog__cards {

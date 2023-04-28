@@ -1,6 +1,9 @@
 function Topics({ topics, selected, showLinkToBlog, onBlogIndex }) {
   return /* html */ `
-  <p class="topics__title">Blog categories</p>
+  <div class="topics__topRow">
+    <p class="topics__title">Blog categories</p>
+    <button type="button" class="topics__closeButton" data-close>Close</button>
+  </div>
   <ul class="topics">
     ${
       onBlogIndex
@@ -23,7 +26,8 @@ function Topics({ topics, selected, showLinkToBlog, onBlogIndex }) {
         </li>`;
       })
       .join("")}
-    </ul>`;
+    </ul>
+    `;
 }
 
 module.exports = Topics;

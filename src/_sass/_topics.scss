@@ -4,6 +4,21 @@
   display: block;
 }
 
+.topics__topRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.topics__closeButton {
+  display: block;
+
+  @media screen and (min-width: $blog_mobile_layout_break) {
+    display: none;
+  }
+}
+
 .topics__title {
   @include font_semibold;
   font-size: 1rem;

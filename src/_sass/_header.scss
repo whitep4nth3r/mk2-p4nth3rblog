@@ -9,8 +9,6 @@
   --selected-link-decoration-color: var(--pink);
 }
 
-$header_bp: 768px;
-
 .header {
   margin: 1rem auto;
   max-width: var(--global-max-width);
@@ -29,7 +27,7 @@ $header_bp: 768px;
   left: 50%;
   transform: translateX(-50%);
 
-  @media screen and (min-width: $header_bp) {
+  @media screen and (min-width: $global_md_breakpoint) {
     width: calc(100vw - calc(var(--body-horizontal-padding-lg) * 2));
   }
 }
@@ -74,7 +72,7 @@ $header_bp: 768px;
 .header__logoContainer {
   display: none;
 
-  @media screen and (min-width: $header_bp) {
+  @media screen and (min-width: $global_md_breakpoint) {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -93,7 +91,7 @@ $header_bp: 768px;
   justify-content: flex-start;
   gap: 0.25rem;
 
-  @media screen and (min-width: $header_bp) {
+  @media screen and (min-width: $global_md_breakpoint) {
     gap: 1rem;
   }
 }
@@ -115,7 +113,7 @@ $header_bp: 768px;
     padding: 0.9rem;
   }
 
-  @media screen and (min-width: $header_bp) {
+  @media screen and (min-width: $global_md_breakpoint) {
     top: 2.8125rem;
 
     a {
@@ -174,7 +172,7 @@ $header_bp: 768px;
   line-height: 1;
   letter-spacing: 1px;
 
-  @media screen and (min-width: $header_bp) {
+  @media screen and (min-width: $global_md_breakpoint) {
     font-size: 1rem;
     padding: 0.5rem 0.5rem;
   }
