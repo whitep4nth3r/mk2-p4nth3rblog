@@ -11,6 +11,9 @@
   transition: all var(--global-transition-time) ease-in-out !important;
   position: relative;
 
+  // this fixes a weird thing on mobile
+  min-height: max-content;
+
   &:focus {
     outline: 0.25rem solid var(--pink);
   }

@@ -40,6 +40,7 @@
   --white-alt: #f7d9ff;
   --orange: #fc814a;
   --yellow: #ffb626;
+  --global-max-width: 1440px;
   --body-horizontal-padding-sm: 1rem;
   --body-horizontal-padding-lg: 2.5rem;
   --font-family-main: "Inter UI var", Helvetica, Arial, sans-serif;
@@ -142,6 +143,10 @@
   margin: 0;
 }
 
+* {
+  z-index: 1;
+}
+
 html {
   font-size: 100%;
   scroll-behavior: var(--scroll-behaviour);
@@ -202,6 +207,7 @@ strong {
 }
 main {
   margin: 10rem auto auto auto;
+  max-width: var(--global-max-width);
 }
 main:before {
   animation: fadeInBrush 0.42s ease-in-out;
@@ -240,8 +246,8 @@ main:after {
   }
 }
 .header {
-  margin-bottom: 1rem;
-  margin-top: 1rem;
+  margin: 1rem auto;
+  max-width: var(--global-max-width);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -254,6 +260,8 @@ main:after {
   background: var(--header-bg);
   backdrop-filter: blur(6px);
   padding: 0.25rem 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
 }
 @media screen and (min-width: 768px) {
   .header {
@@ -267,6 +275,7 @@ main:after {
   align-items: center;
   flex-direction: row;
   justify-self: flex-start;
+  width: max-content;
 }
 
 .header__skipToMainContent {
@@ -2075,6 +2084,7 @@ pre[class*=language-] {
   height: 100%;
   transition: all var(--global-transition-time) ease-in-out !important;
   position: relative;
+  min-height: max-content;
 }
 .card:focus {
   outline: 0.25rem solid var(--pink);

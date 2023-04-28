@@ -3,6 +3,12 @@
   margin: 0;
 }
 
+* {
+  // this is to ensure the background texture layers work
+  // do not remove and think you don't need it!
+  z-index: 1;
+}
+
 html {
   font-size: 100%;
   scroll-behavior: var(--scroll-behaviour);
@@ -74,6 +80,7 @@ strong {
 
 main {
   margin: 10rem auto auto auto;
+  max-width: var(--global-max-width);
 
   &:before {
     animation: fadeInBrush 0.42s ease-in-out;

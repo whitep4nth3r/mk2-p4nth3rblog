@@ -29,7 +29,7 @@ export default async (request, context) => {
     return new HTMLRewriter()
       .on("[data-twitchinfo-live]", {
         element(element) {
-          const today = new Date();
+            const today = new Date();
           const createdOn = new Date(latestVod.created_at);
           const msInDay = 24 * 60 * 60 * 1000;
 

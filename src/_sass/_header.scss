@@ -1,8 +1,8 @@
 $header_bp: 768px;
 
 .header {
-  margin-bottom: 1rem;
-  margin-top: 1rem;
+  margin: 1rem auto;
+  max-width: var(--global-max-width);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -15,6 +15,8 @@ $header_bp: 768px;
   background: var(--header-bg);
   backdrop-filter: blur(6px);
   padding: 0.25rem 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
 
   @media screen and (min-width: $header_bp) {
     width: calc(100vw - calc(var(--body-horizontal-padding-lg) * 2));
@@ -27,6 +29,7 @@ $header_bp: 768px;
   align-items: center;
   flex-direction: row;
   justify-self: flex-start;
+  width: max-content;
 }
 
 .header__skipToMainContent {
