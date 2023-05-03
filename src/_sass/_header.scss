@@ -207,6 +207,7 @@
     position: absolute;
     font-size: 3rem;
     z-index: -1;
+    position: absolute;
   }
 }
 
@@ -214,15 +215,23 @@
   &::after {
     content: "d" / "";
     left: -1px;
-    top: -1px;
+    top: 5px;
+
+    @media screen and (min-width: $global_md_breakpoint) {
+      top: -1px;
+    }
   }
 }
 
 [data-active="blog"] [data-link="blog"] {
   &::after {
     content: "j" / "";
-    top: -2px;
     left: 2px;
+    top: 5px;
+
+    @media screen and (min-width: $global_md_breakpoint) {
+      top: -2px;
+    }
   }
 }
 
@@ -230,7 +239,11 @@
   &::after {
     content: "l" / "";
     left: 0;
-    top: -2px;
+    top: 5px;
+
+    @media screen and (min-width: $global_md_breakpoint) {
+      top: -2px;
+    }
   }
 }
 

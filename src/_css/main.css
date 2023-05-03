@@ -206,7 +206,7 @@ strong {
   }
 }
 main {
-  margin: 4rem auto auto auto;
+  margin: 6rem auto auto auto;
   max-width: var(--global-max-width);
 }
 @media screen and (min-width: 768px) {
@@ -490,24 +490,40 @@ main:after {
   position: absolute;
   font-size: 3rem;
   z-index: -1;
+  position: absolute;
 }
 
 [data-active=home] [data-link=home]::after {
   content: "d"/"";
   left: -1px;
-  top: -1px;
+  top: 5px;
+}
+@media screen and (min-width: 768px) {
+  [data-active=home] [data-link=home]::after {
+    top: -1px;
+  }
 }
 
 [data-active=blog] [data-link=blog]::after {
   content: "j"/"";
-  top: -2px;
   left: 2px;
+  top: 5px;
+}
+@media screen and (min-width: 768px) {
+  [data-active=blog] [data-link=blog]::after {
+    top: -2px;
+  }
 }
 
 [data-active=about] [data-link=about]::after {
   content: "l"/"";
   left: 0;
-  top: -2px;
+  top: 5px;
+}
+@media screen and (min-width: 768px) {
+  [data-active=about] [data-link=about]::after {
+    top: -2px;
+  }
 }
 
 .header__referer {
