@@ -1,5 +1,14 @@
 $bio_breakpoint: 1237px;
 
+[color-mode="dark"] {
+  --bio-button-color: rgba(255, 255, 255, 0.6);
+  --bio-button-selected-bg: rgba(255, 255, 255, 0.1);
+}
+[color-mode="light"] {
+  --bio-button-color: var(--grey-mid);
+  --bio-button-selected-bg: rgba(52, 64, 84, 0.1);
+}
+
 .bio {
   display: flex;
   flex-direction: column;

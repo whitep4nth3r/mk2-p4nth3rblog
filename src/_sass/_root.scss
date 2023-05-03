@@ -1,3 +1,12 @@
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --global-transition-time: 0;
+    --scroll-behaviour: auto;
+  }
+}
+
+$global_md_breakpoint: 768px;
+
 :root {
   --pink: #f0047f;
   --pink-light: #f890c6;
@@ -9,9 +18,7 @@
   --white-alt: #f7d9ff;
   --orange: #fc814a;
 
-  --yellow: #ffb626;
-
-  --global-max-width: 1440px;
+  --yellow: #ffb626; // still in use, needs to go, refactor all components that use it
 
   --body-horizontal-padding-sm: 1rem;
   --body-horizontal-padding-lg: 2.5rem;
@@ -24,6 +31,7 @@
 
   --border-radius-base: 0.375rem;
 
+  --global-max-width: 1440px;
   --feed-max-width: 510px;
   --post-max-width: 980px;
   --grid-max-width: 1280px;
@@ -38,110 +46,26 @@
 
 [color-mode="dark"] {
   color-scheme: dark;
-
-  --toggle-button-bg: #000;
-  --toggle-button-color: var(--white);
-
   --page-bg: radial-gradient(farthest-corner at 100% 100%, var(--black-alt) 0%, var(--black) 50%);
   --whitep4nth3r-bg-svg: url("/img/whitep4nth3r-darkmode.svg");
   --brush-bg-svg: url("/img/brush-darkmode.svg");
 
   --color-bg: var(--black);
   --color-fg: var(--white);
-  --color-link: var(--pink-light);
   --color-blog-copy: rgba(255, 255, 255, 0.92);
+  --color-link: var(--pink-light);
   --color-brush-bg: rgba(255, 255, 255, 0.72);
-
-  --header-bg: rgba(14, 0, 22, 0.6);
-
-  --lighthouse-green-fg: rgb(27, 195, 106);
-  --lighthouse-green-stroke: rgb(27, 195, 106);
-  --lighthouse-green-bg: rgb(30, 46, 47);
-
-  --lighthouse-orange-fg: rgb(251, 157, 70);
-  --lighthouse-orange-stroke: rgb(251, 157, 70);
-  --lighthouse-orange-bg: rgb(52, 43, 34);
-
-  --lighthouse-red-fg: rgb(250, 40, 52);
-  --lighthouse-red-stroke: rgb(250, 40, 52);
-  --lighthouse-red-bg: rgb(52, 31, 32);
-
-  --lighthouse-container-bg: rgb(29, 30, 32);
-
-  --card-bg: rgba(255, 255, 255, 0.02);
-  --card-bg-hover: rgba(255, 255, 255, 0.08);
-  --card-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.16);
-  --card-box-shadow-hover: inset 0px 1px 0px rgba(255, 255, 255, 0.16);
-
-  --card-tag-bg-base: rgba(204, 135, 0, 0.16);
-  --card-tag-color-base: #ffd37d;
-
-  --blog-cat-hover-bg: rgba(255, 255, 255, 0.09);
-
-  --search-input-bg: rgba(255, 255, 255, 0.06);
-  --search-input-border: 0.0625rem solid rgba(255, 255, 255, 0.18);
-
-  --bio-button-color: rgba(255, 255, 255, 0.6);
-  --bio-button-selected-bg: rgba(255, 255, 255, 0.1);
 }
 
 [color-mode="light"] {
   color-scheme: light;
-
-  --toggle-button-bg: var(--white);
-  --toggle-button-color: var(--black);
-
   --page-bg: radial-gradient(farthest-corner at 100% 100%, var(--white-alt) 0%, var(--white) 50%);
   --whitep4nth3r-bg-svg: url("/img/whitep4nth3r-lightmode.svg");
   --brush-bg-svg: url("/img/brush-lightmode.svg");
 
   --color-bg: var(--white);
   --color-fg: var(--black);
-  --color-link: var(--pink);
-
   --color-blog-copy: rgba(0, 0, 0, 0.72);
+  --color-link: var(--pink);
   --color-brush-bg: rgba(0, 0, 0, 0.72);
-
-  --header-bg: rgba(250, 239, 255, 0.8);
-
-  --lighthouse-green-fg: rgb(15, 123, 38);
-  --lighthouse-green-stroke: rgb(27, 195, 106);
-  --lighthouse-green-bg: rgb(233, 249, 240);
-
-  --lighthouse-orange-fg: rgb(184, 42, 22);
-  --lighthouse-orange-stroke: rgb(251, 157, 70);
-  --lighthouse-orange-bg: rgb(255, 246, 237);
-
-  --lighthouse-red-fg: rgb(193, 0, 19);
-  --lighthouse-red-stroke: rgb(250, 40, 52);
-  --lighthouse-red-bg: rgb(255, 234, 235);
-
-  --lighthouse-container-bg: #ffffff;
-
-  --card-bg: rgba(255, 255, 255, 0.32);
-  --card-bg-hover: rgba(255, 255, 255, 0.72);
-  --card-box-shadow: 0px 0px 0px -16px rgba(27, 27, 27, 0.01),
-    inset 0px 1px 0px rgba(255, 255, 255, 0.16);
-  --card-box-shadow-hover: 0px 24px 32px -16px rgba(27, 27, 27, 0.16),
-    inset 0px 1px 0px rgba(255, 255, 255, 0.16);
-
-  --card-tag-bg-base: rgba(255, 204, 102, 0.16);
-  --card-tag-color-base: #cc921e;
-
-  --blog-cat-hover-bg: rgba(0, 0, 0, 0.09);
-
-  --search-input-bg: rgba(0, 0, 0, 0.07);
-  --search-input-border: 1px solid rgba(0, 0, 0, 0.14);
-
-  --bio-button-color: var(--grey-mid);
-  --bio-button-selected-bg: rgba(52, 64, 84, 0.1);
 }
-
-@media (prefers-reduced-motion: reduce) {
-  :root {
-    --global-transition-time: 0;
-    --scroll-behaviour: auto;
-  }
-}
-
-$global_md_breakpoint: 768px;

@@ -1,3 +1,10 @@
+[color-mode="dark"] {
+  --topics-item-hover-bg: rgba(255, 255, 255, 0.09);
+}
+[color-mode="light"] {
+  --topics-item-hover-bg: rgba(0, 0, 0, 0.09);
+}
+
 .topics {
   list-style: none;
   padding-left: 0;
@@ -51,7 +58,7 @@
   transition: background-color var(--global-transition-time) ease-in-out;
 
   &:hover {
-    background-color: var(--blog-cat-hover-bg);
+    background-color: var(--topics-item-hover-bg);
   }
 }
 

@@ -1,3 +1,35 @@
+[color-mode="dark"] {
+  --lighthouse-green-fg: rgb(27, 195, 106);
+  --lighthouse-green-stroke: rgb(27, 195, 106);
+  --lighthouse-green-bg: rgb(30, 46, 47);
+
+  --lighthouse-orange-fg: rgb(251, 157, 70);
+  --lighthouse-orange-stroke: rgb(251, 157, 70);
+  --lighthouse-orange-bg: rgb(52, 43, 34);
+
+  --lighthouse-red-fg: rgb(250, 40, 52);
+  --lighthouse-red-stroke: rgb(250, 40, 52);
+  --lighthouse-red-bg: rgb(52, 31, 32);
+
+  --lighthouse-container-bg: rgb(29, 30, 32);
+}
+
+[color-mode="light"] {
+  --lighthouse-green-fg: rgb(15, 123, 38);
+  --lighthouse-green-stroke: rgb(27, 195, 106);
+  --lighthouse-green-bg: rgb(233, 249, 240);
+
+  --lighthouse-orange-fg: rgb(184, 42, 22);
+  --lighthouse-orange-stroke: rgb(251, 157, 70);
+  --lighthouse-orange-bg: rgb(255, 246, 237);
+
+  --lighthouse-red-fg: rgb(193, 0, 19);
+  --lighthouse-red-stroke: rgb(250, 40, 52);
+  --lighthouse-red-bg: rgb(255, 234, 235);
+
+  --lighthouse-container-bg: #ffffff;
+}
+
 .lighthouse {
   margin: 2rem auto;
   max-width: 520px;

@@ -1,3 +1,19 @@
+[color-mode="dark"] {
+  --card-bg: rgba(255, 255, 255, 0.02);
+  --card-bg-hover: rgba(255, 255, 255, 0.08);
+  --card-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.16);
+  --card-box-shadow-hover: inset 0px 1px 0px rgba(255, 255, 255, 0.16);
+}
+
+[color-mode="light"] {
+  --card-bg: rgba(255, 255, 255, 0.32);
+  --card-bg-hover: rgba(255, 255, 255, 0.72);
+  --card-box-shadow: 0px 0px 0px -16px rgba(27, 27, 27, 0.01),
+    inset 0px 1px 0px rgba(255, 255, 255, 0.16);
+  --card-box-shadow-hover: 0px 24px 32px -16px rgba(27, 27, 27, 0.16),
+    inset 0px 1px 0px rgba(255, 255, 255, 0.16);
+}
+
 .card {
   overflow: hidden;
   border-radius: 0.75rem;
