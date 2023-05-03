@@ -4,7 +4,7 @@ var md = require("markdown-it")({
   html: true,
 });
 
-function openingTag(item) {
+function openingTag({ item, heading }) {
   let href = false;
 
   if (item.type === "talk") {
@@ -20,7 +20,7 @@ function openingTag(item) {
   }
 
   if (href) {
-    return `<a href="${href}" class="card">`;
+    return `<a href="${href}" class="card" aria-label="${heading}">`;
   }
 
   return `<div class="card">`;
@@ -105,7 +105,7 @@ const Card = ({ item, showType = true }) => {
   const itemImage = findImage(item);
 
   return `
-  ${openingTag(item)}
+  ${openingTag({ item, heading })}
     ${renderImage(itemImage)}
     <div class="card__inner">
       <p class="card__date">

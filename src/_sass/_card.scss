@@ -7,12 +7,16 @@
   display: flex;
   flex-direction: column;
   text-decoration: none;
-  height: 100%;
   transition: transform var(--global-transition-time) ease-in-out !important;
   position: relative;
 
   // this fixes a weird thing on mobile
+  // do not put height 100% on here!
   min-height: max-content;
+
+  @media screen and (min-width: $blog_mobile_layout_break) {
+    height: 100%;
+  }
 
   &:focus-visible {
     outline: 0.25rem solid var(--pink);

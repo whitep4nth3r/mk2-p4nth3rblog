@@ -32,6 +32,8 @@
 
   --global-transition-time: 0.21s;
   --scroll-behaviour: smooth;
+
+  --form-height: 48px;
 }
 
 [color-mode="dark"] {
@@ -77,7 +79,7 @@
   --blog-cat-hover-bg: rgba(255, 255, 255, 0.09);
 
   --search-input-bg: rgba(255, 255, 255, 0.06);
-  --search-input-border: 1px solid rgba(255, 255, 255, 0.14);
+  --search-input-border: 0.0625rem solid rgba(255, 255, 255, 0.18);
 
   --bio-button-color: rgba(255, 255, 255, 0.6);
   --bio-button-selected-bg: rgba(255, 255, 255, 0.1);

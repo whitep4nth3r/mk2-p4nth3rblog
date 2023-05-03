@@ -2,6 +2,7 @@ const Config = require("../../lib/config.js");
 const Card = require("../_components/card");
 const Pagination = require("../_components/pagination");
 const Topics = require("../_components/topics");
+const FilterIcon = require("../_components/svg/filterIcon");
 const OpenGraph = require("../../lib/openGraph");
 
 const pageTitle = "Learn web development, CSS, Serverless, JavaScript and more";
@@ -48,7 +49,7 @@ exports.render = function (data) {
           <div id="searchbox" class="ais__searchbox"></div>
         </div>
         <!-- add aria stuff here -->
-        <button type="button" class="blog__filterToggle" data-toggle>Filters</button>
+        <button type="button" class="blog__filterToggle" data-toggle>${FilterIcon()} Filters</button>
       </div>
 
       <div class="blog__cats" data-cats>
@@ -132,12 +133,14 @@ exports.render = function (data) {
       cats.style.display = "none";
       catsVisible = false;
       body.style.position = "relative";
+      toggle.setAttribute("aria-pressed", false);
     }
-
+    
     function showCats() {
       cats.style.display = "block";
       catsVisible = true;
       body.style.position = "fixed";
+      toggle.setAttribute("aria-pressed", true);
     }
 
     function toggleCats() {

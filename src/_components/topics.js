@@ -1,8 +1,12 @@
+const CrossIcon = require("./svg/crossIcon");
+
 function Topics({ topics, selected, showLinkToBlog, onBlogIndex }) {
   return /* html */ `
   <div class="topics__topRow">
-    <p class="topics__title">Blog categories</p>
-    <button type="button" class="topics__closeButton" data-close>Close</button>
+    <p class="topics__title">Filters</p>
+    <button type="button" class="topics__closeButton" aria-pressed="false" aria-label="Close filters" data-close>
+      ${CrossIcon()}
+    </button>
   </div>
   <ul class="topics">
     ${
