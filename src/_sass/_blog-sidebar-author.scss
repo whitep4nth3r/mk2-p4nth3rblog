@@ -1,30 +1,28 @@
 .blogSidebarAuthor {
-  display: grid;
-  gap: 1rem;
-  grid-template-areas: "face about" "face social";
-  grid-template-columns: 1fr 2fr;
-  margin-bottom: 4rem;
-  align-items: center;
+  margin-bottom: 2rem;
 }
 
 .blogSidebarAuthor__cta {
-  @include font_main;
+  @include font_bold;
   color: var(--color-blog-copy);
-  grid-area: about;
-  font-size: 1rem;
+
+  font-size: 1.5rem;
   display: block;
+  position: relative;
+  margin-bottom: 1rem;
+
+  @include link_focus;
 }
 
 .blogSidebarAuthor__imgContainer {
-  grid-area: face;
   border-radius: 100%;
   filter: var(--base-shadow-filter);
   overflow: hidden;
-  width: 100%;
+  width: 6rem;
   aspect-ratio: 1/1;
   display: flex;
   flex-direction: column;
-  min-width: 6rem;
+  margin-bottom: 1rem;
 
   img {
     height: 100%;
@@ -33,15 +31,4 @@
 }
 
 .blogSidebarAuthor_social {
-  grid-area: social;
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-  justify-content: flex-start;
 }
-
-.blogSidebarAuthor_socialLink {
-  display: block;
-}
-
-//todo link focus styles

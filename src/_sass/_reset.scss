@@ -1,9 +1,6 @@
 * {
   box-sizing: border-box;
   margin: 0;
-}
-
-* {
   // this is to ensure the background texture layers work
   // do not remove and think you don't need it!
   z-index: 1;
@@ -14,6 +11,25 @@ html {
   scroll-behavior: var(--scroll-behaviour);
   background-color: var(--color-bg);
 }
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  transition: color 0.2s ease-in-out;
+  text-decoration: underline;
+  text-underline-offset: 0.125rem;
+  text-decoration-thickness: 0.125rem;
+}
+
+strong {
+  @include font_bold;
+}
+
+/* END RESET */
 
 body {
   @include font_main;
@@ -29,32 +45,6 @@ body {
   @media screen and (min-width: 48rem) {
     padding: 1rem var(--body-horizontal-padding-lg);
   }
-}
-
-a {
-  color: inherit;
-  transition: color 0.2s ease-in-out;
-  text-decoration: underline;
-  text-underline-offset: 0.125rem;
-  text-decoration-thickness: 0.125rem;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-family-heading);
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-strong {
-  @include font_bold;
 }
 
 @keyframes fadeInBrush {

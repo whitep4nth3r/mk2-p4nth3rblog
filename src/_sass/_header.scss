@@ -283,15 +283,11 @@
   background-color: transparent;
   cursor: pointer;
   display: inline;
+  position: relative;
 
   &.header__themeToggle--light {
     background-image: url("/img/theme-light.svg");
   }
 
-  &:focus {
-    outline: transparent;
-    outline-style: solid;
-    box-shadow: var(--color-fg) 0 0 0 0.175rem;
-    transition: box-shadow var(--global-transition-time) ease-in-out;
-  }
+  @include link_focus;
 }
