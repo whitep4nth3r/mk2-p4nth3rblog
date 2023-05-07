@@ -1,6 +1,7 @@
 const Config = require("../../lib/config");
 const Topics = require("../_components/topics");
 const Card = require("../_components/card");
+const FilterIcon = require("../_components/svg/filterIcon");
 const OpenGraph = require("../../lib/openGraph");
 
 exports.data = {
@@ -42,10 +43,15 @@ exports.render = function (data) {
       <h1 class="page__headerTitle">${topic.name}</h1>
 
       <div class="blog">
-        <aside class="blog__searchAndCats">   
-          ${Topics({ topics, selected: topic.slug, showLinkToBlog: true })}
+        <aside class="blog__searchAndCats">
+          <div class="blog__searchBoxAndFilterToggle">
+            <button type="button" class="blog__filterToggle" data-toggle>${FilterIcon()} Filters</button>
+          </div>
+
+          <div class="blog__cats" data-cats>
+            ${Topics({ topics: data.topics, onBlogIndex: true })}
+          </div>
         </aside>
-        
         <section class="blog__cards">
           <ol class="blog__cardsGrid">
           ${postsByTopic

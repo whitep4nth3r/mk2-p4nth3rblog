@@ -120,54 +120,6 @@ exports.render = function (data) {
         staticContent.style.display = "block";
       }
     })
-
-    // mobile filter toggle stuff
-    let catsVisible = false; 
-
-    const toggle = document.querySelector("[data-toggle]");
-    const cats = document.querySelector("[data-cats]");
-    const body = document.querySelector("body");
-    const close = document.querySelector("[data-close]");
-
-    function closeCats() {
-      cats.style.display = "none";
-      catsVisible = false;
-      body.style.position = "relative";
-      toggle.setAttribute("aria-pressed", false);
-    }
-    
-    function showCats() {
-      cats.style.display = "block";
-      catsVisible = true;
-      body.style.position = "fixed";
-      toggle.setAttribute("aria-pressed", true);
-    }
-
-    function toggleCats() {
-      if (catsVisible) {
-        closeCats();
-      } else {
-        showCats();
-      }
-    }
-
-    toggle.addEventListener("click", () => {
-      toggleCats();
-    })
-
-    close.addEventListener("click", () => {
-      closeCats();
-    })
-
-    window.addEventListener("resize", (event) => {
-      if(event.target.window.innerWidth > 768) {
-        cats.style.display = "block";
-        catsVisible = true;
-      } else {
-        cats.style.display = "none";
-        catsVisible = false;
-      }
-    });
   </script>
 `;
 };
