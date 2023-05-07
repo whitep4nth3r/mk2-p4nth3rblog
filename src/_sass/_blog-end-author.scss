@@ -1,0 +1,29 @@
+.blogEndAuthor {
+  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  gap: 0 1rem;
+  grid-template-areas:
+    "avatar bio"
+    "avatar social";
+}
+
+.blogEndAuthor__imgContainer {
+  grid-area: avatar;
+  filter: var(--base-shadow-filter);
+  transition: transform var(--global-transition-time) ease-in-out;
+
+  * {
+    border-radius: var(--border-radius-base);
+  }
+}
+
+.blogEndAuthor_social {
+  grid-area: social;
+}
+
+.blogEndAuthor__bio {
+  grid-area: bio;
+  @include short_bio_sm;
+  margin-bottom: 0.5rem;
+}

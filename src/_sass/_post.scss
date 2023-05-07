@@ -10,11 +10,11 @@
   margin: auto;
 }
 
-@media screen and (min-width: 48em) {
+@media screen and (min-width: 56em) {
   .post {
     display: grid;
     grid-template-columns: 1fr 3fr;
-    column-gap: 4rem;
+    column-gap: clamp(2rem, 4vw, 4rem);
   }
 }
 
@@ -47,7 +47,7 @@
   }
 }
 
-.post__excerpt__separator {
+.post__separator {
   margin-bottom: 2rem;
   border-color: var(--post-hr-color);
   border-style: solid;
@@ -61,6 +61,7 @@
 .post__aside {
   flex-direction: column;
   display: flex;
+  width: 17.5rem;
 }
 
 .post__asideStickyGroup {

@@ -109,3 +109,34 @@
     }
   }
 }
+
+@mixin short_bio_sm {
+  max-width: 62ch;
+
+  h2 {
+    @include font_main;
+    font-size: 1.125rem;
+    line-height: 1.75;
+    color: var(--color-fg);
+  }
+
+  h3 {
+    @include font_semibold;
+    font-size: 1.125rem;
+    line-height: 1.75;
+    color: var(--color-fg);
+  }
+
+  p {
+    @include font_main;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--color-fg);
+
+    a {
+      @include font_semibold;
+      color: var(--color-link);
+      text-decoration: none;
+    }
+  }
+}

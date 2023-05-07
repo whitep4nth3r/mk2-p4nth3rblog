@@ -1,5 +1,6 @@
 const ExternalUrl = require("../_components/externalUrl");
 const BlogSidebarAuthor = require("../_components/blogSidebarAuthor");
+const BlogEndAuthor = require("../_components/blogEndAuthor");
 const RichText = require("../_components/richText");
 const PublishedDate = require("../_components/publishedDate");
 const TableOfContents = require("../_components/tableOfContents");
@@ -96,7 +97,7 @@ exports.render = async function (data) {
       </aside>
       <article class="post__article">
         <div class="post__excerpt">${md.render(post.excerpt)}</div>
-        <hr class="post__excerpt__separator" aria-hidden="true" />
+        <hr class="post__separator" aria-hidden="true" />
         <div class="post__body">
           ${outOfDateWarning({ post })}
           ${RichText(post.body, {
@@ -108,6 +109,10 @@ exports.render = async function (data) {
 
         ${post.isSponsored ? isSponsored() : ""}
         ${ExternalUrl({ url: post.externalUrl })}
+
+        <hr class="post__separator" />
+
+        ${BlogEndAuthor({ author: post.author })}
 
         ${
           post.relatedPostsCollection?.items.length > 0

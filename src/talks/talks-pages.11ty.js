@@ -1,4 +1,5 @@
 const BlogSidebarAuthor = require("../_components/blogSidebarAuthor");
+const BlogEndAuthor = require("../_components/blogEndAuthor");
 const RichText = require("../_components/richText");
 const VideoEmbed = require("../_components/videoEmbed");
 const SpeakerDeckLink = require("../_components/speakerDeckLink");
@@ -58,7 +59,8 @@ exports.render = function (data) {
           renderHeadingLinks: true,
         })}
       </div>
-      <hr class="post__excerpt__separator" aria-hidden="true" />
+      <hr class="post__separator" />
+
       <div class="post__body">
         ${
           talk.recording !== null
@@ -75,6 +77,10 @@ exports.render = function (data) {
           renderHeadingLinks: true,
         })}
         </div>
+
+        <hr class="post__separator" />
+
+        ${BlogEndAuthor({ author: talk.author })}
       </article>
   </section>`;
 };
