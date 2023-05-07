@@ -1,13 +1,17 @@
 [color-mode="light"] {
   --header-bg: rgba(250, 239, 255, 0.8);
   --header-external-arrow-svg: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.66663 11.3334L11.3333 4.66675M11.3333 4.66675H4.66663M11.3333 4.66675V11.3334' stroke='black' stroke-opacity='0.72' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  --header-selected-link-decoration-color: var(--pink-light);
+  --header-home-active-content: url("/img/nav-active-home-light.svg");
+  --header-about-active-content: url("/img/nav-active-about-light.svg");
+  --header-blog-active-content: url("/img/nav-active-blog-light.svg");
 }
 
 [color-mode="dark"] {
   --header-bg: rgba(14, 0, 22, 0.6);
   --header-external-arrow-svg: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.66663 11.3334L11.3333 4.66675M11.3333 4.66675H4.66663M11.3333 4.66675V11.3334' stroke='white' stroke-opacity='0.72' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-  --header-selected-link-decoration-color: var(--pink);
+  --header-home-active-content: url("/img/nav-active-home-dark.svg");
+  --header-about-active-content: url("/img/nav-active-about-dark.svg");
+  --header-blog-active-content: url("/img/nav-active-blog-dark.svg");
 }
 
 .header {
@@ -190,60 +194,46 @@
 [data-active="about"] [data-link="about"] {
   opacity: 1;
   position: relative;
-  &::after {
-    // using SVG here to avoid the font flash
-    // content: url("/img/active_nav.svg");
-    // width: 100%;
-    // display: block;
-    // position: absolute;
-    // bottom: 0rem;
-    // z-index: -1;
 
-    // if we want to use the font
-    @include font_atomic_extras;
-    text-transform: lowercase;
-    color: var(--header-selected-link-decoration-color);
+  &::after {
     width: 100%;
     display: block;
     position: absolute;
-    font-size: 3rem;
+    bottom: 0;
+    left: 0;
     z-index: -1;
-    position: absolute;
   }
 }
 
 [data-active="home"] [data-link="home"] {
   &::after {
-    content: "d" / "";
-    left: -1px;
-    top: 5px;
+    content: var(--header-home-active-content);
+    bottom: 0.75rem;
 
     @media screen and (min-width: $global_md_breakpoint) {
-      top: -1px;
+      bottom: 0.25rem;
     }
   }
 }
 
 [data-active="blog"] [data-link="blog"] {
   &::after {
-    content: "j" / "";
-    left: 2px;
-    top: 5px;
+    content: var(--header-blog-active-content);
+    bottom: 0.75rem;
 
     @media screen and (min-width: $global_md_breakpoint) {
-      top: -2px;
+      bottom: 0.25rem;
     }
   }
 }
 
 [data-active="about"] [data-link="about"] {
   &::after {
-    content: "l" / "";
-    left: 0;
-    top: 5px;
+    content: var(--header-about-active-content);
+    bottom: 0.75rem;
 
     @media screen and (min-width: $global_md_breakpoint) {
-      top: -2px;
+      bottom: 0.25rem;
     }
   }
 }
