@@ -688,7 +688,7 @@ main:after {
   gap: 0.5rem;
   background: linear-gradient(180deg, #70707b 0%, #51525c 100%);
   border: 0.0625rem solid #18181b;
-  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.24), inset 0px 2px 0px rgba(255, 255, 255, 0.32);
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.24), inset 0px 1px 0px rgba(255, 255, 255, 0.32);
   border-radius: 0.5rem;
   height: var(--form-height);
   color: #fff;
@@ -698,8 +698,8 @@ main:after {
   background: linear-gradient(180deg, #51525c 0%, #26272b 100%);
 }
 .blog__filterToggle:focus-visible {
-  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 2px #404040, 0px 0px 0px 6px var(--pink), 0px 1px 2px rgba(16, 24, 40, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.24), inset 0px 2px 0px rgba(255, 255, 255, 0.32);
-  outline: var(--color-bg);
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 2px #404040, 0px 0px 0px 6px var(--pink), 0px 1px 2px rgba(16, 24, 40, 0.05), inset 0px -2px 0px rgba(0, 0, 0, 0.24), inset 0px 1px 0px rgba(255, 255, 255, 0.32);
+  outline-color: var(--color-bg);
 }
 .blog__filterToggle:active {
   background: linear-gradient(180deg, #18181b 0%, #26272b 100%);
@@ -2085,11 +2085,13 @@ a.post__linkedHeaderIcon {
 [color-mode=dark] {
   --search-input-bg: rgba(255, 255, 255, 0.06);
   --search-input-border: 0.0625rem solid rgba(255, 255, 255, 0.18);
+  --reset-color: var(--white);
 }
 
 [color-mode=light] {
   --search-input-bg: rgba(0, 0, 0, 0.07);
   --search-input-border: 1px solid rgba(0, 0, 0, 0.14);
+  --reset-color: var(--black);
 }
 
 @media screen and (min-width: 48rem) {
@@ -2182,6 +2184,7 @@ a.post__linkedHeaderIcon {
   width: 100%;
   height: var(--form-height);
   border-radius: 0 var(--border-radius-base) var(--border-radius-base) 0;
+  color: var(--reset-color);
 }
 
 .ais__reset:focus-visible {
