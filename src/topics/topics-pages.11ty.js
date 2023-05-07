@@ -34,7 +34,7 @@ exports.data = {
 };
 
 exports.render = function (data) {
-  const { topic, topics, allPosts } = data;
+  const { topic, allPosts } = data;
   const postsByTopic = Array.from(allPosts.get(topic.slug));
 
   return /* html */ `
@@ -49,7 +49,7 @@ exports.render = function (data) {
           </div>
 
           <div class="blog__cats" data-cats>
-            ${Topics({ topics: data.topics, onBlogIndex: true })}
+            ${Topics({ topics: data.topics, selected: topic.slug })}
           </div>
         </aside>
         <section class="blog__cards">

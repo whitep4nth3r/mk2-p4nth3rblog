@@ -53,7 +53,7 @@ exports.render = function (data) {
       </div>
 
       <div class="blog__cats" data-cats>
-        ${Topics({ topics: data.topics, onBlogIndex: true })}
+        ${Topics({ topics: data.topics })}
       </div>
     </aside>
 

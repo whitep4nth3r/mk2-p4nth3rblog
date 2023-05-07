@@ -1,6 +1,6 @@
 const CrossIcon = require("./svg/crossIcon");
 
-function Topics({ topics, selected, showLinkToBlog, onBlogIndex }) {
+function Topics({ topics, selected }) {
   return /* html */ `
   <div class="topics__topRow">
     <p class="topics__title">Filters</p>
@@ -9,12 +9,7 @@ function Topics({ topics, selected, showLinkToBlog, onBlogIndex }) {
     </button>
   </div>
   <ul class="topics">
-    ${
-      onBlogIndex
-        ? `<li><a href="/blog/" class="topics__listItemLink topics__listItemLink--selected">View all</a></li>`
-        : ""
-    }
-    ${showLinkToBlog ? `<li><a href="/blog/" class="topics__listItemLink">View all</a></li>` : ""}
+    ${selected ? `<li><a href="/blog/" class="topics__listItemLink">View all</a></li>` : ""}
     ${topics
       .map((topic) => {
         const highlight = selected === topic.slug;
