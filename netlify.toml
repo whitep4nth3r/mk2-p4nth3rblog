@@ -12,17 +12,10 @@
   function = "referer"
 
 [[edge_functions]]
-  path = "/"
-  function = "twitch"
-
-[[edge_functions]]
-  path = "/about/"
-  function = "clean-up-past-events"
-
-[[edge_functions]]
   path = "/events/"
   function = "localize-time"
 
+# redirects
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"

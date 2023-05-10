@@ -2,7 +2,21 @@ import { HTMLRewriter } from "https://ghuc.cc/worker-tools/html-rewriter/index.t
 
 export default async (request, context) => {
   const response = await context.next();
-  const data = await fetch(`${Deno.env.get("DOMAIN")}/api/twitch`).then((res) => res.json());
+  const imageSize = "998x556";
+
+  const twitchRes = await fetch(`${Deno.env.get("DOMAIN")}/api/twitch`);
+  const data = await twitchRes.json();
+
+  if (twitchRes.status !== 200) {
+    return new HTMLRewriter()
+      .on("[data-twitchinfo-live]", {
+        element(element) {
+          element.setInnerContent("Follow on Twitch");
+          element.setAttribute("class", "twitchInfo__live twitchInfo__live--offline");
+        },
+      })
+      .transform(response);
+  }
 
   if (data.isLive) {
     // rewrite HTML using data.streams
@@ -15,7 +29,7 @@ export default async (request, context) => {
       })
       .on("[data-twitchinfo-thumbnail]", {
         element(element) {
-          const thumb_url = currentStream.thumbnail_url.replace("{width}x{height}", "1920x1080");
+          const thumb_url = currentStream.thumbnail_url.replace("{width}x{height}", imageSize);
           element.setAttribute("src", thumb_url);
           element.removeAttribute("class");
           element.setAttribute("class", "twitchInfo__thumbnail twitchInfo__thumbnail--live");
@@ -29,7 +43,7 @@ export default async (request, context) => {
     return new HTMLRewriter()
       .on("[data-twitchinfo-live]", {
         element(element) {
-            const today = new Date();
+          const today = new Date();
           const createdOn = new Date(latestVod.created_at);
           const msInDay = 24 * 60 * 60 * 1000;
 
@@ -63,10 +77,17 @@ export default async (request, context) => {
       })
       .on("[data-twitchinfo-thumbnail]", {
         element(element) {
-          const thumb_url = latestVod.thumbnail_url.replace("%{width}x%{height}", "1920x1080");
-          element.setAttribute("src", thumb_url);
+          //https://vod-secure.twitch.tv/_404/404_processing_%{width}x%{height}.png
+          if (!latestVod.thumbnail_url.includes("processing")) {
+            const thumb_url = latestVod.thumbnail_url.replace("%{width}x%{height}", imageSize);
+            element.setAttribute("src", thumb_url);
+          }
         },
       })
       .transform(response);
   }
+};
+
+export const config = {
+  path: "/",
 };

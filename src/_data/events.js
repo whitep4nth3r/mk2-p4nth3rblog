@@ -35,10 +35,15 @@ module.exports = async function () {
 
   const filteredTwitchEvents =
     twitchVacation !== null
-      ? removeTwitchStreamsWhenOnVacation(twitchEvents, twitchVacation.start_time, twitchVacation.end_time)
+      ? removeTwitchStreamsWhenOnVacation(
+          twitchEvents,
+          twitchVacation.start_time,
+          twitchVacation.end_time,
+        )
       : twitchEvents;
 
-  const allEvents = dbEvents.concat(filteredTwitchEvents);
+  // join just next 2 streams with all db events
+  const allEvents = dbEvents.concat(filteredTwitchEvents[0], filteredTwitchEvents[1]);
   const sortedEvents = allEvents.sort(DateUtils.sortItemsByDateAsc);
 
   return {

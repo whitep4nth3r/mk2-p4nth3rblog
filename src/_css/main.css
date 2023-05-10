@@ -2505,7 +2505,7 @@ pre[class*=language-] {
 .twitchInfo__thumbnail {
   aspect-ratio: 16/9;
   border-radius: var(--thumbnail-outer-radius);
-  background-color: var(--color-fg);
+  background-color: var(--color-bg);
   z-index: 0;
   position: relative;
   width: auto;
@@ -2515,11 +2515,11 @@ pre[class*=language-] {
   transition: all var(--global-transition-time) ease-in-out;
 }
 .twitchInfo__thumbnail:hover {
-  filter: grayscale(0);
+  filter: grayscale(0) contrast(1.2);
 }
 
 .twitchInfo__thumbnail--live {
-  filter: grayscale(0);
+  filter: grayscale(0) contrast(1.2);
 }
 
 .twitchInfo__deets {
