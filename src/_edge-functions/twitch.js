@@ -1,26 +1,81 @@
 import { HTMLRewriter } from "https://ghuc.cc/worker-tools/html-rewriter/index.ts";
 
+const accessTokenFetchUrl = `https://id.twitch.tv/oauth2/token?client_id=${Deno.env.get(
+  "TWITCH_CLIENT_ID",
+)}&client_secret=${Deno.env.get(
+  "TWITCH_CLIENT_SECRET",
+)}&grant_type=client_credentials&scope=user_read`;
+const twitchId = "469006291";
+
+let tokenInMemory = null;
+
+const TwitchApi = {
+  getAccessToken: async function () {
+    try {
+      const response = await fetch(accessTokenFetchUrl, {
+        method: "POST",
+        headers: { accept: "application/vnd.twitchtv.v5+json" },
+      });
+      const token = await response.json();
+      tokenInMemory = token;
+
+      return token;
+    } catch (error) {
+      console.log(error);
+    }
+  },
+  getfetchOptions: function (tokenResponse) {
+    return {
+      headers: {
+        "Client-Id": Deno.env.get("TWITCH_CLIENT_ID"),
+        Authorization: `Bearer ${tokenResponse.access_token}`,
+      },
+    };
+  },
+  getStreams: async function () {
+    const tokenResponse = tokenInMemory !== null ? tokenInMemory : await TwitchApi.getAccessToken();
+    if (tokenResponse.access_token) {
+      const streamsResponse = await fetch(
+        `https://api.twitch.tv/helix/streams?user_id=${twitchId}`,
+        TwitchApi.getfetchOptions(tokenResponse),
+      );
+
+      if (streamsResponse.status !== 200) {
+        return null;
+      }
+
+      const streams = await streamsResponse.json();
+      return streams;
+    }
+  },
+  getVods: async function () {
+    const tokenResponse = tokenInMemory !== null ? tokenInMemory : await TwitchApi.getAccessToken();
+    if (tokenResponse.access_token) {
+      const vodsResponse = await fetch(
+        `https://api.twitch.tv/helix/videos?user_id=${twitchId}&type=archive&first=1`,
+        TwitchApi.getfetchOptions(tokenResponse),
+      );
+
+      if (vodsResponse.status !== 200) {
+        return null;
+      }
+
+      const vods = await vodsResponse.json();
+      return vods;
+    }
+  },
+};
+
 export default async (request, context) => {
   const response = await context.next();
   const imageSize = "998x556";
 
-  const twitchRes = await fetch(`${Deno.env.get("DOMAIN")}/api/twitch`);
-  const data = await twitchRes.json();
+  const streams = await TwitchApi.getStreams();
+  const vods = await TwitchApi.getVods();
 
-  if (twitchRes.status !== 200) {
-    return new HTMLRewriter()
-      .on("[data-twitchinfo-live]", {
-        element(element) {
-          element.setInnerContent("Follow on Twitch");
-          element.setAttribute("class", "twitchInfo__live twitchInfo__live--offline");
-        },
-      })
-      .transform(response);
-  }
-
-  if (data.isLive) {
-    // rewrite HTML using data.streams
-    const currentStream = data.streams.data[0];
+  // if live!
+  if (streams !== null && streams.data.length === 1) {
+    const currentStream = streams.data[0];
     return new HTMLRewriter()
       .on("[data-twitchinfo-title]", {
         element(element) {
@@ -36,9 +91,11 @@ export default async (request, context) => {
         },
       })
       .transform(response);
-  } else {
-    //rewrite HTML using data.latestVod data
-    const { latestVod } = data;
+  }
+
+  // not live!
+  if (vods !== null) {
+    const latestVod = vods.data[0];
 
     return new HTMLRewriter()
       .on("[data-twitchinfo-live]", {
@@ -86,6 +143,16 @@ export default async (request, context) => {
       })
       .transform(response);
   }
+
+  // fallback!
+  return new HTMLRewriter()
+    .on("[data-twitchinfo-live]", {
+      element(element) {
+        element.setInnerContent("Follow on Twitch");
+        element.setAttribute("class", "twitchInfo__live twitchInfo__live--offline");
+      },
+    })
+    .transform(response);
 };
 
 export const config = {
