@@ -41,11 +41,15 @@ exports.render = function (data) {
         })
         .join("")}
     </ol>
-    ${Pagination({
-      previous: data.pagination.href.previous,
-      next: data.pagination.href.next,
-      currentPage: data.pagination.pageNumber,
-      totalPages: data.pagination.pages.length,
-    })}
+     ${
+       data.pagination.pages.length > 1
+         ? Pagination({
+             previous: data.pagination.href.previous,
+             next: data.pagination.href.next,
+             currentPage: data.pagination.pageNumber,
+             totalPages: data.pagination.pages.length,
+           })
+         : ""
+     }
   </section>`;
 };
