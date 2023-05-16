@@ -66,6 +66,11 @@
   top: 10rem;
   overflow-y: scroll;
   max-height: 100vh;
+  padding-top: 0.25rem;
+  padding-bottom: 4rem;
+  padding-right: 1rem;
+  margin-left: -1rem;
+  padding-left: 1rem;
 }
 
 .post__body {
@@ -133,6 +138,10 @@
   margin-bottom: 1rem;
   color: var(--color-blog-copy);
   word-break: break-word;
+
+  a {
+    @include link_focus;
+  }
 }
 
 .post__p--bold {

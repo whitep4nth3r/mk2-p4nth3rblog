@@ -20,6 +20,8 @@
   margin-bottom: 1rem;
   font-size: 1.2rem;
   cursor: pointer;
+
+  @include link_focus;
 }
 
 .tableOfContents__item {
@@ -33,6 +35,8 @@
   color: var(--color-fg);
   text-decoration: none;
   display: block;
+
+  @include link_focus;
 }
 
 .tableOfContents__item--nudged {

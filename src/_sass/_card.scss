@@ -23,7 +23,7 @@
   display: flex;
   flex-direction: column;
   text-decoration: none;
-  transition: transform var(--global-transition-time) ease-in-out !important;
+  transition: all var(--global-transition-time) ease-in-out !important;
   position: relative;
 
   // this fixes a weird thing on mobile
@@ -34,8 +34,6 @@
     height: 100%;
   }
 
-  @include link_focus;
-
   &:hover,
   &:focus {
     background: var(--card-bg-hover);
@@ -45,6 +43,8 @@
       transform: scale(1.1);
     }
   }
+
+  @include link_focus;
 }
 
 .card__imageContainer {

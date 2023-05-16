@@ -16,7 +16,7 @@
   justify-content: center;
   aspect-ratio: 16/9;
 
-  @include link_focus($radius: var(--thumbnail-outer-radius));
+  @include link_focus;
 }
 
 .twitchInfo__thumbnail {

@@ -39,12 +39,12 @@ exports.render = function (data) {
 
   return /* html */ `
 
-      <span>Posts tagged</span>
+      <span class="topics__meta">Posts tagged</span>
       <h1 class="page__headerTitle">${topic.name}</h1>
 
       <div class="blog">
         <aside class="blog__searchAndCats">
-          <div class="blog__searchBoxAndFilterToggle">
+          <div class="blog__searchBoxAndFilterToggle blog__searchBoxAndFilterToggle--topicsPage">
             <button type="button" class="blog__filterToggle" data-toggle>${FilterIcon()} Filters</button>
           </div>
 

@@ -42,13 +42,13 @@
   width: max-content;
 }
 
-@mixin link_focus($radius: var(--border-radius-base)) {
+@mixin link_focus {
   &:focus-visible {
-    outline-color: var(--color-focus-outline);
-    outline-width: 0.175rem;
+    outline: transparent;
     outline-style: solid;
-    outline-offset: 0.125rem;
-    border-radius: $radius;
+    box-shadow: var(--color-bg) 0 0 0 0.08rem, var(--color-focus-outline) 0 0 0 0.24rem;
+    transition: box-shadow var(--global-transition-time) ease-in-out;
+    border-radius: var(--border-radius-base);
   }
 }
 

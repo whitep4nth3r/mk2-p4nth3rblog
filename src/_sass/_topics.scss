@@ -7,8 +7,10 @@
 
 .topics {
   list-style: none;
-  padding-left: 0;
   display: block;
+  padding-left: 0.175rem;
+  padding-right: 0.175rem;
+  padding-bottom: 0.75rem;
 }
 
 .topics__topRow {
@@ -46,6 +48,12 @@
   font-size: 1rem;
 }
 
+.topics__meta {
+  @include font_semibold;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
 .topics__listItemLink {
   display: block;
   @include font_semibold;
@@ -60,6 +68,8 @@
   &:hover {
     background-color: var(--topics-item-hover-bg);
   }
+
+  @include link_focus;
 }
 
 .topics__listItemLink--selected {

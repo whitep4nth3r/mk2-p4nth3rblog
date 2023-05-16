@@ -67,6 +67,12 @@ $blog_mobile_layout_break: 48em;
   margin-bottom: 1rem;
 }
 
+.blog__searchBoxAndFilterToggle--topicsPage {
+  @media screen and (min-width: $blog_mobile_layout_break) {
+    margin-bottom: 0;
+  }
+}
+
 .blog__cats {
   display: none;
   background: var(--color-bg);
