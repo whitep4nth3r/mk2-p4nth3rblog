@@ -34,7 +34,7 @@ exports.render = function (data) {
       <div class="home__twitch">
         ${TwitchInfo()}
       </div>
-      <h2 class="home__heading">Check out my latest activity</h2>
+      <a href="/activity/" class="home__heading">Latest news and activity</a>
       <div class="home__activity">
       ${feedItems.map((item) => ActivityFeedItem({ item })).join("")}
       </div>

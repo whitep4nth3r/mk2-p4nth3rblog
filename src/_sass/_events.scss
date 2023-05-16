@@ -1,9 +1,12 @@
-.about__eventsHeader {
+.events {
+  max-width: var(--post-max-width);
+  margin: auto;
+}
 
+.about__eventsHeader {
 }
 
 .about__eventsHeaderTitle {
-
 }
 
 .events__list {

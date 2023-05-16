@@ -1,3 +1,8 @@
+.uses {
+  max-width: var(--post-max-width);
+  margin: auto;
+}
+
 .uses__sectionHeader {
   width: max-content;
   margin-top: 2rem;

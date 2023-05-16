@@ -38,6 +38,7 @@ body {
   padding: var(--body-horizontal-padding-sm);
   position: relative;
 
+  min-height: 100vh;
   background: var(--color-bg);
   background-image: var(--page-bg);
   background-attachment: fixed !important;

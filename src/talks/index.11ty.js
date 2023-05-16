@@ -28,10 +28,8 @@ exports.data = {
 exports.render = function (data) {
   return /* html */ `
   
-  <section class="page__index">
-    <div class="page__header">
-      <h1 class="page__headerTitle">Conference and meetup talks</h1>
-    </div>
+  <section>
+    <h1 class="page__headerTitle">Conference and meetup talks</h1>
 
     <ol class="blog__cardsGrid">
       ${data.pagination.items
@@ -49,5 +47,5 @@ exports.render = function (data) {
       currentPage: data.pagination.pageNumber,
       totalPages: data.pagination.pages.length,
     })}
-    </section>`;
+  </section>`;
 };

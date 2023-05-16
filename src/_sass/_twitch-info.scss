@@ -15,10 +15,13 @@
   align-items: center;
   justify-content: center;
   aspect-ratio: 16/9;
+
+  @include link_focus($radius: var(--thumbnail-outer-radius));
 }
 
 .twitchInfo__thumbnail {
   aspect-ratio: 16/9;
+  object-fit: cover;
   border-radius: var(--thumbnail-outer-radius);
   background-color: var(--color-bg);
   z-index: 0;

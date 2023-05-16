@@ -55,6 +55,7 @@ $global_md_breakpoint: 768px;
   --color-blog-copy: rgba(255, 255, 255, 0.92);
   --color-link: var(--pink-light);
   --color-brush-bg: rgba(255, 255, 255, 0.72);
+  --color-focus-outline: var(--pink-light);
 }
 
 [color-mode="light"] {
@@ -68,4 +69,5 @@ $global_md_breakpoint: 768px;
   --color-blog-copy: rgba(0, 0, 0, 0.72);
   --color-link: var(--pink);
   --color-brush-bg: rgba(0, 0, 0, 0.72);
+  --color-focus-outline: var(--pink);
 }

@@ -42,37 +42,13 @@
   width: max-content;
 }
 
-@mixin link_focus {
+@mixin link_focus($radius: var(--border-radius-base)) {
   &:focus-visible {
-    outline: transparent;
+    outline-color: var(--color-focus-outline);
+    outline-width: 0.175rem;
     outline-style: solid;
-    transition: clip-path var(--global-transition-time) ease-in-out;
-
-    &::before {
-      --s: 0.2rem; /* spread-radius */
-      --x: 0px; /* X offset */
-      --y: 0px; /* Y offset */
-      --b: 0px; /* blur-radius*/
-      content: "";
-      border-radius: 0.25rem;
-      position: absolute;
-      inset: calc(-1 * var(--s) + 0.125rem);
-      transform: translate(var(--x), var(--y));
-      clip-path: polygon(
-        -100vmax -100vmax,
-        100vmax -100vmax,
-        100vmax 100vmax,
-        -100vmax 100vmax,
-        -100vmax -100vmax,
-        calc(0px + var(--s) - var(--x)) calc(0px + var(--s) - var(--y)),
-        calc(0px + var(--s) - var(--x)) calc(100% - var(--s) - var(--y)),
-        calc(100% - var(--s) - var(--x)) calc(100% - var(--s) - var(--y)),
-        calc(100% - var(--s) - var(--x)) calc(0px + var(--s) - var(--y)),
-        calc(0px + var(--s) - var(--x)) calc(0px + var(--s) - var(--y))
-      );
-      filter: blur(var(--b));
-      background: linear-gradient(145deg, var(--pink) 60%, var(--orange) 98%);
-    }
+    outline-offset: 0.125rem;
+    border-radius: $radius;
   }
 }
 
@@ -106,6 +82,8 @@
       @include font_semibold;
       color: var(--color-link);
       text-decoration: none;
+
+      @include link_focus;
     }
   }
 }

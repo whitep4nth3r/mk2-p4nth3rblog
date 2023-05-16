@@ -28,8 +28,13 @@
 
 .home__heading {
   @include font_semibold;
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
+  font-size: 2rem;
+  line-height: 1;
+  margin-bottom: 2rem;
+  color: var(--color-link);
+  position: relative;
+  text-decoration: none;
+  @include link_focus;
 }
 
 .home__activity {

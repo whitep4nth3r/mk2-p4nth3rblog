@@ -34,9 +34,7 @@
     height: 100%;
   }
 
-  &:focus-visible {
-    outline: 0.25rem solid var(--pink);
-  }
+  @include link_focus;
 
   &:hover,
   &:focus {
