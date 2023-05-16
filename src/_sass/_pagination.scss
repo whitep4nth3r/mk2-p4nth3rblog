@@ -1,14 +1,6 @@
 .pagination {
   margin: 4rem auto;
   max-width: var(--grid-max-width);
-
-  --container-padding: 0.5rem;
-
-  @media screen and (min-width: 48em) {
-    --container-padding: 0.75rem;
-  }
-
-  padding: var(--container-padding);
   background: var(--card-bg); // todo — different gradient due to longer content
   backdrop-filter: blur(1rem);
   border-radius: 0.75rem;

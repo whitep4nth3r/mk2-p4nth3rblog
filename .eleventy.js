@@ -17,7 +17,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(embedTwitter, {
-    theme: "dark",
+    theme: "light",
     align: "center",
     doNotTrack: "true",
   });

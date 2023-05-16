@@ -238,29 +238,6 @@
   }
 }
 
-.header__referer {
-  @include font_semibold;
-  display: grid;
-  place-items: center;
-  font-size: 1rem;
-  padding: 0.5rem 1rem;
-  background: var(--grey-dark);
-  border-radius: calc(var(--border-radius-base) * 6);
-  margin: 1rem auto 2rem auto;
-  color: var(--white);
-  max-width: 100%;
-  width: max-content;
-  text-align: center;
-  line-height: 1.4;
-  filter: var(--base-shadow-filter);
-
-  a {
-    display: block;
-    line-height: inherit;
-    text-align: center;
-  }
-}
-
 .header__themeToggle {
   padding: 0.5rem;
   border-color: transparent;

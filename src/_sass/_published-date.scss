@@ -1,13 +1,9 @@
 .publishedDate {
   display: flex;
-  flex-direction: column;
-
-  @media screen and (min-width: 48rem) {
-    flex-direction: row;
-    gap: 2rem;
-    align-items: center;
-    justify-content: flex-start;
-  }
+  flex-direction: row;
+  gap: 2rem;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .publishedDate__item {

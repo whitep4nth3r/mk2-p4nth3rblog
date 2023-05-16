@@ -35,7 +35,7 @@
   max-width: 520px;
   padding: 1rem;
   text-align: left;
-  border-radius: var(--border-radius-base);
+  border-radius: calc(var(--border-radius-base) * 2);
   background-color: var(--lighthouse-container-bg);
   filter: var(--base-shadow-filter);
 }
