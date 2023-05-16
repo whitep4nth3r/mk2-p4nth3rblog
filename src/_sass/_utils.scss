@@ -115,6 +115,8 @@
       @include font_semibold;
       color: var(--color-link);
       text-decoration: none;
+
+      @include link_focus;
     }
   }
 }

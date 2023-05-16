@@ -1008,7 +1008,7 @@ main:after {
   font-size: clamp(1.8rem, 2.8vw, 2rem);
   line-height: 1.4;
   margin-bottom: 2rem;
-  padding-top: 2rem;
+  margin-top: 2rem;
   word-break: break-word;
   hyphens: auto;
   color: var(--color-fg);
@@ -1027,6 +1027,7 @@ main:after {
 }
 
 .post__linkedHeading {
+  display: block;
   text-decoration: none;
   color: var(--color-fg);
   position: relative;
@@ -1510,6 +1511,13 @@ main:after {
   font-family: var(--font-family-main);
   color: var(--color-link);
   text-decoration: none;
+}
+.blogEndAuthor__bio p a:focus-visible {
+  outline: transparent;
+  outline-style: solid;
+  box-shadow: var(--color-bg) 0 0 0 0.08rem, var(--color-focus-outline) 0 0 0 0.24rem;
+  transition: box-shadow var(--global-transition-time) ease-in-out;
+  border-radius: var(--border-radius-base);
 }
 
 .blogSidebarSocialLinks {
