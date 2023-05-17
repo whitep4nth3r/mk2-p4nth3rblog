@@ -2634,4 +2634,12 @@ pre[class*=language-] {
   border-radius: var(--border-radius-base);
 }
 
+.talks__cardGrid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  list-style: none;
+  padding-left: 0;
+}
+
 /*# sourceMappingURL=main.css.map */
