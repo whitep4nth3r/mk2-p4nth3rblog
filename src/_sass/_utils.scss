@@ -28,6 +28,7 @@
   border-radius: 1rem;
   padding: 0.125rem 0.5rem;
   width: max-content;
+  text-transform: capitalize;
 }
 
 @mixin meta_label_alt {
@@ -119,4 +120,12 @@
       @include link_focus;
     }
   }
+}
+
+@mixin card_grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  list-style: none;
+  padding-left: 0;
 }

@@ -47,11 +47,14 @@ function description(item) {
   return "";
 }
 
-function renderImage(image) {
+function renderImage({ image, type }) {
   // empty alt because purely decorative
   // todo — optimize image types here
+
+  const modifier = type === "thing" ? " card__imageContainer--large" : "";
+
   if (image) {
-    return `<div class="card__imageContainer"><img 
+    return `<div class="card__imageContainer${modifier}"><img 
           src="${image.url}?w=510" 
           alt="" 
           height="${image.height}"
@@ -69,6 +72,24 @@ function closingTag(item) {
   }
 
   return `</div>`;
+}
+
+function renderType(item) {
+  if (item.type === "thing") {
+    return `<span class="card__metaLabel">${item.categories[0]}</span>`;
+  }
+
+  return `<span class="card__metaLabel">${activityType[item.type]}</span>`;
+}
+
+function renderDate(item) {
+  if (item.type !== "thing") {
+    return `<p class="card__date">
+    ${DateUtils.formatDateForDisplay(item.date)}
+    </p>`;
+  }
+
+  return "";
 }
 
 const activityType = {
@@ -106,20 +127,13 @@ const Card = ({ item, showType = true }) => {
 
   return `
   ${openingTag({ item, heading })}
-    ${renderImage(itemImage)}
+    ${renderImage({ image: itemImage, type: item.type })}
     <div class="card__inner">
-      <p class="card__date">
-        ${DateUtils.formatDateForDisplay(item.date)}
-      </p>
-
+      ${renderDate(item)}
       <h2 class="card__title">${heading}</h2>
       ${description(item)}
       
-      ${
-        showType === false
-          ? itemMeta(item)
-          : `<span class="card__metaLabel">${activityType[item.type]}</span>`
-      }
+      ${showType === false ? itemMeta(item) : renderType(item)}
   </div>
     ${closingTag(item)}`;
 };

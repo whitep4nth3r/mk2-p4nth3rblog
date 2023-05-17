@@ -116,11 +116,7 @@ $blog_mobile_layout_break: 48em;
 }
 
 .blog__cardsGrid {
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  list-style: none;
-  padding-left: 0;
+  @include card_grid;
 }
 
 .blog__emptySearchCard {

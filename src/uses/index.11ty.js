@@ -1,3 +1,4 @@
+const Card = require("../_components/card");
 const OpenGraph = require("../../lib/openGraph");
 const pageTitle = "My desk, streaming gear and coding setup";
 
@@ -23,34 +24,19 @@ exports.render = function (data) {
   return /* html */ `
     <section class="uses">
         <h1 class="page__headerTitle">${pageTitle}</h1>
-
         ${categories
           .map(
             (cat) => `
           <section id="${cat}">
-            <div class="uses__sectionHeader">
-              <h2 class="uses__sectionHeaderTitle">${cat}</h2>
-            </div>
+            <h2 class="uses_catHeading" data-text="${cat}">
+              ${cat} NEEDS SVG
+            </h2>
             <ol class="uses__list">
             ${things[cat]
               .map(
                 (thing) =>
-                  `<li class="uses__listItem">
-                  <div>
-                    <h3 class="uses__listItemName uses__listItemName--small">${thing.name}</h3>
-                    <img class="uses__listItemImg" src="${thing.image.url}?w=200" alt="${
-                    thing.image.description
-                  }" height="${thing.image.height}" width="${thing.image.width}" />
-                  </div>
-                  <div>
-                    <h3 class="uses__listItemName uses__listItemName--large">${thing.name}</h3>
-                    <div class="uses__listItemDesc">${md.render(thing.description)}</div>
-                    ${
-                      thing.link
-                        ? `<a href="${thing.link}" class="uses__listItemLink" target="_blank" rel="nofollow noreferrer">More <span class="uses__listItemLink--sr">${thing.name}</span> details</a>`
-                        : ""
-                    }
-                  </div>
+                  `<li>
+                  ${Card({ item: { ...thing, type: "thing" } })}
                 </li>
               `,
               )

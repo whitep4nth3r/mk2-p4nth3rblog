@@ -31,7 +31,7 @@ exports.render = function (data) {
   <section>
     <h1 class="page__headerTitle">Conference and meetup talks</h1>
 
-    <ol class="blog__cardsGrid">
+    <ol class="talks__cardGrid">
       ${data.pagination.items
         .map(function (item) {
           return `

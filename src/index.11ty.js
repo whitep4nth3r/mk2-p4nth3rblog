@@ -2,14 +2,14 @@ const HomeAbout = require("./_components/homeAbout");
 const OpenGraph = require("../lib/openGraph");
 const TwitchInfo = require("./_components/twitchInfo");
 const ActivityFeedItem = require("./_components/card");
-const pageTitle = "Salma Alam-Naylor — live streamer, software engineer and writer ";
+const pageTitle = "Salma Alam-Naylor — live streamer, software engineer and developer educator ";
 
 exports.data = {
   layout: "base.html",
   title: pageTitle,
   activeNav: "home",
   metaDescription:
-    "I write code for your entertainment. I work at Netlify, stream coding on Twitch, and love helping people get into tech.",
+    "I write code for your entertainment. I stream live coding on Twitch, help developers build great websites, and love helping people get into tech.",
   openGraphImageUrl: OpenGraph.generateImageUrl({ title: pageTitle }),
   openGraphImageAlt: OpenGraph.generateImageAlt(pageTitle),
   openGraphImageWidth: OpenGraph.imgWidth,
