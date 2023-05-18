@@ -2554,9 +2554,13 @@ pre[class*=language-] {
   grid-area: cta;
   font-weight: var(--font-weight-mid);
   font-family: var(--font-family-main);
-  background-color: var(--grey-dark);
-  color: var(--white);
-  border-radius: var(--border-radius-base);
+  gap: 0.5rem;
+  flex-grow: 0;
+  align-self: center;
+  width: max-content;
+  background-color: var(--card-bg);
+  color: var(--color-fg);
+  border-radius: calc(var(--border-radius-base) * 2);
   padding: 0.5rem 1rem 0.5rem 0.75rem;
   text-decoration: none;
   display: inline-flex;
@@ -2565,11 +2569,13 @@ pre[class*=language-] {
   align-items: center;
   font-size: 1rem;
   border-color: transparent;
-  cursor: pointer;
-  gap: 0.5rem;
-  flex-grow: 0;
-  align-self: center;
-  width: max-content;
+}
+.events__listItemCta:focus-visible {
+  outline: transparent;
+  outline-style: solid;
+  box-shadow: var(--color-bg) 0 0 0 0.08rem, var(--color-focus-outline) 0 0 0 0.24rem;
+  transition: box-shadow var(--global-transition-time) ease-in-out;
+  border-radius: var(--border-radius-base);
 }
 
 .events__listItemCta--sr {

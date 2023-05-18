@@ -43,8 +43,13 @@ module.exports = async function () {
           )
         : twitchEvents;
 
-    // join just next 2 streams with all db events
-    const allEvents = dbEvents.concat(filteredTwitchEvents[0], filteredTwitchEvents[1]);
+    // join just next 4 streams with all db events
+    const allEvents = dbEvents.concat(
+      filteredTwitchEvents[0],
+      filteredTwitchEvents[1],
+      filteredTwitchEvents[2],
+      filteredTwitchEvents[3],
+    );
     const sortedEvents = allEvents.sort(DateUtils.sortItemsByDateAsc);
     return {
       list: sortedEvents,

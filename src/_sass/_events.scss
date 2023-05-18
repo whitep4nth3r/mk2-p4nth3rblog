@@ -113,11 +113,23 @@
 
 .events__listItemCta {
   grid-area: cta;
-  @include button_main;
+  @include font_semibold;
   gap: 0.5rem;
   flex-grow: 0;
   align-self: center;
   width: max-content;
+  background-color: var(--card-bg);
+  color: var(--color-fg);
+  border-radius: calc(var(--border-radius-base) * 2);
+  padding: 0.5rem 1rem 0.5rem 0.75rem;
+  text-decoration: none;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 1rem;
+  border-color: transparent;
+  @include link_focus;
 }
 
 .events__listItemCta--sr {
