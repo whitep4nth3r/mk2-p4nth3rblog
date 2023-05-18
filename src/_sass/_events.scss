@@ -136,6 +136,19 @@
   @include sr_only;
 }
 
+.events__listItemCta--centered {
+  margin: auto;
+  display: flex;
+
+  &::after {
+    content: "";
+    display: inline-block;
+    background-image: var(--header-external-arrow-svg);
+    height: 1rem;
+    width: 1rem;
+  }
+}
+
 .events__listItemCancelled {
   background: var(--yellow);
   color: var(--black);

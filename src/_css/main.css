@@ -2590,6 +2590,18 @@ pre[class*=language-] {
   border-width: 0;
 }
 
+.events__listItemCta--centered {
+  margin: auto;
+  display: flex;
+}
+.events__listItemCta--centered::after {
+  content: "";
+  display: inline-block;
+  background-image: var(--header-external-arrow-svg);
+  height: 1rem;
+  width: 1rem;
+}
+
 .events__listItemCancelled {
   background: var(--yellow);
   color: var(--black);
