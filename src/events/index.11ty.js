@@ -4,7 +4,7 @@ const YouTubeIcon = require("../_components/svg/youtubeIcon");
 const DateUtils = require("../../lib/dateUtils");
 const OpenGraph = require("../../lib/openGraph");
 
-const pageTitle = "Salma Alam-Naylor's Events and Live Streams";
+const pageTitle = "Upcoming Events and Live Streams";
 
 function calculateIcon(type) {
   switch (type) {
@@ -21,7 +21,7 @@ exports.data = {
   layout: "base.html",
   title: pageTitle,
   activeNav: "events",
-  metaDescription: "Upcoming Events and Live Streams featuring Salma Alam-Naylor",
+  metaDescription: "View Salma's Twitch, live events and conference schedule.",
   openGraphImageUrl: OpenGraph.generateImageUrl({ title: pageTitle }),
   openGraphImageAlt: OpenGraph.generateImageAlt(pageTitle),
   openGraphImageWidth: OpenGraph.imgWidth,
