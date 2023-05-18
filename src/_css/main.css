@@ -1898,8 +1898,18 @@ main:after {
   stroke-linecap: round;
 }
 
+.fourohfour__headerTitle {
+  font-weight: var(--font-weight-bold);
+  font-family: var(--font-family-main);
+  margin: 0 auto 1rem auto;
+  font-size: clamp(2rem, 3.5vw, 3.5rem);
+  line-height: 1.4;
+  color: var(--color-fg);
+  max-width: var(--post-max-width);
+}
+
 .fourohfour__content {
-  max-width: var(--global-max-width);
+  max-width: var(--post-max-width);
   margin-left: auto;
   margin-right: auto;
 }
@@ -1909,13 +1919,17 @@ main:after {
   font-family: var(--font-family-main);
   font-size: 1.4rem;
   line-height: 1.4;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
   color: var(--color-fg);
+  display: block;
 }
 
 .fourohfour__img {
-  height: 10rem;
-  transform: rotate(-15deg);
+  box-shadow: 0px 1.5rem 2rem -1rem rgba(0, 0, 0, 0.4), inset 0px 1px 0px rgba(255, 255, 255, 0.48);
+  border-radius: calc(var(--border-radius-base) * 2);
+  width: 100%;
+  margin: auto;
+  display: block;
 }
 
 [color-mode=dark] {
