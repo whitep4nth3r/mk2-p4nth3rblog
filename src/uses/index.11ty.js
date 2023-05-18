@@ -28,8 +28,8 @@ exports.render = function (data) {
           .map(
             (cat) => `
           <section id="${cat}">
-            <h2 class="uses_catHeading" data-text="${cat}">
-              ${cat} NEEDS SVG
+            <h2 class="uses_catHeading">
+              <img src="/img/${cat}.png" alt="${cat}" />
             </h2>
             <ol class="uses__list">
             ${things[cat]

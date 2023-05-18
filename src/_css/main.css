@@ -1624,13 +1624,6 @@ main:after {
 }
 
 .uses_catHeading {
-  font-weight: normal;
-  font-style: normal;
-  font-family: "Atomic Marker", Arial, sans-serif;
-  font-size: 2.5rem;
-  color: var(--orange);
-  transform: rotate(-10deg);
-  transform-origin: top left;
   position: relative;
   top: 2.5rem;
   z-index: 10;
