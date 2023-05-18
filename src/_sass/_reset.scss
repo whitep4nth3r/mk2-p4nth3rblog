@@ -81,7 +81,7 @@ main {
   }
 
   &:after {
-    content: var(--whitep4nth3r-bg-svg) / "";
+    content: var(--whitep4nth3r-bg-svg);
     position: fixed;
     bottom: 0;
     left: 0;
@@ -90,6 +90,12 @@ main {
   }
 }
 
-// * {
-//   outline: 2px solid var(--pink);
-// }
+[data-type="about"],
+[data-type="uses"],
+[data-type="post"] {
+  main:before {
+    content: "Q" / "";
+    top: 20%;
+    right: -20%;
+  }
+}

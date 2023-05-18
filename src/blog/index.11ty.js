@@ -15,8 +15,9 @@ function calculatePageUrl(data) {
 exports.data = {
   layout: "base.html",
   title: pageTitle,
+  pageType: "post",
   activeNav: "blog",
-  metaDescription: `Salma Alam-Naylor writes and live streams about front end development. Read tutorials and quick tips on HTML, CSS, JavaScript and Jamstack.`,
+  metaDescription: `Salma Alam-Naylor writes and live streams about front end development. Read tutorials and quick tips on HTML, CSS, JavaScript and web dev.`,
   openGraphImageUrl: OpenGraph.generateImageUrl({ title: pageTitle }),
   openGraphImageAlt: OpenGraph.generateImageAlt(pageTitle),
   openGraphImageWidth: OpenGraph.imgWidth,
