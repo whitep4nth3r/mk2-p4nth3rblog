@@ -485,6 +485,9 @@ main:after {
   }
 }
 
+.home__left {
+  margin-bottom: 3rem;
+}
 @media screen and (min-width: 62.5em) {
   .home__left {
     width: 26.25rem;
@@ -495,6 +498,7 @@ main:after {
     justify-content: flex-start;
     flex-direction: column;
     min-height: 70vh;
+    margin-bottom: 0;
   }
 }
 
@@ -518,7 +522,7 @@ main:after {
 }
 
 .home__twitch {
-  margin-bottom: 6rem;
+  margin-bottom: 3rem;
 }
 @media screen and (min-width: 62.5em) {
   .home__twitch {
@@ -729,6 +733,10 @@ main:after {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   list-style: none;
   padding-left: 0;
+  grid-auto-rows: 1fr;
+}
+.blog__cardsGrid li {
+  display: flex;
 }
 
 .blog__emptySearchCard {
@@ -753,6 +761,9 @@ main:after {
   }
 }
 
+.about__image {
+  margin-bottom: 3rem;
+}
 @media screen and (min-width: 62.5em) {
   .about__image {
     width: 28rem;
@@ -763,6 +774,7 @@ main:after {
     justify-content: flex-start;
     flex-direction: column;
     min-height: 70vh;
+    margin-bottom: 0;
   }
 }
 
@@ -1641,6 +1653,10 @@ main:after {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   list-style: none;
   padding-left: 0;
+  grid-auto-rows: 1fr;
+}
+.uses__list li {
+  display: flex;
 }
 
 [color-mode=dark] {
@@ -2230,11 +2246,6 @@ pre[class*=language-] {
   position: relative;
   min-height: max-content;
 }
-@media screen and (min-width: 48em) {
-  .card {
-    height: 100%;
-  }
-}
 .card:hover, .card:focus {
   background: var(--card-bg-hover);
   box-shadow: var(--card-box-shadow-hover);
@@ -2671,6 +2682,10 @@ pre[class*=language-] {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   list-style: none;
   padding-left: 0;
+  grid-auto-rows: 1fr;
+}
+.talks__cardGrid li {
+  display: flex;
 }
 
 /*# sourceMappingURL=main.css.map */

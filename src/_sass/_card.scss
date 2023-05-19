@@ -26,13 +26,9 @@
   transition: all var(--global-transition-time) ease-in-out !important;
   position: relative;
 
-  // this fixes a weird thing on mobile
   // do not put height 100% on here!
+  // because it messes with mobile and safari
   min-height: max-content;
-
-  @media screen and (min-width: $blog_mobile_layout_break) {
-    height: 100%;
-  }
 
   &:hover,
   &:focus {
