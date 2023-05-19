@@ -16,7 +16,7 @@ exports.data = {
   activeNav: "about",
   pageType: "about",
   metaDescription:
-    "Salma writes code for your entertainment. She's a software engineer, writer, and live streamer,  helping developers build cool stuff with blog posts, tutorial videos, live coding and open source projects. She works at Netlify.",
+    "Salma writes code for your entertainment. She's a live streamer, software engineer, and developer educator, and helps developers build cool stuff with blog posts, tutorial videos, live coding and open source projects.",
   openGraphImageUrl: OpenGraph.generateImageUrl({ title: pageTitle }),
   openGraphImageAlt: OpenGraph.generateImageAlt(pageTitle),
   openGraphImageWidth: OpenGraph.imgWidth,

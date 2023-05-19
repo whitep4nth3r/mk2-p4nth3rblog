@@ -35,7 +35,6 @@ exports.data = {
     openGraphImageUrl: (data) =>
       OpenGraph.generateImageUrl({
         title: data.post.title,
-        topics: data.post.topicsCollection.items,
       }),
     openGraphImageAlt: (data) => OpenGraph.generateImageAlt(data.post.title),
     openGraphImageWidth: OpenGraph.imgWidth,

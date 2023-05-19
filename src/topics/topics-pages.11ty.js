@@ -22,8 +22,7 @@ exports.data = {
       `Learn about ${data.topic.name} and more from ${Config.meta.jobDescription}.`,
     openGraphImageUrl: (data) =>
       OpenGraph.generateImageUrl({
-        title: `Posts about ${data.topic.name} from Salma Alam-Naylor`,
-        topics: [data.topic],
+        title: `Blog posts tagged ${data.topic.name}`,
       }),
     openGraphImageAlt: (data) =>
       OpenGraph.generateImageAlt(`Posts about ${data.topic.name} from Salma Alam-Naylor`),
