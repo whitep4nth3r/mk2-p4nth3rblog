@@ -4,12 +4,9 @@
 @import "utils";
 @import "keyframes";
 
-@import "button";
-
-@import "grid";
+@import "tc-layout";
 
 @import "header";
-@import "footer";
 @import "home";
 @import "home-about";
 @import "blog";
@@ -20,32 +17,21 @@
 @import "pagination";
 @import "published-date";
 @import "table-of-contents";
-@import "blog-sidebar-topics";
 @import "blog-sidebar-author";
-@import "post-card";
-@import "topics-button";
-@import "home-card";
+@import "blog-end-author";
+@import "blog-sidebar-social-links";
 @import "speaker-deck-link";
 @import "video-embed";
 @import "codepen-embed";
-@import "see-all-cta";
 @import "uses";
-@import "twoColumn";
 @import "bio";
 @import "lighthouse-comparison";
 @import "404";
 @import "ais";
 @import "prism";
-@import "activity-feed";
+@import "card";
 @import "twitch-info";
-
-/* START TEMP */
-main {
-  margin: auto;
-}
-
-// convert to mixin or something
-.colorHighlight {
-  color: var(--color-highlight);
-}
-/* END TEMP */
+@import "activity-feed";
+@import "events";
+@import "social-links";
+@import "talks";

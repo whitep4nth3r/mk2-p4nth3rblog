@@ -1,17 +1,18 @@
 const HomeAbout = require("./_components/homeAbout");
 const OpenGraph = require("../lib/openGraph");
 const TwitchInfo = require("./_components/twitchInfo");
-const DiscordIcon = require("./_components/svg/discordIcon");
-const RandomBlogPost = require("./_components/randomBlogPost");
-const ActivityFeedItem = require("./_components/activityFeedItem");
-const pageTitle = "Tech streams, blogs and code tutorials";
+const ActivityFeedItem = require("./_components/card");
+const pageTitle = "Salma Alam-Naylor — live streamer, software engineer and developer educator ";
 
 exports.data = {
   layout: "base.html",
   title: pageTitle,
+  activeNav: "home",
   metaDescription:
-    "I write code for your entertainment. I work at Netlify, stream coding on Twitch, and love helping people get into tech.",
-  openGraphImageUrl: OpenGraph.generateImageUrl({ title: pageTitle }),
+    "I write code for your entertainment. I stream live coding on Twitch, help developers build great websites, and love helping people get into tech.",
+  openGraphImageUrl: OpenGraph.generateImageUrl({
+    title: "Live streamer, software engineer and developer educator",
+  }),
   openGraphImageAlt: OpenGraph.generateImageAlt(pageTitle),
   openGraphImageWidth: OpenGraph.imgWidth,
   openGraphImageHeight: OpenGraph.imgHeight,
@@ -19,37 +20,29 @@ exports.data = {
 };
 
 exports.render = function (data) {
-  const { events, randomBlogPost, person, activityFeed } = data;
+  const { activityFeed, person } = data;
+  const feedItems = activityFeed.slice(0, 10);
+
   return /*html*/ `
   <section class="home">
-    <div>
-      <div class="home__sticky">
-        ${HomeAbout({ person })}
+
+    <div class="home__left">
+      <div class="home__fixed">
+        ${HomeAbout({ bio: person.bioShort })}
       </div>
     </div>
 
-    <div class="home__items">
-        <div class="home__item">
-          ${TwitchInfo()}
-        </div>
-        <div class="home__item home__item--activity">
-          <a href="/activity/" class="home__itemTitle">🪴 Check out my <span class="colorHighlight">latest activity</span></a>
-          ${ActivityFeedItem({ item: activityFeed[0], forceActiveState: true })}
-        </div>
-        <div class="home__item">
-          <a href="/blog/" class="home__itemTitle">📕 Read <span class="colorHighlight">blogs and tutorials</span></a>
-          ${RandomBlogPost({ post: randomBlogPost })}
-        </div>
-        <div class="home__item">
-          <a href="/discord" class="home__itemTitle">${DiscordIcon()} Join <span class="colorHighlight">The Claw Discord server</span></a>
-            <div class="homeCard">
-              <div class="homeCard__excerpt">
-                <p>Join a growing community of developers who are building stuff, learning things, and helping each other grow through the power of open source software.</p>
-              </div>
-            </div>
-        </div>
+    <div class="home__scroll">
+      <div class="home__twitch">
+        ${TwitchInfo()}
       </div>
-  </section>
+      <a href="/activity/" class="home__heading">Latest news and activity</a>
+      <div class="home__activity">
+      ${feedItems.map((item) => ActivityFeedItem({ item })).join("")}
+      </div>
+      <!-- <h2 class="home__heading"><a href="/activity/">See more stuff</a></h2> -->
+    </div>
 
+  </section>
   `;
 };

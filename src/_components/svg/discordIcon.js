@@ -1,15 +1,17 @@
-function DiscordIcon() {
-  return `
+const defaultOptions = {
+  height: 24,
+  width: 24,
+};
+
+function DiscordIcon({ height, width } = defaultOptions) {
+  return /*html */ `
    <svg
       xmlns="http://www.w3.org/2000/svg"
-      role="img" 
-      aria-label="Discord icon"
-      height="24"
-      width="24"
+      height="${height}" width="${width}" 
       viewBox="0 0 448 512"
     >
       <path
-        fill="currentColor"
+        fill="#5865f2"
         d="M297.216 243.2c0 15.616-11.52 28.416-26.112 28.416-14.336
     0-26.112-12.8-26.112-28.416s11.52-28.416 26.112-28.416c14.592 0 26.112 12.8
     26.112 28.416zm-119.552-28.416c-14.592 0-26.112 12.8-26.112 28.416s11.776

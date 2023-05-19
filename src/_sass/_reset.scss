@@ -1,26 +1,20 @@
 * {
   box-sizing: border-box;
   margin: 0;
+  // this is to ensure the background texture layers work
+  // do not remove and think you don't need it!
+  z-index: 1;
 }
 
 html {
   font-size: 100%;
   scroll-behavior: var(--scroll-behaviour);
-  background: var(--yellow-pink-gradient);
-  padding: 0.5rem;
-
-  @media screen and (min-width: 900px) {
-    padding: 0.75rem;
-  }
+  background-color: var(--color-bg);
 }
 
-body {
-  @include font_main;
-  font-size: 1rem;
-  background-color: var(--color-bg);
-  color: var(--color-fg);
-  padding: 1rem 2rem;
-  border-radius: calc(var(--border-radius-base) * 2);
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 a {
@@ -31,36 +25,77 @@ a {
   text-decoration-thickness: 0.125rem;
 }
 
-a:hover {
-  cursor: pointer;
-}
-
-a:focus,
-summary:focus {
-  --box-shadow-bg: var(--color-bg);
-  --box-shadow-highlight: var(--color-highlight);
-  outline: transparent;
-  outline-style: solid;
-  /* 2nd value is 3x 1st */
-  box-shadow: var(--box-shadow-bg) 0 0 0 0.08rem, var(--box-shadow-highlight) 0 0 0 0.24rem;
-  transition: box-shadow var(--global-transition-time) ease-in-out;
-  border-radius: var(--border-radius-base);
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-family-heading);
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
 strong {
   @include font_bold;
+}
+
+/* END RESET */
+
+body {
+  @include font_main;
+  font-size: 1rem;
+  color: var(--color-fg);
+  padding: var(--body-horizontal-padding-sm);
+  position: relative;
+
+  min-height: 100vh;
+  background: var(--color-bg);
+  background-image: var(--page-bg);
+  background-attachment: fixed !important;
+
+  @media screen and (min-width: 48rem) {
+    padding: 1rem var(--body-horizontal-padding-lg);
+  }
+}
+
+@keyframes fadeInBrush {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+main {
+  margin: 6rem auto auto auto;
+  max-width: var(--global-max-width);
+
+  @media screen and (min-width: $global_md_breakpoint) {
+    margin-top: 10rem;
+  }
+
+  &:before {
+    animation: fadeInBrush 0.42s ease-in-out;
+    @include font_atomic_extras_two;
+    content: "M" / "";
+    color: var(--color-brush-bg);
+    position: fixed;
+    z-index: -1;
+    opacity: 50%;
+    mix-blend-mode: overlay;
+    font-size: 1000px;
+    line-height: 1;
+    right: -10%;
+    top: 5%;
+  }
+
+  &:after {
+    content: var(--whitep4nth3r-bg-svg);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+  }
+}
+
+[data-type="about"],
+[data-type="uses"],
+[data-type="post"] {
+  main:before {
+    content: "Q" / "";
+    top: 20%;
+    right: -20%;
+  }
 }

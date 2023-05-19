@@ -1,32 +1,7 @@
-.page__index {
-  max-width: var(--grid-max-width);
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.page__header {
-  @include grid_header;
-}
-
 .page__headerTitle {
-  @include grid_header_title;
-}
-
-.page__intro {
-  background-color: var(--cta2-bg);
-  border-radius: var(--border-radius-base);
-  padding: clamp(1.5rem, 2.5vw, 2.5rem);
-  margin-bottom: 2rem;
-}
-
-.page__introTitle {
-  @include font_semibold;
-  font-size: clamp(2rem, 4vw, 4rem);
-  margin-bottom: 1rem;
-}
-
-.page__introText {
-  @include font_main;
-  font-size: clamp(1.4rem, 2vw, 2rem);
+  @include font_bold;
+  margin: 0 auto clamp(2rem, 3vw, 3rem) auto;
+  font-size: clamp(2rem, 3.5vw, 3.5rem);
   line-height: 1.4;
+  color: var(--color-fg);
 }

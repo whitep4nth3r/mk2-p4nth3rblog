@@ -1,42 +1,48 @@
 <a href="#main_content" class="header__skipToMainContent">Skip to main content</a>
 
-<button
-  type="button"
-  class="header__themeToggle"
-  data-theme-toggle
-  aria-label="Change to light theme"
-></button>
-
-<aside data-referer data-slug="{{ slug }}" data-title="{{ title }}"></aside>
-
 <header class="header">
-  <div class="header__content">
-    <div class="header__logoContainer">
-      <a href="/" class="header__logoContainerLink" aria-label="Navigate to home page">
-        {% include "logo.html" %}
-      </a>
-    </div>
-
+  <div class="header__navGroup">
+    <div class="header__logoContainer">{% include "logo.html" %}</div>
     <nav aria-label="primary">
-      <ul class="header__navList">
+      <ul class="header__navList" data-active="{{activeNav}}">
         <li class="header__navListItem">
-          <a
-            href="https://github.com/whitep4nth3r?tab=repositories"
-            target="_blank"
-            class="header__navListItemLink"
-          >
-            Projects
-          </a>
+          <a href="/" class="header__navListItemLink" data-link="home">Home</a>
         </li>
         <li class="header__navListItem">
-          <a href="/blog/" class="header__navListItemLink">Posts</a>
+          <a href="/about/" class="header__navListItemLink" data-link="about">About</a>
         </li>
         <li class="header__navListItem">
-          <a href="/about/" class="header__navListItemLink">About</a>
+          <a href="/blog/" class="header__navListItemLink" data-link="blog">Blog</a>
+        </li>
+        <li class="header__navListItem">
+          <details class="header__navListDetails">
+            <summary class="header__navListSummary">More</summary>
+            <div class="header__navListMoreLinks">
+              <a href="/uses/" class="header__navListItemLink">Things I use</a>
+              <a href="/talks/" class="header__navListItemLink">Talks</a>
+              <a href="/events/" class="header__navListItemLink">Events</a>
+              <a
+                href="https://github.com/whitep4nth3r?tab=repositories"
+                target="_blank"
+                class="header__navListItemLink header__navListItemLink--external"
+              >
+                GitHub Projects
+              </a>
+              <a href="/discord" class="header__navListItemLink header__navListItemLink--external">
+                Discord
+              </a>
+            </div>
+          </details>
         </li>
       </ul>
     </nav>
   </div>
+  <button
+    type="button"
+    class="header__themeToggle"
+    data-theme-toggle
+    aria-label="Change to light theme"
+  ></button>
 </header>
 
 <script>

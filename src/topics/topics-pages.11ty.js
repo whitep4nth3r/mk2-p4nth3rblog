@@ -1,10 +1,12 @@
 const Config = require("../../lib/config");
 const Topics = require("../_components/topics");
-const PostCard = require("../_components/postCard");
+const Card = require("../_components/card");
+const FilterIcon = require("../_components/svg/filterIcon");
 const OpenGraph = require("../../lib/openGraph");
 
 exports.data = {
   layout: "base.html",
+  activeNav: "blog",
   pagination: {
     data: "topics",
     alias: "topic",
@@ -15,11 +17,15 @@ exports.data = {
     return `topics/${data.topic.slug}/`;
   },
   eleventyComputed: {
-    title: (data) => `Learn ${data.topic.name} from Salma Alam-Naylor`,
-    metaDescription: (data) => `Learn about ${data.topic.name} and more from ${Config.meta.jobDescription}.`,
+    title: (data) => `Posts about ${data.topic.name} from Salma Alam-Naylor`,
+    metaDescription: (data) =>
+      `Learn about ${data.topic.name} and more from ${Config.meta.jobDescription}.`,
     openGraphImageUrl: (data) =>
-      OpenGraph.generateImageUrl({ title: `Posts about ${data.topic.name} from whitep4nth3r`, topics: [data.topic] }),
-    openGraphImageAlt: (data) => OpenGraph.generateImageAlt(`Posts about ${data.topic.name} from whitep4nth3r`),
+      OpenGraph.generateImageUrl({
+        title: `Blog posts tagged ${data.topic.name}`,
+      }),
+    openGraphImageAlt: (data) =>
+      OpenGraph.generateImageAlt(`Posts about ${data.topic.name} from Salma Alam-Naylor`),
     openGraphImageWidth: OpenGraph.imgWidth,
     openGraphImageHeight: OpenGraph.imgHeight,
     openGraphUrl: (data) => `https://whitep4nth3r.com/topics/${data.topic.slug}/`,
@@ -27,26 +33,36 @@ exports.data = {
 };
 
 exports.render = function (data) {
-  const { topic, topics, allPosts } = data;
+  const { topic, allPosts } = data;
   const postsByTopic = Array.from(allPosts.get(topic.slug));
 
   return /* html */ `
-    <section class="page__index">
-      <div class="page__header">
-        <h1 class="page__headerTitle">Topic: <span class="colorHighlight">${topic.name}</span></h1>
+
+      <span class="topics__meta">Posts tagged</span>
+      <h1 class="page__headerTitle">${topic.name}</h1>
+
+      <div class="blog">
+        <aside class="blog__searchAndCats">
+          <div class="blog__searchBoxAndFilterToggle blog__searchBoxAndFilterToggle--topicsPage">
+            <button type="button" class="blog__filterToggle" data-toggle>${FilterIcon()} Filters</button>
+          </div>
+
+          <div class="blog__cats" data-cats>
+            ${Topics({ topics: data.topics, selected: topic.slug })}
+          </div>
+        </aside>
+        <section class="blog__cards">
+          <ol class="blog__cardsGrid">
+          ${postsByTopic
+            .map(function (item) {
+              return `
+              <li>
+              ${Card({ item: { ...item, type: "post" }, showType: false })}
+              </li>`;
+            })
+            .join("")}
+            </ol>
+          </section>
       </div>
-
-      ${Topics({ topics, selected: topic.slug, showLinkToBlog: true })}
-
-      <ol class="grid">
-        ${postsByTopic
-          .map(function (item) {
-            return `
-          <li class="grid__item blog__item">
-            ${PostCard({ post: item, baseSlug: "blog", isTalk: false })}
-          </li>`;
-          })
-          .join("")}
-      </ol>
-  </section>`;
+      `;
 };

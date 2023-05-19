@@ -1,28 +1,14 @@
 .publishedDate {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .publishedDate__item {
   @include font_semibold;
-  font-size: 1rem;
-  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  margin-bottom: 0;
   color: var(--color-fg);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-
-  @media screen and (min-width: 48em) {
-    justify-content: flex-start;
-  }
-}
-
-.publishedDate__icon {
-  color: var(--color-highlight);
-  display: flex;
-  @media screen and (min-width: 48em) {
-    width: 1.5rem;
-  }
 }

@@ -1,5 +1,5 @@
 ---
-title: This page does not exist 👀
+title: "404: Page not found 🫠"
 permalink: 404.html
 eleventyExcludeFromCollections: true
 ---
@@ -38,12 +38,16 @@ eleventyExcludeFromCollections: true
         <div class="fourohfour__header">
           <h1 class="fourohfour__headerTitle">{{ title }}</h1>
         </div>
-        <p class="fourohfour__text">
-          I'll put something fun here one day. Until then, enjoy this picture of the PantherMoth.
-        </p>
-        <img src="/img/panthermoth.svg" alt="Panther Moth" class="fourohfour__img" />
+        <a href="https://twitch.tv/whitep4nth3r" class="fourohfour__text">
+          Maybe I'm live on Twitch?
+        </a>
+
+        <img
+          src="/img/404.jpg"
+          class="fourohfour__img"
+          alt="Salma with her hands on her head, looking shocked, whilst streaming on Twitch"
+        />
       </div>
     </main>
-    {% include "footer.html" %}
   </body>
 </html>

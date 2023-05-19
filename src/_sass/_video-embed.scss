@@ -3,7 +3,9 @@
   font-size: 1.2rem;
   line-height: 1.6;
   margin-bottom: 1rem;
-  color: var(--color-highlight);
+  margin-top: 2rem;
+  font-style: italic;
+  color: var(--color-fg);
 }
 
 .eleventy-plugin-youtube-embed {
@@ -23,32 +25,4 @@
       height: auto;
     }
   }
-}
-
-.videoEmbed__tiktok {
-  max-width: 542px;
-  min-height: 574px;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: var(--yellow);
-  z-index: 0;
-  position: relative;
-  border-radius: var(--border-radius-base);
-
-  @media screen and (min-width: 48rem) {
-    min-height: 728px;
-  }
-}
-
-.videoEmbed__tiktokOverlay {
-  background-color: var(--grey-dark);
-  position: absolute;
-  z-index: 1;
-  display: block;
-  opacity: 1;
-  height: 100%;
-  width: 100%;
-  border-radius: var(--border-radius-base);
-  transition: all 1s ease-in-out;
-  pointer-events: none;
 }

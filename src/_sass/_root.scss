@@ -1,123 +1,3 @@
-:root {
-  --red: #f11012;
-  --pink: #f00480;
-  --green: #82af3a;
-  --black: #0f111a;
-  --grey-dark: #2b2e3a;
-  --white: #ffffff;
-  --yellow: #ffb626;
-  --twitch-purple: #9146ff;
-
-  --color-bg-button: var(--grey-dark);
-  --color-button: var(--white);
-  --color-logo: var(--color-fg);
-
-  --font-family-bold: "Work Sans Bold", sans-serif;
-  --font-weight-bold: 700;
-  --font-family-heading: "Work Sans SemiBold", sans-serif;
-  --font-weight-heading: 500;
-  --font-family-main: "Work Sans Light", sans-serif;
-  --font-weight-main: 300;
-
-  --border-radius-base: 0.375rem;
-
-  --feed-max-width: 510px;
-  --post-max-width: 980px;
-  --grid-max-width: 1280px;
-
-  --base-shadow-filter: drop-shadow(0px 0.125rem 0.125rem rgba(0, 0, 0, 0.25));
-
-  --yellow-red-gradient: linear-gradient(
-    90deg,
-    hsl(359deg 89% 50%) 0%,
-    hsl(11deg 92% 50%) 11%,
-    hsl(18deg 98% 49%) 22%,
-    hsl(23deg 100% 49%) 33%,
-    hsl(27deg 100% 49%) 44%,
-    hsl(30deg 100% 49%) 56%,
-    hsl(34deg 100% 50%) 67%,
-    hsl(36deg 99% 52%) 78%,
-    hsl(38deg 100% 55%) 89%,
-    hsl(40deg 100% 57%) 100%
-  );
-
-  --yellow-pink-gradient: linear-gradient(
-    90deg,
-    hsl(328deg 97% 48%) 0%,
-    hsl(338deg 98% 57%) 12%,
-    hsl(348deg 100% 62%) 25%,
-    hsl(359deg 100% 66%) 37%,
-    hsl(10deg 100% 64%) 50%,
-    hsl(20deg 100% 62%) 62%,
-    hsl(28deg 100% 60%) 74%,
-    hsl(34deg 100% 58%) 87%,
-    hsl(40deg 100% 57%) 100%
-  );
-
-  --global-transition-time: 0.2s;
-  --scroll-behaviour: smooth;
-}
-
-[color-mode="dark"] {
-  color-scheme: dark;
-
-  --toggle-button-bg: #000;
-  --toggle-button-color: var(--white);
-
-  --cta2-bg: var(--grey-dark);
-
-  --color-bg: var(--black);
-  --color-fg: var(--white);
-  --color-bg-lighter: var(--grey-dark);
-
-  --color-link: var(--color-fg);
-  --color-highlight: var(--yellow);
-
-  --lighthouse-green-fg: rgb(27, 195, 106);
-  --lighthouse-green-stroke: rgb(27, 195, 106);
-  --lighthouse-green-bg: rgb(30, 46, 47);
-
-  --lighthouse-orange-fg: rgb(251, 157, 70);
-  --lighthouse-orange-stroke: rgb(251, 157, 70);
-  --lighthouse-orange-bg: rgb(52, 43, 34);
-
-  --lighthouse-red-fg: rgb(250, 40, 52);
-  --lighthouse-red-stroke: rgb(250, 40, 52);
-  --lighthouse-red-bg: rgb(52, 31, 32);
-
-  --lighthouse-container-bg: rgb(29, 30, 32);
-}
-
-[color-mode="light"] {
-  color-scheme: light;
-
-  --toggle-button-bg: var(--white);
-  --toggle-button-color: var(--black);
-
-  --cta2-bg: var(--yellow);
-
-  --color-bg: var(--white);
-  --color-fg: var(--black);
-  --color-bg-lighter: var(--white);
-
-  --color-link: var(--color-fg);
-  --color-highlight: var(--black);
-
-  --lighthouse-green-fg: rgb(15, 123, 38);
-  --lighthouse-green-stroke: rgb(27, 195, 106);
-  --lighthouse-green-bg: rgb(233, 249, 240);
-
-  --lighthouse-orange-fg: rgb(184, 42, 22);
-  --lighthouse-orange-stroke: rgb(251, 157, 70);
-  --lighthouse-orange-bg: rgb(255, 246, 237);
-
-  --lighthouse-red-fg: rgb(193, 0, 19);
-  --lighthouse-red-stroke: rgb(250, 40, 52);
-  --lighthouse-red-bg: rgb(255, 234, 235);
-
-  --lighthouse-container-bg: #ffffff;
-}
-
 @media (prefers-reduced-motion: reduce) {
   :root {
     --global-transition-time: 0;
@@ -125,7 +5,66 @@
   }
 }
 
-::selection {
-  background: var(--color-highlight);
-  color: var(--color-bg);
+$global_md_breakpoint: 768px;
+
+:root {
+  --pink: #f0047f;
+  --pink-light: #f890c6;
+  --black: #0e0016;
+  --black-alt: #1f1823;
+  --grey-dark: #2b2e3a;
+  --grey-mid: #475467;
+  --white: #faefff;
+  --white-alt: #f7d9ff;
+  --orange: #fc814a;
+
+  --yellow: #ffb626; // still in use, needs to go, refactor all components that use it
+
+  --body-horizontal-padding-sm: 1rem;
+  --body-horizontal-padding-lg: 2.5rem;
+
+  --font-family-main: "Inter UI var", Helvetica, Arial, sans-serif;
+
+  --font-weight-bold: 800;
+  --font-weight-mid: 600;
+  --font-weight-main: 400;
+
+  --border-radius-base: 0.375rem;
+
+  --global-max-width: 1440px;
+  --feed-max-width: 510px;
+  --post-max-width: 1064px;
+
+  --base-shadow-filter: drop-shadow(0px 0.125rem 0.125rem rgba(0, 0, 0, 0.25));
+
+  --global-transition-time: 0.21s;
+  --scroll-behaviour: smooth;
+
+  --form-height: 48px;
+}
+
+[color-mode="dark"] {
+  color-scheme: dark;
+  --page-bg: radial-gradient(farthest-corner at 100% 100%, var(--black-alt) 0%, var(--black) 50%);
+  --whitep4nth3r-bg-svg: url("/img/whitep4nth3r-darkmode.svg");
+
+  --color-bg: var(--black);
+  --color-fg: var(--white);
+  --color-blog-copy: rgba(255, 255, 255, 0.92);
+  --color-link: var(--pink-light);
+  --color-brush-bg: rgba(255, 255, 255, 0.72);
+  --color-focus-outline: var(--pink-light);
+}
+
+[color-mode="light"] {
+  color-scheme: light;
+  --page-bg: radial-gradient(farthest-corner at 100% 100%, var(--white-alt) 0%, var(--white) 50%);
+  --whitep4nth3r-bg-svg: url("/img/whitep4nth3r-lightmode.svg");
+
+  --color-bg: var(--white);
+  --color-fg: var(--black);
+  --color-blog-copy: rgba(0, 0, 0, 0.72);
+  --color-link: var(--pink);
+  --color-brush-bg: rgba(0, 0, 0, 0.72);
+  --color-focus-outline: var(--pink);
 }
