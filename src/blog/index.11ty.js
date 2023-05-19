@@ -1,8 +1,8 @@
 const Config = require("../../lib/config.js");
-
+const Card = require("../_components/card");
 const Pagination = require("../_components/pagination");
-const PostCard = require("../_components/postCard");
 const Topics = require("../_components/topics");
+const FilterIcon = require("../_components/svg/filterIcon");
 const OpenGraph = require("../../lib/openGraph");
 
 const pageTitle = "Learn web development, CSS, Serverless, JavaScript and more";
@@ -15,7 +15,9 @@ function calculatePageUrl(data) {
 exports.data = {
   layout: "base.html",
   title: pageTitle,
-  metaDescription: `Salma Alam-Naylor writes and live streams about front end development. Read tutorials and quick tips on HTML, CSS, JavaScript and Jamstack.`,
+  pageType: "post",
+  activeNav: "blog",
+  metaDescription: `Salma Alam-Naylor writes and live streams about front end development. Read tutorials and quick tips on HTML, CSS, JavaScript and web dev.`,
   openGraphImageUrl: OpenGraph.generateImageUrl({ title: pageTitle }),
   openGraphImageAlt: OpenGraph.generateImageAlt(pageTitle),
   openGraphImageWidth: OpenGraph.imgWidth,
@@ -39,44 +41,47 @@ exports.render = function (data) {
   const latestPost = data.latestPost;
   return /* html */ `
 
-  <section class="page__index">
-    <div class="page__header">
-      <h1 class="page__headerTitle">Blogs and <span class="colorHighlight">tutorials</span></h1>
-    </div>
+  <h1 class="page__headerTitle">Blogs and tutorials</h1>
 
-    <div class="blog__searchAndFilters">
-      <div id="autocomplete" class="ais">
-        <div id="searchbox" class="ais__searchbox"></div>
+  <div class="blog">
+    <aside class="blog__searchAndCats">
+      <div class="blog__searchBoxAndFilterToggle">
+        <div id="autocomplete" class="ais">
+          <div id="searchbox" class="ais__searchbox"></div>
+        </div>
+        <!-- add aria stuff here -->
+        <button type="button" class="blog__filterToggle" data-toggle>${FilterIcon()} Filters</button>
       </div>
 
-      <div>
-        <p class="blog__filterLabel">Filter posts</p>
-        ${Topics({ topics: data.topics, priorityOnly: true })}
+      <div class="blog__cats" data-cats>
+        ${Topics({ topics: data.topics })}
       </div>
-    </div>
+    </aside>
 
-    <div id="hits" class="ais__hitsContainer"></div>
+    <section class="blog__cards">
+      <div id="hits" class="ais__hitsContainer"></div>
 
-    <div data-static-content>
-      <ol class="grid">
-      ${data.pagination.items
-        .map(function (item) {
-          return `
-          <li class="grid__item blog__item">
-            ${PostCard({ post: item, baseSlug: "blog", isTalk: false })}
-          </li>`;
-        })
-        .join("")}
-      </ol>
+      <div data-static-content>
+        <ol class="blog__cardsGrid">
+        ${data.pagination.items
+          .map(function (item) {
+            return `
+            <li>
+              ${Card({ item, showType: false })}
+            </li>`;
+          })
+          .join("")}
+        </ol>
 
-      ${Pagination({
-        previous: data.pagination.href.previous,
-        next: data.pagination.href.next,
-        currentPage: data.pagination.pageNumber,
-        totalPages: data.pagination.pages.length,
-      })}
-    </div>
-  </section>
+        ${Pagination({
+          previous: data.pagination.href.previous,
+          next: data.pagination.href.next,
+          currentPage: data.pagination.pageNumber,
+          totalPages: data.pagination.pages.length,
+        })}
+      </div>
+    </section>
+  </div>
 
   <script defer src="https://cdn.jsdelivr.net/npm/algoliasearch@4.5.1/dist/algoliasearch-lite.umd.js" integrity="sha256-EXPXz4W6pQgfYY3yTpnDa3OH8/EPn16ciVsPQ/ypsjk=" crossorigin="anonymous"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.8.3/dist/instantsearch.production.min.js" integrity="sha256-LAGhRRdtVoD6RLo2qDQsU2mp+XVSciKRC8XPOBWmofM=" crossorigin="anonymous"></script>
@@ -93,6 +98,7 @@ exports.render = function (data) {
         id: "${latestPost.sys.id}",
         date:  "${latestPost.date}",
         readingTime:  "${latestPost.readingTime}",
+        topic: "${latestPost.topicsCollection.items[0].name}",
         featuredImage: {
           url: "${latestPost.featuredImage.url}",
           description: "${latestPost.featuredImage.description}",

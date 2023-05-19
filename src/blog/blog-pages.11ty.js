@@ -1,17 +1,22 @@
 const ExternalUrl = require("../_components/externalUrl");
-const BlogSidebarTopics = require("../_components/blogSidebarTopics");
 const BlogSidebarAuthor = require("../_components/blogSidebarAuthor");
+const BlogEndAuthor = require("../_components/blogEndAuthor");
 const RichText = require("../_components/richText");
 const PublishedDate = require("../_components/publishedDate");
 const TableOfContents = require("../_components/tableOfContents");
 const isSponsored = require("../_components/isSponsored");
-const PostCard = require("../_components/postCard");
+const Card = require("../_components/card");
 const PostStructuredData = require("../_components/postStructuredData");
 const OpenGraph = require("../../lib/openGraph");
+
+var md = require("markdown-it")({
+  html: true,
+});
 
 exports.data = {
   layout: "base.html",
   pageType: "post",
+  activeNav: "blog",
   pagination: {
     data: "posts",
     alias: "post",
@@ -22,7 +27,7 @@ exports.data = {
     return `blog/${data.post.slug}/`;
   },
   eleventyComputed: {
-    title: (data) => data.post.metaTitle,
+    title: (data) => `${data.post.metaTitle} - Salma Alam-Naylor`,
     slug: (data) => data.post.slug,
     canonical: (data) =>
       data.post.externalUrl || `https://whitep4nth3r.com/blog/${data.post.slug}/`,
@@ -30,7 +35,6 @@ exports.data = {
     openGraphImageUrl: (data) =>
       OpenGraph.generateImageUrl({
         title: data.post.title,
-        topics: data.post.topicsCollection.items,
       }),
     openGraphImageAlt: (data) => OpenGraph.generateImageAlt(data.post.title),
     openGraphImageWidth: OpenGraph.imgWidth,
@@ -73,20 +77,27 @@ exports.render = async function (data) {
   });
 
   return /* html */ `
+    <aside data-referer data-slug="{{ slug }}" data-title="{{ title }}"></aside>
+    <div class="post__meta">
+      <p class="post__meta__topic">${post.topicsCollection.items[0].name}</p>
+      ${PublishedDate({
+        date: post.date,
+        readingTime: post.readingTime,
+        isTalk: false,
+        updatedDate: post.updatedDate,
+      })}
+    </div>
+    <h1 class="post__h1">${post.title}</h1>
     <section class="post">
+      <aside class="post__aside">
+        ${BlogSidebarAuthor({ author: post.author })}
+        <div class="post__asideStickyGroup">
+          ${TableOfContents(post.body)}
+        </div>
+      </aside>
       <article class="post__article">
-        <h1 class="post__h1">${post.title}</h1>
-        <aside class="post__inlineAside">
-            ${BlogSidebarAuthor({ author: post.author })}
-            ${PublishedDate({
-              date: post.date,
-              readingTime: post.readingTime,
-              isTalk: false,
-              updatedDate: post.updatedDate,
-            })}
-            ${TableOfContents(post.body)}
-        </aside>
-
+        <div class="post__excerpt">${md.render(post.excerpt)}</div>
+        <hr class="post__separator" aria-hidden="true" />
         <div class="post__body">
           ${outOfDateWarning({ post })}
           ${RichText(post.body, {
@@ -99,46 +110,31 @@ exports.render = async function (data) {
         ${post.isSponsored ? isSponsored() : ""}
         ${ExternalUrl({ url: post.externalUrl })}
 
+        <hr class="post__separator" />
+
+        ${BlogEndAuthor({ author: post.author })}
+
         ${
           post.relatedPostsCollection?.items.length > 0
             ? /*html*/ `
             <div class="post__related">
               <div class="post__relatedHeader">
-                <p class="post__relatedHeaderTitle">Read next 👇</p>
+                <p class="post__relatedHeaderTitle">Related posts</p>
               </div>
               <div class="post__relatedGrid">
                 ${post.relatedPostsCollection.items
-                  .map((post) => PostCard({ post, baseSlug: "blog", isTalk: false }))
+                  .map((post) => Card({ item: { ...post, type: "post" }, showType: false }))
                   .join("")}
               </div>
             </div>`
             : ""
         }
 
-        <div class="post__inlineAside">
-          ${BlogSidebarTopics({ topics: post.topicsCollection.items })}
-        </div>
-
         <script type="application/ld+json">${PostStructuredData({
           post,
           imageUrl: openGraphImageUrl,
         })}</script>
       </article>
-      <aside class="post__aside">
-        ${BlogSidebarAuthor({ author: post.author })}
-
-        ${PublishedDate({
-          date: post.date,
-          readingTime: post.readingTime,
-          isTalk: false,
-          updatedDate: post.updatedDate,
-        })}
-
-        <div class="post__asideStickyGroup">
-          ${TableOfContents(post.body)}
-          ${BlogSidebarTopics({ topics: post.topicsCollection.items })}
-        </div>
-      </aside>
     </section>
     `;
 };

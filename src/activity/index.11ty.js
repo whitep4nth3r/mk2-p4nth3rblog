@@ -1,6 +1,6 @@
 const OpenGraph = require("../../lib/openGraph");
 const pageTitle = "My activity feed — videos, blogs, events, podcasts and more";
-const ActivityFeedItem = require("../_components/activityFeedItem");
+const Card = require("../_components/card");
 const Pagination = require("../_components/pagination");
 
 function calculatePageUrl(data) {
@@ -19,7 +19,7 @@ exports.data = {
   openGraphImageHeight: OpenGraph.imgHeight,
   pagination: {
     data: "activityFeed",
-    size: 10,
+    size: 12,
     addAllPagesToCollections: true,
   },
   permalink: (data) => {
@@ -34,9 +34,19 @@ exports.data = {
 
 exports.render = function (data) {
   return /* html */ `
-  <section class="activityFeed">
-    <h1 class="activityFeed__header">Activity feed</h1>
-    ${data.pagination.items.map((item) => ActivityFeedItem({ item })).join("")}
+  <h1 class="page__headerTitle">Activity feed</h1>
+  
+  <section class="blog__cards">
+    <ol class="blog__cardsGrid">
+      ${data.pagination.items
+        .map(function (item) {
+          return `
+            <li>
+              ${Card({ item })}
+            </li>`;
+        })
+        .join("")}
+    </ol>
 
     ${Pagination({
       previous: data.pagination.href.previous,

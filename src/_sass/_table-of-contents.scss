@@ -1,5 +1,4 @@
 .tableOfContents {
-  margin-top: 1rem;
   margin-bottom: 2rem;
 }
 
@@ -8,12 +7,21 @@
   padding: 0;
 }
 
+[color-mode="dark"] {
+  --table-of-contents-header-color: var(--pink-light);
+}
+[color-mode="light"] {
+  --table-of-contents-header-color: var(--pink);
+}
+
 .tableOfContents__header {
   @include font_bold;
+  color: var(--table-of-contents-header-color);
   margin-bottom: 1rem;
   font-size: 1.2rem;
-  color: var(--color-highlight);
   cursor: pointer;
+
+  @include link_focus;
 }
 
 .tableOfContents__item {
@@ -21,12 +29,14 @@
 }
 
 .tableOfContents__itemLink {
-  @include font_semibold;
+  @include font_main;
   font-size: 1rem;
   line-height: 1.4;
   color: var(--color-fg);
   text-decoration: none;
   display: block;
+
+  @include link_focus;
 }
 
 .tableOfContents__item--nudged {

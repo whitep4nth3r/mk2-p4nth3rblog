@@ -1,9 +1,9 @@
-const PostCard = require("./postCard");
+const Card = require("./card");
 
 function BlogPostEmbed({ post }) {
   return /* html */ `
   <div>
-    ${PostCard({ post, baseSlug: "blog", isTalk: false })}
+    ${Card({ item: post, showType: false })}
   </div>`;
 }
 

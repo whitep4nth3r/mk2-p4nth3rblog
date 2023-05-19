@@ -1,5 +1,5 @@
 const Config = require("../../lib/config.js");
-const PostCard = require("../_components/postCard");
+const Card = require("../_components/card");
 const Pagination = require("../_components/pagination");
 const OpenGraph = require("../../lib/openGraph");
 
@@ -9,7 +9,7 @@ exports.data = {
   layout: "base.html",
   title: pageTitle,
   metaDescription: `Watch talks about web dev, accessibility, Jamstack, JavaScript, and more from ${Config.meta.jobDescription}.`,
-  openGraphImageUrl: OpenGraph.generateImageUrl({ title: pageTitle }),
+  openGraphImageUrl: OpenGraph.generateImageUrl({ title: "Watch talks about web development" }),
   openGraphImageAlt: OpenGraph.generateImageAlt(pageTitle),
   openGraphImageWidth: OpenGraph.imgWidth,
   openGraphImageHeight: OpenGraph.imgHeight,
@@ -28,26 +28,28 @@ exports.data = {
 exports.render = function (data) {
   return /* html */ `
   
-  <section class="page__index">
-    <div class="page__header">
-      <h1 class="page__headerTitle">Conference and meetup <span class="colorHighlight">talks</span></h1>
-    </div>
+  <section>
+    <h1 class="page__headerTitle">Conference and meetup talks</h1>
 
-    <ol class="grid">
+    <ol class="talks__cardGrid">
       ${data.pagination.items
         .map(function (item) {
           return `
-            <li class="grid__item blog__item">
-            ${PostCard({ post: item, baseSlug: "talks", isTalk: true })}
+            <li>
+            ${Card({ item, showType: false })}
             </li>`;
         })
         .join("")}
     </ol>
-    ${Pagination({
-      previous: data.pagination.href.previous,
-      next: data.pagination.href.next,
-      currentPage: data.pagination.pageNumber,
-      totalPages: data.pagination.pages.length,
-    })}
-    </section>`;
+     ${
+       data.pagination.pages.length > 1
+         ? Pagination({
+             previous: data.pagination.href.previous,
+             next: data.pagination.href.next,
+             currentPage: data.pagination.pageNumber,
+             totalPages: data.pagination.pages.length,
+           })
+         : ""
+     }
+  </section>`;
 };

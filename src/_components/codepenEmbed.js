@@ -1,6 +1,5 @@
 function CodePenEmbed({ embedCode, title }) {
   return /* html */ `
-    <p class="codePenEmbed__title">On CodePen: ${title}</p>
     <div class="codePenEmbed__container" data-codepen data-embed-code=${encodeURI(embedCode)}>
       <div data-target></div>
     </div>

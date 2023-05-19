@@ -1,6 +1,10 @@
+.vscode/
+
 .DS_Store
 .env
 /node_modules
 /_site
 # Local Netlify folder
 .netlify
+
+notes.txt

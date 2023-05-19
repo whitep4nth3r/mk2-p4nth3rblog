@@ -1,176 +1,39 @@
-.about__socialLinks {
-  max-width: var(--grid-max-width);
-  margin: 2rem auto;
-  list-style: none;
-  padding-left: 0;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 1rem;
+.about {
+  @include tc_layout_container;
 }
 
-.about__socialLinksItem {
-  @include button_main;
-  gap: 0.5rem;
+.about__image {
+  @include tc_layout_left($width: 28rem);
 }
 
-.about__me {
-  display: block;
+.about__name {
+  z-index: 10;
+  margin-top: -6.6rem;
 
-  @media screen and (min-width: 48em) {
-    display: grid;
-    grid-template-columns: 2fr 4fr;
-    gap: 2rem;
+  @media screen and (min-width: $tc_layout_breakpoint) {
+    margin-top: 0;
   }
 }
 
-.about__meFace {
-  overflow: hidden;
-  margin-bottom: 2rem;
-  overflow: hidden;
-  border-radius: calc(var(--border-radius-base) * 2);
-  filter: var(--base-shadow-filter);
-}
+.about__fixed {
+  @include tc_layout_fixed($height: 100vh);
 
-.about__meFace img {
-  border-radius: calc(var(--border-radius-base) * 2);
-}
+  @media screen and (min-width: $tc_layout_breakpoint) {
+    align-items: flex-start;
+  }
 
-.about__meBio {
-}
-
-.about__events {
-}
-
-.about__eventsHeader {
-  @include grid_header;
-}
-
-.about__eventsHeaderTitle {
-  @include grid_header_title;
-}
-
-.about__eventsList {
-  padding-left: 0;
-  list-style: none;
-}
-
-.about__eventsListItem {
-  display: grid;
-  grid-template-columns: 1fr 4fr;
-  gap: 1rem 2rem;
-  grid-template-areas:
-    "date time"
-    "date name"
-    "date desc"
-    "date cta";
-  margin-bottom: 4rem;
-
-  @media screen and (min-width: 48em) {
-    margin-bottom: 3rem;
-    grid-template-columns: 1fr 6fr 1fr;
-    grid-template-areas:
-      "date time cta"
-      "date name cta"
-      "date desc cta";
+  * {
+    height: calc(100% - 6.5rem);
+    object-fit: cover;
+    border-radius: var(--border-radius-base);
   }
 }
 
-.about__eventsListItemDate {
-  grid-area: date;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+.about__details {
+  @include tc_layout_scroll;
+
+  margin: unset;
 }
 
-.about__eventsListItemDate__month {
-  @include font_semibold;
-  text-align: center;
-  color: var(--color-highlight);
-  text-transform: uppercase;
-  font-size: 1.2rem;
-  margin-bottom: 0.25rem;
-}
-
-.about__eventsListItemDate__day {
-  @include font_bold;
-  display: block;
-  text-align: center;
-  color: var(--color-fg);
-  text-transform: uppercase;
-  font-size: 2.8rem;
-}
-
-.about__eventsListItemTime {
-  grid-area: time;
-  @include font_main;
-  font-size: 1rem;
-  display: grid;
-  gap: 0.5rem;
-  align-items: center;
-  grid-template-columns: 1fr;
-
-  svg {
-    color: var(--color-highlight);
-  }
-
-  @media screen and (min-width: 48em) {
-    display: flex;
-    flex-direction: row;
-  }
-}
-
-.about__eventsListItemTimeInner {
-  display: flex;
-  flex-direction: row;
-  gap: 0.5rem;
-  align-items: center;
-}
-
-.about__eventsListItemTZ {
-  display: flex;
-  flex-direction: column;
-}
-
-.about__eventsListshortDescription {
-  grid-area: desc;
-  @include font_main;
-  font-size: 1.2rem;
-  line-height: 1.2;
-  max-width: 49ch;
-}
-
-.about__eventsListItemName {
-  grid-area: name;
-  @include font_semibold;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  font-size: clamp(1.2rem, 1.6vw, 1.6rem);
-  line-height: 1.2;
-  color: var(--color-fg);
-}
-
-.about__eventsListItemCta {
-  grid-area: cta;
-  @include button_main;
-  gap: 0.5rem;
-  flex-grow: 0;
-  align-self: center;
-  width: max-content;
-}
-
-.about__eventsListItemCta--sr {
-  @include sr_only;
-}
-
-.about__eventsListItemCancelled {
-  background: var(--yellow);
-  color: var(--black);
-  border-radius: var(--border-radius-base);
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  @include font_bold;
-  width: max-content;
+.about__bio {
 }

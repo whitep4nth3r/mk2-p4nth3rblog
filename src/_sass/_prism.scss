@@ -33,7 +33,7 @@ pre[class*="language-"] {
   padding: 1rem;
   margin: 0.5rem 0;
   overflow: auto;
-  border-radius: 0.3rem;
+  border-radius: calc(var(--border-radius-base) * 2);
 }
 
 /* MY FIXES: https://whitep4nth3r.com/blog/how-to-make-your-code-blocks-accessible-on-your-website */

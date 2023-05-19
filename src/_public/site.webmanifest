@@ -1,6 +1,6 @@
 {
   "name": "whitep4nth3r.com",
-  "short_name": "whitep4nth3r.com",
+  "short_name": "whitep4nth3r",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
@@ -13,7 +13,7 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#f11012",
-  "background_color": "#f11012",
-  "display": "standalone"
+  "theme_color": "#f0047f",
+  "background_color": "#f0047f",
+  "start_url": "https://whitep4nth3r.com"
 }

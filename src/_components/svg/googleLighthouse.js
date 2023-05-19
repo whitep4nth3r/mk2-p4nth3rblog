@@ -3,7 +3,7 @@ function GoogleLighthouse() {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       role="img"
-      aria-label="Google Lighthouse logo"
+      aria-label="Google Lighthouse"
       height="60"
       width="60"
       viewBox="0 0 512 548.20728733">

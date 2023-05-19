@@ -7,14 +7,13 @@ function GithubIcon({ height, width } = defaultOptions) {
   return /*html*/ `
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    role="img"
-    aria-label="Github logo"
+    aria-label="Github"
     height="${height}"
     width="${width}"
     viewBox="0 0 496 512"
   >
   <path
-    fill="currentColor"
+    fill="#000"
     d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6
     5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0
     6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6

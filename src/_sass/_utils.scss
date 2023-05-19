@@ -14,29 +14,123 @@
   outline-color: transparent;
   outline-style: solid;
   outline-offset: 0.125rem;
-  border-radius: 0;
-  box-shadow: inset var(--color-highlight) 0 0 0 0.125rem;
+  box-shadow: inset var(--color-fg) 0 0 0 0.125rem;
   transition: box-shadow var(--global-transition-time) ease-in-out;
 }
 
-@mixin add_gradient_bottom($marginTop: 1rem) {
-  &:after {
-    content: "";
-    width: 100%;
-    height: 0.125rem;
-    display: block;
-    margin-top: $marginTop;
-    background: var(--yellow-red-gradient);
+@mixin meta_label {
+  @include font_semibold;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--color-fg);
+  background-color: var(--color-bg);
+  border-radius: 1rem;
+  padding: 0.125rem 0.5rem;
+  width: max-content;
+  text-transform: capitalize;
+}
+
+@mixin meta_label_alt {
+  @include font_semibold;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--pink);
+  background-color: #ffffff;
+  border-radius: 1rem;
+  padding: 0.125rem 0.5rem;
+  width: max-content;
+}
+
+@mixin link_focus {
+  &:focus-visible {
+    outline: transparent;
+    outline-style: solid;
+    box-shadow: var(--color-bg) 0 0 0 0.08rem, var(--color-focus-outline) 0 0 0 0.24rem;
+    transition: box-shadow var(--global-transition-time) ease-in-out;
+    border-radius: var(--border-radius-base);
   }
 }
 
-@mixin add_gradient_top($marginTop: 1rem) {
-  &:before {
-    content: "";
-    width: 100%;
-    height: 0.125rem;
-    margin-top: $marginTop;
-    display: block;
-    background: var(--yellow-red-gradient);
+@mixin short_bio {
+  max-width: 62ch;
+
+  h2 {
+    @include font_main;
+    font-size: clamp(1.8rem, 2.8vw, 2rem);
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    color: var(--color-fg);
+  }
+
+  h3 {
+    @include font_main;
+    font-size: 1.4rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    color: var(--color-fg);
+  }
+
+  p {
+    @include font_main;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: var(--color-fg);
+
+    a {
+      @include font_semibold;
+      color: var(--color-link);
+      text-decoration: none;
+
+      @include link_focus;
+    }
+  }
+}
+
+@mixin short_bio_sm {
+  max-width: 62ch;
+
+  h2 {
+    @include font_main;
+    font-size: 1.125rem;
+    line-height: 1.75;
+    color: var(--color-fg);
+  }
+
+  h3 {
+    @include font_semibold;
+    font-size: 1.125rem;
+    line-height: 1.75;
+    color: var(--color-fg);
+  }
+
+  p {
+    @include font_main;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--color-fg);
+
+    a {
+      @include font_semibold;
+      color: var(--color-link);
+      text-decoration: none;
+
+      @include link_focus;
+    }
+  }
+}
+
+@mixin card_grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  list-style: none;
+  padding-left: 0;
+  grid-auto-rows: 1fr;
+
+  li {
+    display: flex;
   }
 }
