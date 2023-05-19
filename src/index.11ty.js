@@ -10,7 +10,9 @@ exports.data = {
   activeNav: "home",
   metaDescription:
     "I write code for your entertainment. I stream live coding on Twitch, help developers build great websites, and love helping people get into tech.",
-  openGraphImageUrl: OpenGraph.generateImageUrl({ title: pageTitle }),
+  openGraphImageUrl: OpenGraph.generateImageUrl({
+    title: "Live streamer, software engineer and developer educator",
+  }),
   openGraphImageAlt: OpenGraph.generateImageAlt(pageTitle),
   openGraphImageWidth: OpenGraph.imgWidth,
   openGraphImageHeight: OpenGraph.imgHeight,
