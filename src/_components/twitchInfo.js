@@ -12,7 +12,6 @@ function TwitchInfo() {
           Live now ${PlayIcon()}
         </p>
       </div>
-      <!-- todo - placeholder image -->
       <img src="/img/stream_thumb_fallback.jpg" alt="" class="twitchInfo__thumbnail" height="1080" width="1920" data-twitchinfo-thumbnail />
       </a>
   </div>

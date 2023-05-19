@@ -7,7 +7,6 @@ const ResponsiveImage = require("./responsiveImage");
 const Callout = require("./callout");
 const CodeBlock = require("./codeBlock");
 const VideoEmbed = require("./videoEmbed");
-const TikTokEmbed = require("./tikTokEmbed");
 const CodePenEmbed = require("./codepenEmbed");
 const TweetEmbed = require("./tweetEmbed");
 const BlogPostEmbed = require("./blogPostEmbed");
@@ -108,8 +107,6 @@ function getRichTextRenderOptions(links, options) {
             return DeployToNetlifyButton({ title: entry.title, deployUrl: entry.deployUrl });
           case "CodePenEmbed":
             return CodePenEmbed({ embedCode: entry.embedCode, title: entry.title });
-          case "TikTokEmbed":
-            return TikTokEmbed({ embedCode: entry.embedCode, title: entry.title });
           case "BlogPost":
             return BlogPostEmbed({ post: entry });
           case "LighthouseComparison":

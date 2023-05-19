@@ -7,8 +7,6 @@ function DiscordIcon({ height, width } = defaultOptions) {
   return /*html */ `
    <svg
       xmlns="http://www.w3.org/2000/svg"
-      role="img" 
-      aria-label="Discord icon"
       height="${height}" width="${width}" 
       viewBox="0 0 448 512"
     >

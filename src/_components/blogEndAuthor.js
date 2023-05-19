@@ -20,7 +20,6 @@ function BlogEndAuthor({ author }) {
     <div class="blogEndAuthor_social">
       ${SocialLinks()}
     </div>
-
   </div>
   `;
 }

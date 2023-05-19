@@ -60,7 +60,7 @@ exports.render = function (data) {
               ${
                 event.canceled_until !== null
                   ? `<span class="events__listItemCancelled">CANCELLED</span>`
-                  : ""
+                  : ``
               }
             </span>
             <span class="events__listItemName">${event.name}</span>

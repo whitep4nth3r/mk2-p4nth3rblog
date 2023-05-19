@@ -150,9 +150,9 @@
 }
 
 .events__listItemCancelled {
-  background: var(--yellow);
-  color: var(--black);
-  border-radius: var(--border-radius-base);
+  color: var(--color-fg);
+  border-radius: calc(var(--border-radius-base) * 2);
+  background-color: var(--card-bg);
   padding: 0.5rem 1rem;
   font-size: 1rem;
   @include font_bold;
