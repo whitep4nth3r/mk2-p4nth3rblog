@@ -16,7 +16,7 @@ export default async (request, context) => {
 
   // if no referer, return the response
   if (referer === null) {
-    return response;
+    return;
   }
 
   // get keys from refererMessages
@@ -27,7 +27,7 @@ export default async (request, context) => {
 
   // if we don't have a referer match, return the response
   if (findRefererKey === undefined) {
-    return response;
+    return;
   }
 
   // if we do have a referer match, rewrite the element
