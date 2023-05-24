@@ -87,11 +87,6 @@
   align-items: center;
 }
 
-.events__listItemTZ {
-  display: flex;
-  flex-direction: column;
-}
-
 .events__listshortDescription {
   grid-area: desc;
   @include font_main;

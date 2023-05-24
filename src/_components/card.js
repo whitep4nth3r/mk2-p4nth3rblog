@@ -57,6 +57,7 @@ function renderImage({ image, type }) {
     return `<div class="card__imageContainer${modifier}"><img 
           src="${image.url}?w=510" 
           alt="" 
+          role="presentation"
           height="${image.height}"
           width="${image.width}"
           class="card__image"

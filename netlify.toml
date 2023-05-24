@@ -12,13 +12,16 @@
   function = "referer"
 
 [[edge_functions]]
+  path = "/"
+  function = "twitch"
+
+[[edge_functions]]
   path = "/events/"
   function = "localize-time"
 
 [[edge_functions]]
   path = "/events/"
   function = "clean-up-past-events"
-
 
 # redirects
 [[redirects]]

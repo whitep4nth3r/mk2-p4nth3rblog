@@ -77,7 +77,7 @@ exports.render = async function (data) {
   });
 
   return /* html */ `
-    <aside data-referer data-slug="{{ slug }}" data-title="{{ title }}"></aside>
+    <aside data-referer data-slug="${post.slug}" data-title="${post.title}"></aside>
     <div class="post__meta">
       <p class="post__meta__topic">${post.topicsCollection.items[0].name}</p>
       ${PublishedDate({
