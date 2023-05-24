@@ -15,6 +15,8 @@
 }
 
 .header {
+  --header-padding-vertical: 0.25rem;
+  --logo-height: 3rem;
   margin: 1rem auto;
   max-width: var(--global-max-width);
   display: flex;
@@ -28,7 +30,7 @@
   border-radius: 2.5rem;
   background: var(--header-bg);
   backdrop-filter: blur(6px);
-  padding: 0.25rem 0.5rem;
+  padding: 0 0.5rem;
   left: 50%;
   transform: translateX(-50%);
 
@@ -81,8 +83,9 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: var(--header-padding-vertical);
     svg {
-      height: 3rem;
+      height: var(--logo-height);
       width: auto;
     }
   }
@@ -95,10 +98,14 @@
   align-items: center;
   justify-content: flex-start;
   gap: 0.25rem;
+  position: relative;
 
   @media screen and (min-width: $global_md_breakpoint) {
     gap: 1rem;
   }
+}
+
+.header__navListItem {
 }
 
 .header__navListDetails {
@@ -109,18 +116,17 @@
   background: var(--header-bg);
   border-radius: 0 0 var(--border-radius-base) var(--border-radius-base);
   position: absolute;
-  top: 3.25rem;
+  bottom: 0;
   width: max-content;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, 100%);
 
   a {
     padding: 0.9rem;
   }
 
   @media screen and (min-width: $global_md_breakpoint) {
-    top: 2.75rem;
-
+    bottom: calc(var(--header-padding-vertical) * -0.5);
     a {
       padding: 0.5rem;
     }
@@ -157,6 +163,13 @@
 
 .header__navListSummary {
   cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  @media screen and (min-width: $global_md_breakpoint) {
+    height: calc(var(--header-padding-vertical) + var(--logo-height));
+  }
 }
 
 .header__navListItemLink,

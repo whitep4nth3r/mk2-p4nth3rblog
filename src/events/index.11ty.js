@@ -56,7 +56,6 @@ exports.render = function (data) {
                   ${event.date}
                 </span>
               </span>
-              <span class="events__listItemTZ" data-timezone></span>
               ${
                 event.canceled_until !== null
                   ? `<span class="events__listItemCancelled">CANCELLED</span>`
