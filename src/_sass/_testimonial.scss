@@ -8,6 +8,10 @@
 }
 .testimonial__quote {
   grid-area: quote;
+  @include font_main;
+  font-size: 1.2rem;
+  line-height: 1.2;
+  font-style: italic;
 }
 
 .testimonial__image {
@@ -20,4 +24,9 @@
 
 .testimonial__attr {
   grid-area: attr;
+  @include font_semibold;
+
+  a {
+    @include link_focus;
+  }
 }
