@@ -1,4 +1,11 @@
-.blogSidebarAuthor {
+.author {
+  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+}
+
+.author--hideSmall {
   display: none;
   margin-bottom: 2rem;
 
@@ -9,20 +16,20 @@
   }
 }
 
-.blogSidebarAuthor__cta {
+.author__cta {
   display: block;
   position: relative;
   @include link_focus;
 
   &:focus-visible,
   &:hover {
-    .blogSidebarAuthor__imgContainer {
+    .author__imgContainer {
       transform: scale(0.95);
     }
   }
 }
 
-.blogSidebarAuthor__imgContainer {
+.author__imgContainer {
   filter: var(--base-shadow-filter);
   transition: transform var(--global-transition-time) ease-in-out;
 
@@ -31,13 +38,13 @@
   }
 }
 
-.blogSidebarAuthor__name {
+.author__name {
   display: block;
   position: relative;
   top: -4rem;
   height: 0;
 }
 
-.blogSidebarAuthor_social {
+.author_social {
   margin-top: 0.5rem;
 }

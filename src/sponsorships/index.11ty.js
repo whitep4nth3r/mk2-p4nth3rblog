@@ -1,9 +1,11 @@
 const OpenGraph = require("../../lib/openGraph");
-const pageTitle = "Sponsorships and collaborations";
 const Testimonial = require("../_components/testimonial");
-const BlogSidebarAuthor = require("../_components/blogSidebarAuthor");
-const TableOfContents = require("../_components/tableOfContents");
-const RichText = require("../_components/richText");
+const Author = require("../_components/author");
+const StreamPackage = require("../_components/streamPackage");
+
+var md = require("markdown-it")({
+  html: true,
+});
 
 exports.data = {
   layout: "base.html",
@@ -22,29 +24,40 @@ exports.data = {
 exports.render = function (data) {
   const { testimonials, content, person } = data;
 
+  console.log(content);
+
   return /* html */ `
 
-    <h1 class="post__h1">${content.title}</h1>
-    <section class="post">
-      <aside class="post__aside">
-        ${BlogSidebarAuthor({ author: person })}
-        <div class="post__asideStickyGroup">
-          ${TableOfContents(content.body)}
+ 
+  
+  <div class="sponsorships">
+    <h1 class="sponsorships__title">${content.title}</h1>
+    <section class="sponsorships__intro">
+        <aside class="sponsorships__author">
+        ${Author({ author: person })}
+        </aside>
+        <div class="sponsorships__introText">
+          ${md.render(content.intro)}
         </div>
-      </aside>
-      <article class="post__article">
-        <div class="post__body">
-          ${RichText(content.body, {
-            renderRssFriendlyImg: false,
-            absoluteUrls: false,
-            renderHeadingLinks: true,
-          })}
-        </div>
-
-        <hr class="post__separator" />
-
-        ${testimonials.map((testimonial) => Testimonial({ testimonial })).join("")}
-        
     </section>
-  `;
+  
+    <section class="sponsorships__content">
+
+      ${md.render(content.packagesIntro)}
+      ${md.render(content.streamsIntro)}
+
+
+      ${content.streamPackagesCollection.items
+        .map((package) => StreamPackage({ package }))
+        .join("")}
+
+      ${md.render(content.demoAppsAndWebsites)}
+      ${md.render(content.videoContent)}
+
+    </section>
+
+    <section class="sponsorships__testimonials">
+      ${testimonials.map((testimonial) => Testimonial({ testimonial })).join("")}
+    </section>
+  </div>`;
 };

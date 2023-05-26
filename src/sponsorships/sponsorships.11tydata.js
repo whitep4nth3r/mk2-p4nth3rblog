@@ -1,7 +1,7 @@
-const ContentfulPages = require("../../lib/contentfulPages");
+const ContentfulSponsorshipPage = require("../../lib/contentfulSponsorshipPage");
 
 module.exports = async function () {
-  const content = await ContentfulPages.get({ slug: "sponsorships" });
+  const content = await ContentfulSponsorshipPage.get({ slug: "sponsorships" });
 
   return { content };
 };

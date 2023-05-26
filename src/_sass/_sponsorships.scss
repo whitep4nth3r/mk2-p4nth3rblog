@@ -1,0 +1,23 @@
+$sponsor_layout_breakpoint: 768px;
+
+.sponsorships {
+  max-width: 1040px;
+  margin: auto;
+}
+
+.sponsorships__intro {
+  @media screen and (min-width: $sponsor_layout_breakpoint) {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1.5rem;
+  }
+}
+
+.sponsorships__author {
+}
+
+.sponsorships__content {
+}
+
+.sponsorships__testimonials {
+}
