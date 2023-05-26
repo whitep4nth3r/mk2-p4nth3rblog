@@ -1,22 +1,38 @@
-$sponsor_layout_breakpoint: 768px;
+$sponsor_layout_breakpoint: 881px;
 
 .sponsorships {
   max-width: 1040px;
   margin: auto;
 }
 
+.sponsorships__title {
+  @include font_bold;
+  font-size: clamp(2rem, 3.5vw, 3.5rem);
+  line-height: 1;
+  margin-bottom: 2.5rem;
+}
+
 .sponsorships__intro {
+  display: grid;
+  gap: 2rem;
+  margin-bottom: 3rem;
   @media screen and (min-width: $sponsor_layout_breakpoint) {
-    display: grid;
     grid-template-columns: 1fr 2fr;
-    gap: 1.5rem;
   }
 }
 
+.sponsorships__introText {
+  @include general_md;
+}
+
 .sponsorships__author {
+  width: 20rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .sponsorships__content {
+  @include general_md;
 }
 
 .sponsorships__testimonials {

@@ -33,10 +33,10 @@ exports.render = function (data) {
   <div class="sponsorships">
     <h1 class="sponsorships__title">${content.title}</h1>
     <section class="sponsorships__intro">
-        <aside class="sponsorships__author">
+        <aside class="sponsorships__author" data-author>
         ${Author({ author: person })}
         </aside>
-        <div class="sponsorships__introText">
+        <div class="sponsorships__introText" data-intro-text>
           ${md.render(content.intro)}
         </div>
     </section>
@@ -45,7 +45,6 @@ exports.render = function (data) {
 
       ${md.render(content.packagesIntro)}
       ${md.render(content.streamsIntro)}
-
 
       ${content.streamPackagesCollection.items
         .map((package) => StreamPackage({ package }))
@@ -59,5 +58,6 @@ exports.render = function (data) {
     <section class="sponsorships__testimonials">
       ${testimonials.map((testimonial) => Testimonial({ testimonial })).join("")}
     </section>
-  </div>`;
+  </div>
+  `;
 };

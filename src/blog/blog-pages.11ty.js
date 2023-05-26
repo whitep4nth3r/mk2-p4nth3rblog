@@ -90,7 +90,9 @@ exports.render = async function (data) {
     <h1 class="post__h1">${post.title}</h1>
     <section class="post">
       <aside class="post__aside">
-        ${Author({ author: post.author, hideOnSmallScreens: true })}
+        <div class="post__authorContainer">
+          ${Author({ author: post.author, hideOnSmallScreens: true })}
+        </div>
         <div class="post__asideStickyGroup">
           ${TableOfContents(post.body)}
         </div>

@@ -40,7 +40,7 @@
     font-size: 1.25rem;
     line-height: 1.5;
     margin-bottom: 2rem;
-    color: var(--color-blog-copy);
+    color: var(--color-fg);
   }
 }
 
@@ -61,16 +61,26 @@
   width: 17.5rem;
 }
 
+.post__authorContainer {
+  @media screen and (min-width: 56em) {
+    margin-bottom: 2rem;
+  }
+}
+
 .post__asideStickyGroup {
   position: sticky;
   top: 10rem;
   overflow-y: scroll;
   max-height: 100vh;
   padding-top: 0.25rem;
-  padding-bottom: 4rem;
+  padding-bottom: 0;
   padding-right: 1rem;
   margin-left: -1rem;
   padding-left: 1rem;
+
+  @media screen and (min-width: 56em) {
+    padding-bottom: 4rem;
+  }
 }
 
 .post__body {
@@ -137,7 +147,7 @@
   font-size: 1.125rem;
   line-height: 1.75;
   margin-bottom: 1rem;
-  color: var(--color-blog-copy);
+  color: var(--color-fg);
   word-break: break-word;
 
   a {

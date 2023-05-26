@@ -53,21 +53,19 @@
   }
 }
 
-@mixin short_bio {
-  max-width: 62ch;
-
+@mixin general_md {
   h2 {
-    @include font_main;
-    font-size: clamp(1.8rem, 2.8vw, 2rem);
-    line-height: 1.4;
+    @include font_semibold;
+    font-size: clamp(2rem, 3vw, 3rem);
+    line-height: 1.25;
     margin-bottom: 1rem;
     color: var(--color-fg);
   }
 
   h3 {
-    @include font_main;
-    font-size: 1.4rem;
-    line-height: 1.4;
+    @include font_semibold;
+    font-size: 1.875rem;
+    line-height: 2.375;
     margin-bottom: 1rem;
     color: var(--color-fg);
   }
@@ -77,7 +75,7 @@
     font-size: 1.25rem;
     line-height: 1.6;
     margin-bottom: 1rem;
-    color: var(--color-fg);
+    color: var(--color-fg-copy);
 
     a {
       @include font_semibold;
@@ -89,11 +87,16 @@
   }
 }
 
+@mixin short_bio {
+  max-width: 62ch;
+  @include general_md;
+}
+
 @mixin short_bio_sm {
   max-width: 62ch;
 
   h2 {
-    @include font_main;
+    @include font_bold;
     font-size: 1.125rem;
     line-height: 1.75;
     color: var(--color-fg);
@@ -110,7 +113,7 @@
     @include font_main;
     font-size: 1rem;
     line-height: 1.5;
-    color: var(--color-fg);
+    color: var(--color-fg-copy);
 
     a {
       @include font_semibold;
