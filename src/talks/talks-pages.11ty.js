@@ -1,4 +1,4 @@
-const BlogSidebarAuthor = require("../_components/blogSidebarAuthor");
+const Author = require("../_components/author");
 const BlogEndAuthor = require("../_components/blogEndAuthor");
 const RichText = require("../_components/richText");
 const VideoEmbed = require("../_components/videoEmbed");
@@ -48,7 +48,9 @@ exports.render = function (data) {
   <h1 class="post__h1">${talk.title}</h1>
   <section class="post">
     <aside class="post__aside">
-      ${BlogSidebarAuthor({ author: talk.author })}
+      <div class="post__authorContainer">
+        ${Author({ author: talk.author, hideOnSmallScreens: true })}
+      </div>
     </aside>
     <article class="post__article">
       <div class="post__excerpt">

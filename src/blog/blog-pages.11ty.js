@@ -1,5 +1,5 @@
 const ExternalUrl = require("../_components/externalUrl");
-const BlogSidebarAuthor = require("../_components/blogSidebarAuthor");
+const Author = require("../_components/author");
 const BlogEndAuthor = require("../_components/blogEndAuthor");
 const RichText = require("../_components/richText");
 const PublishedDate = require("../_components/publishedDate");
@@ -90,7 +90,9 @@ exports.render = async function (data) {
     <h1 class="post__h1">${post.title}</h1>
     <section class="post">
       <aside class="post__aside">
-        ${BlogSidebarAuthor({ author: post.author })}
+        <div class="post__authorContainer">
+          ${Author({ author: post.author, hideOnSmallScreens: true })}
+        </div>
         <div class="post__asideStickyGroup">
           ${TableOfContents(post.body)}
         </div>

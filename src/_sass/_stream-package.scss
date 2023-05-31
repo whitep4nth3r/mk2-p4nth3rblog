@@ -1,0 +1,11 @@
+.streamPackage {
+  @include general_md;
+
+  .streamPackage__title {
+    @include font_semibold;
+  }
+}
+
+.streamPackage__description {
+  @include general_md;
+}
