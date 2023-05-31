@@ -979,7 +979,7 @@ main:after {
   font-size: 1.25rem;
   line-height: 1.5;
   margin-bottom: 2rem;
-  color: var(--color-fg);
+  color: var(--color-fg-copy);
 }
 
 .post__separator {
@@ -1097,7 +1097,7 @@ main:after {
   font-size: 1.125rem;
   line-height: 1.75;
   margin-bottom: 1rem;
-  color: var(--color-fg);
+  color: var(--color-fg-copy);
   word-break: break-word;
 }
 .post__p a:focus-visible {
@@ -1433,7 +1433,7 @@ main:after {
   font-family: var(--font-family-main);
   font-size: 1rem;
   line-height: 1.4;
-  color: var(--color-fg);
+  color: var(--color-fg-copy);
   text-decoration: none;
   display: block;
 }
