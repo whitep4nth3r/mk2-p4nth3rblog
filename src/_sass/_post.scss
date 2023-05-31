@@ -35,8 +35,7 @@
 
 .post__excerpt {
   p {
-    @include font_main;
-    font-weight: var(--font-weight-mid);
+    @include font_semibold;
     font-size: 1.25rem;
     line-height: 1.5;
     margin-bottom: 2rem;
