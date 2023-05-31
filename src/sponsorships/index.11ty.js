@@ -24,12 +24,7 @@ exports.data = {
 exports.render = function (data) {
   const { testimonials, content, person } = data;
 
-  console.log(content);
-
-  return /* html */ `
-
- 
-  
+  return /* html */ `  
   <div class="sponsorships">
     <h1 class="sponsorships__title">${content.title}</h1>
     <section class="sponsorships__intro">
