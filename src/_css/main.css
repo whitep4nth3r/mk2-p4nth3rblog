@@ -2748,8 +2748,8 @@ pre[class*=language-] {
 .sponsorships__title {
   font-weight: var(--font-weight-bold);
   font-family: var(--font-family-main);
-  font-size: clamp(2rem, 3.5vw, 3.5rem);
-  line-height: 1;
+  font-size: clamp(2.25rem, 3.5vw, 3.5rem);
+  line-height: 1.4;
   margin-bottom: 2.5rem;
 }
 
@@ -2807,8 +2807,6 @@ pre[class*=language-] {
 
 .sponsorships__author {
   width: 20rem;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .sponsorships__content h2 {

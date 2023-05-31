@@ -7,8 +7,8 @@ $sponsor_layout_breakpoint: 881px;
 
 .sponsorships__title {
   @include font_bold;
-  font-size: clamp(2rem, 3.5vw, 3.5rem);
-  line-height: 1;
+  font-size: clamp(2.25rem, 3.5vw, 3.5rem);
+  line-height: 1.4;
   margin-bottom: 2.5rem;
 }
 
@@ -31,8 +31,6 @@ $sponsor_layout_breakpoint: 881px;
 
 .sponsorships__author {
   width: 20rem;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .sponsorships__content {
