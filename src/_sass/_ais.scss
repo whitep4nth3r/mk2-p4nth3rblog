@@ -1,11 +1,8 @@
 [color-mode="dark"] {
-  --search-input-bg: rgba(255, 255, 255, 0.06);
-  --search-input-border: 0.0625rem solid rgba(255, 255, 255, 0.18);
   --reset-color: var(--white);
 }
+
 [color-mode="light"] {
-  --search-input-bg: rgba(0, 0, 0, 0.07);
-  --search-input-border: 1px solid rgba(0, 0, 0, 0.14);
   --reset-color: var(--black);
 }
 
@@ -63,31 +60,24 @@
 
 .ais__input {
   grid-area: input;
-  @include font_main;
-  background-color: var(--search-input-bg);
-  color: var(--color-fg);
-  border: var(--search-input-border);
+  @include form_input;
   border-radius: var(--border-radius-base) 0 0 var(--border-radius-base);
-  font-size: 1rem;
-  padding: 0.5rem;
-  width: 100%;
   height: var(--form-height);
-  background: rgba(255, 255, 255, 0.06);
-  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  width: 100%;
 }
 
 .ais__input:focus-visible {
-  @include search_focus_style;
+  @include input_focus;
 }
 
 .ais__reset {
   @include font_semibold;
   grid-area: button;
-  background-color: var(--search-input-bg);
+  background-color: var(--input-bg);
   display: inline;
   border-radius: 0;
   padding: 0.6rem 1rem;
-  border: var(--search-input-border);
+  border: var(--input-border);
   border-left-width: 0;
   width: 100%;
   height: var(--form-height);
@@ -96,7 +86,7 @@
 }
 
 .ais__reset:focus-visible {
-  @include search_focus_style;
+  @include input_focus;
 }
 
 .ais-Highlight-highlighted {

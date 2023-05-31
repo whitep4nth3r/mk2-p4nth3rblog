@@ -55,8 +55,82 @@ $sponsor_layout_breakpoint: 881px;
   display: grid;
   gap: 2rem;
   margin-top: 3rem;
+  margin-bottom: 3rem;
 
   @media screen and (min-width: $sponsor_layout_breakpoint) {
     grid-template-columns: 1fr 1fr;
+  }
+}
+
+.sponsorships__form {
+  padding: 2rem;
+  background-color: var(--card-bg);
+  border-radius: 1rem;
+  max-width: 600px;
+}
+
+.sponsorships__formInput {
+  @include form_input;
+
+  &:focus-visible {
+    @include input_focus;
+  }
+}
+
+.sponsorships__formInput--text {
+  margin-bottom: 1rem;
+  display: block;
+  width: 100%;
+}
+
+.sponsorships__formInput--checkbox {
+}
+
+.sponsorships__formLabel {
+  @include font_semibold;
+  display: block;
+  width: 100%;
+}
+
+.sponsorships__question {
+  @include font_semibold;
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.sponsorships__formTextArea {
+  @include form_input;
+  width: 100%;
+  
+
+  &:focus-visible {
+    @include input_focus;
+  }
+}
+
+.sponsorships__formTitle {
+  @include font_semibold;
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 1.25;
+  margin-bottom: 1rem;
+  color: var(--color-fg);
+}
+
+.sponsorships__formRow {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.sponsorships__checkboxRow {
+  display: flex;
+  gap: 1rem;
+  flex-direction: row;
+  margin-bottom: 0.5rem;
+
+  &:last-of-type {
+    margin-bottom: 1rem;
   }
 }

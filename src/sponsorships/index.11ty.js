@@ -58,6 +58,47 @@ exports.render = function (data) {
     <section class="sponsorships__testimonials">
       ${testimonials.map((testimonial) => Testimonial({ testimonial })).join("")}
     </section>
+
+    <section class="sponsorships__form">
+        <h2 class="sponsorships__formTitle">Get in touch, let's talk!</h2>
+
+        <form name="show_me_the_money" method="POST" netlify>
+          <div class="sponsorships__formRow">
+            <label class="sponsorships__formLabel" for="name">Name</label>
+            <input type="text" name="name" id="name" class="sponsorships__formInput sponsorships__formInput--text">
+          </div>
+          <div class="sponsorships__formRow">
+            <label class="sponsorships__formLabel" for="email">Email</label>
+            <input type="email" name="email" id="email" class="sponsorships__formInput sponsorships__formInput--text">
+          </div>
+          <p class="sponsorships__question">What do you want to talk about?</p>
+
+          <div class="sponsorships__checkboxRow">
+            <input type="checkbox" value="the_cold_start" id="cold_start" class="sponsorships__formInput sponsorships__formInput--checkbox">
+            <label class="sponsorships__formLabel" for="cold_start">Live stream: The Cold Start</label>
+          </div>
+          <div class="sponsorships__checkboxRow">
+            <input type="checkbox" value="guest_star" id="guest_star" class="sponsorships__formInput sponsorships__formInput--checkbox">
+            <label class="sponsorships__formLabel" for="guest_star">Live stream: The Guest Star</label>
+          </div>
+          <div class="sponsorships__checkboxRow">
+            <input type="checkbox" value="tech_tutorials" id="tech_tutorials" class="sponsorships__formInput sponsorships__formInput--checkbox">
+            <label class="sponsorships__formLabel" for="tech_tutorials">Technical tutorials</label>
+          </div>
+          <div class="sponsorships__checkboxRow">
+            <input type="checkbox" value="demos" id="demos" class="sponsorships__formInput sponsorships__formInput--checkbox">
+            <label class="sponsorships__formLabel" for="demos">Demo websites and apps</label>
+          </div>
+
+          <div class="sponsorships__formRow">
+            <label class="sponsorships__formLabel">Add more info, say hi, tell a joke?</label>
+            <textarea name="message" rows="5" class="sponsorships__formTextArea"></textarea>
+          </div>
+          
+          <button type="submit">Submit</button>
+
+      </form>
+    <section>
   </div>
   `;
 };

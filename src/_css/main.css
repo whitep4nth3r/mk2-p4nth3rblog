@@ -186,6 +186,16 @@ main:after {
   right: -20%;
 }
 
+[color-mode=dark] {
+  --input-bg: rgba(255, 255, 255, 0.06);
+  --input-border: 0.0625rem solid rgba(255, 255, 255, 0.18);
+}
+
+[color-mode=light] {
+  --input-bg: rgba(0, 0, 0, 0.07);
+  --input-border: 1px solid rgba(0, 0, 0, 0.14);
+}
+
 @keyframes flash {
   0% {
     opacity: 0;
@@ -1945,14 +1955,10 @@ main:after {
 }
 
 [color-mode=dark] {
-  --search-input-bg: rgba(255, 255, 255, 0.06);
-  --search-input-border: 0.0625rem solid rgba(255, 255, 255, 0.18);
   --reset-color: var(--white);
 }
 
 [color-mode=light] {
-  --search-input-bg: rgba(0, 0, 0, 0.07);
-  --search-input-border: 1px solid rgba(0, 0, 0, 0.14);
   --reset-color: var(--black);
 }
 
@@ -2013,16 +2019,17 @@ main:after {
   grid-area: input;
   font-weight: var(--font-weight-main);
   font-family: var(--font-family-main);
-  background-color: var(--search-input-bg);
+  background-color: var(--input-bg);
   color: var(--color-fg);
-  border: var(--search-input-border);
-  border-radius: var(--border-radius-base) 0 0 var(--border-radius-base);
+  border: var(--input-border);
+  border-radius: var(--border-radius-base);
   font-size: 1rem;
   padding: 0.5rem;
-  width: 100%;
-  height: var(--form-height);
   background: rgba(255, 255, 255, 0.06);
   box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  border-radius: var(--border-radius-base) 0 0 var(--border-radius-base);
+  height: var(--form-height);
+  width: 100%;
 }
 
 .ais__input:focus-visible {
@@ -2037,11 +2044,11 @@ main:after {
   font-weight: var(--font-weight-mid);
   font-family: var(--font-family-main);
   grid-area: button;
-  background-color: var(--search-input-bg);
+  background-color: var(--input-bg);
   display: inline;
   border-radius: 0;
   padding: 0.6rem 1rem;
-  border: var(--search-input-border);
+  border: var(--input-border);
   border-left-width: 0;
   width: 100%;
   height: var(--form-height);
@@ -2692,7 +2699,6 @@ pre[class*=language-] {
   justify-content: flex-start;
   border-radius: 1rem;
   background-color: var(--testimonial-bg);
-  box-shadow: var(--card-box-shadow-hover);
 }
 
 .testimonial__quote {
@@ -2865,11 +2871,107 @@ pre[class*=language-] {
   display: grid;
   gap: 2rem;
   margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 @media screen and (min-width: 881px) {
   .sponsorships__testimonials {
     grid-template-columns: 1fr 1fr;
   }
+}
+
+.sponsorships__form {
+  padding: 2rem;
+  background-color: var(--card-bg);
+  border-radius: 1rem;
+  max-width: 600px;
+}
+
+.sponsorships__formInput {
+  font-weight: var(--font-weight-main);
+  font-family: var(--font-family-main);
+  background-color: var(--input-bg);
+  color: var(--color-fg);
+  border: var(--input-border);
+  border-radius: var(--border-radius-base);
+  font-size: 1rem;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+}
+.sponsorships__formInput:focus-visible {
+  outline-color: transparent;
+  outline-style: solid;
+  outline-offset: 0.125rem;
+  box-shadow: inset var(--color-fg) 0 0 0 0.125rem;
+  transition: box-shadow var(--global-transition-time) ease-in-out;
+}
+
+.sponsorships__formInput--text {
+  margin-bottom: 1rem;
+  display: block;
+  width: 100%;
+}
+
+.sponsorships__formLabel {
+  font-weight: var(--font-weight-mid);
+  font-family: var(--font-family-main);
+  display: block;
+  width: 100%;
+}
+
+.sponsorships__question {
+  font-weight: var(--font-weight-mid);
+  font-family: var(--font-family-main);
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.sponsorships__formTextArea {
+  font-weight: var(--font-weight-main);
+  font-family: var(--font-family-main);
+  background-color: var(--input-bg);
+  color: var(--color-fg);
+  border: var(--input-border);
+  border-radius: var(--border-radius-base);
+  font-size: 1rem;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  width: 100%;
+}
+.sponsorships__formTextArea:focus-visible {
+  outline-color: transparent;
+  outline-style: solid;
+  outline-offset: 0.125rem;
+  box-shadow: inset var(--color-fg) 0 0 0 0.125rem;
+  transition: box-shadow var(--global-transition-time) ease-in-out;
+}
+
+.sponsorships__formTitle {
+  font-weight: var(--font-weight-mid);
+  font-family: var(--font-family-main);
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 1.25;
+  margin-bottom: 1rem;
+  color: var(--color-fg);
+}
+
+.sponsorships__formRow {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.sponsorships__checkboxRow {
+  display: flex;
+  gap: 1rem;
+  flex-direction: row;
+  margin-bottom: 0.5rem;
+}
+.sponsorships__checkboxRow:last-of-type {
+  margin-bottom: 1rem;
 }
 
 .streamPackage h2 {
