@@ -125,13 +125,14 @@ function itemMeta(item) {
 const Card = ({ item, showType = true }) => {
   const heading = item.title || item.name;
   const itemImage = findImage(item);
-
+  const transition =
+    item.type === "post" ? ` style="view-transition-name: post--${item.sys.id.toLowerCase()}` : "";
   return `
   ${openingTag({ item, heading })}
     ${renderImage({ image: itemImage, type: item.type })}
     <div class="card__inner">
       ${renderDate(item)}
-      <h2 class="card__title">${heading}</h2>
+      <h2 class="card__title"${transition}">${heading}</h2>
       ${description(item)}
       
       ${showType === false ? itemMeta(item) : renderType(item)}

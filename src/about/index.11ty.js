@@ -37,7 +37,7 @@ exports.render = function (data) {
 
       <div class="about__details">
         <div class="about__name">
-          <h1>
+          <h1 class="transition__logo">
             ${NameLogo()}
           </h1>
         </div>

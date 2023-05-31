@@ -1,0 +1,12 @@
+@media not (prefers-reduced-motion: reduce) {
+  .transition__logo {
+    view-transition-name: logo;
+  }
+
+  .transition__avatar {
+    view-transition-name: avatar;
+  }
+
+  //problem here is that we can't turn off the dynamic blog post title
+  //transitions because of no wildcard???
+}

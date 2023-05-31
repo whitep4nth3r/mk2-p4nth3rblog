@@ -1,6 +1,6 @@
 function BioImage({ image }) {
   return /*html*/ `
-    <picture>
+    <picture class="transition__avatar">
       <source
         type="image/avif"
         srcset="${image.url}?q=75&w=500&fm=avif 500w, ${image.url}?q=75&w=900&fm=avif 900w" 

@@ -87,7 +87,9 @@ exports.render = async function (data) {
         updatedDate: post.updatedDate,
       })}
     </div>
-    <h1 class="post__h1">${post.title}</h1>
+    <h1 class="post__h1" style="view-transition-name: post--${post.sys.id.toLowerCase()}">${
+    post.title
+  }</h1>
     <section class="post">
       <aside class="post__aside">
         <div class="post__authorContainer">

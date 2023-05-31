@@ -2952,4 +2952,13 @@ pre[class*=language-] {
   border-radius: var(--border-radius-base);
 }
 
+@media not (prefers-reduced-motion: reduce) {
+  .transition__logo {
+    view-transition-name: logo;
+  }
+  .transition__avatar {
+    view-transition-name: avatar;
+  }
+}
+
 /*# sourceMappingURL=main.css.map */

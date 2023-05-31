@@ -7,7 +7,7 @@ var md = require("markdown-it")({
 function homeAbout({ bio }) {
   return /* html */ `
   <div class="homeAbout">
-    <h1 class="homeAbout__name">
+    <h1 class="homeAbout__name transition__logo">
       ${NameLogo()}
     </h1>
     <div class="homeAbout__bio">
