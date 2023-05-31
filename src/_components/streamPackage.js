@@ -7,7 +7,6 @@ function StreamPackage({ package }) {
   
   <div class="streamPackage">
     <p class="streamPackage__title">${package.title}</p>
-   
     <p class="streamPackage__description">${md.render(package.description)}</p>
   </div>`;
 }

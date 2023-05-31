@@ -41,18 +41,23 @@ exports.render = function (data) {
         </div>
     </section>
   
-    <section class="sponsorships__content">
+    <section>
+      <div class="sponsorships__content">
+        ${md.render(content.packagesIntro)}
+        ${md.render(content.streamsIntro)}
+      </div>
 
-      ${md.render(content.packagesIntro)}
-      ${md.render(content.streamsIntro)}
+      <div class="sponsorships__packages">
+        ${content.streamPackagesCollection.items
+          .map((package) => StreamPackage({ package }))
+          .join("")}
+      </div>
 
-      ${content.streamPackagesCollection.items
-        .map((package) => StreamPackage({ package }))
-        .join("")}
-
-      ${md.render(content.demoAppsAndWebsites)}
-      ${md.render(content.videoContent)}
-
+      <div class="sponsorships__content">
+        ${md.render(content.technicalTutorials)}
+        ${md.render(content.demoAppsAndWebsites)}
+        ${md.render(content.videoContent)}
+      <div>
     </section>
 
     <section class="sponsorships__testimonials">

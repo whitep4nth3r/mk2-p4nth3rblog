@@ -23,6 +23,10 @@ $sponsor_layout_breakpoint: 881px;
 
 .sponsorships__introText {
   @include general_md;
+
+  p:last-of-type {
+    margin-bottom: 0;
+  }
 }
 
 .sponsorships__author {
@@ -33,7 +37,28 @@ $sponsor_layout_breakpoint: 881px;
 
 .sponsorships__content {
   @include general_md;
+
+  h2 {
+    margin-top: 2rem;
+  }
+}
+
+.sponsorships__packages {
+  display: grid;
+  margin: 2rem 0;
+
+  @media screen and (min-width: $sponsor_layout_breakpoint) {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
 }
 
 .sponsorships__testimonials {
+  display: grid;
+  gap: 2rem;
+  margin-top: 3rem;
+
+  @media screen and (min-width: $sponsor_layout_breakpoint) {
+    grid-template-columns: 1fr 1fr;
+  }
 }
