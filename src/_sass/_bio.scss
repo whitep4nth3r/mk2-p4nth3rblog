@@ -72,6 +72,14 @@ $bio_breakpoint: 1237px;
   display: none;
   @include short_bio;
 
+  h2 {
+    @include font_semibold;
+    font-size: 1.875rem;
+    line-height: 1.375;
+    margin-bottom: 1rem;
+    color: var(--color-fg);
+  }
+
   .videoEmbed__cta {
     @include font_main;
     font-size: 1rem;

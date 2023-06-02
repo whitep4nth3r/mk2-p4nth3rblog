@@ -1760,6 +1760,14 @@ main:after {
   transition: box-shadow var(--global-transition-time) ease-in-out;
   border-radius: var(--border-radius-base);
 }
+.bio__block h2 {
+  font-weight: var(--font-weight-mid);
+  font-family: var(--font-family-main);
+  font-size: 1.875rem;
+  line-height: 1.375;
+  margin-bottom: 1rem;
+  color: var(--color-fg);
+}
 .bio__block .videoEmbed__cta {
   font-weight: var(--font-weight-main);
   font-family: var(--font-family-main);
