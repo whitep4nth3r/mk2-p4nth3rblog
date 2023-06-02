@@ -1534,7 +1534,8 @@ main:after {
   line-height: 1.75;
   color: var(--color-fg);
 }
-.blogEndAuthor__bio h2, .blogEndAuthor__bio h3 {
+.blogEndAuthor__bio h2,
+.blogEndAuthor__bio h3 {
   font-weight: var(--font-weight-mid);
   font-family: var(--font-family-main);
   font-size: 1.125rem;
@@ -2691,6 +2692,9 @@ pre[class*=language-] {
 
 .testimonial {
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   justify-content: flex-start;
   border-radius: 1rem;
   background-color: var(--testimonial-bg);
@@ -2701,6 +2705,7 @@ pre[class*=language-] {
   grid-area: quote;
   font-weight: var(--font-weight-main);
   font-family: var(--font-family-main);
+  color: var(--color-fg-copy);
   font-size: 1.2rem;
   line-height: 1.5;
   margin-bottom: 2rem;
@@ -2731,7 +2736,10 @@ pre[class*=language-] {
 
 .testimonial__org {
   grid-area: org;
-  font-weight: var(--font-weight-mid);
+  color: var(--color-fg-copy);
+  text-decoration-style: solid;
+  text-decoration-color: var(--color-fg-copy);
+  font-weight: var(--font-weight-main);
   font-family: var(--font-family-main);
 }
 .testimonial__org:focus-visible {
@@ -2803,6 +2811,10 @@ pre[class*=language-] {
   transition: box-shadow var(--global-transition-time) ease-in-out;
   border-radius: var(--border-radius-base);
 }
+.sponsorships__introText h3 {
+  font-weight: var(--font-weight-main);
+  color: var(--color-fg-copy);
+}
 .sponsorships__introText p:last-of-type {
   margin-bottom: 0;
 }
@@ -2848,7 +2860,7 @@ pre[class*=language-] {
   transition: box-shadow var(--global-transition-time) ease-in-out;
   border-radius: var(--border-radius-base);
 }
-.sponsorships__content h2 {
+.sponsorships__content h3 {
   margin-top: 2rem;
 }
 

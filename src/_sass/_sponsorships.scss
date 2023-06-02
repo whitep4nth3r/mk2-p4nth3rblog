@@ -24,6 +24,11 @@ $sponsor_layout_breakpoint: 881px;
 .sponsorships__introText {
   @include general_md;
 
+  h3 {
+    font-weight: var(--font-weight-main);
+    color: var(--color-fg-copy);
+  }
+
   p:last-of-type {
     margin-bottom: 0;
   }
@@ -36,7 +41,7 @@ $sponsor_layout_breakpoint: 881px;
 .sponsorships__content {
   @include general_md;
 
-  h2 {
+  h3 {
     margin-top: 2rem;
   }
 }
