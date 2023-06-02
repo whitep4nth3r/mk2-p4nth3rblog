@@ -30,7 +30,15 @@
 }
 
 .post__meta__topic {
-  @include meta_label_alt;
+  @include font_semibold;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--pink);
+  background-color: #ffffff;
+  border-radius: 1rem;
+  padding: 0.125rem 0.5rem;
+  width: max-content;
 }
 
 .post__excerpt {

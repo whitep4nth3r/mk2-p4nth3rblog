@@ -593,18 +593,7 @@ main:after {
   display: block;
 }
 
-.homeAbout__bio {
-  max-width: 42rem;
-}
 .homeAbout__bio h2 {
-  font-weight: var(--font-weight-mid);
-  font-family: var(--font-family-main);
-  font-size: clamp(2rem, 3vw, 3rem);
-  line-height: 1.25;
-  margin-bottom: 1rem;
-  color: var(--color-fg);
-}
-.homeAbout__bio h3 {
   font-weight: var(--font-weight-mid);
   font-family: var(--font-family-main);
   font-size: 1.875rem;
@@ -1533,30 +1522,24 @@ main:after {
   grid-area: social;
 }
 
-.blogEndAuthor__bio {
-  grid-area: bio;
-  max-width: 42rem;
-  margin-bottom: 0.5rem;
-}
-.blogEndAuthor__bio h2 {
-  font-weight: var(--font-weight-bold);
-  font-family: var(--font-family-main);
-  font-size: 1.125rem;
-  line-height: 1.75;
-  color: var(--color-fg);
-}
-.blogEndAuthor__bio h3 {
+.blogEndAuthor__name {
   font-weight: var(--font-weight-mid);
   font-family: var(--font-family-main);
   font-size: 1.125rem;
   line-height: 1.75;
   color: var(--color-fg);
 }
+
+.blogEndAuthor__bio {
+  grid-area: bio;
+  margin-bottom: 0.5rem;
+}
 .blogEndAuthor__bio p {
   font-weight: var(--font-weight-main);
   font-family: var(--font-family-main);
   font-size: 1rem;
   line-height: 1.5;
+  margin-bottom: 1rem;
   color: var(--color-fg-copy);
 }
 .blogEndAuthor__bio p a {
@@ -1654,12 +1637,12 @@ main:after {
 
 [color-mode=dark] {
   --bio-button-color: rgba(255, 255, 255, 0.6);
-  --bio-button-selected-bg: rgba(255, 255, 255, 0.1);
+  --bio-button-bg: rgba(255, 255, 255, 0.1);
 }
 
 [color-mode=light] {
   --bio-button-color: var(--grey-mid);
-  --bio-button-selected-bg: rgba(52, 64, 84, 0.1);
+  --bio-button-bg: rgba(52, 64, 84, 0.1);
 }
 
 .bio {
@@ -1712,10 +1695,13 @@ main:after {
   background: transparent;
   border-radius: var(--border-radius-base);
   color: var(--bio-button-color);
+  background: var(--bio-button-bg);
+  color: var(--color-fg);
   font-weight: 600;
   font-size: 1rem;
   line-height: 1.5;
   padding: 0.625rem 0.875rem;
+  text-decoration: none;
 }
 .bio__button:focus-visible {
   outline: transparent;
@@ -1725,22 +1711,18 @@ main:after {
   border-radius: var(--border-radius-base);
 }
 
-.bio__button--selected {
-  background: var(--bio-button-selected-bg);
-  color: var(--color-fg);
-}
-
 .bio__block {
-  display: none;
+  margin-bottom: 4rem;
   max-width: 42rem;
 }
 .bio__block h2 {
   font-weight: var(--font-weight-mid);
   font-family: var(--font-family-main);
-  font-size: clamp(2rem, 3vw, 3rem);
-  line-height: 1.25;
+  font-size: 1.875rem;
+  line-height: 1.375;
   margin-bottom: 1rem;
   color: var(--color-fg);
+  scroll-margin-top: 10.5rem;
 }
 .bio__block h3 {
   font-weight: var(--font-weight-mid);
@@ -1777,11 +1759,6 @@ main:after {
   font-size: 1rem;
   line-height: 1;
   margin-bottom: 1rem;
-  color: var(--color-fg-copy);
-}
-
-.bio__block--show {
-  display: block;
 }
 
 [color-mode=dark] {
@@ -2694,6 +2671,9 @@ pre[class*=language-] {
 
 .testimonial {
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   justify-content: flex-start;
   border-radius: 1rem;
   background-color: var(--testimonial-bg);
@@ -2704,6 +2684,7 @@ pre[class*=language-] {
   grid-area: quote;
   font-weight: var(--font-weight-main);
   font-family: var(--font-family-main);
+  color: var(--color-fg-copy);
   font-size: 1.2rem;
   line-height: 1.5;
   margin-bottom: 2rem;
@@ -2734,7 +2715,10 @@ pre[class*=language-] {
 
 .testimonial__org {
   grid-area: org;
-  font-weight: var(--font-weight-mid);
+  color: var(--color-fg-copy);
+  text-decoration-style: solid;
+  text-decoration-color: var(--color-fg-copy);
+  font-weight: var(--font-weight-main);
   font-family: var(--font-family-main);
 }
 .testimonial__org:focus-visible {
@@ -2784,6 +2768,8 @@ pre[class*=language-] {
   line-height: 1.375;
   margin-bottom: 1rem;
   color: var(--color-fg);
+  font-weight: var(--font-weight-main);
+  color: var(--color-fg-copy);
 }
 .sponsorships__introText p {
   font-weight: var(--font-weight-main);
@@ -2829,6 +2815,7 @@ pre[class*=language-] {
   line-height: 1.375;
   margin-bottom: 1rem;
   color: var(--color-fg);
+  margin-top: 2rem;
 }
 .sponsorships__content p {
   font-weight: var(--font-weight-main);
@@ -2850,9 +2837,6 @@ pre[class*=language-] {
   box-shadow: var(--color-bg) 0 0 0 0.08rem, var(--color-focus-outline) 0 0 0 0.24rem;
   transition: box-shadow var(--global-transition-time) ease-in-out;
   border-radius: var(--border-radius-base);
-}
-.sponsorships__content h2 {
-  margin-top: 2rem;
 }
 
 .sponsorships__packages {
@@ -2877,69 +2861,35 @@ pre[class*=language-] {
   }
 }
 
-.streamPackage h2 {
-  font-weight: var(--font-weight-mid);
-  font-family: var(--font-family-main);
-  font-size: clamp(2rem, 3vw, 3rem);
-  line-height: 1.25;
-  margin-bottom: 1rem;
-  color: var(--color-fg);
-}
-.streamPackage h3 {
-  font-weight: var(--font-weight-mid);
-  font-family: var(--font-family-main);
-  font-size: 1.875rem;
-  line-height: 1.375;
-  margin-bottom: 1rem;
-  color: var(--color-fg);
-}
-.streamPackage p {
+.streamPackage__title {
   font-weight: var(--font-weight-main);
   font-family: var(--font-family-main);
-  font-size: 1.25rem;
-  line-height: 1.6;
+  font-size: 1rem;
+  line-height: 1.5;
   margin-bottom: 1rem;
   color: var(--color-fg-copy);
+  font-weight: var(--font-weight-mid);
+  font-family: var(--font-family-main);
 }
-.streamPackage p a {
+.streamPackage__title a {
   font-weight: var(--font-weight-mid);
   font-family: var(--font-family-main);
   color: var(--color-link);
   text-decoration: none;
 }
-.streamPackage p a:focus-visible {
+.streamPackage__title a:focus-visible {
   outline: transparent;
   outline-style: solid;
   box-shadow: var(--color-bg) 0 0 0 0.08rem, var(--color-focus-outline) 0 0 0 0.24rem;
   transition: box-shadow var(--global-transition-time) ease-in-out;
   border-radius: var(--border-radius-base);
 }
-.streamPackage .streamPackage__title {
-  font-weight: var(--font-weight-mid);
-  font-family: var(--font-family-main);
-}
 
-.streamPackage__description h2 {
-  font-weight: var(--font-weight-mid);
-  font-family: var(--font-family-main);
-  font-size: clamp(2rem, 3vw, 3rem);
-  line-height: 1.25;
-  margin-bottom: 1rem;
-  color: var(--color-fg);
-}
-.streamPackage__description h3 {
-  font-weight: var(--font-weight-mid);
-  font-family: var(--font-family-main);
-  font-size: 1.875rem;
-  line-height: 1.375;
-  margin-bottom: 1rem;
-  color: var(--color-fg);
-}
 .streamPackage__description p {
   font-weight: var(--font-weight-main);
   font-family: var(--font-family-main);
-  font-size: 1.25rem;
-  line-height: 1.6;
+  font-size: 1rem;
+  line-height: 1.5;
   margin-bottom: 1rem;
   color: var(--color-fg-copy);
 }
