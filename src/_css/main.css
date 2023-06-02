@@ -1600,18 +1600,16 @@ main:after {
 }
 
 .videoEmbed__cta {
-  font-weight: var(--font-weight-mid);
+  font-weight: var(--font-weight-main);
   font-family: var(--font-family-main);
-  font-size: 1.2rem;
-  line-height: 1.6;
+  font-size: 1rem;
+  line-height: 1;
   margin-bottom: 1rem;
-  margin-top: 2rem;
-  font-style: italic;
-  color: var(--color-fg);
+  color: var(--color-fg-copy);
 }
 
 .eleventy-plugin-youtube-embed {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   margin-top: 2rem;
   filter: var(--base-shadow-filter);
   border-radius: calc(var(--border-radius-base) * 2);
@@ -1774,7 +1772,12 @@ main:after {
   border-radius: var(--border-radius-base);
 }
 .bio__block .videoEmbed__cta {
-  margin-top: 0;
+  font-weight: var(--font-weight-main);
+  font-family: var(--font-family-main);
+  font-size: 1rem;
+  line-height: 1;
+  margin-bottom: 1rem;
+  color: var(--color-fg-copy);
 }
 
 .bio__block--show {
