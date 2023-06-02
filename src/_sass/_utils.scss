@@ -102,6 +102,7 @@
     color: var(--color-fg);
   }
 
+  h2,
   h3 {
     @include font_semibold;
     font-size: 1.125rem;

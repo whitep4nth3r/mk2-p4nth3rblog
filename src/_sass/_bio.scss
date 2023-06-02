@@ -2,11 +2,11 @@ $bio_breakpoint: 1237px;
 
 [color-mode="dark"] {
   --bio-button-color: rgba(255, 255, 255, 0.6);
-  --bio-button-selected-bg: rgba(255, 255, 255, 0.1);
+  --bio-button-bg: rgba(255, 255, 255, 0.1);
 }
 [color-mode="light"] {
   --bio-button-color: var(--grey-mid);
-  --bio-button-selected-bg: rgba(52, 64, 84, 0.1);
+  --bio-button-bg: rgba(52, 64, 84, 0.1);
 }
 
 .bio {
@@ -55,22 +55,31 @@ $bio_breakpoint: 1237px;
   background: transparent;
   border-radius: var(--border-radius-base);
   color: var(--bio-button-color);
+  background: var(--bio-button-bg);
+  color: var(--color-fg);
   font-weight: 600;
   font-size: 1rem;
   line-height: 1.5;
   padding: 0.625rem 0.875rem;
-
+  text-decoration: none;
   @include link_focus;
 }
 
 .bio__button--selected {
-  background: var(--bio-button-selected-bg);
-  color: var(--color-fg);
 }
 
 .bio__block {
-  display: none;
   @include short_bio;
+  margin-bottom: 4rem;
+
+  h2 {
+    @include font_semibold;
+    font-size: 1.875rem;
+    line-height: 1.375;
+    margin-bottom: 1rem;
+    color: var(--color-fg);
+    scroll-margin-top: 10.5rem;
+  }
 
   .videoEmbed__cta {
     @include font_main;
@@ -79,8 +88,4 @@ $bio_breakpoint: 1237px;
     margin-bottom: 1rem;
     color: var(--color-fg-copy);
   }
-}
-
-.bio__block--show {
-  display: block;
 }
