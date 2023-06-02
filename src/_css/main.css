@@ -593,18 +593,7 @@ main:after {
   display: block;
 }
 
-.homeAbout__bio {
-  max-width: 42rem;
-}
 .homeAbout__bio h2 {
-  font-weight: var(--font-weight-mid);
-  font-family: var(--font-family-main);
-  font-size: clamp(2rem, 3vw, 3rem);
-  line-height: 1.25;
-  margin-bottom: 1rem;
-  color: var(--color-fg);
-}
-.homeAbout__bio h3 {
   font-weight: var(--font-weight-mid);
   font-family: var(--font-family-main);
   font-size: 1.875rem;
@@ -1545,7 +1534,7 @@ main:after {
   line-height: 1.75;
   color: var(--color-fg);
 }
-.blogEndAuthor__bio h3 {
+.blogEndAuthor__bio h2, .blogEndAuthor__bio h3 {
   font-weight: var(--font-weight-mid);
   font-family: var(--font-family-main);
   font-size: 1.125rem;

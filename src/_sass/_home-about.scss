@@ -17,5 +17,27 @@
 }
 
 .homeAbout__bio {
-  @include short_bio;
+  h2 {
+    @include font_semibold;
+    font-size: 1.875rem;
+    line-height: 1.375;
+    margin-bottom: 1rem;
+    color: var(--color-fg);
+  }
+
+  p {
+    @include font_main;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: var(--color-fg-copy);
+
+    a {
+      @include font_semibold;
+      color: var(--color-link);
+      text-decoration: none;
+
+      @include link_focus;
+    }
+  }
 }

@@ -102,7 +102,7 @@
     color: var(--color-fg);
   }
 
-  h3 {
+  h2, h3 {
     @include font_semibold;
     font-size: 1.125rem;
     line-height: 1.75;
