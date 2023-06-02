@@ -28,7 +28,7 @@ function TabbedBio({ shortBio, speakerBio, longBio }) {
       <h2 id="long">Long bio</h2>
       ${longBio}
     </div>
-    <div class="bio__block" data-bio="video">
+    <div class="bio__block">
       <h2 id="video">Video story</h2>
       ${VideoEmbed({ embedUrl: "https://www.youtube.com/embed/j5ahKhnnKd4" })} 
     </div>
