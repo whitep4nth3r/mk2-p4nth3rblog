@@ -46,10 +46,9 @@
   --white: #faefff;
   --white-alt: #f7d9ff;
   --orange: #fc814a;
-  --yellow: #ffb626;
   --body-horizontal-padding-sm: 1rem;
   --body-horizontal-padding-lg: 2.5rem;
-  --font-family-main: "Inter UI var", Helvetica, Arial, sans-serif;
+  --font-family-main: "Inter UI var", Arial, sans-serif;
   --font-weight-bold: 800;
   --font-weight-mid: 600;
   --font-weight-main: 400;
@@ -595,7 +594,7 @@ main:after {
 }
 
 .homeAbout__bio {
-  max-width: 62ch;
+  max-width: 40rem;
 }
 .homeAbout__bio h2 {
   font-weight: var(--font-weight-mid);
@@ -1146,7 +1145,7 @@ main:after {
   content: '"';
   font-weight: normal;
   font-style: normal;
-  font-family: "Atomic Marker", Arial, sans-serif;
+  font-family: "Atomic Marker";
   color: var(--orange);
   font-size: 10rem;
   line-height: 0;
@@ -1270,7 +1269,7 @@ main:after {
   content: '"';
   font-weight: normal;
   font-style: normal;
-  font-family: "Atomic Marker", Arial, sans-serif;
+  font-family: "Atomic Marker";
   color: var(--orange);
   font-size: 10rem;
   line-height: 0;
@@ -1536,7 +1535,7 @@ main:after {
 
 .blogEndAuthor__bio {
   grid-area: bio;
-  max-width: 62ch;
+  max-width: 40rem;
   margin-bottom: 0.5rem;
 }
 .blogEndAuthor__bio h2 {
@@ -1735,7 +1734,7 @@ main:after {
 
 .bio__block {
   display: none;
-  max-width: 62ch;
+  max-width: 40rem;
 }
 .bio__block h2 {
   font-weight: var(--font-weight-mid);
@@ -2551,7 +2550,6 @@ pre[class*=language-] {
   font-family: var(--font-family-main);
   font-size: 1.2rem;
   line-height: 1.2;
-  max-width: 49ch;
 }
 
 .events__listItemName {
