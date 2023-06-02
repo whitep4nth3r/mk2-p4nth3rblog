@@ -54,14 +54,19 @@ function renderImage({ image, type }) {
   const modifier = type === "thing" ? " card__imageContainer--large" : "";
 
   if (image) {
-    return `<div class="card__imageContainer${modifier}"><img 
-          src="${image.url}?w=510" 
-          alt="" 
+    return `<div class="card__imageContainer${modifier}">
+      <picture>
+        <source type="image/avif" srcSet="${image.url}?w=510&fm=avif" />
+        <source type="image/webp" srcSet="${image.url}?w=510&fm=webp" />
+        <img 
+          src="${image.url}?w=510"
+          alt=""
           role="presentation"
           height="${image.height}"
           width="${image.width}"
-          class="card__image"
-          loading="lazy" /></div>`;
+          class="card__image" />
+      </picture>
+    </div>`;
   }
 
   return "";

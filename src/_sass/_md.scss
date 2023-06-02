@@ -1,0 +1,31 @@
+@mixin md_paragraph($fontSize: 1rem, $lineHeight: 1.5) {
+  @include font_main;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  margin-bottom: 1rem;
+  color: var(--color-fg-copy);
+
+  a {
+    @include font_semibold;
+    color: var(--color-link);
+    text-decoration: none;
+
+    @include link_focus;
+  }
+}
+
+@mixin md_h2 {
+  @include font_semibold;
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 1.25;
+  margin-bottom: 1rem;
+  color: var(--color-fg);
+}
+
+@mixin md_h3 {
+  @include font_semibold;
+  font-size: 1.875rem;
+  line-height: 1.375;
+  margin-bottom: 1rem;
+  color: var(--color-fg);
+}

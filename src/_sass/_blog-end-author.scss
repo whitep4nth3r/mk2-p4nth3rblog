@@ -22,8 +22,18 @@
   grid-area: social;
 }
 
+.blogEndAuthor__name {
+  @include font_semibold;
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: var(--color-fg);
+}
+
 .blogEndAuthor__bio {
   grid-area: bio;
-  @include short_bio_sm;
   margin-bottom: 0.5rem;
+
+  p {
+    @include md_paragraph;
+  }
 }

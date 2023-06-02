@@ -1,11 +1,13 @@
 .streamPackage {
-  @include general_md;
+}
 
-  .streamPackage__title {
-    @include font_semibold;
-  }
+.streamPackage__title {
+  @include md_paragraph;
+  @include font_semibold;
 }
 
 .streamPackage__description {
-  @include general_md;
+  p {
+    @include md_paragraph;
+  }
 }

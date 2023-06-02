@@ -18,31 +18,6 @@
   transition: box-shadow var(--global-transition-time) ease-in-out;
 }
 
-@mixin meta_label {
-  @include font_semibold;
-  font-weight: 500;
-  font-size: 0.875rem;
-  line-height: 1.5;
-  color: var(--color-fg);
-  background-color: var(--color-bg);
-  border-radius: 1rem;
-  padding: 0.125rem 0.5rem;
-  width: max-content;
-  text-transform: capitalize;
-}
-
-@mixin meta_label_alt {
-  @include font_semibold;
-  font-weight: 500;
-  font-size: 0.875rem;
-  line-height: 1.5;
-  color: var(--pink);
-  background-color: #ffffff;
-  border-radius: 1rem;
-  padding: 0.125rem 0.5rem;
-  width: max-content;
-}
-
 @mixin link_focus {
   &:focus-visible {
     outline: transparent;
@@ -50,78 +25,6 @@
     box-shadow: var(--color-bg) 0 0 0 0.08rem, var(--color-focus-outline) 0 0 0 0.24rem;
     transition: box-shadow var(--global-transition-time) ease-in-out;
     border-radius: var(--border-radius-base);
-  }
-}
-
-@mixin general_md {
-  h2 {
-    @include font_semibold;
-    font-size: clamp(2rem, 3vw, 3rem);
-    line-height: 1.25;
-    margin-bottom: 1rem;
-    color: var(--color-fg);
-  }
-
-  h3 {
-    @include font_semibold;
-    font-size: 1.875rem;
-    line-height: 1.375;
-    margin-bottom: 1rem;
-    color: var(--color-fg);
-  }
-
-  p {
-    @include font_main;
-    font-size: 1.25rem;
-    line-height: 1.6;
-    margin-bottom: 1rem;
-    color: var(--color-fg-copy);
-
-    a {
-      @include font_semibold;
-      color: var(--color-link);
-      text-decoration: none;
-
-      @include link_focus;
-    }
-  }
-}
-
-@mixin short_bio {
-  max-width: 42rem;
-  @include general_md;
-}
-
-@mixin short_bio_sm {
-  max-width: 42rem;
-
-  h2 {
-    @include font_bold;
-    font-size: 1.125rem;
-    line-height: 1.75;
-    color: var(--color-fg);
-  }
-
-  h3 {
-    @include font_semibold;
-    font-size: 1.125rem;
-    line-height: 1.75;
-    color: var(--color-fg);
-  }
-
-  p {
-    @include font_main;
-    font-size: 1rem;
-    line-height: 1.5;
-    color: var(--color-fg-copy);
-
-    a {
-      @include font_semibold;
-      color: var(--color-link);
-      text-decoration: none;
-
-      @include link_focus;
-    }
   }
 }
 
