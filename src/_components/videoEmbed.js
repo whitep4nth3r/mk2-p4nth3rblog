@@ -1,4 +1,4 @@
-function VideoEmbed({ embedUrl, title, showTitle = true, isShort = false }) {
+function VideoEmbed({ embedUrl, showTitle = true, isShort = false }) {
   // the embed URL needs to be in a <p> tag for the youtube plugin!
   const modifierClass = isShort ? `class="videoEmbed__ytShort"` : "";
   return /* html */ `

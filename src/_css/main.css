@@ -1773,6 +1773,9 @@ main:after {
   transition: box-shadow var(--global-transition-time) ease-in-out;
   border-radius: var(--border-radius-base);
 }
+.bio__block .videoEmbed__cta {
+  margin-top: 0;
+}
 
 .bio__block--show {
   display: block;

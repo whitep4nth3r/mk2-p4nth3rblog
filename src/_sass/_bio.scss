@@ -71,6 +71,10 @@ $bio_breakpoint: 1237px;
 .bio__block {
   display: none;
   @include short_bio;
+
+  .videoEmbed__cta {
+    margin-top: 0;
+  }
 }
 
 .bio__block--show {
