@@ -1,15 +1,13 @@
 .videoEmbed__cta {
-  @include font_semibold;
-  font-size: 1.2rem;
-  line-height: 1.6;
+  @include font_main;
+  font-size: 1rem;
+  line-height: 1;
   margin-bottom: 1rem;
-  margin-top: 2rem;
-  font-style: italic;
-  color: var(--color-fg);
+  color: var(--color-fg-copy);
 }
 
 .eleventy-plugin-youtube-embed {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   margin-top: 2rem;
   filter: var(--base-shadow-filter);
   border-radius: calc(var(--border-radius-base) * 2);
