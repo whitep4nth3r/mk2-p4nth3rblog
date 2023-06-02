@@ -26,18 +26,6 @@
   }
 
   p {
-    @include font_main;
-    font-size: 1.25rem;
-    line-height: 1.6;
-    margin-bottom: 1rem;
-    color: var(--color-fg-copy);
-
-    a {
-      @include font_semibold;
-      color: var(--color-link);
-      text-decoration: none;
-
-      @include link_focus;
-    }
+    @include md_paragraph($fontSize: 1.25rem, $lineHeight: 1.6);
   }
 }
