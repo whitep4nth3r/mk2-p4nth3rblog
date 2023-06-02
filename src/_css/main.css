@@ -1706,6 +1706,7 @@ main:after {
   font-size: 1rem;
   line-height: 1.5;
   padding: 0.625rem 0.875rem;
+  text-decoration: none;
 }
 .bio__button:focus-visible {
   outline: transparent;
@@ -1721,8 +1722,8 @@ main:after {
 }
 
 .bio__block {
-  display: none;
   max-width: 42rem;
+  margin-bottom: 4rem;
 }
 .bio__block h2 {
   font-weight: var(--font-weight-mid);
@@ -1768,6 +1769,7 @@ main:after {
   line-height: 1.375;
   margin-bottom: 1rem;
   color: var(--color-fg);
+  scroll-margin-top: 10.5rem;
 }
 .bio__block .videoEmbed__cta {
   font-weight: var(--font-weight-main);
@@ -1776,10 +1778,6 @@ main:after {
   line-height: 1;
   margin-bottom: 1rem;
   color: var(--color-fg-copy);
-}
-
-.bio__block--show {
-  display: block;
 }
 
 [color-mode=dark] {
