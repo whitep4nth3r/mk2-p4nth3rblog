@@ -594,7 +594,7 @@ main:after {
 }
 
 .homeAbout__bio {
-  max-width: 40rem;
+  max-width: 42rem;
 }
 .homeAbout__bio h2 {
   font-weight: var(--font-weight-mid);
@@ -1535,7 +1535,7 @@ main:after {
 
 .blogEndAuthor__bio {
   grid-area: bio;
-  max-width: 40rem;
+  max-width: 42rem;
   margin-bottom: 0.5rem;
 }
 .blogEndAuthor__bio h2 {
@@ -1734,7 +1734,7 @@ main:after {
 
 .bio__block {
   display: none;
-  max-width: 40rem;
+  max-width: 42rem;
 }
 .bio__block h2 {
   font-weight: var(--font-weight-mid);
