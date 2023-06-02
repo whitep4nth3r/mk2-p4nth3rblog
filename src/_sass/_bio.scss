@@ -69,8 +69,8 @@ $bio_breakpoint: 1237px;
 }
 
 .bio__block {
-  @include short_bio;
   margin-bottom: 4rem;
+  max-width: 42rem;
 
   h2 {
     @include font_semibold;
@@ -81,11 +81,18 @@ $bio_breakpoint: 1237px;
     scroll-margin-top: 10.5rem;
   }
 
+  h3 {
+    @include md_h3;
+  }
+
+  p {
+    @include md_paragraph($fontSize: 1.25rem, $lineHeight: 1.6);
+  }
+
   .videoEmbed__cta {
     @include font_main;
     font-size: 1rem;
     line-height: 1;
     margin-bottom: 1rem;
-    color: var(--color-fg-copy);
   }
 }
