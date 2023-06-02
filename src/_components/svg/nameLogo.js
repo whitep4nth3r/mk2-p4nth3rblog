@@ -1,6 +1,7 @@
 function NameLogo() {
   return /* html */ `
-<svg 
+<svg
+  class="transition__logo"
   viewBox="0 0 434 208" 
   fill="none" 
   xmlns="http://www.w3.org/2000/svg"

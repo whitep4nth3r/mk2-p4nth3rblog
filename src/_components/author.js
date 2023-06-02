@@ -10,7 +10,7 @@ function Author({ author, hideOnSmallScreens = false }) {
       <div class="author__imgContainer">
         ${BioImage({ image: author.imageBio })}
       </div>
-      <div class="author__name transition__logo">
+      <div class="author__name">
         ${NameLogo()}
       </div>
     </a>
