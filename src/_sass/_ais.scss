@@ -9,6 +9,14 @@
   --reset-color: var(--black);
 }
 
+@mixin search_focus_style {
+  outline-color: transparent;
+  outline-style: solid;
+  outline-offset: 0.125rem;
+  box-shadow: inset var(--color-fg) 0 0 0 0.125rem;
+  transition: box-shadow var(--global-transition-time) ease-in-out;
+}
+
 .ais {
   @media screen and (min-width: 48rem) {
     --form-height: 44px;
