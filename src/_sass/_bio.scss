@@ -71,6 +71,14 @@ $bio_breakpoint: 1237px;
 .bio__block {
   display: none;
   @include short_bio;
+
+  .videoEmbed__cta {
+    @include font_main;
+    font-size: 1rem;
+    line-height: 1;
+    margin-bottom: 1rem;
+    color: var(--color-fg-copy);
+  }
 }
 
 .bio__block--show {

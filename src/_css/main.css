@@ -46,10 +46,9 @@
   --white: #faefff;
   --white-alt: #f7d9ff;
   --orange: #fc814a;
-  --yellow: #ffb626;
   --body-horizontal-padding-sm: 1rem;
   --body-horizontal-padding-lg: 2.5rem;
-  --font-family-main: "Inter UI var", Helvetica, Arial, sans-serif;
+  --font-family-main: "Inter UI var", Arial, sans-serif;
   --font-weight-bold: 800;
   --font-weight-mid: 600;
   --font-weight-main: 400;
@@ -595,7 +594,7 @@ main:after {
 }
 
 .homeAbout__bio {
-  max-width: 62ch;
+  max-width: 42rem;
 }
 .homeAbout__bio h2 {
   font-weight: var(--font-weight-mid);
@@ -1146,7 +1145,7 @@ main:after {
   content: '"';
   font-weight: normal;
   font-style: normal;
-  font-family: "Atomic Marker", Arial, sans-serif;
+  font-family: "Atomic Marker";
   color: var(--orange);
   font-size: 10rem;
   line-height: 0;
@@ -1270,7 +1269,7 @@ main:after {
   content: '"';
   font-weight: normal;
   font-style: normal;
-  font-family: "Atomic Marker", Arial, sans-serif;
+  font-family: "Atomic Marker";
   color: var(--orange);
   font-size: 10rem;
   line-height: 0;
@@ -1536,7 +1535,7 @@ main:after {
 
 .blogEndAuthor__bio {
   grid-area: bio;
-  max-width: 62ch;
+  max-width: 42rem;
   margin-bottom: 0.5rem;
 }
 .blogEndAuthor__bio h2 {
@@ -1601,18 +1600,16 @@ main:after {
 }
 
 .videoEmbed__cta {
-  font-weight: var(--font-weight-mid);
+  font-weight: var(--font-weight-main);
   font-family: var(--font-family-main);
-  font-size: 1.2rem;
-  line-height: 1.6;
+  font-size: 1rem;
+  line-height: 1;
   margin-bottom: 1rem;
-  margin-top: 2rem;
-  font-style: italic;
-  color: var(--color-fg);
+  color: var(--color-fg-copy);
 }
 
 .eleventy-plugin-youtube-embed {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   margin-top: 2rem;
   filter: var(--base-shadow-filter);
   border-radius: calc(var(--border-radius-base) * 2);
@@ -1735,7 +1732,7 @@ main:after {
 
 .bio__block {
   display: none;
-  max-width: 62ch;
+  max-width: 42rem;
 }
 .bio__block h2 {
   font-weight: var(--font-weight-mid);
@@ -1773,6 +1770,14 @@ main:after {
   box-shadow: var(--color-bg) 0 0 0 0.08rem, var(--color-focus-outline) 0 0 0 0.24rem;
   transition: box-shadow var(--global-transition-time) ease-in-out;
   border-radius: var(--border-radius-base);
+}
+.bio__block .videoEmbed__cta {
+  font-weight: var(--font-weight-main);
+  font-family: var(--font-family-main);
+  font-size: 1rem;
+  line-height: 1;
+  margin-bottom: 1rem;
+  color: var(--color-fg-copy);
 }
 
 .bio__block--show {
@@ -2263,6 +2268,7 @@ pre[class*=language-] {
   display: flex;
   align-items: center;
   background: linear-gradient(145deg, var(--pink) 60%, var(--orange) 98%);
+  filter: blur(0px);
 }
 
 .card__imageContainer--large {
@@ -2388,11 +2394,11 @@ pre[class*=language-] {
   transition: all var(--global-transition-time) ease-in-out;
 }
 .twitchInfo__thumbnail:hover {
-  filter: grayscale(0) contrast(1.2);
+  filter: grayscale(0) contrast(1.1);
 }
 
 .twitchInfo__thumbnail--live {
-  filter: grayscale(0) contrast(1.2);
+  filter: grayscale(0) contrast(1.1);
 }
 
 .twitchInfo__deets {
@@ -2551,7 +2557,6 @@ pre[class*=language-] {
   font-family: var(--font-family-main);
   font-size: 1.2rem;
   line-height: 1.2;
-  max-width: 49ch;
 }
 
 .events__listItemName {
@@ -2748,8 +2753,8 @@ pre[class*=language-] {
 .sponsorships__title {
   font-weight: var(--font-weight-bold);
   font-family: var(--font-family-main);
-  font-size: clamp(2rem, 3.5vw, 3.5rem);
-  line-height: 1;
+  font-size: clamp(2.25rem, 3.5vw, 3.5rem);
+  line-height: 1.4;
   margin-bottom: 2.5rem;
 }
 
@@ -2807,8 +2812,6 @@ pre[class*=language-] {
 
 .sponsorships__author {
   width: 20rem;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .sponsorships__content h2 {

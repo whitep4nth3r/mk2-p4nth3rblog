@@ -88,12 +88,12 @@
 }
 
 @mixin short_bio {
-  max-width: 62ch;
+  max-width: 42rem;
   @include general_md;
 }
 
 @mixin short_bio_sm {
-  max-width: 62ch;
+  max-width: 42rem;
 
   h2 {
     @include font_bold;

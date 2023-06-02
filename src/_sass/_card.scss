@@ -49,6 +49,8 @@
   display: flex;
   align-items: center;
   background: linear-gradient(145deg, var(--pink) 60%, var(--orange) 98%);
+  // fixes weird edges
+  filter: blur(0px);
 }
 
 .card__imageContainer--large {
