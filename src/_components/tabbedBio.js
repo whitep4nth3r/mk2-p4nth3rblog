@@ -1,4 +1,5 @@
 const SocialLinks = require("./socialLinks");
+const VideoEmbed = require("./videoEmbed");
 
 function TabbedBio({ shortBio, speakerBio, longBio }) {
   return /*html*/ `
@@ -9,6 +10,7 @@ function TabbedBio({ shortBio, speakerBio, longBio }) {
         <button type="button" class="bio__button bio__button--selected" data-view="short">Short bio</button>
         <button type="button" class="bio__button" data-view="speaker">Speaker bio</button>
         <button type="button" class="bio__button" data-view="long">Long bio</button>
+        <button type="button" class="bio__button" data-view="video">Video story</button>
       </div>
       <div class="bio__links">
       ${SocialLinks()}
@@ -18,11 +20,14 @@ function TabbedBio({ shortBio, speakerBio, longBio }) {
     <div class="bio__block bio__block--show" data-bio="short">
       ${shortBio}
     </div>
+    <div class="bio__block" data-bio="speaker">
+      ${speakerBio}
+    </div>
     <div class="bio__block" data-bio="long">
       ${longBio}
     </div>
-    <div class="bio__block" data-bio="speaker">
-      ${speakerBio}
+    <div class="bio__block" data-bio="video">
+      ${VideoEmbed({ embedUrl: "https://www.youtube.com/embed/j5ahKhnnKd4" })} 
     </div>
   </div>
   
