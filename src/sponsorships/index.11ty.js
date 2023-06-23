@@ -26,6 +26,7 @@ exports.render = function (data) {
 
   return /* html */ `  
   <div class="sponsorships">
+    <p data-success class="sponsorships__success">Thanks for your message. I'll get back to you as soon as I can! In the meantime, why not <a href="https://twitter.com/whitep4nth3r">say hi on Twitter</a>.</p>
     <h1 class="sponsorships__title">${content.title}</h1>
     <section class="sponsorships__intro">
         <aside class="sponsorships__author" data-author>
@@ -60,16 +61,18 @@ exports.render = function (data) {
     </section>
 
     <section class="sponsorships__form">
-        <h2 class="sponsorships__formTitle">Get in touch, let's talk!</h2>
+        <h2 class="sponsorships__formTitle">Contact me</h2>
 
-        <form name="show_me_the_money" method="POST" netlify>
-          <div class="sponsorships__formRow">
-            <label class="sponsorships__formLabel" for="name">Name</label>
-            <input type="text" name="name" id="name" class="sponsorships__formInput sponsorships__formInput--text">
-          </div>
-          <div class="sponsorships__formRow">
-            <label class="sponsorships__formLabel" for="email">Email</label>
-            <input type="email" name="email" id="email" class="sponsorships__formInput sponsorships__formInput--text">
+        <form name="show_me_the_money" method="POST" action="/sponsorships/?success=true" netlify>
+          <div class="sponsorships__topRow">
+            <div class="sponsorships__formRow">
+              <label class="sponsorships__formLabel" for="name">Name</label>
+              <input type="text" name="name" id="name" class="sponsorships__formInput sponsorships__formInput--text">
+            </div>
+            <div class="sponsorships__formRow">
+              <label class="sponsorships__formLabel" for="email">Email</label>
+              <input type="email" name="email" id="email" class="sponsorships__formInput sponsorships__formInput--text">
+            </div>
           </div>
           <p class="sponsorships__question">What do you want to talk about?</p>
 
@@ -85,8 +88,8 @@ exports.render = function (data) {
             <input type="checkbox" value="tech_tutorials" id="tech_tutorials" class="sponsorships__formInput sponsorships__formInput--checkbox">
             <label class="sponsorships__formLabel" for="tech_tutorials">Technical tutorials</label>
           </div>
-          <div class="sponsorships__checkboxRow">
-            <input type="checkbox" value="demos" id="demos" class="sponsorships__formInput sponsorships__formInput--checkbox">
+          <div class="sponsorships__checkboxRow ">
+            <input type="checkbox" value="demos" id="demos" class="sponsorships__formInput sponsorships__formInput--checkbox sponsorships__checkboxRow--last">
             <label class="sponsorships__formLabel" for="demos">Demo websites and apps</label>
           </div>
 
@@ -95,7 +98,7 @@ exports.render = function (data) {
             <textarea name="message" rows="5" class="sponsorships__formTextArea"></textarea>
           </div>
           
-          <button type="submit">Submit</button>
+          <button class="sponsorships__submit" type="submit">Submit</button>
 
       </form>
     <section>
