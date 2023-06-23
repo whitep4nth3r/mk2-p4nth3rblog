@@ -8,6 +8,7 @@ exports.data = {
   layout: "base.html",
   title: pageTitle,
   activeNav: "home",
+  canonical: "https://whitep4nth3r.com/",
   metaDescription:
     "I write code for your entertainment. I stream live coding on Twitch, help developers build great websites, and love helping people get into tech.",
   openGraphImageUrl: OpenGraph.generateImageUrl({

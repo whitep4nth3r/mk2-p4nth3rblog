@@ -2258,6 +2258,9 @@ pre[class*=language-] {
 .card__imageContainer--large {
   aspect-ratio: 1/1;
 }
+.card__imageContainer--large * {
+  height: 100%;
+}
 
 .card__inner {
   padding: 0.75rem;
