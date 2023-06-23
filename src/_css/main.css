@@ -2683,7 +2683,6 @@ pre[class*=language-] {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  justify-content: flex-start;
   border-radius: 1rem;
   background-color: var(--testimonial-bg);
 }
@@ -2719,6 +2718,10 @@ pre[class*=language-] {
   grid-area: name;
   margin-bottom: 0;
   line-height: 1;
+  color: var(--color-fg-copy);
+  font-weight: var(--font-weight-main);
+  font-family: var(--font-family-main);
+  font-size: 1rem;
 }
 
 .testimonial__org {
@@ -2825,7 +2828,7 @@ pre[class*=language-] {
   color: var(--color-fg);
   margin-top: 2rem;
 }
-.sponsorships__content p {
+.sponsorships__content p:not(.testimonial__name) {
   font-weight: var(--font-weight-main);
   font-family: var(--font-family-main);
   font-size: 1.25rem;
@@ -2833,13 +2836,13 @@ pre[class*=language-] {
   margin-bottom: 1rem;
   color: var(--color-fg-copy);
 }
-.sponsorships__content p a {
+.sponsorships__content p:not(.testimonial__name) a {
   font-weight: var(--font-weight-mid);
   font-family: var(--font-family-main);
   color: var(--color-link);
   text-decoration: none;
 }
-.sponsorships__content p a:focus-visible {
+.sponsorships__content p:not(.testimonial__name) a:focus-visible {
   outline: transparent;
   outline-style: solid;
   box-shadow: var(--color-bg) 0 0 0 0.08rem, var(--color-focus-outline) 0 0 0 0.24rem;

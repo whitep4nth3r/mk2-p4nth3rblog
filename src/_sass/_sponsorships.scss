@@ -55,7 +55,7 @@ $sponsor_layout_breakpoint: 881px;
     margin-top: 2rem;
   }
 
-  p {
+  p:not(.testimonial__name) {
     @include md_paragraph($fontSize: 1.25rem, $lineHeight: 1.6);
   }
 }
