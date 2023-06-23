@@ -23,6 +23,10 @@
   path = "/events/"
   function = "clean-up-past-events"
 
+[[edge_functions]]
+  path = "/sponsorships/"
+  function = "contact"
+
 # redirects
 [[redirects]]
   from = "/api/*"
