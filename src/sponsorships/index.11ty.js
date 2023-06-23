@@ -56,13 +56,16 @@ exports.render = function (data) {
       <div>
     </section>
 
-    <section class="sponsorships__testimonials">
-      ${testimonials.map((testimonial) => Testimonial({ testimonial })).join("")}
+    <section class="sponsorships__content">
+      <h3>Word on the street</h3>
+      <div class="sponsorships__testimonials">
+        ${testimonials.map((testimonial) => Testimonial({ testimonial })).join("")}
+      </div>
     </section>
 
-    <section class="sponsorships__form">
-        <h2 class="sponsorships__formTitle">Contact me</h2>
-
+    <section class="sponsorships__content">
+      <h3>Contact me</h3>
+      <div class="sponsorships__form">
         <form name="show_me_the_money" method="POST" action="/sponsorships/?success=true" netlify>
           <div class="sponsorships__topRow">
             <div class="sponsorships__formRow">
@@ -99,7 +102,7 @@ exports.render = function (data) {
           </div>
           <button class="sponsorships__submit" type="submit">Submit</button>
       </form>
-    <section>
-  </div>
+    <div>
+  </section>
   `;
 };

@@ -2861,7 +2861,7 @@ pre[class*=language-] {
 .sponsorships__testimonials {
   display: grid;
   gap: 2rem;
-  margin-top: 3rem;
+  margin-top: 1rem;
   margin-bottom: 3rem;
 }
 @media screen and (min-width: 881px) {
@@ -2875,7 +2875,6 @@ pre[class*=language-] {
   background-color: var(--card-bg);
   border-radius: 1rem;
   max-width: 768px;
-  margin: auto;
 }
 
 .sponsorships__formInput {

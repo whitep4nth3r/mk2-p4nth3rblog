@@ -73,7 +73,7 @@ $sponsor_layout_breakpoint: 881px;
 .sponsorships__testimonials {
   display: grid;
   gap: 2rem;
-  margin-top: 3rem;
+  margin-top: 1rem;
   margin-bottom: 3rem;
 
   @media screen and (min-width: $sponsor_layout_breakpoint) {
@@ -86,7 +86,6 @@ $sponsor_layout_breakpoint: 881px;
   background-color: var(--card-bg);
   border-radius: 1rem;
   max-width: 768px;
-  margin: auto;
 }
 
 .sponsorships__formInput {
