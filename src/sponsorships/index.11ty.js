@@ -67,11 +67,11 @@ exports.render = function (data) {
           <div class="sponsorships__topRow">
             <div class="sponsorships__formRow">
               <label class="sponsorships__formLabel" for="name">Name</label>
-              <input type="text" name="name" id="name" class="sponsorships__formInput sponsorships__formInput--text">
+              <input type="text" name="name" id="name" class="sponsorships__formInput sponsorships__formInput--text" autocomplete="name">
             </div>
             <div class="sponsorships__formRow">
               <label class="sponsorships__formLabel" for="email">Email</label>
-              <input type="email" name="email" id="email" class="sponsorships__formInput sponsorships__formInput--text">
+              <input type="email" name="email" id="email" class="sponsorships__formInput sponsorships__formInput--text" autocomplete="email">
             </div>
           </div>
           <p class="sponsorships__question">What do you want to talk about?</p>
