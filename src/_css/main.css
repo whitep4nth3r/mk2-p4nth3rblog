@@ -2913,6 +2913,10 @@ pre[class*=language-] {
   width: 100%;
 }
 
+.sponsorships__formLabel--checkbox {
+  line-height: 1;
+}
+
 .sponsorships__question {
   font-weight: var(--font-weight-main);
   font-family: var(--font-family-main);
@@ -2980,6 +2984,7 @@ pre[class*=language-] {
   gap: 1rem;
   flex-direction: row;
   margin-bottom: 0.5rem;
+  align-items: center;
 }
 
 .sponsorships__checkboxRow--last {

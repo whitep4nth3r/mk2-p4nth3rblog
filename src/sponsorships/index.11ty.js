@@ -76,30 +76,28 @@ exports.render = function (data) {
           </div>
           <p class="sponsorships__question">What do you want to talk about?</p>
 
-          <div class="sponsorships__checkboxRow"><!-- add names to checkbxoes -->
-            <input type="checkbox" name="the_cold_start" value="✔" id="cold_start" class="sponsorships__formInput sponsorships__formInput--checkbox">
-            <label class="sponsorships__formLabel" for="cold_start">Live stream: The Cold Start</label>
+          <div class="sponsorships__checkboxRow">
+            <input type="checkbox" name="the_cold_start" value="✔" id="cold_start" class="sponsorships__formInput--checkbox">
+            <label class="sponsorships__formLabel sponsorships__formLabel--checkbox" for="cold_start">Live stream: The Cold Start</label>
           </div>
           <div class="sponsorships__checkboxRow">
-            <input type="checkbox" name="guest_star" value="✔" id="guest_star" class="sponsorships__formInput sponsorships__formInput--checkbox">
-            <label class="sponsorships__formLabel" for="guest_star">Live stream: The Guest Star</label>
+            <input type="checkbox" name="guest_star" value="✔" id="guest_star" class="sponsorships__formInput--checkbox">
+            <label class="sponsorships__formLabel sponsorships__formLabel--checkbox" for="guest_star">Live stream: The Guest Star</label>
           </div>
           <div class="sponsorships__checkboxRow">
-            <input type="checkbox" name="tech_tutorials" value="✔" id="tech_tutorials" class="sponsorships__formInput sponsorships__formInput--checkbox">
-            <label class="sponsorships__formLabel" for="tech_tutorials">Technical tutorials</label>
+            <input type="checkbox" name="tech_tutorials" value="✔" id="tech_tutorials" class="sponsorships__formInput--checkbox">
+            <label class="sponsorships__formLabel sponsorships__formLabel--checkbox" for="tech_tutorials">Technical tutorials</label>
           </div>
-          <div class="sponsorships__checkboxRow ">
-            <input type="checkbox" name="demos" value="✔" id="demos" class="sponsorships__formInput sponsorships__formInput--checkbox sponsorships__checkboxRow--last">
-            <label class="sponsorships__formLabel" for="demos">Demo websites and apps</label>
+          <div class="sponsorships__checkboxRow sponsorships__checkboxRow--last">
+            <input type="checkbox" name="demos" value="✔" id="demos" class="sponsorships__formInput--checkbox ">
+            <label class="sponsorships__formLabel sponsorships__formLabel--checkbox" for="demos">Demo websites and apps</label>
           </div>
 
           <div class="sponsorships__formRow">
             <label class="sponsorships__formLabel">Add more info, say hi, tell a joke?</label>
             <textarea name="message" rows="5" class="sponsorships__formTextArea"></textarea>
           </div>
-          
           <button class="sponsorships__submit" type="submit">Submit</button>
-
       </form>
     <section>
   </div>

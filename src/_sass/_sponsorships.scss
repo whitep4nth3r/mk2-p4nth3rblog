@@ -114,6 +114,10 @@ $sponsor_layout_breakpoint: 881px;
   width: 100%;
 }
 
+.sponsorships__formLabel--checkbox {
+  line-height: 1;
+}
+
 .sponsorships__question {
   @include font_main;
   font-size: 1.2rem;
@@ -166,6 +170,7 @@ $sponsor_layout_breakpoint: 881px;
   gap: 1rem;
   flex-direction: row;
   margin-bottom: 0.5rem;
+  align-items: center;
 }
 
 .sponsorships__checkboxRow--last {
