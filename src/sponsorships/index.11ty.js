@@ -76,20 +76,20 @@ exports.render = function (data) {
           </div>
           <p class="sponsorships__question">What do you want to talk about?</p>
 
-          <div class="sponsorships__checkboxRow">
-            <input type="checkbox" value="the_cold_start" id="cold_start" class="sponsorships__formInput sponsorships__formInput--checkbox">
+          <div class="sponsorships__checkboxRow"><!-- add names to checkbxoes -->
+            <input type="checkbox" name="the_cold_start" value="the_cold_start" id="cold_start" class="sponsorships__formInput sponsorships__formInput--checkbox">
             <label class="sponsorships__formLabel" for="cold_start">Live stream: The Cold Start</label>
           </div>
           <div class="sponsorships__checkboxRow">
-            <input type="checkbox" value="guest_star" id="guest_star" class="sponsorships__formInput sponsorships__formInput--checkbox">
+            <input type="checkbox" name="guest_star" value="guest_star" id="guest_star" class="sponsorships__formInput sponsorships__formInput--checkbox">
             <label class="sponsorships__formLabel" for="guest_star">Live stream: The Guest Star</label>
           </div>
           <div class="sponsorships__checkboxRow">
-            <input type="checkbox" value="tech_tutorials" id="tech_tutorials" class="sponsorships__formInput sponsorships__formInput--checkbox">
+            <input type="checkbox" name="tech_tutorials" value="tech_tutorials" id="tech_tutorials" class="sponsorships__formInput sponsorships__formInput--checkbox">
             <label class="sponsorships__formLabel" for="tech_tutorials">Technical tutorials</label>
           </div>
           <div class="sponsorships__checkboxRow ">
-            <input type="checkbox" value="demos" id="demos" class="sponsorships__formInput sponsorships__formInput--checkbox sponsorships__checkboxRow--last">
+            <input type="checkbox" name="demos" value="demos" id="demos" class="sponsorships__formInput sponsorships__formInput--checkbox sponsorships__checkboxRow--last">
             <label class="sponsorships__formLabel" for="demos">Demo websites and apps</label>
           </div>
 
