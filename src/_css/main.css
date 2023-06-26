@@ -1005,7 +1005,7 @@ main:after {
 .post__asideStickyGroup {
   position: sticky;
   top: 10rem;
-  overflow-y: scroll;
+  overflow-y: auto;
   max-height: 100vh;
   padding-top: 0.25rem;
   padding-bottom: 0;
