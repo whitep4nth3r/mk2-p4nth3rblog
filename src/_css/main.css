@@ -1630,7 +1630,7 @@ main:after {
 .uses_catHeading {
   position: relative;
   top: 2.5rem;
-  z-index: 10;
+  z-index: 9;
 }
 
 .uses__list {
@@ -2266,6 +2266,7 @@ pre[class*=language-] {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  justify-content: space-between;
 }
 
 .card__image {
