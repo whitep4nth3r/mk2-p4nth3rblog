@@ -80,9 +80,17 @@ function closingTag(item) {
   return `</div>`;
 }
 
+function formatCategoryName(name) {
+  if (name === "pc components") {
+    return "PC Components";
+  }
+
+  return name;
+}
+
 function renderType(item) {
   if (item.type === "thing") {
-    return `<span class="card__metaLabel">${item.categories[0]}</span>`;
+    return `<span class="card__metaLabel">${formatCategoryName(item.category)}</span>`;
   }
 
   return `<span class="card__metaLabel">${activityType[item.type]}</span>`;
