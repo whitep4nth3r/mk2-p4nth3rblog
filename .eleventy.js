@@ -22,6 +22,8 @@ module.exports = function (eleventyConfig) {
     lite: true,
   });
 
+  eleventyConfig.ignores.add("./src/_archive");
+
   return {
     dir: {
       data: "_data",

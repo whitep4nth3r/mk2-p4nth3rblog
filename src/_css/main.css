@@ -1308,6 +1308,11 @@ main:after {
   border-radius: var(--border-radius-base);
 }
 
+.post__arcadeEmbed {
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
 .pagination {
   margin: 4rem auto;
   max-width: var(--global-max-width);
@@ -2381,11 +2386,11 @@ pre[class*=language-] {
   transition: all var(--global-transition-time) ease-in-out;
 }
 .twitchInfo__thumbnail:hover {
-  filter: grayscale(0) contrast(1.1);
+  filter: grayscale(0);
 }
 
 .twitchInfo__thumbnail--live {
-  filter: grayscale(0) contrast(1.1);
+  filter: grayscale(0);
 }
 
 .twitchInfo__deets {

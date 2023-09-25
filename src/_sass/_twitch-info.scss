@@ -33,12 +33,12 @@
   transition: all var(--global-transition-time) ease-in-out;
 
   &:hover {
-    filter: grayscale(0) contrast(1.1);
+    filter: grayscale(0);
   }
 }
 
 .twitchInfo__thumbnail--live {
-  filter: grayscale(0) contrast(1.1);
+  filter: grayscale(0);
 }
 
 .twitchInfo__deets {
