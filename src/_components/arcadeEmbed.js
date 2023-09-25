@@ -1,7 +1,7 @@
 function ArcadeEmbed({ embedCode, title }) {
   return /* html */ `
     <div class="post__arcadeEmbed">
-      ${embedCode}>
+      ${embedCode}
     </div>`;
 }
 
