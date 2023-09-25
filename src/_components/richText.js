@@ -7,6 +7,7 @@ const ResponsiveImage = require("./responsiveImage");
 const Callout = require("./callout");
 const CodeBlock = require("./codeBlock");
 const VideoEmbed = require("./videoEmbed");
+const ArcadeEmbed = require("./arcadeEmbed");
 const CodePenEmbed = require("./codepenEmbed");
 const TweetEmbed = require("./tweetEmbed");
 const BlogPostEmbed = require("./blogPostEmbed");
@@ -121,6 +122,8 @@ function getRichTextRenderOptions(links, options) {
             return TweetEmbed({ tweetUrl: entry.tweetUrl });
           case "VideoEmbed":
             return VideoEmbed({ embedUrl: entry.embedUrl, title: entry.title });
+          case "ArcadeEmbed":
+            return ArcadeEmbed({ embedCode: entry.embedCode, title: entry.title });
           case "Callout":
             return Callout({ title: entry.title, content: entry.content, emoji: entry.emoji });
           case "CodeBlock":
