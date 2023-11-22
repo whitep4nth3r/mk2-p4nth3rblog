@@ -95,7 +95,9 @@ exports.render = async function (data) {
           ${Author({ author: post.author, hideOnSmallScreens: true })}
         </div>
         <div class="post__asideStickyGroup">
-          <span class="post__newsletterSignupWide">${NewsletterSignup()}</span>
+          <span class="post__newsletterSignupWide">${NewsletterSignup({
+            removeMargin: false,
+          })}</span>
           ${TableOfContents(post.body)}
         </div>
       </aside>
@@ -114,7 +116,9 @@ exports.render = async function (data) {
         ${post.isSponsored ? isSponsored() : ""}
         ${ExternalUrl({ url: post.externalUrl })}
 
-        <span class="post__newsletterSignupSmall">${NewsletterSignup()}</span>
+        <span class="post__newsletterSignupSmall">${NewsletterSignup({
+          removeMargin: false,
+        })}</span>
         <hr class="post__separator" />
 
         ${BlogEndAuthor({ author: post.author })}

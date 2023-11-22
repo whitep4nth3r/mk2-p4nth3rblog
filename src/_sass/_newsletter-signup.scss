@@ -2,6 +2,10 @@
   margin-bottom: 2rem;
 }
 
+.newsletterSignup--noMargin {
+  margin-bottom: 0;
+}
+
 .newsletterSignup__title {
   @include font_bold;
   color: var(--color-link);
