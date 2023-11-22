@@ -357,3 +357,19 @@
   margin-bottom: 2rem;
   margin-top: 2rem;
 }
+
+.post__newsletterSignupWide {
+  display: none;
+
+  @media screen and (min-width: 56em) {
+    display: block;
+  }
+}
+
+.post__newsletterSignupSmall {
+  display: block;
+
+  @media screen and (min-width: 56em) {
+    display: none;
+  }
+}
