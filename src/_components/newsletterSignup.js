@@ -2,7 +2,7 @@ function NewsletterSignup() {
   return /* html */ `  
      <div class="newsletterSignup">
         <h2 class="newsletterSignup__title">Want <span>weird stuff</span> in your inbox?</h2>
-        <p class="newsletterSignup__para">Subscribe to find no answers to questions you didn't know you had.</p> 
+        <p class="newsletterSignup__para">Subscribe to the Weird Wide Web Hole newsletter and find no answers to questions you didn't know you had.</p> 
         <form
           action="https://buttondown.email/api/emails/embed-subscribe/weirdwidewebhole"
           method="post"
