@@ -32,33 +32,6 @@
   }
 }
 
-.newsletterSignup__form {
-}
-
-.newsletterSignup__label {
-  @include font_semibold;
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  color: var(--color-fg-copy);
-}
-
-.newsletterSignup__input {
-  @include form_input;
-  border-radius: var(--border-radius-base);
-  height: var(--form-height);
-  width: 100%;
-  margin-bottom: 0.5rem;
-
-  &:focus {
-    @include search_focus_style;
-  }
-  &:focus-visible {
-    @include input_focus;
-  }
-}
-
 .newsletterSignup__submit {
   background-color: var(--pink);
   display: block;
@@ -68,9 +41,13 @@
   color: var(--white);
   font-family: "Atomic Marker";
   font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+  text-align: center;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  margin: 0 auto 0.5rem auto;
 }
 
-.newsletterSignup__submit:focus-visible {
+.newsletterSignup__submit:focus-visible,
+.newsletterSignup__submit:focus-visible:focus {
   @include input_focus;
 }

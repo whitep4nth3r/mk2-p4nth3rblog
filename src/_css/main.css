@@ -3138,47 +3138,6 @@ pre[class*=language-] {
   border-radius: var(--border-radius-base);
 }
 
-.newsletterSignup__label {
-  font-weight: var(--font-weight-mid);
-  font-family: var(--font-family-main);
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  color: var(--color-fg-copy);
-}
-
-.newsletterSignup__input {
-  font-weight: var(--font-weight-main);
-  font-family: var(--font-family-main);
-  background-color: var(--input-bg);
-  color: var(--color-fg);
-  border: var(--input-border);
-  border-radius: var(--border-radius-base);
-  font-size: 1rem;
-  padding: 0.5rem;
-  background: rgba(255, 255, 255, 0.06);
-  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
-  border-radius: var(--border-radius-base);
-  height: var(--form-height);
-  width: 100%;
-  margin-bottom: 0.5rem;
-}
-.newsletterSignup__input:focus {
-  outline-color: transparent;
-  outline-style: solid;
-  outline-offset: 0.125rem;
-  box-shadow: inset var(--color-fg) 0 0 0 0.125rem;
-  transition: box-shadow var(--global-transition-time) ease-in-out;
-}
-.newsletterSignup__input:focus-visible {
-  outline-color: transparent;
-  outline-style: solid;
-  outline-offset: 0.125rem;
-  box-shadow: inset var(--color-fg) 0 0 0 0.125rem;
-  transition: box-shadow var(--global-transition-time) ease-in-out;
-}
-
 .newsletterSignup__submit {
   background-color: var(--pink);
   display: block;
@@ -3188,10 +3147,14 @@ pre[class*=language-] {
   color: var(--white);
   font-family: "Atomic Marker";
   font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+  text-align: center;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  margin: 0 auto 0.5rem auto;
 }
 
-.newsletterSignup__submit:focus-visible {
+.newsletterSignup__submit:focus-visible,
+.newsletterSignup__submit:focus-visible:focus {
   outline-color: transparent;
   outline-style: solid;
   outline-offset: 0.125rem;
