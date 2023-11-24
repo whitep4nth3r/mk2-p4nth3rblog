@@ -68,7 +68,8 @@ const TwitchApi = {
 
 export default async (request, context) => {
   const response = await context.next();
-  const imageSize = "998x556";
+  const imageSizeOffline = "998x556";
+  const imageSizeOnline = "998x499";
 
   const streams = await TwitchApi.getStreams();
   const vods = await TwitchApi.getVods();
@@ -77,6 +78,11 @@ export default async (request, context) => {
   if (streams !== null && streams.data.length === 1) {
     const currentStream = streams.data[0];
     return new HTMLRewriter()
+      .on("[data-twitchinfo-wrapper]", {
+        element(element) {
+          element.setAttribute("data-live", "true");
+        },
+      })
       .on("[data-twitchinfo-title]", {
         element(element) {
           element.setInnerContent(currentStream.title);
@@ -84,8 +90,13 @@ export default async (request, context) => {
       })
       .on("[data-twitchinfo-thumbnail]", {
         element(element) {
-          const thumb_url = currentStream.thumbnail_url.replace("{width}x{height}", imageSize);
+          const thumb_url = currentStream.thumbnail_url.replace(
+            "{width}x{height}",
+            imageSizeOnline,
+          );
           element.setAttribute("src", thumb_url);
+          element.setAttribute("height", "1080");
+          element.setAttribute("width", "2160");
           element.removeAttribute("class");
           element.setAttribute("class", "twitchInfo__thumbnail twitchInfo__thumbnail--live");
         },
@@ -136,7 +147,10 @@ export default async (request, context) => {
         element(element) {
           //https://vod-secure.twitch.tv/_404/404_processing_%{width}x%{height}.png
           if (!latestVod.thumbnail_url.includes("processing")) {
-            const thumb_url = latestVod.thumbnail_url.replace("%{width}x%{height}", imageSize);
+            const thumb_url = latestVod.thumbnail_url.replace(
+              "%{width}x%{height}",
+              imageSizeOffline,
+            );
             element.setAttribute("src", thumb_url);
           }
         },

@@ -2,7 +2,7 @@ const PlayIcon = require("./svg/playIcon");
 
 function TwitchInfo() {
   return /* html */ `
-  <div class="twitchInfo">
+  <div data-twitchinfo-wrapper class="twitchInfo">
     <a href="https://twitch.tv/whitep4nth3r" class="twitchInfo__link" data-twitchinfo-link>
       <div class="twitchInfo__deets">
         <span class="twitchInfo__streamTitleContainer">

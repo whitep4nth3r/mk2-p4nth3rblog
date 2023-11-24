@@ -2374,6 +2374,13 @@ pre[class*=language-] {
   width: 100%;
 }
 
+.twitchInfo[data-live=true] .twitchInfo__link {
+  aspect-ratio: 2/1;
+}
+.twitchInfo[data-live=true] .twitchInfo__thumbnail {
+  aspect-ratio: 2/1;
+}
+
 .twitchInfo__link {
   position: relative;
   display: flex;
