@@ -1,0 +1,53 @@
+.newsletterSignup {
+  margin-bottom: 2rem;
+}
+
+.newsletterSignup--noMargin {
+  margin-bottom: 0;
+}
+
+.newsletterSignup__title {
+  @include font_bold;
+  color: var(--color-link);
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+
+  span {
+    font-family: "Atomic Marker";
+    color: var(--orange);
+  }
+}
+
+.newsletterSignup__para {
+  @include font_main;
+  font-size: 1rem;
+  line-height: 1.75;
+  margin-bottom: 1rem;
+  color: var(--color-fg-copy);
+  word-break: break-word;
+
+  a {
+    @include link_focus;
+  }
+}
+
+.newsletterSignup__submit {
+  background-color: var(--pink);
+  display: block;
+  border-width: 0;
+  border-radius: var(--border-radius-base);
+  width: 100%;
+  color: var(--white);
+  font-family: "Atomic Marker";
+  font-size: 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  margin: 0 auto 0.5rem auto;
+}
+
+.newsletterSignup__submit:focus-visible,
+.newsletterSignup__submit:focus-visible:focus {
+  @include input_focus;
+}

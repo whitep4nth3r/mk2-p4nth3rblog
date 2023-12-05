@@ -2,6 +2,7 @@ const HomeAbout = require("./_components/homeAbout");
 const OpenGraph = require("../lib/openGraph");
 const TwitchInfo = require("./_components/twitchInfo");
 const ActivityFeedItem = require("./_components/card");
+const NewsletterSignup = require("./_components/newsletterSignup");
 const pageTitle = "Salma Alam-Naylor — live streamer, software engineer and developer educator ";
 
 exports.data = {
@@ -22,7 +23,7 @@ exports.data = {
 
 exports.render = function (data) {
   const { activityFeed, person } = data;
-  const feedItems = activityFeed.slice(0, 10);
+  const feedItems = activityFeed.slice(0, 9);
 
   return /*html*/ `
   <section class="home">
@@ -39,6 +40,14 @@ exports.render = function (data) {
       </div>
       <a href="/activity/" class="home__heading">Latest news and activity</a>
       <div class="home__activity">
+      <div class="card">
+        <div class="card__imageContainer">
+        </div>
+        <div class="card__inner">
+          ${NewsletterSignup({ removeMargin: true })}
+          <span class="card__metaLabel">Newsletter</span>
+        </div>
+      </div>
       ${feedItems.map((item) => ActivityFeedItem({ item })).join("")}
       </div>
       <!-- <h2 class="home__heading"><a href="/activity/">See more stuff</a></h2> -->
