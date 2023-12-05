@@ -2,6 +2,7 @@
   :root {
     --global-transition-time: 0;
     --scroll-behaviour: auto;
+    --view-transition-time: 0;
   }
 }
 
@@ -36,6 +37,7 @@ $global_md_breakpoint: 768px;
   --base-shadow-filter: drop-shadow(0px 0.125rem 0.125rem rgba(0, 0, 0, 0.25));
 
   --global-transition-time: 0.21s;
+  --view-transition-time: 1s;
   --scroll-behaviour: smooth;
 
   --form-height: 48px;

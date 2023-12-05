@@ -34,6 +34,7 @@
   :root {
     --global-transition-time: 0;
     --scroll-behaviour: auto;
+    --view-transition-time: 0;
   }
 }
 :root {
@@ -58,6 +59,7 @@
   --post-max-width: 1064px;
   --base-shadow-filter: drop-shadow(0px 0.125rem 0.125rem rgba(0, 0, 0, 0.25));
   --global-transition-time: 0.21s;
+  --view-transition-time: 1s;
   --scroll-behaviour: smooth;
   --form-height: 48px;
 }
@@ -3108,13 +3110,33 @@ pre[class*=language-] {
 }
 
 @media not (prefers-reduced-motion: reduce) {
-  .transition__logo {
-    view-transition-name: logo;
-  }
   .transition__avatar {
     view-transition-name: avatar;
   }
-  
+  ::view-transition-old(avatar),
+  ::view-transition-new(avatar) {
+    animation-duration: var(--view-transition-time);
+  }
+  .transition__name {
+    view-transition-name: nameLogo;
+  }
+  ::view-transition-old(nameLogo),
+  ::view-transition-new(nameLogo) {
+    animation-duration: var(--view-transition-time);
+  }
+  .transition__bio {
+    view-transition-name: shortBio;
+    animation-duration: var(--view-transition-time);
+  }
+  ::view-transition-old(shortBio),
+  ::view-transition-new(shortBio) {
+    animation-duration: var(--view-transition-time);
+  }
+  [class^=post--],
+  [class^=postMeta--] {
+    /* */
+  }
+}
 .newsletterSignup {
   margin-bottom: 2rem;
 }

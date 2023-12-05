@@ -1,12 +1,35 @@
+// https://drafts.csswg.org/css-view-transitions/#selectordef-view-transition
 @media not (prefers-reduced-motion: reduce) {
-  .transition__logo {
-    view-transition-name: logo;
-  }
-
   .transition__avatar {
     view-transition-name: avatar;
   }
 
-  //problem here is that we can't turn off the dynamic blog post title
-  //transitions because of no wildcard styling option???
+  ::view-transition-old(avatar),
+  ::view-transition-new(avatar) {
+    animation-duration: var(--view-transition-time);
+  }
+
+  .transition__name {
+    view-transition-name: nameLogo;
+  }
+
+  ::view-transition-old(nameLogo),
+  ::view-transition-new(nameLogo) {
+    animation-duration: var(--view-transition-time);
+  }
+
+  .transition__bio {
+    view-transition-name: shortBio;
+    animation-duration: var(--view-transition-time);
+  }
+
+  ::view-transition-old(shortBio),
+  ::view-transition-new(shortBio) {
+    animation-duration: var(--view-transition-time);
+  }
+
+  [class^="post--"],
+  [class^="postMeta--"] {
+    /* */
+  }
 }

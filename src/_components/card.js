@@ -119,7 +119,7 @@ const activityType = {
 function itemMeta(item) {
   if (item.type === "post") {
     return `
-    <div class="card__meta">
+    <div class="card__meta" style="view-transition-name: postMeta--${item.sys.id.toLowerCase()}">
       <span class="card__metaLabel">${item.topicsCollection.items[0].name}</span>
       <span class="card__metaRead">${item.readingTime} min read →</span>
     </div>`;
@@ -139,7 +139,9 @@ const Card = ({ item, showType = true }) => {
   const heading = item.title || item.name;
   const itemImage = findImage(item);
   const transition =
-    item.type === "post" ? ` style="view-transition-name: post--${item.sys.id.toLowerCase()}` : "";
+    item.type === "post" || item.type === "talk"
+      ? ` style="view-transition-name: post--${item.sys.id.toLowerCase()}`
+      : "";
   return `
   ${openingTag({ item, heading })}
     ${renderImage({ image: itemImage, type: item.type })}

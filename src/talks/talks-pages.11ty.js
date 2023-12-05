@@ -37,7 +37,9 @@ exports.render = function (data) {
 
   return /* html */ `
   <div class="post__meta">
-    <p class="post__meta__topic">${talk.topicsCollection.items[0].name}</p>
+    <p class="post__meta__topic" style="view-transition-name: postMeta--${talk.sys.id.toLowerCase()}">${
+    talk.topicsCollection.items[0].name
+  }</p>
       ${PublishedDate({
         date: talk.date,
         readingTime: talk.watchTime,
@@ -45,7 +47,9 @@ exports.render = function (data) {
         updatedDate: null,
       })}
     </div>
-  <h1 class="post__h1">${talk.title}</h1>
+  <h1 class="post__h1" style="view-transition-name: post--${talk.sys.id.toLowerCase()}">${
+    talk.title
+  }</h1>
   <section class="post">
     <aside class="post__aside">
       <div class="post__authorContainer">

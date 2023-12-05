@@ -80,7 +80,9 @@ exports.render = async function (data) {
   return /* html */ `
     <aside data-referer data-slug="${post.slug}" data-title="${post.title}"></aside>
     <div class="post__meta">
-      <p class="post__meta__topic">${post.topicsCollection.items[0].name}</p>
+      <p class="post__meta__topic" style="view-transition-name: postMeta--${post.sys.id.toLowerCase()}">${
+    post.topicsCollection.items[0].name
+  }</p>
       ${PublishedDate({
         date: post.date,
         readingTime: post.readingTime,

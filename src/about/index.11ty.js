@@ -30,7 +30,7 @@ exports.render = function (data) {
   return /* html */ `
     <div class="about">
       <div class="about__image">
-        <div class="about__fixed">
+        <div class="about__fixed transition__avatar">
           ${BioImage({ image: person.imageBio })}
         </div>
       </div>

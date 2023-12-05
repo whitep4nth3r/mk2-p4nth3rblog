@@ -16,7 +16,7 @@ function TabbedBio({ shortBio, speakerBio, longBio }) {
       </div>
     </div>
   
-    <div class="bio__block">
+    <div class="bio__block transition__bio">
       ${shortBio}
     </div>
     <div class="bio__block">

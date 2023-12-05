@@ -10,7 +10,7 @@ function homeAbout({ bio }) {
     <h1 class="homeAbout__name">
       ${NameLogo()}
     </h1>
-    <div class="homeAbout__bio">
+    <div class="homeAbout__bio transition__bio">
       ${md.render(bio)}
     </div>
   </div>

@@ -7,7 +7,7 @@ function Author({ author, hideOnSmallScreens = false }) {
   return /*html*/ `
   <div class="author${hideClass}">
     <a href="/about/" class="author__cta" aria-label="About Salma">
-      <div class="author__imgContainer">
+      <div class="author__imgContainer transition__avatar">
         ${BioImage({ image: author.imageBio })}
       </div>
       <div class="author__name">
