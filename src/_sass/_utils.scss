@@ -10,6 +10,14 @@
   border-width: 0;
 }
 
+@mixin input_focus {
+  outline-color: transparent;
+  outline-style: solid;
+  outline-offset: 0.125rem;
+  box-shadow: inset var(--color-fg) 0 0 0 0.125rem;
+  transition: box-shadow var(--global-transition-time) ease-in-out;
+}
+
 @mixin link_focus {
   &:focus-visible {
     outline: transparent;
@@ -31,4 +39,26 @@
   li {
     display: flex;
   }
+}
+
+[color-mode="dark"] {
+  --input-bg: rgba(255, 255, 255, 0.06);
+  --input-border: 0.0625rem solid rgba(255, 255, 255, 0.18);
+}
+
+[color-mode="light"] {
+  --input-bg: rgba(0, 0, 0, 0.07);
+  --input-border: 1px solid rgba(0, 0, 0, 0.14);
+}
+
+@mixin form_input {
+  @include font_main;
+  background-color: var(--input-bg);
+  color: var(--color-fg);
+  border: var(--input-border);
+  border-radius: var(--border-radius-base);
+  font-size: 1rem;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
 }

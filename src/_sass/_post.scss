@@ -77,7 +77,7 @@
 .post__asideStickyGroup {
   position: sticky;
   top: 10rem;
-  overflow-y: scroll;
+  overflow-y: auto;
   max-height: 100vh;
   padding-top: 0.25rem;
   padding-bottom: 0;
@@ -350,5 +350,26 @@
     position: relative;
 
     @include link_focus;
+  }
+}
+
+.post__arcadeEmbed {
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.post__newsletterSignupWide {
+  display: none;
+
+  @media screen and (min-width: 56em) {
+    display: block;
+  }
+}
+
+.post__newsletterSignupSmall {
+  display: block;
+
+  @media screen and (min-width: 56em) {
+    display: none;
   }
 }

@@ -11,10 +11,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  justify-content: flex-start;
   border-radius: 1rem;
   background-color: var(--testimonial-bg);
-  box-shadow: var(--card-box-shadow-hover);
 }
 
 .testimonial__quote {
@@ -47,6 +45,9 @@
   grid-area: name;
   margin-bottom: 0;
   line-height: 1;
+  color: var(--color-fg-copy);
+  @include font_main;
+  font-size: 1rem;
 }
 
 .testimonial__org {

@@ -1,6 +1,7 @@
 const ExternalUrl = require("../_components/externalUrl");
 const Author = require("../_components/author");
 const BlogEndAuthor = require("../_components/blogEndAuthor");
+const NewsletterSignup = require("../_components/newsletterSignup");
 const RichText = require("../_components/richText");
 const PublishedDate = require("../_components/publishedDate");
 const TableOfContents = require("../_components/tableOfContents");
@@ -96,6 +97,9 @@ exports.render = async function (data) {
           ${Author({ author: post.author, hideOnSmallScreens: true })}
         </div>
         <div class="post__asideStickyGroup">
+          <span class="post__newsletterSignupWide">${NewsletterSignup({
+            removeMargin: false,
+          })}</span>
           ${TableOfContents(post.body)}
         </div>
       </aside>
@@ -114,6 +118,9 @@ exports.render = async function (data) {
         ${post.isSponsored ? isSponsored() : ""}
         ${ExternalUrl({ url: post.externalUrl })}
 
+        <span class="post__newsletterSignupSmall">${NewsletterSignup({
+          removeMargin: false,
+        })}</span>
         <hr class="post__separator" />
 
         ${BlogEndAuthor({ author: post.author })}

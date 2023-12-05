@@ -5,7 +5,7 @@ const Topics = require("../_components/topics");
 const FilterIcon = require("../_components/svg/filterIcon");
 const OpenGraph = require("../../lib/openGraph");
 
-const pageTitle = "Learn web development, CSS, Serverless, JavaScript and more";
+const pageTitle = "Blogs and tutorials";
 
 function calculatePageUrl(data) {
   const suffix = data.pagination.pageNumber === 0 ? `` : `${data.pagination.pageNumber + 1}/`;
@@ -14,7 +14,6 @@ function calculatePageUrl(data) {
 
 exports.data = {
   layout: "base.html",
-  title: pageTitle,
   pageType: "post",
   activeNav: "blog",
   metaDescription: `Salma Alam-Naylor writes and live streams about front end development. Read tutorials and quick tips on HTML, CSS, JavaScript and web dev.`,
@@ -32,6 +31,7 @@ exports.data = {
     return `blog/${trailing}`;
   },
   eleventyComputed: {
+    title: (data) => `${pageTitle} — Page ${data.pagination.pageNumber + 1}`,
     canonical: (data) => calculatePageUrl(data),
     openGraphUrl: (data) => calculatePageUrl(data),
   },
