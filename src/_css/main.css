@@ -2319,19 +2319,7 @@ pre[class*=language-] {
   line-height: 1.6;
   color: var(--color-fg);
   margin-bottom: 1rem;
-  overflow: hidden;
-  -webkit-line-clamp: 2;
-  text-overflow: ellipsis;
-  -webkit-box-orient: vertical;
-  display: -webkit-box;
   flex-grow: 1;
-}
-.card__description p {
-  overflow: hidden;
-  -webkit-line-clamp: 2;
-  text-overflow: ellipsis;
-  -webkit-box-orient: vertical;
-  display: -webkit-box;
 }
 
 .card__meta {
