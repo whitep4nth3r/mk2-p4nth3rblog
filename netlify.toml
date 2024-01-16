@@ -12,8 +12,16 @@
   function = "referer"
 
 [[edge_functions]]
+  path = "/blog/*"
+  function = "newsletter"
+
+[[edge_functions]]
   path = "/"
   function = "twitch"
+
+[[edge_functions]]
+  path = "/"
+  function = "newsletter"
 
 [[edge_functions]]
   path = "/events/"

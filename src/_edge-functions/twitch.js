@@ -168,7 +168,3 @@ export default async (request, context) => {
     })
     .transform(response);
 };
-
-export const config = {
-  path: "/",
-};
