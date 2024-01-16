@@ -60,3 +60,8 @@
   from = "/discord"
   to = "https://discord.gg/GQbXUVCneJ"
   status = 301
+
+[[redirects]]
+  from = "/newsetter"
+  to = "https://buttondown.email/weirdwidewebhole"
+  status = 301
