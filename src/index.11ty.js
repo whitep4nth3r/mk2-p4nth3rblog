@@ -42,6 +42,7 @@ exports.render = function (data) {
       <div class="home__activity">
       <div class="card">
         <div class="card__imageContainer">
+          <img src="/img/wwwh.png" alt="weird wide web hole" width="500" height="250" />
         </div>
         <div class="card__inner">
           ${NewsletterSignup({ removeMargin: true })}
