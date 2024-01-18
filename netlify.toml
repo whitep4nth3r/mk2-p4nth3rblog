@@ -12,8 +12,16 @@
   function = "referer"
 
 [[edge_functions]]
+  path = "/blog/*"
+  function = "newsletter"
+
+[[edge_functions]]
   path = "/"
   function = "twitch"
+
+[[edge_functions]]
+  path = "/"
+  function = "newsletter"
 
 [[edge_functions]]
   path = "/events/"
@@ -51,4 +59,9 @@
 [[redirects]]
   from = "/discord"
   to = "https://discord.gg/GQbXUVCneJ"
+  status = 301
+
+[[redirects]]
+  from = "/newsletter"
+  to = "https://buttondown.email/weirdwidewebhole"
   status = 301

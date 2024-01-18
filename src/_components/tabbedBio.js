@@ -9,7 +9,6 @@ function TabbedBio({ shortBio, speakerBio, longBio }) {
       <div class="bio__buttons">
         <a href="#speaker" class="bio__button">Speaker bio</a>
         <a href="#long" class="bio__button" data-view="long">Long bio</a>
-        <a href="#video" class="bio__button" data-view="video">Video story</a>
       </div>
       <div class="bio__links">
       ${SocialLinks()}
@@ -26,10 +25,6 @@ function TabbedBio({ shortBio, speakerBio, longBio }) {
     <div class="bio__block">
       <h2 id="long">Long bio</h2>
       ${longBio}
-    </div>
-    <div class="bio__block">
-      <h2 id="video">Video story</h2>
-      ${VideoEmbed({ embedUrl: "https://www.youtube.com/embed/j5ahKhnnKd4" })} 
     </div>
   </div>
   `;
