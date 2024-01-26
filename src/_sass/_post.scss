@@ -1,8 +1,10 @@
 [color-mode="dark"] {
   --post-hr-color: var(--pink-light);
+  --table-th-color: var(--color-fg);
 }
 [color-mode="light"] {
   --post-hr-color: var(--pink);
+  --table-th-color: var(--white);
 }
 
 .post {
@@ -372,4 +374,37 @@
   @media screen and (min-width: 56em) {
     display: none;
   }
+}
+
+.post__tableWrapper {
+  overflow-x: auto;
+}
+
+.post__table {
+  --cell-padding: clamp(0.5rem, 0.75vw, 0.75rem);
+
+  border-collapse: collapse;
+  word-break: normal;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+}
+
+.post__tableHeader {
+  @include font_semibold;
+  text-align: left;
+  border: 1px solid var(--color-fg);
+  padding: var(--cell-padding);
+  background: var(--grey-mid);
+  color: var(--table-th-color);
+}
+
+.post__tableRow {
+}
+
+.post__tableCell {
+  @include font_main;
+  text-align: left;
+  word-wrap: break-word;
+  padding: var(--cell-padding);
+  border: 1px solid var(--color-fg);
 }

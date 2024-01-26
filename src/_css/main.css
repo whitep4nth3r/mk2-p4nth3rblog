@@ -64,7 +64,11 @@
 
 [color-mode=dark] {
   color-scheme: dark;
-  --page-bg: radial-gradient(farthest-corner at 100% 100%, var(--black-alt) 0%, var(--black) 50%);
+  --page-bg: radial-gradient(
+    farthest-corner at 100% 100%,
+    var(--black-alt) 0%,
+    var(--black) 50%
+  );
   --whitep4nth3r-bg-svg: url("/img/whitep4nth3r-darkmode.svg");
   --color-bg: var(--black);
   --color-fg: var(--white);
@@ -76,7 +80,11 @@
 
 [color-mode=light] {
   color-scheme: light;
-  --page-bg: radial-gradient(farthest-corner at 100% 100%, var(--white-alt) 0%, var(--white) 50%);
+  --page-bg: radial-gradient(
+    farthest-corner at 100% 100%,
+    var(--white-alt) 0%,
+    var(--white) 50%
+  );
   --whitep4nth3r-bg-svg: url("/img/whitep4nth3r-lightmode.svg");
   --color-bg: var(--white);
   --color-fg: var(--black);
@@ -928,10 +936,12 @@ main:after {
 
 [color-mode=dark] {
   --post-hr-color: var(--pink-light);
+  --table-th-color: var(--color-fg);
 }
 
 [color-mode=light] {
   --post-hr-color: var(--pink);
+  --table-th-color: var(--white);
 }
 
 .post {
@@ -1329,6 +1339,37 @@ main:after {
   .post__newsletterSignupSmall {
     display: none;
   }
+}
+
+.post__tableWrapper {
+  overflow-x: auto;
+}
+
+.post__table {
+  --cell-padding: clamp(0.5rem, 0.75vw, 0.75rem);
+  border-collapse: collapse;
+  word-break: normal;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+}
+
+.post__tableHeader {
+  font-weight: var(--font-weight-mid);
+  font-family: var(--font-family-main);
+  text-align: left;
+  border: 1px solid var(--color-fg);
+  padding: var(--cell-padding);
+  background: var(--grey-mid);
+  color: var(--table-th-color);
+}
+
+.post__tableCell {
+  font-weight: var(--font-weight-main);
+  font-family: var(--font-family-main);
+  text-align: left;
+  word-wrap: break-word;
+  padding: var(--cell-padding);
+  border: 1px solid var(--color-fg);
 }
 
 .pagination {
