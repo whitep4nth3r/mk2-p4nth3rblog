@@ -1924,20 +1924,30 @@ main:after {
   stroke-linecap: round;
 }
 
-.fourohfour__headerTitle {
-  font-weight: var(--font-weight-bold);
-  font-family: var(--font-family-main);
-  margin: 0 auto 1rem auto;
-  font-size: clamp(2rem, 3.5vw, 3.5rem);
-  line-height: 1.4;
-  color: var(--color-fg);
-  max-width: var(--post-max-width);
-}
-
 .fourohfour__content {
   max-width: var(--post-max-width);
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
+}
+
+.fourohfour__logo {
+  max-width: 100%;
+}
+
+.fourohfour__cta {
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.fourohfour__title {
+  font-weight: normal;
+  font-style: normal;
+  font-family: "Atomic Marker";
+  color: var(--color-body);
 }
 
 .fourohfour__text {

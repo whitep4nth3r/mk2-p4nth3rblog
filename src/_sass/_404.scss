@@ -1,16 +1,25 @@
-.fourohfour__headerTitle {
-  @include font_bold;
-  margin: 0 auto 1rem auto;
-  font-size: clamp(2rem, 3.5vw, 3.5rem);
-  line-height: 1.4;
-  color: var(--color-fg);
-  max-width: var(--post-max-width);
-}
-
 .fourohfour__content {
   max-width: var(--post-max-width);
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
+}
+
+.fourohfour__logo {
+  max-width: 100%;
+}
+
+.fourohfour__cta {
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.fourohfour__title {
+  @include font_atomic;
+  color: var(--color-body);
 }
 
 .fourohfour__text {
@@ -23,7 +32,8 @@
 }
 
 .fourohfour__img {
-  box-shadow: 0px 1.5rem 2rem -1rem rgba(0, 0, 0, 0.4), inset 0px 1px 0px rgba(255, 255, 255, 0.48);
+  box-shadow: 0px 1.5rem 2rem -1rem rgba(0, 0, 0, 0.4),
+    inset 0px 1px 0px rgba(255, 255, 255, 0.48);
   border-radius: calc(var(--border-radius-base) * 2);
   width: 100%;
   margin: auto;
