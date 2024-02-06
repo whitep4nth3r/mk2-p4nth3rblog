@@ -2334,16 +2334,17 @@ pre[class*=language-] {
   height: 100%;
 }
 
+.card__image {
+  max-width: 100%;
+  transition: all var(--global-transition-time) ease-in-out;
+}
+
 .card__inner {
   padding: 0.75rem;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   justify-content: space-between;
-}
-
-.card__image {
-  transition: all var(--global-transition-time) ease-in-out;
 }
 
 .card__date {

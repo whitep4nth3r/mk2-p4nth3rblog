@@ -3,7 +3,8 @@ const OpenGraph = require("../lib/openGraph");
 const TwitchInfo = require("./_components/twitchInfo");
 const ActivityFeedItem = require("./_components/card");
 const NewsletterSignup = require("./_components/newsletterSignup");
-const pageTitle = "Salma Alam-Naylor — live streamer, software engineer and developer educator ";
+const pageTitle =
+  "Salma Alam-Naylor — live streamer, software engineer and developer educator ";
 
 exports.data = {
   layout: "base.html",
@@ -23,7 +24,7 @@ exports.data = {
 
 exports.render = function (data) {
   const { activityFeed, person } = data;
-  const feedItems = activityFeed.slice(0, 9);
+  const feedItems = activityFeed.slice(0, 8);
 
   return /*html*/ `
   <section class="home">
@@ -42,11 +43,22 @@ exports.render = function (data) {
       <div class="home__activity">
       <div class="card">
         <div class="card__imageContainer">
-          <img src="/img/wwwh.png" alt="weird wide web hole" width="500" height="250" />
+          <img src="/img/wwwh.png" class="card__image" alt="weird wide web hole" width="500" height="250" style="width: 100%;" />
         </div>
         <div class="card__inner">
           ${NewsletterSignup({ removeMargin: true })}
           <span class="card__metaLabel">Newsletter</span>
+        </div>
+      </div>
+       <div class="card">
+        <div class="card__inner">
+          <script
+          src="https://the-claw-webring-widget.netlify.app/the-claw-webring-widget.mjs"
+          type="module"
+        ></script>
+
+        <the-claw-webring-widget fullWidth="true" hideMembers="true"></the-claw-webring-widget>
+          <span class="card__metaLabel">Webring</span>
         </div>
       </div>
       ${feedItems.map((item) => ActivityFeedItem({ item })).join("")}
