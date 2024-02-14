@@ -9,9 +9,10 @@
     "build:eleventy": "npx @11ty/eleventy",
     "build:search": "node ./src/_scripts/build-search.js",
     "dev": "npm-run-all build:sass --parallel watch:*",
-    "build": "npm-run-all build:*",
+    "build": "npm-run-all build:* && npm run sentry:sourcemaps",
     "debug": "DEBUG=Eleventy* npx @11ty/eleventy --serve",
-    "debughard": "DEBUG=Dev:Eleventy* npx @11ty/eleventy --serve"
+    "debughard": "DEBUG=Dev:Eleventy* npx @11ty/eleventy --serve",
+    "sentry:sourcemaps": "sentry-cli sourcemaps inject --org the-claw --project mk2-p4nth3rblog ./_site && sentry-cli sourcemaps upload --org the-claw --project mk2-p4nth3rblog ./_site"
   },
   "author": "whitep4nth3r",
   "license": "MIT",
@@ -20,6 +21,7 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.1.0",
     "@contentful/rich-text-html-renderer": "^15.13.1",
     "@contentful/rich-text-plain-text-renderer": "^15.12.1",
+    "@sentry/cli": "^2.28.6",
     "@whitep4nth3r/get-random-entry": "^0.0.2",
     "algoliasearch": "^4.17.0",
     "dotenv": "^16.0.3",
