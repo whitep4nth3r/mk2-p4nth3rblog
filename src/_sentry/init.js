@@ -3,10 +3,7 @@ function initSentry(buildVersion) {
     Sentry.init({
       dsn: "https://929e6ff57c7961dfe12ee694f8a40dd6@o4506044970565632.ingest.sentry.io/4506593553088512",
       release: `mk2-p4nth3rblog@${buildVersion}`,
-      integrations: [
-        Sentry.browserTracingIntegration(),
-        Sentry.replayIntegration(),
-      ],
+      integrations: [new Sentry.BrowserTracing(), new Sentry.Replay()],
 
       // Set tracesSampleRate to 1.0 to capture 100%
       // of transactions for performance monitoring.
