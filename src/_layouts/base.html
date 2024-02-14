@@ -19,7 +19,7 @@
 
     <script>
       const buildVersion = document
-        .getQuerySelector("head")
+        .querySelector("head")
         .getAttribute("data-build-version");
 
       window.sentryOnLoad = function () {
