@@ -9,10 +9,9 @@
     "build:eleventy": "npx @11ty/eleventy",
     "build:search": "node ./src/_scripts/build-search.js",
     "dev": "npm-run-all build:sass --parallel watch:*",
-    "build": "npm-run-all build:* && npm run sentry:sourcemaps",
+    "build": "npm-run-all build:*",
     "debug": "DEBUG=Eleventy* npx @11ty/eleventy --serve",
-    "debughard": "DEBUG=Dev:Eleventy* npx @11ty/eleventy --serve",
-    "sentry:sourcemaps": "sentry-cli sourcemaps inject --org the-claw --project mk2-p4nth3rblog ./_site && sentry-cli sourcemaps upload --org the-claw --project mk2-p4nth3rblog ./_site"
+    "debughard": "DEBUG=Dev:Eleventy* npx @11ty/eleventy --serve"
   },
   "author": "whitep4nth3r",
   "license": "MIT",
