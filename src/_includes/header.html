@@ -95,7 +95,7 @@
     document.querySelector("html").setAttribute("color-mode", theme);
   }
 
-  const button = document.querySelector("[data-theme-toggle]");
+  const toggleButton = document.querySelector("[data-theme-toggle]");
   const localStorageTheme = localStorage.getItem("theme");
   const systemSettingDark = window.matchMedia("(prefers-color-scheme: dark)");
 
@@ -105,15 +105,18 @@
   });
 
   // update on page load
-  updateButton({ buttonEl: button, isDark: currentThemeSetting === "dark" });
+  updateButton({
+    buttonEl: toggleButton,
+    isDark: currentThemeSetting === "dark",
+  });
   updateThemeOnHtmlEl({ theme: currentThemeSetting });
 
   // update on theme button click
-  button.addEventListener("click", () => {
+  toggleButton.addEventListener("click", () => {
     const newTheme = currentThemeSetting === "dark" ? "light" : "dark";
 
     localStorage.setItem("theme", newTheme);
-    updateButton({ buttonEl: button, isDark: newTheme === "dark" });
+    updateButton({ buttonEl: toggleButton, isDark: newTheme === "dark" });
     updateThemeOnHtmlEl({ theme: newTheme });
 
     currentThemeSetting = newTheme;
