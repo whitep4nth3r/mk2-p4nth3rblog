@@ -1,6 +1,5 @@
 import { HTMLRewriter } from "https://ghuc.cc/worker-tools/html-rewriter/index.ts";
 
-
 // this is a temporary solution to remove "past" events on a visit to the page
 // if I have forgotten to rebuild my static site to update it!
 
@@ -23,4 +22,8 @@ export default async (request, context) => {
       },
     })
     .transform(response);
+};
+
+export const config = {
+  path: "/events/",
 };

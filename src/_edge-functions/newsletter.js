@@ -26,3 +26,8 @@ export default async (request, context) => {
     return response;
   }
 };
+
+export const config = {
+  path: ["/", "/blog/*"],
+  excludedPath: "/blog/",
+};

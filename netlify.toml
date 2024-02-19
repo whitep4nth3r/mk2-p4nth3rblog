@@ -6,35 +6,7 @@
   command = "npm run build"
   functions = "src/_functions/"
   edge_functions = "src/_edge-functions/"
-
-[[edge_functions]]
-  path = "/blog/*"
-  function = "referer"
-
-[[edge_functions]]
-  path = "/blog/*"
-  function = "newsletter"
-
-[[edge_functions]]
-  path = "/"
-  function = "twitch"
-
-[[edge_functions]]
-  path = "/"
-  function = "newsletter"
-
-[[edge_functions]]
-  path = "/events/"
-  function = "localize-time"
-
-[[edge_functions]]
-  path = "/events/"
-  function = "clean-up-past-events"
-
-[[edge_functions]]
-  path = "/sponsorships/"
-  function = "contact"
-
+  
 # redirects
 [[redirects]]
   from = "/api/*"
