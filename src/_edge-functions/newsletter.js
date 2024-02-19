@@ -1,6 +1,7 @@
 import { HTMLRewriter } from "https://ghuc.cc/worker-tools/html-rewriter/index.ts";
 
 export default async (request, context) => {
+  const response = await context.next();
   try {
     const subscribers = await fetch(
       `https://api.buttondown.email/v1/subscribers`,
@@ -12,7 +13,6 @@ export default async (request, context) => {
     );
 
     const result = await subscribers.json();
-    const response = await context.next();
 
     return new HTMLRewriter()
       .on("[data-wwwh-subs]", {
@@ -23,5 +23,6 @@ export default async (request, context) => {
       .transform(response);
   } catch (error) {
     console.log(error);
+    return response;
   }
 };
