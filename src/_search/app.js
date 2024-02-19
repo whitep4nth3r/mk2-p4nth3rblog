@@ -28,7 +28,9 @@ function addLeadingZero(num) {
 function formatDateForDisplay(dateString) {
   const timestamp = Date.parse(dateString);
   const date = new Date(timestamp);
-  return `${date.getDate()} ${getMonthStringFromInt(date.getMonth())} ${date.getFullYear()}`;
+  return `${date.getDate()} ${getMonthStringFromInt(
+    date.getMonth(),
+  )} ${date.getFullYear()}`;
 }
 
 // Create a render function
@@ -74,7 +76,8 @@ function initSearch({ appId, apiKey, indexName, latestPost }) {
   });
 
   // create custom widget
-  const customSearchBox = instantsearch.connectors.connectSearchBox(renderSearchBox);
+  const customSearchBox =
+    instantsearch.connectors.connectSearchBox(renderSearchBox);
 
   search.addWidgets([
     customSearchBox({
@@ -92,10 +95,14 @@ function initSearch({ appId, apiKey, indexName, latestPost }) {
       templates: {
         empty(results) {
           return `
-          <p class="ais__emptyMessage">No results found for <q>${results.query}</q>!</p>
+          <p class="ais__emptyMessage">No results found for <q>${
+            results.query
+          }</q>!</p>
           <p class="ais__howAbout">How about this latest blog post?</p>
           <div class="blog__emptySearchCard">
-            <a href="/blog/${latestPost.slug}/" aria-label="${latestPost.title}" class="card">
+            <a href="/blog/${latestPost.slug}/" aria-label="${
+            latestPost.title
+          }" class="card">
             <div class="card__imageContainer">
               <img 
                 src="${latestPost.featuredImage.url}?w=300" 
@@ -110,7 +117,9 @@ function initSearch({ appId, apiKey, indexName, latestPost }) {
 
               <div class="card__meta">
                 <span class="card__metaLabel">${latestPost.topic}</span>
-                <span class="card__metaRead">${latestPost.readingTime} min read →</span>
+                <span class="card__metaRead">${
+                  latestPost.readingTime
+                } min read →</span>
               </div>
             </div>
             </a>
@@ -144,10 +153,15 @@ function initSearch({ appId, apiKey, indexName, latestPost }) {
 
             <div class="card__inner">
               <p class="card__date">${formatDateForDisplay(hit.date)}</p>
-              <h2 class="card__title">${instantsearch.highlight({ attribute: "title", hit })}</h2>
+              <h2 class="card__title">${instantsearch.highlight({
+                attribute: "title",
+                hit,
+              })}</h2>
 
               <div class="card__meta">
-                <span class="card__metaLabel">${hit.topicsCollection.items[0].name}</span>
+                <span class="card__metaLabel">${
+                  hit.topicsCollection.items[0].name
+                }</span>
                 <span class="card__metaRead">${
                   isTalk ? hit.watchTime : hit.readingTime
                 } ${timeSuffix} →</span>

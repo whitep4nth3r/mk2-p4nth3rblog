@@ -8,3 +8,5 @@
 .netlify
 
 notes.txt
+# Sentry Config File
+.sentryclirc

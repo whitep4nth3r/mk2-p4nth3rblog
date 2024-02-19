@@ -33,7 +33,8 @@ const TwitchApi = {
     };
   },
   getStreams: async function () {
-    const tokenResponse = tokenInMemory !== null ? tokenInMemory : await TwitchApi.getAccessToken();
+    const tokenResponse =
+      tokenInMemory !== null ? tokenInMemory : await TwitchApi.getAccessToken();
     if (tokenResponse.access_token) {
       const streamsResponse = await fetch(
         `https://api.twitch.tv/helix/streams?user_id=${twitchId}`,
@@ -49,7 +50,8 @@ const TwitchApi = {
     }
   },
   getVods: async function () {
-    const tokenResponse = tokenInMemory !== null ? tokenInMemory : await TwitchApi.getAccessToken();
+    const tokenResponse =
+      tokenInMemory !== null ? tokenInMemory : await TwitchApi.getAccessToken();
     if (tokenResponse.access_token) {
       const vodsResponse = await fetch(
         `https://api.twitch.tv/helix/videos?user_id=${twitchId}&type=archive&first=1`,
@@ -98,7 +100,10 @@ export default async (request, context) => {
           element.setAttribute("height", "1080");
           element.setAttribute("width", "2160");
           element.removeAttribute("class");
-          element.setAttribute("class", "twitchInfo__thumbnail twitchInfo__thumbnail--live");
+          element.setAttribute(
+            "class",
+            "twitchInfo__thumbnail twitchInfo__thumbnail--live",
+          );
         },
       })
       .transform(response);
@@ -130,7 +135,10 @@ export default async (request, context) => {
           }
 
           element.setInnerContent(text);
-          element.setAttribute("class", "twitchInfo__live twitchInfo__live--offline");
+          element.setAttribute(
+            "class",
+            "twitchInfo__live twitchInfo__live--offline",
+          );
         },
       })
       .on("[data-twitchinfo-link]", {
@@ -163,8 +171,15 @@ export default async (request, context) => {
     .on("[data-twitchinfo-live]", {
       element(element) {
         element.setInnerContent("Follow on Twitch");
-        element.setAttribute("class", "twitchInfo__live twitchInfo__live--offline");
+        element.setAttribute(
+          "class",
+          "twitchInfo__live twitchInfo__live--offline",
+        );
       },
     })
     .transform(response);
+};
+
+export const config = {
+  path: "/",
 };

@@ -13,8 +13,10 @@ exports.data = {
   eleventyComputed: {
     title: (data) => data.content.metaTitle,
     metaDescription: (data) => data.content.metaDescription,
-    openGraphImageUrl: (data) => OpenGraph.generateImageUrl({ title: data.content.metaTitle }),
-    openGraphImageAlt: (data) => OpenGraph.generateImageAlt(data.content.metaTitle),
+    openGraphImageUrl: (data) =>
+      OpenGraph.generateImageUrl({ title: data.content.metaTitle }),
+    openGraphImageAlt: (data) =>
+      OpenGraph.generateImageAlt(data.content.metaTitle),
   },
   openGraphImageWidth: OpenGraph.imgWidth,
   openGraphImageHeight: OpenGraph.imgHeight,
@@ -59,49 +61,15 @@ exports.render = function (data) {
     <section class="sponsorships__content">
       <h3>Word on the street</h3>
       <div class="sponsorships__testimonials">
-        ${testimonials.map((testimonial) => Testimonial({ testimonial })).join("")}
+        ${testimonials
+          .map((testimonial) => Testimonial({ testimonial }))
+          .join("")}
       </div>
     </section>
 
     <section class="sponsorships__content">
       <h3>Contact me</h3>
-      <div class="sponsorships__form">
-        <form name="show_me_the_money" method="POST" action="/sponsorships/?success=true" netlify>
-          <div class="sponsorships__topRow">
-            <div class="sponsorships__formRow">
-              <label class="sponsorships__formLabel" for="name">Name</label>
-              <input type="text" name="name" id="name" class="sponsorships__formInput sponsorships__formInput--text" autocomplete="name">
-            </div>
-            <div class="sponsorships__formRow">
-              <label class="sponsorships__formLabel" for="email">Email</label>
-              <input type="email" name="email" id="email" class="sponsorships__formInput sponsorships__formInput--text" autocomplete="email">
-            </div>
-          </div>
-          <p class="sponsorships__question">What do you want to talk about?</p>
-
-          <div class="sponsorships__checkboxRow">
-            <input type="checkbox" name="the_cold_start" value="✔" id="cold_start" class="sponsorships__formInput--checkbox">
-            <label class="sponsorships__formLabel sponsorships__formLabel--checkbox" for="cold_start">Live stream: The Cold Start</label>
-          </div>
-          <div class="sponsorships__checkboxRow">
-            <input type="checkbox" name="guest_star" value="✔" id="guest_star" class="sponsorships__formInput--checkbox">
-            <label class="sponsorships__formLabel sponsorships__formLabel--checkbox" for="guest_star">Live stream: The Guest Star</label>
-          </div>
-          <div class="sponsorships__checkboxRow">
-            <input type="checkbox" name="tech_tutorials" value="✔" id="tech_tutorials" class="sponsorships__formInput--checkbox">
-            <label class="sponsorships__formLabel sponsorships__formLabel--checkbox" for="tech_tutorials">Technical tutorials</label>
-          </div>
-          <div class="sponsorships__checkboxRow sponsorships__checkboxRow--last">
-            <input type="checkbox" name="demos" value="✔" id="demos" class="sponsorships__formInput--checkbox ">
-            <label class="sponsorships__formLabel sponsorships__formLabel--checkbox" for="demos">Demo websites and apps</label>
-          </div>
-
-          <div class="sponsorships__formRow">
-            <label class="sponsorships__formLabel">Add more info, say hi, tell a joke?</label>
-            <textarea name="message" rows="5" class="sponsorships__formTextArea"></textarea>
-          </div>
-          <button class="sponsorships__submit" type="submit">Submit</button>
-      </form>
+      <p>Get in touch via <a href="http://twitter.com/whitep4nth3r">Twitter</a>, <a href="https://discord.gg/theclaw">Discord</a> or <a href="mailto:whitep4nth3r@gmail.com">email</a>.</p>
     <div>
   </section>
   `;

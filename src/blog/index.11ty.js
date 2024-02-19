@@ -8,7 +8,10 @@ const OpenGraph = require("../../lib/openGraph");
 const pageTitle = "Blogs and tutorials";
 
 function calculatePageUrl(data) {
-  const suffix = data.pagination.pageNumber === 0 ? `` : `${data.pagination.pageNumber + 1}/`;
+  const suffix =
+    data.pagination.pageNumber === 0
+      ? ``
+      : `${data.pagination.pageNumber + 1}/`;
   return `https://whitep4nth3r.com/blog/${suffix}`;
 }
 
@@ -27,7 +30,10 @@ exports.data = {
     addAllPagesToCollections: true,
   },
   permalink: (data) => {
-    const trailing = data.pagination.pageNumber === 0 ? `` : `${data.pagination.pageNumber + 1}/`;
+    const trailing =
+      data.pagination.pageNumber === 0
+        ? ``
+        : `${data.pagination.pageNumber + 1}/`;
     return `blog/${trailing}`;
   },
   eleventyComputed: {
