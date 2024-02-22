@@ -2406,7 +2406,9 @@ pre[class*=language-] {
 .twitchInfo {
   --thumbnail-outer-radius: calc(var(--border-radius-base) * 2);
   --thumbnail-inner-padding: calc(var(--border-radius-base) / 2);
-  --title-bottom-left-radius: calc(var(--thumbnail-outer-radius) - var(--thumbnail-inner-padding));
+  --title-bottom-left-radius: calc(
+    var(--thumbnail-outer-radius) - var(--thumbnail-inner-padding)
+  );
   --title-font-size: clamp(1rem, 1.5vw, 1.5rem);
   --title-padding: 0.75rem;
   display: block;

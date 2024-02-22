@@ -1,7 +1,9 @@
 .twitchInfo {
   --thumbnail-outer-radius: calc(var(--border-radius-base) * 2);
   --thumbnail-inner-padding: calc(var(--border-radius-base) / 2);
-  --title-bottom-left-radius: calc(var(--thumbnail-outer-radius) - var(--thumbnail-inner-padding));
+  --title-bottom-left-radius: calc(
+    var(--thumbnail-outer-radius) - var(--thumbnail-inner-padding)
+  );
   --title-font-size: clamp(1rem, 1.5vw, 1.5rem);
   --title-padding: 0.75rem;
   display: block;
@@ -38,7 +40,8 @@
   position: relative;
   width: auto;
   height: 100%;
-  box-shadow: 0px 1.5rem 2rem -1rem rgba(0, 0, 0, 0.4), inset 0px 1px 0px rgba(255, 255, 255, 0.48);
+  box-shadow: 0px 1.5rem 2rem -1rem rgba(0, 0, 0, 0.4),
+    inset 0px 1px 0px rgba(255, 255, 255, 0.48);
   filter: grayscale(1);
   transition: all var(--global-transition-time) ease-in-out;
 
@@ -103,7 +106,11 @@
   align-items: center;
   gap: 0.5rem;
 
-  background: linear-gradient(145.04deg, var(--pink) 60.34%, var(--orange) 98.77%);
+  background: linear-gradient(
+    145.04deg,
+    var(--pink) 60.34%,
+    var(--orange) 98.77%
+  );
   color: var(--white);
   padding: var(--title-padding);
   border-radius: calc(var(--border-radius-base) * 0.75);

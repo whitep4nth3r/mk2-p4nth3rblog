@@ -28,6 +28,7 @@
         Sentry.init({
           release: release,
           environment: environment,
+          tracesSampleRate: 1.0,
         });
       };
     </script>

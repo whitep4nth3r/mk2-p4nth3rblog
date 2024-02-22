@@ -37,6 +37,7 @@ exports.render = function (data) {
 
     <div class="home__scroll">
       <div class="home__twitch">
+        <script src="/js/twitch_info.js" type="module"></script>
         ${TwitchInfo()}
       </div>
       <a href="/activity/" class="home__heading">Latest news and activity</a>
@@ -66,9 +67,7 @@ exports.render = function (data) {
       </div>
       ${feedItems.map((item) => ActivityFeedItem({ item })).join("")}
       </div>
-      <!-- <h2 class="home__heading"><a href="/activity/">See more stuff</a></h2> -->
     </div>
-
   </section>
   `;
 };
