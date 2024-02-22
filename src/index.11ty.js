@@ -23,7 +23,7 @@ exports.data = {
 };
 
 exports.render = function (data) {
-  const { activityFeed, person } = data;
+  const { activityFeed, person, newsletter } = data;
   const feedItems = activityFeed.slice(0, 8);
 
   return /*html*/ `
@@ -46,7 +46,10 @@ exports.render = function (data) {
           <img src="/img/wwwh.png" class="card__image" alt="weird wide web hole" width="500" height="250" style="width: 100%;" />
         </div>
         <div class="card__inner">
-          ${NewsletterSignup({ removeMargin: true })}
+          ${NewsletterSignup({
+            removeMargin: true,
+            subscribers: newsletter.subscribers,
+          })}
           <span class="card__metaLabel">Newsletter</span>
         </div>
       </div>
