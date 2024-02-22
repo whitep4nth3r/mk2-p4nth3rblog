@@ -11,10 +11,10 @@ module.exports = async function () {
     );
 
     const result = await response.json();
-    subscribers = result.count.toString();
+    subscribers = `${result.count.toString()}+`;
   } catch (error) {
     console.log(error);
-    subscribers = "200";
+    subscribers = "loads of";
   }
 
   return {
