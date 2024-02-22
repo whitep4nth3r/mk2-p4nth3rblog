@@ -31,7 +31,8 @@ exports.data = {
     title: (data) => `${data.post.metaTitle} - Salma Alam-Naylor`,
     slug: (data) => data.post.slug,
     canonical: (data) =>
-      data.post.externalUrl || `https://whitep4nth3r.com/blog/${data.post.slug}/`,
+      data.post.externalUrl ||
+      `https://whitep4nth3r.com/blog/${data.post.slug}/`,
     metaDescription: (data) => data.post.metaDescription,
     openGraphImageUrl: (data) =>
       OpenGraph.generateImageUrl({
@@ -41,9 +42,11 @@ exports.data = {
     openGraphImageWidth: OpenGraph.imgWidth,
     openGraphImageHeight: OpenGraph.imgHeight,
     openGraphUrl: (data) =>
-      data.post.externalUrl || `https://whitep4nth3r.com/blog/${data.post.slug}/`,
+      data.post.externalUrl ||
+      `https://whitep4nth3r.com/blog/${data.post.slug}/`,
     openGraphTimeToRead: (data) => data.post.readingTime,
-    openGraphArticleTags: (data) => data.post.topicsCollection.items.map((item) => item.name),
+    openGraphArticleTags: (data) =>
+      data.post.topicsCollection.items.map((item) => item.name),
   },
 };
 
@@ -70,7 +73,7 @@ function outOfDateWarning({ post }) {
 }
 
 exports.render = async function (data) {
-  const { post } = data;
+  const { post, newsletter } = data;
 
   const openGraphImageUrl = await OpenGraph.generateImageUrl({
     title: post.title,
@@ -78,7 +81,9 @@ exports.render = async function (data) {
   });
 
   return /* html */ `
-    <aside data-referer data-slug="${post.slug}" data-title="${post.title}"></aside>
+    <aside data-referer data-slug="${post.slug}" data-title="${
+    post.title
+  }"></aside>
     <div class="post__meta">
       <p class="post__meta__topic">${post.topicsCollection.items[0].name}</p>
       ${PublishedDate({
@@ -97,6 +102,7 @@ exports.render = async function (data) {
         <div class="post__asideStickyGroup">
           <span class="post__newsletterSignupWide">${NewsletterSignup({
             removeMargin: false,
+            subscribers: newsletter.subscribers,
           })}</span>
           ${TableOfContents(post.body)}
         </div>
@@ -132,7 +138,9 @@ exports.render = async function (data) {
               </div>
               <div class="post__relatedGrid">
                 ${post.relatedPostsCollection.items
-                  .map((post) => Card({ item: { ...post, type: "post" }, showType: false }))
+                  .map((post) =>
+                    Card({ item: { ...post, type: "post" }, showType: false }),
+                  )
                   .join("")}
               </div>
             </div>`
