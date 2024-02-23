@@ -2411,14 +2411,12 @@ pre[class*=language-] {
   );
   --title-font-size: clamp(1rem, 1.5vw, 1.5rem);
   --title-padding: 0.75rem;
-  display: block;
+  display: flex;
   height: 100%;
   width: 100%;
 }
 
-.twitchInfo[data-live=true] .twitchInfo__link {
-  aspect-ratio: 2/1;
-}
+/* probably won't need - also take out of js */
 .twitchInfo[data-live=true] .twitchInfo__thumbnail {
   aspect-ratio: 2/1;
 }
@@ -2428,7 +2426,8 @@ pre[class*=language-] {
   display: flex;
   align-items: center;
   justify-content: center;
-  aspect-ratio: 16/9;
+  top: 23%;
+  width: 100%;
 }
 .twitchInfo__link:focus-visible {
   outline: transparent;
@@ -2438,16 +2437,30 @@ pre[class*=language-] {
   border-radius: var(--border-radius-base);
 }
 
+* {
+  outline: 1px solid yellow;
+}
+
+.twitchInfo__crt {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+}
+
+.twitchInfo__thumbContainer {
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .twitchInfo__thumbnail {
   aspect-ratio: 16/9;
   object-fit: cover;
   border-radius: var(--thumbnail-outer-radius);
   background-color: var(--color-bg);
-  z-index: 0;
-  position: relative;
-  width: auto;
-  height: 100%;
-  box-shadow: 0px 1.5rem 2rem -1rem rgba(0, 0, 0, 0.4), inset 0px 1px 0px rgba(255, 255, 255, 0.48);
+  width: 80%;
   filter: grayscale(1);
   transition: all var(--global-transition-time) ease-in-out;
 }
