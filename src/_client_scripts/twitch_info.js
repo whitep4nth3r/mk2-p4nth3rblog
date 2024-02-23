@@ -1,9 +1,3 @@
-/**
-  1. get data from api/twitch and then rewrite component ✅
-  2. use web worker ✅
-  3. we want to figure out how to gracefully load the thumbnail ... e.g. don't use a fallback but more of a skeleton loader effect
-*/
-
 const worker = new Worker("/js/twitch_worker.js");
 
 const wrapperEl = document.querySelector("[data-twitch-wrapper]");
