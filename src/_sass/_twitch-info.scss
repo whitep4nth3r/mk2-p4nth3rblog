@@ -6,12 +6,12 @@
   );
   --title-font-size: clamp(1rem, 1.5vw, 1.5rem);
   --title-padding: 0.75rem;
+  --crt-inner-width: 78%;
   display: flex;
   height: 100%;
   width: 100%;
 }
 
-/* probably won't need - also take out of js */
 .twitchInfo[data-live="true"] {
   .twitchInfo__thumbnail {
     aspect-ratio: 2/1;
@@ -23,14 +23,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  top: 23%;
   width: 100%;
 
   @include link_focus;
-}
-
-* {
-  outline: 1px solid yellow;
 }
 
 .twitchInfo__crt {
@@ -39,12 +34,49 @@
   width: 100%;
 }
 
+@property --iris-radius {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+
+@property --iris-gradient-length {
+  syntax: "<length> | <percentage>";
+  inherits: false;
+  initial-value: 0px;
+}
+
 .twitchInfo__thumbContainer {
+  --iris-radius: -50%;
+  --iris-gradient-length: 0px;
+  --time: 420ms;
+
+  -webkit-mask-image: radial-gradient(
+    black,
+    black var(--iris-radius),
+    transparent calc(var(--iris-radius) + var(--iris-gradient-length)),
+    transparent
+  );
+  transition: --iris-radius var(--time) cubic-bezier(0, 0.55, 0.45, 1),
+    --iris-gradient-length var(--time) ease-out;
+
   position: absolute;
   z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: var(--crt-inner-width);
+  top: 22%;
+
+  &:hover {
+    --iris-radius: 100%;
+    --iris-gradient-length: 60px;
+  }
+}
+
+.twitchInfo__thumbContainer--in {
+  --iris-radius: 100%;
+  --iris-gradient-length: 60px;
 }
 
 .twitchInfo__thumbnail {
@@ -52,7 +84,7 @@
   object-fit: cover;
   border-radius: var(--thumbnail-outer-radius);
   background-color: var(--color-bg);
-  width: 80%;
+  width: 100%;
   // box-shadow: 0px 1.5rem 2rem -1rem rgba(0, 0, 0, 0.4),
   //   inset 0px 1px 0px rgba(255, 255, 255, 0.48);
   filter: grayscale(1);
@@ -66,11 +98,16 @@
 .twitchInfo__thumbnail--live {
   filter: grayscale(0);
 }
+.twitchInfo__deetsContainer {
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+}
 
 .twitchInfo__deets {
   position: absolute;
-  z-index: 1;
-  bottom: var(--thumbnail-inner-padding);
+  z-index: 2;
+  top: var(--thumbnail-inner-padding);
   left: var(--thumbnail-inner-padding);
   right: var(--thumbnail-inner-padding);
   display: flex;

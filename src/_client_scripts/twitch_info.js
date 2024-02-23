@@ -20,8 +20,8 @@ worker.onmessage = function (message) {
   const data = message.data;
   if (data) {
     linkEl.href = data.link;
-    // titleEl.innerText = data.title;
-    // subtitleEl.innerText = data.subtitle;
+    titleEl.innerText = data.title;
+    subtitleEl.innerText = data.subtitle;
 
     const thumbnailEl = document.createElement("img");
 
@@ -37,5 +37,9 @@ worker.onmessage = function (message) {
       wrapperEl.setAttribute("data-live", "true");
     }
     thumbContainerEl.appendChild(thumbnailEl);
+
+    thumbnailEl.onload = function () {
+      thumbContainerEl.classList.add("twitchInfo__thumbContainer--in");
+    };
   }
 };
