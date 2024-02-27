@@ -26,7 +26,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "./src/_fonts": "/fonts" });
   eleventyConfig.addPassthroughCopy({ "./src/_public": "/" });
   eleventyConfig.addPassthroughCopy({
-    "./src/_search/app.js": "/js/app_search.js",
+    "./src/_client_scripts/app_search.js": "/js/app_search.js",
   });
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(embedTwitter, {
