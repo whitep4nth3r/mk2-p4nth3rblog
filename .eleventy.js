@@ -28,12 +28,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
     "./src/_client_scripts/app_search.js": "/js/app_search.js",
   });
-  eleventyConfig.addPassthroughCopy({
-    "./src/_client_scripts/twitch_info.js": "/js/twitch_info.js",
-  });
-  eleventyConfig.addPassthroughCopy({
-    "./src/_client_scripts/twitch_worker.js": "/js/twitch_worker.js",
-  });
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(embedTwitter, {
     theme: "light",

@@ -23,7 +23,7 @@ exports.data = {
 };
 
 exports.render = function (data) {
-  const { activityFeed, person, newsletter } = data;
+  const { activityFeed, person, newsletter, twitch } = data;
   const feedItems = activityFeed.slice(0, 8);
 
   return /*html*/ `
@@ -37,8 +37,7 @@ exports.render = function (data) {
 
     <div class="home__scroll">
       <div class="home__twitch">
-        <script src="/js/twitch_info.js" type="module"></script>
-        ${TwitchInfo()}
+        ${TwitchInfo({ isLive: twitch.isLive, vodData: twitch.vodData })}
       </div>
       <a href="/activity/" class="home__heading">Latest news and activity</a>
       <div class="home__activity">
