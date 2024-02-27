@@ -64,13 +64,10 @@ const TwitchApi = {
 
 module.exports = async function () {
   const imageSizeOffline = "998x556";
-  // const imageSizeOnline = "998x499";
 
   const streams = await TwitchApi.getStreams();
 
   if (streams !== null && streams.data.length === 1) {
-    // const currentStream = streams.data[0];
-
     return {
       isLive: true,
     };
