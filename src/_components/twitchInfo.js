@@ -1,20 +1,43 @@
 const PlayIcon = require("./svg/playIcon");
 
-function TwitchInfo() {
+function TwitchInfo({ isLive, vodData }) {
   return /* html */ `
-  <div data-twitchinfo-wrapper class="twitchInfo">
-    <a href="https://twitch.tv/whitep4nth3r" class="twitchInfo__link" data-twitchinfo-link>
-      <div class="twitchInfo__deets">
-        <span class="twitchInfo__streamTitleContainer">
-          <p class="twitchInfo__streamTitle" data-twitchinfo-title>Watch me fix my website LIVE: debug behind the scenes</p>
-        </span>
-        <p class="twitchInfo__live" data-twitchinfo-live>
-          Live now ${PlayIcon()}
-        </p>
-      </div>
-      <img src="/img/stream_thumb_fallback.jpg" alt="" class="twitchInfo__thumbnail" height="1080" width="1920" data-twitchinfo-thumbnail />
-      </a>
-  </div>
+  ${
+    !isLive
+      ? /* html */ `<div class="twitchInfo">
+        <a href="${vodData.link}" class="twitchInfo__link">
+          <div class="twitchInfo__deets">
+            <span class="twitchInfo__streamTitleContainer">
+              <p class="twitchInfo__streamTitle">
+                ${vodData.title}
+              </p>
+            </span>
+            <p class="twitchInfo__live">
+              ${vodData.subtitle} ${PlayIcon()}
+            </p>
+          </div>
+          <img
+            src="${vodData.thumbnail.url}"
+            alt=""
+            class="twitchInfo__thumbnail"
+            height="${vodData.thumbnail.height}"
+            width="${vodData.thumbnail.width}"
+          />
+        </a>
+      </div>`
+      : /* html */ `<div id="twitch-embed" class="twitchInfo__embed"></div>
+      <script src="https://embed.twitch.tv/embed/v1.js"></script>
+      <script>
+        new Twitch.Embed("twitch-embed", {
+          width: 854,
+          height: 480,
+          channel: "whitep4nth3r",
+          layout: "video",
+          parent: ["whitep4nth3r.com"]
+        });
+    </script>
+      `
+  }
   `;
 }
 
