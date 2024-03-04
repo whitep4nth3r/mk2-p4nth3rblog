@@ -12,13 +12,13 @@ export default async (request, context) => {
   // get HTTP referer header
   const referer = request.headers.get("referer");
 
-  // get the next HTTP response in the chain
-  const response = await context.next();
-
   // if no referer, return the response
   if (referer === null) {
     return;
   }
+
+  // get the next HTTP response in the chain
+  const response = await context.next();
 
   // get keys from refererMessages
   const refererKeys = Array.from(Object.keys(messages));

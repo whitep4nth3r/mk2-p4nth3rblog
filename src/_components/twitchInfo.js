@@ -18,7 +18,7 @@ function TwitchInfo({ isLive, vodData }) {
           </div>
           <img
             src="${vodData.thumbnail.url}"
-            alt=""
+            alt="Stream screenshot. It's auto-generated so I can't give you any details, sorry!"
             class="twitchInfo__thumbnail"
             height="${vodData.thumbnail.height}"
             width="${vodData.thumbnail.width}"
