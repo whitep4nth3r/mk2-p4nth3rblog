@@ -1,4 +1,8 @@
-function ResponsiveImage({ image }) {
+// Now transforms images from Contentful and third party images from Twitch using /.netlify/images/?url=
+
+function ResponsiveImage({ image, classOverride = null, loading = null }) {
+  const className = classOverride ? classOverride : "post__responsiveImage";
+  const loadingStrat = loading ? loading : "lazy";
   const { contentType } = image;
   // Inspect contentType to convert GIF to WebP and not AVIF
   // more info: https://twitter.com/whitep4nth3r/status/1460244790059188226
@@ -14,12 +18,16 @@ function ResponsiveImage({ image }) {
   const maxContainerSize = 600;
 
   // Note, this could be further optimised by considering padding inside the container
-  const sizes = `(max-width: ${maxContainerSize - 1}px) 100vw, ${maxContainerSize}px`;
+  const sizes = `(max-width: ${
+    maxContainerSize - 1
+  }px) 100vw, ${maxContainerSize}px`;
 
   function makeSrcSetArray(format) {
     const formatString = format === undefined ? "" : `&fm=${format}`;
 
-    return imageWidths.map((width) => `${image.url}?q=75&w=${width}${formatString} ${width}w`);
+    return imageWidths.map(
+      (width) => `${image.url}?q=75&w=${width}${formatString} ${width}w`,
+    );
   }
 
   function makeSrcSetString(format) {
@@ -27,18 +35,26 @@ function ResponsiveImage({ image }) {
   }
 
   return /* html */ `<picture>
-      ${!isGif ? `<source type="image/avif" srcSet="${makeSrcSetString("avif")}" sizes="${sizes}" />` : ""}
-      <source type="image/webp" srcSet="${makeSrcSetString("webp")}" sizes="${sizes}" />
+      ${
+        !isGif
+          ? `<source type="image/avif" srcSet="${makeSrcSetString(
+              "avif",
+            )}" sizes="${sizes}" />`
+          : ""
+      }
+      <source type="image/webp" srcSet="${makeSrcSetString(
+        "webp",
+      )}" sizes="${sizes}" />
       <img
         srcSet="${makeSrcSetString()}"
         sizes="${sizes}"
         src="${image.url}"
         alt="${image.description}"
-        loading="lazy"
+        loading="${loadingStrat}"
         decoding="async"
         width="${image.width}"
         height="${image.height}"
-        class="post__responsiveImage"
+        class="${className}"
       />
     </picture>`;
 }

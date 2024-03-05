@@ -37,3 +37,6 @@
   from = "/newsletter"
   to = "https://buttondown.email/weirdwidewebhole"
   status = 301
+
+[images]
+  remote_images = ["https://static-cdn.jtvnw.net/cf_vods/.*"]
