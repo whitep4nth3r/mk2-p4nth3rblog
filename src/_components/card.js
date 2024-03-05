@@ -56,10 +56,10 @@ function renderImage({ image, type }) {
   if (image) {
     return `<div class="card__imageContainer${modifier}">
       <picture>
-        <source type="image/avif" srcSet="${image.url}?w=510&fm=avif" />
-        <source type="image/webp" srcSet="${image.url}?w=510&fm=webp" />
+        <source type="image/avif" srcSet="${image.url}?w=450&fm=avif" />
+        <source type="image/webp" srcSet="${image.url}?w=450&fm=webp" />
         <img 
-          src="${image.url}?w=510"
+          src="${image.url}?w=450"
           alt=""
           role="presentation"
           height="${image.height}"
@@ -90,7 +90,9 @@ function formatCategoryName(name) {
 
 function renderType(item) {
   if (item.type === "thing") {
-    return `<span class="card__metaLabel">${formatCategoryName(item.category)}</span>`;
+    return `<span class="card__metaLabel">${formatCategoryName(
+      item.category,
+    )}</span>`;
   }
 
   return `<span class="card__metaLabel">${activityType[item.type]}</span>`;
