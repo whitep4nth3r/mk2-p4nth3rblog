@@ -1,6 +1,4 @@
 function Webring({ members, prevUrl, nextUrl }) {
-  console.log(members);
-
   return /* html */ `
   <div class="card">
    <div class="card__imageContainer">
