@@ -1,7 +1,3 @@
-.tcwr {
-  --gap-unit: 0.25rem;
-}
-
 .tcwr__title {
   @include font_bold;
   color: var(--color-link);
@@ -58,7 +54,7 @@
   color: var(--color-fg-copy);
   display: block;
   font-size: 1rem;
-  padding: var(--gap-unit);
+  padding: 0.25rem;
   border-radius: var(--border-radius-base);
 }
 

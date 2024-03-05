@@ -3222,10 +3222,6 @@ pre[class*=language-] {
   transition: box-shadow var(--global-transition-time) ease-in-out;
 }
 
-.tcwr {
-  --gap-unit: 0.25rem;
-}
-
 .tcwr__title {
   font-weight: var(--font-weight-bold);
   font-family: var(--font-family-main);
@@ -3280,7 +3276,7 @@ pre[class*=language-] {
   color: var(--color-fg-copy);
   display: block;
   font-size: 1rem;
-  padding: var(--gap-unit);
+  padding: 0.25rem;
   border-radius: var(--border-radius-base);
 }
 

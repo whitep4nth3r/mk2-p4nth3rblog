@@ -64,13 +64,20 @@ exports.render = function (data) {
             <span class="card__metaLabel">Newsletter</span>
           </div>
         </div>
-        ${Webring({
-          members: webring.members,
-          prevUrl: webring.prevUrl,
-          nextUrl: webring.nextUrl,
-        })}
-      </div>
-      ${feedItems.map((item) => ActivityFeedItem({ item })).join("")}
+        <div class="card">
+          <div class="card__imageContainer">
+            <img src="/img/theclaw_webring_logo.svg" class="tcwr__logo" alt="The panther moth with a tattoo style banner that reads The Claw" />
+          </div>
+          <div class="card__inner">
+            ${Webring({
+              members: webring.members,
+              prevUrl: webring.prevUrl,
+              nextUrl: webring.nextUrl,
+            })}
+            <span class="card__metaLabel">Webring</span>
+          </div>
+        </div>
+        ${feedItems.map((item) => ActivityFeedItem({ item })).join("")}
       </div>
     </div>
   </section>
