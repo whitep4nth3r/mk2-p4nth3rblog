@@ -1,18 +1,18 @@
 function Webring({ members, prevUrl, nextUrl }) {
   return /* html */ `
   <div class="card">
-   <div class="card__imageContainer">
-    <img src="/img/theclaw_webring_logo.svg" class="tcwr__logo" alt="The panther moth with a tattoo style banner that reads The Claw" />
-   </div>
-    <div class="card__inner">
-      <div class="tcwr">
-        <h2 class="tcwr__title">The Claw <span>webring</span></h2>
-        <div class="tcwr__nav">
-          <a href=${prevUrl} class="tcwr__navItem">Previous</a>
-          <button class="tcwr__navItem--random" data-webring-random>Random</button>
-          <a href="${nextUrl}" class="tcwr__navItem">Next</a>
-        </div>
-        <ul class="tcwr__membersList">
+    <div class="card__imageContainer">
+      <img src="/img/theclaw_webring_logo.svg" class="tcwr__logo" alt="The panther moth with a tattoo style banner that reads The Claw" />
+    </div>
+   <div class="card__inner">
+     <div class="tcwr">
+       <h2 class="tcwr__title">The Claw <span>webring</span></h2>
+       <div class="tcwr__nav">
+         <a href=${prevUrl} class="tcwr__navItem">Previous</a>
+         <button class="tcwr__navItem--random" data-webring-random>Random</button>
+         <a href="${nextUrl}" class="tcwr__navItem">Next</a>
+       </div>
+       <ul class="tcwr__membersList">
           ${members
             .map(
               (member) => `
@@ -28,25 +28,26 @@ function Webring({ members, prevUrl, nextUrl }) {
         <span class="card__metaLabel">Webring</span>
       </div>
     </div>
-    <script type="text/json" id="members">
-      ${JSON.stringify(members)}
-    </script>
-    <script type="module">
-      function getRandomInt(min, max) {
-        return Math.round(Math.random() * (max - min) + min);
-      }
+  </div>
+  <script type="text/json" id="members">
+    ${JSON.stringify(members)}
+  </script>
+  <script type="module">
+    function getRandomInt(min, max) {
+      return Math.round(Math.random() * (max - min) + min);
+    }
 
-      export function getRandomEntry(array) {
-        return array[getRandomInt(0, array.length - 1)];
-      }
+    export function getRandomEntry(array) {
+      return array[getRandomInt(0, array.length - 1)];
+    }
 
-      const members = JSON.parse(document.getElementById("members").textContent);
-      const randomButton = document.querySelector("[data-webring-random]");
+    const members = JSON.parse(document.getElementById("members").textContent);
+    const randomButton = document.querySelector("[data-webring-random]");
 
-      randomButton.addEventListener("click", () => {
-        window.location.href = getRandomEntry(members).url;
-      })
-    </script>
+    randomButton.addEventListener("click", () => {
+      window.location.href = getRandomEntry(members).url;
+    })
+  </script>
   `;
 }
 
