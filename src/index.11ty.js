@@ -24,7 +24,7 @@ exports.data = {
 };
 
 exports.render = function (data) {
-  const { activityFeed, person, newsletter, twitch } = data;
+  const { activityFeed, person, newsletter, twitch, webring } = data;
   const feedItems = activityFeed.slice(0, 8);
 
   return /*html*/ `
