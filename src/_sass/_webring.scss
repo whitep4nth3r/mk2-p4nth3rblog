@@ -61,6 +61,7 @@
 .tcwr__navItem--random {
   @include font_bold;
   font-style: normal;
+  color: var(--color-fg-copy);
   border-radius: var(--border-radius-base);
   background-color: var(--input-bg);
   padding: 0.6rem 1rem;
