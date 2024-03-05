@@ -19,9 +19,11 @@ function Webring({ members, prevUrl, nextUrl }) {
       .join("")}
   </ul>
   <a href="https://github.com/whitep4nth3r/the-claw-webring#join-the-claw-webring" class="tcwr__join">Join</a>
+
   <script type="text/json" id="members">
     ${JSON.stringify(members)}
   </script>
+  
   <script type="module">
     function getRandomInt(min, max) {
       return Math.round(Math.random() * (max - min) + min);
