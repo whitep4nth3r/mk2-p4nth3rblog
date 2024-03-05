@@ -66,7 +66,7 @@ exports.render = function (data) {
         </div>
         <div class="card">
           <div class="card__imageContainer">
-            <img src="/img/theclaw_webring_logo.svg" class="tcwr__logo" alt="The panther moth with a tattoo style banner that reads The Claw" />
+            <img src="/img/theclaw_webring_logo.svg" class="card__image tcwr__logo" alt="The panther moth with a tattoo style banner that reads The Claw" />
           </div>
           <div class="card__inner">
             ${Webring({
