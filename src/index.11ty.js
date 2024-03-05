@@ -3,6 +3,7 @@ const OpenGraph = require("../lib/openGraph");
 const TwitchInfo = require("./_components/twitchInfo");
 const ActivityFeedItem = require("./_components/card");
 const NewsletterSignup = require("./_components/newsletterSignup");
+const Webring = require("./_components/webring");
 const pageTitle =
   "Salma Alam-Naylor — live streamer, software engineer and developer educator ";
 
