@@ -43,7 +43,17 @@ exports.render = function (data) {
       <div class="home__activity">
       <div class="card">
         <div class="card__imageContainer">
-          <img src="/img/wwwh.png" class="card__image" alt="weird wide web hole" width="500" height="250" style="width: 100%;" />
+          <picture>
+            <source type="image/avif" srcset="/.netlify/images/?url=/img/wwwh.png?w=450&fm=avif" />
+            <source type="image/webp" srcset="/.netlify/images/?url=/img/wwwh.png?w=450&fm=webp" />
+            <img
+              src="/.netlify/images/?url=/img/wwwh.png?w=450"
+              alt="weird wide web hole"
+              role="presentation"
+              height="250"
+              width="500"
+              class="card__image" />
+          </picture>
         </div>
         <div class="card__inner">
           ${NewsletterSignup({
