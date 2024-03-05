@@ -3,6 +3,7 @@ const OpenGraph = require("../lib/openGraph");
 const TwitchInfo = require("./_components/twitchInfo");
 const ActivityFeedItem = require("./_components/card");
 const NewsletterSignup = require("./_components/newsletterSignup");
+const Webring = require("./_components/webring");
 const pageTitle =
   "Salma Alam-Naylor — live streamer, software engineer and developer educator ";
 
@@ -23,7 +24,7 @@ exports.data = {
 };
 
 exports.render = function (data) {
-  const { activityFeed, person, newsletter, twitch } = data;
+  const { activityFeed, person, newsletter, twitch, webring } = data;
   const feedItems = activityFeed.slice(0, 8);
 
   return /*html*/ `
@@ -63,14 +64,16 @@ exports.render = function (data) {
           <span class="card__metaLabel">Newsletter</span>
         </div>
       </div>
-       <div class="card">
+      <div class="card">
+        <div class="card__imageContainer">
+          <img src="/img/theclaw_webring_logo.svg" class="card__image tcwr__logo" alt="The panther moth with a tattoo style banner that reads The Claw" />
+        </div>
         <div class="card__inner">
-          <script
-          src="https://the-claw-webring-widget.netlify.app/the-claw-webring-widget.mjs"
-          type="module"
-        ></script>
-
-        <the-claw-webring-widget fullWidth="true" hideMembers="true"></the-claw-webring-widget>
+          ${Webring({
+            members: webring.members,
+            prevUrl: webring.prevUrl,
+            nextUrl: webring.nextUrl,
+          })}
           <span class="card__metaLabel">Webring</span>
         </div>
       </div>
