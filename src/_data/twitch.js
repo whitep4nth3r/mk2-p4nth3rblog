@@ -107,8 +107,8 @@ module.exports = async function () {
         vodData: {
           thumbnail: {
             url: thumb_url,
-            height: "1080",
-            width: "1920",
+            height: 998,
+            width: 556,
           },
           title: latestVod.title,
           subtitle: subtitle,
