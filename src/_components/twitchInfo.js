@@ -1,4 +1,5 @@
 const PlayIcon = require("./svg/playIcon");
+const ResponsiveImage = require("./responsiveImage");
 
 function TwitchInfo({ isLive, vodData }) {
   return /* html */ `
@@ -16,13 +17,18 @@ function TwitchInfo({ isLive, vodData }) {
               ${vodData.subtitle} ${PlayIcon()}
             </p>
           </div>
-          <img
-            src="${vodData.thumbnail.url}"
-            alt="Stream screenshot. It's auto-generated so I can't give you any details, sorry!"
-            class="twitchInfo__thumbnail"
-            height="${vodData.thumbnail.height}"
-            width="${vodData.thumbnail.width}"
-          />
+          ${ResponsiveImage({
+            image: {
+              url: `/.netlify/images/?url=${vodData.thumbnail.url}`,
+              height: vodData.thumbnail.height,
+              width: vodData.thumbnail.width,
+              contentType: "image/jpeg",
+              description:
+                "Stream screenshot. It's auto-generated so I can't give you any details, sorry!",
+            },
+            classOverride: "twitchInfo__thumbnail",
+            loading: "eager",
+          })}
         </a>
       </div>`
       : /* html */ `<div id="twitch-embed" class="twitchInfo__embed"></div>
