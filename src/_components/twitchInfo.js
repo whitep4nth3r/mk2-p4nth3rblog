@@ -8,11 +8,11 @@ function TwitchInfo({ isLive, vodData }) {
       ? /* html */ `<div class="twitchInfo">
         <a href="${vodData.link}" class="twitchInfo__link">
           <div class="twitchInfo__deets">
-            <span class="twitchInfo__streamTitleContainer">
+            <div class="twitchInfo__streamTitleContainer">
               <p class="twitchInfo__streamTitle">
                 ${vodData.title}
               </p>
-            </span>
+            </div>
             <p class="twitchInfo__live">
               ${vodData.subtitle} ${PlayIcon()}
             </p>
