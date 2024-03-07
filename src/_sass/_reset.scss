@@ -81,11 +81,17 @@ main {
   }
 
   &:after {
-    content: var(--whitep4nth3r-bg-svg);
+    content: "";
+    background-image: var(--whitep4nth3r-bg-svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 0;
+    width: 100%;
+    /* https://css-tricks.com/scale-svg/#aa-option-2-use-css-background-images-and-the-padding-bottom-hack */
+    padding-bottom: calc(100% * 201 / 1280); /* aspect ratio of image */
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 100%;
     z-index: -1;
   }
 }
