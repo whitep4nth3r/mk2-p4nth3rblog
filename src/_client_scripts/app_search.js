@@ -33,23 +33,12 @@ function formatDateForDisplay(dateString) {
   )} ${date.getFullYear()}`;
 }
 
-// Create a render function
-const renderSearchBox = (renderOptions, isFirstRender) => {
-  const { query, refine, clear, isSearchStalled, widgetParams } = renderOptions;
+const activateSearchElements = (renderOptions, isFirstRender) => {
+  const { refine, clear } = renderOptions;
 
   if (isFirstRender) {
-    const label = document.createElement("label");
-    label.setAttribute("for", "search");
-    label.classList = "ais__label";
-    label.innerText = "Search posts";
-
-    const input = document.createElement("input");
-    input.setAttribute("id", "search");
-    input.classList = "ais__input";
-
-    const button = document.createElement("button");
-    button.classList = "ais__reset";
-    button.textContent = "Clear";
+    const input = document.querySelector("[data-search-input]");
+    const button = document.querySelector("[data-search-clear]");
 
     input.addEventListener("input", (event) => {
       refine(event.target.value);
@@ -58,13 +47,7 @@ const renderSearchBox = (renderOptions, isFirstRender) => {
     button.addEventListener("click", () => {
       clear();
     });
-
-    widgetParams.container.appendChild(label);
-    widgetParams.container.appendChild(input);
-    widgetParams.container.appendChild(button);
   }
-
-  widgetParams.container.querySelector("input").value = query;
 };
 
 function initSearch({ appId, apiKey, indexName, latestPost }) {
@@ -76,8 +59,9 @@ function initSearch({ appId, apiKey, indexName, latestPost }) {
   });
 
   // create custom widget
-  const customSearchBox =
-    instantsearch.connectors.connectSearchBox(renderSearchBox);
+  const customSearchBox = instantsearch.connectors.connectSearchBox(
+    activateSearchElements,
+  );
 
   search.addWidgets([
     customSearchBox({
