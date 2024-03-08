@@ -1,6 +1,6 @@
 {
   "name": "mk2-p4nth3rblog",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "My website and blog.",
   "scripts": {
     "watch:sass": "sass --watch ./src/_sass:src/_css",
