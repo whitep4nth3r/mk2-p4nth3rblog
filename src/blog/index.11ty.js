@@ -53,7 +53,11 @@ exports.render = function (data) {
     <aside class="blog__searchAndCats">
       <div class="blog__searchBoxAndFilterToggle">
         <div id="autocomplete" class="ais">
-          <div id="searchbox" class="ais__searchbox"></div>
+          <div id="searchbox" class="ais__searchbox">
+            <label for="search" class="ais__label">Search posts</label>
+            <input id="search" data-search-input class="ais__input" type="text" />
+            <button class="ais__reset" data-search-clear type="button">Clear</button>
+          </div>
         </div>
         <!-- add aria stuff here -->
         <button type="button" class="blog__filterToggle" data-toggle>${FilterIcon()} Filters</button>
