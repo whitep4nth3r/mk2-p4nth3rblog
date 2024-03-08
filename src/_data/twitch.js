@@ -77,23 +77,23 @@ module.exports = async function () {
     if (vods !== null) {
       const latestVod = vods.data[0];
 
-      const today = new Date();
-      const createdOn = new Date(latestVod.created_at);
-      const msInDay = 24 * 60 * 60 * 1000;
+      // const today = new Date();
+      // const createdOn = new Date(latestVod.created_at);
+      // const msInDay = 24 * 60 * 60 * 1000;
 
-      createdOn.setHours(0, 0, 0, 0);
-      today.setHours(0, 0, 0, 0);
+      // createdOn.setHours(0, 0, 0, 0);
+      // today.setHours(0, 0, 0, 0);
 
-      const diff = (+today - +createdOn) / msInDay;
-      let subtitle;
+      // const diff = (+today - +createdOn) / msInDay;
+      // let subtitle;
 
-      if (diff === 0) {
-        subtitle = "Earlier today";
-      } else if (diff === 1) {
-        subtitle = "Yesterday";
-      } else {
-        subtitle = `${diff} days ago`;
-      }
+      // if (diff === 0) {
+      //   subtitle = "Earlier today";
+      // } else if (diff === 1) {
+      //   subtitle = "Yesterday";
+      // } else {
+      //   subtitle = `${diff} days ago`;
+      // }
 
       const thumb_url = !latestVod.thumbnail_url.includes("processing")
         ? latestVod.thumbnail_url.replace(
@@ -111,7 +111,7 @@ module.exports = async function () {
             width: 556,
           },
           title: latestVod.title,
-          subtitle: subtitle,
+          subtitle: "Watch VOD",
           link: latestVod.url,
         },
       };
