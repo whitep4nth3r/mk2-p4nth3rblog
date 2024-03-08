@@ -58,6 +58,6 @@ export default async (request, context) => {
 };
 
 export const config = {
-  path: ["/", "/blog/*"],
+  path: ["/blog/*"],
   excludedPath: "/blog/",
 };
