@@ -29,7 +29,7 @@ exports.render = function (data) {
         <p>After years of struggling with making video content at my desk, behind a screen, in January 2024, I set myself a goal. I wanted to get better at making (technical) videos. At the time, I didn't know what that really meant. So I continued to put off making videos.</p>
         <p>On Tuesday 12 March 2024, I was inspired by <a href="https://www.youtube.com/watch?v=cL_P3HQOQ8w&list=PLz8Iz-Fnk_eRG9950e-KKD2UA7ijT7PBq&index=8&ab_channel=LearnWithJason">Jason Lengstorf to just #DoItAnyway</a>. Just make a video. Just do the thing I'd been putting off for so long.</p>
         <p>So I made some videos. And the videos I made weren't from behind my desk, looking at a screen. They're just videos of what I wanted to say that day.</p>
-        <p><strong>This has been a journey</strong>, and it continues. The internet is <em>ours</em>.</p>
+        <p><strong>This has been a journey</strong>, and it continues. This internet is <em>ours</em>.</p>
       </div>
       <div class="video__grid">
         ${VideoEmbed({
