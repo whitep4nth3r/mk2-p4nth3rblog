@@ -30,6 +30,7 @@ const makeList = {
     [BLOCKS.HR]: (node, next) => "",
     [BLOCKS.EMBEDDED_ENTRY]: (node, next) => "",
     [BLOCKS.EMBEDDED_ASSET]: (node, next) => "",
+    [BLOCKS.TABLE]: (node, next) => "",
     [INLINES.EMBEDDED_ENTRY]: (node, next) => "",
     [INLINES.HYPERLINK]: (node, next) => "",
     [INLINES.ENTRY_HYPERLINK]: (node, next) => "",
