@@ -3368,7 +3368,7 @@ pre[class*=language-] {
 .video__banner {
   width: 100vw;
   height: 100svh;
-  position: absolute;
+  position: relative;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -3379,6 +3379,7 @@ pre[class*=language-] {
   background-size: cover;
   background-position: center;
   justify-content: flex-end;
+  filter: contrast(1.1);
 }
 @media screen and (min-width: 768px) {
   .video__banner {
@@ -3400,6 +3401,50 @@ pre[class*=language-] {
   .video__headline {
     width: 50%;
   }
+}
+
+.video__grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  list-style: none;
+  padding-left: 0;
+  grid-auto-rows: 1fr;
+}
+.video__grid li {
+  display: flex;
+}
+
+.video__gridHeader {
+  font-weight: var(--font-weight-bold);
+  font-family: var(--font-family-main);
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  font-size: clamp(2.5rem, 3.5vw, 3.5rem);
+  line-height: 1.4;
+  color: var(--color-fg);
+  max-width: var(--post-max-width);
+  text-wrap: balance;
+}
+
+.video__content {
+  max-width: var(--post-max-width);
+}
+.video__content p {
+  font-weight: var(--font-weight-main);
+  font-family: var(--font-family-main);
+  font-size: 1.125rem;
+  line-height: 1.75;
+  margin-bottom: 1rem;
+  color: var(--color-fg-copy);
+  word-break: break-word;
+}
+.video__content p a:focus-visible {
+  outline: transparent;
+  outline-style: solid;
+  box-shadow: var(--color-bg) 0 0 0 0.08rem, var(--color-focus-outline) 0 0 0 0.24rem;
+  transition: box-shadow var(--global-transition-time) ease-in-out;
+  border-radius: var(--border-radius-base);
 }
 
 /*# sourceMappingURL=main.css.map */
