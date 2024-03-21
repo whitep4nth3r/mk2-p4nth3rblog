@@ -436,13 +436,13 @@ main:after {
 
 [data-active=home] [data-link=home],
 [data-active=blog] [data-link=blog],
-[data-active=about] [data-link=video] {
+[data-active=video] [data-link=video] {
   opacity: 1;
   position: relative;
 }
 [data-active=home] [data-link=home]::after,
 [data-active=blog] [data-link=blog]::after,
-[data-active=about] [data-link=video]::after {
+[data-active=video] [data-link=video]::after {
   width: 100%;
   display: block;
   position: absolute;
@@ -471,12 +471,12 @@ main:after {
   }
 }
 
-[data-active=about] [data-link=video]::after {
+[data-active=video] [data-link=video]::after {
   content: var(--header-about-active-content);
   bottom: 0.75rem;
 }
 @media screen and (min-width: 768px) {
-  [data-active=about] [data-link=video]::after {
+  [data-active=video] [data-link=video]::after {
     bottom: 0.25rem;
   }
 }
@@ -3351,6 +3351,100 @@ pre[class*=language-] {
   outline-offset: 0.125rem;
   box-shadow: inset var(--color-fg) 0 0 0 0.125rem;
   transition: box-shadow var(--global-transition-time) ease-in-out;
+}
+
+.video {
+  position: relative;
+  aspect-ratio: 16/9;
+  /* address the magic numbers here, see _reset.scss */
+  margin-top: -8rem;
+}
+@media screen and (min-width: 768px) {
+  .video {
+    margin-top: -12rem;
+  }
+}
+
+.video__banner {
+  width: 100vw;
+  height: 100svh;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("/.netlify/images/?url=/img/salma_on_sofa.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  justify-content: flex-end;
+  filter: contrast(1.1);
+}
+@media screen and (min-width: 768px) {
+  .video__banner {
+    justify-content: center;
+  }
+}
+
+.video__bannerImg {
+  width: 100%;
+}
+
+.video__headline {
+  padding: clamp(0.5rem, 1vw, 1rem);
+  position: absolute;
+  right: 0;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .video__headline {
+    width: 50%;
+  }
+}
+
+.video__grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  list-style: none;
+  padding-left: 0;
+  grid-auto-rows: 1fr;
+}
+.video__grid li {
+  display: flex;
+}
+
+.video__gridHeader {
+  font-weight: var(--font-weight-bold);
+  font-family: var(--font-family-main);
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  font-size: clamp(2.5rem, 3.5vw, 3.5rem);
+  line-height: 1.4;
+  color: var(--color-fg);
+  max-width: var(--post-max-width);
+  text-wrap: balance;
+}
+
+.video__content {
+  max-width: var(--post-max-width);
+}
+.video__content p {
+  font-weight: var(--font-weight-main);
+  font-family: var(--font-family-main);
+  font-size: 1.125rem;
+  line-height: 1.75;
+  margin-bottom: 1rem;
+  color: var(--color-fg-copy);
+  word-break: break-word;
+}
+.video__content p a:focus-visible {
+  outline: transparent;
+  outline-style: solid;
+  box-shadow: var(--color-bg) 0 0 0 0.08rem, var(--color-focus-outline) 0 0 0 0.24rem;
+  transition: box-shadow var(--global-transition-time) ease-in-out;
+  border-radius: var(--border-radius-base);
 }
 
 /*# sourceMappingURL=main.css.map */
