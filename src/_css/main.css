@@ -436,13 +436,13 @@ main:after {
 
 [data-active=home] [data-link=home],
 [data-active=blog] [data-link=blog],
-[data-active=about] [data-link=video] {
+[data-active=video] [data-link=video] {
   opacity: 1;
   position: relative;
 }
 [data-active=home] [data-link=home]::after,
 [data-active=blog] [data-link=blog]::after,
-[data-active=about] [data-link=video]::after {
+[data-active=video] [data-link=video]::after {
   width: 100%;
   display: block;
   position: absolute;
@@ -471,12 +471,12 @@ main:after {
   }
 }
 
-[data-active=about] [data-link=video]::after {
+[data-active=video] [data-link=video]::after {
   content: var(--header-about-active-content);
   bottom: 0.75rem;
 }
 @media screen and (min-width: 768px) {
-  [data-active=about] [data-link=video]::after {
+  [data-active=video] [data-link=video]::after {
     bottom: 0.25rem;
   }
 }
@@ -3351,6 +3351,55 @@ pre[class*=language-] {
   outline-offset: 0.125rem;
   box-shadow: inset var(--color-fg) 0 0 0 0.125rem;
   transition: box-shadow var(--global-transition-time) ease-in-out;
+}
+
+.video {
+  position: relative;
+  aspect-ratio: 16/9;
+  /* address the magic numbers here, see _reset.scss */
+  margin-top: -8rem;
+}
+@media screen and (min-width: 768px) {
+  .video {
+    margin-top: -12rem;
+  }
+}
+
+.video__banner {
+  width: 100vw;
+  height: 100svh;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("/.netlify/images/?url=/img/salma_on_sofa.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  justify-content: flex-end;
+}
+@media screen and (min-width: 768px) {
+  .video__banner {
+    justify-content: center;
+  }
+}
+
+.video__bannerImg {
+  width: 100%;
+}
+
+.video__headline {
+  padding: clamp(0.5rem, 1vw, 1rem);
+  position: absolute;
+  right: 0;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .video__headline {
+    width: 50%;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

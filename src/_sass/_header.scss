@@ -204,7 +204,7 @@
 
 [data-active="home"] [data-link="home"],
 [data-active="blog"] [data-link="blog"],
-[data-active="about"] [data-link="video"] {
+[data-active="video"] [data-link="video"] {
   opacity: 1;
   position: relative;
 
@@ -240,7 +240,7 @@
   }
 }
 
-[data-active="about"] [data-link="video"] {
+[data-active="video"] [data-link="video"] {
   &::after {
     content: var(--header-about-active-content);
     bottom: 0.75rem;
