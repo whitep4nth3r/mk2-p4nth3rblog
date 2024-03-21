@@ -1,7 +1,7 @@
 const OpenGraph = require("../../lib/openGraph");
 const VideoEmbed = require("../_components/videoEmbed");
 
-const pageTitle = "The internet is ours";
+const pageTitle = "This internet is ours";
 
 exports.data = {
   layout: "base.html",
