@@ -1,7 +1,7 @@
 @font-face {
-  font-family: "Inter UI var";
+  font-family: "Rubik";
   font-weight: 400 900; /* safe weight range */
-  src: url("/fonts/Inter-UI.var.woff2") format("woff2-variations"), url("/fonts/Inter-UI.var.woff2") format("woff2");
+  src: url("/fonts/Rubik-Variable.woff2") format("woff2-variations"), url("/fonts/Rubik-Variable.woff2") format("woff2");
   font-style: normal;
   font-stretch: normal;
   font-display: swap;
@@ -48,7 +48,7 @@
   --orange: #fc814a;
   --body-horizontal-padding-sm: 1rem;
   --body-horizontal-padding-lg: 2.5rem;
-  --font-family-main: "Inter UI var", Arial, sans-serif;
+  --font-family-main: "Rubik", Arial, sans-serif;
   --font-weight-bold: 800;
   --font-weight-mid: 600;
   --font-weight-main: 400;
@@ -436,13 +436,13 @@ main:after {
 
 [data-active=home] [data-link=home],
 [data-active=blog] [data-link=blog],
-[data-active=about] [data-link=about] {
+[data-active=about] [data-link=video] {
   opacity: 1;
   position: relative;
 }
 [data-active=home] [data-link=home]::after,
 [data-active=blog] [data-link=blog]::after,
-[data-active=about] [data-link=about]::after {
+[data-active=about] [data-link=video]::after {
   width: 100%;
   display: block;
   position: absolute;
@@ -471,12 +471,12 @@ main:after {
   }
 }
 
-[data-active=about] [data-link=about]::after {
+[data-active=about] [data-link=video]::after {
   content: var(--header-about-active-content);
   bottom: 0.75rem;
 }
 @media screen and (min-width: 768px) {
-  [data-active=about] [data-link=about]::after {
+  [data-active=about] [data-link=video]::after {
     bottom: 0.25rem;
   }
 }
@@ -1053,6 +1053,7 @@ main:after {
   line-height: 1.4;
   color: var(--color-fg);
   max-width: var(--post-max-width);
+  text-wrap: balance;
 }
 
 .post__h2 {
