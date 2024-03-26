@@ -35,6 +35,11 @@ exports.render = function (data) {
         ${VideoEmbed({
           showTitle: false,
           embedUrl:
+            "https://www.youtube.com/embed/jjI6Mzv6XrQ?si=UzY22AMw4726Ix00",
+        })}
+        ${VideoEmbed({
+          showTitle: false,
+          embedUrl:
             "https://www.youtube.com/embed/_IZri_2rWyo?si=kFx-J-NCokxQVZTQ",
         })}
         ${VideoEmbed({
