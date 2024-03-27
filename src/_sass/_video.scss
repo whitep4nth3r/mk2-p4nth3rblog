@@ -18,16 +18,17 @@
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   background-image: url("/.netlify/images/?url=/img/salma_on_sofa.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   justify-content: flex-end;
   filter: contrast(1.1);
+  transition: height 0.2s ease-in-out;
 
   @media screen and (min-width: $global_md_breakpoint) {
-    justify-content: center;
+    height: 60svh;
   }
 }
 
@@ -36,13 +37,20 @@
 }
 
 .video__headline {
-  padding: clamp(0.5rem, 1vw, 1rem);
-  position: absolute;
-  right: 0;
+  @include font_bold;
+  color: var(--white);
+  text-transform: uppercase;
+  font-size: clamp(3rem, 14vw, 13rem);
+  opacity: 0.8;
+  padding: 1rem 1rem 2rem 1rem;
+  display: flex;
+  align-items: center;
+  max-width: var(--global-max-width);
   width: 100%;
-  @media screen and (min-width: $global_md_breakpoint) {
-    width: 50%;
-  }
+  mix-blend-mode: plus-lighter;
+  line-height: 0.8;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .video__grid {
@@ -58,6 +66,13 @@
   color: var(--color-fg);
   max-width: var(--post-max-width);
   text-wrap: balance;
+}
+
+.video__gridHeader--sub {
+  @include font_semibold;
+  font-size: 1.4rem;
+  word-break: break-word;
+  hyphens: auto;
 }
 
 .video__content {
