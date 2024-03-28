@@ -41,7 +41,7 @@ exports.render = function (data) {
     <hr class="post__hr" />
 
     <section class="sponsorships__content">
-      <h3>Word on the street</h3>
+      <h2>What people say</h2>
       <div class="sponsorships__testimonials">
         ${testimonials
           .map((testimonial) => Testimonial({ testimonial }))
