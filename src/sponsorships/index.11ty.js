@@ -28,7 +28,6 @@ exports.render = function (data) {
 
   return /* html */ `  
   <div class="sponsorships">
-    <p data-success class="sponsorships__success">Thanks for your message. I'll get back to you as soon as I can! In the meantime, why not <a href="https://twitter.com/whitep4nth3r">say hi on Twitter</a>.</p>
     <h1 class="sponsorships__title">${content.title}</h1>
     <section class="sponsorships__intro">
         <aside class="sponsorships__author" data-author>
