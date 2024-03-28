@@ -38,6 +38,8 @@ exports.render = function (data) {
         </div>
     </section>
 
+    <hr class="post__hr" />
+
     <section class="sponsorships__content">
       <h3>Word on the street</h3>
       <div class="sponsorships__testimonials">
@@ -46,6 +48,8 @@ exports.render = function (data) {
           .join("")}
       </div>
     </section>
+
+    <hr class="post__hr" />
   
     <section>
       <div class="sponsorships__content">
@@ -65,6 +69,8 @@ exports.render = function (data) {
         ${md.render(content.videoContent)}
       <div>
     </section>
+
+    <hr class="post__hr" />
 
     <section class="sponsorships__content">
       <h3>Contact me</h3>
