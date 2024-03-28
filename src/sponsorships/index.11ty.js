@@ -28,7 +28,6 @@ exports.render = function (data) {
 
   return /* html */ `  
   <div class="sponsorships">
-    <p data-success class="sponsorships__success">Thanks for your message. I'll get back to you as soon as I can! In the meantime, why not <a href="https://twitter.com/whitep4nth3r">say hi on Twitter</a>.</p>
     <h1 class="sponsorships__title">${content.title}</h1>
     <section class="sponsorships__intro">
         <aside class="sponsorships__author" data-author>
@@ -38,6 +37,19 @@ exports.render = function (data) {
           ${md.render(content.intro)}
         </div>
     </section>
+
+    <hr class="post__hr" />
+
+    <section class="sponsorships__content">
+      <h2>What people say</h2>
+      <div class="sponsorships__testimonials">
+        ${testimonials
+          .map((testimonial) => Testimonial({ testimonial }))
+          .join("")}
+      </div>
+    </section>
+
+    <hr class="post__hr" />
   
     <section>
       <div class="sponsorships__content">
@@ -58,14 +70,7 @@ exports.render = function (data) {
       <div>
     </section>
 
-    <section class="sponsorships__content">
-      <h3>Word on the street</h3>
-      <div class="sponsorships__testimonials">
-        ${testimonials
-          .map((testimonial) => Testimonial({ testimonial }))
-          .join("")}
-      </div>
-    </section>
+    <hr class="post__hr" />
 
     <section class="sponsorships__content">
       <h3>Contact me</h3>
