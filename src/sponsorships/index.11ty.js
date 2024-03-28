@@ -37,6 +37,15 @@ exports.render = function (data) {
           ${md.render(content.intro)}
         </div>
     </section>
+
+    <section class="sponsorships__content">
+      <h3>Word on the street</h3>
+      <div class="sponsorships__testimonials">
+        ${testimonials
+          .map((testimonial) => Testimonial({ testimonial }))
+          .join("")}
+      </div>
+    </section>
   
     <section>
       <div class="sponsorships__content">
@@ -55,15 +64,6 @@ exports.render = function (data) {
         ${md.render(content.demoAppsAndWebsites)}
         ${md.render(content.videoContent)}
       <div>
-    </section>
-
-    <section class="sponsorships__content">
-      <h3>Word on the street</h3>
-      <div class="sponsorships__testimonials">
-        ${testimonials
-          .map((testimonial) => Testimonial({ testimonial }))
-          .join("")}
-      </div>
     </section>
 
     <section class="sponsorships__content">
