@@ -12,7 +12,11 @@ module.exports = async function () {
   const futureEvents = await ContentfulEvents.getAll({ future: true });
 
   const dbEvents = futureEvents.map((ev) => {
-    return { ...ev, type: ev.link?.includes("youtube") ? "youtube" : "db", canceled_until: null };
+    return {
+      ...ev,
+      type: ev.link?.includes("youtube") ? "youtube" : "db",
+      canceled_until: null,
+    };
   });
 
   const twitchSchedule = await TwitchApi.getSchedule();
@@ -28,7 +32,7 @@ module.exports = async function () {
       return {
         ...ev,
         date: ev.start_time,
-        name: ev.title,
+        name: `Live on Twitch: ${ev.title}`,
         link: `https://www.twitch.tv/whitep4nth3r/schedule?segmentID=${segmentInfo.segmentID}`,
         type: "twitch",
       };
