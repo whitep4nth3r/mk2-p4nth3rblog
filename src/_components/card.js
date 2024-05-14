@@ -47,9 +47,11 @@ function description(item) {
   return "";
 }
 
-function renderImage({ image, type }) {
+function renderImage({ image, type, lazyLoad }) {
   // empty alt because purely decorative
   // todo — optimize image types here
+
+  const lazy = lazyLoad ? ` loading="lazy"` : "";
 
   const modifier = type === "thing" ? " card__imageContainer--large" : "";
 
@@ -64,6 +66,7 @@ function renderImage({ image, type }) {
           role="presentation"
           height="${image.height}"
           width="${image.width}"
+          ${lazy}
           class="card__image" />
       </picture>
     </div>`;
@@ -90,9 +93,7 @@ function formatCategoryName(name) {
 
 function renderType(item) {
   if (item.type === "thing") {
-    return `<span class="card__metaLabel">${formatCategoryName(
-      item.category,
-    )}</span>`;
+    return `<span class="card__metaLabel">${formatCategoryName(item.category)}</span>`;
   }
 
   return `<span class="card__metaLabel">${activityType[item.type]}</span>`;
@@ -137,13 +138,13 @@ function itemMeta(item) {
   }
 }
 
-const Card = ({ item, showType = true }) => {
+const Card = ({ item, showType = true, lazyLoad = false }) => {
   const heading = item.title || item.name;
   const itemImage = findImage(item);
 
   return `
   ${openingTag({ item, heading })}
-    ${renderImage({ image: itemImage, type: item.type })}
+    ${renderImage({ image: itemImage, type: item.type, lazyLoad: lazyLoad })}
     <div class="card__inner">
       ${renderDate(item)}
       <h2 class="card__title">${heading}</h2>

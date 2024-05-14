@@ -136,7 +136,7 @@ exports.render = async function (data) {
               <div class="post__relatedGrid">
                 ${post.relatedPostsCollection.items
                   .map((post) =>
-                    Card({ item: { ...post, type: "post" }, showType: false }),
+                    Card({ item: { ...post, type: "post" }, showType: false, lazyLoad: true }),
                   )
                   .join("")}
               </div>
