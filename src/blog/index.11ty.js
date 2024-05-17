@@ -9,9 +9,7 @@ const pageTitle = "Blogs and tutorials";
 
 function calculatePageUrl(data) {
   const suffix =
-    data.pagination.pageNumber === 0
-      ? ``
-      : `${data.pagination.pageNumber + 1}/`;
+    data.pagination.pageNumber === 0 ? `` : `${data.pagination.pageNumber + 1}/`;
   return `https://whitep4nth3r.com/blog/${suffix}`;
 }
 
@@ -31,9 +29,7 @@ exports.data = {
   },
   permalink: (data) => {
     const trailing =
-      data.pagination.pageNumber === 0
-        ? ``
-        : `${data.pagination.pageNumber + 1}/`;
+      data.pagination.pageNumber === 0 ? `` : `${data.pagination.pageNumber + 1}/`;
     return `blog/${trailing}`;
   },
   eleventyComputed: {
@@ -74,10 +70,11 @@ exports.render = function (data) {
       <div data-static-content>
         <ol class="blog__cardsGrid">
         ${data.pagination.items
-          .map(function (item) {
+          .map(function (item, index) {
+            const lazy = index > 5 ? true : false;
             return `
             <li>
-              ${Card({ item, showType: false })}
+              ${Card({ item, showType: false, lazyLoad: lazy })}
             </li>`;
           })
           .join("")}
