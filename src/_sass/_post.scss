@@ -1,10 +1,12 @@
 [color-mode="dark"] {
   --post-hr-color: var(--pink-light);
   --table-th-color: var(--color-fg);
+  --post-meta-fg-color: var(--color-bg);
 }
 [color-mode="light"] {
   --post-hr-color: var(--pink);
   --table-th-color: var(--white);
+  --post-meta-fg-color: var(--color-fg);
 }
 
 .post {
@@ -36,7 +38,7 @@
   font-weight: 500;
   font-size: 0.875rem;
   line-height: 1.5;
-  color: var(--pink);
+  color: var(--post-meta-fg-color);
   background-color: #ffffff;
   border-radius: 1rem;
   padding: 0.125rem 0.5rem;
