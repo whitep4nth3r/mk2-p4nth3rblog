@@ -28,11 +28,9 @@ exports.data = {
     return `blog/${data.post.slug}/`;
   },
   eleventyComputed: {
-    title: (data) => `${data.post.metaTitle} - Salma Alam-Naylor`,
+    title: (data) => data.post.metaTitle,
     slug: (data) => data.post.slug,
-    canonical: (data) =>
-      data.post.externalUrl ||
-      `https://whitep4nth3r.com/blog/${data.post.slug}/`,
+    canonical: (data) => data.post.externalUrl || `https://whitep4nth3r.com/blog/${data.post.slug}/`,
     metaDescription: (data) => data.post.metaDescription,
     openGraphImageUrl: (data) =>
       OpenGraph.generateImageUrl({
@@ -41,12 +39,9 @@ exports.data = {
     openGraphImageAlt: (data) => OpenGraph.generateImageAlt(data.post.title),
     openGraphImageWidth: OpenGraph.imgWidth,
     openGraphImageHeight: OpenGraph.imgHeight,
-    openGraphUrl: (data) =>
-      data.post.externalUrl ||
-      `https://whitep4nth3r.com/blog/${data.post.slug}/`,
+    openGraphUrl: (data) => data.post.externalUrl || `https://whitep4nth3r.com/blog/${data.post.slug}/`,
     openGraphTimeToRead: (data) => data.post.readingTime,
-    openGraphArticleTags: (data) =>
-      data.post.topicsCollection.items.map((item) => item.name),
+    openGraphArticleTags: (data) => data.post.topicsCollection.items.map((item) => item.name),
   },
 };
 
@@ -135,9 +130,7 @@ exports.render = async function (data) {
               </div>
               <div class="post__relatedGrid">
                 ${post.relatedPostsCollection.items
-                  .map((post) =>
-                    Card({ item: { ...post, type: "post" }, showType: false, lazyLoad: true }),
-                  )
+                  .map((post) => Card({ item: { ...post, type: "post" }, showType: false, lazyLoad: true }))
                   .join("")}
               </div>
             </div>`
