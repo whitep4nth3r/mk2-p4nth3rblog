@@ -23,6 +23,7 @@
   }
 
   * {
+    background-color: var(--bio-image-container-bg);
     height: calc(100% - 6.5rem);
     object-fit: cover;
     border-radius: var(--border-radius-base);
