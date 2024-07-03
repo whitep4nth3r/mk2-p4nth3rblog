@@ -72,7 +72,7 @@
   --color-link: var(--pink-light);
   --color-brush-bg: rgba(255, 255, 255, 0.72);
   --color-focus-outline: var(--pink-light);
-  --bio-image-container-bg: rgb(250, 239, 255, 0.08);
+  --bio-image-container-bg: rgb(250, 239, 255, 0.16);
 }
 
 [color-mode=light] {
@@ -821,8 +821,10 @@ main:after {
     align-items: flex-start;
   }
 }
-.about__fixed * {
+.about__fixed img {
   background-color: var(--bio-image-container-bg);
+}
+.about__fixed * {
   height: calc(100% - 6.5rem);
   object-fit: cover;
   border-radius: var(--border-radius-base);
@@ -1560,8 +1562,10 @@ main:after {
   transition: transform var(--global-transition-time) ease-in-out;
   height: 100%;
 }
-.author__imgContainer * {
+.author__imgContainer img {
   background-color: var(--bio-image-container-bg);
+}
+.author__imgContainer * {
   border-radius: var(--border-radius-base);
   height: 100%;
   object-fit: cover;

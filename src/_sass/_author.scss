@@ -37,8 +37,11 @@
   transition: transform var(--global-transition-time) ease-in-out;
   height: 100%;
 
-  * {
+  img {
     background-color: var(--bio-image-container-bg);
+  }
+
+  * {
     border-radius: var(--border-radius-base);
     height: 100%;
     object-fit: cover;
