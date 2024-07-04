@@ -1018,8 +1018,9 @@ main:after {
 }
 
 .post__asideStickyGroup {
+  --sticky-gap: 10rem;
   position: sticky;
-  top: 10rem;
+  top: var(--sticky-gap);
   overflow-y: auto;
   max-height: 100vh;
   padding-top: 0.25rem;
@@ -1030,7 +1031,7 @@ main:after {
 }
 @media screen and (min-width: 56em) {
   .post__asideStickyGroup {
-    padding-bottom: 4rem;
+    padding-bottom: var(--sticky-gap);
   }
 }
 
