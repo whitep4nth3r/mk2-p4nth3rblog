@@ -13,8 +13,9 @@
   filter: var(--base-shadow-filter);
   transition: transform var(--global-transition-time) ease-in-out;
 
-  * {
+  img {
     border-radius: var(--border-radius-base);
+    background-color: var(--bio-image-container-bg);
   }
 }
 

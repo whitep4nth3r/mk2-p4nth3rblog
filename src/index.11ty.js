@@ -4,8 +4,7 @@ const TwitchInfo = require("./_components/twitchInfo");
 const ActivityFeedItem = require("./_components/card");
 const NewsletterSignup = require("./_components/newsletterSignup");
 const Webring = require("./_components/webring");
-const pageTitle =
-  "Salma Alam-Naylor — live streamer, software engineer and developer educator ";
+const pageTitle = "Salma Alam-Naylor — live streamer, software engineer and developer educator ";
 
 exports.data = {
   layout: "base.html",
@@ -15,7 +14,7 @@ exports.data = {
   metaDescription:
     "I write code for your entertainment. I stream live coding on Twitch, help developers build great websites, and love helping people get into tech.",
   openGraphImageUrl: OpenGraph.generateImageUrl({
-    title: "Live streamer, software engineer and developer educator",
+    title: "I write code for your entertainment",
   }),
   openGraphImageAlt: OpenGraph.generateImageAlt(pageTitle),
   openGraphImageWidth: OpenGraph.imgWidth,
