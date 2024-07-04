@@ -2,22 +2,26 @@ const { documentToHtmlString } = require("@contentful/rich-text-html-renderer");
 const { BLOCKS, INLINES } = require("@contentful/rich-text-types");
 const Tools = require("../../lib/tools");
 
+function truncateIfTooLong(text) {
+  return text.length > 60 ? text.slice(0, 60) + "..." : text;
+}
+
 const makeList = {
   renderNode: {
     [BLOCKS.PARAGRAPH]: (node, next) => "",
     [BLOCKS.HEADING_1]: (node, next) => "",
     [BLOCKS.HEADING_2]: (node, next) => `
       <li class="tableOfContents__item">
-        <a href="#${Tools.slugifyString(
-          next(node.content),
-        )}" class="tableOfContents__itemLink">${next(node.content)}</a>
+        <a href="#${Tools.slugifyString(next(node.content))}" class="tableOfContents__itemLink">${next(
+      node.content,
+    )}</a>
       </li>
       `,
     [BLOCKS.HEADING_3]: (node, next) =>
       `<li class="tableOfContents__item tableOfContents__item--nudged">
-        <a href="#${Tools.slugifyString(
-          next(node.content),
-        )}" class="tableOfContents__itemLink">${next(node.content)}</a>
+        <a href="#${Tools.slugifyString(next(node.content))}" class="tableOfContents__itemLink">${truncateIfTooLong(
+        next(node.content),
+      )}</a>
       </li>
       `,
     [BLOCKS.HEADING_4]: (node, next) => "",
