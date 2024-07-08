@@ -10,6 +10,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "./src/_css/": "/css/" });
   eleventyConfig.addPassthroughCopy({ "./src/_fonts": "/fonts" });
   eleventyConfig.addPassthroughCopy({ "./src/_public": "/" });
+  eleventyConfig.addPassthroughCopy({ "./_headers": "/" });
   eleventyConfig.addPassthroughCopy({
     "./src/_client_scripts/app_search.js": "/js/app_search.js",
   });
