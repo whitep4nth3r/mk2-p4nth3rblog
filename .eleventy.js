@@ -1,23 +1,8 @@
-// const { sentryEsbuildPlugin } = require("@sentry/esbuild-plugin");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const embedTwitter = require("eleventy-plugin-embed-twitter");
 const embedYouTube = require("eleventy-plugin-youtube-embed");
 
 module.exports = function (eleventyConfig) {
-  // eleventyConfig.on("eleventy.before", async () => {
-  //   await require("esbuild").build({
-  //     sourcemap: true, // Source map generation must be turned on
-  //     plugins: [
-  //       // Put the Sentry esbuild plugin after all other plugins
-  //       sentryEsbuildPlugin({
-  //         org: "the-claw",
-  //         project: "mk2-p4nth3rblog",
-  //         authToken: process.env.SENTRY_AUTH_TOKEN,
-  //       }),
-  //     ],
-  //   });
-  // });
-
   eleventyConfig.ignores.add("./src/_sass");
   eleventyConfig.ignores.add("./src/_scripts");
 

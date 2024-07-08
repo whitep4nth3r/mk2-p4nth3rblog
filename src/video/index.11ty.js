@@ -8,7 +8,7 @@ exports.data = {
   title: pageTitle,
   activeNav: "video",
   pageType: "video",
-  metaDescription: "I made some videos. Maybe you could, too.",
+  metaDescription: "I made some videos to practise making videos. These videos don't mean anything really. Or maybe they do?",
   openGraphImageUrl: OpenGraph.generateImageUrl({ title: pageTitle }),
   openGraphImageAlt: OpenGraph.generateImageAlt(pageTitle),
   openGraphImageWidth: OpenGraph.imgWidth,
