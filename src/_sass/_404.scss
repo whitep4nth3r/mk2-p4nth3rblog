@@ -18,7 +18,7 @@
 }
 
 .fourohfour__title {
-  @include font_atomic;
+  margin-top: 2rem;
   color: var(--color-body);
 }
 
@@ -32,8 +32,7 @@
 }
 
 .fourohfour__img {
-  box-shadow: 0px 1.5rem 2rem -1rem rgba(0, 0, 0, 0.4),
-    inset 0px 1px 0px rgba(255, 255, 255, 0.48);
+  box-shadow: 0px 1.5rem 2rem -1rem rgba(0, 0, 0, 0.4), inset 0px 1px 0px rgba(255, 255, 255, 0.48);
   border-radius: calc(var(--border-radius-base) * 2);
   width: 100%;
   margin: auto;

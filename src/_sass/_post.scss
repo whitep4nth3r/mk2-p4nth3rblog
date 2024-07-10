@@ -205,7 +205,7 @@
 
 .post__blockquote:before {
   content: '"';
-  @include font_atomic;
+  font-style: italic;
   color: var(--orange);
   font-size: 10rem;
   line-height: 0;
@@ -325,7 +325,7 @@
 
 .post__calloutContent blockquote:before {
   content: '"';
-  @include font_atomic;
+  font-style: italic;
   color: var(--orange);
   font-size: 10rem;
   line-height: 0;
