@@ -48,15 +48,6 @@ body {
   }
 }
 
-@keyframes fadeInBrush {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 50%;
-  }
-}
-
 main {
   margin: 6rem auto auto auto;
   max-width: var(--global-max-width);
@@ -67,7 +58,6 @@ main {
 
   &:before {
     content: "";
-    animation: fadeInBrush 0.42s ease-in-out;
     background-image: var(--bg-brush);
     background-repeat: no-repeat;
     background-size: cover;
