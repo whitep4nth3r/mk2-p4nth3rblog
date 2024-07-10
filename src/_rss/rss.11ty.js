@@ -58,14 +58,15 @@ exports.render = function (data) {
   const { sortedItems } = data;
 
   return /* xml */ `<?xml version="1.0" encoding="UTF-8"?>
+  <?xml-stylesheet href="/css/rss-style.xsl" type="text/xsl"?>
   <rss version="2.0"
   xmlns:atom="https://www.w3.org/2005/Atom"
   xmlns:content="https://purl.org/rss/1.0/modules/content/">
   <channel>
-  <title>${Config.site.title} RSS Feed</title>
+  <title>whitep4nth3r's Web Feed</title>
   <atom:link href="https://${Config.site.domain}/feed.xml" rel="self" type="application/rss+xml" />
   <link>https://${Config.site.domain}</link>
-  <description>Posts, talks and more about web development, accessibility, Jamstack, JavaScript, and more from whitep4nth3r.</description>
+  <description>Hello, I'm Salma. I write code for your entertainment. I help developers build cool stuff with blog posts, videos, live coding and open source projects. I work at Sentry. I like to think I'm kinda cool.</description>
     ${buildRssItems(sortedItems)}
     </channel>
     </rss>

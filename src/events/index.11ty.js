@@ -21,7 +21,7 @@ exports.data = {
   layout: "base.html",
   title: pageTitle,
   activeNav: "events",
-  metaDescription: "View Salma's Twitch, live events and conference schedule.",
+  metaDescription: "View my Twitch schedule, virtual events and conference speaking schedule. Come and say hi if you meet me somewhere in the world!",
   openGraphImageUrl: OpenGraph.generateImageUrl({ title: pageTitle }),
   openGraphImageAlt: OpenGraph.generateImageAlt(pageTitle),
   openGraphImageWidth: OpenGraph.imgWidth,

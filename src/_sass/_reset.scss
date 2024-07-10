@@ -48,15 +48,6 @@ body {
   }
 }
 
-@keyframes fadeInBrush {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 50%;
-  }
-}
-
 main {
   margin: 6rem auto auto auto;
   max-width: var(--global-max-width);
@@ -66,18 +57,16 @@ main {
   }
 
   &:before {
-    animation: fadeInBrush 0.42s ease-in-out;
-    @include font_atomic_extras_two;
-    content: "M" / "";
-    color: var(--color-brush-bg);
+    content: "";
+    background-image: var(--bg-brush);
+    background-repeat: no-repeat;
+    background-size: cover;
     position: fixed;
     z-index: -1;
     opacity: 50%;
+    height: 100%;
+    width: 100%;
     mix-blend-mode: overlay;
-    font-size: 1000px;
-    line-height: 1;
-    right: -10%;
-    top: 5%;
   }
 
   &:after {
@@ -93,15 +82,5 @@ main {
     bottom: 0;
     left: 0;
     z-index: -1;
-  }
-}
-
-[data-type="about"],
-[data-type="uses"],
-[data-type="post"] {
-  main:before {
-    content: "Q" / "";
-    top: 20%;
-    right: -20%;
   }
 }

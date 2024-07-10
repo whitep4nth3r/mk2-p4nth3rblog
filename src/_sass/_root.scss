@@ -21,10 +21,11 @@ $global_md_breakpoint: 768px;
   --body-horizontal-padding-sm: 1rem;
   --body-horizontal-padding-lg: 2.5rem;
 
-  --font-family-main: "Rubik", Arial, sans-serif;
+  /* https://modernfontstacks.com/ */
+  --font-family-main: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial, sans-serif;
 
-  --font-weight-bold: 800;
-  --font-weight-mid: 600;
+  --font-weight-bold: 700;
+  --font-weight-mid: 700;
   --font-weight-main: 400;
 
   --border-radius-base: 0.375rem;
@@ -45,6 +46,7 @@ $global_md_breakpoint: 768px;
   color-scheme: dark;
   --page-bg: radial-gradient(farthest-corner at 100% 100%, var(--black-alt) 0%, var(--black) 50%);
   --whitep4nth3r-bg-svg: url("/img/whitep4nth3r-darkmode.svg");
+  --bg-brush: url("/img/brush-dark.svg");
 
   --color-bg: var(--black);
   --color-fg: var(--white);
@@ -60,6 +62,7 @@ $global_md_breakpoint: 768px;
   color-scheme: light;
   --page-bg: radial-gradient(farthest-corner at 100% 100%, var(--white-alt) 0%, var(--white) 50%);
   --whitep4nth3r-bg-svg: url("/img/whitep4nth3r-lightmode.svg");
+  --bg-brush: url("/img/brush-light.svg");
 
   --color-bg: var(--white);
   --color-fg: var(--black);

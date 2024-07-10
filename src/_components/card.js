@@ -112,11 +112,12 @@ function renderDate(item) {
 const activityType = {
   award: "Award",
   event: "Event",
-  link: "Misc.",
+  link: "Link",
   podcast: "Podcast",
   post: "Blog",
   talk: "Talk",
   youtube: "YouTube",
+  "youtube-short": "Short",
 };
 
 function itemMeta(item) {

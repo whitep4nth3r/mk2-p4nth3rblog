@@ -10,6 +10,10 @@
   border-width: 0;
 }
 
+.sr-only {
+  @include sr_only;
+}
+
 @mixin input_focus {
   outline-color: transparent;
   outline-style: solid;

@@ -1,0 +1,4 @@
+# RSS Styles:
+/feed.xml
+  Content-Type: application/xml; charset=utf-8
+  x-content-type-options: nosniff
