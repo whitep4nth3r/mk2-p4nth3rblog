@@ -94,13 +94,3 @@ main {
     z-index: -1;
   }
 }
-
-[data-type="about"],
-[data-type="uses"],
-[data-type="post"] {
-  main:before {
-    content: "Q" / "";
-    top: 20%;
-    right: -20%;
-  }
-}
