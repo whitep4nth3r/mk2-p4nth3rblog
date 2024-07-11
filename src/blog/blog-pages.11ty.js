@@ -116,6 +116,7 @@ exports.render = async function (data) {
 
         <span class="post__newsletterSignupSmall">${NewsletterSignup({
           removeMargin: false,
+          subscribers: newsletter.subscribers,
         })}</span>
         <hr class="post__separator" />
 
