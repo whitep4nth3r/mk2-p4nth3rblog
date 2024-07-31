@@ -21,14 +21,6 @@ function calculateDate(page) {
   return page.date.toISOString();
 }
 
-function calculateUrl(page) {
-  if (page.data.eleventyComputed && page.data.eleventyComputed.canonical) {
-    return page.data.eleventyComputed.canonical(page.data);
-  }
-
-  return `https://${Config.site.domain}${page.url}`;
-}
-
 function removeUrlParamsFromLink(url) {
   return url.split("?")[0];
 }
@@ -38,7 +30,7 @@ function buildItems(items) {
     ${items
       .map((page) => {
         const date = calculateDate(page);
-        const url = calculateUrl(page);
+        const url = `https://${Config.site.domain}${page.url}`;
 
         return /*xml*/ `<url><loc>${removeUrlParamsFromLink(
           url,
