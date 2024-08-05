@@ -13,19 +13,18 @@ exports.data = {
     size: 1,
     addAllPagesToCollections: true,
   },
+  includeInSitemap: true,
   permalink: (data) => {
     return `topics/${data.topic.slug}/`;
   },
   eleventyComputed: {
     title: (data) => `Posts about ${data.topic.name} from Salma Alam-Naylor`,
-    metaDescription: (data) =>
-      `Learn about ${data.topic.name} and more from ${Config.meta.jobDescription}.`,
+    metaDescription: (data) => `Learn about ${data.topic.name} and more from ${Config.meta.jobDescription}.`,
     openGraphImageUrl: (data) =>
       OpenGraph.generateImageUrl({
         title: `Blog posts tagged ${data.topic.name}`,
       }),
-    openGraphImageAlt: (data) =>
-      OpenGraph.generateImageAlt(`Posts about ${data.topic.name} from Salma Alam-Naylor`),
+    openGraphImageAlt: (data) => OpenGraph.generateImageAlt(`Posts about ${data.topic.name} from Salma Alam-Naylor`),
     openGraphImageWidth: OpenGraph.imgWidth,
     openGraphImageHeight: OpenGraph.imgHeight,
     openGraphUrl: (data) => `https://whitep4nth3r.com/topics/${data.topic.slug}/`,
