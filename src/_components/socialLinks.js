@@ -19,7 +19,7 @@ function SocialLinks() {
       <a href="https://youtube.com/whitep4nth3r" class="socialLinks__item" target="_blank" rel="nofollow noreferrer" aria-label="Subscribe on YouTube">${YouTubeIcon()}</a>
     </li>
     <li>
-      <a href="https://mastodon.social/@whitep4nth3r" class="socialLinks__item" target="_blank" rel="nofollow noreferrer" aria-label="Follow on Mastodon">${MastodonIcon()}</a>
+      <a href="https://mastodon.social/@whitep4nth3r" class="socialLinks__item" target="_blank" rel="me nofollow noreferrer" aria-label="Follow on Mastodon">${MastodonIcon()}</a>
     </li>
     <li>
       <a href="https://twitter.com/whitep4nth3r" class="socialLinks__item" target="_blank" rel="nofollow noreferrer" aria-label="Follow on Twitter">${TwitterIcon()}</a>
