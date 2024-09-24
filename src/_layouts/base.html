@@ -24,6 +24,12 @@
           environment: environment,
           tracesSampleRate: 0.5,
           enableInp: true,
+          integrations: [
+            Sentry.replayIntegration({
+              maskAllText: false,
+              blockAllMedia: false,
+            }),
+          ],
         });
       };
     </script>
