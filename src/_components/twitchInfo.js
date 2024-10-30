@@ -1,12 +1,13 @@
 const PlayIcon = require("./svg/playIcon");
 const ResponsiveImage = require("./responsiveImage");
 
-function TwitchInfo({ isLive, vodData }) {
+function TwitchInfo({ isLive, vodData, isPlaceholder }) {
+  const placeholderClass = isPlaceholder ? " twitchInfo__placeholder" : "";
   return /* html */ `
   ${
     !isLive
       ? /* html */ `<div class="twitchInfo">
-        <a href="${vodData.link}" class="twitchInfo__link">
+        <a href="${vodData.link}" class="twitchInfo__link${placeholderClass}">
           <div class="twitchInfo__deets">
             <div class="twitchInfo__streamTitleContainer">
               <p class="twitchInfo__streamTitle">
@@ -23,10 +24,9 @@ function TwitchInfo({ isLive, vodData }) {
               height: vodData.thumbnail.height,
               width: vodData.thumbnail.width,
               contentType: "image/jpeg",
-              description:
-                "Stream screenshot. It's auto-generated so I can't give you any details, sorry!",
+              description: "Stream screenshot. It's auto-generated so I can't give you any details, sorry!",
             },
-            classOverride: "twitchInfo__thumbnail",
+            classOverride: `twitchInfo__thumbnail${placeholderClass}`,
             loading: "eager",
           })}
         </a>

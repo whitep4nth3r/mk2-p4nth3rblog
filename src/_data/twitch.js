@@ -27,8 +27,7 @@ const TwitchApi = {
     };
   },
   getStreams: async function () {
-    const tokenResponse =
-      tokenInMemory !== null ? tokenInMemory : await TwitchApi.getAccessToken();
+    const tokenResponse = tokenInMemory !== null ? tokenInMemory : await TwitchApi.getAccessToken();
     if (tokenResponse.access_token) {
       const streamsResponse = await fetch(
         `https://api.twitch.tv/helix/streams?user_id=${twitchId}`,
@@ -44,8 +43,7 @@ const TwitchApi = {
     }
   },
   getVods: async function () {
-    const tokenResponse =
-      tokenInMemory !== null ? tokenInMemory : await TwitchApi.getAccessToken();
+    const tokenResponse = tokenInMemory !== null ? tokenInMemory : await TwitchApi.getAccessToken();
     if (tokenResponse.access_token) {
       const vodsResponse = await fetch(
         `https://api.twitch.tv/helix/videos?user_id=${twitchId}&type=archive&first=1`,
@@ -74,7 +72,7 @@ module.exports = async function () {
   } else {
     const vods = await TwitchApi.getVods();
 
-    if (vods !== null) {
+    if (vods.data.length > 0) {
       const latestVod = vods.data[0];
 
       // const today = new Date();
@@ -96,10 +94,7 @@ module.exports = async function () {
       // }
 
       const thumb_url = !latestVod.thumbnail_url.includes("processing")
-        ? latestVod.thumbnail_url.replace(
-            "%{width}x%{height}",
-            imageSizeOffline,
-          )
+        ? latestVod.thumbnail_url.replace("%{width}x%{height}", imageSizeOffline)
         : "/img/stream_thumb_fallback.jpg";
 
       return {
@@ -107,8 +102,8 @@ module.exports = async function () {
         vodData: {
           thumbnail: {
             url: thumb_url,
-            height: 998,
-            width: 556,
+            height: 556,
+            width: 998,
           },
           title: latestVod.title,
           subtitle: "Watch VOD",
@@ -118,15 +113,16 @@ module.exports = async function () {
     } else {
       return {
         isLive: false,
+        isPlaceholder: true,
         vodData: {
           thumbnail: {
-            url: "/img/stream_thumb_fallback.jpg",
-            height: "1080",
-            width: "1920",
+            url: "/img/stream_thumb_fallback.png",
+            height: "499",
+            width: "998",
           },
-          title: "Watch me fix my website LIVE: debug behind the scenes",
-          subtitle: "Last week",
-          link: "https://whitep4nth3r.com",
+          title: "writing code LIVE for your entertainment",
+          subtitle: "Follow on Twitch",
+          link: "https://twitch.tv/whitep4nth3r",
         },
       };
     }
