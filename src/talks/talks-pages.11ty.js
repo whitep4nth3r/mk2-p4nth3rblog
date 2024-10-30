@@ -18,6 +18,7 @@ exports.data = {
   permalink: (data) => {
     return `talks/${data.talk.slug}/`;
   },
+  includeInSitemap: true,
   eleventyComputed: {
     title: (data) => `${data.talk.title} - Salma Alam-Naylor`,
     metaDescription: (data) => data.talk.metaDescription,
@@ -63,11 +64,7 @@ exports.render = function (data) {
       <hr class="post__separator" />
 
       <div class="post__body">
-        ${
-          talk.recording !== null
-            ? VideoEmbed({ embedUrl: talk.recording.embedUrl, title: talk.recording.title })
-            : ""
-        }
+        ${talk.recording !== null ? VideoEmbed({ embedUrl: talk.recording.embedUrl, title: talk.recording.title }) : ""}
         <h2 class="post__h2">Slides</h2>
         ${SpeakerDeckLink({ speakerDeckLink: talk.speakerDeckLink })}
 

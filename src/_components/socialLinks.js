@@ -1,8 +1,8 @@
 const DiscordIcon = require("./svg/discordIcon");
 const GithubIcon = require("./svg/githubIcon");
 const TwitchIcon = require("./svg/twitchIcon");
-const TwitterIcon = require("./svg/twitterIcon");
 const YouTubeIcon = require("./svg/youtubeIcon");
+const BlueskyIcon = require("./svg/blueskyIcon");
 const FeedIcon = require("./svg/feedIcon");
 
 function SocialLinks() {
@@ -14,11 +14,11 @@ function SocialLinks() {
     <li>
       <a href="https://github.com/whitep4nth3r" class="socialLinks__item" target="_blank" rel="nofollow noreferrer" aria-label="View on GitHub">${GithubIcon()}</a>
     </li>
-    <li>
-      <a href="https://youtube.com/whitep4nth3r" class="socialLinks__item" target="_blank" rel="nofollow noreferrer" aria-label="Subscribe on YouTube">${YouTubeIcon()}</a>
+      <li>
+      <a href="https://twitter.com/whitep4nth3r" class="socialLinks__item" target="_blank" rel="nofollow noreferrer" aria-label="Follow on Bluesky">${BlueskyIcon()}</a>
     </li>
     <li>
-      <a href="https://twitter.com/whitep4nth3r" class="socialLinks__item" target="_blank" rel="nofollow noreferrer" aria-label="Follow on Twitter">${TwitterIcon()}</a>
+      <a href="https://youtube.com/whitep4nth3r" class="socialLinks__item" target="_blank" rel="nofollow noreferrer" aria-label="Subscribe on YouTube">${YouTubeIcon()}</a>
     </li>
     <li>
       <a href="/discord" class="socialLinks__item" target="_blank" rel="nofollow noreferrer" aria-label="Join Discord">${DiscordIcon()}</a>

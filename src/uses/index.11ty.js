@@ -17,6 +17,7 @@ exports.data = {
   openGraphImageWidth: OpenGraph.imgWidth,
   openGraphImageHeight: OpenGraph.imgHeight,
   openGraphUrl: "https://whitep4nth3r.com/uses/",
+  includeInSitemap: true,
 };
 
 exports.render = function (data) {
@@ -30,10 +31,7 @@ exports.render = function (data) {
             (cat) => `
           <section id="${cat}">
             <h2 class="uses_catHeading">
-              <img src="/.netlify/images/?url=/img/${cat.replace(
-                " ",
-                "-",
-              )}.png" alt="${cat}" />
+              <img src="/.netlify/images/?url=/img/${cat.replace(" ", "-")}.png" alt="${cat}" />
             </h2>
             <ol class="uses__list">
             ${things[cat]

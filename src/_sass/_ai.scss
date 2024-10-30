@@ -1,0 +1,44 @@
+.ai__content {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+.ai__cta {
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.ai__title {
+  @include font_bold;
+  font-size: clamp(2rem, 4vw, 4rem);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  color: var(--color-body);
+}
+
+.ai__subtitle {
+  @include font_bold;
+  font-size: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  color: var(--color-body);
+}
+
+.ai__text {
+  @include font_main;
+  font-size: 1.4rem;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+  color: var(--color-fg);
+  display: block;
+
+  &:last-of-type {
+    margin-bottom: 4rem;
+  }
+}

@@ -1,4 +1,5 @@
 const NameLogo = require("./svg/nameLogo");
+const SocialLinks = require("./socialLinks");
 
 var md = require("markdown-it")({
   html: true,
@@ -12,6 +13,9 @@ function homeAbout({ bio }) {
     </h1>
     <div class="homeAbout__bio">
       ${md.render(bio)}
+    </div>
+    <div class="homeAbout__social">
+      ${SocialLinks()}
     </div>
   </div>
   `;

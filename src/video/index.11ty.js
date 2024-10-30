@@ -8,12 +8,14 @@ exports.data = {
   title: pageTitle,
   activeNav: "video",
   pageType: "video",
-  metaDescription: "I made some videos to practise making videos. These videos don't mean anything really. Or maybe they do?",
+  metaDescription:
+    "I made some videos to practise making videos. These videos don't mean anything really. Or maybe they do?",
   openGraphImageUrl: OpenGraph.generateImageUrl({ title: pageTitle }),
   openGraphImageAlt: OpenGraph.generateImageAlt(pageTitle),
   openGraphImageWidth: OpenGraph.imgWidth,
   openGraphImageHeight: OpenGraph.imgHeight,
   openGraphUrl: "https://whitep4nth3r.com/video/",
+  includeInSitemap: true,
 };
 
 exports.render = function (data) {
@@ -35,38 +37,31 @@ exports.render = function (data) {
       <div class="video__grid">
         ${VideoEmbed({
           showTitle: false,
-          embedUrl:
-            "https://www.youtube.com/embed/jjI6Mzv6XrQ?si=UzY22AMw4726Ix00",
+          embedUrl: "https://www.youtube.com/embed/jjI6Mzv6XrQ?si=UzY22AMw4726Ix00",
         })}
         ${VideoEmbed({
           showTitle: false,
-          embedUrl:
-            "https://www.youtube.com/embed/_IZri_2rWyo?si=kFx-J-NCokxQVZTQ",
+          embedUrl: "https://www.youtube.com/embed/_IZri_2rWyo?si=kFx-J-NCokxQVZTQ",
         })}
         ${VideoEmbed({
           showTitle: false,
-          embedUrl:
-            "https://www.youtube.com/embed/4HbFQ932R5M?si=ormWKMq4K-f33UIi",
+          embedUrl: "https://www.youtube.com/embed/4HbFQ932R5M?si=ormWKMq4K-f33UIi",
         })}
         ${VideoEmbed({
           showTitle: false,
-          embedUrl:
-            "https://www.youtube.com/embed/5Ondq89xYVs?si=1XeQ5wXlud1pAOrN",
+          embedUrl: "https://www.youtube.com/embed/5Ondq89xYVs?si=1XeQ5wXlud1pAOrN",
         })}
         ${VideoEmbed({
           showTitle: false,
-          embedUrl:
-            "https://www.youtube.com/embed/7mhcWrZf_7w?si=tho4AOX4gE1mPKbb",
+          embedUrl: "https://www.youtube.com/embed/7mhcWrZf_7w?si=tho4AOX4gE1mPKbb",
         })}
         ${VideoEmbed({
           showTitle: false,
-          embedUrl:
-            "https://www.youtube.com/embed/trj6acFLOW0?si=Vu6565KelUA4SU7Z",
+          embedUrl: "https://www.youtube.com/embed/trj6acFLOW0?si=Vu6565KelUA4SU7Z",
         })}
         ${VideoEmbed({
           showTitle: false,
-          embedUrl:
-            "https://www.youtube.com/embed/ma9cRUkfiSQ?si=PSbKyqjU-1Lsqidn",
+          embedUrl: "https://www.youtube.com/embed/ma9cRUkfiSQ?si=PSbKyqjU-1Lsqidn",
         })}
       </div>
     </section>

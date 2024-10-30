@@ -22,6 +22,7 @@ exports.data = {
   openGraphImageWidth: OpenGraph.imgWidth,
   openGraphImageHeight: OpenGraph.imgHeight,
   openGraphUrl: "https://whitep4nth3r.com/about/",
+  includeInSitemap: true,
 };
 
 exports.render = function (data) {

@@ -10,13 +10,12 @@ var md = require("markdown-it")({
 exports.data = {
   layout: "base.html",
   pageType: "sponsorships",
+  includeInSitemap: true,
   eleventyComputed: {
     title: (data) => data.content.metaTitle,
     metaDescription: (data) => data.content.metaDescription,
-    openGraphImageUrl: (data) =>
-      OpenGraph.generateImageUrl({ title: data.content.metaTitle }),
-    openGraphImageAlt: (data) =>
-      OpenGraph.generateImageAlt(data.content.metaTitle),
+    openGraphImageUrl: (data) => OpenGraph.generateImageUrl({ title: data.content.metaTitle }),
+    openGraphImageAlt: (data) => OpenGraph.generateImageAlt(data.content.metaTitle),
   },
   openGraphImageWidth: OpenGraph.imgWidth,
   openGraphImageHeight: OpenGraph.imgHeight,
@@ -43,9 +42,7 @@ exports.render = function (data) {
     <section class="sponsorships__content">
       <h2>What people say</h2>
       <div class="sponsorships__testimonials">
-        ${testimonials
-          .map((testimonial) => Testimonial({ testimonial }))
-          .join("")}
+        ${testimonials.map((testimonial) => Testimonial({ testimonial })).join("")}
       </div>
     </section>
 
@@ -58,9 +55,7 @@ exports.render = function (data) {
       </div>
 
       <div class="sponsorships__packages">
-        ${content.streamPackagesCollection.items
-          .map((package) => StreamPackage({ package }))
-          .join("")}
+        ${content.streamPackagesCollection.items.map((package) => StreamPackage({ package })).join("")}
       </div>
 
       <div class="sponsorships__content">

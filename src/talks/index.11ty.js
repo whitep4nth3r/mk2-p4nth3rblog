@@ -19,6 +19,7 @@ exports.data = {
     size: Config.pagination.pageSize,
     addAllPagesToCollections: true,
   },
+  includeInSitemap: true,
   permalink: (data) => {
     const trailing = data.pagination.pageNumber === 0 ? `` : `${data.pagination.pageNumber + 1}/`;
     return `talks/${trailing}`;

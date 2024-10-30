@@ -1,6 +1,6 @@
 const defaultOptions = {
-  height: 24,
-  width: 24,
+  height: 32,
+  width: 32,
 };
 
 function DiscordIcon({ height, width } = defaultOptions) {

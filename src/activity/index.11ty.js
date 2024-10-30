@@ -26,6 +26,7 @@ exports.data = {
     const trailing = data.pagination.pageNumber === 0 ? `` : `${data.pagination.pageNumber + 1}/`;
     return `activity/${trailing}`;
   },
+  includeInSitemap: true,
   eleventyComputed: {
     canonical: (data) => calculatePageUrl(data),
     openGraphUrl: (data) => calculatePageUrl(data),

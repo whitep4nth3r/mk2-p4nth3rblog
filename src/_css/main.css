@@ -574,10 +574,13 @@ main:after {
   display: block;
 }
 
+.homeAbout__bio {
+  margin-bottom: 2rem;
+}
 .homeAbout__bio h2 {
   font-weight: var(--font-weight-mid);
   font-family: var(--font-family-main);
-  font-size: 1.875rem;
+  font-size: 1.5rem;
   line-height: 1.375;
   margin-bottom: 1rem;
   color: var(--color-fg);
@@ -594,7 +597,6 @@ main:after {
   font-weight: var(--font-weight-mid);
   font-family: var(--font-family-main);
   color: var(--color-link);
-  text-decoration: none;
 }
 .homeAbout__bio p a:focus-visible {
   outline: transparent;
@@ -1590,7 +1592,6 @@ main:after {
   font-weight: var(--font-weight-mid);
   font-family: var(--font-family-main);
   color: var(--color-link);
-  text-decoration: none;
 }
 .blogEndAuthor__bio p a:focus-visible {
   outline: transparent;
@@ -1732,6 +1733,9 @@ main:after {
     order: 2;
   }
 }
+.bio__links .socialLinks {
+  gap: 1rem;
+}
 
 .bio__button {
   position: relative;
@@ -1787,7 +1791,6 @@ main:after {
   font-weight: var(--font-weight-mid);
   font-family: var(--font-family-main);
   color: var(--color-link);
-  text-decoration: none;
 }
 .bio__block p a:focus-visible {
   outline: transparent;
@@ -2374,9 +2377,7 @@ pre[class*=language-] {
 .twitchInfo {
   --thumbnail-outer-radius: calc(var(--border-radius-base) * 2);
   --thumbnail-inner-padding: calc(var(--border-radius-base) / 2);
-  --title-bottom-left-radius: calc(
-    var(--thumbnail-outer-radius) - var(--thumbnail-inner-padding)
-  );
+  --title-bottom-left-radius: calc(var(--thumbnail-outer-radius) - var(--thumbnail-inner-padding));
   --title-font-size: clamp(1rem, 1.5vw, 1.5rem);
   --title-padding: 0.75rem;
   display: block;
@@ -2419,6 +2420,10 @@ pre[class*=language-] {
 }
 .twitchInfo__thumbnail:hover {
   filter: grayscale(0);
+}
+
+.twitchInfo__placeholder {
+  aspect-ratio: 2/1;
 }
 
 .twitchInfo__thumbnail--live {
@@ -2677,12 +2682,12 @@ pre[class*=language-] {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  gap: 0.25rem;
 }
 
 .socialLinks li {
-  height: 2.75rem;
-  width: 2.75rem;
   display: flex;
   justify-self: center;
   align-items: center;
@@ -2845,7 +2850,6 @@ pre[class*=language-] {
   font-weight: var(--font-weight-mid);
   font-family: var(--font-family-main);
   color: var(--color-link);
-  text-decoration: none;
 }
 .sponsorships__introText p a:focus-visible {
   outline: transparent;
@@ -2891,7 +2895,6 @@ pre[class*=language-] {
   font-weight: var(--font-weight-mid);
   font-family: var(--font-family-main);
   color: var(--color-link);
-  text-decoration: none;
 }
 .sponsorships__content p:not(.testimonial__name) a:focus-visible {
   outline: transparent;
@@ -3096,7 +3099,6 @@ pre[class*=language-] {
   font-weight: var(--font-weight-mid);
   font-family: var(--font-family-main);
   color: var(--color-link);
-  text-decoration: none;
 }
 .streamPackage__title a:focus-visible {
   outline: transparent;
@@ -3118,7 +3120,6 @@ pre[class*=language-] {
   font-weight: var(--font-weight-mid);
   font-family: var(--font-family-main);
   color: var(--color-link);
-  text-decoration: none;
 }
 .streamPackage__description p a:focus-visible {
   outline: transparent;
@@ -3423,6 +3424,53 @@ pre[class*=language-] {
   box-shadow: var(--color-bg) 0 0 0 0.08rem, var(--color-focus-outline) 0 0 0 0.24rem;
   transition: box-shadow var(--global-transition-time) ease-in-out;
   border-radius: var(--border-radius-base);
+}
+
+.ai__content {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+.ai__cta {
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.ai__title {
+  font-weight: var(--font-weight-bold);
+  font-family: var(--font-family-main);
+  font-size: clamp(2rem, 4vw, 4rem);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  color: var(--color-body);
+}
+
+.ai__subtitle {
+  font-weight: var(--font-weight-bold);
+  font-family: var(--font-family-main);
+  font-size: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  color: var(--color-body);
+}
+
+.ai__text {
+  font-weight: var(--font-weight-main);
+  font-family: var(--font-family-main);
+  font-size: 1.4rem;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+  color: var(--color-fg);
+  display: block;
+}
+.ai__text:last-of-type {
+  margin-bottom: 4rem;
 }
 
 /*# sourceMappingURL=main.css.map */

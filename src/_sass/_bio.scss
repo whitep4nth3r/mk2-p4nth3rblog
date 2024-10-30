@@ -47,6 +47,10 @@ $bio_breakpoint: 1237px;
   @media screen and (min-width: $bio_breakpoint) {
     order: 2;
   }
+
+  .socialLinks {
+    gap: 1rem;
+  }
 }
 
 .bio__button {

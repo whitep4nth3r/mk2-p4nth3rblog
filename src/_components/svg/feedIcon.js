@@ -2,8 +2,8 @@ function FeedIcon() {
   return /*html*/ `
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      height="24"
-      width="24"
+      height="32"
+      width="32"
       viewBox="0 0 448 512">
       <path
         fill="currentColor"

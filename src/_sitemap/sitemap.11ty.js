@@ -21,14 +21,6 @@ function calculateDate(page) {
   return page.date.toISOString();
 }
 
-function calculateUrl(page) {
-  if (page.data.eleventyComputed && page.data.eleventyComputed.canonical) {
-    return page.data.eleventyComputed.canonical(page.data);
-  }
-
-  return `https://${Config.site.domain}${page.url}`;
-}
-
 function removeUrlParamsFromLink(url) {
   return url.split("?")[0];
 }
@@ -37,12 +29,14 @@ function buildItems(items) {
   return `
     ${items
       .map((page) => {
-        const date = calculateDate(page);
-        const url = calculateUrl(page);
+        if (page.data.includeInSitemap === true) {
+          const date = calculateDate(page);
+          const url = `https://${Config.site.domain}${page.url}`;
 
-        return /*xml*/ `<url><loc>${removeUrlParamsFromLink(
-          url,
-        )}</loc><changefreq>daily</changefreq><lastmod>${date}</lastmod></url>`;
+          return /*xml*/ `<url><loc>${removeUrlParamsFromLink(
+            url,
+          )}</loc><changefreq>daily</changefreq><lastmod>${date}</lastmod></url>`;
+        }
       })
       .join("")}
   `;

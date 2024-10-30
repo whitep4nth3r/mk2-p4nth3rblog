@@ -21,12 +21,14 @@ exports.data = {
   layout: "base.html",
   title: pageTitle,
   activeNav: "events",
-  metaDescription: "View my Twitch schedule, virtual events and conference speaking schedule. Come and say hi if you meet me somewhere in the world!",
+  metaDescription:
+    "View my Twitch schedule, virtual events and conference speaking schedule. Come and say hi if you meet me somewhere in the world!",
   openGraphImageUrl: OpenGraph.generateImageUrl({ title: pageTitle }),
   openGraphImageAlt: OpenGraph.generateImageAlt(pageTitle),
   openGraphImageWidth: OpenGraph.imgWidth,
   openGraphImageHeight: OpenGraph.imgHeight,
   openGraphUrl: "https://whitep4nth3r.com/events/",
+  includeInSitemap: true,
 };
 
 exports.render = function (data) {
@@ -56,18 +58,10 @@ exports.render = function (data) {
                   ${event.date}
                 </span>
               </span>
-              ${
-                event.canceled_until !== null
-                  ? `<span class="events__listItemCancelled">CANCELLED</span>`
-                  : ``
-              }
+              ${event.canceled_until !== null ? `<span class="events__listItemCancelled">CANCELLED</span>` : ``}
             </span>
             <span class="events__listItemName">${event.name}</span>
-            ${
-              event.description
-                ? `<p class="events__listshortDescription">${event.description}</p>`
-                : ""
-            }
+            ${event.description ? `<p class="events__listshortDescription">${event.description}</p>` : ""}
             ${
               event.canceled_until === null && event.link
                 ? `

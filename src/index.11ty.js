@@ -20,6 +20,7 @@ exports.data = {
   openGraphImageWidth: OpenGraph.imgWidth,
   openGraphImageHeight: OpenGraph.imgHeight,
   openGraphUrl: "https://whitep4nth3r.com/",
+  includeInSitemap: true,
 };
 
 exports.render = function (data) {
@@ -37,7 +38,7 @@ exports.render = function (data) {
 
     <div class="home__scroll">
       <div class="home__twitch">
-        ${TwitchInfo({ isLive: twitch.isLive, vodData: twitch.vodData })}
+        ${TwitchInfo({ isLive: twitch.isLive, vodData: twitch.vodData, isPlaceholder: twitch.isPlaceholder })}
       </div>
       <a href="/activity/" class="home__heading">Latest news and activity</a>
       <div class="home__activity">

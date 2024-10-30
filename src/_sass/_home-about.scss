@@ -17,9 +17,10 @@
 }
 
 .homeAbout__bio {
+  margin-bottom: 2rem;
   h2 {
     @include font_semibold;
-    font-size: 1.875rem;
+    font-size: 1.5rem;
     line-height: 1.375;
     margin-bottom: 1rem;
     color: var(--color-fg);

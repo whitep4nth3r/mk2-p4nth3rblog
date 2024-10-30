@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" color-mode="dark">
-  <head
-    data-build-version="{{ buildInfo.version }}"
-    data-env="{{buildInfo.environment}}">
+  <head data-build-version="{{ buildInfo.version }}" data-env="{{buildInfo.environment}}">
     {% include "head_base.html" %} {% if openGraphTimeToRead %}
     <meta name="twitter:label1" content="Written by" />
     <meta name="twitter:data1" content="Salma Alam-Naylor" />
@@ -16,13 +14,9 @@
     <meta property="og:type" content="website" />
     {% endif %}
     <script>
-      const release = document
-        .querySelector("head")
-        .getAttribute("data-build-version");
+      const release = document.querySelector("head").getAttribute("data-build-version");
 
-      const environment = document
-        .querySelector("head")
-        .getAttribute("data-env");
+      const environment = document.querySelector("head").getAttribute("data-env");
 
       window.sentryOnLoad = function () {
         Sentry.init({
@@ -30,12 +24,16 @@
           environment: environment,
           tracesSampleRate: 0.5,
           enableInp: true,
+          integrations: [
+            Sentry.replayIntegration({
+              maskAllText: false,
+              blockAllMedia: false,
+            }),
+          ],
         });
       };
     </script>
-    <script
-      src="https://js.sentry-cdn.com/9093cd35e7e4f174110bcc38a87a56b0.min.js"
-      crossorigin="anonymous"></script>
+    <script src="https://js.sentry-cdn.com/9093cd35e7e4f174110bcc38a87a56b0.min.js" crossorigin="anonymous"></script>
   </head>
   <body data-type="{{pageType}}">
     {% include "header.html" %}
