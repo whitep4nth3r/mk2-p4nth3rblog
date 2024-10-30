@@ -1,11 +1,11 @@
 const OpenGraph = require("../../lib/openGraph");
 
-const pageTitle = "How I use AI";
+const pageTitle = "My AI Manifesto";
 
 exports.data = {
   layout: "base.html",
   title: pageTitle,
-  metaDescription: "Salma doesn't use AI on her website or to generate content verbatim. But it does have its uses.",
+  metaDescription: "I don't use AI on my website or to generate content verbatim. But it does have its uses.",
   openGraphImageUrl: OpenGraph.generateImageUrl({ title: pageTitle }),
   openGraphImageAlt: OpenGraph.generateImageAlt(pageTitle),
   openGraphImageWidth: OpenGraph.imgWidth,
