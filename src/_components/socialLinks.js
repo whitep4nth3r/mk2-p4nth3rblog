@@ -14,8 +14,8 @@ function SocialLinks() {
     <li>
       <a href="https://github.com/whitep4nth3r" class="socialLinks__item" target="_blank" rel="nofollow noreferrer" aria-label="View on GitHub">${GithubIcon()}</a>
     </li>
-      <li>
-      <a href="https://twitter.com/whitep4nth3r" class="socialLinks__item" target="_blank" rel="nofollow noreferrer" aria-label="Follow on Bluesky">${BlueskyIcon()}</a>
+    <li>
+      <a href="https://bsky.app/profile/whitep4nth3r.com" class="socialLinks__item" target="_blank" rel="nofollow noreferrer" aria-label="Follow on Bluesky">${BlueskyIcon()}</a>
     </li>
     <li>
       <a href="https://youtube.com/whitep4nth3r" class="socialLinks__item" target="_blank" rel="nofollow noreferrer" aria-label="Subscribe on YouTube">${YouTubeIcon()}</a>
