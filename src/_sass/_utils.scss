@@ -23,7 +23,8 @@
 }
 
 @mixin link_focus {
-  &:focus-visible {
+  &:focus-visible,
+  &:focus {
     outline: transparent;
     outline-style: solid;
     box-shadow: var(--color-bg) 0 0 0 0.08rem, var(--color-focus-outline) 0 0 0 0.24rem;
