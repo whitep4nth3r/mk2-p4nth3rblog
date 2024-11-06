@@ -1,40 +1,44 @@
+@use "font";
+@use "tc-layout";
+@use "utils";
+
 .home {
-  @include tc_layout_container;
+  @include tc-layout.tc_layout_container;
 }
 
 .home__left {
-  @include tc_layout_left;
+  @include tc-layout.tc_layout_left;
 }
 
 .home__fixed {
-  @include tc_layout_fixed;
+  @include tc-layout.tc_layout_fixed;
 }
 
 .home__scroll {
-  @include tc_layout_scroll;
+  @include tc-layout.tc_layout_scroll;
 }
 
 .home__twitch {
-  @media screen and (min-width: $tc_layout_breakpoint) {
+  margin-bottom: 3rem;
+
+  @media screen and (min-width: tc-layout.$tc_layout_breakpoint) {
     display: flex;
     flex-grow: 1;
     justify-content: center;
     align-items: center;
     flex-direction: column;
   }
-
-  margin-bottom: 3rem;
 }
 
 .home__heading {
-  @include font_semibold;
+  @include font.font_semibold;
   font-size: 2rem;
   line-height: 1;
   margin-bottom: 2rem;
   color: var(--color-link);
   position: relative;
   text-decoration: none;
-  @include link_focus;
+  @include utils.link_focus;
 }
 
 .home__activity {
@@ -43,7 +47,7 @@
   grid-template-columns: 1fr;
   gap: 1rem;
 
-  @media screen and (min-width: $tc_layout_breakpoint) {
+  @media screen and (min-width: tc-layout.$tc_layout_breakpoint) {
     grid-template-columns: 1fr 1fr;
   }
 }

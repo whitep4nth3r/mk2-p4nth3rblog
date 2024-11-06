@@ -1,3 +1,6 @@
+@use "font";
+@use "utils";
+
 .newsletterSignup {
   margin-bottom: 2rem;
 }
@@ -7,7 +10,7 @@
 }
 
 .newsletterSignup__title {
-  @include font_bold;
+  @include font.font_bold;
   color: var(--color-link);
   font-size: 1.2rem;
   line-height: 1.6;
@@ -20,7 +23,7 @@
 }
 
 .newsletterSignup__para {
-  @include font_main;
+  @include font.font_main;
   font-size: 1rem;
   line-height: 1.75;
   margin-bottom: 1rem;
@@ -28,7 +31,7 @@
   word-break: break-word;
 
   a {
-    @include link_focus;
+    @include utils.link_focus;
   }
 }
 
@@ -50,5 +53,5 @@
 
 .newsletterSignup__submit:focus-visible,
 .newsletterSignup__submit:focus-visible:focus {
-  @include input_focus;
+  @include utils.input_focus;
 }

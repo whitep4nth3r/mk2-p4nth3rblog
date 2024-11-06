@@ -1,3 +1,6 @@
+@use "font";
+@use "utils";
+
 [color-mode="dark"] {
   --reset-color: var(--white);
 }
@@ -40,14 +43,14 @@
 }
 
 .ais__emptyMessage {
-  @include font_semibold;
+  @include font.font_semibold;
   font-size: 2rem;
   margin-top: 3rem;
   margin-bottom: 3rem;
 }
 
 .ais__howAbout {
-  @include font_semibold;
+  @include font.font_semibold;
   color: var(--color-fg);
   font-size: 2rem;
   margin-bottom: 3rem;
@@ -59,7 +62,7 @@
 
 .ais__label {
   grid-area: label;
-  @include font_semibold;
+  @include font.font_semibold;
   font-size: 1rem;
   margin-bottom: 1rem;
   display: flex;
@@ -68,18 +71,18 @@
 
 .ais__input {
   grid-area: input;
-  @include form_input;
+  @include utils.form_input;
   border-radius: var(--border-radius-base) 0 0 var(--border-radius-base);
   height: var(--form-height);
   width: 100%;
 }
 
 .ais__input:focus-visible {
-  @include input_focus;
+  @include utils.input_focus;
 }
 
 .ais__reset {
-  @include font_semibold;
+  @include font.font_semibold;
   grid-area: button;
   background-color: var(--input-bg);
   display: inline;
@@ -93,7 +96,7 @@
 }
 
 .ais__reset:focus-visible {
-  @include input_focus;
+  @include utils.input_focus;
 }
 
 .ais-Highlight-highlighted {

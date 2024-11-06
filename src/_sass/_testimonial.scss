@@ -1,3 +1,6 @@
+@use "font";
+@use "utils";
+
 [color-mode="dark"] {
   --testimonial-bg: var(--black);
 }
@@ -17,7 +20,7 @@
 
 .testimonial__quote {
   grid-area: quote;
-  @include font_main;
+  @include font.font_main;
   color: var(--color-fg-copy);
   font-size: 1.2rem;
   line-height: 1.5;
@@ -46,7 +49,7 @@
   margin-bottom: 0;
   line-height: 1;
   color: var(--color-fg-copy);
-  @include font_main;
+  @include font.font_main;
   font-size: 1rem;
 }
 
@@ -55,6 +58,6 @@
   color: var(--color-fg-copy);
   text-decoration-style: solid;
   text-decoration-color: var(--color-fg-copy);
-  @include font_main;
-  @include link_focus;
+  @include font.font_main;
+  @include utils.link_focus;
 }

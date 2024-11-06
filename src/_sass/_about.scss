@@ -1,24 +1,26 @@
+@use "tc-layout";
+
 .about {
-  @include tc_layout_container;
+  @include tc-layout.tc_layout_container;
 }
 
 .about__image {
-  @include tc_layout_left($width: 28rem);
+  @include tc-layout.tc_layout_left($width: 28rem);
 }
 
 .about__name {
   z-index: 10;
   margin-top: -6.6rem;
 
-  @media screen and (min-width: $tc_layout_breakpoint) {
+  @media screen and (min-width: tc-layout.$tc_layout_breakpoint) {
     margin-top: 0;
   }
 }
 
 .about__fixed {
-  @include tc_layout_fixed($height: 100vh);
+  @include tc-layout.tc_layout_fixed($height: 100vh);
 
-  @media screen and (min-width: $tc_layout_breakpoint) {
+  @media screen and (min-width: tc-layout.$tc_layout_breakpoint) {
     align-items: flex-start;
   }
   
@@ -34,7 +36,7 @@
 }
 
 .about__details {
-  @include tc_layout_scroll;
+  @include tc-layout.tc_layout_scroll;
 
   margin: unset;
 }

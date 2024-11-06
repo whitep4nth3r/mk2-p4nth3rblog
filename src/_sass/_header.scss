@@ -1,3 +1,7 @@
+@use "font";
+@use "root";
+@use "utils";
+
 [color-mode="light"] {
   --header-bg: rgba(250, 239, 255, 0.8);
   --header-external-arrow-svg: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.66663 11.3334L11.3333 4.66675M11.3333 4.66675H4.66663M11.3333 4.66675V11.3334' stroke='black' stroke-opacity='0.72' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
@@ -34,7 +38,7 @@
   left: 50%;
   transform: translateX(-50%);
 
-  @media screen and (min-width: $global_md_breakpoint) {
+  @media screen and (min-width: root.$global_md_breakpoint) {
     width: calc(100vw - calc(var(--body-horizontal-padding-lg) * 2));
   }
 }
@@ -49,7 +53,7 @@
 }
 
 .header__skipToMainContent {
-  @include font_bold;
+  @include font.font_bold;
   display: flex;
   justify-content: center;
   color: var(--color-fg);
@@ -69,7 +73,7 @@
   z-index: 15;
   position: absolute;
 
-  @include link_focus;
+  @include utils.link_focus;
 
   &:focus {
     top: 1rem;
@@ -79,7 +83,7 @@
 .header__logoContainer {
   display: none;
 
-  @media screen and (min-width: $global_md_breakpoint) {
+  @media screen and (min-width: root.$global_md_breakpoint) {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -100,7 +104,7 @@
   gap: 0.25rem;
   position: relative;
 
-  @media screen and (min-width: $global_md_breakpoint) {
+  @media screen and (min-width: root.$global_md_breakpoint) {
     gap: 1rem;
   }
 }
@@ -125,7 +129,7 @@
     padding: 0.9rem;
   }
 
-  @media screen and (min-width: $global_md_breakpoint) {
+  @media screen and (min-width: root.$global_md_breakpoint) {
     bottom: calc(var(--header-padding-vertical) * -0.5);
     a {
       padding: 0.5rem;
@@ -167,7 +171,7 @@
   display: flex;
   align-items: center;
 
-  @media screen and (min-width: $global_md_breakpoint) {
+  @media screen and (min-width: root.$global_md_breakpoint) {
     height: calc(var(--header-padding-vertical) + var(--logo-height));
   }
 }
@@ -176,7 +180,7 @@
 .header__navListSummary {
   transition: opacity var(--global-transition-time) ease-in-out;
   opacity: 0.72;
-  @include font_bold;
+  @include font.font_bold;
   padding: 1rem 0.5rem;
   text-decoration: none;
   display: flex;
@@ -190,12 +194,12 @@
   line-height: 1;
   letter-spacing: 1px;
 
-  @media screen and (min-width: $global_md_breakpoint) {
+  @media screen and (min-width: root.$global_md_breakpoint) {
     font-size: 1rem;
     padding: 0.5rem 0.5rem;
   }
 
-  @include link_focus;
+  @include utils.link_focus;
 
   &:hover {
     opacity: 1;
@@ -223,7 +227,7 @@
     content: var(--header-home-active-content);
     bottom: 0.75rem;
 
-    @media screen and (min-width: $global_md_breakpoint) {
+    @media screen and (min-width: root.$global_md_breakpoint) {
       bottom: 0.25rem;
     }
   }
@@ -234,7 +238,7 @@
     content: var(--header-blog-active-content);
     bottom: 0.75rem;
 
-    @media screen and (min-width: $global_md_breakpoint) {
+    @media screen and (min-width: root.$global_md_breakpoint) {
       bottom: 0.25rem;
     }
   }
@@ -245,7 +249,7 @@
     content: var(--header-about-active-content);
     bottom: 0.75rem;
 
-    @media screen and (min-width: $global_md_breakpoint) {
+    @media screen and (min-width: root.$global_md_breakpoint) {
       bottom: 0.25rem;
     }
   }
@@ -270,5 +274,5 @@
     background-image: url("/img/theme-light.svg");
   }
 
-  @include link_focus;
+  @include utils.link_focus;
 }

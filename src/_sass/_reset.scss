@@ -1,3 +1,6 @@
+@use "font";
+@use "root";
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -26,13 +29,13 @@ a {
 }
 
 strong {
-  @include font_bold;
+  @include font.font_bold;
 }
 
 /* END RESET */
 
 body {
-  @include font_main;
+  @include font.font_main;
   font-size: 1rem;
   color: var(--color-fg);
   padding: var(--body-horizontal-padding-sm);
@@ -52,7 +55,7 @@ main {
   margin: 6rem auto auto auto;
   max-width: var(--global-max-width);
 
-  @media screen and (min-width: $global_md_breakpoint) {
+  @media screen and (min-width: root.$global_md_breakpoint) {
     margin-top: 10rem;
   }
 

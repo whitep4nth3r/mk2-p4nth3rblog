@@ -1,3 +1,6 @@
+@use "font";
+@use "utils";
+
 .pagination {
   margin: 4rem auto;
   max-width: var(--global-max-width);
@@ -7,7 +10,7 @@
 }
 
 .pagination__description {
-  @include sr_only;
+  @include utils.sr_only;
 }
 
 .pagination__list {
@@ -21,7 +24,7 @@
 }
 
 .pagination__listItem {
-  @include font_bold;
+  @include font.font_bold;
   font-size: 1.2rem;
   text-decoration: none;
   flex-grow: 1;
@@ -50,7 +53,7 @@
     position: relative;
 
     &:focus {
-      @include link_focus;
+      @include utils.link_focus;
     }
   }
 }

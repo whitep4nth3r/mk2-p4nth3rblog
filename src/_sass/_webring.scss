@@ -1,5 +1,8 @@
+@use "font";
+@use "utils";
+
 .tcwr__title {
-  @include font_bold;
+  @include font.font_bold;
   color: var(--color-link);
   font-size: 1.2rem;
   line-height: 1.6;
@@ -59,7 +62,7 @@
 }
 
 .tcwr__navItem--random {
-  @include font_bold;
+  @include font.font_bold;
   font-style: normal;
   color: var(--color-fg-copy);
   border-radius: var(--border-radius-base);
@@ -70,7 +73,7 @@
 
 .tcwr__navItem:focus,
 .tcwr__navItem:focus-visible {
-  @include input_focus;
+  @include utils.input_focus;
 }
 
 .tcwr__membersList {
@@ -88,7 +91,7 @@
 
 .tcwr__membersListItemLink:focus-visible,
 .tcwr__membersListItemLink:focus-visible:focus {
-  @include input_focus;
+  @include utils.input_focus;
 }
 
 .tcwr__join {
@@ -109,5 +112,5 @@
 
 .tcwr__join:focus-visible,
 .tcwr__join:focus-visible:focus {
-  @include input_focus;
+  @include utils.input_focus;
 }

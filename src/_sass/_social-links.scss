@@ -1,3 +1,5 @@
+@use "utils";
+
 .socialLinks {
   list-style: none;
   padding-left: 0;
@@ -34,7 +36,7 @@
   justify-content: center;
   position: relative;
 
-  @include link_focus;
+  @include utils.link_focus;
 }
 
 @keyframes flutter {

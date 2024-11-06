@@ -1,3 +1,5 @@
+@use "font";
+
 [color-mode="dark"] {
   --lighthouse-green-fg: rgb(27, 195, 106);
   --lighthouse-green-stroke: rgb(27, 195, 106);
@@ -50,14 +52,14 @@
 }
 
 .lighthouse__title {
-  @include font_semibold;
+  @include font.font_semibold;
   font-size: 1.2rem;
   line-height: 1.4;
   margin-bottom: 1rem;
 }
 
 .lighthouse__subTitle {
-  @include font_main;
+  @include font.font_main;
   font-size: 1.2rem;
   line-height: 1.4;
   margin-bottom: 2rem;
@@ -120,7 +122,7 @@
 }
 
 .lighthouse__type {
-  @include font_bold;
+  @include font.font_bold;
   font-size: 1.2rem;
   text-align: center;
   line-height: 1.4;

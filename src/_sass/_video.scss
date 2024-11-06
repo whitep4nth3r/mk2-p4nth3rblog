@@ -1,3 +1,7 @@
+@use "font";
+@use "root";
+@use "utils";
+
 .video {
   position: relative;
   aspect-ratio: 16/9;
@@ -5,7 +9,7 @@
   /* address the magic numbers here, see _reset.scss */
   margin-top: -8rem;
 
-  @media screen and (min-width: $global_md_breakpoint) {
+  @media screen and (min-width: root.$global_md_breakpoint) {
     margin-top: -12rem;
   }
 }
@@ -27,7 +31,7 @@
   filter: contrast(1.1);
   transition: height 0.2s ease-in-out;
 
-  @media screen and (min-width: $global_md_breakpoint) {
+  @media screen and (min-width: root.$global_md_breakpoint) {
     height: 60svh;
   }
 }
@@ -37,7 +41,7 @@
 }
 
 .video__headline {
-  @include font_bold;
+  @include font.font_bold;
   color: var(--white);
   text-transform: uppercase;
   font-size: clamp(3rem, 14vw, 13rem);
@@ -54,11 +58,11 @@
 }
 
 .video__grid {
-  @include card_grid;
+  @include utils.card_grid;
 }
 
 .video__gridHeader {
-  @include font_bold;
+  @include font.font_bold;
   margin-top: 3rem;
   margin-bottom: 2rem;
   font-size: clamp(2.5rem, 3.5vw, 3.5rem);
@@ -69,7 +73,7 @@
 }
 
 .video__gridHeader--sub {
-  @include font_semibold;
+  @include font.font_semibold;
   font-size: 1.4rem;
   word-break: break-word;
   hyphens: auto;
@@ -79,7 +83,7 @@
   max-width: var(--post-max-width);
 
   p {
-    @include font_main;
+    @include font.font_main;
     font-size: 1.125rem;
     line-height: 1.75;
     margin-bottom: 1rem;
@@ -87,7 +91,7 @@
     word-break: break-word;
 
     a {
-      @include link_focus;
+      @include utils.link_focus;
     }
   }
 }

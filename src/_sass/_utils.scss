@@ -1,3 +1,5 @@
+@use "font";
+
 @mixin sr_only {
   position: absolute;
   width: 1px;
@@ -57,7 +59,7 @@
 }
 
 @mixin form_input {
-  @include font_main;
+  @include font.font_main;
   background-color: var(--input-bg);
   color: var(--color-fg);
   border: var(--input-border);

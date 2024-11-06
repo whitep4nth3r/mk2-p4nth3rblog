@@ -1,5 +1,7 @@
+@use "font";
+
 .page__headerTitle {
-  @include font_bold;
+  @include font.font_bold;
   margin: 0 auto clamp(2rem, 3vw, 3rem) auto;
   font-size: clamp(2rem, 3.5vw, 3.5rem);
   line-height: 1.4;

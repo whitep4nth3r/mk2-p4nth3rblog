@@ -1,3 +1,6 @@
+@use "font";
+@use "utils";
+
 .events {
   max-width: var(--post-max-width);
   margin: auto;
@@ -44,7 +47,7 @@
 }
 
 .events__listItemDate__month {
-  @include font_semibold;
+  @include font.font_semibold;
   text-align: center;
   color: var(--color-fg);
   text-transform: uppercase;
@@ -53,7 +56,7 @@
 }
 
 .events__listItemDate__day {
-  @include font_bold;
+  @include font.font_bold;
   display: block;
   text-align: center;
   color: var(--color-fg);
@@ -63,7 +66,7 @@
 
 .events__listItemTime {
   grid-area: time;
-  @include font_main;
+  @include font.font_main;
   font-size: 1rem;
   display: grid;
   gap: 0.5rem;
@@ -89,14 +92,14 @@
 
 .events__listshortDescription {
   grid-area: desc;
-  @include font_main;
+  @include font.font_main;
   font-size: 1.2rem;
   line-height: 1.2;
 }
 
 .events__listItemName {
   grid-area: name;
-  @include font_semibold;
+  @include font.font_semibold;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -107,7 +110,7 @@
 
 .events__listItemCta {
   grid-area: cta;
-  @include font_semibold;
+  @include font.font_semibold;
   gap: 0.5rem;
   flex-grow: 0;
   align-self: center;
@@ -123,11 +126,11 @@
   align-items: center;
   font-size: 1rem;
   border-color: transparent;
-  @include link_focus;
+  @include utils.link_focus;
 }
 
 .events__listItemCta--sr {
-  @include sr_only;
+  @include utils.sr_only;
 }
 
 .events__listItemCta--centered {
@@ -149,6 +152,6 @@
   background-color: var(--card-bg);
   padding: 0.5rem 1rem;
   font-size: 1rem;
-  @include font_bold;
+  @include font.font_bold;
   width: max-content;
 }
