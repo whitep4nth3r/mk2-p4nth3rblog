@@ -81,6 +81,5 @@ exports.render = function (data) {
       </div>
     </div>
   </section>
-  <script src="https://cursor-party.whitep4nth3r.partykit.dev/cursors.js"></script>
   `;
 };
