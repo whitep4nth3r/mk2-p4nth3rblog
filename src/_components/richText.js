@@ -9,7 +9,6 @@ const CodeBlock = require("./codeBlock");
 const VideoEmbed = require("./videoEmbed");
 const ArcadeEmbed = require("./arcadeEmbed");
 const CodePenEmbed = require("./codepenEmbed");
-const TweetEmbed = require("./tweetEmbed");
 const BlogPostEmbed = require("./blogPostEmbed");
 const LighthouseComparison = require("./lighthouseComparison");
 const DeployToNetlifyButton = require("./deployToNetlifyButton");
@@ -159,8 +158,6 @@ function getRichTextRenderOptions(links, options) {
               metric: entry.metric,
               device: entry.device,
             });
-          case "TweetEmbed":
-            return TweetEmbed({ tweetUrl: entry.tweetUrl });
           case "VideoEmbed":
             return VideoEmbed({ embedUrl: entry.embedUrl, title: entry.title });
           case "ArcadeEmbed":
