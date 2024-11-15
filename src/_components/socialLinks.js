@@ -27,7 +27,7 @@ function SocialLinks({ uUrl }) {
       <a href="/feed.xml" class="socialLinks__item" target="_blank" aria-label="Subscribe to RSS Feed">${FeedIcon()}</a>
     </li>
   </ul>
-  <div class="h-card" rel="author" aria-hidden="true" style="visibility: hidden; height: 0;">
+ <div class="h-card" rel="author" aria-hidden="true" style="visibility: hidden; height: 0;">
     <span class="p-name">Salma Alam-Naylor</span>
     <span class="p-nickname">whitep4nth3r</span>
     <div class="p-org">Sentry</div>

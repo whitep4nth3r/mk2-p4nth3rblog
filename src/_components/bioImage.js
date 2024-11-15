@@ -11,7 +11,7 @@ function BioImage({ image }) {
         srcset="${image.url}?q=75&w=500&fm=webp 500w, ${image.url}?q=75&w=900&fm=webp 900w"
         sizes="(max-width: 735px) 100vw, 736px"
       />
-        <img
+      <img
         src="${image.url}?w=400&q=75" 
         alt="${image.description}" 
         height="${image.height}" 

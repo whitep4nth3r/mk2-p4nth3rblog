@@ -96,10 +96,11 @@ exports.render = async function (data) {
               uUrl: `https://whitep4nth3r.com/blog/${data.post.slug}/`,
               hideOnSmallScreens: true,
             })}
-            <a class="p-author h-card" href="https://whitep4nth3r.com" style="visibility: hidden;">Salma Alam-Naylor</a>
-            <a class="u-url" href="${`https://whitep4nth3r.com/blog/${data.post.slug}/`}" style="visibility: hidden;">${
-    post.title
-  }</a>
+            <div style="visibility: hidden; height: 0;">
+              <a class="p-author h-card" href="https://whitep4nth3r.com">Salma Alam-Naylor</a>
+              <a class="u-url" href="${`https://whitep4nth3r.com/blog/${data.post.slug}/`}">${post.title}</a>
+              <img class="u-photo" src="https://images.ctfassets.net/56dzm01z6lln/69YokY1TvGVk37gCQmQJDo/c315f0996556c9c1f276d12d5f201a76/headshot_relaxed.png"/>
+            </div>
           </div>
           <div class="post__asideStickyGroup">
             <span class="post__newsletterSignupWide">${NewsletterSignup({
@@ -130,7 +131,10 @@ exports.render = async function (data) {
           })}</span>
           <hr class="post__separator" />
 
-          ${BlogEndAuthor({ author: post.author, uUrl: `https://whitep4nth3r.com/blog/${data.post.slug}/` })}
+          ${BlogEndAuthor({
+            author: post.author,
+            uUrl: `https://whitep4nth3r.com/blog/${data.post.slug}/`,
+          })}
 
           ${
             post.relatedPostsCollection?.items.length > 0
