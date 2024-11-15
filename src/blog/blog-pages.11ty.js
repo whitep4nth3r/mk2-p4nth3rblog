@@ -96,6 +96,10 @@ exports.render = async function (data) {
               uUrl: `https://whitep4nth3r.com/blog/${data.post.slug}/`,
               hideOnSmallScreens: true,
             })}
+            <a class="p-author h-card" href="https://whitep4nth3r.com" style="visibility: hidden;">Salma Alam-Naylor</a>
+            <a class="u-url" href="${`https://whitep4nth3r.com/blog/${data.post.slug}/`}" style="visibility: hidden;">${
+    post.title
+  }</a>
           </div>
           <div class="post__asideStickyGroup">
             <span class="post__newsletterSignupWide">${NewsletterSignup({
