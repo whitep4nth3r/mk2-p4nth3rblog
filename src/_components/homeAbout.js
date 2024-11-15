@@ -15,7 +15,7 @@ function homeAbout({ bio }) {
       ${md.render(bio)}
     </div>
     <div class="homeAbout__social">
-      ${SocialLinks()}
+      ${SocialLinks({ uUrl: "https://whitep4nth3r.com" })}
     </div>
   </div>
   `;

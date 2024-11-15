@@ -50,7 +50,11 @@ exports.render = function (data) {
   <section class="post">
     <aside class="post__aside">
       <div class="post__authorContainer">
-        ${Author({ author: talk.author, hideOnSmallScreens: true })}
+        ${Author({
+          author: talk.author,
+          uUrl: `https://whitep4nth3r.com/talks/${data.talk.slug}/`,
+          hideOnSmallScreens: true,
+        })}
       </div>
     </aside>
     <article class="post__article">
@@ -75,10 +79,10 @@ exports.render = function (data) {
           renderHeadingLinks: true,
         })}
         </div>
-
+        
         <hr class="post__separator" />
 
-        ${BlogEndAuthor({ author: talk.author })}
+        ${BlogEndAuthor({ author: talk.author, uUrl: `https://whitep4nth3r.com/talks/${data.talk.slug}/` })}
       </article>
   </section>`;
 };

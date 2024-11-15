@@ -78,7 +78,7 @@ exports.render = async function (data) {
 
   return /* html */ `
     <div class="post__meta">
-      <p class="post__meta__topic">${post.topicsCollection.items[0].name}</p>
+      <p class="post__meta__topic p-category">${post.topicsCollection.items[0].name}</p>
       ${PublishedDate({
         date: post.date,
         readingTime: post.readingTime,
@@ -90,7 +90,11 @@ exports.render = async function (data) {
     <section class="post">
       <aside class="post__aside">
         <div class="post__authorContainer">
-          ${Author({ author: post.author, hideOnSmallScreens: true })}
+          ${Author({
+            author: post.author,
+            uUrl: `https://whitep4nth3r.com/blog/${data.post.slug}/`,
+            hideOnSmallScreens: true,
+          })}
         </div>
         <div class="post__asideStickyGroup">
           <span class="post__newsletterSignupWide">${NewsletterSignup({
@@ -103,7 +107,7 @@ exports.render = async function (data) {
       <article class="post__article h-entry">
         <div class="post__excerpt">${md.render(post.excerpt)}</div>
         <hr class="post__separator" aria-hidden="true" />
-        <div class="post__body">
+        <div class="post__body e-content">
           ${outOfDateWarning({ post })}
           ${RichText(post.body, {
             renderRssFriendlyImg: false,
@@ -121,7 +125,7 @@ exports.render = async function (data) {
         })}</span>
         <hr class="post__separator" />
 
-        ${BlogEndAuthor({ author: post.author })}
+        ${BlogEndAuthor({ author: post.author, uUrl: `https://whitep4nth3r.com/blog/${data.post.slug}/` })}
 
         ${
           post.relatedPostsCollection?.items.length > 0
