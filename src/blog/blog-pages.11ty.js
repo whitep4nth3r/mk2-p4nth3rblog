@@ -77,7 +77,7 @@ exports.render = async function (data) {
   });
 
   return /* html */ `
-    <article>
+    <article class="h-entry">
       <div class="post__meta">
         <p class="post__meta__topic p-category">${post.topicsCollection.items[0].name}</p>
         ${PublishedDate({
