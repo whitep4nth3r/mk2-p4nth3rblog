@@ -36,6 +36,7 @@ function SocialLinks() {
     <span class="p-locality">Manchester</span>,
     <div class="p-country-name">UK</div>
     <div class="p-category">Software Engineer</div>
+    <p class="p-note">I write code for your entertainment.</p>
   </div>
   `;
 }
