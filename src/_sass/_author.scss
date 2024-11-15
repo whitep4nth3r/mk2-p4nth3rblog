@@ -1,3 +1,5 @@
+@use "utils";
+
 .author {
   --gap: 4rem;
   display: flex;
@@ -22,7 +24,7 @@
   display: block;
   position: relative;
   flex-grow: 1;
-  @include link_focus;
+  @include utils.link_focus;
 
   &:focus-visible,
   &:hover {

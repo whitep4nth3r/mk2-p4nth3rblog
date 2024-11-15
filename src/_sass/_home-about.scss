@@ -1,3 +1,6 @@
+@use "font";
+@use "md";
+
 .homeAbout {
   width: 100%;
 }
@@ -19,7 +22,7 @@
 .homeAbout__bio {
   margin-bottom: 2rem;
   h2 {
-    @include font_semibold;
+    @include font.font_semibold;
     font-size: 1.5rem;
     line-height: 1.375;
     margin-bottom: 1rem;
@@ -27,6 +30,6 @@
   }
 
   p {
-    @include md_paragraph($fontSize: 1.25rem, $lineHeight: 1.6);
+    @include md.md_paragraph($fontSize: 1.25rem, $lineHeight: 1.6);
   }
 }

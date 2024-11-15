@@ -1,3 +1,7 @@
+@use "font";
+@use "md";
+@use "utils";
+
 $bio_breakpoint: 1237px;
 
 [color-mode="dark"] {
@@ -65,7 +69,7 @@ $bio_breakpoint: 1237px;
   line-height: 1.5;
   padding: 0.625rem 0.875rem;
   text-decoration: none;
-  @include link_focus;
+  @include utils.link_focus;
 }
 
 .bio__button--selected {
@@ -76,7 +80,7 @@ $bio_breakpoint: 1237px;
   max-width: 42rem;
 
   h2 {
-    @include font_semibold;
+    @include font.font_semibold;
     font-size: 1.875rem;
     line-height: 1.375;
     margin-bottom: 1rem;
@@ -85,15 +89,15 @@ $bio_breakpoint: 1237px;
   }
 
   h3 {
-    @include md_h3;
+    @include md.md_h3;
   }
 
   p {
-    @include md_paragraph($fontSize: 1.25rem, $lineHeight: 1.6);
+    @include md.md_paragraph($fontSize: 1.25rem, $lineHeight: 1.6);
   }
 
   .videoEmbed__cta {
-    @include font_main;
+    @include font.font_main;
     font-size: 1rem;
     line-height: 1;
     margin-bottom: 1rem;

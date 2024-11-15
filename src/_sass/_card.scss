@@ -1,3 +1,6 @@
+@use "font";
+@use "utils";
+
 [color-mode="dark"] {
   --card-bg: rgba(255, 255, 255, 0.02);
   --card-bg-hover: rgba(255, 255, 255, 0.08);
@@ -40,7 +43,7 @@
     }
   }
 
-  @include link_focus;
+  @include utils.link_focus;
 }
 
 .card__imageContainer {
@@ -75,7 +78,7 @@
 }
 
 .card__date {
-  @include font_main;
+  @include font.font_main;
   color: var(--color-fg);
   font-size: 0.875rem;
   margin-bottom: 0.5rem;
@@ -83,14 +86,14 @@
 }
 
 .card__title {
-  @include font_bold;
+  @include font.font_bold;
   font-size: 1.25rem;
   line-height: 1.6;
   margin-bottom: 0.5rem;
 }
 
 .card__description {
-  @include font_main;
+  @include font.font_main;
   font-size: 0.875rem;
   line-height: 1.6;
   color: var(--color-fg);
@@ -106,7 +109,7 @@
 }
 
 .card__metaLabel {
-  @include font_semibold;
+  @include font.font_semibold;
   font-weight: 500;
   font-size: 0.875rem;
   line-height: 1.5;
@@ -119,7 +122,7 @@
 }
 
 .card__metaRead {
-  @include font_semibold;
+  @include font.font_semibold;
   font-size: 0.875rem;
   line-height: 1.125;
   color: var(--color-fg);

@@ -1,3 +1,7 @@
+@use "font";
+@use "md";
+@use "utils";
+
 $sponsor_layout_breakpoint: 881px;
 
 .sponsorships {
@@ -6,7 +10,7 @@ $sponsor_layout_breakpoint: 881px;
 }
 
 .sponsorships__title {
-  @include font_bold;
+  @include font.font_bold;
   font-size: clamp(2.25rem, 3.5vw, 3.5rem);
   line-height: 1.4;
   margin-bottom: 2.5rem;
@@ -23,17 +27,17 @@ $sponsor_layout_breakpoint: 881px;
 
 .sponsorships__introText {
   h2 {
-    @include md_h2;
+    @include md.md_h2;
   }
 
   h3 {
-    @include md_h3;
+    @include md.md_h3;
     font-weight: var(--font-weight-main);
     color: var(--color-fg-copy);
   }
 
   p {
-    @include md_paragraph($fontSize: 1.25rem, $lineHeight: 1.6);
+    @include md.md_paragraph($fontSize: 1.25rem, $lineHeight: 1.6);
 
     &:last-of-type {
       margin-bottom: 0;
@@ -47,16 +51,16 @@ $sponsor_layout_breakpoint: 881px;
 
 .sponsorships__content {
   h2 {
-    @include md_h2;
+    @include md.md_h2;
   }
 
   h3 {
-    @include md_h3;
+    @include md.md_h3;
     margin-top: 2rem;
   }
 
   p:not(.testimonial__name) {
-    @include md_paragraph($fontSize: 1.25rem, $lineHeight: 1.6);
+    @include md.md_paragraph($fontSize: 1.25rem, $lineHeight: 1.6);
   }
 }
 
@@ -89,10 +93,10 @@ $sponsor_layout_breakpoint: 881px;
 }
 
 .sponsorships__formInput {
-  @include form_input;
+  @include utils.form_input;
 
   &:focus-visible {
-    @include input_focus;
+    @include utils.input_focus;
   }
 }
 
@@ -105,7 +109,7 @@ $sponsor_layout_breakpoint: 881px;
 }
 
 .sponsorships__formLabel {
-  @include font_main;
+  @include font.font_main;
   font-size: 1.2rem;
   line-height: 1.4;
   color: var(--color-fg-copy);
@@ -118,7 +122,7 @@ $sponsor_layout_breakpoint: 881px;
 }
 
 .sponsorships__question {
-  @include font_main;
+  @include font.font_main;
   font-size: 1.2rem;
   line-height: 1.4;
   color: var(--color-fg-copy);
@@ -128,18 +132,18 @@ $sponsor_layout_breakpoint: 881px;
 }
 
 .sponsorships__formTextArea {
-  @include form_input;
+  @include utils.form_input;
   width: 100%;
   scroll-padding-block: 1rem;
   line-height: 1.5;
 
   &:focus-visible {
-    @include input_focus;
+    @include utils.input_focus;
   }
 }
 
 .sponsorships__formTitle {
-  @include font_semibold;
+  @include font.font_semibold;
   font-size: clamp(2rem, 3vw, 3rem);
   line-height: 1.25;
   margin-bottom: 1rem;
@@ -183,15 +187,15 @@ $sponsor_layout_breakpoint: 881px;
   color: var(--bio-button-color);
   background: var(--bio-button-bg);
   color: var(--color-fg);
-  @include font_semibold;
+  @include font.font_semibold;
   font-size: 1.2rem;
   line-height: 1.6;
   padding: 0.625rem 0.875rem;
-  @include link_focus;
+  @include utils.link_focus;
 }
 
 .sponsorships__success {
-  @include font_main;
+  @include font.font_main;
   display: none;
   padding: 0.5rem 1rem;
   margin-bottom: 2rem;

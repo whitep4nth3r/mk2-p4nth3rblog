@@ -69,7 +69,7 @@ exports.render = function (data) {
 
     <section class="sponsorships__content">
       <h3>Contact me</h3>
-      <p>Get in touch via <a href="http://twitter.com/whitep4nth3r">Twitter</a>, <a href="https://discord.gg/theclaw">Discord</a> or <a href="mailto:whitep4nth3r@gmail.com">email</a>.</p>
+      <p>Get in touch via <a href="https://bsky.app/profile/whitep4nth3r.com">Bluesky</a>, <a href="https://discord.gg/theclaw">Discord</a> or <a href="mailto:whitep4nth3r@gmail.com">email</a>.</p>
     <div>
   </section>
   `;

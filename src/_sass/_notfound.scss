@@ -1,3 +1,5 @@
+@use "font";
+
 .fourohfour__content {
   max-width: var(--post-max-width);
   margin-left: auto;
@@ -23,7 +25,7 @@
 }
 
 .fourohfour__text {
-  @include font_main;
+  @include font.font_main;
   font-size: 1.4rem;
   line-height: 1.4;
   margin-bottom: 4rem;

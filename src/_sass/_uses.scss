@@ -1,3 +1,5 @@
+@use "utils";
+
 .uses {
   max-width: var(--global-max-width);
   margin: auto;
@@ -10,5 +12,5 @@
 }
 
 .uses__list {
-  @include card_grid;
+  @include utils.card_grid;
 }

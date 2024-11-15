@@ -1,3 +1,7 @@
+@use "blog";
+@use "font";
+@use "utils";
+
 [color-mode="dark"] {
   --topics-item-hover-bg: rgba(255, 255, 255, 0.09);
 }
@@ -38,25 +42,25 @@
     outline: var(--color-bg);
   }
 
-  @media screen and (min-width: $blog_mobile_layout_break) {
+  @media screen and (min-width: blog.$blog_mobile_layout_break) {
     display: none;
   }
 }
 
 .topics__title {
-  @include font_semibold;
+  @include font.font_semibold;
   font-size: 1rem;
 }
 
 .topics__meta {
-  @include font_semibold;
+  @include font.font_semibold;
   font-size: 1rem;
   margin-bottom: 1rem;
 }
 
 .topics__listItemLink {
   display: block;
-  @include font_semibold;
+  @include font.font_semibold;
   color: var(--color-fg);
   font-size: 1rem;
   line-height: 1.5rem;
@@ -69,7 +73,7 @@
     background-color: var(--topics-item-hover-bg);
   }
 
-  @include link_focus;
+  @include utils.link_focus;
 }
 
 .topics__listItemLink--selected {

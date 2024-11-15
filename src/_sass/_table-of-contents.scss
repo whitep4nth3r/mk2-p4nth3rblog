@@ -1,3 +1,6 @@
+@use "font";
+@use "utils";
+
 .tableOfContents {
   margin-bottom: 2rem;
 }
@@ -15,13 +18,13 @@
 }
 
 .tableOfContents__header {
-  @include font_bold;
+  @include font.font_bold;
   color: var(--table-of-contents-header-color);
   margin-bottom: 1rem;
   font-size: 1.2rem;
   cursor: pointer;
 
-  @include link_focus;
+  @include utils.link_focus;
 }
 
 .tableOfContents__item {
@@ -29,14 +32,14 @@
 }
 
 .tableOfContents__itemLink {
-  @include font_main;
+  @include font.font_main;
   font-size: 1rem;
   line-height: 1.4;
   color: var(--color-fg-copy);
   text-decoration: none;
   display: block;
 
-  @include link_focus;
+  @include utils.link_focus;
 }
 
 .tableOfContents__item--nudged {

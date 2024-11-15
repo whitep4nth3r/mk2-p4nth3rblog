@@ -1,3 +1,6 @@
+@use "font";
+@use "md";
+
 .blogEndAuthor {
   margin-bottom: 2rem;
   display: grid;
@@ -24,7 +27,7 @@
 }
 
 .blogEndAuthor__name {
-  @include font_semibold;
+  @include font.font_semibold;
   font-size: 1.125rem;
   line-height: 1.75;
   color: var(--color-fg);
@@ -35,6 +38,6 @@
   margin-bottom: 0.5rem;
 
   p {
-    @include md_paragraph;
+    @include md.md_paragraph;
   }
 }

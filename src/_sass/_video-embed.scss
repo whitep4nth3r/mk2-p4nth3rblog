@@ -1,5 +1,7 @@
+@use "font";
+
 .videoEmbed__cta {
-  @include font_main;
+  @include font.font_main;
   font-size: 1rem;
   line-height: 1;
   margin-bottom: 1rem;

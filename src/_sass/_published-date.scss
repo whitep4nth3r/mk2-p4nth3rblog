@@ -1,3 +1,5 @@
+@use "font";
+
 .publishedDate {
   display: flex;
   flex-direction: row;
@@ -7,7 +9,7 @@
 }
 
 .publishedDate__item {
-  @include font_semibold;
+  @include font.font_semibold;
   font-size: 0.875rem;
   margin-bottom: 0;
   color: var(--color-fg);

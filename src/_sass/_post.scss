@@ -1,3 +1,6 @@
+@use "font";
+@use "utils";
+
 [color-mode="dark"] {
   --post-hr-color: var(--pink-light);
   --table-th-color: var(--color-fg);
@@ -34,7 +37,7 @@
 }
 
 .post__meta__topic {
-  @include font_semibold;
+  @include font.font_semibold;
   font-weight: 500;
   font-size: 0.875rem;
   line-height: 1.5;
@@ -47,7 +50,7 @@
 
 .post__excerpt {
   p {
-    @include font_semibold;
+    @include font.font_semibold;
     font-size: 1.25rem;
     line-height: 1.5;
     margin-bottom: 2rem;
@@ -106,7 +109,7 @@
 }
 
 .post__h1 {
-  @include font_bold;
+  @include font.font_bold;
   margin: 0 auto 3rem auto;
   font-size: clamp(2.5rem, 3.5vw, 3.5rem);
   line-height: 1.4;
@@ -116,7 +119,7 @@
 }
 
 .post__h2 {
-  @include font_semibold;
+  @include font.font_semibold;
   font-size: clamp(1.8rem, 2.8vw, 2rem);
   line-height: 1.4;
   margin-bottom: 2rem;
@@ -127,7 +130,7 @@
 }
 
 .post__h3 {
-  @include font_semibold;
+  @include font.font_semibold;
   font-size: 1.4rem;
   line-height: 1.4;
   margin-top: 2rem;
@@ -142,13 +145,13 @@
   text-decoration: none;
   color: var(--color-fg);
   position: relative;
-  @include link_focus;
+  @include utils.link_focus;
 }
 
 .post__h4,
 .post__h5,
 .post__h6 {
-  @include font_semibold;
+  @include font.font_semibold;
   font-size: 1.2rem;
   line-height: 1.4;
   margin-bottom: 1rem;
@@ -156,7 +159,7 @@
 }
 
 .post__p {
-  @include font_main;
+  @include font.font_main;
   font-size: 1.125rem;
   line-height: 1.75;
   margin-bottom: 1rem;
@@ -164,7 +167,7 @@
   word-break: break-word;
 
   a {
-    @include link_focus;
+    @include utils.link_focus;
   }
 }
 
@@ -215,7 +218,7 @@
 
 .post__externalUrl,
 .post__isSponsored {
-  @include font_bold;
+  @include font.font_bold;
   margin-bottom: 2rem;
   max-width: max-content;
   color: var(--color-fg);
@@ -239,7 +242,7 @@
 }
 
 .post__relatedHeader {
-  @include font_semibold;
+  @include font.font_semibold;
   font-size: clamp(1.8rem, 2.8vw, 2rem);
   line-height: 1.4;
   margin-bottom: 2rem;
@@ -259,15 +262,6 @@
 
   @media screen and (min-width: 54em) {
     grid-template-columns: 1fr 1fr;
-  }
-}
-
-.post__tweetEmbed {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-
-  iframe {
-    border-radius: 14px;
   }
 }
 
@@ -293,7 +287,7 @@
 }
 
 .post__calloutTitle {
-  @include font_bold;
+  @include font.font_bold;
   font-size: 1.4rem;
   line-height: 1.6;
   margin-bottom: 1rem;
@@ -301,7 +295,7 @@
 }
 
 .post__calloutContent {
-  @include font_main;
+  @include font.font_main;
   font-size: 1.2rem;
   line-height: 1.6;
   color: var(--color-fg);
@@ -317,7 +311,7 @@
 }
 
 .post__calloutContent blockquote p {
-  @include font_semibold;
+  @include font.font_semibold;
   margin-bottom: 1.75rem;
   font-size: 1.4rem;
   line-height: 1.7;
@@ -334,14 +328,14 @@
 }
 
 .post__outOfDate {
-  @include font_semibold;
+  @include font.font_semibold;
   line-height: 1.3;
   font-size: 1.5rem;
   margin-bottom: 2rem;
 }
 
 .post__referer {
-  @include font_semibold;
+  @include font.font_semibold;
   display: block;
   max-width: var(--post-max-width);
   font-size: 1rem;
@@ -355,7 +349,7 @@
     line-height: inherit;
     position: relative;
 
-    @include link_focus;
+    @include utils.link_focus;
   }
 }
 
@@ -394,7 +388,7 @@
 }
 
 .post__tableHeader {
-  @include font_semibold;
+  @include font.font_semibold;
   text-align: left;
   border: 1px solid var(--color-fg);
   padding: var(--cell-padding);
@@ -406,7 +400,7 @@
 }
 
 .post__tableCell {
-  @include font_main;
+  @include font.font_main;
   text-align: left;
   word-wrap: break-word;
   padding: var(--cell-padding);

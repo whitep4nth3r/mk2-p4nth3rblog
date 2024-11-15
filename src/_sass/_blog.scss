@@ -1,3 +1,6 @@
+@use "font";
+@use "utils";
+
 $blog_mobile_layout_break: 48em;
 
 .blog {
@@ -20,7 +23,7 @@ $blog_mobile_layout_break: 48em;
 }
 
 .blog__filterToggle {
-  @include font_semibold;
+  @include font.font_semibold;
   font-size: 0.875rem;
   line-height: 1.25;
   display: flex;
@@ -116,7 +119,7 @@ $blog_mobile_layout_break: 48em;
 }
 
 .blog__cardsGrid {
-  @include card_grid;
+  @include utils.card_grid;
 }
 
 .blog__emptySearchCard {

@@ -1,3 +1,6 @@
+@use "font";
+@use "utils";
+
 .twitchInfo {
   --thumbnail-outer-radius: calc(var(--border-radius-base) * 2);
   --thumbnail-inner-padding: calc(var(--border-radius-base) / 2);
@@ -22,7 +25,7 @@
   justify-content: center;
   aspect-ratio: 16/9;
 
-  @include link_focus;
+  @include utils.link_focus;
 }
 
 .twitchInfo__thumbnail {
@@ -77,7 +80,7 @@
 }
 
 .twitchInfo__streamTitle {
-  @include font_semibold;
+  @include font.font_semibold;
   font-size: var(--title-font-size);
   color: #fff;
   white-space: nowrap;
@@ -91,7 +94,7 @@
     width: 1.25rem;
   }
 
-  @include font_semibold;
+  @include font.font_semibold;
   font-size: var(--title-font-size);
   font-style: italic;
 

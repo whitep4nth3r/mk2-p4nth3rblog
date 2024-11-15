@@ -1,13 +1,16 @@
+@use "font";
+@use "md";
+
 .streamPackage {
 }
 
 .streamPackage__title {
-  @include md_paragraph;
-  @include font_semibold;
+  @include md.md_paragraph;
+  @include font.font_semibold;
 }
 
 .streamPackage__description {
   p {
-    @include md_paragraph;
+    @include md.md_paragraph;
   }
 }
