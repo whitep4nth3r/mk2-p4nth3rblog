@@ -77,76 +77,78 @@ exports.render = async function (data) {
   });
 
   return /* html */ `
-    <div class="post__meta">
-      <p class="post__meta__topic p-category">${post.topicsCollection.items[0].name}</p>
-      ${PublishedDate({
-        date: post.date,
-        readingTime: post.readingTime,
-        isTalk: false,
-        updatedDate: post.updatedDate,
-      })}
-    </div>
-    <h1 class="post__h1">${post.title}</h1>
-    <section class="post">
-      <aside class="post__aside">
-        <div class="post__authorContainer">
-          ${Author({
-            author: post.author,
-            uUrl: `https://whitep4nth3r.com/blog/${data.post.slug}/`,
-            hideOnSmallScreens: true,
-          })}
-        </div>
-        <div class="post__asideStickyGroup">
-          <span class="post__newsletterSignupWide">${NewsletterSignup({
+    <article>
+      <div class="post__meta">
+        <p class="post__meta__topic p-category">${post.topicsCollection.items[0].name}</p>
+        ${PublishedDate({
+          date: post.date,
+          readingTime: post.readingTime,
+          isTalk: false,
+          updatedDate: post.updatedDate,
+        })}
+      </div>
+      <h1 class="post__h1 p-name">${post.title}</h1>
+      <section class="post">
+        <aside class="post__aside">
+          <div class="post__authorContainer">
+            ${Author({
+              author: post.author,
+              uUrl: `https://whitep4nth3r.com/blog/${data.post.slug}/`,
+              hideOnSmallScreens: true,
+            })}
+          </div>
+          <div class="post__asideStickyGroup">
+            <span class="post__newsletterSignupWide">${NewsletterSignup({
+              removeMargin: false,
+              subscribers: newsletter.subscribers,
+            })}</span>
+            ${TableOfContents(post.body)}
+          </div>
+        </aside>
+        <div class="post__article">
+          <div class="post__excerpt">${md.render(post.excerpt)}</div>
+          <hr class="post__separator" aria-hidden="true" />
+          <div class="post__body e-content">
+            ${outOfDateWarning({ post })}
+            ${RichText(post.body, {
+              renderRssFriendlyImg: false,
+              absoluteUrls: false,
+              renderHeadingLinks: true,
+            })}
+          </div>
+
+          ${post.isSponsored ? isSponsored() : ""}
+          ${ExternalUrl({ url: post.externalUrl })}
+
+          <span class="post__newsletterSignupSmall">${NewsletterSignup({
             removeMargin: false,
             subscribers: newsletter.subscribers,
           })}</span>
-          ${TableOfContents(post.body)}
+          <hr class="post__separator" />
+
+          ${BlogEndAuthor({ author: post.author, uUrl: `https://whitep4nth3r.com/blog/${data.post.slug}/` })}
+
+          ${
+            post.relatedPostsCollection?.items.length > 0
+              ? /*html*/ `
+              <div class="post__related">
+                <div class="post__relatedHeader">
+                  <p class="post__relatedHeaderTitle">Related posts</p>
+                </div>
+                <div class="post__relatedGrid">
+                  ${post.relatedPostsCollection.items
+                    .map((post) => Card({ item: { ...post, type: "post" }, showType: false, lazyLoad: true }))
+                    .join("")}
+                </div>
+              </div>`
+              : ""
+          }
+
+          <script type="application/ld+json">${PostStructuredData({
+            post,
+            imageUrl: openGraphImageUrl,
+          })}</script>
         </div>
-      </aside>
-      <article class="post__article">
-        <div class="post__excerpt">${md.render(post.excerpt)}</div>
-        <hr class="post__separator" aria-hidden="true" />
-        <div class="post__body e-content">
-          ${outOfDateWarning({ post })}
-          ${RichText(post.body, {
-            renderRssFriendlyImg: false,
-            absoluteUrls: false,
-            renderHeadingLinks: true,
-          })}
-        </div>
-
-        ${post.isSponsored ? isSponsored() : ""}
-        ${ExternalUrl({ url: post.externalUrl })}
-
-        <span class="post__newsletterSignupSmall">${NewsletterSignup({
-          removeMargin: false,
-          subscribers: newsletter.subscribers,
-        })}</span>
-        <hr class="post__separator" />
-
-        ${BlogEndAuthor({ author: post.author, uUrl: `https://whitep4nth3r.com/blog/${data.post.slug}/` })}
-
-        ${
-          post.relatedPostsCollection?.items.length > 0
-            ? /*html*/ `
-            <div class="post__related">
-              <div class="post__relatedHeader">
-                <p class="post__relatedHeaderTitle">Related posts</p>
-              </div>
-              <div class="post__relatedGrid">
-                ${post.relatedPostsCollection.items
-                  .map((post) => Card({ item: { ...post, type: "post" }, showType: false, lazyLoad: true }))
-                  .join("")}
-              </div>
-            </div>`
-            : ""
-        }
-
-        <script type="application/ld+json">${PostStructuredData({
-          post,
-          imageUrl: openGraphImageUrl,
-        })}</script>
       </article>
     </section>
     `;
