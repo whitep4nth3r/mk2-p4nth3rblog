@@ -104,7 +104,7 @@ exports.render = async function (data) {
           ${TableOfContents(post.body)}
         </div>
       </aside>
-      <article class="post__article h-entry">
+      <article class="post__article">
         <div class="post__excerpt">${md.render(post.excerpt)}</div>
         <hr class="post__separator" aria-hidden="true" />
         <div class="post__body e-content">
