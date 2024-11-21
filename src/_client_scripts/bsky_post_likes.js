@@ -23,7 +23,8 @@ if (bskyPostId !== null) {
   const data = await bskyPostLikes.json();
 
   if (data.likes.length > 0) {
-    likesCount.textContent = data.likes.length;
+    const likesInt = data.likes.length === 50 ? "50+" : data.likes.length;
+    likesCount.textContent = likesInt;
     drawLikes(data.likes);
   }
 }
