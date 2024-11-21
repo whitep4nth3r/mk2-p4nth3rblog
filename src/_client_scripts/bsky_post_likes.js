@@ -22,9 +22,8 @@ if (bskyPostId !== null) {
   const bskyPostLikes = await fetch(getLikesURL + postUri);
   const data = await bskyPostLikes.json();
 
-  likesCount.textContent = data.likes.length;
-
   if (data.likes.length > 0) {
+    likesCount.textContent = data.likes.length;
     drawLikes(data.likes);
   }
 }
