@@ -129,7 +129,7 @@ exports.render = async function (data) {
               post.blueskyPostId
                 ? `
               <section class="post__likes">
-                <h3 class="post__likesTitle">🦋 Likes on Bluesky</h3>
+                <h3 class="post__likesTitle">🦋 Likes on Bluesky (<span data-bsky-likes-count></span>)</h3>
                   <a class="post__likes__cta" href="https://bsky.app/profile/whitep4nth3r.com/post/${post.blueskyPostId}" target="_blank">Like this post on Bluesky to see your face on this page</a>
                 <ul data-bsky-likes  class="post__likesList"></ul>
               </section>`
