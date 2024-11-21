@@ -76,7 +76,7 @@ exports.render = async function (data) {
     topics: post.topicsCollection.items,
   });
 
-  return /* html */ `
+  return /*html*/ `
     <article class="h-entry">
       <div class="post__meta">
         <p class="post__meta__topic p-category">${post.topicsCollection.items[0].name}</p>
@@ -125,10 +125,22 @@ exports.render = async function (data) {
           ${post.isSponsored ? isSponsored() : ""}
           ${ExternalUrl({ url: post.externalUrl })}
 
+            ${
+              post.blueskyPostId
+                ? `
+              <section class="post__likes">
+                <h3 class="post__likesTitle">🦋 Likes on Bluesky</h3>
+                  <a class="post__likes__cta" href="https://bsky.app/profile/whitep4nth3r.com/post/${post.blueskyPostId}" target="_blank">Like this post on Bluesky to see your face on this page</a>
+                <ul data-bsky-likes  class="post__likesList"></ul>
+              </section>`
+                : ""
+            }
+
           <span class="post__newsletterSignupSmall">${NewsletterSignup({
             removeMargin: false,
             subscribers: newsletter.subscribers,
           })}</span>
+
           <hr class="post__separator" />
 
           ${BlogEndAuthor({
@@ -159,5 +171,7 @@ exports.render = async function (data) {
         </div>
       </article>
     </section>
+    <meta id="bsky_post_id" data-bsky-post-id="${post.blueskyPostId}" />
+    <script src="/js/bsky_post_likes.js" type="module"></script>
     `;
 };
