@@ -4,8 +4,6 @@ function ResponsiveImage({ image, classOverride = null, loading = null }) {
   const className = classOverride ? classOverride : "post__responsiveImage";
   const loadingStrat = loading ? loading : "lazy";
   const { contentType } = image;
-  // Inspect contentType to convert GIF to WebP and not AVIF
-  // more info: https://twitter.com/whitep4nth3r/status/1460244790059188226
   const isGif = contentType === "image/gif";
 
   // Note, this array could be further optimised looking at the resulting quality and file size

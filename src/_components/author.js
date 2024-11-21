@@ -2,7 +2,7 @@ const BioImage = require("./bioImage");
 const SocialLinks = require("./socialLinks");
 const NameLogo = require("./svg/nameLogo");
 
-function Author({ author, hideOnSmallScreens = false }) {
+function Author({ author, uUrl, hideOnSmallScreens = false }) {
   const hideClass = hideOnSmallScreens ? " author--hideSmall" : "";
   return /*html*/ `
   <div class="author${hideClass}">
@@ -16,7 +16,7 @@ function Author({ author, hideOnSmallScreens = false }) {
     </a>
 
     <div class="author_social">
-      ${SocialLinks()}
+      ${SocialLinks({ uUrl })}
     </div>
   </div>
   `;

@@ -76,74 +76,102 @@ exports.render = async function (data) {
     topics: post.topicsCollection.items,
   });
 
-  return /* html */ `
-    <div class="post__meta">
-      <p class="post__meta__topic">${post.topicsCollection.items[0].name}</p>
-      ${PublishedDate({
-        date: post.date,
-        readingTime: post.readingTime,
-        isTalk: false,
-        updatedDate: post.updatedDate,
-      })}
-    </div>
-    <h1 class="post__h1">${post.title}</h1>
-    <section class="post">
-      <aside class="post__aside">
-        <div class="post__authorContainer">
-          ${Author({ author: post.author, hideOnSmallScreens: true })}
-        </div>
-        <div class="post__asideStickyGroup">
-          <span class="post__newsletterSignupWide">${NewsletterSignup({
+  return /*html*/ `
+    <article class="h-entry">
+      <div class="post__meta">
+        <p class="post__meta__topic p-category">${post.topicsCollection.items[0].name}</p>
+        ${PublishedDate({
+          date: post.date,
+          readingTime: post.readingTime,
+          isTalk: false,
+          updatedDate: post.updatedDate,
+        })}
+      </div>
+      <h1 class="post__h1 p-name">${post.title}</h1>
+      <section class="post">
+        <aside class="post__aside">
+          <div class="post__authorContainer">
+            ${Author({
+              author: post.author,
+              uUrl: `https://whitep4nth3r.com/blog/${data.post.slug}/`,
+              hideOnSmallScreens: true,
+            })}
+            <div style="visibility: hidden; height: 0;">
+              <a class="p-author h-card" href="https://whitep4nth3r.com/">Salma Alam-Naylor</a>
+              <a class="u-url" href="${`https://whitep4nth3r.com/blog/${data.post.slug}/`}">${post.title}</a>
+              <img class="u-photo" src="https://images.ctfassets.net/56dzm01z6lln/69YokY1TvGVk37gCQmQJDo/c315f0996556c9c1f276d12d5f201a76/headshot_relaxed.png"/>
+            </div>
+          </div>
+          <div class="post__asideStickyGroup">
+            <span class="post__newsletterSignupWide">${NewsletterSignup({
+              removeMargin: false,
+              subscribers: newsletter.subscribers,
+            })}</span>
+            ${TableOfContents(post.body)}
+          </div>
+        </aside>
+        <div class="post__article">
+          <div class="post__excerpt">${md.render(post.excerpt)}</div>
+          <hr class="post__separator" aria-hidden="true" />
+          <div class="post__body e-content">
+            ${outOfDateWarning({ post })}
+            ${RichText(post.body, {
+              renderRssFriendlyImg: false,
+              absoluteUrls: false,
+              renderHeadingLinks: true,
+            })}
+          </div>
+
+          ${post.isSponsored ? isSponsored() : ""}
+          ${ExternalUrl({ url: post.externalUrl })}
+
+            ${
+              post.blueskyPostId
+                ? `
+              <section class="post__likes">
+                <h3 class="post__likesTitle">🦋 Likes on Bluesky</h3>
+                  <a class="post__likes__cta" href="https://bsky.app/profile/whitep4nth3r.com/post/${post.blueskyPostId}" target="_blank">Like this post on Bluesky to see your face on this page</a>
+                <ul data-bsky-likes  class="post__likesList"></ul>
+              </section>`
+                : ""
+            }
+
+          <span class="post__newsletterSignupSmall">${NewsletterSignup({
             removeMargin: false,
             subscribers: newsletter.subscribers,
           })}</span>
-          ${TableOfContents(post.body)}
-        </div>
-      </aside>
-      <article class="post__article">
-        <div class="post__excerpt">${md.render(post.excerpt)}</div>
-        <hr class="post__separator" aria-hidden="true" />
-        <div class="post__body">
-          ${outOfDateWarning({ post })}
-          ${RichText(post.body, {
-            renderRssFriendlyImg: false,
-            absoluteUrls: false,
-            renderHeadingLinks: true,
+
+          <hr class="post__separator" />
+
+          ${BlogEndAuthor({
+            author: post.author,
+            uUrl: `https://whitep4nth3r.com/blog/${data.post.slug}/`,
           })}
+
+          ${
+            post.relatedPostsCollection?.items.length > 0
+              ? /*html*/ `
+              <div class="post__related">
+                <div class="post__relatedHeader">
+                  <p class="post__relatedHeaderTitle">Related posts</p>
+                </div>
+                <div class="post__relatedGrid">
+                  ${post.relatedPostsCollection.items
+                    .map((post) => Card({ item: { ...post, type: "post" }, showType: false, lazyLoad: true }))
+                    .join("")}
+                </div>
+              </div>`
+              : ""
+          }
+
+          <script type="application/ld+json">${PostStructuredData({
+            post,
+            imageUrl: openGraphImageUrl,
+          })}</script>
         </div>
-
-        ${post.isSponsored ? isSponsored() : ""}
-        ${ExternalUrl({ url: post.externalUrl })}
-
-        <span class="post__newsletterSignupSmall">${NewsletterSignup({
-          removeMargin: false,
-          subscribers: newsletter.subscribers,
-        })}</span>
-        <hr class="post__separator" />
-
-        ${BlogEndAuthor({ author: post.author })}
-
-        ${
-          post.relatedPostsCollection?.items.length > 0
-            ? /*html*/ `
-            <div class="post__related">
-              <div class="post__relatedHeader">
-                <p class="post__relatedHeaderTitle">Related posts</p>
-              </div>
-              <div class="post__relatedGrid">
-                ${post.relatedPostsCollection.items
-                  .map((post) => Card({ item: { ...post, type: "post" }, showType: false, lazyLoad: true }))
-                  .join("")}
-              </div>
-            </div>`
-            : ""
-        }
-
-        <script type="application/ld+json">${PostStructuredData({
-          post,
-          imageUrl: openGraphImageUrl,
-        })}</script>
       </article>
     </section>
+    <meta id="bsky_post_id" data-bsky-post-id="${post.blueskyPostId}" />
+    <script src="/js/bsky_post_likes.js" type="module"></script>
     `;
 };

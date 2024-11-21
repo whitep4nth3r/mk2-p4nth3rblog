@@ -11,7 +11,7 @@ function TabbedBio({ shortBio, speakerBio, longBio }) {
         <a href="#long" class="bio__button" data-view="long">Long bio</a>
       </div>
       <div class="bio__links">
-      ${SocialLinks()}
+      ${SocialLinks({ uUrl: "https://whitep4nth3r.com/about/" })}
       </div>
     </div>
   

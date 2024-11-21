@@ -5,7 +5,7 @@ var md = require("markdown-it")({
   html: true,
 });
 
-function BlogEndAuthor({ author }) {
+function BlogEndAuthor({ author, uUrl }) {
   return /*html*/ `
   <div class="blogEndAuthor">
     <div class="blogEndAuthor__imgContainer">
@@ -18,7 +18,7 @@ function BlogEndAuthor({ author }) {
     </div>
 
     <div class="blogEndAuthor_social">
-      ${SocialLinks()}
+      ${SocialLinks({ uUrl: uUrl })}
     </div>
   </div>
   `;
