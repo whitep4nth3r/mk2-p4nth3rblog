@@ -1,5 +1,6 @@
 const LIMIT = 59;
 const bskyPostId = document.querySelector("#bsky_post_id").dataset.bskyPostId;
+const container = document.querySelector("[data-bsky-container]");
 const likesContainer = document.querySelector("[data-bsky-likes]");
 const likesCount = document.querySelector("[data-bsky-likes-count]");
 const myDid = "did:plc:qcxqtc2yzznbaazu7egncqqx";
@@ -33,15 +34,20 @@ function drawLikes(likesActors, postLikesCount) {
 
 if (bskyPostId !== null) {
   const postUri = `at://${myDid}/app.bsky.feed.post/${bskyPostId}`;
-  const bskyPost = await fetch(getPostURL + postUri);
-  const bskyPostLikes = await fetch(getLikesURL + postUri);
-  const postData = await bskyPost.json();
-  const likesData = await bskyPostLikes.json();
 
-  const totalLikesCount = postData.posts[0].likeCount;
+  try {
+    const bskyPost = await fetch(getPostURL + postUri);
+    const bskyPostLikes = await fetch(getLikesURL + postUri);
+    const postData = await bskyPost.json();
+    const likesData = await bskyPostLikes.json();
 
-  if (likesData.likes.length > 0) {
-    likesCount.textContent = totalLikesCount;
-    drawLikes(likesData.likes, totalLikesCount);
+    const totalLikesCount = postData.posts[0].likeCount;
+
+    if (likesData.likes.length > 0) {
+      likesCount.textContent = totalLikesCount;
+      drawLikes(likesData.likes, totalLikesCount);
+    }
+  } catch (error) {
+    container.remove();
   }
 }
