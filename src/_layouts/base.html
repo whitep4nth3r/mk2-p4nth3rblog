@@ -19,6 +19,7 @@
 
       window.sentryOnLoad = function () {
         Sentry.init({
+          enabled: environment === "production",
           release: release,
           environment: environment,
           tracesSampleRate: 0.5,
