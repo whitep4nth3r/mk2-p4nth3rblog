@@ -409,7 +409,7 @@
 
 .post__likes {
   margin-bottom: 2rem;
-  min-height: 400px;
+  height: 400px;
 }
 
 .post__likesTitle {
@@ -418,6 +418,15 @@
   line-height: 1.2;
   margin-bottom: 1rem;
   color: var(--color-fg-copy);
+}
+
+.post__likesCta {
+  @include font.font_main;
+  color: var(--color-fg-copy);
+  font-size: 1.25rem;
+  font-style: italic;
+  margin-bottom: 2rem;
+  display: block;
 }
 
 .post__likesList {
@@ -445,20 +454,11 @@
   @include font.font_bold;
   width: 4rem;
   aspect-ratio: 1/1;
-  background-color: #208bfe;
-  color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1rem;
   font-style: italic;
-}
-
-.post__likes__cta {
-  @include font.font_main;
-  color: var(--color-fg-copy);
-  font-size: 1.25rem;
-  font-style: italic;
-  margin-bottom: 2rem;
-  display: block;
+  background-color: #208bfe;
+  color: #fff;
 }
