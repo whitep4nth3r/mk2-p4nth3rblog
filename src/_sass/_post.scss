@@ -409,7 +409,7 @@
 
 .post__likes {
   margin-bottom: 2rem;
-  min-height: 300px;
+  min-height: 400px;
 }
 
 .post__likesTitle {
@@ -431,12 +431,27 @@
 
 .post__like {
   width: 4rem;
+  aspect-ratio: 1/1;
   margin-right: -1rem;
+  border-radius: 100%;
+  filter: var(--base-shadow-filter);
 }
 
 .post__like__avatar {
   border-radius: 100%;
-  filter: var(--base-shadow-filter);
+}
+
+.post__like--howManyMore {
+  @include font.font_bold;
+  width: 4rem;
+  aspect-ratio: 1/1;
+  background-color: #208bfe;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-style: italic;
 }
 
 .post__likes__cta {

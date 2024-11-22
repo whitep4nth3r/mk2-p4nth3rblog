@@ -1,11 +1,24 @@
+const LIMIT = 59;
 const bskyPostId = document.querySelector("#bsky_post_id").dataset.bskyPostId;
 const likesContainer = document.querySelector("[data-bsky-likes]");
 const likesCount = document.querySelector("[data-bsky-likes-count]");
 const myDid = "did:plc:qcxqtc2yzznbaazu7egncqqx";
-const getLikesURL = `https://public.api.bsky.app/xrpc/app.bsky.feed.getLikes?uri=`;
+const bskyAPI = "https://public.api.bsky.app/xrpc/";
+const getLikesURL = `${bskyAPI}app.bsky.feed.getLikes?limit=${LIMIT}&uri=`;
+const getPostURL = `${bskyAPI}app.bsky.feed.getPosts?uris=`;
 
-function drawLikes(likes) {
-  for (const like of likes) {
+function drawHowManyMore(postLikesCount, likesActorLength) {
+  if (postLikesCount > LIMIT) {
+    const likesMore = document.createElement("li");
+    likesMore.classList.add("post__like");
+    likesMore.classList.add("post__like--howManyMore");
+    likesMore.innerHTML = `+${postLikesCount - likesActorLength}`;
+    likesContainer.appendChild(likesMore);
+  }
+}
+
+function drawLikes(likesActors, postLikesCount) {
+  for (const like of likesActors) {
     const likeEl = document.createElement("li");
     likeEl.classList.add("post__like");
     likeEl.innerHTML = `
@@ -14,17 +27,21 @@ function drawLikes(likes) {
     }" />`;
     likesContainer.appendChild(likeEl);
   }
+
+  drawHowManyMore(postLikesCount, likesActors.length);
 }
 
 if (bskyPostId !== null) {
   const postUri = `at://${myDid}/app.bsky.feed.post/${bskyPostId}`;
-
+  const bskyPost = await fetch(getPostURL + postUri);
   const bskyPostLikes = await fetch(getLikesURL + postUri);
-  const data = await bskyPostLikes.json();
+  const postData = await bskyPost.json();
+  const likesData = await bskyPostLikes.json();
 
-  if (data.likes.length > 0) {
-    const likesInt = data.likes.length === 50 ? "50+" : data.likes.length;
-    likesCount.textContent = likesInt;
-    drawLikes(data.likes);
+  const totalLikesCount = postData.posts[0].likeCount;
+
+  if (likesData.likes.length > 0) {
+    likesCount.textContent = totalLikesCount;
+    drawLikes(likesData.likes, totalLikesCount);
   }
 }
