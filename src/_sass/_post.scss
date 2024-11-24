@@ -447,9 +447,12 @@
 }
 
 .post__like__avatar {
+  width: 4rem;
+  aspect-ratio: 1/1;
   border-radius: 100%;
 }
 
+.post__like--placeholder,
 .post__like--howManyMore {
   @include font.font_bold;
   width: 4rem;

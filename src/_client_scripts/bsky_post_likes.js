@@ -13,7 +13,7 @@ function drawHowManyMore(postLikesCount, likesActorLength) {
     const likesMore = document.createElement("li");
     likesMore.classList.add("post__like");
     likesMore.classList.add("post__like--howManyMore");
-    likesMore.innerHTML = `+${postLikesCount - likesActorLength}`;
+    likesMore.innerText = `+${postLikesCount - likesActorLength}`;
     likesContainer.appendChild(likesMore);
   }
 }
@@ -22,10 +22,18 @@ function drawLikes(likesActors, postLikesCount) {
   for (const like of likesActors) {
     const likeEl = document.createElement("li");
     likeEl.classList.add("post__like");
-    likeEl.innerHTML = `
+
+    if (like.actor.avatar !== undefined) {
+      likeEl.innerHTML = `
       <img class="post__like__avatar" src="${like.actor.avatar.replace("avatar", "avatar_thumbnail")}" alt="${
-      like.actor.displayName
-    }" />`;
+        like.actor.displayName
+      }" />`;
+    } else {
+      likeEl.classList.add("post__like--placeholder");
+      likeEl.innerHTML = `
+        <span aria-label="${like.actor.displayName}">@</span>
+      `;
+    }
     likesContainer.appendChild(likeEl);
   }
 
