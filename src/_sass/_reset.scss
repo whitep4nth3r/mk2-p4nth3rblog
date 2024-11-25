@@ -54,6 +54,7 @@ body {
 main {
   margin: 6rem auto auto auto;
   max-width: var(--global-max-width);
+  overflow: hidden;
 
   @media screen and (min-width: root.$global_md_breakpoint) {
     margin-top: 10rem;
