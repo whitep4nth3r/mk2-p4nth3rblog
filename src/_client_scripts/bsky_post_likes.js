@@ -1,4 +1,4 @@
-const LIMIT = 59;
+const LIMIT = 55;
 const bskyPostId = document.querySelector("[data-bsky-post-id]").dataset.bskyPostId;
 const container = document.querySelector("[data-bsky-container]");
 const likesContainer = document.querySelector("[data-bsky-likes]");
