@@ -11,6 +11,10 @@
   gap: 0.25rem;
 }
 
+.socialLinks--about {
+  justify-content: flex-end;
+}
+
 .socialLinks li {
   display: flex;
   justify-self: center;
