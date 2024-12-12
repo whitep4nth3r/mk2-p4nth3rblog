@@ -5,9 +5,11 @@ const YouTubeIcon = require("./svg/youtubeIcon");
 const BlueskyIcon = require("./svg/blueskyIcon");
 const FeedIcon = require("./svg/feedIcon");
 
-function SocialLinks({ uUrl }) {
+function SocialLinks({ uUrl, extraClassModifier = null }) {
+  const extraClass = extraClassModifier ? `socialLinks--${extraClassModifier}` : "";
+  
   return /*html*/ `
-  <ul class="socialLinks">
+  <ul class="socialLinks ${extraClass}">
     <li>
       <a href="https://twitch.tv/whitep4nth3r" class="socialLinks__item" target="_blank" rel="nofollow noreferrer" aria-label="Follow on Twitch">${TwitchIcon()}</a>
     </li>

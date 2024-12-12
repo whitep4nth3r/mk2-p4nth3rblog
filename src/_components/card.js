@@ -15,7 +15,8 @@ function openingTag({ item, heading }) {
     href = `/blog/${item.slug}/`;
   }
 
-  if (item.link) {
+  if (item.link && item.type !== "thing"
+  ) {
     href = item.link;
   }
 
@@ -150,9 +151,9 @@ const Card = ({ item, showType = true, lazyLoad = false }) => {
       ${renderDate(item)}
       <h2 class="card__title">${heading}</h2>
       ${description(item)}
-      
+      ${item.type === "thing" && item.link ? `<a href="${item.link}" class="card__linkButton" target="_blank">Buy this thing</a>` : ""}
       ${showType === false ? itemMeta(item) : renderType(item)}
-  </div>
+    </div>
     ${closingTag(item)}`;
 };
 

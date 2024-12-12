@@ -95,12 +95,12 @@
 }
 
 .tcwr__join {
-  background-color: var(--orange);
+  background: linear-gradient(45deg, var(--pink) 0%, var(--orange) 75%);
   display: block;
   border-width: 0;
   border-radius: var(--border-radius-base);
   width: 100%;
-  color: var(--black);
+  color: var(--white);
   font-weight: bold;
   text-transform: uppercase;
   font-size: 1.5rem;
@@ -112,5 +112,5 @@
 
 .tcwr__join:focus-visible,
 .tcwr__join:focus-visible:focus {
-  @include utils.input_focus;
+  @include utils.link_focus;
 }
