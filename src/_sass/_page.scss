@@ -7,3 +7,10 @@
   line-height: 1.4;
   color: var(--color-fg);
 }
+
+.page__text {
+  @include font.font_main;
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: var(--color-copy);
+}

@@ -904,6 +904,14 @@ main:after {
   color: var(--color-fg);
 }
 
+.page__text {
+  font-weight: var(--font-weight-main);
+  font-family: var(--font-family-main);
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: var(--color-copy);
+}
+
 [color-mode=dark] {
   --post-hr-color: var(--pink-light);
   --table-th-color: var(--color-fg);
@@ -2311,10 +2319,8 @@ pre[class*=language-] {
 [color-mode=light] {
   --card-bg: rgba(255, 255, 255, 0.32);
   --card-bg-hover: rgba(255, 255, 255, 0.72);
-  --card-box-shadow: 0px 0px 0px -16px rgba(27, 27, 27, 0.01),
-    inset 0px 1px 0px rgba(255, 255, 255, 0.16);
-  --card-box-shadow-hover: 0px 24px 32px -16px rgba(27, 27, 27, 0.16),
-    inset 0px 1px 0px rgba(255, 255, 255, 0.16);
+  --card-box-shadow: 0px 0px 0px -16px rgba(27, 27, 27, 0.01), inset 0px 1px 0px rgba(255, 255, 255, 0.16);
+  --card-box-shadow-hover: 0px 24px 32px -16px rgba(27, 27, 27, 0.16), inset 0px 1px 0px rgba(255, 255, 255, 0.16);
 }
 
 .card {
@@ -2428,6 +2434,32 @@ pre[class*=language-] {
   font-size: 0.875rem;
   line-height: 1.125;
   color: var(--color-fg);
+}
+
+.card__linkButton {
+  background: linear-gradient(45deg, var(--pink) 0%, var(--orange) 75%);
+  display: block;
+  border-width: 0;
+  border-radius: var(--border-radius-base);
+  width: 100%;
+  color: var(--white);
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  margin: 0 auto 0.5rem auto;
+}
+
+.card__linkButton:focus-visible:focus-visible, .card__linkButton:focus-visible:focus,
+.card__linkButton:focus-visible:focus:focus-visible,
+.card__linkButton:focus-visible:focus:focus {
+  outline: transparent;
+  outline-style: solid;
+  box-shadow: var(--color-bg) 0 0 0 0.08rem, var(--color-focus-outline) 0 0 0 0.24rem;
+  transition: box-shadow var(--global-transition-time) ease-in-out;
+  border-radius: var(--border-radius-base);
 }
 
 .twitchInfo {
@@ -3287,7 +3319,7 @@ pre[class*=language-] {
 }
 
 .newsletterSignup__submit {
-  background-color: var(--pink);
+  background: linear-gradient(45deg, var(--pink) 0%, var(--orange) 75%);
   display: block;
   border-width: 0;
   border-radius: var(--border-radius-base);
@@ -3302,13 +3334,14 @@ pre[class*=language-] {
   margin: 0 auto 0.5rem auto;
 }
 
-.newsletterSignup__submit:focus-visible,
-.newsletterSignup__submit:focus-visible:focus {
-  outline-color: transparent;
+.newsletterSignup__submit:focus-visible:focus-visible, .newsletterSignup__submit:focus-visible:focus,
+.newsletterSignup__submit:focus-visible:focus:focus-visible,
+.newsletterSignup__submit:focus-visible:focus:focus {
+  outline: transparent;
   outline-style: solid;
-  outline-offset: 0.125rem;
-  box-shadow: inset var(--color-fg) 0 0 0 0.125rem;
+  box-shadow: var(--color-bg) 0 0 0 0.08rem, var(--color-focus-outline) 0 0 0 0.24rem;
   transition: box-shadow var(--global-transition-time) ease-in-out;
+  border-radius: var(--border-radius-base);
 }
 
 .tcwr__title {
@@ -3412,12 +3445,12 @@ pre[class*=language-] {
 }
 
 .tcwr__join {
-  background-color: var(--orange);
+  background: linear-gradient(45deg, var(--pink) 0%, var(--orange) 75%);
   display: block;
   border-width: 0;
   border-radius: var(--border-radius-base);
   width: 100%;
-  color: var(--black);
+  color: var(--white);
   font-weight: bold;
   text-transform: uppercase;
   font-size: 1.5rem;
@@ -3427,13 +3460,14 @@ pre[class*=language-] {
   margin: 1rem auto 0.5rem auto;
 }
 
-.tcwr__join:focus-visible,
-.tcwr__join:focus-visible:focus {
-  outline-color: transparent;
+.tcwr__join:focus-visible:focus-visible, .tcwr__join:focus-visible:focus,
+.tcwr__join:focus-visible:focus:focus-visible,
+.tcwr__join:focus-visible:focus:focus {
+  outline: transparent;
   outline-style: solid;
-  outline-offset: 0.125rem;
-  box-shadow: inset var(--color-fg) 0 0 0 0.125rem;
+  box-shadow: var(--color-bg) 0 0 0 0.08rem, var(--color-focus-outline) 0 0 0 0.24rem;
   transition: box-shadow var(--global-transition-time) ease-in-out;
+  border-radius: var(--border-radius-base);
 }
 
 .video {
