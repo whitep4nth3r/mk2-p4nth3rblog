@@ -19,11 +19,10 @@
 
       window.sentryOnLoad = function () {
         Sentry.init({
-          enabled: environment === "production",
+          // enabled: environment === "production", DO NOT COMMIT THIS LINE
           release: release,
           environment: environment,
-          tracesSampleRate: 0.5,
-          enableInp: true,
+          // tracesSampleRate: 0.5, DO NOT COMMIT THIS LINE
           integrations: [
             Sentry.replayIntegration({
               maskAllText: false,
@@ -31,6 +30,21 @@
             }),
           ],
         });
+
+        Sentry.lazyLoadIntegration("feedbackIntegration")
+          .then((feedbackIntegration) => {
+            Sentry.addIntegration(
+              feedbackIntegration({
+                showBranding: true,
+                namePlaceholder: "Salma Alam-Naylor",
+                emailPlaceholder: "whitep4nth3r@gmail.com",
+              }),
+            );
+          })
+          .catch(() => {
+            // this can happen if e.g. a network error occurs,
+            // in this case User Feedback will not be enabled
+          });
       };
     </script>
     <script src="https://js.sentry-cdn.com/9093cd35e7e4f174110bcc38a87a56b0.min.js" crossorigin="anonymous"></script>
