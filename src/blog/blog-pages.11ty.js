@@ -31,7 +31,8 @@ exports.data = {
     title: (data) => data.post.metaTitle,
     slug: (data) => data.post.slug,
     includeInSitemap: (data) => data.post.externalUrl === null,
-    canonical: (data) => data.post.externalUrl || `https://whitep4nth3r.com/blog/${data.post.slug}/`,
+    canonical: (data) =>
+      data.post.externalUrl || `https://whitep4nth3r.com/blog/${data.post.slug}/`,
     metaDescription: (data) => data.post.metaDescription,
     openGraphImageUrl: (data) =>
       OpenGraph.generateImageUrl({
@@ -40,7 +41,8 @@ exports.data = {
     openGraphImageAlt: (data) => OpenGraph.generateImageAlt(data.post.title),
     openGraphImageWidth: OpenGraph.imgWidth,
     openGraphImageHeight: OpenGraph.imgHeight,
-    openGraphUrl: (data) => data.post.externalUrl || `https://whitep4nth3r.com/blog/${data.post.slug}/`,
+    openGraphUrl: (data) =>
+      data.post.externalUrl || `https://whitep4nth3r.com/blog/${data.post.slug}/`,
     openGraphTimeToRead: (data) => data.post.readingTime,
     openGraphArticleTags: (data) => data.post.topicsCollection.items.map((item) => item.name),
   },
@@ -98,7 +100,9 @@ exports.render = async function (data) {
             })}
             <div style="visibility: hidden; height: 0;">
               <a class="p-author h-card" href="https://whitep4nth3r.com/">Salma Alam-Naylor</a>
-              <a class="u-url" href="${`https://whitep4nth3r.com/blog/${data.post.slug}/`}">${post.title}</a>
+              <a class="u-url" href="${`https://whitep4nth3r.com/blog/${data.post.slug}/`}">${
+    post.title
+  }</a>
               <img class="u-photo" src="https://images.ctfassets.net/56dzm01z6lln/69YokY1TvGVk37gCQmQJDo/c315f0996556c9c1f276d12d5f201a76/headshot_relaxed.png"/>
             </div>
           </div>
@@ -148,6 +152,12 @@ exports.render = async function (data) {
             uUrl: `https://whitep4nth3r.com/blog/${data.post.slug}/`,
           })}
 
+          <div class="post__coffee">
+            <h3 class="post__coffeeHeader">Did this post help you?</h3>
+            <a href="https://www.buymeacoffee.com/whitep4nth3r" class="post__coffeeButton" target="_blank">☕️ Buy me a coffee</a>
+            <p class="post__coffeeThanks">(thank you!)</p>
+          </div>
+
           ${
             post.relatedPostsCollection?.items.length > 0
               ? /*html*/ `
@@ -157,7 +167,9 @@ exports.render = async function (data) {
                 </div>
                 <div class="post__relatedGrid">
                   ${post.relatedPostsCollection.items
-                    .map((post) => Card({ item: { ...post, type: "post" }, showType: false, lazyLoad: true }))
+                    .map((post) =>
+                      Card({ item: { ...post, type: "post" }, showType: false, lazyLoad: true }),
+                    )
                     .join("")}
                 </div>
               </div>`
