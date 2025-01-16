@@ -100,9 +100,7 @@ exports.render = async function (data) {
             })}
             <div style="visibility: hidden; height: 0;">
               <a class="p-author h-card" href="https://whitep4nth3r.com/">Salma Alam-Naylor</a>
-              <a class="u-url" href="${`https://whitep4nth3r.com/blog/${data.post.slug}/`}">${
-    post.title
-  }</a>
+              <a class="u-url" href="${`https://whitep4nth3r.com/blog/${data.post.slug}/`}">${post.title}</a>
               <img class="u-photo" src="https://images.ctfassets.net/56dzm01z6lln/69YokY1TvGVk37gCQmQJDo/c315f0996556c9c1f276d12d5f201a76/headshot_relaxed.png"/>
             </div>
           </div>
@@ -167,9 +165,7 @@ exports.render = async function (data) {
                 </div>
                 <div class="post__relatedGrid">
                   ${post.relatedPostsCollection.items
-                    .map((post) =>
-                      Card({ item: { ...post, type: "post" }, showType: false, lazyLoad: true }),
-                    )
+                    .map((post) => Card({ item: { ...post, type: "post" }, showType: false, lazyLoad: true }))
                     .join("")}
                 </div>
               </div>`
@@ -185,5 +181,6 @@ exports.render = async function (data) {
     </section>
     <meta data-bsky-post-id="${post.blueskyPostId}" />
     <script src="/js/bsky_post_likes.js" type="module"></script>
+    <script src="/js/copy_code.js"></script>
     `;
 };

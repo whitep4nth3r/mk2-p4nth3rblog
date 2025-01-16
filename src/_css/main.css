@@ -1114,6 +1114,38 @@ main:after {
 .post__codeBlock {
   margin-bottom: 2rem;
   margin-top: 2rem;
+  position: relative;
+}
+
+.post__codeBlockCopyButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: space-between;
+  font-size: 1.25rem;
+  font-weight: var(--font-weight-main);
+  font-family: var(--font-family-main);
+  color: var(--black);
+  border-radius: 0 var(--border-radius-base) 0 0;
+  background: var(--white);
+}
+.post__codeBlockCopyButton svg {
+  pointer-events: none;
+}
+
+.post__codeBlockCopyButton:focus-visible:focus-visible, .post__codeBlockCopyButton:focus-visible:focus,
+.post__codeBlockCopyButton:active:focus-visible,
+.post__codeBlockCopyButton:active:focus,
+.post__codeBlockCopyButton:focus-visible:focus:focus-visible,
+.post__codeBlockCopyButton:focus-visible:focus:focus {
+  outline: transparent;
+  outline-style: solid;
+  box-shadow: var(--color-bg) 0 0 0 0.08rem, var(--color-focus-outline) 0 0 0 0.24rem;
+  transition: box-shadow var(--global-transition-time) ease-in-out;
+  border-radius: var(--border-radius-base);
 }
 
 .post__blockquote {

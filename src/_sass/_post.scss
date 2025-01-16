@@ -188,6 +188,33 @@
 .post__codeBlock {
   margin-bottom: 2rem;
   margin-top: 2rem;
+  position: relative;
+}
+
+.post__codeBlockCopyButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.5rem;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: space-between;
+  font-size: 1.25rem;
+  @include font.font_main;
+  color: var(--black);
+  border-radius: 0 var(--border-radius-base) 0 0;
+  background: var(--white);
+
+  svg,
+  span {
+    pointer-events: none;
+  }
+}
+
+.post__codeBlockCopyButton:focus-visible,
+.post__codeBlockCopyButton:active,
+.post__codeBlockCopyButton:focus-visible:focus {
+  @include utils.link_focus;
 }
 
 .post__blockquote {
