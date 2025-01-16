@@ -205,7 +205,8 @@
   border-radius: 0 var(--border-radius-base) 0 0;
   background: var(--white);
 
-  svg {
+  svg,
+  span {
     pointer-events: none;
   }
 }
