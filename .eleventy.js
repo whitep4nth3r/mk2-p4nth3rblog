@@ -12,6 +12,9 @@ module.exports = function (eleventyConfig) {
     "./src/_client_scripts/app_search.js": "/js/app_search.js",
   });
   eleventyConfig.addPassthroughCopy({
+    "./src/_client_scripts/copy_code.js": "/js/copy_code.js",
+  });
+  eleventyConfig.addPassthroughCopy({
     "./src/_client_scripts/bsky_post_likes.js": "/js/bsky_post_likes.js",
   });
   eleventyConfig.addPlugin(syntaxHighlight);
