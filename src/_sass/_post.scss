@@ -213,7 +213,7 @@
 
 .post__codeBlockCopyButton:focus-visible,
 .post__codeBlockCopyButton:active,
-.post__codeBlockCopyButton:focus-visible:focus {
+.post__codeBlockCopyButton:focus {
   @include utils.link_focus;
 }
 
