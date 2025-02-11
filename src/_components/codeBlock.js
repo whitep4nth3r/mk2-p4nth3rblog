@@ -23,11 +23,14 @@ const CodeBlock = ({ code, lang, isDiff }) => {
       Copy
     </span>
     </button>
-    <div data-code-block>
+    <div data-code-block itemscope itemtype="https://schema.org/SoftwareSourceCode">
+      <meta itemprop="codeSampleType" content="snippet">
+      <meta itemprop="programmingLanguage" content="${lang}">
+      <meta data-code-id="${thisCodeId}" itemprop="text" content="${encodeURIComponent(code)}">
       ${HighlightPairedShortcode(code, `${prefix}${lang}`)}
     </div>
   </div>
-  <meta data-code-id="${thisCodeId}" data-code-to-copy="${encodeURIComponent(code)}">
+
   `;
 };
 
