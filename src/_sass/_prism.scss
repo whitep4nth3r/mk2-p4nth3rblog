@@ -31,9 +31,9 @@ pre[class*="language-"] {
 /* Code blocks */
 pre[class*="language-"] {
   padding: 1rem;
-  margin: 0.5rem 0;
+  margin: 0;
   overflow: auto;
-  border-radius: calc(var(--border-radius-base) * 2);
+  border-radius: 0 0 calc(var(--border-radius-base) * 2) calc(var(--border-radius-base) * 2);
 }
 
 /* MY FIXES: https://whitep4nth3r.com/blog/how-to-make-your-code-blocks-accessible-on-your-website */
