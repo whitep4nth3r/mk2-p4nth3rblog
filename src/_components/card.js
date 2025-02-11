@@ -15,8 +15,7 @@ function openingTag({ item, heading }) {
     href = `/blog/${item.slug}/`;
   }
 
-  if (item.link && item.type !== "thing"
-  ) {
+  if (item.link && item.type !== "thing") {
     href = item.link;
   }
 
@@ -73,7 +72,7 @@ function renderImage({ image, type, lazyLoad }) {
     </div>`;
   }
 
-  return "";
+  return `<div class="card__imageContainer"></div>`;
 }
 
 function closingTag(item) {
@@ -151,7 +150,11 @@ const Card = ({ item, showType = true, lazyLoad = false }) => {
       ${renderDate(item)}
       <h2 class="card__title">${heading}</h2>
       ${description(item)}
-      ${item.type === "thing" && item.link ? `<a href="${item.link}" class="card__linkButton" target="_blank">Buy this thing</a>` : ""}
+      ${
+        item.type === "thing" && item.link
+          ? `<a href="${item.link}" class="card__linkButton" target="_blank">Buy this thing</a>`
+          : ""
+      }
       ${showType === false ? itemMeta(item) : renderType(item)}
     </div>
     ${closingTag(item)}`;

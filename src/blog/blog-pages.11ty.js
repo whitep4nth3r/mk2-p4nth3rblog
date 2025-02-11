@@ -31,18 +31,13 @@ exports.data = {
     title: (data) => data.post.metaTitle,
     slug: (data) => data.post.slug,
     includeInSitemap: (data) => data.post.externalUrl === null,
-    canonical: (data) =>
-      data.post.externalUrl || `https://whitep4nth3r.com/blog/${data.post.slug}/`,
+    canonical: (data) => data.post.externalUrl || `https://whitep4nth3r.com/blog/${data.post.slug}/`,
     metaDescription: (data) => data.post.metaDescription,
-    openGraphImageUrl: (data) =>
-      OpenGraph.generateImageUrl({
-        title: data.post.title,
-      }),
+    openGraphImageUrl: (data) => OpenGraph.generateImageUrl({ title: data.post.title }),
     openGraphImageAlt: (data) => OpenGraph.generateImageAlt(data.post.title),
     openGraphImageWidth: OpenGraph.imgWidth,
     openGraphImageHeight: OpenGraph.imgHeight,
-    openGraphUrl: (data) =>
-      data.post.externalUrl || `https://whitep4nth3r.com/blog/${data.post.slug}/`,
+    openGraphUrl: (data) => data.post.externalUrl || `https://whitep4nth3r.com/blog/${data.post.slug}/`,
     openGraphTimeToRead: (data) => data.post.readingTime,
     openGraphArticleTags: (data) => data.post.topicsCollection.items.map((item) => item.name),
   },
