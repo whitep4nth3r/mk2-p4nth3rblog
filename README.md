@@ -1,10 +1,6 @@
-<<<<<<< HEAD
 # whitep4nth3r.com | PREVIEW BRANCH
-=======
-[![Netlify Status](https://api.netlify.com/api/v1/badges/c4d8b097-e089-4d54-acda-b29415724c2d/deploy-status)](https://app.netlify.com/sites/mk2-p4nth3rblog/deploys)
 
-# whitep4nth3r.com
->>>>>>> main
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c4d8b097-e089-4d54-acda-b29415724c2d/deploy-status)](https://app.netlify.com/sites/mk2-p4nth3rblog/deploys)
 
 This site is built with [Eleventy](https://www.11ty.dev/docs/) and [Netlify](https://netlify.com)
 
