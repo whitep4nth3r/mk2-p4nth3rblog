@@ -40,7 +40,7 @@ exports.render = function (data) {
       <div class="home__twitch">
         ${TwitchInfo({ isLive: twitch.isLive, vodData: twitch.vodData, isPlaceholder: twitch.isPlaceholder })}
       </div>
-      <a href="/activity/" class="home__heading">Latest news and activity</a>
+      <a href="/activity/" class="home__heading">Latest stuff and things</a>
       <div class="home__activity">
       <div class="card">
         <div class="card__imageContainer">
