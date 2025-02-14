@@ -14,32 +14,9 @@
   }
 }
 
-@keyframes funky {
-  0% {
-    filter: saturate(100%);
-    transform: rotate(-8deg);
-  }
-  50% {
-    filter: saturate(0);
-    transform: rotate(-2deg);
-  }
-  100% {
-    filter: saturate(100%);
-    transform: rotate(-8deg);
-  }
-}
-
 .tcwr__logo {
-  animation: funky infinite 4s;
-  max-height: 100%;
+  max-height: 90%;
   margin: auto;
-  transform: rotate(-8deg);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .tcwr__logo {
-    animation: unset;
-  }
 }
 
 .tcwr__nav {

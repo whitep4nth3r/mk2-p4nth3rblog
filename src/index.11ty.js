@@ -64,6 +64,7 @@ exports.render = function (data) {
           <span class="card__metaLabel">Newsletter</span>
         </div>
       </div>
+      ${feedItems.map((item) => ActivityFeedItem({ item })).join("")}
       <div class="card">
         <div class="card__imageContainer">
           <img src="/img/theclaw_webring_logo.svg" class="card__image tcwr__logo" alt="The panther moth with a tattoo style banner that reads The Claw" />
@@ -77,9 +78,9 @@ exports.render = function (data) {
           <span class="card__metaLabel">Webring</span>
         </div>
       </div>
-      ${feedItems.map((item) => ActivityFeedItem({ item })).join("")}
-      </div>
     </div>
+  </div>
+
   </section>
   <script src="https://cursor-party.whitep4nth3r.partykit.dev/cursors.js"></script>
   `;
