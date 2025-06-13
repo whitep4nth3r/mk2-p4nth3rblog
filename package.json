@@ -16,7 +16,7 @@
   "author": "whitep4nth3r",
   "license": "MIT",
   "dependencies": {
-    "@11ty/eleventy": "3.0.0",
+    "@11ty/eleventy": "3.1.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.1.0",
     "@contentful/rich-text-html-renderer": "^15.13.1",
     "@contentful/rich-text-plain-text-renderer": "^15.12.1",

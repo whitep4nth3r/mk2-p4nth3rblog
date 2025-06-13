@@ -4,7 +4,8 @@ const TwitchInfo = require("./_components/twitchInfo");
 const ActivityFeedItem = require("./_components/card");
 const NewsletterSignup = require("./_components/newsletterSignup");
 const Webring = require("./_components/webring");
-const pageTitle = "Salma Alam-Naylor — live streamer, software engineer and developer educator ";
+const PersonStructuredData = require("./_components/personStructuredData");
+const pageTitle = "Salma Alam-Naylor — software engineer and developer educator who makes stuff on the internet";
 
 exports.data = {
   layout: "base.html",
@@ -12,7 +13,7 @@ exports.data = {
   activeNav: "home",
   canonical: "https://whitep4nth3r.com/",
   metaDescription:
-    "I write code for your entertainment. I stream live coding on Twitch, help developers build great websites, and love helping people get into tech.",
+    "I write code for your entertainment. I make stuff on the internet, help developers build great websites, and love helping people get into tech.",
   openGraphImageUrl: OpenGraph.generateImageUrl({
     title: "I write code for your entertainment",
   }),
@@ -82,6 +83,9 @@ exports.render = function (data) {
   </div>
 
   </section>
+  <script type="application/ld+json">${PersonStructuredData({
+    person,
+  })}</script>
   <script src="https://cursor-party.whitep4nth3r.partykit.dev/cursors.js"></script>
   `;
 };
