@@ -77,7 +77,6 @@ exports.render = function (data) {
           )
           .join("")}
       </ol>
-      <a href="https://www.twitch.tv/whitep4nth3r/schedule" class="events__listItemCta events__listItemCta--centered">View full Twitch schedule</a>
     </section>
   `;
 };

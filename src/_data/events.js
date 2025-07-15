@@ -19,6 +19,9 @@ module.exports = async function () {
     };
   });
 
+  let filteredTwitchEvents = [];
+  let sortedEvents = [];
+
   const twitchSchedule = await TwitchApi.getSchedule();
 
   if (twitchSchedule !== null) {
@@ -38,29 +41,25 @@ module.exports = async function () {
       };
     });
 
-    const filteredTwitchEvents =
+    filteredTwitchEvents =
       twitchVacation !== null
-        ? removeTwitchStreamsWhenOnVacation(
-            twitchEvents,
-            twitchVacation.start_time,
-            twitchVacation.end_time,
-          )
+        ? removeTwitchStreamsWhenOnVacation(twitchEvents, twitchVacation.start_time, twitchVacation.end_time)
         : twitchEvents;
-
-    // join just next 4 streams with all db events
-    const allEvents = dbEvents.concat(
-      filteredTwitchEvents[0],
-      filteredTwitchEvents[1],
-      filteredTwitchEvents[2],
-      filteredTwitchEvents[3],
-    );
-    const sortedEvents = allEvents.sort(DateUtils.sortItemsByDateAsc);
-    return {
-      list: sortedEvents,
-    };
   }
 
+  // join just next 4 streams with all db events
+  const allEvents =
+    filteredTwitchEvents.length > 0
+      ? dbEvents.concat(
+          filteredTwitchEvents[0],
+          filteredTwitchEvents[1],
+          filteredTwitchEvents[2],
+          filteredTwitchEvents[3],
+        )
+      : dbEvents;
+
+  sortedEvents = allEvents.sort(DateUtils.sortItemsByDateAsc);
   return {
-    list: [],
+    list: sortedEvents,
   };
 };

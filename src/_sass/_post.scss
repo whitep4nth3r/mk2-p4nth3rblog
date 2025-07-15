@@ -188,6 +188,16 @@
 .post__codeBlock {
   margin-bottom: 2rem;
   margin-top: 2rem;
+}
+
+.post__codeBlockBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  background: var(--grey-dark);
+  border-radius: calc(var(--border-radius-base) * 2) calc(var(--border-radius-base) * 2) 0 0;
+  padding: 0.5rem 1rem;
   position: relative;
 }
 
@@ -199,7 +209,8 @@
   display: flex;
   gap: 0.5rem;
   justify-content: space-between;
-  font-size: 1.25rem;
+  align-items: center;
+  font-size: 1rem;
   @include font.font_main;
   color: var(--black);
   border-radius: 0 var(--border-radius-base) 0 0;
