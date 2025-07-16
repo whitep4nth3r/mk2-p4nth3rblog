@@ -238,7 +238,7 @@
 
 .post__blockquote p {
   font-style: italic;
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
   line-height: 1.5;
   font-weight: 500;
   color: var(--color-fg);
@@ -248,10 +248,10 @@
   content: '"';
   font-style: italic;
   color: var(--orange);
-  font-size: 10rem;
+  font-size: 8rem;
   line-height: 0;
   position: relative;
-  top: 4rem;
+  top: 2rem;
 }
 
 .post__externalUrl,
