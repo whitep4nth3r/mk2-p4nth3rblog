@@ -38,10 +38,6 @@ exports.render = function (data) {
     </div>
 
     <div class="home__scroll">
-      <div class="home__twitch">
-        ${TwitchInfo({ isLive: twitch.isLive, vodData: twitch.vodData, isPlaceholder: twitch.isPlaceholder })}
-      </div>
-      <a href="/activity/" class="home__heading">Latest stuff and things</a>
       <div class="home__activity">
       <div class="card">
         <div class="card__imageContainer">
@@ -79,6 +75,9 @@ exports.render = function (data) {
           <span class="card__metaLabel">Webring</span>
         </div>
       </div>
+    </div>
+    <div class="home__twitch">
+      ${TwitchInfo({ isLive: twitch.isLive, vodData: twitch.vodData, isPlaceholder: twitch.isPlaceholder })}
     </div>
   </div>
 
