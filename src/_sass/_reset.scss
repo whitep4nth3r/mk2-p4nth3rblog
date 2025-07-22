@@ -32,6 +32,10 @@ strong {
   @include font.font_bold;
 }
 
+:target {
+  scroll-margin-block-start: 7rem;
+}
+
 /* END RESET */
 
 body {
