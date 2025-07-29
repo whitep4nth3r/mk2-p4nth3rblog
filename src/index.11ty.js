@@ -5,7 +5,7 @@ const ActivityFeedItem = require("./_components/card");
 const NewsletterSignup = require("./_components/newsletterSignup");
 const Webring = require("./_components/webring");
 const PersonStructuredData = require("./_components/personStructuredData");
-const pageTitle = "Salma Alam-Naylor — software engineer and developer educator who makes stuff on the internet";
+const pageTitle = "I'm Salma and I make stuff on the internet";
 
 exports.data = {
   layout: "base.html",

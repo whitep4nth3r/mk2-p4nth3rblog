@@ -20,7 +20,7 @@ exports.data = {
   },
   includeInSitemap: true,
   eleventyComputed: {
-    title: (data) => `${data.talk.title} - Salma Alam-Naylor`,
+    title: (data) => data.talk.title,
     metaDescription: (data) => data.talk.metaDescription,
     openGraphImageUrl: (data) =>
       OpenGraph.generateImageUrl({
