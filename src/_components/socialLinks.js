@@ -11,19 +11,19 @@ function SocialLinks({ uUrl, extraClassModifier = null }) {
   return /*html*/ `
   <ul class="socialLinks ${extraClass}">
     <li>
-      <a href="https://twitch.tv/whitep4nth3r" class="socialLinks__item" target="_blank" rel="nofollow noreferrer" aria-label="Follow on Twitch">${TwitchIcon()}</a>
+      <a href="https://twitch.tv/whitep4nth3r" class="socialLinks__item" target="_blank" aria-label="Follow on Twitch">${TwitchIcon()}</a>
     </li>
     <li>
-      <a href="https://github.com/whitep4nth3r" class="socialLinks__item" target="_blank" rel="nofollow noreferrer" aria-label="View on GitHub">${GithubIcon()}</a>
+      <a href="https://github.com/whitep4nth3r" class="socialLinks__item" target="_blank" aria-label="View on GitHub">${GithubIcon()}</a>
     </li>
     <li>
-      <a href="https://bsky.app/profile/whitep4nth3r.com" class="socialLinks__item bluesky-flutter" target="_blank" rel="me nofollow noreferrer" aria-label="Follow on Bluesky">${BlueskyIcon()}</a>
+      <a href="https://bsky.app/profile/whitep4nth3r.com" class="socialLinks__item bluesky-flutter" target="_blank" rel="me" aria-label="Follow on Bluesky">${BlueskyIcon()}</a>
     </li>
     <li>
-      <a href="https://youtube.com/whitep4nth3r" class="socialLinks__item" target="_blank" rel="nofollow noreferrer" aria-label="Subscribe on YouTube">${YouTubeIcon()}</a>
+      <a href="https://youtube.com/whitep4nth3r" class="socialLinks__item" target="_blank" aria-label="Subscribe on YouTube">${YouTubeIcon()}</a>
     </li>
     <li>
-      <a href="/discord" class="socialLinks__item" target="_blank" rel="nofollow noreferrer" aria-label="Join Discord">${DiscordIcon()}</a>
+      <a href="/discord" class="socialLinks__item" target="_blank" aria-label="Join Discord">${DiscordIcon()}</a>
     </li>
     <li>
       <a href="/feed.xml" class="socialLinks__item" target="_blank" aria-label="Subscribe to RSS Feed">${FeedIcon()}</a>
