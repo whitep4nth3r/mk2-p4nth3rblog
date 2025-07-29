@@ -10,8 +10,7 @@ function ExternalUrl({ url }) {
       <a
         class="post__externalUrl"
         href="${url}"
-        target="_blank"
-        rel="nofollow noreferrer">
+        target="_blank">
           <span class="post__externalUrlIcon">${WavyCheckIcon()}</span>
           Originally posted on ${formatUrlForDisplay(url)}
       </a>
