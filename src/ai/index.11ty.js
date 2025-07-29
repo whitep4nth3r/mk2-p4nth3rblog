@@ -5,7 +5,8 @@ const pageTitle = "My AI Manifesto";
 exports.data = {
   layout: "base.html",
   title: pageTitle,
-  metaDescription: "I don't use AI on my website or to generate content verbatim. But it does have its uses.",
+  metaDescription:
+    "I do not use AI on my website or to generate content verbatim. This website is my playground and my exploration space, and I like to handcraft it myself",
   openGraphImageUrl: OpenGraph.generateImageUrl({ title: pageTitle }),
   openGraphImageAlt: OpenGraph.generateImageAlt(pageTitle),
   openGraphImageWidth: OpenGraph.imgWidth,
