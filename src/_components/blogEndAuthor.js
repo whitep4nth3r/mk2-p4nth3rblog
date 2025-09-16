@@ -9,7 +9,7 @@ function BlogEndAuthor({ author, uUrl }) {
   return /*html*/ `
   <div class="blogEndAuthor">
     <div class="blogEndAuthor__imgContainer">
-      ${BioImage({ image: author.imageBio })}
+      ${BioImage({ image: author.imageBio }, true)}
     </div>
 
     <div class="blogEndAuthor__bio">
