@@ -1,6 +1,10 @@
 @use "font";
 @use "root";
 
+@view-transition {
+  navigation: auto;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
