@@ -1,6 +1,7 @@
 function NameLogo() {
   return /* html */ `
-<svg 
+<svg
+  style="view-transition-name: name-logo;"
   aria-labelledby="my-name"
   viewBox="0 0 434 208" 
   fill="none" 
