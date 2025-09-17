@@ -1,6 +1,83 @@
 @use "font";
 @use "root";
 
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-group(root) {
+  animation-duration: 0.4s;
+}
+
+/* Create a custom animation */
+@keyframes move-out {
+  from {
+    transform: translateY(0%);
+  }
+
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes move-in {
+  from {
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0%);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-old(root) {
+    animation: 0.4s ease-in both move-out;
+  }
+
+  ::view-transition-new(root) {
+    animation: 0.4s ease-in both move-in;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+}
+
+.vt__bioImage {
+  view-transition-name: bio-image;
+}
+
+.vt__nameLogo {
+  view-transition-name: name-logo;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(root) {
+    animation-duration: 1s;
+  }
+
+  :root::view-transition-old(bio-image),
+  :root::view-transition-new(bio-image),
+  :root::view-transition-old(name-logo),
+  :root::view-transition-new(name-logo) {
+    /* kill the UA’s injected animations */
+    animation-name: none !important;
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+    animation-fill-mode: none !important;
+    animation-iteration-count: 1 !important;
+    animation-play-state: paused !important;
+
+    /* force final state */
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .bioImage {
+    view-transition-name: none !important;
+  }
+}
+
 * {
   box-sizing: border-box;
   margin: 0;

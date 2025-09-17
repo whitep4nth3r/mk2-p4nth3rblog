@@ -148,7 +148,7 @@ const Card = ({ item, showType = true, lazyLoad = false }) => {
     ${renderImage({ image: itemImage, type: item.type, lazyLoad: lazyLoad })}
     <div class="card__inner">
       ${renderDate(item)}
-      <h2 class="card__title">${heading}</h2>
+      <h2 class="card__title" style="view-transition-name: heading-${item.sys.id}">${heading}</h2>
       ${description(item)}
       ${
         item.type === "thing" && item.link

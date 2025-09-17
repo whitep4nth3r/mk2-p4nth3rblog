@@ -1,6 +1,7 @@
 function NameLogo() {
   return /* html */ `
-<svg 
+<svg
+  class="vt__nameLogo"
   aria-labelledby="my-name"
   viewBox="0 0 434 208" 
   fill="none" 

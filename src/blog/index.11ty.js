@@ -43,7 +43,6 @@ exports.render = function (data) {
   return /* html */ `
 
   <h1 class="page__headerTitle">Blogs and tutorials</h1>
-
   <div class="blog">
     <aside class="blog__searchAndCats">
       <div class="blog__searchBoxAndFilterToggle">
@@ -61,6 +60,8 @@ exports.render = function (data) {
       <div class="blog__cats" data-cats>
         ${Topics({ topics: data.topics })}
       </div>
+      <div style="view-transition-name: bio-image"></div>
+      <div style="view-transition-name: name-logo"></div>
     </aside>
 
     <section class="blog__cards">
@@ -87,6 +88,7 @@ exports.render = function (data) {
         })}
       </div>
     </section>
+
   </div>
 
   <script defer src="https://cdn.jsdelivr.net/npm/algoliasearch@4.5.1/dist/algoliasearch-lite.umd.js" integrity="sha256-EXPXz4W6pQgfYY3yTpnDa3OH8/EPn16ciVsPQ/ypsjk=" crossorigin="anonymous"></script>
