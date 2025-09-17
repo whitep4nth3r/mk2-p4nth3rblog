@@ -8,5 +8,6 @@ module.exports = async function () {
   return {
     posts,
     topics,
+    count: posts.length,
   };
 };
