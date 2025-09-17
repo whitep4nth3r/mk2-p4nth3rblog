@@ -3834,5 +3834,12 @@ pre[class*=language-] {
     view-transition-name: none;
   }
 }
+::view-transition-old(root) {
+  animation: 0.4s ease-in both move-out;
+}
+
+::view-transition-new(root) {
+  animation: 0.4s ease-in both move-in;
+}
 
 /*# sourceMappingURL=main.css.map */
