@@ -1,7 +1,7 @@
 function BioImage({ image }, small = false) {
-  const vtName = small ? "bio-image-small" : "bio-image";
+  const vtNameClass = small ? "vt__bioImage-small" : "vt__bioImage";
   return /*html*/ `
-    <picture style="view-transition-name: ${vtName};">
+    <picture class="${vtNameClass}">
       <source
         type="image/avif"
         srcset="${image.url}?q=75&w=500&fm=avif 500w, ${image.url}?q=75&w=900&fm=avif 900w" 
