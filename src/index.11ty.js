@@ -33,6 +33,7 @@ exports.render = function (data) {
 
     <div class="home__left">
       <div class="home__fixed">
+        <div style="view-transition-name: bio-image"></div>
         ${HomeAbout({ bio: person.bioShort })}
       </div>
     </div>
