@@ -42,7 +42,7 @@ exports.render = function (data) {
   const latestPost = data.latestPost;
   return /* html */ `
 
-  <h1 class="page__headerTitle">Blogs and tutorials</h1>
+  <h1 class="page__headerTitle">${data.count} Blogs and tutorials</h1>
   <div class="blog">
     <aside class="blog__searchAndCats">
       <div class="blog__searchBoxAndFilterToggle">
