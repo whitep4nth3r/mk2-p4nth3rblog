@@ -26,9 +26,9 @@ exports.render = function () {
       <div class="ai__cta">
         <div class="newsletterSignup">
           <h2 class="newsletterSignup__title">
-            Want
-            <span>weird stuff</span>
-            in your inbox?
+            Enjoy
+            <span>weird</span>
+            newsletters?
           </h2>
           <p class="newsletterSignup__para">
             Enter the Weird Wide Web Hole to find no answers to questions you didn't know you had.
