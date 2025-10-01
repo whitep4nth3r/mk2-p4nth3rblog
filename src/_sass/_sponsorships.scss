@@ -22,6 +22,8 @@ $sponsor_layout_breakpoint: 881px;
   margin-bottom: 3rem;
   @media screen and (min-width: $sponsor_layout_breakpoint) {
     grid-template-columns: 1fr 2fr;
+    margin-left: unset;
+    margin-right: unset;
   }
 }
 
@@ -47,6 +49,13 @@ $sponsor_layout_breakpoint: 881px;
 
 .sponsorships__author {
   width: 20rem;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media screen and (min-width: $sponsor_layout_breakpoint) {
+    margin-left: unset;
+    margin-right: unset;
+  }
 }
 
 .sponsorships__content {
