@@ -20,9 +20,7 @@ function stripParaTags(string) {
 function getRichTextRenderOptions(links, options) {
   const { absoluteUrls, renderHeadingLinks, renderRssFriendlyImg } = options;
 
-  const assetBlockMap = new Map(
-    links?.assets?.block?.map((asset) => [asset.sys.id, asset]),
-  );
+  const assetBlockMap = new Map(links?.assets?.block?.map((asset) => [asset.sys.id, asset]));
 
   const inlineEntryMap = new Map();
   const blockEntryMap = new Map();
@@ -47,12 +45,8 @@ function getRichTextRenderOptions(links, options) {
     },
     renderNode: {
       [INLINES.HYPERLINK]: (node, next) => {
-        const openInNewWindow = node.data.uri.includes("https://")
-          ? `target="_blank"`
-          : "";
-        return `<a href="${
-          node.data.uri
-        }" ${openInNewWindow}>${next(node.content)}</a>`;
+        const openInNewWindow = node.data.uri.includes("https://") ? `target="_blank"` : "";
+        return `<a href="${node.data.uri}" ${openInNewWindow}>${next(node.content)}</a>`;
       },
       [INLINES.EMBEDDED_ENTRY]: (node, next) => {
         const entry = inlineEntryMap.get(node.data.target.sys.id);
@@ -68,29 +62,19 @@ function getRichTextRenderOptions(links, options) {
             return null;
         }
       },
-      [BLOCKS.TABLE]: (
-        node,
-        next,
-      ) => `<div class="post__tableWrapper"><table class="post__table">
+      [BLOCKS.TABLE]: (node, next) => `<div class="post__tableWrapper"><table class="post__table">
         <tbody>${next(node.content)}</tbody>
       </table></div>`,
       [BLOCKS.TABLE_HEADER_CELL]: (node, next) =>
-        `<th class="post__tableHeader">${stripParaTags(
-          next(node.content),
-        )}</th>`,
-      [BLOCKS.TABLE_ROW]: (node, next) =>
-        `<tr class="post__tableRow">${next(node.content)}</tr>`,
-      [BLOCKS.TABLE_CELL]: (node, next) =>
-        `<td class="post__tableCell">${stripParaTags(next(node.content))}</td>`,
+        `<th class="post__tableHeader">${stripParaTags(next(node.content))}</th>`,
+      [BLOCKS.TABLE_ROW]: (node, next) => `<tr class="post__tableRow">${next(node.content)}</tr>`,
+      [BLOCKS.TABLE_CELL]: (node, next) => `<td class="post__tableCell">${stripParaTags(next(node.content))}</td>`,
       [BLOCKS.HR]: (text) => `<hr class="post__hr" />`,
-      [BLOCKS.HEADING_1]: (node, next) =>
-        `<h1 class="post__h1">${next(node.content)}</h1>`,
+      [BLOCKS.HEADING_1]: (node, next) => `<h1 class="post__h1">${next(node.content)}</h1>`,
       [BLOCKS.HEADING_2]: (node, next) => {
         if (renderHeadingLinks) {
           return /*html*/ `
-            <a href="#${Tools.slugifyString(
-              next(node.content),
-            )}" id="${Tools.slugifyString(
+            <a href="#${Tools.slugifyString(next(node.content))}" id="${Tools.slugifyString(
             next(node.content),
           )}" class="post__linkedHeading">
               <h2 class="post__h2">${next(node.content)}</h2>
@@ -102,9 +86,7 @@ function getRichTextRenderOptions(links, options) {
       [BLOCKS.HEADING_3]: (node, next) => {
         if (renderHeadingLinks) {
           return /*html*/ `
-          <a href="#${Tools.slugifyString(
-            next(node.content),
-          )}" id="${Tools.slugifyString(
+          <a href="#${Tools.slugifyString(next(node.content))}" id="${Tools.slugifyString(
             next(node.content),
           )}" class="post__linkedHeading">
             <h3 class="post__h3">${next(node.content)}</h3>
@@ -113,18 +95,11 @@ function getRichTextRenderOptions(links, options) {
           return `<h3 class="post__h3">${next(node.content)}</h3>`;
         }
       },
-      [BLOCKS.HEADING_4]: (node, next) =>
-        `<h4 class="post__h4">${next(node.content)}</h4>`,
-      [BLOCKS.HEADING_5]: (node, next) =>
-        `<h5 class="post__h5">${next(node.content)}</h5>`,
-      [BLOCKS.HEADING_6]: (node, next) =>
-        `<h6 class="post__h6">${next(node.content)}</h6>`,
-      [BLOCKS.PARAGRAPH]: (node, next) =>
-        `<p class="post__p">${next(node.content)}</p>`,
-      [BLOCKS.QUOTE]: (node, next) =>
-        `<blockquote class="post__blockquote">${next(
-          node.content,
-        )}</blockquote>`,
+      [BLOCKS.HEADING_4]: (node, next) => `<h4 class="post__h4">${next(node.content)}</h4>`,
+      [BLOCKS.HEADING_5]: (node, next) => `<h5 class="post__h5">${next(node.content)}</h5>`,
+      [BLOCKS.HEADING_6]: (node, next) => `<h6 class="post__h6">${next(node.content)}</h6>`,
+      [BLOCKS.PARAGRAPH]: (node, next) => `<p class="post__p">${next(node.content)}</p>`,
+      [BLOCKS.QUOTE]: (node, next) => `<blockquote class="post__blockquote">${next(node.content)}</blockquote>`,
       [BLOCKS.UL_LIST]: (node, next) => `<ul>${next(node.content)}</ul>`,
       [BLOCKS.OL_LIST]: (node, next) => `<ol>${next(node.content)}</ol>`,
       [BLOCKS.LIST_ITEM]: (node, next) => `<li>${next(node.content)}</li>`,
@@ -154,7 +129,7 @@ function getRichTextRenderOptions(links, options) {
               device: entry.device,
             });
           case "VideoEmbed":
-            return VideoEmbed({ embedUrl: entry.embedUrl });
+            return VideoEmbed({ embedUrl: entry.embedUrl, title: entry.title });
           case "ArcadeEmbed":
             return ArcadeEmbed({
               embedCode: entry.embedCode,
@@ -201,10 +176,7 @@ const defaultOptions = {
 };
 
 function RichText(postBody, options = defaultOptions) {
-  return `${documentToHtmlString(
-    postBody.json,
-    getRichTextRenderOptions(postBody.links, options),
-  )}`;
+  return `${documentToHtmlString(postBody.json, getRichTextRenderOptions(postBody.links, options))}`;
 }
 
 module.exports = RichText;

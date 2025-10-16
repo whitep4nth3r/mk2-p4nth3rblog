@@ -1,4 +1,4 @@
-function VideoEmbed({ embedUrl, isShort = false }) {
+function VideoEmbed({ embedUrl, title, isShort = false }) {
   const modifierClass = isShort ? ` videoEmbed__ytShort` : "";
   return /* html */ `
     <div class="videoEmbed${modifierClass}">
@@ -7,7 +7,7 @@ function VideoEmbed({ embedUrl, isShort = false }) {
         width="560"
         height="315"
         src="${embedUrl}"
-        title="YouTube video player"
+        title="${title}"
         frameborder="0"
         loading="lazy"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
