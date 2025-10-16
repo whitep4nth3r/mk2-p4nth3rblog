@@ -19,10 +19,6 @@ module.exports = function (eleventyConfig) {
   });
   eleventyConfig.addPlugin(syntaxHighlight);
 
-  eleventyConfig.addPlugin(embedYouTube, {
-    lite: true,
-  });
-
   eleventyConfig.ignores.add("./src/_archive");
 
   return {

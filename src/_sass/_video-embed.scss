@@ -1,14 +1,10 @@
 @use "font";
 
-.videoEmbed__cta {
-  @include font.font_main;
-  font-size: 1rem;
-  line-height: 1;
-  margin-bottom: 1rem;
-  color: var(--color-fg-copy);
+.videoEmbed {
+  text-align: center;
 }
 
-.eleventy-plugin-youtube-embed {
+.videoEmbed__iframe {
   margin-bottom: 1rem;
   margin-top: 2rem;
   filter: var(--base-shadow-filter);
@@ -17,7 +13,7 @@
 }
 
 .videoEmbed__ytShort {
-  .eleventy-plugin-youtube-embed {
+  .videoEmbed__iframe {
     lite-youtube {
       aspect-ratio: 9/16;
       position: relative;

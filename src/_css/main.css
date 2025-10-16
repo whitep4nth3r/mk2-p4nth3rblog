@@ -1557,10 +1557,6 @@ main:after {
   transition: all var(--global-transition-time) ease-in-out;
 }
 
-.post__coffeeButton:focus-visible,
-.post__coffeeButton:focus-visible:focus {
-  background: #ffdd04;
-}
 .post__coffeeButton:focus-visible:focus-visible, .post__coffeeButton:focus-visible:focus,
 .post__coffeeButton:focus-visible:focus:focus-visible,
 .post__coffeeButton:focus-visible:focus:focus {
@@ -1569,6 +1565,10 @@ main:after {
   box-shadow: var(--color-bg) 0 0 0 0.08rem, var(--color-focus-outline) 0 0 0 0.24rem;
   transition: box-shadow var(--global-transition-time) ease-in-out;
   border-radius: var(--border-radius-base);
+}
+.post__coffeeButton:focus-visible,
+.post__coffeeButton:focus-visible:focus {
+  background: #ffdd04;
 }
 
 .post__coffeeThanks {
@@ -1865,16 +1865,11 @@ main:after {
   margin-bottom: 2rem;
 }
 
-.videoEmbed__cta {
-  font-weight: var(--font-weight-main);
-  font-family: var(--font-family-main);
-  font-size: 1rem;
-  line-height: 1;
-  margin-bottom: 1rem;
-  color: var(--color-fg-copy);
+.videoEmbed {
+  text-align: center;
 }
 
-.eleventy-plugin-youtube-embed {
+.videoEmbed__iframe {
   margin-bottom: 1rem;
   margin-top: 2rem;
   filter: var(--base-shadow-filter);
@@ -1882,7 +1877,7 @@ main:after {
   overflow: hidden;
 }
 
-.videoEmbed__ytShort .eleventy-plugin-youtube-embed lite-youtube {
+.videoEmbed__ytShort .videoEmbed__iframe lite-youtube {
   aspect-ratio: 9/16;
   position: relative;
   width: 100%;
@@ -2734,6 +2729,10 @@ pre[class*=language-] {
   text-overflow: ellipsis;
 }
 
+.twitchInfo__live svg {
+  height: 1.25rem;
+  width: 1.25rem;
+}
 .twitchInfo__live {
   font-weight: var(--font-weight-mid);
   font-family: var(--font-family-main);
@@ -2750,10 +2749,6 @@ pre[class*=language-] {
   padding: var(--title-padding);
   border-radius: calc(var(--border-radius-base) * 0.75);
   border-bottom-right-radius: var(--title-bottom-left-radius);
-}
-.twitchInfo__live svg {
-  height: 1.25rem;
-  width: 1.25rem;
 }
 
 .twitchInfo__embed {
@@ -3434,8 +3429,6 @@ pre[class*=language-] {
   line-height: 1.5;
   margin-bottom: 1rem;
   color: var(--color-fg-copy);
-  font-weight: var(--font-weight-mid);
-  font-family: var(--font-family-main);
 }
 .streamPackage__title a {
   font-weight: var(--font-weight-mid);
@@ -3448,6 +3441,10 @@ pre[class*=language-] {
   box-shadow: var(--color-bg) 0 0 0 0.08rem, var(--color-focus-outline) 0 0 0 0.24rem;
   transition: box-shadow var(--global-transition-time) ease-in-out;
   border-radius: var(--border-radius-base);
+}
+.streamPackage__title {
+  font-weight: var(--font-weight-mid);
+  font-family: var(--font-family-main);
 }
 
 .streamPackage__description p {

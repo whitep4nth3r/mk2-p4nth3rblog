@@ -154,7 +154,7 @@ function getRichTextRenderOptions(links, options) {
               device: entry.device,
             });
           case "VideoEmbed":
-            return VideoEmbed({ embedUrl: entry.embedUrl, title: entry.title });
+            return VideoEmbed({ embedUrl: entry.embedUrl });
           case "ArcadeEmbed":
             return ArcadeEmbed({
               embedCode: entry.embedCode,

@@ -1,11 +1,21 @@
-function VideoEmbed({ embedUrl, showTitle = true, isShort = false }) {
-  // the embed URL needs to be in a <p> tag for the youtube plugin!
-  const modifierClass = isShort ? `class="videoEmbed__ytShort"` : "";
+function VideoEmbed({ embedUrl, isShort = false }) {
+  const modifierClass = isShort ? ` videoEmbed__ytShort` : "";
   return /* html */ `
-    <div ${modifierClass}>
-      <p>${embedUrl}</p>
+    <div class="videoEmbed${modifierClass}">
+      <iframe
+       class="videoEmbed__iframe"
+        width="560"
+        height="315"
+        src="${embedUrl}"
+        title="YouTube video player"
+        frameborder="0"
+        loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+      </iframe>
     </div>
-    ${showTitle ? ` <p class="videoEmbed__cta">Click the video above to play</p>` : ""}`;
+    `;
 }
 
 module.exports = VideoEmbed;
