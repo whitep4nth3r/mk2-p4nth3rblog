@@ -3,7 +3,7 @@ function VideoEmbed({ embedUrl, title, isShort = false }) {
   return /* html */ `
     <div class="videoEmbed${modifierClass}">
       <iframe
-       class="videoEmbed__iframe"
+        class="videoEmbed__iframe"
         width="560"
         height="315"
         src="${embedUrl}"
