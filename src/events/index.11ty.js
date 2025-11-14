@@ -37,6 +37,8 @@ exports.render = function (data) {
   return /* html */ `
     <section class="events">
       <h1 class="page__headerTitle">Upcoming Events and Live Streams</h1>
+
+      ${events.list.length === 0 ? `<p class="page__text page__text--large">Nothing scheduled! I'm free!</p>` : ""}
       
       <ol class="events__list">
         ${events.list
@@ -65,9 +67,7 @@ exports.render = function (data) {
             ${
               event.canceled_until === null && event.link
                 ? `
-            <a href="${
-              event.link
-            }" class="events__listItemCta" target="_blank">${calculateIcon(
+            <a href="${event.link}" class="events__listItemCta" target="_blank">${calculateIcon(
                     event.type,
                   )} Go to <span class="events__listItemCta--sr">${event.name}</span> event</a>`
                 : ""

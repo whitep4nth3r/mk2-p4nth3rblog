@@ -989,6 +989,10 @@ main:after {
   color: var(--color-copy);
 }
 
+.page__text--large {
+  font-size: 1.5rem;
+}
+
 [color-mode=dark] {
   --post-hr-color: var(--pink-light);
   --table-th-color: var(--color-fg);
@@ -1854,7 +1858,6 @@ main:after {
   border-radius: var(--border-radius-base);
   padding: 0.5rem 1rem 0.5rem 0.75rem;
   color: var(--topic-button-color);
-  text-decoration: none;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -1863,6 +1866,7 @@ main:after {
   max-width: max-content;
   margin-top: 2rem;
   margin-bottom: 2rem;
+  text-decoration: underline;
 }
 
 .videoEmbed {
