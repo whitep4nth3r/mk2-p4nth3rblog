@@ -1,5 +1,4 @@
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const embedYouTube = require("eleventy-plugin-youtube-embed");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.ignores.add("./src/_sass");
@@ -18,10 +17,6 @@ module.exports = function (eleventyConfig) {
     "./src/_client_scripts/bsky_post_likes.js": "/js/bsky_post_likes.js",
   });
   eleventyConfig.addPlugin(syntaxHighlight);
-
-  eleventyConfig.addPlugin(embedYouTube, {
-    lite: true,
-  });
 
   eleventyConfig.ignores.add("./src/_archive");
 

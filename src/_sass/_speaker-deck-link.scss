@@ -9,7 +9,6 @@
   border-radius: var(--border-radius-base);
   padding: 0.5rem 1rem 0.5rem 0.75rem;
   color: var(--topic-button-color);
-  text-decoration: none;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -18,4 +17,5 @@
   max-width: max-content;
   margin-top: 2rem;
   margin-bottom: 2rem;
+  text-decoration: underline;
 }

@@ -7,7 +7,7 @@ function SpeakerDeckLink({ speakerDeckLink }) {
     <a href="${speakerDeckLink.link}"  class="speakerDeckLink__viewCta" target="_blank" title="View ${
     speakerDeckLink.title
   } on Speaker Deck">
-        View on Speaker Deck
+        View slides
     </a>
   </div>
   `;

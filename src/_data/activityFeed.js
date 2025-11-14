@@ -17,7 +17,7 @@ module.exports = async function () {
   const feedItems = await ContentfulActivityFeedItems.getAll();
 
   const allItems = [...pastEvents, ...feedItems, ...postSummaries, ...talkSummaries].sort(
-    DateUtils.sortItemsByDateDesc,
+    DateUtils.sortItemsByDateDesc
   );
 
   return allItems;
