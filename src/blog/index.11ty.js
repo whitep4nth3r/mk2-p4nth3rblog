@@ -103,15 +103,15 @@ exports.render = function (data) {
       latestPost: {
         title:  "${latestPost.title}",
         slug: "${latestPost.slug}",
-        id: "${latestPost.sys.id}",
+        id: "${latestPost.sys?.id}",
         date:  "${latestPost.date}",
         readingTime:  "${latestPost.readingTime}",
-        topic: "${latestPost.topicsCollection.items[0].name}",
+        topic: "${latestPost.topicsCollection?.items[0].name || ''}",
         featuredImage: {
-          url: "${latestPost.featuredImage.url}",
-          description: "${latestPost.featuredImage.description}",
-          width: "${latestPost.featuredImage.width}",
-          height: "${latestPost.featuredImage.height}",
+          url: "${latestPost.featuredImage?.url || ''}",
+          description: "${latestPost.featuredImage?.description || ''}",
+          width: "${latestPost.featuredImage?.width || 0}",
+          height: "${latestPost.featuredImage?.height || 0}",
         }
       }
     });
