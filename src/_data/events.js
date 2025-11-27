@@ -25,8 +25,8 @@ module.exports = async function () {
   const twitchSchedule = await TwitchApi.getSchedule();
 
   if (twitchSchedule !== null) {
-    const twitchStreams = twitchSchedule.data.segments;
-    const twitchVacation = twitchSchedule.data.vacation;
+    const twitchStreams = twitchSchedule?.data.segments || [];
+    const twitchVacation = twitchSchedule?.data.vacation || {};
 
     const twitchEvents = twitchStreams.map((ev) => {
       const buffer = Buffer.from(ev.id, "base64");

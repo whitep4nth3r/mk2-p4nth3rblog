@@ -12,10 +12,10 @@ exports.data = {
   pageType: "sponsorships",
   includeInSitemap: true,
   eleventyComputed: {
-    title: (data) => data.sponsorshipsContent.metaTitle,
-    metaDescription: (data) => data.sponsorshipsContent.metaDescription,
-    openGraphImageUrl: (data) => OpenGraph.generateImageUrl({ title: data.sponsorshipsContent.metaTitle }),
-    openGraphImageAlt: (data) => OpenGraph.generateImageAlt(data.sponsorshipsContent.metaTitle),
+    title: (data) => data.sponsorshipsContent?.metaTitle,
+    metaDescription: (data) => data.sponsorshipsContent?.metaDescription,
+    openGraphImageUrl: (data) => OpenGraph.generateImageUrl({ title: data.sponsorshipsContent?.metaTitle || "" }),
+    openGraphImageAlt: (data) => OpenGraph.generateImageAlt(data.sponsorshipsContent?.metaTitle || ""),
   },
   openGraphImageWidth: OpenGraph.imgWidth,
   openGraphImageHeight: OpenGraph.imgHeight,
@@ -27,13 +27,13 @@ exports.render = function (data) {
 
   return /* html */ `  
   <div class="sponsorships">
-    <h1 class="sponsorships__title">${sponsorshipsContent.title}</h1>
+    <h1 class="sponsorships__title">${sponsorshipsContent?.title}</h1>
     <section class="sponsorships__intro">
         <aside class="sponsorships__author" data-author>
         ${Author({ author: person, uUrl: "https://whitep4nth3r.com/sponsorships/" })}
         </aside>
         <div class="sponsorships__introText" data-intro-text>
-          ${md.render(sponsorshipsContent.intro)}
+          ${md.render(sponsorshipsContent?.intro || "")}
         </div>
     </section>
 
@@ -50,18 +50,18 @@ exports.render = function (data) {
   
     <section>
       <div class="sponsorships__content">
-        ${md.render(sponsorshipsContent.packagesIntro)}
-        ${md.render(sponsorshipsContent.streamsIntro)}
+        ${md.render(sponsorshipsContent?.packagesIntro || "")}
+        ${md.render(sponsorshipsContent?.streamsIntro || "")}
       </div>
 
       <div class="sponsorships__packages">
-        ${sponsorshipsContent.streamPackagesCollection.items.map((package) => StreamPackage({ package })).join("")}
+        ${sponsorshipsContent?.streamPackagesCollection.items.map((package) => StreamPackage({ package })).join("")}
       </div>
 
       <div class="sponsorships__content">
-        ${md.render(sponsorshipsContent.technicalTutorials)}
-        ${md.render(sponsorshipsContent.demoAppsAndWebsites)}
-        ${md.render(sponsorshipsContent.videoContent)}
+        ${md.render(sponsorshipsContent?.technicalTutorials || "")}
+        ${md.render(sponsorshipsContent?.demoAppsAndWebsites || "")}
+        ${md.render(sponsorshipsContent?.videoContent || "")}
       <div>
     </section>
 
