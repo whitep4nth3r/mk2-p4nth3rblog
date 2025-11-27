@@ -11,7 +11,7 @@ module.exports = async function () {
     );
 
     const result = await response.json();
-    subscribers = `${result.count.toString()}+`;
+    subscribers = `${result.count?.toString() || NaN}+`;
   } catch (error) {
     console.log(error);
     subscribers = "loads of";

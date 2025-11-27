@@ -33,7 +33,7 @@ exports.render = function (data) {
     <div class="about">
       <div class="about__image">
         <div class="about__fixed">
-          ${BioImage({ image: person.imageBio })}
+          ${BioImage({ image: person?.imageBio || "" })}
         </div>
       </div>
 
@@ -45,9 +45,9 @@ exports.render = function (data) {
         </div>
         <div class="about__bio">
           ${TabbedBio({
-            shortBio: md.render(person.bioShort),
-            speakerBio: md.render(person.bioSpeaker),
-            longBio: RichText(person.bioLong),
+            shortBio: md.render(person?.bioShort || ""),
+            speakerBio: md.render(person?.bioSpeaker || ""),
+            longBio: RichText(person?.bioLong || ""),
           })}
         </div>
       </div>

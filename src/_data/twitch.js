@@ -65,14 +65,14 @@ module.exports = async function () {
 
   const streams = await TwitchApi.getStreams();
 
-  if (streams !== null && streams.data.length === 1) {
+  if (streams !== null && streams?.data.length === 1) {
     return {
       isLive: true,
     };
   } else {
     const vods = await TwitchApi.getVods();
 
-    if (vods.data.length > 0) {
+    if (vods?.data.length > 0) {
       const latestVod = vods.data[0];
 
       // const today = new Date();

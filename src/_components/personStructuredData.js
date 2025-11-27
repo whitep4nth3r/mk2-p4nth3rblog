@@ -4,7 +4,7 @@ const plainText = require("markdown-it-plain-text");
 function PersonStructuredData({ person }) {
   const md = new MarkdownIt();
   md.use(plainText);
-  md.render(person.bioShort);
+  md.render(person?.bioShort || "");
 
   return JSON.stringify({
     "@context": "https://schema.org/",
@@ -18,8 +18,8 @@ function PersonStructuredData({ person }) {
       "@type": "Brand",
       name: "whitep4nth3r",
     },
-    image: person.imageBio.url,
-    name: person.name,
+    image: person?.imageBio.url || "",
+    name: person?.name || "",
     description: md.plainText,
     jobTitle: "Software Engineer and Developer Educator",
   });

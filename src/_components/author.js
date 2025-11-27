@@ -8,7 +8,7 @@ function Author({ author, uUrl, hideOnSmallScreens = false }) {
   <div class="author${hideClass}">
     <a href="/about/" class="author__cta" aria-label="About Salma">
       <div class="author__imgContainer">
-        ${BioImage({ image: author.imageBio })}
+        ${BioImage({ image: author?.imageBio || "" })}
       </div>
       <div class="author__name">
         ${NameLogo()}

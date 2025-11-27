@@ -24,8 +24,8 @@ async function getLatestBlogPost() {
   }`;
 
   const response = await ContentfulApi.callContentful(query, variables);
-  const posts = response.data.blogPostCollection.items ? response.data.blogPostCollection.items : [];
-  return posts[0];
+  const posts = response.data?.blogPostCollection.items ? response.data.blogPostCollection.items : [];
+  return posts.length > 0 ? [0] : null;
 }
 
 module.exports = async function () {
