@@ -52,13 +52,14 @@ module.exports = async function () {
     filteredTwitchEvents.length > 0
       ? dbEvents.concat(
           filteredTwitchEvents[0],
-          filteredTwitchEvents[1],
-          filteredTwitchEvents[2],
-          filteredTwitchEvents[3],
+          // filteredTwitchEvents[1]
+          // filteredTwitchEvents[2],
+          // filteredTwitchEvents[3],
         )
       : dbEvents;
 
   sortedEvents = allEvents.sort(DateUtils.sortItemsByDateAsc);
+
   return {
     list: sortedEvents,
   };
