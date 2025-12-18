@@ -1,4 +1,4 @@
-// Now transforms images from Contentful and third party images from Twitch using /.netlify/images/?url=
+// Now transforms images from Contentful and third party images using /.netlify/images/?url=
 
 function ResponsiveImage({ image, classOverride = null, loading = null }) {
   const className = classOverride ? classOverride : "post__responsiveImage";
@@ -16,16 +16,12 @@ function ResponsiveImage({ image, classOverride = null, loading = null }) {
   const maxContainerSize = 600;
 
   // Note, this could be further optimised by considering padding inside the container
-  const sizes = `(max-width: ${
-    maxContainerSize - 1
-  }px) 100vw, ${maxContainerSize}px`;
+  const sizes = `(max-width: ${maxContainerSize - 1}px) 100vw, ${maxContainerSize}px`;
 
   function makeSrcSetArray(format) {
     const formatString = format === undefined ? "" : `&fm=${format}`;
 
-    return imageWidths.map(
-      (width) => `${image.url}?q=75&w=${width}${formatString} ${width}w`,
-    );
+    return imageWidths.map((width) => `${image.url}?q=75&w=${width}${formatString} ${width}w`);
   }
 
   function makeSrcSetString(format) {
@@ -33,16 +29,8 @@ function ResponsiveImage({ image, classOverride = null, loading = null }) {
   }
 
   return /* html */ `<picture>
-      ${
-        !isGif
-          ? `<source type="image/avif" srcSet="${makeSrcSetString(
-              "avif",
-            )}" sizes="${sizes}" />`
-          : ""
-      }
-      <source type="image/webp" srcSet="${makeSrcSetString(
-        "webp",
-      )}" sizes="${sizes}" />
+      ${!isGif ? `<source type="image/avif" srcSet="${makeSrcSetString("avif")}" sizes="${sizes}" />` : ""}
+      <source type="image/webp" srcSet="${makeSrcSetString("webp")}" sizes="${sizes}" />
       <img
         srcSet="${makeSrcSetString()}"
         sizes="${sizes}"

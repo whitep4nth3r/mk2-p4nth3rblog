@@ -16,7 +16,7 @@ exports.data = {
   layout: "base.html",
   pageType: "post",
   activeNav: "blog",
-  metaDescription: `Salma Alam-Naylor writes and live streams about front end development. Read tutorials and quick tips on HTML, CSS, JavaScript and web dev.`,
+  metaDescription: `Salma Alam-Naylor writes about technology the web. Read tutorials and quick tips on HTML, CSS, JavaScript and web dev.`,
   openGraphImageUrl: OpenGraph.generateImageUrl({ title: pageTitle }),
   openGraphImageAlt: OpenGraph.generateImageAlt(pageTitle),
   openGraphImageWidth: OpenGraph.imgWidth,
