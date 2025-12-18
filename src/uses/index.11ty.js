@@ -1,6 +1,6 @@
 const Card = require("../_components/card");
 const OpenGraph = require("../../lib/openGraph");
-const pageTitle = "My desk, streaming gear and coding setup";
+const pageTitle = "My desk and coding setup";
 
 var md = require("markdown-it")({
   html: true,
@@ -10,8 +10,7 @@ exports.data = {
   layout: "base.html",
   title: pageTitle,
   pageType: "uses",
-  metaDescription:
-    "I receive a lot of questions on stream about my setup and what I use. So here's a (probably very incomplete) list!",
+  metaDescription: "Here's what's on my desk.",
   openGraphImageUrl: OpenGraph.generateImageUrl({ title: pageTitle }),
   openGraphImageAlt: OpenGraph.generateImageAlt(pageTitle),
   openGraphImageWidth: OpenGraph.imgWidth,

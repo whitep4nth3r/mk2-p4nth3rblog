@@ -1,15 +1,12 @@
 const ClockIcon = require("../_components/svg/clockIcon");
-const TwitchIcon = require("../_components/svg/twitchIcon");
 const YouTubeIcon = require("../_components/svg/youtubeIcon");
 const DateUtils = require("../../lib/dateUtils");
 const OpenGraph = require("../../lib/openGraph");
 
-const pageTitle = "Upcoming Events and Live Streams";
+const pageTitle = "Upcoming Events";
 
 function calculateIcon(type) {
   switch (type) {
-    case "twitch":
-      return TwitchIcon();
     case "youtube":
       return YouTubeIcon();
     default:
@@ -22,7 +19,7 @@ exports.data = {
   title: pageTitle,
   activeNav: "events",
   metaDescription:
-    "View my Twitch schedule, virtual events and conference speaking schedule. Come and say hi if you meet me somewhere in the world!",
+    "View my events and conference speaking schedule. Come and say hi if you meet me somewhere in the world!",
   openGraphImageUrl: OpenGraph.generateImageUrl({ title: pageTitle }),
   openGraphImageAlt: OpenGraph.generateImageAlt(pageTitle),
   openGraphImageWidth: OpenGraph.imgWidth,
@@ -36,7 +33,7 @@ exports.render = function (data) {
 
   return /* html */ `
     <section class="events">
-      <h1 class="page__headerTitle">Upcoming Events and Live Streams</h1>
+      <h1 class="page__headerTitle">Upcoming Events</h1>
 
       ${events.list.length === 0 ? `<p class="page__text page__text--large">Nothing scheduled! I'm free!</p>` : ""}
       
@@ -60,12 +57,11 @@ exports.render = function (data) {
                   ${event.date}
                 </span>
               </span>
-              ${event.canceled_until !== null ? `<span class="events__listItemCancelled">CANCELLED</span>` : ``}
             </span>
             <span class="events__listItemName">${event.name}</span>
             ${event.description ? `<p class="events__listshortDescription">${event.description}</p>` : ""}
             ${
-              event.canceled_until === null && event.link
+              event.link
                 ? `
             <a href="${event.link}" class="events__listItemCta" target="_blank">${calculateIcon(
                     event.type,

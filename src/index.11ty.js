@@ -1,6 +1,5 @@
 const HomeAbout = require("./_components/homeAbout");
 const OpenGraph = require("../lib/openGraph");
-const TwitchInfo = require("./_components/twitchInfo");
 const ActivityFeedItem = require("./_components/card");
 const NewsletterSignup = require("./_components/newsletterSignup");
 const Webring = require("./_components/webring");
@@ -25,7 +24,7 @@ exports.data = {
 };
 
 exports.render = function (data) {
-  const { activityFeed, person, newsletter, twitch, webring } = data;
+  const { activityFeed, person, newsletter, webring } = data;
   const feedItems = activityFeed.slice(0, 8);
 
   return /*html*/ `
@@ -76,9 +75,6 @@ exports.render = function (data) {
           <span class="card__metaLabel">Webring</span>
         </div>
       </div>
-    </div>
-    <div class="home__twitch">
-      ${TwitchInfo({ isLive: twitch.isLive, vodData: twitch.vodData, isPlaceholder: twitch.isPlaceholder })}
     </div>
   </div>
 

@@ -66,7 +66,7 @@ exports.render = function (data) {
   <title>whitep4nth3r's Web Feed</title>
   <atom:link href="https://${Config.site.domain}/feed.xml" rel="self" type="application/rss+xml" />
   <link>https://${Config.site.domain}</link>
-  <description>Hello, I'm Salma. I write code for your entertainment. I help developers build cool stuff with blog posts, videos, live coding and open source projects. I work at Sentry. I like to think I'm kinda cool.</description>
+  <description>Hello, I'm Salma. I write code for your entertainment. I help developers build cool stuff with blog posts, videos, and open source projects. I work at Nordcraft. I like to think I'm kinda cool.</description>
     ${buildRssItems(sortedItems)}
     </channel>
     </rss>
