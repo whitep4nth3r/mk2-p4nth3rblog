@@ -2,29 +2,26 @@
 
 <header class="header">
   <div class="header__navGroup">
-    <div class="header__logoContainer">{% include "logo.html" %}</div>
     <nav aria-label="primary">
       <ul class="header__navList" data-active="{{activeNav}}">
         <li class="header__navListItem">
           <a href="/" class="header__navListItemLink" data-link="home">Home</a>
         </li>
         <li class="header__navListItem">
-          <a href="/about/" class="header__navListItemLink" data-link="about"> About </a>
+          <a href="/about/" class="header__navListItemLink" data-link="about">About</a>
         </li>
         <li class="header__navListItem">
-          <a href="/blog/" class="header__navListItemLink" data-link="blog"> Blog </a>
+          <a href="/blog/" class="header__navListItemLink" data-link="blog">Blog</a>
         </li>
         <li class="header__navListItem">
           <details class="header__navListDetails">
             <summary class="header__navListSummary">More</summary>
             <div class="header__navListMoreLinks">
-              <a href="/ai/" class="header__navListItemLink">AI Usage</a>
               <a href="/newsletter" target="_blank" class="header__navListItemLink header__navListItemLink--external">
                 Newsletter
               </a>
               <a href="/uses/" class="header__navListItemLink">Things I use</a>
               <a href="/talks/" class="header__navListItemLink">Talks</a>
-              <a href="/events/" class="header__navListItemLink">Events</a>
               <a href="/activity/" class="header__navListItemLink">Activity feed </a>
               <a
                 href="https://github.com/whitep4nth3r?tab=repositories"

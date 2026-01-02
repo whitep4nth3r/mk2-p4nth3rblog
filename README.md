@@ -40,7 +40,7 @@ Contains all code to fetch and format data from the following sources:
 Directories prefixed with `_` are utility folders, providing global data, layouts, styles, component partials and other
 functionality.
 
-Other directories (about, blog, talks, topics, uses) act as page-level route directories, resulting in e.g.
+Other directories (about, blog, talks, uses) act as page-level route directories, resulting in e.g.
 `/activity/`, `/talks/` etc in the site build.
 
 The site homepage is built from `/src/index.11ty.js`.

@@ -14,16 +14,6 @@
   status = 200
 
 [[redirects]]
-  from = "/topics"
-  to = "/topics/webdev/"
-  status = 308
-
-[[redirects]]
-  from = "/faqs"
-  to = "/blog/faqs/"
-  status = 301
-
-[[redirects]]
   from = "/github"
   to = "https://github.com/whitep4nth3r"
   status = 301
@@ -42,7 +32,3 @@
   from = "/keyboard"
   to = "https://collabs.shop/mmjqxo"
   status = 301
-
-
-[images]
-  remote_images = ["https://static-cdn.jtvnw.net/cf_vods/.*"]

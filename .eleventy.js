@@ -8,9 +8,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "./src/_css/": "/css/" });
   eleventyConfig.addPassthroughCopy({ "./src/_public": "/" });
   eleventyConfig.addPassthroughCopy({
-    "./src/_client_scripts/app_search.js": "/js/app_search.js",
-  });
-  eleventyConfig.addPassthroughCopy({
     "./src/_client_scripts/copy_code.js": "/js/copy_code.js",
   });
   eleventyConfig.addPassthroughCopy({
