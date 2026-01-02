@@ -4,7 +4,7 @@ const Pagination = require("../_components/pagination");
 const FilterIcon = require("../_components/svg/filterIcon");
 const OpenGraph = require("../../lib/openGraph");
 
-const pageTitle = "Blogs and tutorials";
+const pageTitle = "Stuff I wrote";
 
 function calculatePageUrl(data) {
   const suffix = data.pagination.pageNumber === 0 ? `` : `${data.pagination.pageNumber + 1}/`;
@@ -41,7 +41,7 @@ exports.render = function (data) {
   const latestPost = data.latestPost;
   return /* html */ `
 
-  <h1 class="page__headerTitle">${data.count} Blogs and tutorials</h1>
+  <h1 class="page__headerTitle">${data.count} posts</h1>
   <div class="blog">
     <div style="view-transition-name: bio-image"></div>
     <div style="view-transition-name: name-logo"></div>
