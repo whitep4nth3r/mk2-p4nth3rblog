@@ -80,21 +80,6 @@
   }
 }
 
-.header__logoContainer {
-  display: none;
-
-  @media screen and (min-width: root.$global_md_breakpoint) {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: var(--header-padding-vertical);
-    svg {
-      height: var(--logo-height);
-      width: auto;
-    }
-  }
-}
-
 .header__navList {
   padding-left: 0;
   list-style: none;

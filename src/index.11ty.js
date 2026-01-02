@@ -82,6 +82,5 @@ exports.render = function (data) {
   <script type="application/ld+json">${PersonStructuredData({
     person,
   })}</script>
-  <script src="https://cursor-party.whitep4nth3r.partykit.dev/cursors.js"></script>
   `;
 };

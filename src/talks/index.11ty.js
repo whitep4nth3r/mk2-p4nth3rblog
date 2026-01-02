@@ -8,7 +8,7 @@ const pageTitle = "Watch talks about web development by Salma Alam-Naylor";
 exports.data = {
   layout: "base.html",
   title: pageTitle,
-  metaDescription: `Watch talks about web dev, accessibility, Jamstack, JavaScript, and more from ${Config.meta.jobDescription}.`,
+  metaDescription: `Watch talks about web dev and more from ${Config.meta.jobDescription}.`,
   openGraphImageUrl: OpenGraph.generateImageUrl({ title: "Watch talks about web development" }),
   openGraphImageAlt: OpenGraph.generateImageAlt(pageTitle),
   openGraphImageWidth: OpenGraph.imgWidth,
