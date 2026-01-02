@@ -3,7 +3,6 @@
 @use "utils";
 
 [color-mode="light"] {
-  --header-bg: rgba(250, 239, 255, 0.8);
   --header-external-arrow-svg: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.66663 11.3334L11.3333 4.66675M11.3333 4.66675H4.66663M11.3333 4.66675V11.3334' stroke='black' stroke-opacity='0.72' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   --header-home-active-content: url("/img/nav-active-home-light.svg");
   --header-about-active-content: url("/img/nav-active-about-light.svg");
@@ -11,7 +10,6 @@
 }
 
 [color-mode="dark"] {
-  --header-bg: rgba(14, 0, 22, 0.75);
   --header-external-arrow-svg: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.66663 11.3334L11.3333 4.66675M11.3333 4.66675H4.66663M11.3333 4.66675V11.3334' stroke='white' stroke-opacity='0.72' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   --header-home-active-content: url("/img/nav-active-home-dark.svg");
   --header-about-active-content: url("/img/nav-active-about-dark.svg");
@@ -27,16 +25,11 @@
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
-  z-index: 10;
-  position: fixed;
   justify-self: center;
   width: calc(100vw - calc(var(--body-horizontal-padding-sm) * 2));
-  border-radius: 2.5rem;
-  background: var(--header-bg);
-  backdrop-filter: blur(6px);
+  border-radius: var(--border-radius-base);
+  background: var(--color-fg);
   padding: 0 0.5rem;
-  left: 50%;
-  transform: translateX(-50%);
 
   @media screen and (min-width: root.$global_md_breakpoint) {
     width: calc(100vw - calc(var(--body-horizontal-padding-lg) * 2));
@@ -56,7 +49,7 @@
   @include font.font_bold;
   display: flex;
   justify-content: center;
-  color: var(--color-fg);
+  color: var(--color-bg);
   text-decoration: none;
   font-size: 1rem;
   line-height: 1;
@@ -69,7 +62,7 @@
   top: -100px;
   transform: translateX(-50%);
   left: 50%;
-  background-color: var(--color-bg);
+  background-color: var(--color-fg);
   z-index: 15;
   position: absolute;
 
@@ -102,7 +95,7 @@
 }
 
 .header__navListMoreLinks {
-  background: var(--header-bg);
+  background: var(--color-fg);
   border-radius: 0 0 var(--border-radius-base) var(--border-radius-base);
   position: absolute;
   bottom: 0;
@@ -119,18 +112,6 @@
     a {
       padding: 0.5rem;
     }
-  }
-
-  // backdrop filter doesn't work if parent element has one!
-  // so we do this instead on the dropdown
-  &::before {
-    background-color: var(--header-bg);
-    content: "";
-    filter: blur(6px);
-    position: absolute;
-    inset: 6%;
-    z-index: -1;
-    display: block;
   }
 }
 
@@ -164,8 +145,8 @@
 .header__navListItemLink,
 .header__navListSummary {
   transition: opacity var(--global-transition-time) ease-in-out;
-  opacity: 0.72;
-  @include font.font_bold;
+  @include font.font_heading;
+  color: var(--color-bg);
   padding: 1rem 0.5rem;
   text-decoration: none;
   display: flex;
@@ -175,12 +156,12 @@
   justify-content: space-between;
   text-transform: uppercase;
   position: relative;
-  font-size: 0.875rem;
+  font-size: 1rem;
   line-height: 1;
   letter-spacing: 1px;
 
   @media screen and (min-width: root.$global_md_breakpoint) {
-    font-size: 1rem;
+    font-size: 1.5rem;
     padding: 0.5rem 0.5rem;
   }
 

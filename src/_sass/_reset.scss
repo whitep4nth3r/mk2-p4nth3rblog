@@ -132,9 +132,7 @@ body {
   position: relative;
 
   min-height: 100vh;
-  background: var(--color-bg);
-  background-image: var(--page-bg);
-  background-attachment: fixed !important;
+  background: var(--page-bg);
 
   @media screen and (min-width: 48rem) {
     padding: 1rem var(--body-horizontal-padding-lg);
@@ -148,33 +146,5 @@ main {
 
   @media screen and (min-width: root.$global_md_breakpoint) {
     margin-top: 10rem;
-  }
-
-  &:before {
-    content: "";
-    background-image: var(--bg-brush);
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: fixed;
-    z-index: -1;
-    opacity: 50%;
-    height: 100%;
-    width: 100%;
-    mix-blend-mode: overlay;
-  }
-
-  &:after {
-    content: "";
-    background-image: var(--whitep4nth3r-bg-svg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 0;
-    width: 100%;
-    /* https://css-tricks.com/scale-svg/#aa-option-2-use-css-background-images-and-the-padding-bottom-hack */
-    padding-bottom: calc(100% * 201 / 1280); /* aspect ratio of image */
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
   }
 }

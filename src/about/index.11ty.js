@@ -2,7 +2,7 @@ const RichText = require("../_components/richText");
 const BioImage = require("../_components/bioImage");
 const TabbedBio = require("../_components/tabbedBio");
 const OpenGraph = require("../../lib/openGraph");
-const NameLogo = require("../_components/svg/nameLogo");
+const NameLogoLarge = require("../_components/svg/nameLogo-large");
 const PersonStructuredData = require("../_components/personStructuredData");
 
 const pageTitle = "About Salma Alam-Naylor";
@@ -40,7 +40,7 @@ exports.render = function (data) {
       <div class="about__details">
         <div class="about__name">
           <h1>
-            ${NameLogo()}
+            ${NameLogoLarge()}
           </h1>
         </div>
         <div class="about__bio">

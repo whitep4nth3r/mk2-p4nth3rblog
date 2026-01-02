@@ -1,4 +1,4 @@
-const NameLogo = require("./svg/nameLogo");
+const NameLogoLarge = require("./svg/nameLogo-large");
 const SocialLinks = require("./socialLinks");
 
 var md = require("markdown-it")({
@@ -9,7 +9,7 @@ function homeAbout({ bio }) {
   return /* html */ `
   <div class="homeAbout">
     <h1 class="homeAbout__name">
-      ${NameLogo()}
+      ${NameLogoLarge()}
     </h1>
     <div class="homeAbout__bio">
       ${md.render(bio)}

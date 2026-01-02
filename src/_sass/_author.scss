@@ -25,6 +25,7 @@
   position: relative;
   flex-grow: 1;
   @include utils.link_focus;
+  text-decoration: none;
 
   &:focus-visible,
   &:hover {

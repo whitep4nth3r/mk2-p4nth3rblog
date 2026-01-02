@@ -10,7 +10,9 @@
 
 .about__name {
   z-index: 10;
-  margin-top: -6.6rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
 
   @media screen and (min-width: tc-layout.$tc_layout_breakpoint) {
     margin-top: 0;
@@ -23,7 +25,7 @@
   @media screen and (min-width: tc-layout.$tc_layout_breakpoint) {
     align-items: flex-start;
   }
-  
+
   img {
     background-color: var(--bio-image-container-bg);
   }

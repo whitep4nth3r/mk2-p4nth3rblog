@@ -12,3 +12,8 @@
   font-weight: var(--font-weight-mid);
   font-family: var(--font-family-main);
 }
+
+@mixin font_heading {
+  font-family: var(--font-family-heading);
+  font-weight: 400;
+}

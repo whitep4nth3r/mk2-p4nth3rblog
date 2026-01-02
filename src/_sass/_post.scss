@@ -109,7 +109,7 @@
 }
 
 .post__h1 {
-  @include font.font_bold;
+  @include font.font_heading;
   margin: 0 auto 3rem auto;
   font-size: clamp(2.5rem, 3.5vw, 3.5rem);
   line-height: 1.4;
@@ -119,7 +119,7 @@
 }
 
 .post__h2 {
-  @include font.font_semibold;
+  @include font.font_heading;
   font-size: clamp(1.8rem, 2.8vw, 2rem);
   line-height: 1.4;
   margin-bottom: 2rem;
@@ -130,7 +130,7 @@
 }
 
 .post__h3 {
-  @include font.font_semibold;
+  @include font.font_heading;
   font-size: 1.4rem;
   line-height: 1.4;
   margin-top: 2rem;
@@ -151,7 +151,7 @@
 .post__h4,
 .post__h5,
 .post__h6 {
-  @include font.font_semibold;
+  @include font.font_heading;
   font-size: 1.2rem;
   line-height: 1.4;
   margin-bottom: 1rem;

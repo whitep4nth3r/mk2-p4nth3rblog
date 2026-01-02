@@ -1,6 +1,6 @@
 const BioImage = require("./bioImage");
 const SocialLinks = require("./socialLinks");
-const NameLogo = require("./svg/nameLogo");
+const NameLogoBlog = require("./svg/nameLogo-blog");
 
 function Author({ author, uUrl, hideOnSmallScreens = false }) {
   const hideClass = hideOnSmallScreens ? " author--hideSmall" : "";
@@ -11,7 +11,7 @@ function Author({ author, uUrl, hideOnSmallScreens = false }) {
         ${BioImage({ image: author.imageBio })}
       </div>
       <div class="author__name">
-        ${NameLogo()}
+        ${NameLogoBlog()}
       </div>
     </a>
 

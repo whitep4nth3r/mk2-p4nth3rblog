@@ -17,7 +17,7 @@
 
 .card {
   overflow: hidden;
-  border-radius: 0.75rem;
+  border-radius: var(--border-radius-base);
   background: var(--card-bg);
   backdrop-filter: blur(1rem);
   box-shadow: var(--card-box-shadow);
@@ -91,9 +91,9 @@
 }
 
 .card__title {
-  @include font.font_bold;
-  font-size: 1.25rem;
-  line-height: 1.6;
+  @include font.font_heading;
+  font-size: clamp(1.25rem, 2vw, 2rem);
+  line-height: 1.2;
   margin-bottom: 0.5rem;
 }
 
