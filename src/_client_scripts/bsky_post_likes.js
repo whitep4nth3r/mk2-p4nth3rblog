@@ -25,7 +25,7 @@ function drawLikes(likesActors, postLikesCount) {
 
     if (like.actor.avatar !== undefined) {
       likeEl.innerHTML = `
-      <img class="post__like__avatar" src="${like.actor.avatar.replace("avatar", "avatar_thumbnail")}" alt="${
+        <img class="post__like__avatar" src="${like.actor.avatar.replace("avatar", "avatar_thumbnail")}" alt="${
         like.actor.displayName
       }" />`;
     } else {

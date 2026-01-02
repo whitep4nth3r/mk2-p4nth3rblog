@@ -7,6 +7,7 @@ const PublishedDate = require("../_components/publishedDate");
 const TableOfContents = require("../_components/tableOfContents");
 const isSponsored = require("../_components/isSponsored");
 const Card = require("../_components/card");
+const HeartIcon = require("../_components/svg/heartIcon");
 const PostStructuredData = require("../_components/postStructuredData");
 const OpenGraph = require("../../lib/openGraph");
 
@@ -126,8 +127,10 @@ exports.render = async function (data) {
               post.blueskyPostId
                 ? `
               <section class="post__likes" data-bsky-container>
-                <h3 class="post__likesTitle">🦋 <span data-bsky-likes-count></span> likes on Bluesky</h3>
-                <a class="post__likesCta" href="https://bsky.app/profile/whitep4nth3r.com/post/${post.blueskyPostId}" target="_blank">Like this post on Bluesky to see your face on this page</a>
+                <h3 class="post__likesTitle">${HeartIcon()} <span data-bsky-likes-count></span> likes</h3>
+                <a class="post__likesCta" href="https://bsky.app/profile/whitep4nth3r.com/post/${
+                  post.blueskyPostId
+                }" target="_blank">Like this post on Bluesky to see your face on this page</a>
                 <ul data-bsky-likes class="post__likesList"></ul>
               </section>`
                 : ""
