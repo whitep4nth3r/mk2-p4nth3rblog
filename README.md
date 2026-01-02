@@ -16,7 +16,7 @@ npm install
 
 ### Run the site locally
 
-Use the Netlify CLI to inject environment variables stored against the Netlify site — no local `.env` file needed!
+Use the Netlify CLI to inject environment variables stored against the Netlify site — no local `.env` file needed.
 
 ```bash
 ntl dev

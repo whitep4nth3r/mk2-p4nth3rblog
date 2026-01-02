@@ -458,6 +458,15 @@
   line-height: 1.2;
   margin-bottom: 1rem;
   color: var(--color-fg-copy);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  align-items: center;
+
+  svg {
+    color: var(--pink);
+  }
 }
 
 .post__likesCta {
@@ -467,6 +476,10 @@
   font-style: italic;
   margin-bottom: 2rem;
   display: block;
+
+  &:focus-visible {
+    @include utils.link_focus;
+  }
 }
 
 .post__likesList {
@@ -481,13 +494,33 @@
 .post__like {
   width: 4rem;
   aspect-ratio: 1/1;
-  margin-right: -1rem;
-  border-radius: 100%;
-  filter: var(--base-shadow-filter);
+  filter: contrast(150%);
+  display: flex;
+  overflow: hidden;
+
+  &::before {
+    top: -50%;
+    left: -50%;
+    right: -50%;
+    bottom: -50%;
+    content: "";
+    position: absolute;
+    transform: rotate(20deg);
+    background: radial-gradient(circle at center, #000, #fff);
+    background-size: 0.15em 0.15em;
+  }
 }
 
 .post__like__avatar {
-  border-radius: 100%;
+  width: 100%;
+  filter: grayscale(1) brightness(90%) contrast(150%);
+  height: auto;
+  transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
+  mix-blend-mode: hard-light;
+
+  &:hover {
+    filter: unset;
+  }
 }
 
 .post__like--placeholder,
@@ -500,6 +533,11 @@
   align-items: center;
   font-size: 1rem;
   font-style: italic;
-  background-color: #208bfe;
+  background-color: var(--pink);
   color: #fff;
+  filter: unset;
+
+  &::before {
+    content: unset;
+  }
 }
