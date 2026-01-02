@@ -145,12 +145,6 @@ exports.render = async function (data) {
             uUrl: `https://whitep4nth3r.com/blog/${data.post.slug}/`,
           })}
 
-          <div class="post__coffee">
-            <h3 class="post__coffeeHeader">Did this post help you?</h3>
-            <a href="https://www.buymeacoffee.com/whitep4nth3r" class="post__coffeeButton" target="_blank">☕️ Buy me a coffee</a>
-            <p class="post__coffeeThanks">(thank you!)</p>
-          </div>
-
           ${
             post.relatedPostsCollection?.items.length > 0
               ? /*html*/ `
