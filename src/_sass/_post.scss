@@ -449,7 +449,6 @@
 .post__likes {
   margin-bottom: 2rem;
   min-height: 400px;
-  padding-right: 1rem;
 }
 
 .post__likesTitle {
@@ -492,11 +491,13 @@
 }
 
 .post__like {
-  width: 4rem;
   aspect-ratio: 1/1;
   filter: contrast(150%);
   display: flex;
+  flex: 1 1 4rem;
   overflow: hidden;
+  justify-content: center;
+  align-items: center;
 
   &::before {
     top: -50%;
@@ -512,11 +513,12 @@
 }
 
 .post__like__avatar {
-  width: 100%;
   filter: grayscale(1) brightness(90%) contrast(150%);
-  height: auto;
+  width: auto;
+  height: 100%;
   transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
   mix-blend-mode: hard-light;
+  object-fit: cover;
 
   &:hover {
     filter: unset;
@@ -526,16 +528,11 @@
 .post__like--placeholder,
 .post__like--howManyMore {
   @include font.font_bold;
-  width: 4rem;
-  aspect-ratio: 1/1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   font-size: 1rem;
-  font-style: italic;
   background-color: var(--pink);
   color: #fff;
   filter: unset;
+  flex: 0 1 4rem;
 
   &::before {
     content: unset;
