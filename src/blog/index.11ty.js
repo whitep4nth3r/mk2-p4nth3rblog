@@ -1,7 +1,6 @@
 const Config = require("../../lib/config.js");
 const Card = require("../_components/card");
 const Pagination = require("../_components/pagination");
-const Topics = require("../_components/topics");
 const FilterIcon = require("../_components/svg/filterIcon");
 const OpenGraph = require("../../lib/openGraph");
 
@@ -44,25 +43,8 @@ exports.render = function (data) {
 
   <h1 class="page__headerTitle">${data.count} Blogs and tutorials</h1>
   <div class="blog">
-    <aside class="blog__searchAndCats">
-      <div class="blog__searchBoxAndFilterToggle">
-        <div id="autocomplete" class="ais">
-          <div id="searchbox" class="ais__searchbox">
-            <label for="search" class="ais__label">Search posts</label>
-            <input id="search" data-search-input class="ais__input" type="text" />
-            <button class="ais__reset" data-search-clear type="button">Clear</button>
-          </div>
-        </div>
-        <!-- add aria stuff here -->
-        <button type="button" class="blog__filterToggle" data-toggle>${FilterIcon()} Filters</button>
-      </div>
-
-      <div class="blog__cats" data-cats>
-        ${Topics({ topics: data.topics })}
-      </div>
-      <div style="view-transition-name: bio-image"></div>
-      <div style="view-transition-name: name-logo"></div>
-    </aside>
+    <div style="view-transition-name: bio-image"></div>
+    <div style="view-transition-name: name-logo"></div>
 
     <section class="blog__cards">
       <div id="hits" class="ais__hitsContainer"></div>
@@ -90,45 +72,5 @@ exports.render = function (data) {
     </section>
 
   </div>
-
-  <script defer src="https://cdn.jsdelivr.net/npm/algoliasearch@4.5.1/dist/algoliasearch-lite.umd.js" integrity="sha256-EXPXz4W6pQgfYY3yTpnDa3OH8/EPn16ciVsPQ/ypsjk=" crossorigin="anonymous"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.8.3/dist/instantsearch.production.min.js" integrity="sha256-LAGhRRdtVoD6RLo2qDQsU2mp+XVSciKRC8XPOBWmofM=" crossorigin="anonymous"></script>
-  <script defer src="/js/app_search.js"></script>
-
-  <script type="module">
-    const search = initSearch({
-      appId: "${data.search.ALGOLIA_APP_ID}", 
-      apiKey: "${data.search.ALGOLIA_SEARCH_API_KEY}", 
-      indexName: "${data.search.ALGOLIA_INDEX}",
-      latestPost: {
-        title:  "${latestPost.title}",
-        slug: "${latestPost.slug}",
-        id: "${latestPost.sys.id}",
-        date:  "${latestPost.date}",
-        readingTime:  "${latestPost.readingTime}",
-        topic: "${latestPost.topicsCollection.items[0].name}",
-        featuredImage: {
-          url: "${latestPost.featuredImage.url}",
-          description: "${latestPost.featuredImage.description}",
-          width: "${latestPost.featuredImage.width}",
-          height: "${latestPost.featuredImage.height}",
-        }
-      }
-    });
-
-    const searchBox = document.getElementById("searchbox");
-    const hits = document.getElementById("hits");
-    const staticContent = document.querySelector("[data-static-content]");
-
-    searchBox.addEventListener("keyup", function(e) { 
-      if (e.target.value.length >= 1) {
-        hits.style.display = "block";
-        staticContent.style.display = "none";
-      } else {
-        hits.style.display = "none";
-        staticContent.style.display = "block";
-      }
-    })
-  </script>
 `;
 };
