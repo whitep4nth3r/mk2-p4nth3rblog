@@ -492,24 +492,12 @@
 
 .post__like {
   aspect-ratio: 1/1;
-  filter: contrast(150%);
   display: flex;
   flex: 1 1 4rem;
-  overflow: hidden;
   justify-content: center;
   align-items: center;
 
-  &::before {
-    top: -50%;
-    left: -50%;
-    right: -50%;
-    bottom: -50%;
-    content: "";
-    position: absolute;
-    transform: rotate(20deg);
-    background: radial-gradient(circle at center, #000, #fff);
-    background-size: 0.15em 0.15em;
-  }
+  @include utils.half_tone;
 }
 
 .post__like__avatar {
@@ -517,8 +505,6 @@
   width: auto;
   height: 100%;
   transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
-  mix-blend-mode: hard-light;
-  object-fit: cover;
 
   &:hover {
     filter: unset;

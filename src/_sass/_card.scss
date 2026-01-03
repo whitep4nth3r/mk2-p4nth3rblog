@@ -38,6 +38,8 @@
     width: auto;
     object-fit: cover;
   }
+
+  @include utils.half_tone;
 }
 
 .card__imageContainer--large {
@@ -73,14 +75,15 @@
 
 .card__title {
   @include font.font_heading;
-  font-size: clamp(1.25rem, 2vw, 2rem);
+  font-size: clamp(1.5rem, 3vw, 3rem);
   line-height: 1.2;
   margin-bottom: 0.5rem;
+  text-wrap: wrap;
 }
 
 .card__description {
   @include font.font_main;
-  font-size: 0.875rem;
+  font-size: 1.25rem;
   line-height: 1.6;
   color: var(--color-fg);
   margin-bottom: 1rem;
@@ -89,29 +92,36 @@
 
 .card__meta {
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 0.5rem;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: stretch;
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: right;
 }
 
 .card__metaLabel {
-  @include font.font_semibold;
+  @include font.font_heading;
   font-weight: 500;
-  font-size: 0.875rem;
+  font-size: 2rem;
   line-height: 1.5;
-  color: var(--color-fg);
-  background-color: var(--color-bg);
-  border-radius: 1rem;
+  color: var(--color-bg);
+  background-color: var(--pink);
   padding: 0.125rem 0.5rem;
+  text-transform: uppercase;
   width: max-content;
-  text-transform: capitalize;
 }
 
 .card__metaRead {
-  @include font.font_semibold;
-  font-size: 0.875rem;
+  @include font.font_bold;
+  font-size: 2rem;
   line-height: 1.125;
-  color: var(--color-fg);
+  color: var(--black);
+  background-color: var(--white);
+  padding: 0.125rem 0.5rem;
+  text-transform: uppercase;
 }
 
 .card__linkButton {

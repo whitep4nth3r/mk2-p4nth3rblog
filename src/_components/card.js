@@ -47,16 +47,14 @@ function description(item) {
   return "";
 }
 
-function renderImage({ image, type, lazyLoad }) {
+function renderImage({ image, lazyLoad }) {
   // empty alt because purely decorative
   // todo — optimize image types here
 
   const lazy = lazyLoad ? ` loading="lazy"` : "";
 
-  const modifier = type === "thing" ? " card__imageContainer--large" : "";
-
   if (image) {
-    return `<div class="card__imageContainer${modifier}">
+    return `
       <picture>
         <source type="image/avif" srcSet="${image.url}?w=450&fm=avif" />
         <source type="image/webp" srcSet="${image.url}?w=450&fm=webp" />
@@ -68,11 +66,10 @@ function renderImage({ image, type, lazyLoad }) {
           width="${image.width}"
           ${lazy}
           class="card__image" />
-      </picture>
-    </div>`;
+      </picture>`;
   }
 
-  return `<div class="card__imageContainer"></div>`;
+  return ``;
 }
 
 function closingTag(item) {
@@ -93,10 +90,10 @@ function formatCategoryName(name) {
 
 function renderType(item) {
   if (item.type === "thing") {
-    return `<span class="card__metaLabel">${formatCategoryName(item.category)}</span>`;
+    return `<div class="card__meta"><span class="card__metaLabel">${formatCategoryName(item.category)}</span></div>`;
   }
 
-  return `<span class="card__metaLabel">${activityType[item.type]}</span>`;
+  return `<div class="card__meta"><span class="card__metaLabel">${activityType[item.type]}</span></div>`;
 }
 
 function renderDate(item) {
@@ -114,7 +111,7 @@ const activityType = {
   event: "Event",
   link: "Link",
   podcast: "Podcast",
-  post: "Blog",
+  post: "Article",
   talk: "Talk",
   youtube: "YouTube",
   "youtube-short": "Short",
@@ -125,7 +122,7 @@ function itemMeta(item) {
     return `
     <div class="card__meta">
       <span class="card__metaLabel">${item.topicsCollection.items[0].name}</span>
-      <span class="card__metaRead">${item.readingTime} min read →</span>
+      <span class="card__metaRead">${item.readingTime} min</span>
     </div>`;
   }
 
@@ -133,7 +130,7 @@ function itemMeta(item) {
     return `
     <div class="card__meta">
       <span class="card__metaLabel">${item.topicsCollection.items[0].name}</span>
-      <span class="card__metaRead">${item.watchTime} min watch time →</span>
+      <span class="card__metaRead">${item.watchTime} min</span>
     </div>
     `;
   }
@@ -143,9 +140,14 @@ const Card = ({ item, showType = true, lazyLoad = false }) => {
   const heading = item.title || item.name;
   const itemImage = findImage(item);
 
+  const modifier = item.type === "thing" ? " card__imageContainer--large" : "";
+
   return `
   ${openingTag({ item, heading })}
-    ${renderImage({ image: itemImage, type: item.type, lazyLoad: lazyLoad })}
+    ${showType === false ? itemMeta(item) : renderType(item)}
+    <div class="card__imageContainer${modifier}">
+      ${renderImage({ image: itemImage, lazyLoad: lazyLoad })}
+    </div>
     <div class="card__inner">
       ${renderDate(item)}
       <h2 class="card__title" style="view-transition-name: heading-${item.sys.id}">${heading}</h2>
@@ -155,7 +157,6 @@ const Card = ({ item, showType = true, lazyLoad = false }) => {
           ? `<a href="${item.link}" class="card__linkButton" target="_blank">Buy this thing</a>`
           : ""
       }
-      ${showType === false ? itemMeta(item) : renderType(item)}
     </div>
     ${closingTag(item)}`;
 };

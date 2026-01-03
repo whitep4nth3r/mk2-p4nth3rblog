@@ -64,17 +64,21 @@ exports.render = function (data) {
   <section class="home__latest">
     <h2 class="home__latestHeader">Latest articles</h2>
 
-    <div class="home__cards">
-      ${posts.map((item) => Card({ item })).join("")}  
-       <a href="/blog/">View all</a>
-    </div>
+    <ul class="home__cards">
+      ${posts.map((item) => `<li>${Card({ item: item, showType: false })}</li>`).join("")}
+      <li>
+        <a href="/blog/">View all</a>
+      </li>
+    </ul>
 
     <h2 class="home__latestHeader">Latest stuff on the internet</h2>
 
-    <div class="home__cards">
-      ${stuff.map((item) => Card({ item })).join("")}
+    <ul class="home__cards">
+      ${stuff.map((item) => `<li>${Card({ item })}</li>`).join("")}
+      <li>
         <a href="/activity/">View all</a>
-    </div>
+      </li>
+    </ul>
   </section>
 
 

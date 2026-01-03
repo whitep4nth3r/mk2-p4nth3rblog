@@ -556,7 +556,15 @@ main {
 
 .home__cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
+  list-style: none;
+  padding-left: 0;
+  grid-auto-rows: 1fr;
+}
+.home__cards li {
+  display: flex;
+}
+.home__cards {
   background: var(--color-bg);
 }
 
@@ -620,8 +628,7 @@ main {
 
 .blog__cardsGrid {
   display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
   list-style: none;
   padding-left: 0;
   grid-auto-rows: 1fr;
@@ -1274,12 +1281,12 @@ main {
 
 .post__like {
   aspect-ratio: 1/1;
-  filter: contrast(150%);
   display: flex;
   flex: 1 1 4rem;
-  overflow: hidden;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+  filter: contrast(150%);
 }
 .post__like::before {
   top: -50%;
@@ -1292,14 +1299,16 @@ main {
   background: radial-gradient(circle at center, #000, #fff);
   background-size: 0.15em 0.15em;
 }
+.post__like * {
+  mix-blend-mode: hard-light;
+  object-fit: cover;
+}
 
 .post__like__avatar {
   filter: grayscale(1) brightness(90%) contrast(150%);
   width: auto;
   height: 100%;
   transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
-  mix-blend-mode: hard-light;
-  object-fit: cover;
 }
 .post__like__avatar:hover {
   filter: unset;
@@ -1636,8 +1645,7 @@ main {
 
 .uses__list {
   display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
   list-style: none;
   padding-left: 0;
   grid-auto-rows: 1fr;
@@ -2123,6 +2131,25 @@ pre[class*=language-] {
   width: auto;
   object-fit: cover;
 }
+.card__imageContainer {
+  overflow: hidden;
+  filter: contrast(150%);
+}
+.card__imageContainer::before {
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  content: "";
+  position: absolute;
+  transform: rotate(20deg);
+  background: radial-gradient(circle at center, #000, #fff);
+  background-size: 0.15em 0.15em;
+}
+.card__imageContainer * {
+  mix-blend-mode: hard-light;
+  object-fit: cover;
+}
 
 .card__imageContainer--large {
   aspect-ratio: 1/1;
@@ -2161,9 +2188,10 @@ pre[class*=language-] {
 .card__title {
   font-family: var(--font-family-heading);
   font-weight: 400;
-  font-size: clamp(1.25rem, 2vw, 2rem);
+  font-size: clamp(1.5rem, 3vw, 3rem);
   line-height: 1.2;
   margin-bottom: 0.5rem;
+  text-wrap: wrap;
 }
 
 .card__description {
@@ -2172,7 +2200,7 @@ pre[class*=language-] {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  font-size: 0.875rem;
+  font-size: 1.25rem;
   line-height: 1.6;
   color: var(--color-fg);
   margin-bottom: 1rem;
@@ -2181,31 +2209,38 @@ pre[class*=language-] {
 
 .card__meta {
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 0.5rem;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: stretch;
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: right;
 }
 
 .card__metaLabel {
-  font-weight: var(--font-weight-mid);
-  font-family: var(--font-family-main);
+  font-family: var(--font-family-heading);
+  font-weight: 400;
   font-weight: 500;
-  font-size: 0.875rem;
+  font-size: 2rem;
   line-height: 1.5;
-  color: var(--color-fg);
-  background-color: var(--color-bg);
-  border-radius: 1rem;
+  color: var(--color-bg);
+  background-color: var(--pink);
   padding: 0.125rem 0.5rem;
+  text-transform: uppercase;
   width: max-content;
-  text-transform: capitalize;
 }
 
 .card__metaRead {
-  font-weight: var(--font-weight-mid);
+  font-weight: var(--font-weight-bold);
   font-family: var(--font-family-main);
-  font-size: 0.875rem;
+  font-size: 2rem;
   line-height: 1.125;
-  color: var(--color-fg);
+  color: var(--black);
+  background-color: var(--white);
+  padding: 0.125rem 0.5rem;
+  text-transform: uppercase;
 }
 
 .card__linkButton {
@@ -2460,8 +2495,7 @@ pre[class*=language-] {
 
 .talks__cardGrid {
   display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
   list-style: none;
   padding-left: 0;
   grid-auto-rows: 1fr;
@@ -3152,8 +3186,7 @@ pre[class*=language-] {
 
 .video__grid {
   display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
   list-style: none;
   padding-left: 0;
   grid-auto-rows: 1fr;

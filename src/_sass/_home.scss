@@ -203,7 +203,6 @@
 }
 
 .home__cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  @include utils.card_grid;
   background: var(--color-bg);
 }
