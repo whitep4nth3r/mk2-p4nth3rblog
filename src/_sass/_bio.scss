@@ -47,17 +47,6 @@ $bio_breakpoint: 1237px;
   }
 }
 
-.bio__links {
-  order: 1;
-  @media screen and (min-width: $bio_breakpoint) {
-    order: 2;
-  }
-
-  .socialLinks {
-    gap: 1rem;
-  }
-}
-
 .bio__button {
   position: relative;
   border-width: 0;
@@ -95,12 +84,5 @@ $bio_breakpoint: 1237px;
 
   p {
     @include md.md_paragraph($fontSize: 1.25rem, $lineHeight: 1.6);
-  }
-
-  .videoEmbed__cta {
-    @include font.font_main;
-    font-size: 1rem;
-    line-height: 1;
-    margin-bottom: 1rem;
   }
 }

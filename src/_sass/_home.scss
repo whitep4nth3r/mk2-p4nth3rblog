@@ -1,41 +1,112 @@
 @use "font";
-@use "tc-layout";
 @use "utils";
 
 .home {
-  @include tc-layout.tc_layout_container;
 }
 
-.home__left {
-  @include tc-layout.tc_layout_left;
-}
+.hero {
+  --gap: 1rem;
+  --grid-tc: 1fr;
 
-.home__fixed {
-  @include tc-layout.tc_layout_fixed;
-}
-
-.home__scroll {
-  @include tc-layout.tc_layout_scroll;
-}
-
-.home__heading {
-  @include font.font_semibold;
-  font-size: 2rem;
-  line-height: 1;
-  margin-bottom: 2rem;
-  color: var(--color-link);
-  position: relative;
-  text-decoration: none;
-  @include utils.link_focus;
-}
-
-.home__activity {
-  margin: auto;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-
-  @media screen and (min-width: tc-layout.$tc_layout_breakpoint) {
-    grid-template-columns: 1fr 1fr;
+  @media screen and (min-width: 1080px) {
+    --gap: 3rem;
+    --grid-tc: 1fr 1fr;
   }
+
+  position: relative;
+  height: 80svh;
+
+  display: grid;
+  grid-template-columns: var(--grid-tc);
+}
+
+.hero__cloud {
+}
+
+.hero__image {
+  height: 100%;
+  width: auto;
+  position: relative;
+}
+
+[color-mode="dark"] {
+  --image_gradient: linear-gradient(to top, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 0.5) 25%, rgba(0, 0, 0, 0) 50%);
+}
+[color-mode="light"] {
+  --image_gradient: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 1) 10%,
+    rgba(255, 255, 255, 0.5) 25%,
+    rgba(255, 255, 255, 0) 50%
+  );
+}
+
+.hero__imageOverlay {
+  z-index: 20;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--image_gradient);
+  pointer-events: none;
+}
+
+.hero__name {
+  @include font.font_heading;
+  overflow: hidden;
+  white-space: nowrap;
+  color: var(--color-bg);
+  background: var(--color-fg);
+  position: absolute;
+  z-index: 10;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding-left: var(--gap);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.hero__name__inner {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  line-height: 1;
+  font-size: clamp(1.5rem, 12vw, 12rem);
+  gap: var(--gap);
+
+  span {
+    display: flex;
+  }
+}
+
+.hero__name__separator {
+  svg {
+    height: clamp(2rem, 4vw, 4rem);
+    width: clamp(2rem, 4vw, 4rem);
+  }
+}
+
+.home__latest {
+  background: var(--color-bg);
+  width: 100%;
+  margin-top: 4rem;
+}
+
+.home__latestHeader {
+  display: inline-block;
+  padding: 1rem;
+  @include font.font_heading;
+  color: var(--color-bg);
+  background: var(--color-fg);
+  font-size: clamp(1.5rem, 4vw, 4rem);
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.home__cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  background: var(--color-bg);
 }

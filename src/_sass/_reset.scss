@@ -128,23 +128,14 @@ body {
   @include font.font_main;
   font-size: 1rem;
   color: var(--color-fg);
-  padding: var(--body-horizontal-padding-sm);
   position: relative;
 
   min-height: 100vh;
   background: var(--page-bg);
-
-  @media screen and (min-width: 48rem) {
-    padding: 1rem var(--body-horizontal-padding-lg);
-  }
 }
 
 main {
-  margin: 6rem auto auto auto;
-  max-width: var(--global-max-width);
+  margin: auto;
+  // max-width: var(--global-max-width);
   overflow: hidden;
-
-  @media screen and (min-width: root.$global_md_breakpoint) {
-    margin-top: 10rem;
-  }
 }

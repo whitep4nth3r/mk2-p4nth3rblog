@@ -1,10 +1,10 @@
-const HomeAbout = require("./_components/homeAbout");
 const OpenGraph = require("../lib/openGraph");
-const ActivityFeedItem = require("./_components/card");
+const Card = require("./_components/card");
 const NewsletterSignup = require("./_components/newsletterSignup");
 const Webring = require("./_components/webring");
 const PersonStructuredData = require("./_components/personStructuredData");
-const pageTitle = "I'm Salma and I make stuff on the internet";
+const StarIcon = require("./_components/svg/starIcon");
+const pageTitle = "I make stuff on the internet.";
 
 exports.data = {
   layout: "base.html",
@@ -24,63 +24,93 @@ exports.data = {
 };
 
 exports.render = function (data) {
-  const { activityFeed, person, newsletter, webring } = data;
-  const feedItems = activityFeed.slice(0, 8);
+  const { person, newsletter, webring, home } = data;
+  const { posts, stuff } = home;
 
   return /*html*/ `
   <section class="home">
+    <div class="hero">
+      <div class="hero__cloud">
+        WORD CLOUD THING
+      </div>
+      <div class="hero__image">
+        <div class="hero__imageOverlay"></div>
+        <img src="${person.imageBio.url}" class="vt__bioImage" alt="${person.imageBio.description}" height="${
+    person.imageBio.height
+  }" width="${person.imageBio.width}" />
+      </div>
+      <h1 class="hero__name">
+        <span class="hero__name__inner">
+          <span class="hero__name__separator">${StarIcon()}</span>
+          <span>SALMA ALAM-NAYLOR</span>
+          <span class="hero__name__separator">${StarIcon()}</span>
+        <span>
+      </h1>
+    </div>
+  </section>
 
-    <div class="home__left">
-      <div class="home__fixed">
-        <div style="view-transition-name: bio-image"></div>
-        ${HomeAbout({ bio: person.bioShort })}
+
+  <section class="home__latest">
+    <h2 class="home__latestHeader">Latest articles</h2>
+
+    <div class="home__cards">
+      ${posts.map((item) => Card({ item })).join("")}  
+       <a href="/blog/">View all</a>
+    </div>
+
+    <h2 class="home__latestHeader">Latest stuff on the internet</h2>
+
+    <div class="home__cards">
+      ${stuff.map((item) => Card({ item })).join("")}
+        <a href="/activity/">View all</a>
+    </div>
+  </section>
+
+
+  <div class="home__cards">
+    <div class="card">
+      <div class="card__imageContainer">
+        <picture>
+          <source type="image/avif" srcset="/.netlify/images/?url=/img/wwwh.png?w=450&fm=avif" />
+          <source type="image/webp" srcset="/.netlify/images/?url=/img/wwwh.png?w=450&fm=webp" />
+          <img
+            src="/.netlify/images/?url=/img/wwwh.png?w=450"
+            alt="weird wide web hole"
+            role="presentation"
+            height="250"
+            width="500"
+            class="card__image" />
+        </picture>
+      </div>
+      <div class="card__inner">
+        ${NewsletterSignup({
+          removeMargin: true,
+          subscribers: newsletter.subscribers,
+        })}
+        <span class="card__metaLabel">Newsletter</span>
       </div>
     </div>
 
-    <div class="home__scroll">
-      <div class="home__activity">
-      <div class="card">
-        <div class="card__imageContainer">
-          <picture>
-            <source type="image/avif" srcset="/.netlify/images/?url=/img/wwwh.png?w=450&fm=avif" />
-            <source type="image/webp" srcset="/.netlify/images/?url=/img/wwwh.png?w=450&fm=webp" />
-            <img
-              src="/.netlify/images/?url=/img/wwwh.png?w=450"
-              alt="weird wide web hole"
-              role="presentation"
-              height="250"
-              width="500"
-              class="card__image" />
-          </picture>
-        </div>
-        <div class="card__inner">
-          ${NewsletterSignup({
-            removeMargin: true,
-            subscribers: newsletter.subscribers,
-          })}
-          <span class="card__metaLabel">Newsletter</span>
-        </div>
+    <div class="card">
+      <div class="card__imageContainer">
+        <img src="/img/theclaw_webring_logo.svg" class="card__image tcwr__logo" alt="The panther moth with a tattoo style banner that reads The Claw" />
       </div>
-      ${feedItems.map((item) => ActivityFeedItem({ item })).join("")}
-      <div class="card">
-        <div class="card__imageContainer">
-          <img src="/img/theclaw_webring_logo.svg" class="card__image tcwr__logo" alt="The panther moth with a tattoo style banner that reads The Claw" />
-        </div>
-        <div class="card__inner">
-          ${Webring({
-            members: webring.members,
-            prevUrl: webring.prevUrl,
-            nextUrl: webring.nextUrl,
-          })}
-          <span class="card__metaLabel">Webring</span>
-        </div>
+      <div class="card__inner">
+        ${Webring({
+          members: webring.members,
+          prevUrl: webring.prevUrl,
+          nextUrl: webring.nextUrl,
+        })}
+        <span class="card__metaLabel">Webring</span>
       </div>
     </div>
   </div>
 
-  </section>
   <script type="application/ld+json">${PersonStructuredData({
     person,
   })}</script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
+  <script src="/js/gsap_home.js" type="module"></script>
   `;
 };

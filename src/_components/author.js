@@ -1,5 +1,4 @@
 const BioImage = require("./bioImage");
-const SocialLinks = require("./socialLinks");
 const NameLogoBlog = require("./svg/nameLogo-blog");
 
 function Author({ author, uUrl, hideOnSmallScreens = false }) {
@@ -14,10 +13,6 @@ function Author({ author, uUrl, hideOnSmallScreens = false }) {
         ${NameLogoBlog()}
       </div>
     </a>
-
-    <div class="author_social">
-      ${SocialLinks({ uUrl })}
-    </div>
   </div>
   `;
 }

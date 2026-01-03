@@ -38,10 +38,9 @@ exports.data = {
 };
 
 exports.render = function (data) {
-  const latestPost = data.latestPost;
   return /* html */ `
 
-  <h1 class="page__headerTitle">${data.count} posts</h1>
+  <h1 class="page__headerTitle">${data.count} articles</h1>
   <div class="blog">
     <div style="view-transition-name: bio-image"></div>
     <div style="view-transition-name: name-logo"></div>

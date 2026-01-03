@@ -161,5 +161,3 @@ const Card = ({ item, showType = true, lazyLoad = false }) => {
 };
 
 module.exports = Card;
-
-// ${embed(item)}

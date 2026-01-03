@@ -6,9 +6,7 @@
   display: grid;
   grid-template-columns: 1fr 5fr;
   gap: 0 1rem;
-  grid-template-areas:
-    "avatar bio"
-    "avatar social";
+  grid-template-areas: "avatar bio";
 }
 
 .blogEndAuthor__imgContainer {
@@ -20,10 +18,6 @@
     border-radius: var(--border-radius-base);
     background-color: var(--bio-image-container-bg);
   }
-}
-
-.blogEndAuthor_social {
-  grid-area: social;
 }
 
 .blogEndAuthor__name {
