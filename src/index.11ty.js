@@ -4,7 +4,14 @@ const NewsletterSignup = require("./_components/newsletterSignup");
 const Webring = require("./_components/webring");
 const PersonStructuredData = require("./_components/personStructuredData");
 const StarIcon = require("./_components/svg/starIcon");
+const HeartIcon = require("./_components/svg/heartIcon");
 const pageTitle = "I make stuff on the internet.";
+
+const isProduction = process.env.NODE_ENV === "production";
+
+const wwwhImgAvif = isProduction ? "/.netlify/images/?url=/img/wwwh.png?w=800&fm=avif" : "/img/wwwh.png";
+
+const wwwhImgWebp = isProduction ? "/.netlify/images/?url=/img/wwwh.png?w=800&fm=webp" : "/img/wwwh.png";
 
 exports.data = {
   layout: "base.html",
@@ -29,9 +36,13 @@ exports.render = function (data) {
 
   return /*html*/ `
   <section class="home">
-    <div class="hero">
+    <div class="hero" data-hero>
       <div class="hero__cloud">
-        WORD CLOUD THING
+        <h2 class="hero__cloud__wd">${HeartIcon()} web developer</h2>
+        <h2 class="hero__cloud__is">international<br/>speaker</h2>
+        <h2 class="hero__cloud__te">tech educator</h2>
+        <h2 class="hero__cloud__e">entertainer</h2>
+        <h2 class="hero__cloud__han">has a newsletter</h2>
       </div>
       <div class="hero__image">
         <div class="hero__imageOverlay"></div>
@@ -71,8 +82,8 @@ exports.render = function (data) {
     <div class="card">
       <div class="card__imageContainer">
         <picture>
-          <source type="image/avif" srcset="/.netlify/images/?url=/img/wwwh.png?w=450&fm=avif" />
-          <source type="image/webp" srcset="/.netlify/images/?url=/img/wwwh.png?w=450&fm=webp" />
+          <source type="image/avif" srcset="${wwwhImgAvif}" />
+          <source type="image/webp" srcset="${wwwhImgWebp}" />
           <img
             src="/.netlify/images/?url=/img/wwwh.png?w=450"
             alt="weird wide web hole"
@@ -111,6 +122,6 @@ exports.render = function (data) {
   })}</script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
-  <script src="/js/gsap_home.js" type="module"></script>
+  <script src="/js/home.js" type="module"></script>
   `;
 };

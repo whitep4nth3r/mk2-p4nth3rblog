@@ -32,11 +32,10 @@
   display: flex;
   align-items: center;
   background: var(--pink);
-  // fixes weird edges
-  filter: blur(0px);
 
   * {
     height: 100%;
+    width: auto;
     object-fit: cover;
   }
 }
@@ -52,6 +51,7 @@
 
 .card__image {
   height: 100%;
+  width: auto;
   transition: all var(--global-transition-time) ease-in-out;
 }
 

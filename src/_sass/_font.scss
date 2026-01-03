@@ -1,6 +1,9 @@
 @mixin font_main {
   font-weight: var(--font-weight-main);
   font-family: var(--font-family-main);
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 
 @mixin font_bold {
@@ -16,4 +19,9 @@
 @mixin font_heading {
   font-family: var(--font-family-heading);
   font-weight: 400;
+}
+
+@mixin font_serif {
+  font-family: var(--font-family-serif);
+  font-weight: 700;
 }

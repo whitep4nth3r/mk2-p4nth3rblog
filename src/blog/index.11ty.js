@@ -1,7 +1,6 @@
 const Config = require("../../lib/config.js");
 const Card = require("../_components/card");
 const Pagination = require("../_components/pagination");
-const FilterIcon = require("../_components/svg/filterIcon");
 const OpenGraph = require("../../lib/openGraph");
 
 const pageTitle = "Stuff I wrote";

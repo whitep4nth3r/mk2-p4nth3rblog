@@ -14,7 +14,7 @@ module.exports = function (eleventyConfig) {
     "./src/_client_scripts/bsky_post_likes.js": "/js/bsky_post_likes.js",
   });
   eleventyConfig.addPassthroughCopy({
-    "./src/_client_scripts/gsap_home.js": "/js/gsap_home.js",
+    "./src/_client_scripts/home.js": "/js/home.js",
   });
   eleventyConfig.addPlugin(syntaxHighlight);
 

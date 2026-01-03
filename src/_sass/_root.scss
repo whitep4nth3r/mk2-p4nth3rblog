@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Gilda+Display&family=Space+Grotesk:wght@300..700&display=swap");
 
 @media (prefers-reduced-motion: reduce) {
   :root {
@@ -23,8 +23,9 @@ $global_md_breakpoint: 768px;
   --body-horizontal-padding-sm: 1rem;
   --body-horizontal-padding-lg: 2.5rem;
 
-  --font-family-main: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial, sans-serif;
+  --font-family-main: "Space Grotesk", sans-serif;
   --font-family-heading: "Anton", sans-serif;
+  --font-family-serif: "Gilda Display", serif;
 
   --font-weight-bold: 700;
   --font-weight-mid: 700;
