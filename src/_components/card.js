@@ -98,9 +98,7 @@ function renderType(item) {
 
 function renderDate(item) {
   if (item.type !== "thing") {
-    return `<p class="card__date">
-    ${DateUtils.formatDateForDisplay(item.date)}
-    </p>`;
+    return `<p class="card__metaDate">${DateUtils.formatDateForDisplay(item.date)}</p>`;
   }
 
   return "";
@@ -121,16 +119,22 @@ function itemMeta(item) {
   if (item.type === "post") {
     return `
     <div class="card__meta">
-      <span class="card__metaLabel">${item.topicsCollection.items[0].name}</span>
-      <span class="card__metaRead">${item.readingTime} min</span>
+      ${renderDate(item)}
+      <span class="card__metaInfo">
+        <span class="card__metaLabel">${item.topicsCollection.items[0].name}</span>
+        <span class="card__metaRead">${item.readingTime} min</span>
+      </span>
     </div>`;
   }
 
   if (item.type === "talk") {
     return `
     <div class="card__meta">
-      <span class="card__metaLabel">${item.topicsCollection.items[0].name}</span>
-      <span class="card__metaRead">${item.watchTime} min</span>
+      ${renderDate(item)}
+      <span>
+        <span class="card__metaLabel">${item.topicsCollection.items[0].name}</span>
+        <span class="card__metaRead">${item.watchTime} min</span>
+      </span>
     </div>
     `;
   }
@@ -149,7 +153,7 @@ const Card = ({ item, showType = true, lazyLoad = false }) => {
       ${renderImage({ image: itemImage, lazyLoad: lazyLoad })}
     </div>
     <div class="card__inner">
-      ${renderDate(item)}
+
       <h2 class="card__title" style="view-transition-name: heading-${item.sys.id}">${heading}</h2>
       ${description(item)}
       ${

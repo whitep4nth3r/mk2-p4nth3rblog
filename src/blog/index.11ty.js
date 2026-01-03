@@ -41,13 +41,7 @@ exports.render = function (data) {
 
   <h1 class="page__headerTitle">${data.count} articles</h1>
   <div class="blog">
-    <div style="view-transition-name: bio-image"></div>
-    <div style="view-transition-name: name-logo"></div>
-
     <section class="blog__cards">
-      <div id="hits" class="ais__hitsContainer"></div>
-
-      <div data-static-content>
         <ol class="blog__cardsGrid">
         ${data.pagination.items
           .map(function (item, index) {
@@ -66,7 +60,6 @@ exports.render = function (data) {
           currentPage: data.pagination.pageNumber,
           totalPages: data.pagination.pages.length,
         })}
-      </div>
     </section>
 
   </div>

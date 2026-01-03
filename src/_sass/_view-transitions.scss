@@ -24,3 +24,38 @@
     view-transition-name: none;
   }
 }
+
+.vt__bioImage {
+  view-transition-name: bio-image;
+}
+
+.vt__nameLogo {
+  view-transition-name: name-logo;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(root) {
+    animation-duration: 1s;
+  }
+
+  :root::view-transition-old(bio-image),
+  :root::view-transition-new(bio-image),
+  :root::view-transition-old(name-logo),
+  :root::view-transition-new(name-logo) {
+    /* kill the UA’s injected animations */
+    animation-name: none !important;
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+    animation-fill-mode: none !important;
+    animation-iteration-count: 1 !important;
+    animation-play-state: paused !important;
+
+    /* force final state */
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .bioImage {
+    view-transition-name: none !important;
+  }
+}

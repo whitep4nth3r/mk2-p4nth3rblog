@@ -42,7 +42,7 @@ exports.render = function (data) {
         <h2 class="hero__cloud__is">international<br/>speaker</h2>
         <h2 class="hero__cloud__te">tech educator</h2>
         <h2 class="hero__cloud__e">entertainer</h2>
-        <h2 class="hero__cloud__han">has a newsletter</h2>
+        <h2 class="hero__cloud__han">has a weird newsletter</h2>
       </div>
       <div class="hero__image">
         <div class="hero__imageOverlay"></div>
@@ -64,21 +64,21 @@ exports.render = function (data) {
   <section class="home__latest">
     <h2 class="home__latestHeader">Latest articles</h2>
 
-    <ul class="home__cards">
+    <ol class="home__cards">
       ${posts.map((item) => `<li>${Card({ item: item, showType: false })}</li>`).join("")}
       <li>
         <a href="/blog/">View all</a>
       </li>
-    </ul>
+    </ol>
 
     <h2 class="home__latestHeader">Latest stuff on the internet</h2>
 
-    <ul class="home__cards">
+    <ol class="home__cards">
       ${stuff.map((item) => `<li>${Card({ item })}</li>`).join("")}
       <li>
         <a href="/activity/">View all</a>
       </li>
-    </ul>
+    </ol>
   </section>
 
 

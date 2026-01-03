@@ -31,11 +31,14 @@
   overflow: hidden;
   display: flex;
   align-items: center;
+  justify-content: center;
   background: var(--pink);
 
-  * {
+  *,
+  img,
+  .card__image {
     height: 100%;
-    width: auto;
+    width: 100%;
     object-fit: cover;
   }
 
@@ -45,7 +48,9 @@
 .card__imageContainer--large {
   aspect-ratio: 1/1;
 
-  * {
+  *,
+  img,
+  .card__image {
     height: 100%;
     object-fit: cover;
   }
@@ -63,14 +68,6 @@
   flex-direction: column;
   flex-grow: 1;
   justify-content: flex-start;
-}
-
-.card__date {
-  @include font.font_main;
-  color: var(--color-fg);
-  font-size: 0.875rem;
-  margin-bottom: 0.5rem;
-  line-height: 1;
 }
 
 .card__title {
@@ -92,14 +89,19 @@
 
 .card__meta {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: stretch;
   z-index: 10;
   position: absolute;
   top: 0;
-  right: 0;
   text-align: right;
+  width: 100%;
+}
+
+.card__metaInfo {
+  display: flex;
+  flex-direction: column;
 }
 
 .card__metaLabel {
@@ -107,11 +109,10 @@
   font-weight: 500;
   font-size: 2rem;
   line-height: 1.5;
-  color: var(--color-bg);
+  color: var(--white);
   background-color: var(--pink);
-  padding: 0.125rem 0.5rem;
   text-transform: uppercase;
-  width: max-content;
+  padding: 0.125rem 0.5rem;
 }
 
 .card__metaRead {
@@ -120,8 +121,21 @@
   line-height: 1.125;
   color: var(--black);
   background-color: var(--white);
-  padding: 0.125rem 0.5rem;
   text-transform: uppercase;
+  padding: 0.125rem 0.5rem;
+}
+
+.card__metaDate {
+  @include font.font_bold;
+  color: var(--white);
+  background-color: var(--black);
+  font-size: 2rem;
+  line-height: 1.125;
+  text-transform: uppercase;
+  display: flex;
+  flex-grow: 0;
+  align-self: flex-start;
+  padding: 0.125rem 0.5rem;
 }
 
 .card__linkButton {

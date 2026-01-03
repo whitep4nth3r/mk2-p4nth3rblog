@@ -58,69 +58,6 @@
   --bio-image-container-bg: rgb(14, 0, 22, 0.08);
 }
 
-@view-transition {
-  navigation: auto;
-}
-::view-transition-group(root) {
-  animation-duration: 0.4s;
-}
-
-/* Create a custom animation */
-@keyframes move-out {
-  from {
-    transform: translateY(0%);
-  }
-  to {
-    transform: translateY(-100%);
-  }
-}
-@keyframes move-in {
-  from {
-    transform: translateY(100%);
-  }
-  to {
-    transform: translateY(0%);
-  }
-}
-@media (prefers-reduced-motion: no-preference) {
-  ::view-transition-old(root) {
-    animation: 0.4s ease-in both move-out;
-  }
-  ::view-transition-new(root) {
-    animation: 0.4s ease-in both move-in;
-  }
-}
-.vt__bioImage {
-  view-transition-name: bio-image;
-}
-
-.vt__nameLogo {
-  view-transition-name: name-logo;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  ::view-transition-group(root) {
-    animation-duration: 1s;
-  }
-  :root::view-transition-old(bio-image),
-  :root::view-transition-new(bio-image),
-  :root::view-transition-old(name-logo),
-  :root::view-transition-new(name-logo) {
-    /* kill the UA’s injected animations */
-    animation-name: none !important;
-    animation-duration: 0s !important;
-    animation-delay: 0s !important;
-    animation-fill-mode: none !important;
-    animation-iteration-count: 1 !important;
-    animation-play-state: paused !important;
-    /* force final state */
-    opacity: 1 !important;
-    transform: none !important;
-  }
-  .bioImage {
-    view-transition-name: none !important;
-  }
-}
 * {
   box-sizing: border-box;
   margin: 0;
@@ -390,7 +327,6 @@ main {
   align-items: center;
   height: 100%;
   width: 100%;
-  padding: clamp(0.5rem, 2vw, 2rem);
   gap: 0.5rem;
   position: absolute;
   z-index: var(--cloud-z-index);
@@ -399,6 +335,7 @@ main {
   .hero__cloud {
     position: relative;
     justify-content: flex-start;
+    padding: clamp(0.5rem, 2vw, 2rem);
   }
 }
 .hero__cloud h2 {
@@ -559,7 +496,6 @@ main {
   grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
   list-style: none;
   padding-left: 0;
-  grid-auto-rows: 1fr;
 }
 .home__cards li {
   display: flex;
@@ -631,7 +567,6 @@ main {
   grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
   list-style: none;
   padding-left: 0;
-  grid-auto-rows: 1fr;
 }
 .blog__cardsGrid li {
   display: flex;
@@ -1648,7 +1583,6 @@ main {
   grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
   list-style: none;
   padding-left: 0;
-  grid-auto-rows: 1fr;
 }
 .uses__list li {
   display: flex;
@@ -2124,11 +2058,14 @@ pre[class*=language-] {
   overflow: hidden;
   display: flex;
   align-items: center;
+  justify-content: center;
   background: var(--pink);
 }
-.card__imageContainer * {
+.card__imageContainer *,
+.card__imageContainer img,
+.card__imageContainer .card__image {
   height: 100%;
-  width: auto;
+  width: 100%;
   object-fit: cover;
 }
 .card__imageContainer {
@@ -2154,7 +2091,9 @@ pre[class*=language-] {
 .card__imageContainer--large {
   aspect-ratio: 1/1;
 }
-.card__imageContainer--large * {
+.card__imageContainer--large *,
+.card__imageContainer--large img,
+.card__imageContainer--large .card__image {
   height: 100%;
   object-fit: cover;
 }
@@ -2171,18 +2110,6 @@ pre[class*=language-] {
   flex-direction: column;
   flex-grow: 1;
   justify-content: flex-start;
-}
-
-.card__date {
-  font-weight: var(--font-weight-main);
-  font-family: var(--font-family-main);
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  color: var(--color-fg);
-  font-size: 0.875rem;
-  margin-bottom: 0.5rem;
-  line-height: 1;
 }
 
 .card__title {
@@ -2209,14 +2136,19 @@ pre[class*=language-] {
 
 .card__meta {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: stretch;
   z-index: 10;
   position: absolute;
   top: 0;
-  right: 0;
   text-align: right;
+  width: 100%;
+}
+
+.card__metaInfo {
+  display: flex;
+  flex-direction: column;
 }
 
 .card__metaLabel {
@@ -2225,11 +2157,10 @@ pre[class*=language-] {
   font-weight: 500;
   font-size: 2rem;
   line-height: 1.5;
-  color: var(--color-bg);
+  color: var(--white);
   background-color: var(--pink);
-  padding: 0.125rem 0.5rem;
   text-transform: uppercase;
-  width: max-content;
+  padding: 0.125rem 0.5rem;
 }
 
 .card__metaRead {
@@ -2239,8 +2170,22 @@ pre[class*=language-] {
   line-height: 1.125;
   color: var(--black);
   background-color: var(--white);
-  padding: 0.125rem 0.5rem;
   text-transform: uppercase;
+  padding: 0.125rem 0.5rem;
+}
+
+.card__metaDate {
+  font-weight: var(--font-weight-bold);
+  font-family: var(--font-family-main);
+  color: var(--white);
+  background-color: var(--black);
+  font-size: 2rem;
+  line-height: 1.125;
+  text-transform: uppercase;
+  display: flex;
+  flex-grow: 0;
+  align-self: flex-start;
+  padding: 0.125rem 0.5rem;
 }
 
 .card__linkButton {
@@ -2498,7 +2443,6 @@ pre[class*=language-] {
   grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
   list-style: none;
   padding-left: 0;
-  grid-auto-rows: 1fr;
 }
 .talks__cardGrid li {
   display: flex;
@@ -3189,7 +3133,6 @@ pre[class*=language-] {
   grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
   list-style: none;
   padding-left: 0;
-  grid-auto-rows: 1fr;
 }
 .video__grid li {
   display: flex;
@@ -3354,6 +3297,37 @@ pre[class*=language-] {
   .vt__bioImage,
   .vt__nameLogo {
     view-transition-name: none;
+  }
+}
+.vt__bioImage {
+  view-transition-name: bio-image;
+}
+
+.vt__nameLogo {
+  view-transition-name: name-logo;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(root) {
+    animation-duration: 1s;
+  }
+  :root::view-transition-old(bio-image),
+  :root::view-transition-new(bio-image),
+  :root::view-transition-old(name-logo),
+  :root::view-transition-new(name-logo) {
+    /* kill the UA’s injected animations */
+    animation-name: none !important;
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+    animation-fill-mode: none !important;
+    animation-iteration-count: 1 !important;
+    animation-play-state: paused !important;
+    /* force final state */
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .bioImage {
+    view-transition-name: none !important;
   }
 }
 
