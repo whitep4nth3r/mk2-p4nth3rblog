@@ -51,21 +51,14 @@ $global_md_breakpoint: 768px;
 
   --color-bg: var(--black);
   --color-fg: var(--white);
-  --color-fg-copy: var(--white);
-  --color-link: var(--pink-light);
-  --bio-image-container-bg: rgb(250, 239, 255, 0.16);
+  --color-link: var(--pink);
 }
 
 [color-mode="light"] {
   color-scheme: light;
   --page-bg: var(--white);
-  --whitep4nth3r-bg-svg: url("/img/whitep4nth3r-lightmode.svg");
-  --bg-brush: url("/img/brush-light.svg");
 
   --color-bg: var(--white);
   --color-fg: var(--black);
-  --color-fg-copy: var(--black);
   --color-link: var(--pink);
-
-  --bio-image-container-bg: rgb(14, 0, 22, 0.08);
 }

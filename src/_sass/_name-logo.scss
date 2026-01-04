@@ -1,23 +1,15 @@
 @use "font";
 
-.nameLogo__filter {
-  position: absolute;
-}
-
 .nameLogo {
   @include font.heading;
-  filter: url(#distort);
   transform: rotate(5deg) translate(-5px, -16px);
   text-transform: uppercase;
   line-height: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: var(--pink);
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-  color: var(--white);
-  outline: 1rem solid var(--pink);
 }
 
 .nameLogo__top {
@@ -26,18 +18,4 @@
 
 .nameLogo__bottom {
   font-size: clamp(1rem, 4vw, 3.15rem);
-}
-
-.nameLogoLarge {
-  @include font.heading;
-  filter: url(#distort_large);
-  text-transform: uppercase;
-  font-size: clamp(2rem, 4.5vw, 4.5rem);
-  line-height: 1;
-  display: flex;
-  align-items: center;
-  color: var(--color-bg);
-  background: var(--color-fg);
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
 }

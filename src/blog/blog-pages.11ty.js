@@ -74,69 +74,72 @@ exports.render = async function (data) {
   });
 
   return /*html*/ `
-    <article class="h-entry">
-      <div class="post__meta">
-        <p class="post__meta__topic p-category">${post.topicsCollection.items[0].name}</p>
-        ${PublishedDate({
-          date: post.date,
-          readingTime: post.readingTime,
-          isTalk: false,
-          updatedDate: post.updatedDate,
-        })}
+    <article class="post h-entry">
+      <div class="post__header">
+        <div class="post__meta">
+            <p class="post__meta__topic p-category">${post.topicsCollection.items[0].name}</p>
+            ${PublishedDate({
+              date: post.date,
+              readingTime: post.readingTime,
+              isTalk: false,
+              updatedDate: post.updatedDate,
+            })}
+        </div>
+        <h1 class="post__h1 p-name" style="view-transition-name: heading-${post.sys.id}">${post.title}</h1>
+        <div class="post__excerpt">${md.render(post.excerpt)}</div>
       </div>
-      <h1 class="post__h1 p-name" style="view-transition-name: heading-${post.sys.id}">${post.title}</h1>
-      <section class="post">
-        <aside class="post__aside">
-          <div class="post__authorContainer">
-            ${Author({
-              author: post.author,
-              uUrl: `https://whitep4nth3r.com/blog/${data.post.slug}/`,
-              hideOnSmallScreens: true,
-            })}
-            <div style="visibility: hidden; height: 0;">
-              <a class="p-author h-card" href="https://whitep4nth3r.com/">Salma Alam-Naylor</a>
-              <a class="u-url" href="${`https://whitep4nth3r.com/blog/${data.post.slug}/`}">${post.title}</a>
-              <img class="u-photo" src="https://images.ctfassets.net/56dzm01z6lln/69YokY1TvGVk37gCQmQJDo/c315f0996556c9c1f276d12d5f201a76/headshot_relaxed.png"/>
-            </div>
-          </div>
-          <div class="post__asideStickyGroup">
-            ${TableOfContents(post.body)}
-          </div>
-        </aside>
-        <div class="post__article">
-          <div class="post__excerpt">${md.render(post.excerpt)}</div>
-          <hr class="post__separator" aria-hidden="true" />
-          <div class="post__body e-content">
-            ${outOfDateWarning({ post })}
-            ${RichText(post.body, {
-              renderRssFriendlyImg: false,
-              absoluteUrls: false,
-              renderHeadingLinks: true,
-            })}
-          </div>
 
-          ${post.isSponsored ? isSponsored() : ""}
-          ${ExternalUrl({ url: post.externalUrl })}
+      <aside class="post__aside">
+        ${TableOfContents(post.body)}
+      </aside>
+     
+      <aside class="post__author">
+        ${Author({
+          author: post.author,
+          uUrl: `https://whitep4nth3r.com/blog/${data.post.slug}/`,
+          hideOnSmallScreens: true,
+        })}
+        <div style="visibility: hidden; height: 0;">
+          <a class="p-author h-card" href="https://whitep4nth3r.com/">Salma Alam-Naylor</a>
+          <a class="u-url" href="${`https://whitep4nth3r.com/blog/${data.post.slug}/`}">${post.title}</a>
+          <img class="u-photo" src="https://images.ctfassets.net/56dzm01z6lln/69YokY1TvGVk37gCQmQJDo/c315f0996556c9c1f276d12d5f201a76/headshot_relaxed.png"/>
+        </div>
+      </aside>
 
-            ${
-              post.blueskyPostId
-                ? `
-              <section class="post__likes" data-bsky-container>
-                <h3 class="post__likesTitle">${HeartIcon()} <span data-bsky-likes-count></span> likes</h3>
-                <a class="post__likesCta" href="https://bsky.app/profile/whitep4nth3r.com/post/${
+       ${
+         post.blueskyPostId
+           ? `
+              <aside class="post__likes" data-bsky-container>
+                <a href="https://bsky.app/profile/whitep4nth3r.com/post/${
                   post.blueskyPostId
-                }" target="_blank">Like this post on Bluesky to see your face on this page</a>
-                <ul data-bsky-likes class="post__likesList"></ul>
-              </section>`
-                : ""
-            }
+                }" target="_blank" aria-label="Like this post on Bluesky" class="post__likesTitle">${HeartIcon()} <span data-bsky-likes-count></span> likes</a>
+                <ul data-bsky-likes class="post__likesList">
+                </ul>
+              </aside>`
+           : ""
+       }
 
-          <hr class="post__separator" />
-
-          ${BlogEndAuthor({
-            author: post.author,
-            uUrl: `https://whitep4nth3r.com/blog/${data.post.slug}/`,
+      <section class="post__article">
+        <div class="post__body e-content">
+          ${outOfDateWarning({ post })}
+          ${RichText(post.body, {
+            renderRssFriendlyImg: false,
+            absoluteUrls: false,
+            renderHeadingLinks: true,
           })}
+        </div>
+
+        ${post.isSponsored ? isSponsored() : ""}
+
+        ${ExternalUrl({ url: post.externalUrl })}
+
+        <hr class="post__separator" />
+
+        ${BlogEndAuthor({
+          author: post.author,
+          uUrl: `https://whitep4nth3r.com/blog/${data.post.slug}/`,
+        })}
+      </section>
 
           ${
             post.relatedPostsCollection?.items.length > 0
