@@ -4,83 +4,41 @@
 
 $bio_breakpoint: 1237px;
 
-[color-mode="dark"] {
-  --bio-button-color: rgba(255, 255, 255, 0.6);
-  --bio-button-bg: rgba(255, 255, 255, 0.1);
-}
-[color-mode="light"] {
-  --bio-button-color: var(--grey-mid);
-  --bio-button-bg: rgba(52, 64, 84, 0.1);
-}
-
-.bio {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: relative;
-}
-
-.bio__topRow {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  gap: 1rem;
-  align-items: center;
-  margin-bottom: 2rem;
-
-  @media screen and (min-width: $bio_breakpoint) {
-    flex-direction: row;
-  }
-}
-
-.bio__buttons {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  gap: 1rem;
-  align-items: center;
-  z-index: 3;
-  order: 2;
-
-  @media screen and (min-width: $bio_breakpoint) {
-    order: 1;
-  }
-}
-
-.bio__button {
-  position: relative;
-  border-width: 0;
-  border-radius: var(--border-radius-base);
-  color: var(--color-fg);
-  font-weight: 600;
-  font-size: 1rem;
-  line-height: 1.5;
-  padding: 0.625rem 0.875rem;
-  text-decoration: none;
-  @include utils.link_focus;
-}
-
-.bio__button--selected {
-}
-
 .bio__block {
-  margin-bottom: 4rem;
-  max-width: 42rem;
-
   h2 {
-    @include font.semibold;
-    font-size: 1.875rem;
-    line-height: 1.375;
-    margin-bottom: 1rem;
+    @include font.heading;
+    font-size: clamp(2rem, 4vw, 4rem);
+    line-height: 1.2;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    word-break: break-word;
+    hyphens: auto;
     color: var(--color-fg);
-    scroll-margin-top: 10.5rem;
+    text-transform: uppercase;
   }
 
   h3 {
-    @include md.md_h3;
+    @include font.heading;
+    font-size: clamp(1.5rem, 3vw, 3rem);
+    line-height: 1.2;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    color: var(--color-fg);
+    word-break: break-word;
+    hyphens: auto;
+    text-transform: uppercase;
   }
 
   p {
-    @include md.md_paragraph;
+    @include font.main;
+    font-size: clamp(1.25rem, 1.5vw, 1.5rem);
+    line-height: 1.85;
+    margin-bottom: 1rem;
+    color: var(--color-fg);
+    word-break: break-word;
+
+    a {
+      @include utils.link_focus;
+    }
   }
 }

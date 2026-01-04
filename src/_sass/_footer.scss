@@ -17,7 +17,7 @@
   justify-content: space-between;
 
   @media screen and (min-width: 900px) {
-    border: 1rem solid var(--color-fg);
+    border: 0.5rem solid var(--color-fg);
     flex-direction: row;
   }
 }
@@ -53,7 +53,7 @@
     display: inline-block;
     filter: (url(#distort_from_footer));
     transform: rotate(-5deg);
-    color: var(--pink);
+    color: var(--weird-color);
   }
 }
 

@@ -2,7 +2,6 @@
 @use "utils";
 
 :root {
-  --image-z-index: 5;
   --header-z-index: 10;
   --name-z-index: 30;
   --cloud-z-index: 25;
@@ -91,6 +90,13 @@
   align-self: flex-end;
 }
 
+[color-mode="dark"] {
+  --weird-color: var(--green);
+}
+[color-mode="light"] {
+  --weird-color: var(--pink);
+}
+
 .hero__cloud__han {
   @include font.heading;
   text-transform: uppercase;
@@ -103,6 +109,7 @@
     display: inline-block;
     filter: url(#distort_from_footer);
     transform: rotate(-5deg);
+    color: var(--weird-color);
   }
 }
 
@@ -135,7 +142,6 @@
     width: 100%;
     object-fit: cover;
     position: absolute;
-    top: -100px;
     left: 0;
     filter: contrast(200%);
 
@@ -146,6 +152,7 @@
 }
 
 .hero__name {
+  view-transition-name: hero-name;
   @include font.heading;
   overflow: hidden;
   white-space: nowrap;

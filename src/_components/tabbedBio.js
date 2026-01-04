@@ -4,13 +4,6 @@ function TabbedBio({ shortBio, speakerBio, longBio }) {
   return /*html*/ `
   
   <div class="bio">
-    <div class="bio__topRow">
-      <div class="bio__buttons">
-        <a href="#speaker" class="bio__button">Speaker bio</a>
-        <a href="#long" class="bio__button" data-view="long">Long bio</a>
-      </div>
-    </div>
-  
     <div class="bio__block">
       ${shortBio}
     </div>
