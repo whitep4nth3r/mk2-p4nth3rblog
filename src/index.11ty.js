@@ -38,7 +38,6 @@ exports.render = function (data) {
         <h2 class="hero__cloud__han">has a <span>weird</span> newsletter</h2>
       </div>
       <div class="hero__image">
-        <div class="hero__imageOverlay"></div>
         <img src="${person.imageBio.url}" class="vt__bioImage" alt="${person.imageBio.description}" height="${
     person.imageBio.height
   }" width="${person.imageBio.width}" />
@@ -53,6 +52,7 @@ exports.render = function (data) {
     </div>
   </section>
 
+  <h2 class="home__jobTitle">Head of Developer Education @ <a href="https://nordcraft.com/" target="_blank">Nordcraft</a></h2>
 
   <section class="home__latest">
     <h2 class="home__latestHeader">Latest articles</h2>
@@ -60,7 +60,7 @@ exports.render = function (data) {
     <ol class="home__cards">
       ${posts.map((item) => `<li>${Card({ item: item, showType: false })}</li>`).join("")}
       <li>
-        <a href="/blog/">View all</a>
+        <a href="/blog/" class="card card--viewAll">Browse more articles</a>
       </li>
     </ol>
 
@@ -69,7 +69,7 @@ exports.render = function (data) {
     <ol class="home__cards">
       ${stuff.map((item) => `<li>${Card({ item })}</li>`).join("")}
       <li>
-        <a href="/activity/">View all</a>
+        <a href="/activity/" class="card card--viewAll">See more stuff</a>
       </li>
     </ol>
   </section>

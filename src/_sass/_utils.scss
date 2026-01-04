@@ -25,15 +25,12 @@
 }
 
 @mixin link_focus {
-  transition: all var(--global-transition-time) ease-in-out;
-
   &:focus-visible,
   &:focus {
     outline-color: var(--pink);
     outline-style: solid;
     outline-width: 0.25rem;
     outline-offset: -0.25rem;
-    border-radius: var(--border-radius-base);
   }
 }
 

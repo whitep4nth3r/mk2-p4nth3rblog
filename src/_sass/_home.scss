@@ -5,20 +5,7 @@
   --image-z-index: 5;
   --header-z-index: 10;
   --name-z-index: 30;
-  --overlay-z-index: 20;
   --cloud-z-index: 25;
-}
-
-[color-mode="dark"] {
-  --image_gradient: linear-gradient(to top, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 0.5) 20%, rgba(0, 0, 0, 0) 40%);
-}
-[color-mode="light"] {
-  --image_gradient: linear-gradient(
-    to top,
-    rgba(255, 255, 255, 1) 10%,
-    rgba(255, 255, 255, 0.5) 20%,
-    rgba(255, 255, 255, 0) 40%
-  );
 }
 
 .hero {
@@ -33,6 +20,7 @@
   position: relative;
   // height: 100svh; // dynamically calculated
 
+  overflow: hidden;
   display: grid;
   grid-template-columns: var(--grid-tc);
 }
@@ -113,7 +101,7 @@
 
   span {
     display: inline-block;
-    filter: (url(#distort_wwwh));
+    filter: url(#distort_from_footer);
     transform: rotate(-5deg);
   }
 }
@@ -130,27 +118,14 @@
     width: 100%;
     object-fit: cover;
     position: absolute;
-    top: 0;
+    top: -100px;
     left: 0;
     filter: contrast(200%);
 
     @media screen and (min-width: 1080px) {
       position: relative;
-      height: unset;
-      width: unset;
     }
   }
-}
-
-.hero__imageOverlay {
-  z-index: var(--overlay-z-index);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--image_gradient);
-  pointer-events: none;
 }
 
 .hero__name {
@@ -189,10 +164,24 @@
   }
 }
 
+.home__jobTitle {
+  @include font.heading;
+  text-align: right;
+  text-transform: uppercase;
+  font-size: clamp(1.5rem, 4vw, 4rem);
+  color: var(--color-fg);
+  padding-left: clamp(0.5rem, 0.75vw, 1rem);
+  padding-right: clamp(0.5rem, 0.75vw, 1rem);
+
+  a {
+    @include utils.link_focus;
+  }
+}
+
 .home__latest {
   background: var(--color-bg);
   width: 100%;
-  margin-top: 4rem;
+  margin-top: 2rem;
 }
 
 .home__latestHeader {
@@ -211,4 +200,5 @@
 .home__cards {
   @include utils.card_grid;
   background: var(--color-bg);
+  margin-bottom: 2rem;
 }

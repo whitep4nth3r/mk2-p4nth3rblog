@@ -26,6 +26,20 @@
   @include utils.link_focus;
 }
 
+.card--viewAll {
+  @include font.heading;
+  text-transform: uppercase;
+  font-size: clamp(3rem, 5vw, 5rem);
+  line-height: 1.2;
+  color: var(--color-bg);
+  background: var(--color-fg);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 2rem;
+  text-align: right;
+}
+
 .card__imageContainer {
   aspect-ratio: 1.75/1;
   overflow: hidden;

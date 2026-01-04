@@ -63,15 +63,7 @@
   }
 }
 
-.header__navListItem {
-}
-
-.header__navListDetails {
-  position: relative;
-}
-
 .header__navListItemLink {
-  transition: opacity var(--global-transition-time) ease-in-out;
   @include font.heading;
   color: var(--color-fg);
   padding: 1rem 0.5rem;
@@ -95,18 +87,20 @@
   text-decoration: underline;
   text-decoration-color: var(--pink);
   text-decoration-thickness: 0.5rem;
+  text-underline-offset: clamp(0.25rem, 0.5vw, 0.5rem);
+  filter: url(#distort_from_footer);
+  transform: rotate(-2deg);
+  transform-origin: left top;
 }
 
 .header__themeToggle {
   padding: 0.5rem;
   border-color: transparent;
-  transition: all var(--global-transition-time) ease-in-out;
   background-image: url("/img/theme-dark.svg");
   background-repeat: no-repeat;
   background-position: center;
   height: 2.75rem;
   width: 2.75rem;
-  border-radius: 100%;
   background-color: transparent;
   cursor: pointer;
   display: inline;
