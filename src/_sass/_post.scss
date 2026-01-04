@@ -107,6 +107,11 @@
   width: max-content;
 }
 
+.post__meta__topic--alt {
+  color: var(--black);
+  background-color: var(--green);
+}
+
 .post__excerpt {
   p {
     @include font.serif;
@@ -115,6 +120,19 @@
     line-height: 1.2;
     color: var(--color-fg);
   }
+}
+
+.post__excerpt--talk {
+  p {
+    font-size: clamp(1rem, 2vw, 2rem);
+  }
+}
+
+.post__talkAbstractHeader {
+  @include font.heading;
+  text-transform: uppercase;
+  font-size: clamp(1.5rem, 3vw, 3rem);
+  text-align: right;
 }
 
 .post__separator {
@@ -152,11 +170,16 @@
     position: sticky;
     z-index: 10;
     top: 0;
+    margin-bottom: 2rem;
   }
 }
 
 .post__body {
   margin-bottom: 2rem;
+
+  .post__h2:is(:first-child) {
+    margin-top: 0;
+  }
 }
 
 .post__hr {

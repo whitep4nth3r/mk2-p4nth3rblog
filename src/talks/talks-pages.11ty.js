@@ -3,6 +3,7 @@ const RichText = require("../_components/richText");
 const VideoEmbed = require("../_components/videoEmbed");
 const SpeakerDeckLink = require("../_components/speakerDeckLink");
 const PublishedDate = require("../_components/publishedDate");
+const Tools = require("../../lib/tools");
 const OpenGraph = require("../../lib/openGraph");
 
 exports.data = {
@@ -36,50 +37,87 @@ exports.render = function (data) {
   const { talk } = data;
 
   return /* html */ `
-  <div class="post__meta">
-    <p class="post__meta__topic">${talk.topicsCollection.items[0].name}</p>
-      ${PublishedDate({
-        date: talk.date,
-        readingTime: talk.watchTime,
-        isTalk: true,
-        updatedDate: null,
-      })}
-    </div>
-  <h1 class="post__h1">${talk.title}</h1>
-  <section class="post">
-    <aside class="post__aside">
-      <div class="post__authorContainer">
-        ${Author({
-          author: talk.author,
-          uUrl: `https://whitep4nth3r.com/talks/${data.talk.slug}/`,
-          hideOnSmallScreens: true,
-        })}
-      </div>
-    </aside>
-    <article class="post__article">
-      <div class="post__excerpt">
-        ${RichText(talk.abstract, {
-          renderRssFriendlyImg: false,
-          absoluteUrls: false,
-          renderHeadingLinks: true,
-        })}
-      </div>
-      <hr class="post__separator" />
+  <article class="post">
+    <div class="post__header">
+      <h1 class="post__h1">${talk.title}</h1>
 
+      <div class="post__byline">
+        <div class="post__meta">
+          <p class="post__meta__topic post__meta__topic--alt">talk</p>
+          <p class="post__meta__topic">${talk.topicsCollection.items[0].name}</p>
+            ${PublishedDate({
+              date: talk.date,
+              readingTime: talk.watchTime,
+              isTalk: true,
+              updatedDate: null,
+            })}
+        </div>
+        <div class="post__excerpt post__excerpt--talk">
+        <h2 class="post__talkAbstractHeader">Abstract</h2>
+          ${RichText(talk.abstract, {
+            renderRssFriendlyImg: false,
+            absoluteUrls: false,
+            renderHeadingLinks: true,
+          })}
+      </div>
+      </div>
+    </div>
+
+    <aside class="post__aside">
+        <details class="tableOfContents" open>
+        <summary class="tableOfContents__header">Table of contents</summary>
+        <ol class="tableOfContents__list">
+          ${
+            talk.recording !== null
+              ? `<li class="tableOfContents__item">
+            <a href="#recording" class="tableOfContents__itemLink">Recording</a>
+          </li>`
+              : ""
+          }
+          <li class="tableOfContents__item">
+            <a href="#slides" class="tableOfContents__itemLink">Slides</a>
+          </li>
+          <li class="tableOfContents__item">
+            <a href="#transcript" class="tableOfContents__itemLink">Transcript</a>
+          </li>
+        </ol>
+    </details>
+
+    </aside>
+
+    <aside class="post__author">
+       ${Author({
+         author: talk.author,
+         uUrl: `https://whitep4nth3r.com/talks/${talk.slug}/`,
+         hideOnSmallScreens: true,
+       })}
+        <div style="visibility: hidden; height: 0;">
+          <a class="p-author h-card" href="https://whitep4nth3r.com/">Salma Alam-Naylor</a>
+          <a class="u-url" href="${`https://whitep4nth3r.com/talks/${talk.slug}/`}">${talk.title}</a>
+          <img class="u-photo" src="src="${talk.author.imageBio.url}"/>
+        </div>
+    </aside>
+    <section class="post__article">
       <div class="post__body">
-        ${talk.recording !== null ? VideoEmbed({ embedUrl: talk.recording.embedUrl, title: talk.recording.title }) : ""}
-        <h2 class="post__h2">Slides</h2>
+
+        ${
+          talk.recording !== null
+            ? `<h2 class="post__h2" id="recording">Recording</h2>${VideoEmbed({
+                embedUrl: talk.recording.embedUrl,
+                title: talk.recording.title,
+              })}`
+            : ""
+        }
+        <h2 class="post__h2" id="slides">Slides</h2>
         ${SpeakerDeckLink({ speakerDeckLink: talk.speakerDeckLink })}
 
-        <h2 class="post__h2">Transcript</h2>
+        <h2 class="post__h2" id="transcript">Transcript</h2>
         ${RichText(talk.transcript, {
           renderRssFriendlyImg: false,
           absoluteUrls: false,
           renderHeadingLinks: true,
         })}
-        </div>
-        
-        <hr class="post__separator" />
-      </article>
-  </section>`;
+      </div>
+    </section>
+  </article>`;
 };

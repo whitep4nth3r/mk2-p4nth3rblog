@@ -65,7 +65,7 @@ function outOfDateWarning({ post }) {
 }
 
 exports.render = async function (data) {
-  const { post, newsletter } = data;
+  const { post } = data;
 
   const openGraphImageUrl = await OpenGraph.generateImageUrl({
     title: post.title,
@@ -98,13 +98,13 @@ exports.render = async function (data) {
       <aside class="post__author">
         ${Author({
           author: post.author,
-          uUrl: `https://whitep4nth3r.com/blog/${data.post.slug}/`,
+          uUrl: `https://whitep4nth3r.com/blog/${post.slug}/`,
           hideOnSmallScreens: true,
         })}
         <div style="visibility: hidden; height: 0;">
           <a class="p-author h-card" href="https://whitep4nth3r.com/">Salma Alam-Naylor</a>
-          <a class="u-url" href="${`https://whitep4nth3r.com/blog/${data.post.slug}/`}">${post.title}</a>
-          <img class="u-photo" src="https://images.ctfassets.net/56dzm01z6lln/69YokY1TvGVk37gCQmQJDo/c315f0996556c9c1f276d12d5f201a76/headshot_relaxed.png"/>
+          <a class="u-url" href="${`https://whitep4nth3r.com/blog/${post.slug}/`}">${post.title}</a>
+          <img class="u-photo" src="${post.author.imageBio.url}"/>
         </div>
       </aside>
 
