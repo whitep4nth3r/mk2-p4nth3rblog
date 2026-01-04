@@ -1,11 +1,7 @@
-@use "tc-layout";
-
 .about {
-  @include tc-layout.tc_layout_container;
 }
 
 .about__image {
-  @include tc-layout.tc_layout_left($width: 28rem);
 }
 
 .about__name {
@@ -13,19 +9,9 @@
   display: flex;
   align-items: center;
   margin-bottom: 2rem;
-
-  @media screen and (min-width: tc-layout.$tc_layout_breakpoint) {
-    margin-top: 0;
-  }
 }
 
 .about__fixed {
-  @include tc-layout.tc_layout_fixed($height: 100vh);
-
-  @media screen and (min-width: tc-layout.$tc_layout_breakpoint) {
-    align-items: flex-start;
-  }
-
   img {
     background-color: var(--bio-image-container-bg);
   }
@@ -38,8 +24,6 @@
 }
 
 .about__details {
-  @include tc-layout.tc_layout_scroll;
-
   margin: unset;
 }
 

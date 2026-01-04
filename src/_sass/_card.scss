@@ -8,7 +8,6 @@
   display: flex;
   flex-direction: column;
   text-decoration: none;
-  transition: all var(--global-transition-time) ease-in-out !important;
   position: relative;
   flex-grow: 1;
 
@@ -19,7 +18,8 @@
   &:hover,
   &:focus {
     .card__image {
-      transform: scale(1.1);
+      transform: rotate(5deg);
+      transform-origin: center center;
     }
   }
 
@@ -31,13 +31,20 @@
   text-transform: uppercase;
   font-size: clamp(3rem, 5vw, 5rem);
   line-height: 1.2;
-  color: var(--color-bg);
-  background: var(--color-fg);
+  color: var(--color-fg);
+  background: var(--color-bg);
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
   padding: 2rem;
   text-align: right;
+
+  &:hover {
+    p {
+      transform: rotate(5deg);
+      transform-origin: center center;
+    }
+  }
 }
 
 .card__imageContainer {
@@ -73,7 +80,6 @@
 .card__image {
   height: 100%;
   width: auto;
-  transition: all var(--global-transition-time) ease-in-out;
 }
 
 .card__inner {

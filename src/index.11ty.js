@@ -32,10 +32,11 @@ exports.render = function (data) {
     <div class="hero" data-hero>
       <div class="hero__cloud">
         <h2 class="hero__cloud__wd">${HeartIcon()} web developer</h2>
-        <h2 class="hero__cloud__is">international<br/>speaker</h2>
+        <h2 class="hero__cloud__is">international speaker</h2>
         <h2 class="hero__cloud__te">tech educator</h2>
         <h2 class="hero__cloud__e">entertainer</h2>
         <h2 class="hero__cloud__han">has a <span>weird</span> newsletter</h2>
+        <h2 class="hero__cloud__ms">makes <span>stuff</span> on the internet</h2>
       </div>
       <div class="hero__image">
         <img src="${person.imageBio.url}" class="vt__bioImage" alt="${person.imageBio.description}" height="${
@@ -60,7 +61,7 @@ exports.render = function (data) {
     <ol class="home__cards">
       ${posts.map((item) => `<li>${Card({ item: item, showType: false })}</li>`).join("")}
       <li>
-        <a href="/blog/" class="card card--viewAll">Browse more articles</a>
+        <a href="/blog/" class="card card--viewAll"><p>Browse more articles</p></a>
       </li>
     </ol>
 
@@ -69,7 +70,7 @@ exports.render = function (data) {
     <ol class="home__cards">
       ${stuff.map((item) => `<li>${Card({ item })}</li>`).join("")}
       <li>
-        <a href="/activity/" class="card card--viewAll">See more stuff</a>
+        <a href="/activity/" class="card card--viewAll"><p>See more stuff</p></a>
       </li>
     </ol>
   </section>

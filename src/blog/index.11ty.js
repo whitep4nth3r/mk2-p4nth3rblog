@@ -3,7 +3,7 @@ const Card = require("../_components/card");
 const Pagination = require("../_components/pagination");
 const OpenGraph = require("../../lib/openGraph");
 
-const pageTitle = "Stuff I wrote";
+const pageTitle = "Articles";
 
 function calculatePageUrl(data) {
   const suffix = data.pagination.pageNumber === 0 ? `` : `${data.pagination.pageNumber + 1}/`;
