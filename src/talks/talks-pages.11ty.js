@@ -1,5 +1,4 @@
 const Author = require("../_components/author");
-const BlogEndAuthor = require("../_components/blogEndAuthor");
 const RichText = require("../_components/richText");
 const VideoEmbed = require("../_components/videoEmbed");
 const SpeakerDeckLink = require("../_components/speakerDeckLink");
@@ -81,8 +80,6 @@ exports.render = function (data) {
         </div>
         
         <hr class="post__separator" />
-
-        ${BlogEndAuthor({ author: talk.author, uUrl: `https://whitep4nth3r.com/talks/${data.talk.slug}/` })}
       </article>
   </section>`;
 };

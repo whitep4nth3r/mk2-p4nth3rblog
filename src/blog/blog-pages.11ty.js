@@ -1,6 +1,5 @@
 const ExternalUrl = require("../_components/externalUrl");
 const Author = require("../_components/author");
-const BlogEndAuthor = require("../_components/blogEndAuthor");
 const RichText = require("../_components/richText");
 const PublishedDate = require("../_components/publishedDate");
 const TableOfContents = require("../_components/tableOfContents");
@@ -76,7 +75,10 @@ exports.render = async function (data) {
   return /*html*/ `
     <article class="post h-entry">
       <div class="post__header">
-        <div class="post__meta">
+        <h1 class="post__h1 p-name" style="view-transition-name: heading-${post.sys.id}">${post.title}</h1>
+        
+        <div class="post__byline">
+          <div class="post__meta">
             <p class="post__meta__topic p-category">${post.topicsCollection.items[0].name}</p>
             ${PublishedDate({
               date: post.date,
@@ -84,9 +86,9 @@ exports.render = async function (data) {
               isTalk: false,
               updatedDate: post.updatedDate,
             })}
+          </div>
+          <div class="post__excerpt">${md.render(post.excerpt)}</div>
         </div>
-        <h1 class="post__h1 p-name" style="view-transition-name: heading-${post.sys.id}">${post.title}</h1>
-        <div class="post__excerpt">${md.render(post.excerpt)}</div>
       </div>
 
       <aside class="post__aside">
@@ -132,13 +134,6 @@ exports.render = async function (data) {
         ${post.isSponsored ? isSponsored() : ""}
 
         ${ExternalUrl({ url: post.externalUrl })}
-
-        <hr class="post__separator" />
-
-        ${BlogEndAuthor({
-          author: post.author,
-          uUrl: `https://whitep4nth3r.com/blog/${data.post.slug}/`,
-        })}
       </section>
 
           ${
@@ -146,7 +141,7 @@ exports.render = async function (data) {
               ? /*html*/ `
               <div class="post__related">
                 <div class="post__relatedHeader">
-                  <p class="post__relatedHeaderTitle">Related posts</p>
+                  <p class="post__relatedHeaderTitle">Read more on this topic</p>
                 </div>
                 <div class="post__relatedGrid">
                   ${post.relatedPostsCollection.items
@@ -163,7 +158,6 @@ exports.render = async function (data) {
           })}</script>
         </div>
       </article>
-    </section>
     <meta data-bsky-post-id="${post.blueskyPostId}" />
     <script src="/js/bsky_post_likes.js" type="module"></script>
     <script src="/js/copy_code.js"></script>

@@ -131,7 +131,7 @@ function itemMeta(item) {
     return `
     <div class="card__meta">
       ${renderDate(item)}
-      <span>
+      <span class="card__metaInfo">
         <span class="card__metaLabel">${item.topicsCollection.items[0].name}</span>
         <span class="card__metaRead">${item.watchTime} min</span>
       </span>

@@ -13,17 +13,18 @@
 }
 
 .post {
+  position: relative;
   margin-top: 4rem;
   gap: 3rem;
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   flex-direction: column;
 
   @media screen and (min-width: 1080px) {
     gap: 3rem;
     display: grid;
     grid-auto-columns: auto;
-    grid-template-rows: auto 1fr;
+    grid-template-rows: auto 1fr auto;
     grid-template-areas:
       "bsky title title author"
       "bsky aside content author"
@@ -38,32 +39,46 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  gap: 2rem;
+  margin-bottom: 4rem;
 }
 
 .post__h1 {
   @include font.heading;
   text-transform: uppercase;
-  font-size: clamp(3rem, 7vw, 7rem);
+  font-size: clamp(3rem, 8vw, 8rem);
   line-height: 1;
   color: var(--color-fg);
   text-wrap: balance;
 }
 
+.post__byline {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: flex-start;
+
+  @media screen and (min-width: 1080px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
 .post__meta {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 2rem;
-  flex-wrap: wrap;
+  align-items: flex-start;
 }
 
 .post__meta__topic {
-  @include font.semibold;
+  @include font.heading;
   font-weight: 500;
-  font-size: 0.875rem;
+  font-size: 2rem;
   line-height: 1.5;
-  color: var(--post-meta-fg-color);
-  background-color: #ffffff;
-  border-radius: 1rem;
+  color: var(--white);
+  background-color: var(--pink);
+  text-transform: uppercase;
   padding: 0.125rem 0.5rem;
   width: max-content;
 }
@@ -72,9 +87,8 @@
   p {
     @include font.serif;
     font-style: italic;
-    font-size: 1.25rem;
-    line-height: 1.5;
-    margin-bottom: 2rem;
+    font-size: clamp(1.25rem, 3vw, 3rem);
+    line-height: 1.2;
     color: var(--color-fg);
   }
 }
@@ -93,13 +107,23 @@
 
 .post__aside {
   grid-area: aside;
-  flex-direction: column;
-  display: flex;
-  width: 17.5rem;
+
+  @media screen and (min-width: 1080px) {
+    align-self: start;
+    position: sticky;
+    z-index: 10;
+    top: 0;
+  }
 }
 
 .post__author {
   grid-area: author;
+  @media screen and (min-width: 1080px) {
+    align-self: start;
+    position: sticky;
+    z-index: 10;
+    top: 0;
+  }
 }
 
 .post__body {
@@ -114,7 +138,7 @@
 
 .post__h2 {
   @include font.heading;
-  font-size: clamp(1.8rem, 2.8vw, 2rem);
+  font-size: clamp(2rem, 4vw, 4rem);
   line-height: 1.4;
   margin-bottom: 2rem;
   margin-top: 2rem;
@@ -125,7 +149,7 @@
 
 .post__h3 {
   @include font.heading;
-  font-size: 1.4rem;
+  font-size: clamp(1.5rem, 3vw, 3rem);
   line-height: 1.4;
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -154,8 +178,8 @@
 
 .post__p {
   @include font.main;
-  font-size: 1.125rem;
-  line-height: 1.75;
+  font-size: clamp(1.25rem, 1.5vw, 1.5rem);
+  line-height: 1.85;
   margin-bottom: 1rem;
   color: var(--color-fg);
   word-break: break-word;
@@ -286,12 +310,16 @@
 }
 
 .post__relatedHeaderTitle {
+  @include font.heading;
+  font-size: clamp(2rem, 4vw, 4rem);
+  text-align: right;
+  padding: 1rem;
+  text-transform: uppercase;
 }
 
 .post__relatedGrid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
 
   @media screen and (min-width: 54em) {
     grid-template-columns: 1fr 1fr;
@@ -427,8 +455,6 @@
 
 .post__likes {
   grid-area: bsky;
-  margin-bottom: 2rem;
-  min-height: 400px;
 }
 
 .post__likesTitle {
@@ -473,7 +499,7 @@
 .post__like {
   aspect-ratio: 1/1;
   display: flex;
-  flex: 1 1 6rem;
+  flex: 1 1 5rem;
   justify-content: center;
   align-items: center;
 

@@ -39,7 +39,7 @@ exports.data = {
 exports.render = function (data) {
   return /* html */ `
 
-  <h1 class="page__headerTitle">${data.count} articles</h1>
+  <h1 class="page__header">${data.count} articles</h1>
   <div class="blog">
     <section class="blog__cards">
         <ol class="blog__cardsGrid">

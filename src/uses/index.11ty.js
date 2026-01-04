@@ -24,7 +24,7 @@ exports.render = function (data) {
 
   return /* html */ `
     <section class="uses">
-        <h1 class="page__headerTitle">${pageTitle}</h1>
+        <h1 class="page__header">${pageTitle}</h1>
         <p class="page__text"><em>Buy this thing</em> links will earn me a small commission.</p>
         ${categories
           .map(

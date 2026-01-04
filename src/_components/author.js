@@ -1,6 +1,10 @@
 const BioImage = require("./bioImage");
 const NameLogoBlog = require("./svg/nameLogo-blog");
 
+var md = require("markdown-it")({
+  html: true,
+});
+
 function Author({ author, uUrl, hideOnSmallScreens = false }) {
   const hideClass = hideOnSmallScreens ? " author--hideSmall" : "";
   return /*html*/ `
@@ -13,6 +17,10 @@ function Author({ author, uUrl, hideOnSmallScreens = false }) {
         ${NameLogoBlog()}
       </div>
     </a>
+
+    <div>
+      ${md.render(author.bioPost)}
+    </div>
   </div>
   `;
 }

@@ -49,13 +49,9 @@ body {
   font-size: 1rem;
   color: var(--color-fg);
   position: relative;
-
-  min-height: 100vh;
   background: var(--page-bg);
 }
 
 main {
   margin: auto;
-  // max-width: var(--global-max-width);
-  overflow: hidden;
 }
