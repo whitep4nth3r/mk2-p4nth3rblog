@@ -21,7 +21,7 @@
 }
 
 .blogEndAuthor__name {
-  @include font.font_semibold;
+  @include font.semibold;
   font-size: 1.125rem;
   line-height: 1.75;
   color: var(--color-fg);

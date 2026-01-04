@@ -18,7 +18,7 @@
 }
 
 .tableOfContents__header {
-  @include font.font_bold;
+  @include font.bold;
   color: var(--table-of-contents-header-color);
   margin-bottom: 1rem;
   font-size: 1.2rem;
@@ -32,7 +32,7 @@
 }
 
 .tableOfContents__itemLink {
-  @include font.font_main;
+  @include font.main;
   font-size: 1rem;
   line-height: 1.4;
   color: var(--color-fg-copy);

@@ -9,10 +9,8 @@
 @use "md";
 @use "header";
 @use "home";
-@use "home-about";
 @use "blog";
 @use "about";
-@use "page";
 @use "post";
 @use "pagination";
 @use "published-date";
@@ -29,15 +27,9 @@
 @use "prism";
 @use "card";
 @use "activity-feed";
-@use "events";
-@use "social-links";
 @use "talks";
-@use "testimonial";
-@use "sponsorships";
-@use "stream-package";
-@use "newsletter-signup";
 @use "webring";
 @use "video";
-@use "ai";
 @use "name-logo";
 @use "view-transitions";
+@use "footer";

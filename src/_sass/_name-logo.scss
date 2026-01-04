@@ -5,7 +5,7 @@
 }
 
 .nameLogo {
-  @include font.font_heading;
+  @include font.heading;
   filter: url(#distort);
   transform: rotate(5deg) translate(-5px, -16px);
   text-transform: uppercase;
@@ -29,7 +29,7 @@
 }
 
 .nameLogoLarge {
-  @include font.font_heading;
+  @include font.heading;
   filter: url(#distort_large);
   text-transform: uppercase;
   font-size: clamp(2rem, 4.5vw, 4.5rem);

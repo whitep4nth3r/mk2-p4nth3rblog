@@ -9,7 +9,7 @@
 }
 
 .publishedDate__item {
-  @include font.font_semibold;
+  @include font.semibold;
   font-size: 0.875rem;
   margin-bottom: 0;
   color: var(--color-fg);

@@ -37,7 +37,7 @@
 }
 
 .post__meta__topic {
-  @include font.font_semibold;
+  @include font.semibold;
   font-weight: 500;
   font-size: 0.875rem;
   line-height: 1.5;
@@ -50,7 +50,7 @@
 
 .post__excerpt {
   p {
-    @include font.font_semibold;
+    @include font.semibold;
     font-size: 1.25rem;
     line-height: 1.5;
     margin-bottom: 2rem;
@@ -109,7 +109,7 @@
 }
 
 .post__h1 {
-  @include font.font_heading;
+  @include font.heading;
   margin: 0 auto 3rem auto;
   font-size: clamp(2.5rem, 3.5vw, 3.5rem);
   line-height: 1.4;
@@ -119,7 +119,7 @@
 }
 
 .post__h2 {
-  @include font.font_heading;
+  @include font.heading;
   font-size: clamp(1.8rem, 2.8vw, 2rem);
   line-height: 1.4;
   margin-bottom: 2rem;
@@ -130,7 +130,7 @@
 }
 
 .post__h3 {
-  @include font.font_heading;
+  @include font.heading;
   font-size: 1.4rem;
   line-height: 1.4;
   margin-top: 2rem;
@@ -151,7 +151,7 @@
 .post__h4,
 .post__h5,
 .post__h6 {
-  @include font.font_heading;
+  @include font.heading;
   font-size: 1.2rem;
   line-height: 1.4;
   margin-bottom: 1rem;
@@ -159,7 +159,7 @@
 }
 
 .post__p {
-  @include font.font_main;
+  @include font.main;
   font-size: 1.125rem;
   line-height: 1.75;
   margin-bottom: 1rem;
@@ -211,7 +211,7 @@
   justify-content: space-between;
   align-items: center;
   font-size: 1rem;
-  @include font.font_main;
+  @include font.main;
   color: var(--black);
   border-radius: 0 var(--border-radius-base) 0 0;
   background: var(--white);
@@ -256,7 +256,7 @@
 
 .post__externalUrl,
 .post__isSponsored {
-  @include font.font_bold;
+  @include font.bold;
   margin-bottom: 2rem;
   max-width: max-content;
   color: var(--color-fg);
@@ -280,7 +280,7 @@
 }
 
 .post__relatedHeader {
-  @include font.font_semibold;
+  @include font.semibold;
   font-size: clamp(1.8rem, 2.8vw, 2rem);
   line-height: 1.4;
   margin-bottom: 2rem;
@@ -325,7 +325,7 @@
 }
 
 .post__calloutTitle {
-  @include font.font_bold;
+  @include font.bold;
   font-size: 1.4rem;
   line-height: 1.6;
   margin-bottom: 1rem;
@@ -333,7 +333,7 @@
 }
 
 .post__calloutContent {
-  @include font.font_main;
+  @include font.main;
   font-size: 1.2rem;
   line-height: 1.6;
   color: var(--color-fg);
@@ -349,7 +349,7 @@
 }
 
 .post__calloutContent blockquote p {
-  @include font.font_semibold;
+  @include font.semibold;
   margin-bottom: 1.75rem;
   font-size: 1.4rem;
   line-height: 1.7;
@@ -366,14 +366,14 @@
 }
 
 .post__outOfDate {
-  @include font.font_semibold;
+  @include font.semibold;
   line-height: 1.3;
   font-size: 1.5rem;
   margin-bottom: 2rem;
 }
 
 .post__referer {
-  @include font.font_semibold;
+  @include font.semibold;
   display: block;
   max-width: var(--post-max-width);
   font-size: 1rem;
@@ -396,22 +396,6 @@
   margin-top: 2rem;
 }
 
-.post__newsletterSignupWide {
-  display: none;
-
-  @media screen and (min-width: 56em) {
-    display: block;
-  }
-}
-
-.post__newsletterSignupSmall {
-  display: block;
-
-  @media screen and (min-width: 56em) {
-    display: none;
-  }
-}
-
 .post__tableWrapper {
   overflow-x: auto;
 }
@@ -426,7 +410,7 @@
 }
 
 .post__tableHeader {
-  @include font.font_semibold;
+  @include font.semibold;
   text-align: left;
   border: 1px solid var(--color-fg);
   padding: var(--cell-padding);
@@ -438,7 +422,7 @@
 }
 
 .post__tableCell {
-  @include font.font_main;
+  @include font.main;
   text-align: left;
   word-wrap: break-word;
   padding: var(--cell-padding);
@@ -452,7 +436,7 @@
 }
 
 .post__likesTitle {
-  @include font.font_bold;
+  @include font.bold;
   font-size: 2rem;
   line-height: 1.2;
   margin-bottom: 1rem;
@@ -469,7 +453,7 @@
 }
 
 .post__likesCta {
-  @include font.font_main;
+  @include font.main;
   color: var(--color-fg-copy);
   font-size: 1.25rem;
   font-style: italic;
@@ -513,7 +497,7 @@
 
 .post__like--placeholder,
 .post__like--howManyMore {
-  @include font.font_bold;
+  @include font.bold;
   font-size: 1rem;
   background-color: var(--pink);
   color: #fff;

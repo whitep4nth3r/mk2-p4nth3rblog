@@ -23,7 +23,7 @@
 }
 
 .header__skipToMainContent {
-  @include font.font_bold;
+  @include font.bold;
   display: flex;
   justify-content: center;
   color: var(--color-bg);
@@ -72,7 +72,7 @@
 
 .header__navListItemLink {
   transition: opacity var(--global-transition-time) ease-in-out;
-  @include font.font_heading;
+  @include font.heading;
   color: var(--color-fg);
   padding: 1rem 0.5rem;
   text-decoration: none;

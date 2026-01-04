@@ -52,14 +52,14 @@
 }
 
 .lighthouse__title {
-  @include font.font_semibold;
+  @include font.semibold;
   font-size: 1.2rem;
   line-height: 1.4;
   margin-bottom: 1rem;
 }
 
 .lighthouse__subTitle {
-  @include font.font_main;
+  @include font.main;
   font-size: 1.2rem;
   line-height: 1.4;
   margin-bottom: 2rem;
@@ -122,7 +122,7 @@
 }
 
 .lighthouse__type {
-  @include font.font_bold;
+  @include font.bold;
   font-size: 1.2rem;
   text-align: center;
   line-height: 1.4;

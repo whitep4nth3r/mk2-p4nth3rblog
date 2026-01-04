@@ -1,17 +1,10 @@
 const OpenGraph = require("../lib/openGraph");
 const Card = require("./_components/card");
-const NewsletterSignup = require("./_components/newsletterSignup");
 const Webring = require("./_components/webring");
 const PersonStructuredData = require("./_components/personStructuredData");
 const StarIcon = require("./_components/svg/starIcon");
 const HeartIcon = require("./_components/svg/heartIcon");
 const pageTitle = "I make stuff on the internet.";
-
-const isProduction = process.env.NODE_ENV === "production";
-
-const wwwhImgAvif = isProduction ? "/.netlify/images/?url=/img/wwwh.png?w=800&fm=avif" : "/img/wwwh.png";
-
-const wwwhImgWebp = isProduction ? "/.netlify/images/?url=/img/wwwh.png?w=800&fm=webp" : "/img/wwwh.png";
 
 exports.data = {
   layout: "base.html",
@@ -31,7 +24,7 @@ exports.data = {
 };
 
 exports.render = function (data) {
-  const { person, newsletter, webring, home } = data;
+  const { person, webring, home } = data;
   const { posts, stuff } = home;
 
   return /*html*/ `
@@ -42,7 +35,7 @@ exports.render = function (data) {
         <h2 class="hero__cloud__is">international<br/>speaker</h2>
         <h2 class="hero__cloud__te">tech educator</h2>
         <h2 class="hero__cloud__e">entertainer</h2>
-        <h2 class="hero__cloud__han">has a weird newsletter</h2>
+        <h2 class="hero__cloud__han">has a <span>weird</span> newsletter</h2>
       </div>
       <div class="hero__image">
         <div class="hero__imageOverlay"></div>
@@ -81,31 +74,8 @@ exports.render = function (data) {
     </ol>
   </section>
 
-
+<!--
   <div class="home__cards">
-    <div class="card">
-      <div class="card__imageContainer">
-        <picture>
-          <source type="image/avif" srcset="${wwwhImgAvif}" />
-          <source type="image/webp" srcset="${wwwhImgWebp}" />
-          <img
-            src="/.netlify/images/?url=/img/wwwh.png?w=450"
-            alt="weird wide web hole"
-            role="presentation"
-            height="250"
-            width="500"
-            class="card__image" />
-        </picture>
-      </div>
-      <div class="card__inner">
-        ${NewsletterSignup({
-          removeMargin: true,
-          subscribers: newsletter.subscribers,
-        })}
-        <span class="card__metaLabel">Newsletter</span>
-      </div>
-    </div>
-
     <div class="card">
       <div class="card__imageContainer">
         <img src="/img/theclaw_webring_logo.svg" class="card__image tcwr__logo" alt="The panther moth with a tattoo style banner that reads The Claw" />
@@ -119,7 +89,7 @@ exports.render = function (data) {
         <span class="card__metaLabel">Webring</span>
       </div>
     </div>
-  </div>
+  </div>-->
 
   <script type="application/ld+json">${PersonStructuredData({
     person,

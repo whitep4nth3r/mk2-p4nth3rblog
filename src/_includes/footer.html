@@ -1,13 +1,85 @@
-<footer>
+<footer class="footer">
+  <div class="footer__newsletter">
+    <div class="footer__newsletterContent">
+      <h2 class="footer__newsletterTitle">Get my <span>weird</span> newsletter</h2>
+      <p class="footer__newsletterCopy">
+        Join {{newsletter.subscribers}} subscribers and get <b>four weird links</b> every Thursday.
+        <em>Enter the weird_wide_web_hole to find no answers to questions you didn't know you had.</em>
+      </p>
+      <form
+        action="https://buttondown.com/api/emails/embed-subscribe/weirdwidewebhole"
+        method="post"
+        class="embeddable-buttondown-form footer__newsletterForm">
+        <label for="bd-email" class="footer__newsletterLabel">Enter your email</label>
+        <div class="footer__newsletterInputRow">
+          <input
+            type="email"
+            name="email"
+            id="bd-email"
+            class="footer__newsletterInput"
+            placeholder="send_me_links@hotmail.com" />
+          <input type="submit" value="Subscribe" class="footer__newsletterSubmit" />
+        </div>
+
+        <a href="https://buttondown.com/refer/weirdwidewebhole" target="_blank"> Powered by Buttondown</a>
+      </form>
+    </div>
+    <img src="/img/wwwh.png" alt="" class="footer__newsletterImg" />
+  </div>
+
+  <!--
   <ul>
-    <li><a href="/newsletter/">Newsletter</a></li>
+    <li><a href="/newsletter/">Newsletter - to do archives on site</a></li>
     <li><a href="/uses/">Things I use</a></li>
     <li><a href="/talks/">Talks</a></li>
     <li><a href="/activity/">Activity feed</a></li>
     <li><a href="https://github.com/whitep4nth3r?tab=repositories" target="_blank"> GitHub Projects </a></li>
   </ul>
 
+  <ul class="footer__social">
+    <li>
+      <a href="https://github.com/whitep4nth3r" class="socialLinks__item" target="_blank" aria-label="View on GitHub"
+        >Github</a
+      >
+    </li>
+    <li>
+      <a
+        href="https://bsky.app/profile/whitep4nth3r.com"
+        class="socialLinks__item bluesky-flutter"
+        target="_blank"
+        rel="me"
+        aria-label="Follow on Bluesky"
+        >Bluesky</a
+      >
+    </li>
+    <li>
+      <a
+        href="https://youtube.com/whitep4nth3r"
+        class="socialLinks__item"
+        target="_blank"
+        aria-label="Subscribe on YouTube"
+        >YouTube</a
+      >
+    </li>
+    <li>
+      <a href="/discord" class="socialLinks__item" target="_blank" aria-label="Join Discord">Discord</a>
+    </li>
+    <li>
+      <a href="/feed.xml" class="socialLinks__item" target="_blank" aria-label="Subscribe to RSS Feed">RSS</a>
+    </li>
+  </ul>-->
   <p>No AI was used in the creation of this website.</p>
-
-  {% include "social_links.html" %}
+  <svg width="0" height="0" class="wwwh__filter">
+    <defs>
+      <filter id="distort_wwwh">
+        <feTurbulence type="turbulence" result="noise" numOctaves="1" baseFrequency="0.01 0.01"></feTurbulence>
+        <feDisplacementMap
+          in="SourceGraphic"
+          in2="noise"
+          scale="6"
+          xChannelSelector="R"
+          yChannelSelector="R"></feDisplacementMap>
+      </filter>
+    </defs>
+  </svg>
 </footer>

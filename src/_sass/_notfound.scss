@@ -11,21 +11,13 @@
   max-width: 100%;
 }
 
-.fourohfour__cta {
-  max-width: 400px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-}
-
 .fourohfour__title {
   margin-top: 2rem;
   color: var(--color-body);
 }
 
 .fourohfour__text {
-  @include font.font_main;
+  @include font.main;
   font-size: 1.4rem;
   line-height: 1.4;
   margin-bottom: 4rem;

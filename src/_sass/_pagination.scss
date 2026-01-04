@@ -24,7 +24,7 @@
 }
 
 .pagination__listItem {
-  @include font.font_bold;
+  @include font.bold;
   font-size: 1.2rem;
   text-decoration: none;
   flex-grow: 1;

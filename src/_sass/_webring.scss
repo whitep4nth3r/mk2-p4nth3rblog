@@ -2,7 +2,7 @@
 @use "utils";
 
 .tcwr__title {
-  @include font.font_bold;
+  @include font.bold;
   color: var(--color-link);
   font-size: 1.2rem;
   line-height: 1.6;
@@ -39,13 +39,11 @@
 }
 
 .tcwr__navItem--random {
-  @include font.font_bold;
+  @include font.bold;
   font-style: normal;
   color: var(--color-fg-copy);
   border-radius: var(--border-radius-base);
-  background-color: var(--input-bg);
   padding: 0.6rem 1rem;
-  border: var(--input-border);
 }
 
 .tcwr__navItem:focus,

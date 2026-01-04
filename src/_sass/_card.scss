@@ -71,7 +71,8 @@
 }
 
 .card__title {
-  @include font.font_heading;
+  @include font.heading;
+  text-transform: uppercase;
   font-size: clamp(1.5rem, 3vw, 3rem);
   line-height: 1.2;
   margin-bottom: 0.5rem;
@@ -79,7 +80,7 @@
 }
 
 .card__description {
-  @include font.font_main;
+  @include font.main;
   font-size: 1.25rem;
   line-height: 1.6;
   color: var(--color-fg);
@@ -105,7 +106,7 @@
 }
 
 .card__metaLabel {
-  @include font.font_heading;
+  @include font.heading;
   font-weight: 500;
   font-size: 2rem;
   line-height: 1.5;
@@ -116,7 +117,7 @@
 }
 
 .card__metaRead {
-  @include font.font_bold;
+  @include font.bold;
   font-size: 2rem;
   line-height: 1.125;
   color: var(--black);
@@ -126,7 +127,7 @@
 }
 
 .card__metaDate {
-  @include font.font_bold;
+  @include font.bold;
   color: var(--white);
   background-color: var(--black);
   font-size: 2rem;

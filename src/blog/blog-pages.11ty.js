@@ -1,7 +1,6 @@
 const ExternalUrl = require("../_components/externalUrl");
 const Author = require("../_components/author");
 const BlogEndAuthor = require("../_components/blogEndAuthor");
-const NewsletterSignup = require("../_components/newsletterSignup");
 const RichText = require("../_components/richText");
 const PublishedDate = require("../_components/publishedDate");
 const TableOfContents = require("../_components/tableOfContents");
@@ -101,10 +100,6 @@ exports.render = async function (data) {
             </div>
           </div>
           <div class="post__asideStickyGroup">
-            <span class="post__newsletterSignupWide">${NewsletterSignup({
-              removeMargin: false,
-              subscribers: newsletter.subscribers,
-            })}</span>
             ${TableOfContents(post.body)}
           </div>
         </aside>
@@ -135,11 +130,6 @@ exports.render = async function (data) {
               </section>`
                 : ""
             }
-
-          <span class="post__newsletterSignupSmall">${NewsletterSignup({
-            removeMargin: false,
-            subscribers: newsletter.subscribers,
-          })}</span>
 
           <hr class="post__separator" />
 

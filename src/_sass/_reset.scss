@@ -1,12 +1,8 @@
 @use "font";
-@use "root";
 
 * {
   box-sizing: border-box;
   margin: 0;
-  // this is to ensure the background texture layers work
-  // do not remove and think you don't need it!
-  z-index: 1;
 }
 
 html {
@@ -21,6 +17,7 @@ h3,
 h4,
 h5,
 h6 {
+  @include font.heading;
   text-wrap: balance;
 }
 
@@ -38,7 +35,7 @@ a {
 }
 
 strong {
-  @include font.font_bold;
+  @include font.bold;
 }
 
 :target {
@@ -48,7 +45,7 @@ strong {
 /* END RESET */
 
 body {
-  @include font.font_main;
+  @include font.main;
   font-size: 1rem;
   color: var(--color-fg);
   position: relative;

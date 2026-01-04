@@ -10,14 +10,14 @@
 }
 
 [color-mode="dark"] {
-  --image_gradient: linear-gradient(to top, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 0.5) 25%, rgba(0, 0, 0, 0) 50%);
+  --image_gradient: linear-gradient(to top, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 0.5) 20%, rgba(0, 0, 0, 0) 40%);
 }
 [color-mode="light"] {
   --image_gradient: linear-gradient(
     to top,
     rgba(255, 255, 255, 1) 10%,
-    rgba(255, 255, 255, 0.5) 25%,
-    rgba(255, 255, 255, 0) 50%
+    rgba(255, 255, 255, 0.5) 20%,
+    rgba(255, 255, 255, 0) 40%
   );
 }
 
@@ -61,7 +61,7 @@
 }
 
 .hero__cloud__wd {
-  @include font.font_heading;
+  @include font.heading;
   text-transform: uppercase;
   font-size: clamp(3rem, 6vw, 6rem);
   line-height: 1;
@@ -77,7 +77,7 @@
 }
 
 .hero__cloud__is {
-  @include font.font_serif;
+  @include font.serif;
   font-style: italic;
   font-size: clamp(3rem, 6vw, 6rem);
   line-height: 1;
@@ -86,7 +86,7 @@
 }
 
 .hero__cloud__te {
-  @include font.font_main;
+  @include font.main;
   font-size: clamp(2rem, 5vw, 5rem);
   display: flex;
   align-self: center;
@@ -96,7 +96,7 @@
 }
 
 .hero__cloud__e {
-  @include font.font_serif;
+  @include font.serif;
   font-size: clamp(3rem, 6vw, 6rem);
   line-height: 1;
   display: flex;
@@ -104,12 +104,18 @@
 }
 
 .hero__cloud__han {
-  @include font.font_heading;
+  @include font.heading;
   text-transform: uppercase;
   font-size: clamp(2rem, 4vw, 4rem);
   line-height: 1;
-  display: flex;
+  display: block;
   align-self: flex-start;
+
+  span {
+    display: inline-block;
+    filter: (url(#distort_wwwh));
+    transform: rotate(-5deg);
+  }
 }
 
 .hero__image {
@@ -148,7 +154,7 @@
 }
 
 .hero__name {
-  @include font.font_heading;
+  @include font.heading;
   overflow: hidden;
   white-space: nowrap;
   color: var(--color-bg);
@@ -192,7 +198,7 @@
 .home__latestHeader {
   display: inline-block;
   padding: 1rem;
-  @include font.font_heading;
+  @include font.heading;
   color: var(--color-bg);
   background: var(--color-fg);
   font-size: clamp(1.5rem, 4vw, 4rem);

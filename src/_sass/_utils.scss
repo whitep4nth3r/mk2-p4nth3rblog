@@ -25,12 +25,14 @@
 }
 
 @mixin link_focus {
+  transition: all var(--global-transition-time) ease-in-out;
+
   &:focus-visible,
   &:focus {
-    outline: transparent;
+    outline-color: var(--pink);
     outline-style: solid;
-    box-shadow: var(--color-bg) 0 0 0 0.08rem, var(--color-focus-outline) 0 0 0 0.24rem;
-    transition: box-shadow var(--global-transition-time) ease-in-out;
+    outline-width: 0.25rem;
+    outline-offset: -0.25rem;
     border-radius: var(--border-radius-base);
   }
 }
@@ -44,28 +46,6 @@
   li {
     display: flex;
   }
-}
-
-[color-mode="dark"] {
-  --input-bg: rgba(255, 255, 255, 0.06);
-  --input-border: 0.0625rem solid rgba(255, 255, 255, 0.18);
-}
-
-[color-mode="light"] {
-  --input-bg: rgba(0, 0, 0, 0.07);
-  --input-border: 1px solid rgba(0, 0, 0, 0.14);
-}
-
-@mixin form_input {
-  @include font.font_main;
-  background-color: var(--input-bg);
-  color: var(--color-fg);
-  border: var(--input-border);
-  border-radius: var(--border-radius-base);
-  font-size: 1rem;
-  padding: 0.5rem;
-  background: rgba(255, 255, 255, 0.06);
-  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
 }
 
 @mixin half_tone {

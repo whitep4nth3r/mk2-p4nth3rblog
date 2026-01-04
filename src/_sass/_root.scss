@@ -31,7 +31,7 @@ $global_md_breakpoint: 768px;
   --font-weight-mid: 700;
   --font-weight-main: 400;
 
-  --border-radius-base: 0.25rem;
+  --border-radius-base: 0;
 
   --global-max-width: 1440px;
   --feed-max-width: 510px;
@@ -53,7 +53,6 @@ $global_md_breakpoint: 768px;
   --color-fg: var(--white);
   --color-fg-copy: var(--white);
   --color-link: var(--pink-light);
-  --color-focus-outline: var(--pink-light);
   --bio-image-container-bg: rgb(250, 239, 255, 0.16);
 }
 
@@ -67,7 +66,6 @@ $global_md_breakpoint: 768px;
   --color-fg: var(--black);
   --color-fg-copy: var(--black);
   --color-link: var(--pink);
-  --color-focus-outline: var(--pink);
 
   --bio-image-container-bg: rgb(14, 0, 22, 0.08);
 }

@@ -70,7 +70,7 @@ $bio_breakpoint: 1237px;
   max-width: 42rem;
 
   h2 {
-    @include font.font_semibold;
+    @include font.semibold;
     font-size: 1.875rem;
     line-height: 1.375;
     margin-bottom: 1rem;

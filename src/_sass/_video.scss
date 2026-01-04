@@ -41,7 +41,7 @@
 }
 
 .video__headline {
-  @include font.font_bold;
+  @include font.bold;
   color: var(--white);
   text-transform: uppercase;
   font-size: clamp(3rem, 14vw, 13rem);
@@ -62,7 +62,7 @@
 }
 
 .video__gridHeader {
-  @include font.font_bold;
+  @include font.bold;
   margin-top: 3rem;
   margin-bottom: 2rem;
   font-size: clamp(2.5rem, 3.5vw, 3.5rem);
@@ -73,7 +73,7 @@
 }
 
 .video__gridHeader--sub {
-  @include font.font_semibold;
+  @include font.semibold;
   font-size: 1.4rem;
   word-break: break-word;
   hyphens: auto;
@@ -83,7 +83,7 @@
   max-width: var(--post-max-width);
 
   p {
-    @include font.font_main;
+    @include font.main;
     font-size: 1.125rem;
     line-height: 1.75;
     margin-bottom: 1rem;
