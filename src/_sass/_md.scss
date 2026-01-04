@@ -1,17 +1,14 @@
 @use "font";
 @use "utils";
 
-@mixin md_paragraph($fontSize: 1rem, $lineHeight: 1.5) {
+@mixin md_paragraph {
   @include font.main;
-  font-size: $fontSize;
-  line-height: $lineHeight;
+  font-size: clamp(1.25rem, 1.6vw, 1.5rem);
+  line-height: 1.2;
   margin-bottom: 1rem;
-  color: var(--color-fg-copy);
+  color: var(--color-fg);
 
   a {
-    @include font.semibold;
-    color: var(--color-link);
-
     @include utils.link_focus;
   }
 }

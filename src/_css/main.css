@@ -563,7 +563,6 @@ main {
 }
 @media screen and (min-width: 1080px) {
   .post {
-    gap: 3rem;
     display: grid;
     grid-auto-columns: auto;
     grid-template-rows: auto 1fr auto;
@@ -762,8 +761,14 @@ main {
 }
 
 .post__codeBlock {
+  --border-radius: 3px;
   margin-bottom: 2rem;
   margin-top: 2rem;
+  border-radius: var(--border-radius);
+}
+.post__codeBlock .language-markup {
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
 }
 
 .post__codeBlockBar {
@@ -772,7 +777,7 @@ main {
   justify-content: space-between;
   width: 100%;
   background: var(--grey-dark);
-  border-radius: calc(var(--border-radius-base) * 2) calc(var(--border-radius-base) * 2) 0 0;
+  border-radius: calc(var(--border-radius) * 2) calc(var(--border-radius) * 2) 0 0;
   padding: 0.5rem 1rem;
   position: relative;
 }
@@ -793,7 +798,7 @@ main {
   font-weight: 400;
   font-style: normal;
   color: var(--black);
-  border-radius: 0 var(--border-radius-base) 0 0;
+  border-radius: 0 var(--border-radius) 0 0;
   background: var(--white);
 }
 .post__codeBlockCopyButton svg,
@@ -822,10 +827,12 @@ main {
 
 .post__blockquote p {
   font-style: italic;
-  font-size: 1.5rem;
+  font-size: clamp(2rem, 2.5vw, 2.5rem);
   line-height: 1.5;
   font-weight: 500;
   color: var(--color-fg);
+  font-family: var(--font-family-serif);
+  font-weight: 700;
 }
 
 .post__blockquote:before {
@@ -1255,7 +1262,7 @@ main {
   font-style: normal;
   font-size: 1.25rem;
   line-height: 1.4;
-  color: var(--color-fg-copy);
+  color: var(--color-fg);
   text-decoration: none;
   display: block;
 }
@@ -1275,30 +1282,18 @@ main {
 }
 
 .author {
-  --gap: 5rem;
   display: flex;
-  height: 100%;
+  gap: 0;
   flex-direction: column;
   justify-content: space-between;
-  row-gap: var(--gap);
-}
-
-.author--hideSmall {
-  display: none;
-}
-@media screen and (min-width: 56em) {
-  .author--hideSmall {
-    display: flex;
-    height: 100%;
-    flex-direction: column;
-    justify-content: space-between;
-  }
+  position: relative;
+  overflow: hidden;
 }
 
 .author__cta {
-  display: block;
+  display: flex;
   position: relative;
-  flex-grow: 1;
+  text-decoration: none;
 }
 .author__cta:focus-visible, .author__cta:focus {
   outline-color: var(--pink);
@@ -1306,29 +1301,64 @@ main {
   outline-width: 0.25rem;
   outline-offset: -0.25rem;
 }
-.author__cta {
-  text-decoration: none;
+
+.author__imgContainer img {
+  filter: contrast(200%);
+  object-fit: cover;
 }
-.author__cta:focus-visible .author__imgContainer, .author__cta:hover .author__imgContainer {
-  transform: scale(0.95);
+.author__imgContainer picture {
+  display: flex;
 }
 
-.author__imgContainer {
-  filter: var(--base-shadow-filter);
-  transition: transform var(--global-transition-time) ease-in-out;
-  height: 100%;
+.author__info {
+  padding: 1rem;
+  color: var(--color-fg);
+  border-top: 0.5rem solid var(--green);
 }
-.author__imgContainer * {
-  border-radius: var(--border-radius-base);
-  height: 100%;
-  object-fit: cover;
+.author__info p {
+  font-family: var(--font-family-serif);
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.25;
+  margin-bottom: 1rem;
+  text-align: left;
+  font-style: italic;
+}
+.author__info p a:focus-visible, .author__info p a:focus {
+  outline-color: var(--pink);
+  outline-style: solid;
+  outline-width: 0.25rem;
+  outline-offset: -0.25rem;
 }
 
 .author__name {
-  display: block;
-  position: relative;
-  height: 0;
-  bottom: var(--gap);
+  position: absolute;
+  top: 75%;
+  transform: translate(-5%, -75%);
+}
+
+.nameLogo {
+  font-family: var(--font-family-heading);
+  font-weight: 400;
+  transform: rotate(5deg);
+  text-transform: uppercase;
+  line-height: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--color-fg);
+  background: var(--color-bg);
+  opacity: 0.7;
+  mix-blend-mode: difference;
+  padding: 0.5rem 1rem;
+}
+
+.nameLogo__top {
+  font-size: clamp(2rem, 7vw, 7.5rem);
+}
+
+.nameLogo__bottom {
+  font-size: clamp(1rem, 4vw, 3.15rem);
 }
 
 .speakerDeckLink__viewCta {
@@ -1445,8 +1475,6 @@ main {
   position: relative;
   border-width: 0;
   border-radius: var(--border-radius-base);
-  color: var(--bio-button-color);
-  background: var(--bio-button-bg);
   color: var(--color-fg);
   font-weight: 600;
   font-size: 1rem;
@@ -1488,15 +1516,10 @@ main {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  font-size: 1.25rem;
-  line-height: 1.6;
+  font-size: clamp(1.25rem, 1.6vw, 1.5rem);
+  line-height: 1.2;
   margin-bottom: 1rem;
-  color: var(--color-fg-copy);
-}
-.bio__block p a {
-  font-weight: var(--font-weight-mid);
-  font-family: var(--font-family-main);
-  color: var(--color-link);
+  color: var(--color-fg);
 }
 .bio__block p a:focus-visible, .bio__block p a:focus {
   outline-color: var(--pink);
@@ -2081,7 +2104,7 @@ pre[class*=language-] {
 .tcwr__navItem {
   font-style: italic;
   line-height: 1.2;
-  color: var(--color-fg-copy);
+  color: var(--color-fg);
   display: block;
   font-size: 1rem;
   padding: 0.25rem;
@@ -2092,7 +2115,7 @@ pre[class*=language-] {
   font-weight: var(--font-weight-bold);
   font-family: var(--font-family-main);
   font-style: normal;
-  color: var(--color-fg-copy);
+  color: var(--color-fg);
   border-radius: var(--border-radius-base);
   padding: 0.6rem 1rem;
 }
@@ -2114,7 +2137,7 @@ pre[class*=language-] {
 }
 
 .tcwr__membersListItemLink {
-  color: var(--color-fg-copy);
+  color: var(--color-fg);
   margin-bottom: 0.25rem;
   display: block;
 }
@@ -2252,7 +2275,7 @@ pre[class*=language-] {
   font-size: 1.125rem;
   line-height: 1.75;
   margin-bottom: 1rem;
-  color: var(--color-fg-copy);
+  color: var(--color-fg);
   word-break: break-word;
 }
 .video__content p a:focus-visible, .video__content p a:focus {
@@ -2260,27 +2283,6 @@ pre[class*=language-] {
   outline-style: solid;
   outline-width: 0.25rem;
   outline-offset: -0.25rem;
-}
-
-.nameLogo {
-  font-family: var(--font-family-heading);
-  font-weight: 400;
-  transform: rotate(5deg) translate(-5px, -16px);
-  text-transform: uppercase;
-  line-height: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
-
-.nameLogo__top {
-  font-size: clamp(2rem, 7vw, 7.5rem);
-}
-
-.nameLogo__bottom {
-  font-size: clamp(1rem, 4vw, 3.15rem);
 }
 
 @view-transition {

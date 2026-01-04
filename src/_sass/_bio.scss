@@ -51,8 +51,6 @@ $bio_breakpoint: 1237px;
   position: relative;
   border-width: 0;
   border-radius: var(--border-radius-base);
-  color: var(--bio-button-color);
-  background: var(--bio-button-bg);
   color: var(--color-fg);
   font-weight: 600;
   font-size: 1rem;
@@ -83,6 +81,6 @@ $bio_breakpoint: 1237px;
   }
 
   p {
-    @include md.md_paragraph($fontSize: 1.25rem, $lineHeight: 1.6);
+    @include md.md_paragraph;
   }
 }

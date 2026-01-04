@@ -31,7 +31,7 @@
 .tcwr__navItem {
   font-style: italic;
   line-height: 1.2;
-  color: var(--color-fg-copy);
+  color: var(--color-fg);
   display: block;
   font-size: 1rem;
   padding: 0.25rem;
@@ -41,7 +41,7 @@
 .tcwr__navItem--random {
   @include font.bold;
   font-style: normal;
-  color: var(--color-fg-copy);
+  color: var(--color-fg);
   border-radius: var(--border-radius-base);
   padding: 0.6rem 1rem;
 }
@@ -59,7 +59,7 @@
 }
 
 .tcwr__membersListItemLink {
-  color: var(--color-fg-copy);
+  color: var(--color-fg);
   margin-bottom: 0.25rem;
   display: block;
 }

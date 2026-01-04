@@ -135,30 +135,29 @@ exports.render = async function (data) {
 
         ${ExternalUrl({ url: post.externalUrl })}
       </section>
+    </article>
 
-          ${
-            post.relatedPostsCollection?.items.length > 0
-              ? /*html*/ `
-              <div class="post__related">
-                <div class="post__relatedHeader">
-                  <p class="post__relatedHeaderTitle">Read more on this topic</p>
-                </div>
-                <div class="post__relatedGrid">
-                  ${post.relatedPostsCollection.items
-                    .map((post) => Card({ item: { ...post, type: "post" }, showType: false, lazyLoad: true }))
-                    .join("")}
-                </div>
-              </div>`
-              : ""
-          }
+      ${
+        post.relatedPostsCollection?.items.length > 0
+          ? /*html*/ `
+    <div class="post__related">
+      <div class="post__relatedHeader">
+        <p class="post__relatedHeaderTitle">Read more on this topic</p>
+      </div>
+      <div class="post__relatedGrid">
+        ${post.relatedPostsCollection.items
+          .map((post) => Card({ item: { ...post, type: "post" }, showType: false, lazyLoad: true }))
+          .join("")}
+      </div>
+    </div>`
+          : ""
+      }
 
-          <script type="application/ld+json">${PostStructuredData({
-            post,
-            imageUrl: openGraphImageUrl,
-          })}</script>
-        </div>
-      </article>
     <meta data-bsky-post-id="${post.blueskyPostId}" />
+    <script type="application/ld+json">${PostStructuredData({
+      post,
+      imageUrl: openGraphImageUrl,
+    })}</script>
     <script src="/js/bsky_post_likes.js" type="module"></script>
     <script src="/js/copy_code.js"></script>
     `;

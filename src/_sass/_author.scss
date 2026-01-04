@@ -1,58 +1,77 @@
 @use "utils";
+@use "font";
 
 .author {
-  --gap: 5rem;
   display: flex;
-  height: 100%;
+  gap: 0;
   flex-direction: column;
   justify-content: space-between;
-  row-gap: var(--gap);
-}
-
-.author--hideSmall {
-  display: none;
-
-  @media screen and (min-width: 56em) {
-    display: flex;
-    height: 100%;
-    flex-direction: column;
-    justify-content: space-between;
-  }
+  position: relative;
+  overflow: hidden;
 }
 
 .author__cta {
-  display: block;
+  display: flex;
   position: relative;
-  flex-grow: 1;
-  @include utils.link_focus;
   text-decoration: none;
+  @include utils.link_focus;
+}
 
-  &:focus-visible,
-  &:hover {
-    .author__imgContainer {
-      transform: scale(0.95);
+.author__imgContainer {
+  img {
+    filter: contrast(200%);
+    object-fit: cover;
+  }
+
+  picture {
+    display: flex;
+  }
+}
+
+.author__info {
+  padding: 1rem;
+  color: var(--color-fg);
+  border-top: 0.5rem solid var(--green);
+
+  p {
+    @include font.serif;
+    font-size: 1.25rem;
+    line-height: 1.25;
+    margin-bottom: 1rem;
+    text-align: left;
+    font-style: italic;
+
+    a {
+      @include utils.link_focus;
     }
   }
 }
 
-.author__imgContainer {
-  filter: var(--base-shadow-filter);
-  transition: transform var(--global-transition-time) ease-in-out;
-  height: 100%;
-
-  img {
-  }
-
-  * {
-    border-radius: var(--border-radius-base);
-    height: 100%;
-    object-fit: cover;
-  }
+.author__name {
+  position: absolute;
+  top: 75%;
+  transform: translate(-5%, -75%);
 }
 
-.author__name {
-  display: block;
-  position: relative;
-  height: 0;
-  bottom: var(--gap);
+.nameLogo {
+  @include font.heading;
+  transform: rotate(5deg);
+  text-transform: uppercase;
+  line-height: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--color-fg);
+  background: var(--color-bg);
+  opacity: 0.7;
+  mix-blend-mode: difference;
+  padding: 0.5rem 1rem;
+}
+
+.nameLogo__top {
+  font-size: clamp(2rem, 7vw, 7.5rem);
+}
+
+.nameLogo__bottom {
+  font-size: clamp(1rem, 4vw, 3.15rem);
 }

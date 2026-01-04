@@ -60,7 +60,6 @@ function renderImage({ image, lazyLoad }) {
         <source type="image/webp" srcSet="${image.url}?w=450&fm=webp" />
         <img 
           src="${image.url}?w=450"
-          alt=""
           role="presentation"
           height="${image.height}"
           width="${image.width}"
