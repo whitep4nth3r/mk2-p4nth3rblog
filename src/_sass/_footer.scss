@@ -5,19 +5,19 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 .footer__newsletter {
   background: var(--color-bg);
   color: var(--color-fg);
-  border: 1rem solid var(--color-fg);
   display: flex;
   flex-direction: column;
   position: relative;
   justify-content: space-between;
 
   @media screen and (min-width: 900px) {
+    border: 1rem solid var(--color-fg);
     flex-direction: row;
   }
 }
@@ -47,7 +47,7 @@
 
 .footer__newsletterTitle {
   text-transform: uppercase;
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-size: clamp(2rem, 4vw, 2.5rem);
 
   span {
     display: inline-block;
@@ -58,7 +58,7 @@
 }
 
 .footer__newsletterCopy {
-  font-size: clamp(2rem, 3.5vw, 2.25rem);
+  font-size: clamp(1.5rem, 3.5vw, 2.25rem);
 
   em {
     @include font.serif;
@@ -128,7 +128,7 @@
 .footer__newsletterPowered {
   @include font.main;
   font-size: 1rem;
-  color: var(--color-bg);
+  color: var(--color-fg);
 
   @include utils.link_focus;
 }

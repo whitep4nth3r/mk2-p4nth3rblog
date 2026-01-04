@@ -2,7 +2,11 @@
 @use "utils";
 
 .tableOfContents {
-  margin-bottom: 2rem;
+  padding: 1rem;
+
+  @media screen and (min-width: utils.$post_breakpoint_lg) {
+    padding: 0;
+  }
 }
 
 .tableOfContents__list {

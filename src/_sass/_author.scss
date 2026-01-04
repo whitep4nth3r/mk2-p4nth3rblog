@@ -21,6 +21,7 @@
   img {
     filter: contrast(200%);
     object-fit: cover;
+    clip-path: polygon(3rem 0, 100% 0, 100% 100%, 0 100%, 0 3rem);
   }
 
   picture {
@@ -32,6 +33,13 @@
   padding: 1rem;
   color: var(--color-fg);
   border-top: 0.5rem solid var(--green);
+
+  @media screen and (min-width: utils.$post_breakpoint_md) {
+    padding-top: 1rem;
+    padding-left: 0;
+    padding-bottom: 0;
+    padding-right: 0.5rem;
+  }
 
   p {
     @include font.serif;
@@ -50,7 +58,8 @@
 .author__name {
   position: absolute;
   top: 75%;
-  transform: translate(-5%, -75%);
+  left: 50%;
+  transform: translate(-50%, -75%);
 }
 
 .nameLogo {
@@ -66,12 +75,38 @@
   opacity: 0.7;
   mix-blend-mode: difference;
   padding: 0.5rem 1rem;
+  text-align: center;
+  border-radius: var(--border-radius-accent);
 }
 
 .nameLogo__top {
-  font-size: clamp(2rem, 7vw, 7.5rem);
+  font-size: 10rem;
+
+  @media screen and (min-width: utils.$post_breakpoint_md) {
+    font-size: 5rem;
+  }
+
+  @media screen and (min-width: utils.$post_breakpoint_lg) {
+    font-size: 4.5rem;
+  }
+
+  @media screen and (min-width: 1440px) {
+    font-size: 7rem;
+  }
 }
 
 .nameLogo__bottom {
-  font-size: clamp(1rem, 4vw, 3.15rem);
+  font-size: 4.5rem;
+
+  @media screen and (min-width: utils.$post_breakpoint_md) {
+    font-size: 2rem;
+  }
+
+  @media screen and (min-width: utils.$post_breakpoint_lg) {
+    font-size: 2rem;
+  }
+
+  @media screen and (min-width: 1440px) {
+    font-size: 3rem;
+  }
 }

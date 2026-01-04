@@ -8,9 +8,9 @@ function PublishedDate({ date, readingTime, isTalk, updatedDate }) {
   return /* html */ `
   <div class="publishedDate">
     <p class="publishedDate__item">
-      ${updated}<time class="dt-published" datetime="${DateUtils.formatDateForTimeElement(
-    displayDate,
-  )}">${DateUtils.formatDateForDisplay(displayDate)}</time>
+      <time class="dt-published" datetime="${DateUtils.formatDateForTimeElement(
+        displayDate,
+      )}"> ${updated}${DateUtils.formatDateForDisplay(displayDate)}</time>
     </p>
     <p class="publishedDate__item">
       ${readingTime} min ${timeSuffix}

@@ -1,5 +1,8 @@
 @use "font";
 
+$post_breakpoint_lg: 1280px;
+$post_breakpoint_md: 1080px;
+
 @mixin sr_only {
   position: absolute;
   width: 1px;

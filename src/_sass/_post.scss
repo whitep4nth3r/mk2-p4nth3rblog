@@ -14,20 +14,40 @@
 
 .post {
   position: relative;
-  margin-top: 4rem;
-  gap: 3rem;
-  display: flex;
+  gap: 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "title"
+    "aside"
+    "content"
+    "author"
+    "bsky";
   align-items: flex-start;
   flex-direction: column;
 
-  @media screen and (min-width: 1080px) {
+  @media screen and (min-width: utils.$post_breakpoint_md) {
+    margin-top: 2rem;
+    gap: 1rem;
+    display: grid;
+    grid-auto-columns: auto;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+      "title title author"
+      "aside content author"
+      "bsky bsky bsky";
+    grid-template-columns: 2fr 6fr 2fr;
+  }
+
+  @media screen and (min-width: utils.$post_breakpoint_lg) {
+    margin-top: 4rem;
+    gap: 3rem;
     display: grid;
     grid-auto-columns: auto;
     grid-template-rows: auto 1fr auto;
     grid-template-areas:
       "bsky title title author"
-      "bsky aside content author"
-      "related related related related";
+      "bsky aside content author";
     grid-template-columns: 1fr 2fr 6fr 2fr;
   }
 }
@@ -39,7 +59,12 @@
   align-items: flex-start;
   justify-content: flex-start;
   gap: 2rem;
-  margin-bottom: 4rem;
+  padding: 1rem;
+
+  @media screen and (min-width: utils.$post_breakpoint_lg) {
+    margin-bottom: 4rem;
+    padding: 0;
+  }
 }
 
 .post__h1 {
@@ -57,7 +82,7 @@
   gap: 3rem;
   align-items: flex-start;
 
-  @media screen and (min-width: 1080px) {
+  @media screen and (min-width: utils.$post_breakpoint_lg) {
     flex-direction: row;
     justify-content: space-between;
   }
@@ -66,7 +91,7 @@
 .post__meta {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: clamp(1rem, 1.5vw, 2rem);
   align-items: flex-start;
 }
 
@@ -86,7 +111,7 @@
   p {
     @include font.serif;
     font-style: italic;
-    font-size: clamp(1.25rem, 3vw, 3rem);
+    font-size: clamp(2rem, 3vw, 3rem);
     line-height: 1.2;
     color: var(--color-fg);
   }
@@ -102,12 +127,17 @@
   grid-area: content;
   display: flex;
   flex-direction: column;
+  padding: 1rem;
+
+  @media screen and (min-width: utils.$post_breakpoint_lg) {
+    padding: 0;
+  }
 }
 
 .post__aside {
   grid-area: aside;
 
-  @media screen and (min-width: 1080px) {
+  @media screen and (min-width: utils.$post_breakpoint_md) {
     align-self: start;
     position: sticky;
     z-index: 10;
@@ -117,7 +147,7 @@
 
 .post__author {
   grid-area: author;
-  @media screen and (min-width: 1080px) {
+  @media screen and (min-width: utils.$post_breakpoint_md) {
     align-self: start;
     position: sticky;
     z-index: 10;
@@ -203,14 +233,13 @@
 }
 
 .post__codeBlock {
-  --border-radius: 3px;
   margin-bottom: 2rem;
   margin-top: 2rem;
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius-accent);
 
-  .language-markup {
-    border-bottom-left-radius: var(--border-radius);
-    border-bottom-right-radius: var(--border-radius);
+  [class^="language-"] {
+    border-bottom-left-radius: var(--border-radius-accent);
+    border-bottom-right-radius: var(--border-radius-accent);
   }
 }
 
@@ -220,7 +249,7 @@
   justify-content: space-between;
   width: 100%;
   background: var(--grey-dark);
-  border-radius: calc(var(--border-radius) * 2) calc(var(--border-radius) * 2) 0 0;
+  border-radius: var(--border-radius-accent) var(--border-radius-accent) 0 0;
   padding: 0.5rem 1rem;
   position: relative;
 }
@@ -237,7 +266,7 @@
   font-size: 1rem;
   @include font.main;
   color: var(--black);
-  border-radius: 0 var(--border-radius) 0 0;
+  border-radius: 0 var(--border-radius-accent) 0 0;
   background: var(--white);
 
   svg,
@@ -301,7 +330,6 @@
 }
 
 .post__related {
-  grid-area: related;
   margin-bottom: 2rem;
 }
 
@@ -337,7 +365,7 @@
   margin-left: auto;
   margin-right: auto;
   display: block;
-  border-radius: calc(var(--border-radius-base) * 2);
+  border-radius: var(--border-radius-accent);
 }
 
 .post__deployToNetlifyButton {
