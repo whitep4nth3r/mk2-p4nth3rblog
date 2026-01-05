@@ -160,19 +160,23 @@
 }
 
 .card__linkButton {
-  background: var(--pink);
-  display: block;
-  border-width: 0;
-  border-radius: var(--border-radius-base);
-  width: 100%;
-  color: var(--white);
-  font-weight: bold;
+  flex: 1 1 auto;
+  @include font.heading;
   text-transform: uppercase;
-  font-size: 1.5rem;
-  text-align: center;
+  font-size: 2rem;
+  background: var(--green);
+  color: var(--black);
+  border: var(--black) 0.25rem solid;
   text-decoration: none;
-  padding: 0.5rem 1rem;
-  margin: 0 auto 0.5rem auto;
+  text-align: center;
+
+  @include utils.link_focus;
+
+  &:focus-visible,
+  &:focus {
+    background: var(--color-bg);
+    color: var(--color-fg);
+  }
 }
 
 .card__linkButton:focus-visible,

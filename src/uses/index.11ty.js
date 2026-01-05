@@ -30,9 +30,6 @@ exports.render = function (data) {
           .map(
             (cat) => `
           <section id="${cat}">
-            <h2 class="uses_catHeading">
-              <img src="/.netlify/images/?url=/img/${cat.replace(" ", "-")}.png" alt="${cat}" />
-            </h2>
             <ol class="uses__list">
             ${things[cat]
               .map(

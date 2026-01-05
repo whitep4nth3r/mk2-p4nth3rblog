@@ -1581,7 +1581,6 @@ main {
 }
 
 .uses {
-  max-width: var(--global-max-width);
   margin: auto;
 }
 
@@ -1593,12 +1592,27 @@ main {
 
 .uses__list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   list-style: none;
   padding-left: 0;
 }
 .uses__list li {
   display: flex;
+}
+.uses__list {
+  margin-bottom: 3rem;
+}
+
+.page__text {
+  font-weight: var(--font-weight-main);
+  font-family: var(--font-family-main);
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  margin-bottom: 3rem;
+  padding: 1rem;
+  text-align: right;
 }
 
 .bio__block h2 {
@@ -2143,19 +2157,26 @@ pre[class*=language-] {
 }
 
 .card__linkButton {
-  background: var(--pink);
-  display: block;
-  border-width: 0;
-  border-radius: var(--border-radius-base);
-  width: 100%;
-  color: var(--white);
-  font-weight: bold;
+  flex: 1 1 auto;
+  font-family: var(--font-family-heading);
+  font-weight: 400;
   text-transform: uppercase;
-  font-size: 1.5rem;
-  text-align: center;
+  font-size: 2rem;
+  background: var(--green);
+  color: var(--black);
+  border: var(--black) 0.25rem solid;
   text-decoration: none;
-  padding: 0.5rem 1rem;
-  margin: 0 auto 0.5rem auto;
+  text-align: center;
+}
+.card__linkButton:focus-visible, .card__linkButton:focus {
+  outline-color: var(--pink);
+  outline-style: solid;
+  outline-width: 0.25rem;
+  outline-offset: -0.25rem;
+}
+.card__linkButton:focus-visible, .card__linkButton:focus {
+  background: var(--color-bg);
+  color: var(--color-fg);
 }
 
 .card__linkButton:focus-visible:focus-visible, .card__linkButton:focus-visible:focus,
