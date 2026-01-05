@@ -44,7 +44,7 @@ $post_breakpoint_md: 1080px;
   padding-left: 0;
 
   @media screen and (min-width: 1280px) {
-    grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   }
 
   li {

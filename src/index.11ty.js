@@ -33,7 +33,7 @@ exports.render = function (data) {
     <div class="hero" data-hero>
       <div class="hero__cloud" data-cloud>
         <span class="hero__cloud__wd"> 
-          <h2>${HeartIcon()} web developer</h2>
+          <h2><span>${HeartIcon()}</span><span>web developer</span></h2>
         </span>
         <span class="hero__cloud__is">
           <h2>international speaker</h2>

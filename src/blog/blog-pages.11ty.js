@@ -58,7 +58,7 @@ function outOfDateWarning({ post }) {
   const outOfDate = diff > 730;
 
   if (outOfDate) {
-    return `<p class="post__outOfDate">⚠️ This post is over two years old and may contain some outdated technical information. Please proceed with caution!</p>`;
+    return `<aside class="post__outOfDate">This post is over two years old and may contain some outdated technical information.</aside>`;
   }
 
   return "";
@@ -73,6 +73,7 @@ exports.render = async function (data) {
   });
 
   return /*html*/ `
+    ${outOfDateWarning({ post })}
     <article class="post h-entry">
       <div class="post__header">
         <h1 class="post__h1 p-name" style="view-transition-name: heading-${post.sys.id}">${post.title}</h1>
@@ -123,7 +124,6 @@ exports.render = async function (data) {
 
       <section class="post__article">
         <div class="post__body e-content">
-          ${outOfDateWarning({ post })}
           ${RichText(post.body, {
             renderRssFriendlyImg: false,
             absoluteUrls: false,

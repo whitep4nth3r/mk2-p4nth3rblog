@@ -72,6 +72,13 @@
     font-size: clamp(3rem, 6vw, 11rem);
     line-height: 1;
     display: flex;
+    gap: 0.5rem;
+    align-items: center;
+
+    span {
+      align-self: center;
+      display: flex;
+    }
   }
 
   svg {
@@ -111,7 +118,7 @@
 
   h2 {
     @include font.serif;
-    font-size: clamp(3rem, 6vw, 8rem);
+    font-size: clamp(3rem, 5vw, 6rem);
     line-height: 1;
   }
 }
@@ -139,7 +146,7 @@
 
   h2 {
     @include font.heading;
-    font-size: clamp(2rem, 4vw, 6rem);
+    font-size: clamp(2rem, 3vw, 4rem);
     line-height: 1;
   }
 
@@ -220,7 +227,7 @@
   @include font.heading;
   text-align: right;
   text-transform: uppercase;
-  font-size: clamp(1.5rem, 4vw, 4rem);
+  font-size: clamp(1.5rem, 3vw, 3rem);
   color: var(--color-fg);
   padding-left: clamp(0.5rem, 0.75vw, 1rem);
   padding-right: clamp(0.5rem, 0.75vw, 1rem);

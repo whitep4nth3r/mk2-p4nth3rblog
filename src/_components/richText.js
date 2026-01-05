@@ -139,7 +139,6 @@ function getRichTextRenderOptions(links, options) {
             return Callout({
               title: entry.title,
               content: entry.content,
-              emoji: entry.emoji,
             });
           case "CodeBlock":
             return CodeBlock({
