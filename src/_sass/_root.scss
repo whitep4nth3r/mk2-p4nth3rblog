@@ -52,6 +52,8 @@ $global_md_breakpoint: 768px;
   --color-bg: var(--black);
   --color-fg: var(--white);
   --color-link: var(--pink);
+
+  --color-accent: var(--green);
 }
 
 [color-mode="light"] {
@@ -61,4 +63,6 @@ $global_md_breakpoint: 768px;
   --color-bg: var(--white);
   --color-fg: var(--black);
   --color-link: var(--pink);
+
+  --color-accent: var(--pink);
 }

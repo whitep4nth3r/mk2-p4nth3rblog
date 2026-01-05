@@ -7,7 +7,12 @@
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-  overflow: hidden;
+  background: var(--color-bg);
+
+  clip-path: polygon(2rem 0, 100% 0, 100% calc(100% - 2rem), calc(100% - 2rem) 100%, 0 100%, 0 2rem);
+
+  border-top: 0.5rem dashed var(--color-accent);
+  border-bottom: 0.5rem dashed var(--color-accent);
 }
 
 .author__cta {
@@ -21,7 +26,7 @@
   img {
     filter: contrast(200%);
     object-fit: cover;
-    clip-path: polygon(3rem 0, 100% 0, 100% 100%, 0 100%, 0 3rem);
+    object-position: top center;
   }
 
   picture {
@@ -31,23 +36,15 @@
 
 .author__info {
   padding: 1rem;
-  color: var(--color-fg);
-  border-top: 0.5rem solid var(--green);
-
-  @media screen and (min-width: utils.$post_breakpoint_md) {
-    padding-top: 1rem;
-    padding-left: 0;
-    padding-bottom: 0;
-    padding-right: 0.5rem;
-  }
+  background: var(--color-fg);
 
   p {
-    @include font.serif;
+    @include font.main;
+    color: var(--color-bg);
     font-size: 1.25rem;
     line-height: 1.25;
     margin-bottom: 1rem;
     text-align: left;
-    font-style: italic;
 
     a {
       @include utils.link_focus;
@@ -55,58 +52,33 @@
   }
 }
 
+[color-mode="dark"] {
+  --name-mbm: unset;
+}
+[color-mode="light"] {
+  --name-mbm: difference;
+}
+
 .author__name {
   position: absolute;
-  top: 75%;
-  left: 50%;
-  transform: translate(-50%, -75%);
-}
-
-.nameLogo {
-  @include font.heading;
-  transform: rotate(5deg);
-  text-transform: uppercase;
-  line-height: 1;
+  bottom: 0;
+  color: var(--color-bg);
+  background-color: var(--color-fg);
+  padding: 0.5rem;
+  width: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  color: var(--color-fg);
-  background: var(--color-bg);
-  opacity: 0.7;
-  mix-blend-mode: difference;
-  padding: 0.5rem 1rem;
-  text-align: center;
-  border-radius: var(--border-radius-accent);
-}
+  justify-content: center;
 
-.nameLogo__top {
-  font-size: 10rem;
-
-  @media screen and (min-width: utils.$post_breakpoint_md) {
-    font-size: 5rem;
-  }
-
-  @media screen and (min-width: utils.$post_breakpoint_lg) {
-    font-size: 4.5rem;
-  }
-
-  @media screen and (min-width: 1440px) {
-    font-size: 7rem;
-  }
-}
-
-.nameLogo__bottom {
-  font-size: 4.5rem;
-
-  @media screen and (min-width: utils.$post_breakpoint_md) {
-    font-size: 2rem;
-  }
-
-  @media screen and (min-width: utils.$post_breakpoint_lg) {
-    font-size: 2rem;
-  }
-
-  @media screen and (min-width: 1440px) {
-    font-size: 3rem;
+  svg {
+    display: flex;
+    width: 90%;
+    height: auto;
+    transform: rotate(-5deg);
+    top: -2rem;
+    position: relative;
+    z-index: 20;
+    mix-blend-mode: var(--name-mbm);
+    filter: url(#distort_from_footer);
   }
 }

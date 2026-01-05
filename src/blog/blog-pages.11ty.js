@@ -6,6 +6,8 @@ const TableOfContents = require("../_components/tableOfContents");
 const isSponsored = require("../_components/isSponsored");
 const Card = require("../_components/card");
 const HeartIcon = require("../_components/svg/heartIcon");
+const StarIcon = require("../_components/svg/starIcon");
+
 const PostStructuredData = require("../_components/postStructuredData");
 const OpenGraph = require("../../lib/openGraph");
 
@@ -115,7 +117,7 @@ exports.render = async function (data) {
               <aside class="post__likes" data-bsky-container>
                 <a href="https://bsky.app/profile/whitep4nth3r.com/post/${
                   post.blueskyPostId
-                }" target="_blank" aria-label="Like this post on Bluesky" class="post__likesTitle">${HeartIcon()} <span data-bsky-likes-count></span> likes</a>
+                }" target="_blank" aria-label="Like this post on Bluesky" class="post__likesTitle" data-bsky-external-link>${HeartIcon()} <span data-bsky-likes-count></span></a>
                 <ul data-bsky-likes class="post__likesList">
                 </ul>
               </aside>`
@@ -142,7 +144,14 @@ exports.render = async function (data) {
           ? /*html*/ `
     <div class="post__related">
       <div class="post__relatedHeader">
-        <p class="post__relatedHeaderTitle">Read more on this topic</p>
+        <p class="post__relatedHeaderTitle">
+          <span>
+            ${StarIcon()}
+          </span>
+          <span>
+            Read more on this topic
+          </span>
+        </p>
       </div>
       <div class="post__relatedGrid">
         ${post.relatedPostsCollection.items

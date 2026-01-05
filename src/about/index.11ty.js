@@ -3,7 +3,6 @@ const TabbedBio = require("../_components/tabbedBio");
 const OpenGraph = require("../../lib/openGraph");
 const PersonStructuredData = require("../_components/personStructuredData");
 const StarIcon = require("../_components/svg/starIcon");
-const ResponsiveImage = require("../_components/responsiveImage");
 
 const pageTitle = "About Salma Alam-Naylor";
 

@@ -106,5 +106,5 @@
     background-image: url("/img/theme-light.svg");
   }
 
-  @include utils.link_focus;
+  @include utils.link_focus(var(--color-accent));
 }

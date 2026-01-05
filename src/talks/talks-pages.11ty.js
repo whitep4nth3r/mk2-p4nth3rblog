@@ -102,7 +102,7 @@ exports.render = function (data) {
 
         ${
           talk.recording !== null
-            ? `<h2 class="post__h2" id="recording">Recording</h2>${VideoEmbed({
+            ? `<h2 class="post__h2 post__h2--topTalk" id="recording">Recording</h2>${VideoEmbed({
                 embedUrl: talk.recording.embedUrl,
                 title: talk.recording.title,
               })}`

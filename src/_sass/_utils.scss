@@ -27,10 +27,10 @@ $post_breakpoint_md: 1080px;
   transition: box-shadow var(--global-transition-time) ease-in-out;
 }
 
-@mixin link_focus {
+@mixin link_focus($color: var(--pink)) {
   &:focus-visible,
   &:focus {
-    outline-color: var(--pink);
+    outline-color: $color;
     outline-style: solid;
     outline-width: 0.25rem;
     outline-offset: -0.25rem;

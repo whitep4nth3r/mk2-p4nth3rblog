@@ -2,12 +2,10 @@
 @use "utils";
 
 [color-mode="dark"] {
-  --post-accent-color: var(--green);
   --table-th-color: var(--color-fg);
   --post-meta-fg-color: var(--color-bg);
 }
 [color-mode="light"] {
-  --post-accent-color: var(--pink);
   --table-th-color: var(--white);
   --post-meta-fg-color: var(--color-fg);
 }
@@ -138,7 +136,7 @@
 
 .post__separator {
   margin-bottom: 2rem;
-  border-color: var(--post-accent-color);
+  border-color: var(--color-accent);
   border-style: solid;
 }
 
@@ -177,10 +175,6 @@
 
 .post__body {
   margin-bottom: 2rem;
-
-  .post__h2:is(:first-child) {
-    margin-top: 0;
-  }
 }
 
 .post__hr {
@@ -194,17 +188,21 @@
   font-size: clamp(2rem, 4vw, 4rem);
   line-height: 1.2;
   margin-bottom: 2rem;
-  margin-top: 2rem;
+  margin-top: clamp(4rem, 5vw, 6rem);
   word-break: break-word;
   hyphens: auto;
   color: var(--color-fg);
+}
+
+.post__h2--topTalk {
+  margin-top: 0;
 }
 
 .post__h3 {
   @include font.heading;
   font-size: clamp(1.5rem, 3vw, 3rem);
   line-height: 1.2;
-  margin-top: 2rem;
+  margin-top: clamp(2rem, 3vw, 4rem);
   margin-bottom: 2rem;
   color: var(--color-fg);
   word-break: break-word;
@@ -287,8 +285,9 @@
   gap: 0.5rem;
   justify-content: space-between;
   align-items: center;
-  font-size: 1rem;
-  @include font.main;
+  font-size: 1.25rem;
+  @include font.heading;
+  text-transform: uppercase;
   color: var(--black);
   border-radius: 0 var(--border-radius-accent) 0 0;
   background: var(--white);
@@ -365,15 +364,25 @@
   padding-top: 2rem;
   word-break: break-word;
   hyphens: auto;
-  color: var(--color-fg);
+  color: var(--color-accent);
 }
 
 .post__relatedHeaderTitle {
   @include font.heading;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: flex-end;
   font-size: clamp(2rem, 4vw, 4rem);
   text-align: right;
   padding: 1rem;
   text-transform: uppercase;
+  align-items: center;
+
+  svg {
+    height: 3rem;
+    width: 3rem;
+  }
 }
 
 .post__relatedGrid {
@@ -400,8 +409,8 @@
 
 .post__callout {
   padding: 1rem;
-  border-top: 0.5rem solid var(--post-accent-color);
-  border-bottom: 0.5rem solid var(--post-accent-color);
+  border-top: 0.5rem solid var(--color-accent);
+  border-bottom: 0.5rem solid var(--color-accent);
   margin-top: 2rem;
   margin-bottom: 2rem;
   display: flex;
@@ -445,7 +454,7 @@
   font-size: clamp(1.5rem, 2vw, 2rem);
   line-height: 1.5;
   font-weight: 500;
-  color: var(--post-accent-color);
+  color: var(--color-accent);
   @include font.serif;
 }
 
@@ -530,8 +539,8 @@
   background: var(--color-bg);
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
-  gap: 0.5rem;
+  justify-content: center;
+  gap: 0.75rem;
   align-items: center;
   padding: 1rem;
 
@@ -546,7 +555,7 @@
   &:hover,
   &:focus {
     svg {
-      transform: scale(1.2) rotate(15deg);
+      transform: scale(1.2) rotate(-15deg);
       filter: url(#distort_from_footer);
     }
   }

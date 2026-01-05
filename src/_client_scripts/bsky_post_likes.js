@@ -3,10 +3,13 @@ const bskyPostId = document.querySelector("[data-bsky-post-id]").dataset.bskyPos
 const container = document.querySelector("[data-bsky-container]");
 const likesContainer = document.querySelector("[data-bsky-likes]");
 const likesCount = document.querySelector("[data-bsky-likes-count]");
+const externalLink = document.querySelector("[data-bsky-external-link]");
 const myDid = "did:plc:qcxqtc2yzznbaazu7egncqqx";
 const bskyAPI = "https://public.api.bsky.app/xrpc/";
 const getLikesURL = `${bskyAPI}app.bsky.feed.getLikes?limit=${LIMIT}&uri=`;
 const getPostURL = `${bskyAPI}app.bsky.feed.getPosts?uris=`;
+
+let totalLikesCount;
 
 function drawHowManyMore(postLikesCount, likesActorLength) {
   if (postLikesCount > LIMIT) {
@@ -48,7 +51,7 @@ if (bskyPostId !== "null") {
     const postData = await bskyPost.json();
     const likesData = await bskyPostLikes.json();
 
-    const totalLikesCount = postData.posts[0].likeCount;
+    totalLikesCount = postData.posts[0].likeCount;
 
     if (likesData.likes.length > 0) {
       likesCount.textContent = totalLikesCount;
@@ -57,4 +60,12 @@ if (bskyPostId !== "null") {
   } catch (error) {
     container.remove();
   }
+
+  externalLink.addEventListener("mouseenter", () => {
+    likesCount.textContent = "Like";
+  });
+
+  externalLink.addEventListener("mouseleave", () => {
+    likesCount.textContent = totalLikesCount;
+  });
 }
