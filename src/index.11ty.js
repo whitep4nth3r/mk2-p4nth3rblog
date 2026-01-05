@@ -5,6 +5,7 @@ const PersonStructuredData = require("./_components/personStructuredData");
 const StarIcon = require("./_components/svg/starIcon");
 const HeartIcon = require("./_components/svg/heartIcon");
 const ResponsiveImage = require("./_components/responsiveImage");
+
 const pageTitle = "I make stuff on the internet.";
 
 exports.data = {
@@ -15,7 +16,7 @@ exports.data = {
   metaDescription:
     "I write code for your entertainment. I make stuff on the internet, help developers build great websites, and love helping people get into tech.",
   openGraphImageUrl: OpenGraph.generateImageUrl({
-    title: "I write code for your entertainment",
+    title: pageTitle,
   }),
   openGraphImageAlt: OpenGraph.generateImageAlt(pageTitle),
   openGraphImageWidth: OpenGraph.imgWidth,
