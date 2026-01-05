@@ -37,9 +37,9 @@ $post_breakpoint_md: 1080px;
   }
 }
 
-@mixin card_grid {
+@mixin card_grid($minSize: 320px) {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax($minSize, 1fr));
   list-style: none;
   padding-left: 0;
 

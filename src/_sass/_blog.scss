@@ -9,7 +9,7 @@
 }
 
 .blog__cardsGrid {
-  @include utils.card_grid;
+  @include utils.card_grid(500px);
 }
 
 .blog__item mark {

@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", (event) => {
   gsap.registerPlugin(ScrollTrigger);
   gsap.to(".hero__name__inner", {
-    x: "-100%",
+    x: "100%",
     ease: "none",
     scrollTrigger: {
       trigger: "html",
@@ -14,6 +14,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
   const headerHeight = document.querySelector("header").offsetHeight;
   const hero = document.querySelector("[data-hero]");
   hero.style.height = `calc(100svh - ${headerHeight}px)`;
+
+  
 
   window.addEventListener("resize", () => {
     const updatedHeaderHeight = document.querySelector("header").offsetHeight;

@@ -6,31 +6,10 @@
   animation-duration: 0.4s;
 }
 
-.vt__bioImage {
-  view-transition-name: bio-image;
-}
-
-.vt__nameLogo {
-  view-transition-name: name-logo;
-}
-
 @media (prefers-reduced-motion: reduce) {
   ::view-transition-group(root) {
     animation-duration: 1s;
   }
-
-  .vt__bioImage,
-  .vt__nameLogo {
-    view-transition-name: none;
-  }
-}
-
-.vt__bioImage {
-  view-transition-name: bio-image;
-}
-
-.vt__nameLogo {
-  view-transition-name: name-logo;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -53,9 +32,5 @@
     /* force final state */
     opacity: 1 !important;
     transform: none !important;
-  }
-
-  .bioImage {
-    view-transition-name: none !important;
   }
 }

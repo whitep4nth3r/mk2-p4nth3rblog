@@ -3,6 +3,8 @@ const TabbedBio = require("../_components/tabbedBio");
 const OpenGraph = require("../../lib/openGraph");
 const PersonStructuredData = require("../_components/personStructuredData");
 const StarIcon = require("../_components/svg/starIcon");
+const ResponsiveImage = require("../_components/responsiveImage");
+
 const pageTitle = "About Salma Alam-Naylor";
 
 var md = require("markdown-it")({
@@ -39,7 +41,7 @@ exports.render = function (data) {
         </h1>
 
         <div class="about__hero__image">
-          <img src="${person.imageBio.url}" class="vt__bioImage" alt="${person.imageBio.description}" height="${
+         <img src="${person.imageBio.url + `?fm=webp`}" alt="${person.imageBio.description}" height="${
     person.imageBio.height
   }" width="${person.imageBio.width}" />
         </div>

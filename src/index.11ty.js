@@ -4,6 +4,7 @@ const Webring = require("./_components/webring");
 const PersonStructuredData = require("./_components/personStructuredData");
 const StarIcon = require("./_components/svg/starIcon");
 const HeartIcon = require("./_components/svg/heartIcon");
+const ResponsiveImage = require("./_components/responsiveImage");
 const pageTitle = "I make stuff on the internet.";
 
 exports.data = {
@@ -30,16 +31,28 @@ exports.render = function (data) {
   return /*html*/ `
   <section class="home">
     <div class="hero" data-hero>
-      <div class="hero__cloud">
-        <h2 class="hero__cloud__wd">${HeartIcon()} web developer</h2>
-        <h2 class="hero__cloud__is">international speaker</h2>
-        <h2 class="hero__cloud__te">tech educator</h2>
-        <h2 class="hero__cloud__e">entertainer</h2>
-        <h2 class="hero__cloud__han">has a <span>weird</span> newsletter</h2>
-        <h2 class="hero__cloud__ms">makes <span>stuff</span> on the internet</h2>
+      <div class="hero__cloud" data-cloud>
+        <span class="hero__cloud__wd"> 
+          <h2>${HeartIcon()} web developer</h2>
+        </span>
+        <span class="hero__cloud__is">
+          <h2>international speaker</h2>
+        </span>
+        <span class="hero__cloud__te">
+          <h2>tech educator</h2>
+        </span>
+        <span class="hero__cloud__e">
+          <h2>entertainer</h2>
+        </span>
+        <span class="hero__cloud__han">
+          <h2 >has a <span>weird</span> newsletter</h2>
+        </span>
+        <span class="hero__cloud__ms">
+          <h2>makes <span>stuff</span> on the internet</h2>
+        </span>
       </div>
       <div class="hero__image">
-        <img src="${person.imageBio.url}" class="vt__bioImage" alt="${person.imageBio.description}" height="${
+        <img src="${person.imageBio.url + `?fm=webp`}" alt="${person.imageBio.description}" height="${
     person.imageBio.height
   }" width="${person.imageBio.width}" />
       </div>
