@@ -460,13 +460,18 @@ main {
   font-weight: 400;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   line-height: 1;
   font-size: clamp(1.5rem, 7vw, 12rem);
   gap: var(--gap);
 }
 .hero__name__inner span {
   display: flex;
+}
+@media screen and (min-width: 1080px) {
+  .hero__name__inner {
+    justify-content: flex-start;
+  }
 }
 
 .hero__name__separator svg {
