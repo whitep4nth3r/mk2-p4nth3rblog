@@ -12,7 +12,7 @@
 }
 
 .uses__list {
-  @include utils.card_grid(500px);
+  @include utils.card_grid;
   margin-bottom: 3rem;
 }
 

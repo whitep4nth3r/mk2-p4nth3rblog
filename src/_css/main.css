@@ -26,7 +26,6 @@
   --font-weight-main: 400;
   --border-radius-base: 0;
   --border-radius-accent: 3px;
-  --global-max-width: 1440px;
   --feed-max-width: 510px;
   --post-max-width: 1064px;
   --base-shadow-filter: drop-shadow(0px 0.125rem 0.125rem rgba(0, 0, 0, 0.25));
@@ -518,6 +517,11 @@ main {
   list-style: none;
   padding-left: 0;
 }
+@media screen and (min-width: 1280px) {
+  .home__cards {
+    grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
+  }
+}
 .home__cards li {
   display: flex;
 }
@@ -532,9 +536,14 @@ main {
 
 .blog__cardsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   list-style: none;
   padding-left: 0;
+}
+@media screen and (min-width: 1280px) {
+  .blog__cardsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
+  }
 }
 .blog__cardsGrid li {
   display: flex;
@@ -1592,9 +1601,14 @@ main {
 
 .uses__list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   list-style: none;
   padding-left: 0;
+}
+@media screen and (min-width: 1280px) {
+  .uses__list {
+    grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
+  }
 }
 .uses__list li {
   display: flex;
@@ -2203,9 +2217,14 @@ pre[class*=language-] {
 
 .talks__cardGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   list-style: none;
   padding-left: 0;
+}
+@media screen and (min-width: 1280px) {
+  .talks__cardGrid {
+    grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
+  }
 }
 .talks__cardGrid li {
   display: flex;
@@ -2307,115 +2326,6 @@ pre[class*=language-] {
 .tcwr__join:focus-visible:focus-visible, .tcwr__join:focus-visible:focus,
 .tcwr__join:focus-visible:focus:focus-visible,
 .tcwr__join:focus-visible:focus:focus {
-  outline-color: var(--pink);
-  outline-style: solid;
-  outline-width: 0.25rem;
-  outline-offset: -0.25rem;
-}
-
-.video {
-  position: relative;
-  aspect-ratio: 16/9;
-  /* address the magic numbers here, see _reset.scss */
-  margin-top: -8rem;
-}
-@media screen and (min-width: 768px) {
-  .video {
-    margin-top: -12rem;
-  }
-}
-
-.video__banner {
-  width: 100vw;
-  height: 100svh;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  background-image: url("/.netlify/images/?url=/img/salma_on_sofa.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  justify-content: flex-end;
-  filter: contrast(1.1);
-  transition: height 0.2s ease-in-out;
-}
-@media screen and (min-width: 768px) {
-  .video__banner {
-    height: 60svh;
-  }
-}
-
-.video__bannerImg {
-  width: 100%;
-}
-
-.video__headline {
-  font-weight: var(--font-weight-bold);
-  font-family: var(--font-family-main);
-  color: var(--white);
-  text-transform: uppercase;
-  font-size: clamp(3rem, 14vw, 13rem);
-  opacity: 0.8;
-  padding: 1rem 1rem 2rem 1rem;
-  display: flex;
-  align-items: center;
-  max-width: var(--global-max-width);
-  width: 100%;
-  mix-blend-mode: plus-lighter;
-  line-height: 0.8;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.video__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  list-style: none;
-  padding-left: 0;
-}
-.video__grid li {
-  display: flex;
-}
-
-.video__gridHeader {
-  font-weight: var(--font-weight-bold);
-  font-family: var(--font-family-main);
-  margin-top: 3rem;
-  margin-bottom: 2rem;
-  font-size: clamp(2.5rem, 3.5vw, 3.5rem);
-  line-height: 1.4;
-  color: var(--color-fg);
-  max-width: var(--post-max-width);
-  text-wrap: balance;
-}
-
-.video__gridHeader--sub {
-  font-weight: var(--font-weight-mid);
-  font-family: var(--font-family-main);
-  font-size: 1.4rem;
-  word-break: break-word;
-  hyphens: auto;
-}
-
-.video__content {
-  max-width: var(--post-max-width);
-}
-.video__content p {
-  font-weight: var(--font-weight-main);
-  font-family: var(--font-family-main);
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 1.125rem;
-  line-height: 1.75;
-  margin-bottom: 1rem;
-  color: var(--color-fg);
-  word-break: break-word;
-}
-.video__content p a:focus-visible, .video__content p a:focus {
   outline-color: var(--pink);
   outline-style: solid;
   outline-width: 0.25rem;

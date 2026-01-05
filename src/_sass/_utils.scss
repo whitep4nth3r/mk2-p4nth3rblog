@@ -37,11 +37,15 @@ $post_breakpoint_md: 1080px;
   }
 }
 
-@mixin card_grid($minSize: 320px) {
+@mixin card_grid() {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax($minSize, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   list-style: none;
   padding-left: 0;
+
+  @media screen and (min-width: 1280px) {
+    grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
+  }
 
   li {
     display: flex;

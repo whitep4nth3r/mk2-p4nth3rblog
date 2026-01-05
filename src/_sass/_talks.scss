@@ -1,5 +1,5 @@
 @use "utils";
 
 .talks__cardGrid {
-  @include utils.card_grid(500px);
+  @include utils.card_grid;
 }
