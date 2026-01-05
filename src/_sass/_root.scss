@@ -2,26 +2,18 @@
 
 @media (prefers-reduced-motion: reduce) {
   :root {
-    --global-transition-time: 0;
     --scroll-behaviour: auto;
   }
 }
 
-$global_md_breakpoint: 768px;
-
 :root {
   --pink: #f0047f;
-  --pink-light: #f890c6;
   --green: #c3eb78;
   --black: #000000;
-  --black-alt: #1f1823;
   --grey-dark: #2b2e3a;
   --grey-mid: #475467;
   --white: #ffffff;
   --orange: #fc814a;
-
-  --body-horizontal-padding-sm: 1rem;
-  --body-horizontal-padding-lg: 2.5rem;
 
   --font-family-main: "Space Grotesk", sans-serif;
   --font-family-heading: "Anton", sans-serif;
@@ -35,19 +27,12 @@ $global_md_breakpoint: 768px;
   --border-radius-accent: 3px;
 
   --feed-max-width: 510px;
-  --post-max-width: 1064px;
 
-  --base-shadow-filter: drop-shadow(0px 0.125rem 0.125rem rgba(0, 0, 0, 0.25));
-
-  --global-transition-time: 0.21s;
   --scroll-behaviour: smooth;
-
-  --form-height: 48px;
 }
 
 [color-mode="dark"] {
   color-scheme: dark;
-  --page-bg: var(--black);
 
   --color-bg: var(--black);
   --color-fg: var(--white);
@@ -58,7 +43,6 @@ $global_md_breakpoint: 768px;
 
 [color-mode="light"] {
   color-scheme: light;
-  --page-bg: var(--white);
 
   --color-bg: var(--white);
   --color-fg: var(--black);

@@ -31,6 +31,7 @@ exports.render = function (data) {
   return /*html*/ `
   <section class="home">
     <div class="hero" data-hero>
+      <div class="hero__cloud__underlay"></div>
       <div class="hero__cloud" data-cloud>
         <span class="hero__cloud__wd"> 
           <h2><span>${HeartIcon()}</span><span>web developer</span></h2>

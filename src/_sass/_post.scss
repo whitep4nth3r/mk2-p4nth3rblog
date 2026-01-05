@@ -408,9 +408,9 @@
 }
 
 .post__callout {
-  padding: 1rem;
-  border-top: 0.5rem solid var(--color-accent);
-  border-bottom: 0.5rem solid var(--color-accent);
+  padding: 2rem;
+  border-top: 0.5rem dashed var(--color-accent);
+  border-bottom: 0.5rem dashed var(--color-accent);
   margin-top: 2rem;
   margin-bottom: 2rem;
   display: flex;
@@ -420,14 +420,16 @@
 
 .post__calloutTitle {
   @include font.heading;
+  text-transform: uppercase;
+  text-align: right;
   font-size: 2rem;
   line-height: 1;
-  margin-bottom: 1rem;
   color: var(--color-fg);
 }
 
 .post__calloutContent {
   @include font.main;
+  font-style: italic;
   font-size: clamp(1.25rem, 1.5vw, 1.5rem);
   line-height: 1.85;
   margin-bottom: 1rem;
@@ -468,10 +470,10 @@
   text-transform: uppercase;
 }
 
+//todo maybe
 .post__referer {
   @include font.semibold;
   display: block;
-  max-width: var(--post-max-width);
   font-size: 1rem;
   margin: 1rem auto 2rem auto;
   color: var(--color-fg);
@@ -510,7 +512,7 @@
   text-align: left;
   border: 1px solid var(--color-fg);
   padding: var(--cell-padding);
-  background: var(--grey-mid);
+  background: var(--grey-dark);
   color: var(--table-th-color);
 }
 

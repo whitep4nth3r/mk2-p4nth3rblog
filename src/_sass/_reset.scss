@@ -47,9 +47,7 @@ strong {
 body {
   @include font.main;
   font-size: 1rem;
-  color: var(--color-fg);
   position: relative;
-  background: var(--page-bg);
 }
 
 main {

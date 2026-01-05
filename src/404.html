@@ -27,9 +27,14 @@ eleventyExcludeFromCollections: true
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0f111a" />
-    <meta name="msapplication-TileColor" content="#0f111a" />
-    <meta name="theme-color" content="#0f111a" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000" />
+    <meta name="msapplication-TileColor" content="#000000" />
+
+    <!-- For light mode -->
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+
+    <!-- For dark mode -->
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
   </head>
   <body data-type="404">
     {% include "header.html" %}
