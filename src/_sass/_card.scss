@@ -39,10 +39,14 @@
   padding: 2rem;
   text-align: right;
 
+  p {
+    transform: rotate(5deg);
+    transform-origin: center center;
+  }
+
   &:hover {
     p {
-      transform: rotate(5deg);
-      transform-origin: center center;
+      transform: rotate(0);
     }
   }
 }
