@@ -317,6 +317,8 @@ main {
 @media screen and (min-width: 1080px) {
   .hero__cloud__underlay {
     width: 50%;
+    left: 0;
+    top: 0;
   }
 }
 
