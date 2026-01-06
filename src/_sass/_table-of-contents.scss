@@ -7,6 +7,18 @@
   @media screen and (min-width: utils.$post_breakpoint_lg) {
     padding: 0;
   }
+
+  &[open] {
+    .tableOfContents__header::marker {
+      content: "⬇";
+    }
+  }
+
+  &:not([open]) {
+    .tableOfContents__header::marker {
+      content: "⮕";
+    }
+  }
 }
 
 .tableOfContents__list {
