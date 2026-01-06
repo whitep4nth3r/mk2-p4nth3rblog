@@ -112,7 +112,7 @@ exports.render = async function (data) {
        ${
          post.blueskyPostId
            ? `
-              <aside class="post__likes" data-bsky-container>
+              <aside class="post__likes" data-bsky-likes-container>
                 <a href="https://bsky.app/profile/whitep4nth3r.com/post/${
                   post.blueskyPostId
                 }" target="_blank" aria-label="Like this post on Bluesky" class="post__likesTitle" data-bsky-external-link>${HeartIcon()} <span data-bsky-likes-count></span></a>
@@ -134,6 +134,19 @@ exports.render = async function (data) {
         ${post.isSponsored ? isSponsored() : ""}
 
         ${ExternalUrl({ url: post.externalUrl })}
+
+
+       ${
+         post.blueskyPostId
+           ? `
+            <aside class="post__comments" data-bsky-comments-container>
+              <hr class="post__hr" />
+              <h4 class="post__comments__header">Discussion on Bluesky</h4>
+              <ul data-bsky-comments class="post__commentsList">
+              </ul>
+            </aside>`
+           : ""
+       }
       </section>
     </article>
 

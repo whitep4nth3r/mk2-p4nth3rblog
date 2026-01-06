@@ -754,12 +754,6 @@ main {
   text-align: right;
 }
 
-.post__separator {
-  margin-bottom: 2rem;
-  border-color: var(--color-accent);
-  border-style: solid;
-}
-
 .post__article {
   grid-area: content;
   display: flex;
@@ -1288,6 +1282,107 @@ main {
 .post__like--placeholder::before,
 .post__like--howManyMore::before {
   content: unset;
+}
+
+.post__comments__header {
+  font-family: var(--font-family-heading);
+  font-weight: 400;
+  color: var(--color-accent);
+  font-size: clamp(2rem, 4vw, 4rem);
+  line-height: 1.2;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  filter: url(#distort_from_footer);
+}
+
+.post__commentsList {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.post__commentListItem {
+  display: grid;
+  gap: 1rem;
+  justify-content: flex-start;
+  width: 100%;
+  grid-template-areas: "avatar author" "avatar text" "avatar stats";
+}
+
+.post__comment__avatar {
+  grid-area: avatar;
+  overflow: hidden;
+  filter: contrast(150%);
+}
+.post__comment__avatar::before {
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  content: "";
+  position: absolute;
+  transform: rotate(20deg);
+  background: radial-gradient(circle at center, #000, #fff);
+  background-size: 0.15em 0.15em;
+}
+.post__comment__avatar * {
+  mix-blend-mode: hard-light;
+  object-fit: cover;
+}
+.post__comment__avatar {
+  width: 80px;
+  aspect-ratio: 1/1;
+  border-radius: 100%;
+}
+.post__comment__avatar img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.post__comment__author {
+  grid-area: author;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  gap: 1rem;
+  width: 100%;
+  font-weight: var(--font-weight-main);
+  font-family: var(--font-family-main);
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.post__comment__authorDisplay {
+  display: flex;
+  font-weight: var(--font-weight-bold);
+  font-family: var(--font-family-main);
+}
+
+.post__comment__authorHandle {
+  display: flex;
+  opacity: 0.8;
+}
+
+.post__comment__text {
+  grid-area: text;
+  font-weight: var(--font-weight-main);
+  font-family: var(--font-family-main);
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.2rem;
+  line-height: 1.2;
+}
+
+.post__comment__stats {
+  grid-area: stats;
 }
 
 .pagination {

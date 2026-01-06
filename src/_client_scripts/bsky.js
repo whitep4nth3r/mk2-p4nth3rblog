@@ -1,8 +1,9 @@
 const LIMIT = 84;
 const bskyPostId = document.querySelector("[data-bsky-post-id]").dataset.bskyPostId;
-const container = document.querySelector("[data-bsky-container]");
+const container = document.querySelector("[data-bsky-likes-container]");
 const likesContainer = document.querySelector("[data-bsky-likes]");
 const likesCount = document.querySelector("[data-bsky-likes-count]");
+const commentsList = document.querySelector("[data-bsky-comments]");
 const externalLink = document.querySelector("[data-bsky-external-link]");
 const myDid = "did:plc:qcxqtc2yzznbaazu7egncqqx";
 const bskyAPI = "https://public.api.bsky.app/xrpc/";
@@ -44,6 +45,34 @@ function drawLikes(likesActors, postLikesCount) {
   drawHowManyMore(postLikesCount, likesActors.length);
 }
 
+function drawComments(comments) {
+  let list = "";
+  for (const comment of comments) {
+    const newComment = `<li class="post__commentListItem">
+    <div class="post__comment__avatar">
+  <img src="${comment.post.author.avatar.replace("avatar", "avatar_thumbnail")}" alt="${
+      comment.post.author.displayName
+    }" height="128" width="128" /></div>
+  <p class="post__comment__author"><span class="post__comment__authorDisplay">${
+    comment.post.author.displayName
+  }</span><span class="post__comment__authorHandle">${comment.post.author.handle}</span></p>
+  <p class="post__comment__text">${comment.post.record.text}</p>
+  <div class="post__comment__stats">
+    <span>${comment.replies.length}</span>
+    <span>${comment.post.repostCount + comment.post.quoteCount}</span>
+    <span>${comment.post.likeCount}</span>
+  </div>
+</li>`;
+
+    //todo replies
+    //todo embeds?
+    //todo timestamp
+
+    list += newComment;
+  }
+  commentsList.insertAdjacentHTML("beforeend", list);
+}
+
 if (bskyPostId !== "null") {
   const postUri = `at://${myDid}/app.bsky.feed.post/${bskyPostId}`;
   try {
@@ -62,11 +91,12 @@ if (bskyPostId !== "null") {
     const comments = await fetch(getCommentsURL + postUri);
     const commentsData = await comments.json();
 
-    if (commentsData.thread?.replies?.length) {
-      console.log(commentsData.thread.replies);
+    if (commentsData.thread?.replies?.length > 0) {
+      drawComments(commentsData.thread.replies);
     }
   } catch (error) {
     container.remove();
+    commentsList.remove();
   }
 
   externalLink.addEventListener("mouseenter", () => {
