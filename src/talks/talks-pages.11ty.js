@@ -3,7 +3,6 @@ const RichText = require("../_components/richText");
 const VideoEmbed = require("../_components/videoEmbed");
 const SpeakerDeckLink = require("../_components/speakerDeckLink");
 const PublishedDate = require("../_components/publishedDate");
-const Tools = require("../../lib/tools");
 const OpenGraph = require("../../lib/openGraph");
 
 exports.data = {
@@ -88,13 +87,11 @@ exports.render = function (data) {
     <aside class="post__author">
        ${Author({
          author: talk.author,
-         uUrl: `https://whitep4nth3r.com/talks/${talk.slug}/`,
-         hideOnSmallScreens: true,
        })}
         <div style="visibility: hidden; height: 0;">
           <a class="p-author h-card" href="https://whitep4nth3r.com/">Salma Alam-Naylor</a>
           <a class="u-url" href="${`https://whitep4nth3r.com/talks/${talk.slug}/`}">${talk.title}</a>
-          <img class="u-photo" src="src="${talk.author.imageBio.url}"/>
+          <img class="u-photo" src="src="${talk.author.imageBio.url}" />
         </div>
     </aside>
     <section class="post__article">

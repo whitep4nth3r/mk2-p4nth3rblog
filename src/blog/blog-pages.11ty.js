@@ -101,8 +101,6 @@ exports.render = async function (data) {
       <aside class="post__author">
         ${Author({
           author: post.author,
-          uUrl: `https://whitep4nth3r.com/blog/${post.slug}/`,
-          hideOnSmallScreens: true,
         })}
         <div style="visibility: hidden; height: 0;">
           <a class="p-author h-card" href="https://whitep4nth3r.com/">Salma Alam-Naylor</a>

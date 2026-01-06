@@ -175,10 +175,18 @@
 
 .post__body {
   margin-bottom: 2rem;
+
+  &::first-letter {
+    @include font.heading;
+    initial-letter: 2;
+    padding-right: 0.5rem;
+  }
 }
 
 .post__hr {
-  border-color: var(--color-fg);
+  border-color: var(--color-accent);
+  border-style: dashed;
+  border-width: 0.25rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
@@ -314,7 +322,7 @@
 
 .post__blockquote p {
   font-style: italic;
-  font-size: clamp(2rem, 2.5vw, 2.5rem);
+  font-size: clamp(1.5rem, 2vw, 2rem);
   line-height: 1.5;
   font-weight: 500;
   color: var(--color-fg);

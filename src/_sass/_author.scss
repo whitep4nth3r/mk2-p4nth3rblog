@@ -23,14 +23,10 @@
 }
 
 .author__imgContainer {
+  @include utils.half_tone;
   img {
-    filter: contrast(200%);
     object-fit: cover;
     object-position: top center;
-  }
-
-  picture {
-    display: flex;
   }
 }
 
