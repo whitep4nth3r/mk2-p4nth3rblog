@@ -67,6 +67,7 @@ function drawComments(comments) {
     //todo replies
     //todo embeds?
     //todo timestamp
+    //add link to post?
 
     list += newComment;
   }
