@@ -40,20 +40,12 @@
   align-items: center;
   height: 100%;
   width: 100%;
-  gap: 1rem;
   position: absolute;
   z-index: var(--cloud-z-index);
 
   @media screen and (min-width: 1080px) {
     position: relative;
-    justify-content: flex-start;
     height: 80vh;
-    padding: clamp(0.5rem, 2vw, 2rem);
-    padding: clamp(0.5rem, 2vw, 2rem);
-  }
-
-  span {
-    flex: 1 1 auto;
   }
 
   h2 {

@@ -282,21 +282,14 @@ main {
   align-items: center;
   height: 100%;
   width: 100%;
-  gap: 1rem;
   position: absolute;
   z-index: var(--cloud-z-index);
 }
 @media screen and (min-width: 1080px) {
   .hero__cloud {
     position: relative;
-    justify-content: flex-start;
     height: 80vh;
-    padding: clamp(0.5rem, 2vw, 2rem);
-    padding: clamp(0.5rem, 2vw, 2rem);
   }
-}
-.hero__cloud span {
-  flex: 1 1 auto;
 }
 .hero__cloud h2 {
   background: var(--cloud-bg);

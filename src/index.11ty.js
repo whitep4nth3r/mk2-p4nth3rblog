@@ -57,7 +57,7 @@ exports.render = function (data) {
     person.imageBio.height
   }" width="${person.imageBio.width}" />
       </div>
-      <h1 class="hero__name">
+      <h1 class="hero__name" data-name>
         <span class="hero__name__inner">
           <span class="hero__name__separator">${StarIcon()}</span>
           <span>SALMA ALAM-NAYLOR</span>

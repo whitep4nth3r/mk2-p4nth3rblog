@@ -1,3 +1,7 @@
+function updateHeroHeight(hero, height) {
+  hero.style.height = `calc(100svh - ${height}px)`;
+}
+
 document.addEventListener("DOMContentLoaded", (event) => {
   gsap.registerPlugin(ScrollTrigger);
 
@@ -32,10 +36,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
   const headerHeight = document.querySelector("header").offsetHeight;
   const hero = document.querySelector("[data-hero]");
-  hero.style.height = `calc(100svh - ${headerHeight}px)`;
+
+  updateHeroHeight(hero, headerHeight);
 
   window.addEventListener("resize", () => {
     const updatedHeaderHeight = document.querySelector("header").offsetHeight;
-    hero.style.height = `calc(100svh - ${updatedHeaderHeight}px)`;
+    updateHeroHeight(hero, updatedHeaderHeight);
   });
 });
