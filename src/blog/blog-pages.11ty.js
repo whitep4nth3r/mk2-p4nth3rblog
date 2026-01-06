@@ -165,7 +165,7 @@ exports.render = async function (data) {
       post,
       imageUrl: openGraphImageUrl,
     })}</script>
-    <script src="/js/bsky_post_likes.js" type="module"></script>
+    <script src="/js/bsky.js" type="module"></script>
     <script src="/js/copy_code.js"></script>
     `;
 };

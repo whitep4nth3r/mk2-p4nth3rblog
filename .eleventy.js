@@ -11,7 +11,7 @@ module.exports = function (eleventyConfig) {
     "./src/_client_scripts/copy_code.js": "/js/copy_code.js",
   });
   eleventyConfig.addPassthroughCopy({
-    "./src/_client_scripts/bsky_post_likes.js": "/js/bsky_post_likes.js",
+    "./src/_client_scripts/bsky.js": "/js/bsky.js",
   });
   eleventyConfig.addPassthroughCopy({
     "./src/_client_scripts/home.js": "/js/home.js",

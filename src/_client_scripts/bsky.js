@@ -8,6 +8,7 @@ const myDid = "did:plc:qcxqtc2yzznbaazu7egncqqx";
 const bskyAPI = "https://public.api.bsky.app/xrpc/";
 const getLikesURL = `${bskyAPI}app.bsky.feed.getLikes?limit=${LIMIT}&uri=`;
 const getPostURL = `${bskyAPI}app.bsky.feed.getPosts?uris=`;
+const getCommentsURL = `${bskyAPI}app.bsky.feed.getPostThread?uri=`;
 
 let totalLikesCount;
 
@@ -56,6 +57,13 @@ if (bskyPostId !== "null") {
     if (likesData.likes.length > 0) {
       likesCount.textContent = totalLikesCount;
       drawLikes(likesData.likes, totalLikesCount);
+    }
+
+    const comments = await fetch(getCommentsURL + postUri);
+    const commentsData = await comments.json();
+
+    if (commentsData.thread?.replies?.length) {
+      console.log(commentsData.thread.replies);
     }
   } catch (error) {
     container.remove();
