@@ -132,6 +132,8 @@ function drawReplies(replies) {
   for (const reply of replies) {
     const newReply = drawOneReply(reply);
 
+    //make sure ordered by timestamp in serverless function
+
     //todo embeds?
     //todo timestamp
     //only show if doesn't contain quote post - see women in tech article
