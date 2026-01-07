@@ -110,7 +110,13 @@ function drawEmbedExternal(external) {
 }
 
 function drawEmbedRecord(record) {
-  return drawOnePost(record, record.author, record.value.text);
+  return drawOnePost(
+    record,
+    record.author,
+    record.value.text,
+    record.value.createdAt,
+    record.embeds ? record.embeds[0] : null,
+  );
 }
 
 function drawEmbed(embed) {
@@ -132,13 +138,18 @@ function drawEmbed(embed) {
   }
 }
 
-function drawOnePost(post, author, text = "", embed = null, replies = []) {
+function drawOnePost(post, author, text = "", createdAt, embed = null, replies = []) {
   const isEmbed = post.$type && post.$type === "app.bsky.embed.record#viewRecord";
   const parentTagName = isEmbed ? "div" : "li";
   const innerTagName = isEmbed ? "span" : "a";
   const includeLink = !isEmbed
     ? `target="_blank" aria-label="Read ${author.displayName}'s reply on Bluesky" href="${createLinkToPost(post)}"`
     : "";
+  const date = new Intl.DateTimeFormat("en-GB", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+  }).format(new Date(createdAt));
 
   return `<${parentTagName} class="post__replyListItem">
     <${innerTagName} class="post__replyListItemInner"${includeLink}>
@@ -150,7 +161,9 @@ function drawOnePost(post, author, text = "", embed = null, replies = []) {
     <div class="post__reply__content">
       <p class="post__reply__author"><span class="post__reply__authorDisplay">${
         author.displayName
-      }</span><span class="post__reply__authorHandle">${author.handle}</span></p>
+      }</span><span class="post__reply__authorHandle">${
+    author.handle
+  }</span><span class="post__reply__createdAt">${date}</span></p>
       ${text.length > 0 ? `<p class="post__reply__text">${escapeHTML(text)}</p>` : ""}
       ${embed ? drawEmbed(embed) : ``}
       <div class="post__reply__stats">
@@ -174,16 +187,13 @@ function drawReplies(replies) {
       reply.post,
       reply.post.author,
       reply.post.record.text,
+      reply.post.record.createdAt,
       reply.post.embed,
       reply.replies,
     );
 
     //make sure ordered by timestamp in serverless function
     //todo timestamp
-
-    //todo embeds?
-
-    //only show if doesn't contain quote post - see women in tech article
 
     list += newReply;
   }

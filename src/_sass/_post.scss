@@ -695,7 +695,8 @@
   @include font.bold;
 }
 
-.post__reply__authorHandle {
+.post__reply__authorHandle,
+.post__reply__createdAt {
   display: flex;
   opacity: 0.8;
 }
