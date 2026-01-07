@@ -4,13 +4,14 @@ const container = document.querySelector("[data-bsky-likes-container]");
 const likesContainer = document.querySelector("[data-bsky-likes]");
 const likesCount = document.querySelector("[data-bsky-likes-count]");
 const commentsList = document.querySelector("[data-bsky-comments]");
+const commentsCount = document.querySelector("[data-bsky-comments-count]");
 const externalLink = document.querySelector("[data-bsky-external-link]");
 const commentCountEl = document.querySelector("[data-bsky-comment-count]");
 const myDid = "did:plc:qcxqtc2yzznbaazu7egncqqx";
 const bskyAPI = "https://public.api.bsky.app/xrpc/";
 const getLikesURL = `${bskyAPI}app.bsky.feed.getLikes?limit=${LIMIT}&uri=`;
 const getPostURL = `${bskyAPI}app.bsky.feed.getPosts?uris=`;
-const getCommentsURL = `${bskyAPI}app.bsky.feed.getPostThread?uri=`;
+const getCommentsURL = `/api/bskycomments?postUri=`;
 
 let totalLikesCount;
 
@@ -100,9 +101,10 @@ if (bskyPostId !== "null") {
 
     const comments = await fetch(getCommentsURL + postUri);
     const commentsData = await comments.json();
+    console.log(commentsData);
 
     if (commentsData.thread?.replies?.length > 0) {
-      commentCountEl.innerText = commentsData.thread.replies.length;
+      commentsCount.textContent = commentsData.thread.replies.length;
       drawComments(commentsData.thread.replies);
     }
   } catch (error) {
