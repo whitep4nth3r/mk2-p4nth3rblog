@@ -686,4 +686,15 @@
 
 .post__comment__stats {
   grid-area: stats;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.post__comments__stats__likes {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
 }

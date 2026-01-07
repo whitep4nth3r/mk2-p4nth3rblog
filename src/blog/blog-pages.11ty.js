@@ -141,7 +141,7 @@ exports.render = async function (data) {
            ? `
             <aside class="post__comments" data-bsky-comments-container>
               <hr class="post__hr" />
-              <h4 class="post__comments__header">Discussion on Bluesky</h4>
+              <h4 class="post__comments__header"><span data-bsky-comment-count></span> Comments on Bluesky</h4>
               <ul data-bsky-comments class="post__commentsList">
               </ul>
             </aside>`
