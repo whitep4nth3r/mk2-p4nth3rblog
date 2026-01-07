@@ -708,9 +708,8 @@
 }
 
 .post__replies__placeholder {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  display: block;
+  margin-bottom: 2rem;
 }
 
 .post__replies__placeholderText {
@@ -720,6 +719,7 @@
   line-height: 1.2;
   color: var(--color-fg);
 }
+
 .post__replies__placeholderCta {
   @include font.heading;
   text-transform: uppercase;
@@ -729,8 +729,8 @@
   border: var(--black) 0.25rem solid;
   text-decoration: none;
   text-align: center;
-  padding: 0.5rem 1rem;
-  display: block;
+  padding: 0.5rem 2rem;
+  display: inline-block;
   @include utils.link_focus;
 
   &:focus-visible,
