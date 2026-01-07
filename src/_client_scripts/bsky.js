@@ -180,11 +180,11 @@ if (bskyPostId !== "null") {
     repliesList.remove();
   }
 
-  externalLink.addEventListener("mouseenter", () => {
+  externalLink.addEventListener("pointerenter", () => {
     likesCount.textContent = "Like";
   });
 
-  externalLink.addEventListener("mouseleave", () => {
+  externalLink.addEventListener("pointerleave", () => {
     likesCount.textContent = totalLikesCount;
   });
 }
