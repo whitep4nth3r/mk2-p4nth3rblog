@@ -613,6 +613,7 @@
 }
 
 .post__replies {
+  --embed-border-color: #b2bec3;
 }
 
 .post__replies__header {
@@ -750,7 +751,7 @@
   flex-direction: column;
   gap: 0.5rem;
   border-radius: var(--border-radius-accent);
-  border: 1px solid var(--color-fg);
+  border: 1px solid var(--embed-border-color);
   padding: 0.5rem;
   width: 100%;
 
@@ -771,7 +772,7 @@
   flex-direction: column;
   gap: 0.5rem;
   border-radius: var(--border-radius-accent);
-  border: 1px solid var(--color-fg);
+  border: 1px solid var(--embed-border-color);
   padding: 0.5rem;
   width: 100%;
 
