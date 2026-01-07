@@ -1,20 +1,6 @@
-let cachedSession = null;
-let authPromise = null;
-/*
-cachedSession shape:
-{
-  accessJwt: string,
-  expiresAt: number (ms timestamp)
-}
-*/
-
 async function authenticate() {
   const identifier = "whitep4nth3r.com";
   const password = process.env.BSKY_APP_PASSWORD;
-
-  if (!identifier || !password) {
-    throw new Error("Missing Bluesky credentials");
-  }
 
   const res = await fetch("https://bsky.social/xrpc/com.atproto.server.createSession", {
     method: "POST",
@@ -28,31 +14,8 @@ async function authenticate() {
   }
 
   const session = await res.json();
-  const now = Date.now();
 
-  cachedSession = {
-    accessJwt: session.accessJwt,
-    // Prefer expiresAt if provided, fallback to conservative TTL
-    expiresAt: session.expiresAt ? new Date(session.expiresAt).getTime() : now + 1000 * 60 * 110,
-  };
-
-  return cachedSession.accessJwt;
-}
-
-async function getCachedSession() {
-  const now = Date.now();
-
-  if (cachedSession && cachedSession.expiresAt > now + 60_000) {
-    return cachedSession.accessJwt;
-  }
-
-  if (!authPromise) {
-    authPromise = authenticate().finally(() => {
-      authPromise = null;
-    });
-  }
-
-  return authPromise;
+  return session.accessJwt;
 }
 
 function filterHiddenRepliesByThreadGate(data) {
@@ -68,7 +31,7 @@ function filterHiddenRepliesByThreadGate(data) {
   };
 }
 
-export const handler = async (event) => {
+exports.handler = async (event) => {
   const postUri = event.queryStringParameters?.postUri;
 
   if (!postUri) {
@@ -80,7 +43,7 @@ export const handler = async (event) => {
   }
 
   try {
-    let accessJwt = await getCachedSession();
+    let accessJwt = await authenticate();
 
     let apiRes = await fetch(
       `https://bsky.social/xrpc/app.bsky.feed.getPostThread?uri=${encodeURIComponent(postUri)}`,
@@ -90,18 +53,6 @@ export const handler = async (event) => {
         },
       },
     );
-
-    // Retry once if token expired early
-    if (apiRes.status === 401) {
-      cachedSession = null;
-      accessJwt = await getCachedSession();
-
-      apiRes = await fetch(`https://bsky.social/xrpc/app.bsky.feed.getPostThread?uri=${encodeURIComponent(postUri)}`, {
-        headers: {
-          Authorization: `Bearer ${accessJwt}`,
-        },
-      });
-    }
 
     if (!apiRes.ok) {
       const text = await apiRes.text();

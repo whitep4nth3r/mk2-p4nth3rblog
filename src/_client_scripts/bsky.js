@@ -74,10 +74,7 @@ function countReplies(replies) {
 }
 
 function escapeHTML(str = "") {
-  return str
-    .replace(/&/g, "&amp;") // MUST be first
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;");
+  return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
 
 function createLinkToPost(data) {
@@ -89,8 +86,29 @@ function createLinkToPost(data) {
   return `https://bsky.app/profile/${handle}/post/${postId}`;
 }
 
+function drawEmbed(type, post) {
+  switch (type) {
+    case "app.bsky.embed.record#view":
+      return "RECORD VIEW";
+    case "app.bsky.embed.images#view":
+      return "IMAGES VIEW";
+    case "app.bsky.embed.external#view":
+      return "EXTERNAL VIEW";
+    default:
+      return "";
+  }
+}
+
 function drawOneReply(reply) {
   console.log(reply);
+
+  let embedType = "";
+
+  const embed = reply.post.embed;
+
+  if (embed) {
+    embedType = reply.post.embed.$type;
+  }
 
   //try doing embeds on this post
   // http://localhost:8888/blog/how-to-build-a-copy-code-snippet-button/
@@ -109,6 +127,7 @@ function drawOneReply(reply) {
         reply.post.author.displayName
       }</span><span class="post__reply__authorHandle">${reply.post.author.handle}</span></p>
       <p class="post__reply__text">${escapeHTML(reply.post.record.text)}</p>
+      ${embed ? drawEmbed(embedType, reply.post.embed) : ``}
       <div class="post__reply__stats">
         <span class="post__reply__stats__row">${replySvg} ${reply.replies?.length || 0}</span>
         <span class="post__reply__stats__row">${repostSvg} ${reply.post.repostCount + reply.post.quoteCount}</span>
