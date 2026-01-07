@@ -139,11 +139,15 @@ exports.render = async function (data) {
        ${
          post.blueskyPostId
            ? `
-            <aside class="post__comments" data-bsky-comments-container>
+            <aside class="post__replies" data-bsky-replies-container>
               <hr class="post__hr" />
-              <h4 class="post__comments__header"><span data-bsky-comments-count></span> comments on Bluesky</h4>
-              <ul data-bsky-comments class="post__commentsList">
+              <h4 class="post__replies__header"><span data-bsky-replies-count></span> replies on Bluesky</h4>
+              <div class="post__replies__placeholder" data-replies-placeholder>
+                <p class="post__replies__placeholderText">No replies yet.</p>
+              </div>
+              <ul data-bsky-replies class="post__repliesList">
               </ul>
+                <a href="https://bsky.app/profile/whitep4nth3r.com/post/${post.blueskyPostId}" target="_blank" class="post__replies__placeholderCta">Say something</a>
             </aside>`
            : ""
        }
