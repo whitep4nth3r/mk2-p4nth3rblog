@@ -1316,8 +1316,8 @@ main {
 
 .post__replyListItemInner {
   display: grid;
-  grid-template-columns: 50px auto;
-  grid-template-rows: auto auto auto;
+  grid-template-columns: 50px 1fr;
+  grid-template-rows: auto auto;
   gap: 1rem;
   align-self: start;
   text-decoration: none;
@@ -1328,9 +1328,13 @@ main {
   outline-width: 0.25rem;
   outline-offset: -0.25rem;
 }
+.post__replyListItemInner {
+  width: 100%;
+}
 @media screen and (min-width: 1080px) {
   .post__replyListItemInner {
     grid-template-columns: 75px auto;
+    grid-template-rows: auto auto auto;
   }
 }
 
@@ -1371,21 +1375,24 @@ main {
   flex-direction: column;
   justify-content: flex-start;
   gap: 1rem;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .post__reply__author {
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
-  gap: 1rem;
+  gap: 0.5rem;
   width: 100%;
   font-weight: var(--font-weight-main);
   font-family: var(--font-family-main);
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  font-size: 1rem;
-  line-height: 1.25;
+  font-size: clamp(0.75rem, 0.9vw, 1rem);
+  line-height: 1;
+  flex-wrap: wrap;
 }
 
 .post__reply__authorDisplay {
@@ -1405,7 +1412,7 @@ main {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  font-size: 1.2rem;
+  font-size: clamp(0.8rem, 1.2vw, 1.2rem);
   line-height: 1.2;
 }
 
