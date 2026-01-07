@@ -1301,6 +1301,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  max-width: 800px;
 }
 
 .post__repliesList--child {
@@ -1315,7 +1316,7 @@ main {
 
 .post__replyListItemInner {
   display: grid;
-  grid-template-columns: 1fr 7fr;
+  grid-template-columns: 100px auto;
   grid-template-rows: auto auto auto;
   gap: 1rem;
   align-self: start;
