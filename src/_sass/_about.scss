@@ -7,11 +7,11 @@
   position: relative;
 
   @media screen and (min-width: 1080px) {
-    --gap: 3rem;
-    --grid-tc: 1fr 1fr;
+    height: 100vh;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
-  display: grid;
-  grid-template-columns: var(--grid-tc);
 }
 
 .about__hero__image {
@@ -23,8 +23,8 @@
 
   img {
     view-transition-name: bio-image;
-    height: 100%;
-    width: 100%;
+    height: 101%;
+    width: auto;
     object-fit: cover;
     object-position: top center;
     position: relative;
@@ -53,7 +53,7 @@
   justify-content: center;
   line-height: 1;
   font-size: clamp(1.5rem, 8vw, 8rem);
-  gap: var(--gap);
+  gap: 3rem;
 
   span {
     display: flex;
@@ -61,10 +61,10 @@
 }
 
 .about__hero__bio {
-  padding: 1rem;
+  padding: 2rem;
 
   @media screen and (min-width: 1080px) {
-    padding: 4rem;
-    margin-top: 9rem;
+    overflow-y: scroll;
+    padding: 12rem 4rem;
   }
 }

@@ -184,5 +184,9 @@ exports.render = async function (data) {
     })}</script>
     <script src="/js/bsky.js" type="module"></script>
     <script src="/js/copy_code.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
+    <script src="/js/blog.js" type="module"></script>
     `;
 };

@@ -57,10 +57,6 @@ exports.render = function (data) {
       </div>
     </section>
 
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
-    <script src="/js/about.js" type="module"></script> -->
     <script type="application/ld+json">${PersonStructuredData({
       person,
     })}</script>

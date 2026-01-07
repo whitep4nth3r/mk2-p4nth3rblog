@@ -420,6 +420,10 @@
   flex-direction: column;
 }
 
+.post__body > .post__callout:first-child {
+  margin-top: 0;
+}
+
 .post__calloutTitle {
   @include font.heading;
   text-transform: uppercase;
