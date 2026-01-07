@@ -642,20 +642,30 @@
 
 .post__replyListItemInner {
   display: grid;
-  grid-template-columns: 100px auto;
+  grid-template-columns: 50px auto;
   grid-template-rows: auto auto auto;
   gap: 1rem;
   align-self: start;
   text-decoration: none;
-  padding: 0.5rem;
   @include utils.link_focus;
+
+  @media screen and (min-width: 1080px) {
+    grid-template-columns: 75px auto;
+  }
 }
 
 .post__reply__avatar {
   @include utils.half_tone;
   aspect-ratio: 1/1;
-  border-radius: 100%;
-  align-self: start;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.post__reply__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* fills the square, no stretching */
+  display: block;
 }
 
 .post__reply__content {
@@ -730,12 +740,19 @@
   text-decoration: none;
   text-align: center;
   padding: 0.5rem 2rem;
-  display: inline-block;
+  display: block;
   @include utils.link_focus;
+  margin-left: auto;
+  margin-right: auto;
 
   &:focus-visible,
   &:focus {
     background: var(--color-bg);
     color: var(--color-fg);
+  }
+
+  @media screen and (min-width: 1080px) {
+    width: max-content;
+    margin: unset;
   }
 }

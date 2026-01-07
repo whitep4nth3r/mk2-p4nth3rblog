@@ -1316,18 +1316,22 @@ main {
 
 .post__replyListItemInner {
   display: grid;
-  grid-template-columns: 100px auto;
+  grid-template-columns: 50px auto;
   grid-template-rows: auto auto auto;
   gap: 1rem;
   align-self: start;
   text-decoration: none;
-  padding: 0.5rem;
 }
 .post__replyListItemInner:focus-visible, .post__replyListItemInner:focus {
   outline-color: var(--pink);
   outline-style: solid;
   outline-width: 0.25rem;
   outline-offset: -0.25rem;
+}
+@media screen and (min-width: 1080px) {
+  .post__replyListItemInner {
+    grid-template-columns: 75px auto;
+  }
 }
 
 .post__reply__avatar {
@@ -1351,8 +1355,15 @@ main {
 }
 .post__reply__avatar {
   aspect-ratio: 1/1;
-  border-radius: 100%;
-  align-self: start;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.post__reply__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* fills the square, no stretching */
+  display: block;
 }
 
 .post__reply__content {
@@ -1438,7 +1449,7 @@ main {
   text-decoration: none;
   text-align: center;
   padding: 0.5rem 2rem;
-  display: inline-block;
+  display: block;
 }
 .post__replies__placeholderCta:focus-visible, .post__replies__placeholderCta:focus {
   outline-color: var(--pink);
@@ -1446,9 +1457,19 @@ main {
   outline-width: 0.25rem;
   outline-offset: -0.25rem;
 }
+.post__replies__placeholderCta {
+  margin-left: auto;
+  margin-right: auto;
+}
 .post__replies__placeholderCta:focus-visible, .post__replies__placeholderCta:focus {
   background: var(--color-bg);
   color: var(--color-fg);
+}
+@media screen and (min-width: 1080px) {
+  .post__replies__placeholderCta {
+    width: max-content;
+    margin: unset;
+  }
 }
 
 .pagination {
