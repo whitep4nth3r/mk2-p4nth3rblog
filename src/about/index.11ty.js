@@ -25,6 +25,8 @@ exports.data = {
   includeInSitemap: true,
 };
 
+//todo make a scrollable container
+
 exports.render = function (data) {
   const { person } = data;
 

@@ -77,71 +77,92 @@ function escapeHTML(str = "") {
   return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
 
-function createLinkToPost(data) {
-  const handle = data.post.author.handle;
-  const postUri = data.post.uri;
+function createLinkToPost(post) {
+  const handle = post.author.handle;
+  const postUri = post.uri;
 
   const postId = postUri.split("/").pop();
 
   return `https://bsky.app/profile/${handle}/post/${postId}`;
 }
 
-function drawEmbed(type, post) {
-  switch (type) {
+function drawEmbedImages(images) {
+  return images
+    .map(
+      (img) => `
+      <img
+        src="${img.thumb}"
+        alt="${img.alt}"
+        height="${img.aspectRatio.height}"
+        width="${img.aspectRatio.width}"
+      />
+    `,
+    )
+    .join("");
+}
+
+function drawEmbedExternal(external) {
+  return `
+    ${external.title.length > 0 ? `<p class="ext__title">${external.title}</p>` : ""}
+    ${external.description.length > 0 ? `<p class="ext__desc">${external.description}</p>` : ""}
+    <p class="ext__uri">${external.uri}</p>
+  `;
+}
+
+function drawEmbedRecord(record) {
+  return drawOnePost(record, record.author, record.value.text);
+}
+
+function drawEmbed(embed) {
+  switch (embed.$type) {
     case "app.bsky.embed.record#view":
-      return "RECORD VIEW";
+      return `<div class="post__reply__embed post__reply__embed--record">
+          ${drawEmbedRecord(embed.record)}
+      </div>`;
     case "app.bsky.embed.images#view":
-      return "IMAGES VIEW";
+      return `<div class="post__reply__embed post__reply__embed--images">
+          ${drawEmbedImages(embed.images)}
+      </div>`;
     case "app.bsky.embed.external#view":
-      return "EXTERNAL VIEW";
+      return `<div class="post__reply__embed post__reply__embed--external">
+          ${drawEmbedExternal(embed.external)}
+      </div>`;
     default:
       return "";
   }
 }
 
-function drawOneReply(reply) {
-  console.log(reply);
+function drawOnePost(post, author, text = "", embed = null, replies = []) {
+  const isEmbed = post.$type && post.$type === "app.bsky.embed.record#viewRecord";
+  const parentTagName = isEmbed ? "div" : "li";
+  const innerTagName = isEmbed ? "span" : "a";
+  const includeLink = !isEmbed
+    ? `target="_blank" aria-label="Read ${author.displayName}'s reply on Bluesky" href="${createLinkToPost(post)}"`
+    : "";
 
-  let embedType = "";
-
-  const embed = reply.post.embed;
-
-  if (embed) {
-    embedType = reply.post.embed.$type;
-  }
-
-  //try doing embeds on this post
-  // http://localhost:8888/blog/how-to-build-a-copy-code-snippet-button/
-
-  return `<li class="post__replyListItem">
-    <a class="post__replyListItemInner" target="_blank" aria-label="Read ${
-      reply.post.author.displayName
-    }'s reply on Bluesky" href="${createLinkToPost(reply)}">
+  return `<${parentTagName} class="post__replyListItem">
+    <${innerTagName} class="post__replyListItemInner"${includeLink}>
       <div class="post__reply__avatar">
-        <img src="${reply.post.author.avatar.replace("avatar", "avatar_thumbnail")}" alt="${
-    reply.post.author.displayName
+        <img src="${author.avatar.replace("avatar", "avatar_thumbnail")}" alt="${
+    author.displayName
   }" height="128" width="128" />
     </div>
     <div class="post__reply__content">
       <p class="post__reply__author"><span class="post__reply__authorDisplay">${
-        reply.post.author.displayName
-      }</span><span class="post__reply__authorHandle">${reply.post.author.handle}</span></p>
-      <p class="post__reply__text">${escapeHTML(reply.post.record.text)}</p>
-      ${embed ? drawEmbed(embedType, reply.post.embed) : ``}
+        author.displayName
+      }</span><span class="post__reply__authorHandle">${author.handle}</span></p>
+      ${text.length > 0 ? `<p class="post__reply__text">${escapeHTML(text)}</p>` : ""}
+      ${embed ? drawEmbed(embed) : ``}
       <div class="post__reply__stats">
-        <span class="post__reply__stats__row">${replySvg} ${reply.replies?.length || 0}</span>
-        <span class="post__reply__stats__row">${repostSvg} ${reply.post.repostCount + reply.post.quoteCount}</span>
-        <span class="post__reply__stats__row">${heartSvg} <span>${reply.post.likeCount}</span></span>
+        <span class="post__reply__stats__item">${replySvg} <span>${post.replyCount}</span></span>
+        <span class="post__reply__stats__item">${repostSvg}<span> ${post.repostCount + post.quoteCount}</span></span>
+        <span class="post__reply__stats__item">${heartSvg} <span>${post.likeCount}</span></span>
       </div>
     </div>
-  </a>
+  </${innerTagName}>
 
-  ${
-    reply.replies?.length > 0
-      ? `<ul class="post__repliesList post__repliesList--child">${drawReplies(reply.replies)}</ul>`
-      : ``
-  }
-</li>`;
+  ${replies?.length > 0 ? `<ul class="post__repliesList post__repliesList--child">${drawReplies(replies)}</ul>` : ``}
+</${parentTagName}>`;
 }
 
 function drawReplies(replies) {
@@ -149,12 +170,19 @@ function drawReplies(replies) {
 
   let list = "";
   for (const reply of replies) {
-    const newReply = drawOneReply(reply);
+    const newReply = drawOnePost(
+      reply.post,
+      reply.post.author,
+      reply.post.record.text,
+      reply.post.embed,
+      reply.replies,
+    );
 
     //make sure ordered by timestamp in serverless function
+    //todo timestamp
 
     //todo embeds?
-    //todo timestamp
+
     //only show if doesn't contain quote post - see women in tech article
 
     list += newReply;

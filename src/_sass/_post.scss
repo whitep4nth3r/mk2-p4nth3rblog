@@ -715,15 +715,64 @@
   align-items: center;
 }
 
-.post__reply__stats__row {
+.post__reply__stats__item {
   display: flex;
   flex-direction: row;
-  gap: 0.5rem;
+  gap: 0.25rem;
 }
 
 .post__replies__placeholder {
   display: block;
   margin-bottom: 2rem;
+}
+
+.post__reply__embed {
+}
+
+.post__reply__embed--images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+
+  img {
+    height: auto;
+    border-radius: var(--border-radius-accent);
+  }
+}
+
+.post__reply__embed--external {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-radius: var(--border-radius-accent);
+  border: 1px solid var(--color-fg);
+  padding: 0.5rem;
+  width: 100%;
+
+  .ext__title {
+    @include font.bold;
+  }
+
+  .ext__desc {
+  }
+
+  .ext__uri {
+    font-style: italic;
+  }
+}
+
+.post__reply__embed--record {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-radius: var(--border-radius-accent);
+  border: 1px solid var(--color-fg);
+  padding: 0.5rem;
+  width: 100%;
+
+  .post__replyListItemInner {
+    grid-template-rows: auto;
+  }
 }
 
 .post__replies__placeholderText {
