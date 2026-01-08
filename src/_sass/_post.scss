@@ -48,6 +48,10 @@
       "bsky aside content author";
     grid-template-columns: 1fr 2fr 6fr 2fr;
   }
+
+  @media screen and (min-width: utils.$post_breakpoint_xl) {
+    grid-template-columns: 1fr 1fr 6fr 2fr;
+  }
 }
 
 .post__header {
@@ -169,6 +173,8 @@
 
 .post__body {
   margin-bottom: 2rem;
+  max-width: 100ch;
+  align-self: center;
 
   &::first-letter {
     @include font.heading;
