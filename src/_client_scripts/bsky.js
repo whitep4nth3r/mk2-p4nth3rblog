@@ -147,8 +147,8 @@ function drawOnePost(post, author, text = "", createdAt, embed = null, replies =
     year: "numeric",
   }).format(new Date(createdAt));
 
-  return `<${parentTagName} class="post__replyListItem">
-    <${innerTagName} class="post__replyListItemInner"${includeLink}>
+  return `<${parentTagName} class="post__reply__listItem">
+    <${innerTagName} class="post__reply__listItem__inner"${includeLink}>
       <div class="post__reply__avatar">
         <img src="${author.avatar.replace("avatar", "avatar_thumbnail")}" alt="${
     author.displayName
@@ -170,7 +170,9 @@ function drawOnePost(post, author, text = "", createdAt, embed = null, replies =
     </div>
   </${innerTagName}>
 
-  ${replies?.length > 0 ? `<ul class="post__repliesList post__repliesList--child">${drawReplies(replies)}</ul>` : ``}
+  ${
+    replies?.length > 0 ? `<ul class="post__replies__list post__replies__list--child">${drawReplies(replies)}</ul>` : ``
+  }
 </${parentTagName}>`;
 }
 

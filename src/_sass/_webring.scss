@@ -10,7 +10,6 @@
 
   span {
     font-style: italic;
-    color: var(--orange);
   }
 }
 
@@ -70,7 +69,7 @@
 }
 
 .tcwr__join {
-  background: linear-gradient(45deg, var(--pink) 0%, var(--orange) 75%);
+  background: linear-gradient(45deg, var(--pink) 0%, var(--green) 75%);
   display: block;
   border-width: 0;
   border-radius: var(--border-radius-base);

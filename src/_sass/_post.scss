@@ -185,6 +185,13 @@
   }
 }
 
+.post__body--talk {
+  &::first-letter {
+    initial-letter: unset;
+    padding-right: unset;
+  }
+}
+
 .post__hr {
   border-color: var(--color-accent);
   border-style: dashed;
@@ -372,13 +379,9 @@
 }
 
 .post__relatedHeader {
-  @include font.semibold;
   font-size: clamp(1.8rem, 2.8vw, 2rem);
-  line-height: 1.4;
   margin-bottom: 2rem;
   padding-top: 2rem;
-  word-break: break-word;
-  hyphens: auto;
   color: var(--color-accent);
 }
 
@@ -393,10 +396,13 @@
   padding: 1rem;
   text-transform: uppercase;
   align-items: center;
+  flex-wrap: wrap;
+  align-items: center;
 
   svg {
-    height: 3rem;
-    width: 3rem;
+    display: flex;
+    height: clamp(2rem, 2vw, 3rem);
+    width: clamp(2rem, 2vw, 3rem);
   }
 }
 
@@ -437,7 +443,7 @@
   margin-top: 0;
 }
 
-.post__calloutTitle {
+.post__callout__title {
   @include font.heading;
   text-transform: uppercase;
   text-align: right;
@@ -446,7 +452,7 @@
   color: var(--color-fg);
 }
 
-.post__calloutContent {
+.post__callout__content {
   @include font.main;
   font-style: italic;
   font-size: clamp(1.25rem, 1.5vw, 1.5rem);
@@ -460,17 +466,17 @@
   }
 }
 
-.post__calloutContent p:not(:last-of-type) {
+.post__callout__content p:not(:last-of-type) {
   margin-bottom: 1rem;
 }
 
-.post__calloutContent blockquote {
+.post__callout__content blockquote {
   display: block;
   margin-block-start: 2rem;
   margin-block-end: 2rem;
 }
 
-.post__calloutContent blockquote p {
+.post__callout__content blockquote p {
   font-style: italic;
   font-size: clamp(1.5rem, 2vw, 2rem);
   line-height: 1.5;
@@ -487,25 +493,6 @@
   font-size: clamp(1.5rem, 2vw, 2rem);
   text-align: center;
   text-transform: uppercase;
-}
-
-//todo maybe
-.post__referer {
-  @include font.semibold;
-  display: block;
-  font-size: 1rem;
-  margin: 1rem auto 2rem auto;
-  color: var(--color-fg);
-  line-height: 1.4;
-  font-style: italic;
-
-  a {
-    display: inline-block;
-    line-height: inherit;
-    position: relative;
-
-    @include utils.link_focus;
-  }
 }
 
 .post__arcadeEmbed {
@@ -526,7 +513,7 @@
   margin-top: 1rem;
 }
 
-.post__tableHeader {
+.post__table__header {
   @include font.semibold;
   text-align: left;
   border: 1px solid var(--color-fg);
@@ -535,10 +522,10 @@
   color: var(--table-th-color);
 }
 
-.post__tableRow {
+.post__table__row {
 }
 
-.post__tableCell {
+.post__table__cell {
   @include font.main;
   text-align: left;
   word-wrap: break-word;
@@ -551,7 +538,7 @@
   grid-area: bsky;
 }
 
-.post__likesTitle {
+.post__likes__title {
   @include font.heading;
   text-transform: uppercase;
   font-size: 2rem;
@@ -582,7 +569,7 @@
   }
 }
 
-.post__likesList {
+.post__likes__list {
   list-style: none;
   padding: 0;
   display: flex;
@@ -613,12 +600,12 @@
 
 .post__like--placeholder,
 .post__like--howManyMore {
-  @include font.bold;
-  font-size: 1rem;
-  background-color: var(--pink);
-  color: #fff;
+  @include font.heading;
+  font-size: clamp(1.5rem, 1.75vw, 2rem);
+  background-color: var(--color-fg);
+  color: var(--color-bg);
   filter: unset;
-  flex: 0 1 4rem;
+  aspect-ratio: 1/1;
 
   &::before {
     content: unset;
@@ -642,7 +629,7 @@
   filter: url(#distort_from_footer);
 }
 
-.post__repliesList {
+.post__replies__list {
   list-style: none;
   padding: 0;
   display: flex;
@@ -651,17 +638,17 @@
   max-width: 800px;
 }
 
-.post__repliesList--child {
+.post__replies__list--child {
   padding-left: 2rem;
 }
 
-.post__replyListItem {
+.post__reply__listItem {
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
 }
 
-.post__replyListItemInner {
+.post__reply__listItem__inner {
   display: grid;
   grid-template-columns: 50px 1fr;
   grid-template-rows: auto auto;
@@ -796,7 +783,7 @@
   padding: 0.5rem;
   width: 100%;
 
-  .post__replyListItemInner {
+  .post__reply__listItem__inner {
     grid-template-rows: auto;
   }
 }

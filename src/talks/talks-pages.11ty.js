@@ -95,7 +95,7 @@ exports.render = function (data) {
         </div>
     </aside>
     <section class="post__article">
-      <div class="post__body">
+      <div class="post__body post__body--talk">
 
         ${
           talk.recording !== null

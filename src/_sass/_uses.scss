@@ -5,21 +5,7 @@
   margin: auto;
 }
 
-.uses_catHeading {
-  position: relative;
-  top: 2.5rem;
-  z-index: 9;
-}
-
 .uses__list {
   @include utils.card_grid;
   margin-bottom: 3rem;
-}
-
-.page__text {
-  @include font.main;
-  font-size: clamp(1.5rem, 2vw, 2rem);
-  margin-bottom: 3rem;
-  padding: 1rem;
-  text-align: right;
 }

@@ -37,7 +37,7 @@ exports.render = function (data) {
   return /* html */ `
   <h1 class="page__header">Activity feed</h1>
   
-  <section class="blog__cards">
+  <section>
     <ol class="blog__cardsGrid">
       ${data.pagination.items
         .map(function (item) {

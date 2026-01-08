@@ -13,7 +13,6 @@
   --grey-dark: #2b2e3a;
   --grey-mid: #475467;
   --white: #ffffff;
-  --orange: #fc814a;
 
   --font-family-main: "Space Grotesk", sans-serif;
   --font-family-heading: "Anton", sans-serif;
@@ -27,26 +26,21 @@
   --border-radius-accent: 3px;
 
   --feed-max-width: 510px;
-
   --scroll-behaviour: smooth;
 }
 
 [color-mode="dark"] {
   color-scheme: dark;
-
   --color-bg: var(--black);
   --color-fg: var(--white);
   --color-link: var(--pink);
-
   --color-accent: var(--green);
 }
 
 [color-mode="light"] {
   color-scheme: light;
-
   --color-bg: var(--white);
   --color-fg: var(--black);
   --color-link: var(--pink);
-
   --color-accent: var(--pink);
 }
