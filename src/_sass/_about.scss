@@ -10,16 +10,23 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
+
+  @media screen and (min-width: 1080px) and (prefers-reduced-motion: reduce) {
+    align-items: stretch;
+  }
 }
 
 .about__hero__image {
   width: auto;
   position: relative;
-  justify-content: center;
   align-items: center;
   z-index: 0;
   overflow: hidden;
   height: 100vh;
+
+  @media screen and (min-width: 1080px) and (prefers-reduced-motion: reduce) {
+    height: 100%;
+  }
 
   img {
     view-transition-name: bio-image;
@@ -32,6 +39,10 @@
     height: auto;
     transform-origin: center center;
     display: block;
+
+    @media screen and (min-width: 1080px) and (prefers-reduced-motion: reduce) {
+      height: 100%;
+    }
   }
 }
 

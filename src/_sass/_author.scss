@@ -81,5 +81,10 @@
       top: 0;
       transform: rotate(0);
     }
+
+    @media screen and (min-width: 1080px) and (prefers-reduced-motion: reduce) {
+      top: -3rem;
+      transform: rotate(-10deg);
+    }
   }
 }
