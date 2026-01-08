@@ -658,6 +658,9 @@
   @media screen and (min-width: 1080px) {
     grid-template-rows: auto auto auto;
   }
+
+  .post__reply__stats__item {
+  }
 }
 
 .post__reply__avatar {
@@ -716,7 +719,7 @@
   grid-area: stats;
   display: flex;
   flex-direction: row;
-  gap: 1rem;
+  gap: 0.5rem;
   justify-content: flex-start;
   align-items: center;
 }
@@ -724,15 +727,15 @@
 .post__reply__stats__item {
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 0.25rem;
+  flex-wrap: wrap;
+  font-size: clamp(0.8rem, 1.2vw, 1rem);
 }
 
 .post__replies__placeholder {
   display: block;
   margin-bottom: 2rem;
-}
-
-.post__reply__embed {
 }
 
 .post__reply__embed--images {
