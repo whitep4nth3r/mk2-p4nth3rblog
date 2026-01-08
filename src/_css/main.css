@@ -577,6 +577,7 @@ main {
   justify-content: center;
   align-items: center;
   z-index: 0;
+  overflow: hidden;
 }
 .about__hero__image img {
   view-transition-name: bio-image;
