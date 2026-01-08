@@ -15,6 +15,18 @@
   border-bottom: 0.5rem dashed var(--color-accent);
 }
 
+.author__underlay {
+  background-size: 600px 600px;
+  background-repeat: repeat;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 150 150' xmlns='http://www.w3.org/2000/svg'%3E %3Cfilter id='noiseFilter'%3E %3CfeTurbulence type='fractalNoise' baseFrequency='3' numOctaves='2' result='noise' /%3E %3CfeColorMatrix type='saturate' values='0' result='grayscale' /%3E %3CfeComponentTransfer%3E %3CfeFuncA in='grayscale' type='linear' slope='0.4' result='updated' /%3E %3C/feComponentTransfer%3E %3CfeMerge%3E %3CfeMergeNode in='noise' /%3E %3CfeMergeNode in='updated' /%3E %3C/feMerge%3E %3C/filter%3E %3Crect width='100%25' height='100%25' opacity='0.46' filter='url(%23noiseFilter)'/%3E %3C/svg%3E");
+}
+
 .author__cta {
   display: flex;
   position: relative;

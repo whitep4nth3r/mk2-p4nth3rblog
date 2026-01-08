@@ -3,6 +3,7 @@ const TabbedBio = require("../_components/tabbedBio");
 const OpenGraph = require("../../lib/openGraph");
 const PersonStructuredData = require("../_components/personStructuredData");
 const StarIcon = require("../_components/svg/starIcon");
+const NameSvg = require("../_components/svg/name");
 
 const pageTitle = "About Salma Alam-Naylor";
 
@@ -42,6 +43,7 @@ exports.render = function (data) {
         </h1>
 
         <div class="about__hero__image">
+        <div class="about__hero__name">${NameSvg()}</div>
          <img src="${person.imageBio.url + `?fm=webp`}" alt="${person.imageBio.description}" height="${
     person.imageBio.height
   }" width="${person.imageBio.width}" />
