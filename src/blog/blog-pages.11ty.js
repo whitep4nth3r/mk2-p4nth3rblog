@@ -129,11 +129,12 @@ exports.render = async function (data) {
             absoluteUrls: false,
             renderHeadingLinks: true,
           })}
+
+          ${post.isSponsored ? isSponsored() : ""}
+
+          ${ExternalUrl({ url: post.externalUrl })}
         </div>
 
-        ${post.isSponsored ? isSponsored() : ""}
-
-        ${ExternalUrl({ url: post.externalUrl })}
 
 
        ${

@@ -654,6 +654,7 @@ main {
 }
 
 .post {
+  --max-width: 100ch;
   position: relative;
   gap: 2rem;
   display: grid;
@@ -818,7 +819,7 @@ main {
 
 .post__body {
   margin-bottom: 2rem;
-  max-width: 100ch;
+  max-width: var(--max-width);
   align-self: center;
 }
 .post__body::first-letter {
@@ -1320,6 +1321,9 @@ main {
 
 .post__replies {
   --embed-border-color: #b2bec3;
+  max-width: var(--max-width);
+  align-self: center;
+  width: 100%;
 }
 
 .post__replies__header {

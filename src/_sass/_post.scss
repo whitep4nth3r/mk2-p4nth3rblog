@@ -11,6 +11,7 @@
 }
 
 .post {
+  --max-width: 100ch;
   position: relative;
   gap: 2rem;
   display: grid;
@@ -174,7 +175,7 @@
 
 .post__body {
   margin-bottom: 2rem;
-  max-width: 100ch;
+  max-width: var(--max-width);
   align-self: center;
 
   &::first-letter {
@@ -346,7 +347,8 @@
 
 .post__externalUrl,
 .post__isSponsored {
-  @include font.bold;
+  @include font.serif;
+  margin-top: 2rem;
   margin-bottom: 2rem;
   max-width: max-content;
   color: var(--color-fg);
@@ -625,6 +627,9 @@
 
 .post__replies {
   --embed-border-color: #b2bec3;
+  max-width: var(--max-width);
+  align-self: center;
+  width: 100%;
 }
 
 .post__replies__header {
