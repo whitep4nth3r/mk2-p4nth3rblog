@@ -18,6 +18,18 @@ async function authenticate() {
   return session.accessJwt;
 }
 
+function sortByCreatedAt(a, b) {
+  if (a.post.record.createdAt > b.post.record.createdAt) {
+    return 1;
+  }
+
+  if (b.post.record.createdAt > a.post.record.createdAt) {
+    return -1;
+  }
+
+  return 0;
+}
+
 function filterHiddenRepliesByThreadGate(data) {
   if (!data.thread || !Array.isArray(data.thread.replies)) return data.thread;
   const hiddenPostUris = data.threadgate?.record.hiddenReplies;
@@ -72,10 +84,12 @@ exports.handler = async (event) => {
       data = filterHiddenRepliesByThreadGate(data);
     }
 
+    const sortedReplies = data.thread.replies.sort(sortByCreatedAt);
+
     return {
       statusCode: 200,
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
+      body: JSON.stringify({ ...data, thread: { ...data.thread, replies: sortedReplies } }),
     };
   } catch (err) {
     return {

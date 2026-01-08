@@ -192,9 +192,6 @@ function drawReplies(replies) {
       reply.replies,
     );
 
-    //make sure ordered by timestamp in serverless function
-    //todo timestamp
-
     list += newReply;
   }
 
