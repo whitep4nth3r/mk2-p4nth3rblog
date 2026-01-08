@@ -17,6 +17,9 @@ module.exports = function (eleventyConfig) {
     "./src/_client_scripts/home.js": "/js/home.js",
   });
   eleventyConfig.addPassthroughCopy({
+    "./src/_client_scripts/about.js": "/js/about.js",
+  });
+  eleventyConfig.addPassthroughCopy({
     "./src/_client_scripts/blog.js": "/js/blog.js",
   });
   eleventyConfig.addPlugin(syntaxHighlight);

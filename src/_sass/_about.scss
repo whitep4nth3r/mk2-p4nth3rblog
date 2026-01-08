@@ -18,6 +18,7 @@
   position: relative;
   justify-content: center;
   align-items: center;
+  z-index: 0;
 
   img {
     view-transition-name: bio-image;
@@ -61,6 +62,6 @@
 .about__hero__bio {
   padding: 2rem;
   @media screen and (min-width: 1080px) {
-    padding: 12rem 4rem;
+    padding: 12rem 4rem 10rem 4rem;
   }
 }

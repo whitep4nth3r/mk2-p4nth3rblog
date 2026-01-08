@@ -132,6 +132,9 @@ main {
   justify-self: center;
   width: 100%;
   padding: 1rem;
+  position: relative;
+  z-index: 100 !important;
+  background: var(--color-bg);
 }
 
 .header__navGroup {
@@ -573,6 +576,7 @@ main {
   position: relative;
   justify-content: center;
   align-items: center;
+  z-index: 0;
 }
 .about__hero__image img {
   view-transition-name: bio-image;
@@ -617,7 +621,7 @@ main {
 }
 @media screen and (min-width: 1080px) {
   .about__hero__bio {
-    padding: 12rem 4rem;
+    padding: 12rem 4rem 10rem 4rem;
   }
 }
 
@@ -2606,6 +2610,9 @@ pre[class*=language-] {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  background: var(--color-bg);
+  z-index: 10;
+  position: relative;
 }
 
 .footer__newsletter {

@@ -11,6 +11,9 @@
   justify-self: center;
   width: 100%;
   padding: 1rem;
+  position: relative;
+  z-index: 100 !important;
+  background: var(--color-bg);
 }
 
 .header__navGroup {
