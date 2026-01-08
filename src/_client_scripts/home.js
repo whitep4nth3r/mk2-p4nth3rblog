@@ -1,5 +1,5 @@
 function updateHeroHeight(hero, height) {
-  hero.style.height = `calc(100vh - ${height}px)`;
+  hero.style.height = `calc(100dvh - ${height}px)`;
 }
 
 document.addEventListener("DOMContentLoaded", (event) => {
