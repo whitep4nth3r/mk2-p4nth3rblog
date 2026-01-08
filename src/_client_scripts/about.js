@@ -1,51 +1,44 @@
-document.addEventListener("DOMContentLoaded", (event) => {
+document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger);
 
   const mediaQuery = window.matchMedia("(min-width: 1080px)");
-  let aboutTween;
-  let aboutScaleTween;
+  let heroTimeline;
 
   function handleMediaQuery(e) {
     if (e.matches) {
-      aboutTween = gsap.to(".about__hero__image", {
-        y: "-15%",
-        ease: "none",
+      if (heroTimeline) {
+        heroTimeline.scrollTrigger?.kill();
+        heroTimeline.kill();
+        heroTimeline = null;
+      }
+
+      heroTimeline = gsap.timeline({
         scrollTrigger: {
           trigger: ".about__hero__image",
           start: "top top",
           endTrigger: ".footer",
           end: "top top",
-          pin: true,
+          pin: ".about__hero__image",
           pinSpacing: false,
           scrub: true,
         },
       });
 
-      aboutScaleTween = gsap.to(".about__hero__image img", {
+      heroTimeline.to(".about__hero__image img", {
+        y: "-15%",
         scale: 1.2,
         ease: "none",
-        scrollTrigger: {
-          trigger: ".about__hero__image",
-          start: "top top",
-          endTrigger: ".footer",
-          end: "top top",
-          scrub: true,
-        },
       });
     } else {
-      if (aboutTween) {
-        aboutTween.scrollTrigger?.kill();
-        aboutTween.kill();
-        aboutTween = null;
-      }
-      if (aboutScaleTween) {
-        aboutScaleTween.scrollTrigger?.kill();
-        aboutScaleTween.kill();
-        aboutScaleTween = null;
+      if (heroTimeline) {
+        heroTimeline.scrollTrigger?.kill();
+        heroTimeline.kill();
+        heroTimeline = null;
       }
     }
   }
 
   handleMediaQuery(mediaQuery);
+
   mediaQuery.addEventListener("change", handleMediaQuery);
 });

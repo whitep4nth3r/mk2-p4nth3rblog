@@ -571,22 +571,24 @@ main {
 }
 
 .about__hero__image {
-  height: 100%;
   width: auto;
   position: relative;
   justify-content: center;
   align-items: center;
   z-index: 0;
   overflow: hidden;
+  height: 100vh;
 }
 .about__hero__image img {
   view-transition-name: bio-image;
-  height: 101%;
-  width: auto;
   object-fit: cover;
   object-position: top center;
   position: relative;
   filter: contrast(200%);
+  width: 100%;
+  height: auto;
+  transform-origin: center center;
+  display: block;
 }
 
 .about__name {
