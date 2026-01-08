@@ -7,8 +7,6 @@
   position: relative;
 
   @media screen and (min-width: 1080px) {
-    height: 100vh;
-    overflow: hidden;
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
@@ -62,9 +60,7 @@
 
 .about__hero__bio {
   padding: 2rem;
-
   @media screen and (min-width: 1080px) {
-    overflow-y: scroll;
     padding: 12rem 4rem;
   }
 }
