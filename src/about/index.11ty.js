@@ -43,7 +43,6 @@ exports.render = function (data) {
         </h1>
 
         <div class="about__hero__image">
-        <div class="about__hero__name">${NameSvg()}</div>
          <img src="${person.imageBio.url + `?fm=webp`}" alt="${person.imageBio.description}" height="${
     person.imageBio.height
   }" width="${person.imageBio.width}" />

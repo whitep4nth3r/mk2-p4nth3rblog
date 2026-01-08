@@ -1,5 +1,9 @@
-function updateHeroHeight(hero, height) {
-  hero.style.height = `calc(100svh - ${height}px)`;
+function updateHeroHeight(hero, headerHeight) {
+  hero.style.height = `calc(100svh - ${headerHeight}px)`;
+}
+
+function updateCloudHeight(cloud, headerAndNameHeight) {
+  cloud.style.height = `calc(100svh - ${headerAndNameHeight}px)`;
 }
 
 document.addEventListener("DOMContentLoaded", (event) => {
@@ -58,14 +62,21 @@ document.addEventListener("DOMContentLoaded", (event) => {
   }
 
   const headerHeight = document.querySelector("header").offsetHeight;
+  const nameHeight = document.querySelector(".hero__name").offsetHeight;
+
   const hero = document.querySelector("[data-hero]");
+  const cloud = document.querySelector("[data-cloud]");
 
   updateHeroHeight(hero, headerHeight);
+  updateCloudHeight(cloud, headerHeight + nameHeight);
 
   window.addEventListener("resize", () => {
-    console.log("resixing");
-
     const updatedHeaderHeight = document.querySelector("header").offsetHeight;
     updateHeroHeight(hero, updatedHeaderHeight);
+
+    if (largeLayout) {
+      const updatedNameHeight = document.querySelector(".hero__name").offsetHeight;
+      updateCloudHeight(cloud, updatedHeaderHeight + updatedNameHeight);
+    }
   });
 });
