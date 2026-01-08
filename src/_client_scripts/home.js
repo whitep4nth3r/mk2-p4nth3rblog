@@ -3,6 +3,8 @@ function updateHeroHeight(hero, height) {
 }
 
 document.addEventListener("DOMContentLoaded", (event) => {
+  const largeLayout = window.matchMedia("(min-width: 1080px)");
+
   const isReduced =
     window.matchMedia(`(prefers-reduced-motion: reduce)`) === true ||
     window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
@@ -10,14 +12,25 @@ document.addEventListener("DOMContentLoaded", (event) => {
   if (!!isReduced) {
   } else {
     gsap.registerPlugin(ScrollTrigger);
-    const mediaQuery = window.matchMedia("(min-width: 1080px)");
-    let heroTween;
+    let nameTween, imgTween;
 
     function handleMediaQuery(e) {
       if (e.matches) {
-        if (!heroTween) {
-          heroTween = gsap.to(".hero__name__inner", {
+        if (!nameTween) {
+          nameTween = gsap.to(".hero__name__inner", {
             x: "100%",
+            ease: "none",
+            scrollTrigger: {
+              trigger: "html",
+              start: "top top",
+              end: "bottom top",
+              scrub: true,
+            },
+          });
+
+          imgTween = gsap.to(".hero__image img", {
+            scale: 1.2,
+            y: "-20%",
             ease: "none",
             scrollTrigger: {
               trigger: "html",
@@ -28,16 +41,20 @@ document.addEventListener("DOMContentLoaded", (event) => {
           });
         }
       } else {
-        if (heroTween) {
-          heroTween.scrollTrigger.kill();
-          heroTween.kill();
-          heroTween = null;
+        if (nameTween) {
+          nameTween.scrollTrigger.kill();
+          nameTween.kill();
+          nameTween = null;
+
+          imgTween.scrollTrigger.kill();
+          imgTween.kill();
+          imgTween = null;
         }
       }
     }
 
-    handleMediaQuery(mediaQuery);
-    mediaQuery.addEventListener("change", handleMediaQuery);
+    handleMediaQuery(largeLayout);
+    largeLayout.addEventListener("change", handleMediaQuery);
   }
 
   const headerHeight = document.querySelector("header").offsetHeight;
@@ -46,7 +63,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
   updateHeroHeight(hero, headerHeight);
 
   window.addEventListener("resize", () => {
-    const updatedHeaderHeight = document.querySelector("header").offsetHeight;
-    updateHeroHeight(hero, updatedHeaderHeight);
+    //try and stop stuttering on vertical layout
+    if (largeLayout.matches) {
+      const updatedHeaderHeight = document.querySelector("header").offsetHeight;
+      updateHeroHeight(hero, updatedHeaderHeight);
+    }
   });
 });
