@@ -686,7 +686,7 @@ main {
 }
 @media screen and (min-width: 2000px) {
   .post {
-    grid-template-columns: 1fr 1fr 6fr 2fr;
+    grid-template-columns: 1fr 1fr 7fr 2fr;
   }
 }
 
