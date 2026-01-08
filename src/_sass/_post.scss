@@ -72,10 +72,10 @@
 .post__h1 {
   @include font.heading;
   text-transform: uppercase;
-  font-size: clamp(3rem, 8vw, 8rem);
+  font-size: clamp(3rem, 9vw, 13rem);
   line-height: 1;
   color: var(--color-fg);
-  text-wrap: balance;
+  text-wrap: pretty;
 }
 
 .post__byline {
@@ -116,6 +116,7 @@
 }
 
 .post__excerpt {
+  max-width: 120ch;
   p {
     @include font.serif;
     font-style: italic;

@@ -710,10 +710,10 @@ main {
   font-family: var(--font-family-heading);
   font-weight: 400;
   text-transform: uppercase;
-  font-size: clamp(3rem, 8vw, 8rem);
+  font-size: clamp(3rem, 9vw, 13rem);
   line-height: 1;
   color: var(--color-fg);
-  text-wrap: balance;
+  text-wrap: pretty;
 }
 
 .post__byline {
@@ -755,6 +755,9 @@ main {
   background-color: var(--green);
 }
 
+.post__excerpt {
+  max-width: 120ch;
+}
 .post__excerpt p {
   font-family: var(--font-family-serif);
   font-weight: 700;
