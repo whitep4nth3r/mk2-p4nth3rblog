@@ -1,5 +1,5 @@
 function updateHeroHeight(hero, height) {
-  hero.style.height = `calc(100svh - ${height}px)`;
+  hero.style.height = `calc(100vh - ${height}px)`;
 }
 
 document.addEventListener("DOMContentLoaded", (event) => {
@@ -63,10 +63,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
   updateHeroHeight(hero, headerHeight);
 
   window.addEventListener("resize", () => {
-    //try and stop stuttering on vertical layout
-    if (largeLayout.matches) {
-      const updatedHeaderHeight = document.querySelector("header").offsetHeight;
-      updateHeroHeight(hero, updatedHeaderHeight);
-    }
+    console.log("resixing");
+
+    const updatedHeaderHeight = document.querySelector("header").offsetHeight;
+    updateHeroHeight(hero, updatedHeaderHeight);
   });
 });
