@@ -115,8 +115,8 @@ exports.render = async function (data) {
               <aside class="post__likes" data-bsky-likes-container>
                 <a href="https://bsky.app/profile/whitep4nth3r.com/post/${
                   post.blueskyPostId
-                }" target="_blank" aria-label="Like this post on Bluesky" class="post__likesTitle" data-bsky-external-link>${HeartIcon()} <span data-bsky-likes-count></span></a>
-                <ul data-bsky-likes class="post__likesList">
+                }" target="_blank" aria-label="Like this post on Bluesky" class="post__likes__title" data-bsky-external-link>${HeartIcon()} <span data-bsky-likes-count></span></a>
+                <ul data-bsky-likes class="post__likes__list">
                 </ul>
               </aside>`
            : ""
@@ -142,11 +142,11 @@ exports.render = async function (data) {
            ? `
             <aside class="post__replies" data-bsky-replies-container>
               <hr class="post__hr" />
-              <h4 class="post__replies__header"><span data-bsky-replies-count></span> replies on Bluesky</h4>
+              <h3 class="post__replies__header"><span data-bsky-replies-count></span> replies on Bluesky</h3>
               <div class="post__replies__placeholder" data-replies-placeholder>
                 <p class="post__replies__placeholderText">No replies yet.</p>
               </div>
-              <ul data-bsky-replies class="post__repliesList">
+              <ul data-bsky-replies class="post__replies__list">
               </ul>
                 <a href="https://bsky.app/profile/whitep4nth3r.com/post/${post.blueskyPostId}" target="_blank" class="post__replies__placeholderCta">Say something</a>
             </aside>`

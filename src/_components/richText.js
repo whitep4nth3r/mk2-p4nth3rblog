@@ -66,9 +66,9 @@ function getRichTextRenderOptions(links, options) {
         <tbody>${next(node.content)}</tbody>
       </table></div>`,
       [BLOCKS.TABLE_HEADER_CELL]: (node, next) =>
-        `<th class="post__tableHeader">${stripParaTags(next(node.content))}</th>`,
-      [BLOCKS.TABLE_ROW]: (node, next) => `<tr class="post__tableRow">${next(node.content)}</tr>`,
-      [BLOCKS.TABLE_CELL]: (node, next) => `<td class="post__tableCell">${stripParaTags(next(node.content))}</td>`,
+        `<th class="post__table__header">${stripParaTags(next(node.content))}</th>`,
+      [BLOCKS.TABLE_ROW]: (node, next) => `<tr class="post__table__row">${next(node.content)}</tr>`,
+      [BLOCKS.TABLE_CELL]: (node, next) => `<td class="post__table__cell">${stripParaTags(next(node.content))}</td>`,
       [BLOCKS.HR]: (text) => `<hr class="post__hr" />`,
       [BLOCKS.HEADING_1]: (node, next) => `<h1 class="post__h1">${next(node.content)}</h1>`,
       [BLOCKS.HEADING_2]: (node, next) => {

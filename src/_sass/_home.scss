@@ -37,14 +37,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100%;
   width: 100%;
   position: absolute;
   z-index: var(--cloud-z-index);
 
   @media screen and (min-width: 1080px) {
     position: relative;
-    height: 80vh;
   }
 
   h2 {
@@ -78,7 +76,7 @@
   h2 {
     @include font.heading;
     text-transform: uppercase;
-    font-size: clamp(3rem, 6vw, 11rem);
+    font-size: clamp(3rem, calc(4vw + 4svh), 11rem);
     line-height: 1;
     display: flex;
     gap: 0.5rem;
@@ -105,7 +103,7 @@
   h2 {
     @include font.serif;
     font-style: italic;
-    font-size: clamp(2rem, 4vw, 7rem);
+    font-size: clamp(2rem, calc(2.5vw + 2.5svh), 7rem);
     line-height: 1;
   }
 }
@@ -116,7 +114,7 @@
 
   h2 {
     @include font.main;
-    font-size: clamp(2rem, 6vw, 7rem);
+    font-size: clamp(2rem, calc(1.5rem + 2vw + 2svh), 6rem);
     text-decoration: underline;
     text-underline-offset: clamp(0.5rem, 1vw, 1rem);
     text-decoration-thickness: clamp(0.25rem, 0.75vw, 0.75rem);
@@ -129,7 +127,7 @@
 
   h2 {
     @include font.serif;
-    font-size: clamp(3rem, 5vw, 6rem);
+    font-size: clamp(3rem, calc(3.5vw + 3svh), 6rem);
     line-height: 1;
   }
 }
@@ -140,7 +138,7 @@
   h2 {
     @include font.heading;
     text-transform: uppercase;
-    font-size: clamp(2rem, 4vw, 9rem);
+    font-size: clamp(2rem, calc(2.75vw + 2.5svh), 9rem);
     line-height: 1;
   }
 
@@ -157,7 +155,7 @@
 
   h2 {
     @include font.heading;
-    font-size: clamp(2rem, 3vw, 4rem);
+    font-size: clamp(2rem, calc(2vw + 1.5svh), 4rem);
     line-height: 1;
     text-box: trim-both cap alphabetic;
   }
