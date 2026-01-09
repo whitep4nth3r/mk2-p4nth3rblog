@@ -174,17 +174,21 @@
   max-width: var(--max-width);
   align-self: center;
 
-  &::first-letter {
-    @include font.heading;
-    initial-letter: 2;
-    padding-right: 0.5rem;
+  @media screen and (min-width: utils.$post_breakpoint_lg) {
+    &::first-letter {
+      @include font.heading;
+      initial-letter: 2;
+      padding-right: 0.5rem;
+    }
   }
 }
 
 .post__body--talk {
-  &::first-letter {
-    initial-letter: unset;
-    padding-right: unset;
+  @media screen and (min-width: utils.$post_breakpoint_lg) {
+    &::first-letter {
+      initial-letter: unset;
+      padding-right: unset;
+    }
   }
 }
 
