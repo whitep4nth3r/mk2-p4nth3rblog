@@ -1,0 +1,125 @@
+<footer class="footer">
+  <div class="footer__newsletter">
+    <div class="footer__newsletter__content">
+      <h2 class="footer__newsletter__title">Get my <span>weird</span> newsletter</h2>
+      <p class="footer__newsletter__copy">
+        Join {{newsletter.subscribers}} subscribers and get <b>four weird links</b> every Thursday.
+        <em>Enter the weird_wide_web_hole to find no answers to questions you didn't know you had.</em>
+      </p>
+      <form
+        action="https://buttondown.com/api/emails/embed-subscribe/weirdwidewebhole"
+        method="post"
+        class="embeddable-buttondown-form footer__newsletter__form">
+        <label for="bd-email" class="footer__newsletter__label">Enter your email</label>
+        <div class="footer__newsletter__inputRow">
+          <input
+            type="email"
+            name="email"
+            id="bd-email"
+            class="footer__newsletter__input"
+            placeholder="send_me_links@hotmail.com" />
+          <input type="submit" value="Subscribe" class="footer__newsletter__submit" />
+        </div>
+
+        <a class="footer__newsletter__powered" href="https://buttondown.com/refer/weirdwidewebhole" target="_blank">
+          Powered by Buttondown</a
+        >
+      </form>
+    </div>
+    <img src="/img/wwwh.png" alt="" class="footer__newsletter__img" />
+  </div>
+
+  <!-- todo: newsletter archives on site -->
+  <ol class="footer__links">
+    <li><a href="https://buttondown.com/weirdwidewebhole/archive/" target="_blank">Newsletter archive</a></li>
+    <li><a href="/uses/">Things I use</a></li>
+    <li><a href="/talks/">Talks</a></li>
+    <li><a href="/activity/">Activity feed</a></li>
+    <li><a href="/webring/">Webring</a></li>
+    <li><a href="https://github.com/whitep4nth3r?tab=repositories" target="_blank"> GitHub projects</a></li>
+  </ol>
+
+  <ul class="footer__social">
+    <li>
+      <a href="https://bsky.app/profile/whitep4nth3r.com" target="_blank" rel="me" aria-label="Follow on Bluesky"
+        ><svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 16 16">
+          <path
+            fill="currentColor"
+            d="M3.468 1.948C5.303 3.325 7.276 6.118 8 7.616c.725-1.498 2.698-4.29 4.532-5.668C13.855.955 16 .186 16 2.632c0 .489-.28 4.105-.444 4.692-.572 2.04-2.653 2.561-4.504 2.246 3.236.551 4.06 2.375 2.281 4.2-3.376 3.464-4.852-.87-5.23-1.98-.07-.204-.103-.3-.103-.218 0-.081-.033.014-.102.218-.379 1.11-1.855 5.444-5.231 1.98-1.778-1.825-.955-3.65 2.28-4.2-1.85.315-3.932-.205-4.503-2.246C.28 6.737 0 3.12 0 2.632 0 .186 2.145.955 3.468 1.948"></path>
+        </svg>
+      </a>
+    </li>
+    <li>
+      <a href="/feed.xml" class="socialLinks__item" target="_blank" aria-label="Subscribe to RSS Feed">
+        <svg xmlns="http://www.w3.org/2000/svg" height="60" width="60" viewBox="0 0 448 512">
+          <path
+            fill="currentColor"
+            d="M128.081 415.959c0 35.369-28.672 64.041-64.041 64.041S0 451.328 0 415.959s28.672-64.041 64.041-64.041 64.04 28.673 64.04 64.041zm175.66 47.25c-8.354-154.6-132.185-278.587-286.95-286.95C7.656 175.765 0 183.105 0 192.253v48.069c0 8.415 6.49 15.472 14.887 16.018 111.832 7.284 201.473 96.702 208.772 208.772.547 8.397 7.604 14.887 16.018 14.887h48.069c9.149.001 16.489-7.655 15.995-16.79zm144.249.288C439.596 229.677 251.465 40.445 16.503 32.01 7.473 31.686 0 38.981 0 48.016v48.068c0 8.625 6.835 15.645 15.453 15.999 191.179 7.839 344.627 161.316 352.465 352.465.353 8.618 7.373 15.453 15.999 15.453h48.068c9.034-.001 16.329-7.474 16.005-16.504z"></path>
+        </svg>
+      </a>
+    </li>
+    <li>
+      <a href="https://youtube.com/whitep4nth3r" target="_blank" aria-label="Subscribe on YouTube"
+        ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" height="60" width="60">
+          <path
+            fill="currentColor"
+            d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path>
+        </svg>
+      </a>
+    </li>
+    <li>
+      <a href="/discord" class="socialLinks__item" target="_blank" aria-label="Join Discord"
+        ><svg xmlns="http://www.w3.org/2000/svg" height="60" width="60" viewBox="0 0 448 512">
+          <path
+            fill="currentColor"
+            d="M297.216 243.2c0 15.616-11.52 28.416-26.112 28.416-14.336
+    0-26.112-12.8-26.112-28.416s11.52-28.416 26.112-28.416c14.592 0 26.112 12.8
+    26.112 28.416zm-119.552-28.416c-14.592 0-26.112 12.8-26.112 28.416s11.776
+    28.416 26.112 28.416c14.592 0 26.112-12.8
+    26.112-28.416.256-15.616-11.52-28.416-26.112-28.416zM448
+    52.736V512c-64.494-56.994-43.868-38.128-118.784-107.776l13.568
+    47.36H52.48C23.552 451.584 0 428.032 0 398.848V52.736C0 23.552 23.552 0
+    52.48 0h343.04C424.448 0 448 23.552 448 52.736zm-72.96
+    242.688c0-82.432-36.864-149.248-36.864-149.248-36.864-27.648-71.936-26.88-71.936-26.88l-3.584
+    4.096c43.52 13.312 63.744 32.512 63.744
+    32.512-60.811-33.329-132.244-33.335-191.232-7.424-9.472 4.352-15.104
+    7.424-15.104 7.424s21.248-20.224
+    67.328-33.536l-2.56-3.072s-35.072-.768-71.936 26.88c0 0-36.864 66.816-36.864
+    149.248 0 0 21.504 37.12 78.08 38.912 0 0 9.472-11.52
+    17.152-21.248-32.512-9.728-44.8-30.208-44.8-30.208 3.766 2.636 9.976 6.053
+    10.496 6.4 43.21 24.198 104.588 32.126 159.744 8.96 8.96-3.328 18.944-8.192
+    29.44-15.104 0 0-12.8 20.992-46.336 30.464 7.68 9.728 16.896 20.736 16.896
+    20.736 56.576-1.792 78.336-38.912 78.336-38.912z" />
+        </svg>
+      </a>
+    </li>
+  </ul>
+
+  <aside class="footer__aside">
+    <svg xmlns="http://www.w3.org/2000/svg" height="40" width="40" viewBox="0 0 512 512" aria-label="Heart" role="img">
+      <path
+        fill="currentColor"
+        d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" />
+    </svg>
+    <span>Look for the good in the world</span>
+    <svg xmlns="http://www.w3.org/2000/svg" height="40" width="40" viewBox="0 0 512 512" aria-label="Heart" role="img">
+      <path
+        fill="currentColor"
+        d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z" />
+    </svg>
+  </aside>
+
+  <svg width="0" height="0" class="svg__filter">
+    <defs>
+      <filter id="distort">
+        <feTurbulence type="turbulence" result="noise" numOctaves="1" baseFrequency="0.01 0.01"></feTurbulence>
+        <feDisplacementMap
+          in="SourceGraphic"
+          in2="noise"
+          scale="6"
+          xChannelSelector="R"
+          yChannelSelector="R"></feDisplacementMap>
+      </filter>
+    </defs>
+  </svg>
+</footer>

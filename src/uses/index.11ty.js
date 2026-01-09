@@ -20,33 +20,23 @@ exports.data = {
 };
 
 exports.render = function (data) {
-  const { categories, things } = data;
+  const { things } = data;
 
   return /* html */ `
     <section class="uses">
-        <h1 class="page__headerTitle">${pageTitle}</h1>
+        <h1 class="page__header">${pageTitle}</h1>
         <p class="page__text"><em>Buy this thing</em> links will earn me a small commission.</p>
-        ${categories
-          .map(
-            (cat) => `
-          <section id="${cat}">
-            <h2 class="uses_catHeading">
-              <img src="/.netlify/images/?url=/img/${cat.replace(" ", "-")}.png" alt="${cat}" />
-            </h2>
-            <ol class="uses__list">
-            ${things[cat]
-              .map(
-                (thing) =>
-                  `<li>
-                  ${Card({ item: { ...thing, type: "thing" } })}
-                </li>
-              `,
-              )
-              .join("")}
-            </ol>
-          </section>`,
-          )
-          .join("")}
+          <ol class="uses__list">
+          ${things
+            .map(
+              (thing) =>
+                `<li>
+                ${Card({ item: { ...thing, type: "thing" } })}
+              </li>
+            `,
+            )
+            .join("")}
+          </ol>
     </section>
   `;
 };

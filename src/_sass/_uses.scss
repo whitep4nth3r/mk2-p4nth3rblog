@@ -1,16 +1,11 @@
 @use "utils";
+@use "font";
 
 .uses {
-  max-width: var(--global-max-width);
   margin: auto;
-}
-
-.uses_catHeading {
-  position: relative;
-  top: 2.5rem;
-  z-index: 9;
 }
 
 .uses__list {
   @include utils.card_grid;
+  margin-bottom: 3rem;
 }

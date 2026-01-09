@@ -1,22 +1,27 @@
-const BioImage = require("./bioImage");
-const SocialLinks = require("./socialLinks");
-const NameLogo = require("./svg/nameLogo");
+const NameSvg = require("../_components/svg/name");
 
-function Author({ author, uUrl, hideOnSmallScreens = false }) {
-  const hideClass = hideOnSmallScreens ? " author--hideSmall" : "";
+var md = require("markdown-it")({
+  html: true,
+});
+
+function Author({ author }) {
   return /*html*/ `
-  <div class="author${hideClass}">
+  <div class="author">
+    <div class="author__underlay"></div>
     <a href="/about/" class="author__cta" aria-label="About Salma">
       <div class="author__imgContainer">
-        ${BioImage({ image: author.imageBio })}
+        <img src="${author.imageBio.url + `?fm=webp&w=500`}" alt="${author.imageBio.description}" height="${
+    author.imageBio.height
+  }" width="${author.imageBio.width}" />
       </div>
       <div class="author__name">
-        ${NameLogo()}
+          <div class="author__underlay"></div>
+          ${NameSvg()}
       </div>
     </a>
 
-    <div class="author_social">
-      ${SocialLinks({ uUrl })}
+    <div class="author__info">
+      ${md.render(author.bioPost)}
     </div>
   </div>
   `;

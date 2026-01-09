@@ -2,24 +2,17 @@
 @use "root";
 @use "reset";
 @use "utils";
-@use "keyframes";
-
-@use "tc-layout";
 
 @use "md";
 @use "header";
 @use "home";
-@use "home-about";
 @use "blog";
 @use "about";
-@use "page";
 @use "post";
 @use "pagination";
 @use "published-date";
 @use "table-of-contents";
 @use "author";
-@use "blog-end-author";
-@use "blog-sidebar-social-links";
 @use "speaker-deck-link";
 @use "video-embed";
 @use "codepen-embed";
@@ -29,15 +22,6 @@
 @use "notfound";
 @use "prism";
 @use "card";
-@use "activity-feed";
-@use "events";
-@use "social-links";
 @use "talks";
-@use "testimonial";
-@use "sponsorships";
-@use "stream-package";
-@use "newsletter-signup";
 @use "webring";
-@use "video";
-@use "ai";
-@use "view-transitions";
+@use "footer";

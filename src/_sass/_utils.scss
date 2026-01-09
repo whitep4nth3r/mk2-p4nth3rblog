@@ -1,5 +1,9 @@
 @use "font";
 
+$post_breakpoint_xl: 2000px;
+$post_breakpoint_lg: 1280px;
+$post_breakpoint_md: 1080px;
+
 @mixin sr_only {
   position: absolute;
   width: 1px;
@@ -21,51 +25,69 @@
   outline-style: solid;
   outline-offset: 0.125rem;
   box-shadow: inset var(--color-fg) 0 0 0 0.125rem;
-  transition: box-shadow var(--global-transition-time) ease-in-out;
 }
 
-@mixin link_focus {
+@mixin link_focus($color: var(--pink)) {
   &:focus-visible,
   &:focus {
-    outline: transparent;
+    outline-color: $color;
     outline-style: solid;
-    box-shadow: var(--color-bg) 0 0 0 0.08rem, var(--color-focus-outline) 0 0 0 0.24rem;
-    transition: box-shadow var(--global-transition-time) ease-in-out;
-    border-radius: var(--border-radius-base);
+    outline-width: 0.25rem;
+    outline-offset: -0.25rem;
   }
 }
 
-@mixin card_grid {
+@mixin card_grid() {
   display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   list-style: none;
   padding-left: 0;
-  grid-auto-rows: 1fr;
+
+  @media screen and (min-width: 1280px) {
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  }
 
   li {
     display: flex;
   }
 }
 
-[color-mode="dark"] {
-  --input-bg: rgba(255, 255, 255, 0.06);
-  --input-border: 0.0625rem solid rgba(255, 255, 255, 0.18);
+@mixin half_tone {
+  overflow: hidden;
+  filter: contrast(150%);
+
+  &::before {
+    top: -50%;
+    left: -50%;
+    right: -50%;
+    bottom: -50%;
+    content: "";
+    position: absolute;
+    transform: rotate(20deg);
+    background: radial-gradient(circle at center, #000, #fff);
+    background-size: 0.15em 0.15em;
+  }
+
+  * {
+    mix-blend-mode: hard-light;
+    object-fit: cover;
+  }
 }
 
-[color-mode="light"] {
-  --input-bg: rgba(0, 0, 0, 0.07);
-  --input-border: 1px solid rgba(0, 0, 0, 0.14);
+.page__header {
+  @include font.heading;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  line-height: 1;
+  margin-bottom: 2rem;
+  text-align: right;
+  text-transform: uppercase;
+  padding: 1rem;
 }
 
-@mixin form_input {
-  @include font.font_main;
-  background-color: var(--input-bg);
-  color: var(--color-fg);
-  border: var(--input-border);
-  border-radius: var(--border-radius-base);
-  font-size: 1rem;
-  padding: 0.5rem;
-  background: rgba(255, 255, 255, 0.06);
-  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+.page__text {
+  @include font.main;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  margin-bottom: 3rem;
+  padding: 1rem;
+  text-align: right;
 }

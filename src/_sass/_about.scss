@@ -1,45 +1,82 @@
-@use "tc-layout";
+@use "font";
 
 .about {
-  @include tc-layout.tc_layout_container;
 }
 
-.about__image {
-  @include tc-layout.tc_layout_left($width: 28rem);
+.about__hero {
+  position: relative;
+
+  @media screen and (min-width: 1080px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media screen and (min-width: 1080px) and (prefers-reduced-motion: reduce) {
+    align-items: stretch;
+  }
+}
+
+.about__hero__image {
+  width: auto;
+  position: relative;
+  align-items: center;
+  z-index: 0;
+  overflow: hidden;
+  height: 100vh;
+
+  @media screen and (min-width: 1080px) and (prefers-reduced-motion: reduce) {
+    height: 100%;
+  }
+
+  img {
+    view-transition-name: hero-image;
+    object-fit: cover;
+    object-position: top center;
+    position: relative;
+    filter: contrast(200%);
+
+    width: 100%;
+    height: auto;
+    transform-origin: center center;
+    display: block;
+
+    @media screen and (min-width: 1080px) and (prefers-reduced-motion: reduce) {
+      height: 100%;
+    }
+  }
 }
 
 .about__name {
-  z-index: 10;
-  margin-top: -6.6rem;
+  view-transition-name: hero-name;
+  @include font.heading;
+  white-space: nowrap;
+  color: var(--color-bg);
+  background: var(--color-fg);
+  position: absolute;
+  z-index: var(--name-z-index);
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
 
-  @media screen and (min-width: tc-layout.$tc_layout_breakpoint) {
-    margin-top: 0;
+.about__name__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  font-size: clamp(1.5rem, 8vw, 8rem);
+  gap: clamp(1rem, 2vw, 2rem);
+
+  span {
+    display: flex;
   }
 }
 
-.about__fixed {
-  @include tc-layout.tc_layout_fixed($height: 100vh);
-
-  @media screen and (min-width: tc-layout.$tc_layout_breakpoint) {
-    align-items: flex-start;
+.about__hero__bio {
+  padding: 2rem;
+  @media screen and (min-width: 1080px) {
+    padding: 12rem 4rem 10rem 4rem;
   }
-  
-  img {
-    background-color: var(--bio-image-container-bg);
-  }
-
-  * {
-    height: calc(100% - 6.5rem);
-    object-fit: cover;
-    border-radius: var(--border-radius-base);
-  }
-}
-
-.about__details {
-  @include tc-layout.tc_layout_scroll;
-
-  margin: unset;
-}
-
-.about__bio {
 }

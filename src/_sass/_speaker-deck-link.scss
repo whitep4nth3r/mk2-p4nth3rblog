@@ -1,21 +1,26 @@
 @use "font";
+@use "utils";
 
-// .speakerDeckLink {
-// }
+.speakerDeckLink {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+[color-mode="dark"] {
+  --sd_link_color: var(--green);
+}
+[color-mode="light"] {
+  --sd_link_color: var(--pink);
+}
 
 .speakerDeckLink__viewCta {
-  @include font.font_semibold;
-  background-color: var(--topic-button-bg);
-  border-radius: var(--border-radius-base);
-  padding: 0.5rem 1rem 0.5rem 0.75rem;
-  color: var(--topic-button-color);
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  font-size: 1rem;
-  max-width: max-content;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  @include font.heading;
+  color: var(--sd_link_color);
+  font-size: clamp(2rem, 3vw, 3rem);
   text-decoration: underline;
+  text-underline-offset: clamp(0.25rem, 0.5vw, 0.5rem);
+  text-decoration-thickness: 0.5rem;
+
+  @include utils.link_focus;
 }

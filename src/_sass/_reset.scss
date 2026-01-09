@@ -1,89 +1,8 @@
 @use "font";
-@use "root";
-
-@view-transition {
-  navigation: auto;
-}
-
-::view-transition-group(root) {
-  animation-duration: 0.4s;
-}
-
-/* Create a custom animation */
-@keyframes move-out {
-  from {
-    transform: translateY(0%);
-  }
-
-  to {
-    transform: translateY(-100%);
-  }
-}
-
-@keyframes move-in {
-  from {
-    transform: translateY(100%);
-  }
-
-  to {
-    transform: translateY(0%);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  ::view-transition-old(root) {
-    animation: 0.4s ease-in both move-out;
-  }
-
-  ::view-transition-new(root) {
-    animation: 0.4s ease-in both move-in;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-}
-
-.vt__bioImage {
-  view-transition-name: bio-image;
-}
-
-.vt__nameLogo {
-  view-transition-name: name-logo;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  ::view-transition-group(root) {
-    animation-duration: 1s;
-  }
-
-  :root::view-transition-old(bio-image),
-  :root::view-transition-new(bio-image),
-  :root::view-transition-old(name-logo),
-  :root::view-transition-new(name-logo) {
-    /* kill the UA’s injected animations */
-    animation-name: none !important;
-    animation-duration: 0s !important;
-    animation-delay: 0s !important;
-    animation-fill-mode: none !important;
-    animation-iteration-count: 1 !important;
-    animation-play-state: paused !important;
-
-    /* force final state */
-    opacity: 1 !important;
-    transform: none !important;
-  }
-
-  .bioImage {
-    view-transition-name: none !important;
-  }
-}
 
 * {
   box-sizing: border-box;
   margin: 0;
-  // this is to ensure the background texture layers work
-  // do not remove and think you don't need it!
-  z-index: 1;
 }
 
 html {
@@ -98,6 +17,7 @@ h3,
 h4,
 h5,
 h6 {
+  @include font.heading;
   text-wrap: balance;
 }
 
@@ -110,12 +30,12 @@ a {
   color: inherit;
   transition: color 0.2s ease-in-out;
   text-decoration: underline;
-  text-underline-offset: 0.125rem;
-  text-decoration-thickness: 0.125rem;
+  text-underline-offset: 0.25rem;
+  text-decoration-thickness: 0.25rem;
 }
 
 strong {
-  @include font.font_bold;
+  @include font.bold;
 }
 
 :target {
@@ -125,56 +45,21 @@ strong {
 /* END RESET */
 
 body {
-  @include font.font_main;
+  @include font.main;
   font-size: 1rem;
-  color: var(--color-fg);
-  padding: var(--body-horizontal-padding-sm);
   position: relative;
-
-  min-height: 100vh;
-  background: var(--color-bg);
-  background-image: var(--page-bg);
-  background-attachment: fixed !important;
-
-  @media screen and (min-width: 48rem) {
-    padding: 1rem var(--body-horizontal-padding-lg);
-  }
 }
 
 main {
-  margin: 6rem auto auto auto;
-  max-width: var(--global-max-width);
-  overflow: hidden;
+  margin: auto;
+}
 
-  @media screen and (min-width: root.$global_md_breakpoint) {
-    margin-top: 10rem;
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition {
+    navigation: auto;
   }
 
-  &:before {
-    content: "";
-    background-image: var(--bg-brush);
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: fixed;
-    z-index: -1;
-    opacity: 50%;
-    height: 100%;
-    width: 100%;
-    mix-blend-mode: overlay;
-  }
-
-  &:after {
-    content: "";
-    background-image: var(--whitep4nth3r-bg-svg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 0;
-    width: 100%;
-    /* https://css-tricks.com/scale-svg/#aa-option-2-use-css-background-images-and-the-padding-bottom-hack */
-    padding-bottom: calc(100% * 201 / 1280); /* aspect ratio of image */
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
+  ::view-transition-group(root) {
+    animation-duration: 0.4s;
   }
 }

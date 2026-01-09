@@ -2,15 +2,19 @@
 
 .publishedDate {
   display: flex;
-  flex-direction: row;
-  gap: 2rem;
+  flex-direction: column;
+  gap: clamp(1rem, 2vw, 2rem);
   align-items: center;
   justify-content: flex-start;
 }
 
 .publishedDate__item {
-  @include font.font_semibold;
-  font-size: 0.875rem;
-  margin-bottom: 0;
+  @include font.bold;
   color: var(--color-fg);
+  font-size: 1.25rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+  display: flex;
+  flex-grow: 0;
+  align-self: flex-start;
 }

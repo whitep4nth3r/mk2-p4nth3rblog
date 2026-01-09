@@ -3,10 +3,6 @@
 
 .pagination {
   margin: 4rem auto;
-  max-width: var(--global-max-width);
-  background: var(--card-bg); // todo — different gradient due to longer content
-  backdrop-filter: blur(1rem);
-  border-radius: 0.75rem;
 }
 
 .pagination__description {
@@ -24,8 +20,9 @@
 }
 
 .pagination__listItem {
-  @include font.font_bold;
-  font-size: 1.2rem;
+  @include font.heading;
+  font-size: clamp(2rem, 4vw, 3rem);
+  text-transform: uppercase;
   text-decoration: none;
   flex-grow: 1;
   text-align: center;

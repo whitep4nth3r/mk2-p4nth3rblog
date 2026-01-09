@@ -1,10 +1,10 @@
-const HomeAbout = require("./_components/homeAbout");
 const OpenGraph = require("../lib/openGraph");
-const ActivityFeedItem = require("./_components/card");
-const NewsletterSignup = require("./_components/newsletterSignup");
-const Webring = require("./_components/webring");
+const Card = require("./_components/card");
 const PersonStructuredData = require("./_components/personStructuredData");
-const pageTitle = "I'm Salma and I make stuff on the internet";
+const StarIcon = require("./_components/svg/starIcon");
+const HeartIcon = require("./_components/svg/heartIcon");
+
+const pageTitle = "I make stuff on The Internet.";
 
 exports.data = {
   layout: "base.html",
@@ -12,9 +12,9 @@ exports.data = {
   activeNav: "home",
   canonical: "https://whitep4nth3r.com/",
   metaDescription:
-    "I write code for your entertainment. I make stuff on the internet, help developers build great websites, and love helping people get into tech.",
+    "Web developer. International speaker. Tech educator. Entertainer. Has a weird newsletter. Makes stuff on The Internet.",
   openGraphImageUrl: OpenGraph.generateImageUrl({
-    title: "I write code for your entertainment",
+    title: pageTitle,
   }),
   openGraphImageAlt: OpenGraph.generateImageAlt(pageTitle),
   openGraphImageWidth: OpenGraph.imgWidth,
@@ -24,63 +24,75 @@ exports.data = {
 };
 
 exports.render = function (data) {
-  const { activityFeed, person, newsletter, webring } = data;
-  const feedItems = activityFeed.slice(0, 8);
+  const { person, webring, home } = data;
+  const { posts, stuff } = home;
 
   return /*html*/ `
   <section class="home">
-
-    <div class="home__left">
-      <div class="home__fixed">
-        <div style="view-transition-name: bio-image"></div>
-        ${HomeAbout({ bio: person.bioShort })}
+    <div class="hero" data-hero>
+    <div class="hero__cloud" data-cloud>
+      <div class="hero__cloud__underlay"></div>
+        <span class="hero__cloud__wd"> 
+          <h2><span>${HeartIcon()}</span><span>web developer</span></h2>
+        </span>
+        <span class="hero__cloud__is">
+          <h2>international speaker</h2>
+        </span>
+        <span class="hero__cloud__te">
+          <h2>tech educator</h2>
+        </span>
+        <span class="hero__cloud__e">
+          <h2>entertainer</h2>
+        </span>
+        <span class="hero__cloud__han">
+          <h2 >has a <span>weird</span> newsletter</h2>
+        </span>
+        <span class="hero__cloud__ms">
+          <h2>makes <span>stuff</span> on the internet</h2>
+        </span>
       </div>
+      <div class="hero__image">
+        <img src="${person.imageBio.url + `?fm=webp`}" alt="${person.imageBio.description}" height="${
+    person.imageBio.height
+  }" width="${person.imageBio.width}" />
+      </div>
+      <h1 class="hero__name" data-name>
+        <span class="hero__name__inner">
+          <span class="hero__name__separator">${StarIcon()}</span>
+          <span>SALMA ALAM-NAYLOR</span>
+          <span class="hero__name__separator">${StarIcon()}</span>
+        <span>
+      </h1>
     </div>
-
-    <div class="home__scroll">
-      <div class="home__activity">
-      <div class="card">
-        <div class="card__imageContainer">
-          <picture>
-            <source type="image/avif" srcset="/.netlify/images/?url=/img/wwwh.png?w=450&fm=avif" />
-            <source type="image/webp" srcset="/.netlify/images/?url=/img/wwwh.png?w=450&fm=webp" />
-            <img
-              src="/.netlify/images/?url=/img/wwwh.png?w=450"
-              alt="weird wide web hole"
-              role="presentation"
-              height="250"
-              width="500"
-              class="card__image" />
-          </picture>
-        </div>
-        <div class="card__inner">
-          ${NewsletterSignup({
-            removeMargin: true,
-            subscribers: newsletter.subscribers,
-          })}
-          <span class="card__metaLabel">Newsletter</span>
-        </div>
-      </div>
-      ${feedItems.map((item) => ActivityFeedItem({ item })).join("")}
-      <div class="card">
-        <div class="card__imageContainer">
-          <img src="/img/theclaw_webring_logo.svg" class="card__image tcwr__logo" alt="The panther moth with a tattoo style banner that reads The Claw" />
-        </div>
-        <div class="card__inner">
-          ${Webring({
-            members: webring.members,
-            prevUrl: webring.prevUrl,
-            nextUrl: webring.nextUrl,
-          })}
-          <span class="card__metaLabel">Webring</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
   </section>
+
+  <h2 class="home__jobTitle">Head of Developer Education @ <a href="https://nordcraft.com/" target="_blank">Nordcraft</a></h2>
+
+  <section class="home__latest">
+    <h2 class="home__latestHeader">Latest articles</h2>
+
+    <ol class="home__cards">
+      ${posts.map((item) => `<li>${Card({ item: item, showType: false })}</li>`).join("")}
+      <li>
+        <a href="/blog/" class="card card--viewAll"><p>Browse more articles</p></a>
+      </li>
+    </ol>
+
+    <h2 class="home__latestHeader">Latest stuff on the internet</h2>
+
+    <ol class="home__cards">
+      ${stuff.map((item) => `<li>${Card({ item })}</li>`).join("")}
+      <li>
+        <a href="/activity/" class="card card--viewAll"><p>See more stuff</p></a>
+      </li>
+    </ol>
+  </section>
+
   <script type="application/ld+json">${PersonStructuredData({
     person,
   })}</script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
+  <script src="/js/home.js" type="module"></script>
   `;
 };

@@ -1,13 +1,13 @@
 const ExternalUrl = require("../_components/externalUrl");
 const Author = require("../_components/author");
-const BlogEndAuthor = require("../_components/blogEndAuthor");
-const NewsletterSignup = require("../_components/newsletterSignup");
 const RichText = require("../_components/richText");
 const PublishedDate = require("../_components/publishedDate");
 const TableOfContents = require("../_components/tableOfContents");
 const isSponsored = require("../_components/isSponsored");
 const Card = require("../_components/card");
 const HeartIcon = require("../_components/svg/heartIcon");
+const StarIcon = require("../_components/svg/starIcon");
+
 const PostStructuredData = require("../_components/postStructuredData");
 const OpenGraph = require("../../lib/openGraph");
 
@@ -60,14 +60,14 @@ function outOfDateWarning({ post }) {
   const outOfDate = diff > 730;
 
   if (outOfDate) {
-    return `<p class="post__outOfDate">⚠️ This post is over two years old and may contain some outdated technical information. Please proceed with caution!</p>`;
+    return `<aside class="post__outOfDate">This post is over two years old and may contain some outdated technical information.</aside>`;
   }
 
   return "";
 }
 
 exports.render = async function (data) {
-  const { post, newsletter } = data;
+  const { post } = data;
 
   const openGraphImageUrl = await OpenGraph.generateImageUrl({
     title: post.title,
@@ -75,104 +75,119 @@ exports.render = async function (data) {
   });
 
   return /*html*/ `
-    <article class="h-entry">
-      <div class="post__meta">
-        <p class="post__meta__topic p-category">${post.topicsCollection.items[0].name}</p>
-        ${PublishedDate({
-          date: post.date,
-          readingTime: post.readingTime,
-          isTalk: false,
-          updatedDate: post.updatedDate,
-        })}
-      </div>
-      <h1 class="post__h1 p-name" style="view-transition-name: heading-${post.sys.id}">${post.title}</h1>
-      <section class="post">
-        <aside class="post__aside">
-          <div class="post__authorContainer">
-            ${Author({
-              author: post.author,
-              uUrl: `https://whitep4nth3r.com/blog/${data.post.slug}/`,
-              hideOnSmallScreens: true,
+    ${outOfDateWarning({ post })}
+    <article class="post h-entry">
+      <div class="post__header">
+        <h1 class="post__h1 p-name" style="view-transition-name: heading-${post.sys.id}">${post.title}</h1>
+        
+        <div class="post__byline">
+          <div class="post__meta">
+            <p class="post__meta__topic p-category">${post.topicsCollection.items[0].name}</p>
+            ${PublishedDate({
+              date: post.date,
+              readingTime: post.readingTime,
+              isTalk: false,
+              updatedDate: post.updatedDate,
             })}
-            <div style="visibility: hidden; height: 0;">
-              <a class="p-author h-card" href="https://whitep4nth3r.com/">Salma Alam-Naylor</a>
-              <a class="u-url" href="${`https://whitep4nth3r.com/blog/${data.post.slug}/`}">${post.title}</a>
-              <img class="u-photo" src="https://images.ctfassets.net/56dzm01z6lln/69YokY1TvGVk37gCQmQJDo/c315f0996556c9c1f276d12d5f201a76/headshot_relaxed.png"/>
-            </div>
           </div>
-          <div class="post__asideStickyGroup">
-            <span class="post__newsletterSignupWide">${NewsletterSignup({
-              removeMargin: false,
-              subscribers: newsletter.subscribers,
-            })}</span>
-            ${TableOfContents(post.body)}
-          </div>
-        </aside>
-        <div class="post__article">
           <div class="post__excerpt">${md.render(post.excerpt)}</div>
-          <hr class="post__separator" aria-hidden="true" />
-          <div class="post__body e-content">
-            ${outOfDateWarning({ post })}
-            ${RichText(post.body, {
-              renderRssFriendlyImg: false,
-              absoluteUrls: false,
-              renderHeadingLinks: true,
-            })}
-          </div>
+        </div>
+      </div>
 
-          ${post.isSponsored ? isSponsored() : ""}
-          ${ExternalUrl({ url: post.externalUrl })}
+      <aside class="post__aside">
+        ${TableOfContents(post.body)}
+      </aside>
+     
+      <aside class="post__author">
+        ${Author({
+          author: post.author,
+        })}
+        <div style="visibility: hidden; height: 0;">
+          <a class="p-author h-card" href="https://whitep4nth3r.com/">Salma Alam-Naylor</a>
+          <a class="u-url" href="${`https://whitep4nth3r.com/blog/${post.slug}/`}">${post.title}</a>
+          <img class="u-photo" src="${post.author.imageBio.url}"/>
+        </div>
+      </aside>
 
-            ${
-              post.blueskyPostId
-                ? `
-              <section class="post__likes" data-bsky-container>
-                <h3 class="post__likesTitle">${HeartIcon()} <span data-bsky-likes-count></span> likes</h3>
-                <a class="post__likesCta" href="https://bsky.app/profile/whitep4nth3r.com/post/${
+       ${
+         post.blueskyPostId
+           ? `
+              <aside class="post__likes" data-bsky-likes-container>
+                <a href="https://bsky.app/profile/whitep4nth3r.com/post/${
                   post.blueskyPostId
-                }" target="_blank">Like this post on Bluesky to see your face on this page</a>
-                <ul data-bsky-likes class="post__likesList"></ul>
-              </section>`
-                : ""
-            }
+                }" target="_blank" aria-label="Like this post on Bluesky" class="post__likes__title" data-bsky-external-link>${HeartIcon()} <span data-bsky-likes-count></span></a>
+                <ul data-bsky-likes class="post__likes__list">
+                </ul>
+              </aside>`
+           : ""
+       }
 
-          <span class="post__newsletterSignupSmall">${NewsletterSignup({
-            removeMargin: false,
-            subscribers: newsletter.subscribers,
-          })}</span>
-
-          <hr class="post__separator" />
-
-          ${BlogEndAuthor({
-            author: post.author,
-            uUrl: `https://whitep4nth3r.com/blog/${data.post.slug}/`,
+      <section class="post__article">
+        <div class="post__body e-content">
+          ${RichText(post.body, {
+            renderRssFriendlyImg: false,
+            absoluteUrls: false,
+            renderHeadingLinks: true,
           })}
 
-          ${
-            post.relatedPostsCollection?.items.length > 0
-              ? /*html*/ `
-              <div class="post__related">
-                <div class="post__relatedHeader">
-                  <p class="post__relatedHeaderTitle">Related posts</p>
-                </div>
-                <div class="post__relatedGrid">
-                  ${post.relatedPostsCollection.items
-                    .map((post) => Card({ item: { ...post, type: "post" }, showType: false, lazyLoad: true }))
-                    .join("")}
-                </div>
-              </div>`
-              : ""
-          }
+          ${post.isSponsored ? isSponsored() : ""}
 
-          <script type="application/ld+json">${PostStructuredData({
-            post,
-            imageUrl: openGraphImageUrl,
-          })}</script>
+          ${ExternalUrl({ url: post.externalUrl })}
         </div>
-      </article>
-    </section>
+
+
+
+       ${
+         post.blueskyPostId
+           ? `
+            <aside class="post__replies" data-bsky-replies-container>
+              <hr class="post__hr" />
+              <h3 class="post__replies__header"><span data-bsky-replies-count></span> replies on Bluesky</h3>
+              <div class="post__replies__placeholder" data-replies-placeholder>
+                <p class="post__replies__placeholderText">No replies yet.</p>
+              </div>
+              <ul data-bsky-replies class="post__replies__list">
+              </ul>
+                <a href="https://bsky.app/profile/whitep4nth3r.com/post/${post.blueskyPostId}" target="_blank" class="post__replies__placeholderCta">Say something</a>
+            </aside>`
+           : ""
+       }
+      </section>
+    </article>
+
+      ${
+        post.relatedPostsCollection?.items.length > 0
+          ? /*html*/ `
+    <div class="post__related">
+      <div class="post__relatedHeader">
+        <p class="post__relatedHeaderTitle">
+          <span>
+            ${StarIcon()}
+          </span>
+          <span>
+            Read more on this topic
+          </span>
+        </p>
+      </div>
+      <div class="post__relatedGrid">
+        ${post.relatedPostsCollection.items
+          .map((post) => Card({ item: { ...post, type: "post" }, showType: false, lazyLoad: true }))
+          .join("")}
+      </div>
+    </div>`
+          : ""
+      }
+
     <meta data-bsky-post-id="${post.blueskyPostId}" />
-    <script src="/js/bsky_post_likes.js" type="module"></script>
+    <script type="application/ld+json">${PostStructuredData({
+      post,
+      imageUrl: openGraphImageUrl,
+    })}</script>
+    <script src="/js/bsky.js" type="module"></script>
     <script src="/js/copy_code.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
+    <script src="/js/blog.js" type="module"></script>
     `;
 };

@@ -1,7 +1,6 @@
 function BioImage({ image }, small = false) {
-  const vtNameClass = small ? "vt__bioImage-small" : "vt__bioImage";
   return /*html*/ `
-    <picture class="${vtNameClass}">
+    <picture>
       <source
         type="image/avif"
         srcset="${image.url}?q=75&w=500&fm=avif 500w, ${image.url}?q=75&w=900&fm=avif 900w" 

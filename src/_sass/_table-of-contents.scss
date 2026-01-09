@@ -2,7 +2,23 @@
 @use "utils";
 
 .tableOfContents {
-  margin-bottom: 2rem;
+  padding: 1rem;
+
+  @media screen and (min-width: utils.$post_breakpoint_lg) {
+    padding: 0;
+  }
+
+  &[open] {
+    .tableOfContents__header::marker {
+      content: "⬇";
+    }
+  }
+
+  &:not([open]) {
+    .tableOfContents__header::marker {
+      content: "⮕";
+    }
+  }
 }
 
 .tableOfContents__list {
@@ -11,17 +27,18 @@
 }
 
 [color-mode="dark"] {
-  --table-of-contents-header-color: var(--pink-light);
+  --table-of-contents-header-color: var(--green);
 }
 [color-mode="light"] {
   --table-of-contents-header-color: var(--pink);
 }
 
 .tableOfContents__header {
-  @include font.font_bold;
+  @include font.heading;
+  text-transform: uppercase;
   color: var(--table-of-contents-header-color);
   margin-bottom: 1rem;
-  font-size: 1.2rem;
+  font-size: clamp(1.5rem, 2vw, 2rem);
   cursor: pointer;
 
   @include utils.link_focus;
@@ -32,10 +49,10 @@
 }
 
 .tableOfContents__itemLink {
-  @include font.font_main;
-  font-size: 1rem;
+  @include font.main;
+  font-size: 1.25rem;
   line-height: 1.4;
-  color: var(--color-fg-copy);
+  color: var(--color-fg);
   text-decoration: none;
   display: block;
 

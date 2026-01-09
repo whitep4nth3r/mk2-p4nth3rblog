@@ -5,11 +5,10 @@
 }
 
 .videoEmbed__iframe {
-  margin-bottom: 1rem;
-  margin-top: 2rem;
-  filter: var(--base-shadow-filter);
-  border-radius: calc(var(--border-radius-base) * 2);
-  overflow: hidden;
+  border-radius: var(--border-radius-accent);
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
 }
 
 .videoEmbed__ytShort {

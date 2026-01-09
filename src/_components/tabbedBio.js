@@ -1,23 +1,9 @@
-const SocialLinks = require("./socialLinks");
 const VideoEmbed = require("./videoEmbed");
 
 function TabbedBio({ shortBio, speakerBio, longBio }) {
   return /*html*/ `
   
   <div class="bio">
-    <div class="bio__topRow">
-      <div class="bio__buttons">
-        <a href="#speaker" class="bio__button">Speaker bio</a>
-        <a href="#long" class="bio__button" data-view="long">Long bio</a>
-      </div>
-      <div class="bio__links">
-      ${SocialLinks({
-        uUrl: "https://whitep4nth3r.com/about/",
-        extraClassModifier: "about",
-      })}
-      </div>
-    </div>
-  
     <div class="bio__block">
       ${shortBio}
     </div>
