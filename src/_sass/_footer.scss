@@ -132,7 +132,7 @@
   @include font.main;
   font-size: 1rem;
   color: var(--color-fg);
-
+  width: max-content;
   @include utils.link_focus;
 }
 
