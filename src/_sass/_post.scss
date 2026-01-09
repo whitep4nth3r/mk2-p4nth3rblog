@@ -28,7 +28,6 @@
   @media screen and (min-width: utils.$post_breakpoint_md) {
     margin-top: 2rem;
     gap: 1rem;
-    display: grid;
     grid-auto-columns: auto;
     grid-template-rows: auto 1fr auto;
     grid-template-areas:
@@ -41,9 +40,6 @@
   @media screen and (min-width: utils.$post_breakpoint_lg) {
     margin-top: 4rem;
     gap: 3rem;
-    display: grid;
-    grid-auto-columns: auto;
-    grid-template-rows: auto 1fr auto;
     grid-template-areas:
       "bsky title title author"
       "bsky aside content author";
