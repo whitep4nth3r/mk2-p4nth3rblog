@@ -87,7 +87,7 @@
   text-decoration-color: var(--pink);
   text-decoration-thickness: 0.5rem;
   text-underline-offset: clamp(0.25rem, 0.5vw, 0.5rem);
-  filter: url(#distort_from_footer);
+  filter: url(#distort);
   transform: rotate(-2deg);
   transform-origin: left top;
 }

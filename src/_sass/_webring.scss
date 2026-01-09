@@ -98,7 +98,7 @@
   @include font.heading;
   text-transform: uppercase;
   font-size: clamp(2rem, 4vw, 2.5rem);
-  filter: url(#distort_from_footer);
+  filter: url(#distort);
 }
 
 .webring__members__listItemLinks {

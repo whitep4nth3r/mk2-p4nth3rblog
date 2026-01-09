@@ -87,7 +87,7 @@
     position: relative;
     z-index: 20;
     mix-blend-mode: var(--name-mbm);
-    filter: url(#distort_from_footer);
+    filter: url(#distort);
 
     @media screen and (min-width: 1080px) {
       top: 0;

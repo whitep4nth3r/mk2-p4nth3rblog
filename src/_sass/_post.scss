@@ -570,7 +570,7 @@
   &:focus {
     svg {
       transform: scale(1.2) rotate(-15deg);
-      filter: url(#distort_from_footer);
+      filter: url(#distort);
     }
   }
 }
@@ -632,7 +632,7 @@
   line-height: 1.2;
   margin-bottom: 2rem;
   text-transform: uppercase;
-  filter: url(#distort_from_footer);
+  filter: url(#distort);
 }
 
 .post__replies__list {

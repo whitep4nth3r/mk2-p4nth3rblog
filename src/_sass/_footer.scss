@@ -54,7 +54,7 @@
 
   span {
     display: inline-block;
-    filter: (url(#distort_from_footer));
+    filter: (url(#distort));
     transform: rotate(-5deg);
     color: var(--weird-color);
   }
@@ -180,7 +180,7 @@
 
   a {
     color: var(--color-fg);
-    filter: url(#distort_from_footer);
+    filter: url(#distort);
     @include utils.link_focus;
   }
 }
