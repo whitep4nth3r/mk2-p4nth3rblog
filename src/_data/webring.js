@@ -1,7 +1,5 @@
 module.exports = async function () {
-  const members = await fetch(
-    "https://the-claw-webring.netlify.app/data/members.json",
-  ).then((res) => res.json());
+  const members = await fetch("https://the-claw-webring.netlify.app/data/members.json").then((res) => res.json());
 
   return {
     members,

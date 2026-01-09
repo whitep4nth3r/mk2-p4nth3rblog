@@ -73,7 +73,7 @@
 .post__h1 {
   @include font.heading;
   text-transform: uppercase;
-  font-size: clamp(3rem, 9vw, 13rem);
+  font-size: clamp(3rem, 9vw, 11rem);
   line-height: 1;
   color: var(--color-fg);
   text-wrap: pretty;
@@ -619,7 +619,7 @@
 }
 
 .post__replies {
-  --embed-border-color: #b2bec3;
+  --subtle-border-color: #b2bec3;
   max-width: var(--max-width);
   align-self: center;
   width: 100%;
@@ -763,7 +763,7 @@
   flex-direction: column;
   gap: 0.5rem;
   border-radius: var(--border-radius-accent);
-  border: 1px solid var(--embed-border-color);
+  border: 1px solid var(--subtle-border-color);
   padding: 0.5rem;
   width: 100%;
   font-size: clamp(0.8rem, 1.2vw, 1.2rem);
@@ -785,7 +785,7 @@
   flex-direction: column;
   gap: 0.5rem;
   border-radius: var(--border-radius-accent);
-  border: 1px solid var(--embed-border-color);
+  border: 1px solid var(--subtle-border-color);
   padding: 0.5rem;
   width: 100%;
 

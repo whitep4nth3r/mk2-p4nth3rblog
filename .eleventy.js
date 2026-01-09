@@ -22,6 +22,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
     "./src/_client_scripts/blog.js": "/js/blog.js",
   });
+  eleventyConfig.addPassthroughCopy({
+    "./src/_client_scripts/webring.js": "/js/webring.js",
+  });
   eleventyConfig.addPlugin(syntaxHighlight);
 
   eleventyConfig.ignores.add("./src/_archive");

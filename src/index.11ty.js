@@ -1,6 +1,5 @@
 const OpenGraph = require("../lib/openGraph");
 const Card = require("./_components/card");
-const Webring = require("./_components/webring");
 const PersonStructuredData = require("./_components/personStructuredData");
 const StarIcon = require("./_components/svg/starIcon");
 const HeartIcon = require("./_components/svg/heartIcon");
@@ -88,23 +87,6 @@ exports.render = function (data) {
       </li>
     </ol>
   </section>
-
-<!--
-  <div class="home__cards">
-    <div class="card">
-      <div class="card__imageContainer">
-        <img src="/img/theclaw_webring_logo.svg" class="card__image tcwr__logo" alt="The panther moth with a tattoo style banner that reads The Claw" />
-      </div>
-      <div class="card__inner">
-        ${Webring({
-          members: webring.members,
-          prevUrl: webring.prevUrl,
-          nextUrl: webring.nextUrl,
-        })}
-        <span class="card__metaLabel">Webring</span>
-      </div>
-    </div>
-  </div>-->
 
   <script type="application/ld+json">${PersonStructuredData({
     person,
