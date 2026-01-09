@@ -1,9 +1,9 @@
 const RichText = require("../_components/richText");
-const BioImage = require("../_components/bioImage");
 const TabbedBio = require("../_components/tabbedBio");
 const OpenGraph = require("../../lib/openGraph");
-const NameLogo = require("../_components/svg/nameLogo");
 const PersonStructuredData = require("../_components/personStructuredData");
+const StarIcon = require("../_components/svg/starIcon");
+const NameSvg = require("../_components/svg/name");
 
 const pageTitle = "About Salma Alam-Naylor";
 
@@ -26,24 +26,29 @@ exports.data = {
   includeInSitemap: true,
 };
 
+//todo make a scrollable container
+
 exports.render = function (data) {
   const { person } = data;
 
   return /* html */ `
-    <div class="about">
-      <div class="about__image">
-        <div class="about__fixed">
-          ${BioImage({ image: person.imageBio })}
-        </div>
-      </div>
+    <section class="about">
+      <div class="about__hero" data-hero>
+        <h1 class="about__name">
+          <span class="about__name__inner">
+            <span class="hero__name__separator">${StarIcon()}</span>
+            <span>SALMA ALAM-NAYLOR</span>
+            <span class="hero__name__separator">${StarIcon()}</span>
+          <span>
+        </h1>
 
-      <div class="about__details">
-        <div class="about__name">
-          <h1>
-            ${NameLogo()}
-          </h1>
+        <div class="about__hero__image">
+         <img src="${person.imageBio.url + `?fm=webp`}" alt="${person.imageBio.description}" height="${
+    person.imageBio.height
+  }" width="${person.imageBio.width}" />
         </div>
-        <div class="about__bio">
+
+        <div class="about__hero__bio">
           ${TabbedBio({
             shortBio: md.render(person.bioShort),
             speakerBio: md.render(person.bioSpeaker),
@@ -51,10 +56,13 @@ exports.render = function (data) {
           })}
         </div>
       </div>
-    </div>
+    </section>
 
     <script type="application/ld+json">${PersonStructuredData({
       person,
     })}</script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
+    <script src="/js/about.js" type="module"></script>
   `;
 };

@@ -63,10 +63,10 @@ exports.render = function (data) {
   xmlns:atom="https://www.w3.org/2005/Atom"
   xmlns:content="https://purl.org/rss/1.0/modules/content/">
   <channel>
-  <title>whitep4nth3r's Web Feed</title>
+  <title>Salma Alam-Naylor's RSS Feed</title>
   <atom:link href="https://${Config.site.domain}/feed.xml" rel="self" type="application/rss+xml" />
   <link>https://${Config.site.domain}</link>
-  <description>Hello, I'm Salma. I write code for your entertainment. I help developers build cool stuff with blog posts, videos, and open source projects. I work at Nordcraft. I like to think I'm kinda cool.</description>
+  <description>I'm Salma. Web developer. International speaker. Tech educator. Entertainer. Has a weird newsletter. Makes stuff on The Internet.</description>
     ${buildRssItems(sortedItems)}
     </channel>
     </rss>

@@ -1,32 +1,23 @@
 @use "font";
 
 .fourohfour__content {
-  max-width: var(--post-max-width);
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
-  text-align: center;
-}
-
-.fourohfour__logo {
-  max-width: 100%;
-}
-
-.fourohfour__cta {
-  max-width: 400px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
+  padding: 1rem;
 }
 
 .fourohfour__title {
+  @include font.heading;
+  font-size: 6rem;
+  text-transform: uppercase;
   margin-top: 2rem;
-  color: var(--color-body);
+  color: var(--color-accent);
 }
 
 .fourohfour__text {
-  @include font.font_main;
-  font-size: 1.4rem;
+  @include font.serif;
+  font-size: 2rem;
   line-height: 1.4;
   margin-bottom: 4rem;
   color: var(--color-fg);

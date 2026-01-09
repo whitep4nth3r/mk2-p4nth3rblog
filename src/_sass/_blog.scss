@@ -5,9 +5,6 @@
   display: block;
 }
 
-.blog__cards {
-}
-
 .blog__cardsGrid {
   @include utils.card_grid;
 }

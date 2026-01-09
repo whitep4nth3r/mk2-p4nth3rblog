@@ -27,80 +27,23 @@ eleventyExcludeFromCollections: true
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0f111a" />
-    <meta name="msapplication-TileColor" content="#0f111a" />
-    <meta name="theme-color" content="#0f111a" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000" />
+    <meta name="msapplication-TileColor" content="#000000" />
+
+    <!-- For light mode -->
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+
+    <!-- For dark mode -->
+    <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
   </head>
   <body data-type="404">
     {% include "header.html" %}
     <main id="main_content">
       <div class="fourohfour__content">
-        <svg
-          class="fourohfour__logo"
-          width="426"
-          height="291"
-          viewBox="0 0 426 291"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M115.687 185.192H133.059V231.652H115.687V287H70.0346V231.652H0.142578V185.192L63.9746 4.19998H75.2866H115.687V185.192ZM47.4106 185.192H70.0346L70.8426 118.936L47.4106 185.192Z"
-            fill="url(#paint0_linear_4029_6690)" />
-          <path
-            d="M148.092 53.488C148.092 24.4 171.524 0.56398 200.612 0.56398H222.024C251.112 0.56398 274.948 24.4 274.948 53.488V238.116C274.948 267.204 251.112 290.636 222.024 290.636H200.612C171.524 290.636 148.092 267.204 148.092 238.116V53.488ZM200.612 230.036C200.612 235.692 205.056 240.54 210.712 240.54H211.924C217.58 240.54 222.024 235.692 222.024 230.036V61.568C222.024 55.912 217.58 51.064 211.924 51.064H210.712C205.056 51.064 200.612 55.912 200.612 61.568V230.036Z"
-            fill="url(#paint1_linear_4029_6690)" />
-          <path
-            d="M407.64 185.192H425.012V231.652H407.64V287H361.988V231.652H292.096V185.192L355.928 4.19998H367.24H407.64V185.192ZM339.364 185.192H361.988L362.796 118.936L339.364 185.192Z"
-            fill="url(#paint2_linear_4029_6690)" />
-          <defs>
-            <linearGradient
-              id="paint0_linear_4029_6690"
-              x1="212.577"
-              y1="0.56398"
-              x2="212.577"
-              y2="290.636"
-              gradientUnits="userSpaceOnUse">
-              <stop stop-color="#F0047F" />
-              <stop offset="1" stop-color="#FC814A" />
-            </linearGradient>
-            <linearGradient
-              id="paint1_linear_4029_6690"
-              x1="212.577"
-              y1="0.56398"
-              x2="212.577"
-              y2="290.636"
-              gradientUnits="userSpaceOnUse">
-              <stop stop-color="#F0047F" />
-              <stop offset="1" stop-color="#FC814A" />
-            </linearGradient>
-            <linearGradient
-              id="paint2_linear_4029_6690"
-              x1="212.577"
-              y1="0.56398"
-              x2="212.577"
-              y2="290.636"
-              gradientUnits="userSpaceOnUse">
-              <stop stop-color="#F0047F" />
-              <stop offset="1" stop-color="#FC814A" />
-            </linearGradient>
-          </defs>
-        </svg>
-        <h1 class="fourohfour__title">Oops. You fell down a hole.</h1>
-        <div class="fourohfour__cta">
-          <div class="newsletterSignup">
-            <h2 class="newsletterSignup__title">
-              Want
-              <span>weird stuff</span>
-              in your inbox?
-            </h2>
-            <p class="newsletterSignup__para">
-              Enter the Weird Wide Web Hole to find no answers to questions you didn't know you had.
-            </p>
-            <a href="https://buttondown.email/weirdwidewebhole" class="newsletterSignup__submit" target="_blank">
-              Subscribe
-            </a>
-          </div>
-        </div>
+        <h1 class="fourohfour__title">404: Oh no.</h1>
+        <p class="fourohfour__text"><em>Good luck out there.</em></p>
       </div>
     </main>
+    {% include "footer.html" %}
   </body>
 </html>

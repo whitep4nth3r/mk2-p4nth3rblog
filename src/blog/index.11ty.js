@@ -1,10 +1,9 @@
 const Config = require("../../lib/config.js");
 const Card = require("../_components/card");
 const Pagination = require("../_components/pagination");
-const FilterIcon = require("../_components/svg/filterIcon");
 const OpenGraph = require("../../lib/openGraph");
 
-const pageTitle = "Blogs and tutorials";
+const pageTitle = "Articles";
 
 function calculatePageUrl(data) {
   const suffix = data.pagination.pageNumber === 0 ? `` : `${data.pagination.pageNumber + 1}/`;
@@ -38,18 +37,11 @@ exports.data = {
 };
 
 exports.render = function (data) {
-  const latestPost = data.latestPost;
   return /* html */ `
 
-  <h1 class="page__headerTitle">${data.count} Blogs and tutorials</h1>
+  <h1 class="page__header">${data.count} articles</h1>
   <div class="blog">
-    <div style="view-transition-name: bio-image"></div>
-    <div style="view-transition-name: name-logo"></div>
-
     <section class="blog__cards">
-      <div id="hits" class="ais__hitsContainer"></div>
-
-      <div data-static-content>
         <ol class="blog__cardsGrid">
         ${data.pagination.items
           .map(function (item, index) {
@@ -68,7 +60,6 @@ exports.render = function (data) {
           currentPage: data.pagination.pageNumber,
           totalPages: data.pagination.pages.length,
         })}
-      </div>
     </section>
 
   </div>

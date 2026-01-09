@@ -30,7 +30,7 @@ exports.render = function (data) {
   return /* html */ `
   
   <section>
-    <h1 class="page__headerTitle">Conference and meetup talks</h1>
+    <h1 class="page__header">${data.talkSummaries.length} recorded talks</h1>
 
     <ol class="talks__cardGrid">
       ${data.pagination.items
