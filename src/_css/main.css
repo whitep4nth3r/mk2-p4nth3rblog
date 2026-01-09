@@ -1009,18 +1009,25 @@ main {
 
 .post__externalUrl,
 .post__isSponsored {
-  font-weight: var(--font-weight-bold);
-  font-family: var(--font-family-main);
+  font-family: var(--font-family-heading);
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+  margin-top: 2rem;
   margin-bottom: 2rem;
   max-width: max-content;
-  color: var(--color-fg);
+  color: var(--color-accent);
   text-decoration: none;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  font-size: 1rem;
   word-wrap: break-word;
+}
+.post__externalUrl svg,
+.post__isSponsored svg {
+  height: 2rem;
+  width: 2rem;
 }
 
 .post__isSponsoredIcon,
