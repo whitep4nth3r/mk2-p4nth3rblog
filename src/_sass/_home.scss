@@ -33,6 +33,7 @@
 }
 
 .hero__cloud {
+  //todo turn this into container
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -127,7 +128,7 @@
 
   h2 {
     @include font.serif;
-    font-size: clamp(3rem, calc(3.5vw + 3svh), 6rem);
+    font-size: clamp(3rem, calc(3.5vw + 3svh), 6rem); //clamp(3rem,min(5vw,5svh),6rem) TODO make this cqw
     line-height: 1;
   }
 }
