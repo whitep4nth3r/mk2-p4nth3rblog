@@ -4,7 +4,7 @@ const PersonStructuredData = require("./_components/personStructuredData");
 const StarIcon = require("./_components/svg/starIcon");
 const HeartIcon = require("./_components/svg/heartIcon");
 
-const pageTitle = "I make stuff on The Internet.";
+const pageTitle = "Salma makes stuff on The Internet.";
 
 exports.data = {
   layout: "base.html",
