@@ -36,14 +36,21 @@ exports.data = {
   },
 };
 
+function addPageInfo(currentPage, totalPages) {
+  return `• Page ${currentPage + 1}/${totalPages}`;
+}
+
 exports.render = function (data) {
+  const { pagination } = data;
   return /* html */ `
 
-  <h1 class="page__header">${data.count} articles</h1>
+  <h1 class="page__header">${data.count} articles ${
+    pagination.pageNumber > 0 ? addPageInfo(pagination.pageNumber, pagination.pages.length) : ""
+  }</h1>
   <div class="blog">
     <section class="blog__cards">
         <ol class="blog__cardsGrid">
-        ${data.pagination.items
+        ${pagination.items
           .map(function (item, index) {
             const lazy = index > 5 ? true : false;
             return `
@@ -55,10 +62,10 @@ exports.render = function (data) {
         </ol>
 
         ${Pagination({
-          previous: data.pagination.href.previous,
-          next: data.pagination.href.next,
-          currentPage: data.pagination.pageNumber,
-          totalPages: data.pagination.pages.length,
+          previous: pagination.href.previous,
+          next: pagination.href.next,
+          currentPage: pagination.pageNumber,
+          totalPages: pagination.pages.length,
         })}
     </section>
 
