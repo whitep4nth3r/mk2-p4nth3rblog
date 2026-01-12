@@ -33,7 +33,7 @@ exports.render = function (data) {
     <div class="hero__cloud" data-cloud>
       <div class="hero__cloud__underlay"></div>
         <span class="hero__cloud__wd"> 
-          <h2><span>${HeartIcon()}</span><span>web developer</span></h2>
+          <h2><span aria-hidden="true">${HeartIcon()}</span><span>web developer</span></h2>
         </span>
         <span class="hero__cloud__is">
           <h2>international speaker</h2>
@@ -56,11 +56,11 @@ exports.render = function (data) {
     person.imageBio.height
   }" width="${person.imageBio.width}" />
       </div>
-      <h1 class="hero__name" data-name>
+      <h1 class="hero__name" data-name aria-label="Salma Alam-Naylor">
         <span class="hero__name__inner">
-          <span class="hero__name__separator">${StarIcon()}</span>
+          <span aria-hidden="true" class="hero__name__separator">${StarIcon()}</span>
           <span>SALMA ALAM-NAYLOR</span>
-          <span class="hero__name__separator">${StarIcon()}</span>
+          <span aria-hidden="true" class="hero__name__separator">${StarIcon()}</span>
         <span>
       </h1>
     </div>
