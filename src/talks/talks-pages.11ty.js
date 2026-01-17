@@ -91,7 +91,7 @@ exports.render = function (data) {
         <div style="visibility: hidden; height: 0;">
           <a class="p-author h-card" href="https://whitep4nth3r.com/">Salma Alam-Naylor</a>
           <a class="u-url" href="${`https://whitep4nth3r.com/talks/${talk.slug}/`}">${talk.title}</a>
-          <img class="u-photo" src="src="${talk.author.imageBio.url}" />
+          <img class="u-photo" src="${talk.author.imageBio.url}" />
         </div>
     </aside>
     <section class="post__article">

@@ -34,9 +34,9 @@ exports.render = function (data) {
   return /* html */ `
     <section class="about">
       <div class="about__hero" data-hero>
-        <h1 class="about__name">
+        <h1 class="about__name" aria-label="Salma Alam-Naylor">
           <span class="about__name__inner">
-            <span class="hero__name__separator">${StarIcon()}</span>
+            <span aria-hidden="true" class="hero__name__separator">${StarIcon()}</span>
             <span>SALMA ALAM-NAYLOR</span>
             <span class="hero__name__separator">${StarIcon()}</span>
           <span>
