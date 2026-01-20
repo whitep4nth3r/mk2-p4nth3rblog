@@ -21,10 +21,12 @@ exports.data = {
   openGraphImageHeight: OpenGraph.imgHeight,
   openGraphUrl: "https://whitep4nth3r.com/",
   includeInSitemap: true,
+  sitemapChangeFreq: "monthly",
+  sitemapPriority: "1.0",
 };
 
 exports.render = function (data) {
-  const { person, webring, home } = data;
+  const { person, home } = data;
   const { posts, stuff } = home;
 
   return /*html*/ `

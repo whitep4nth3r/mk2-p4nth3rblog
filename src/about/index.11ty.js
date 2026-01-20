@@ -24,6 +24,8 @@ exports.data = {
   openGraphImageHeight: OpenGraph.imgHeight,
   openGraphUrl: "https://whitep4nth3r.com/about/",
   includeInSitemap: true,
+  sitemapChangeFreq: "monthly",
+  sitemapPriority: "1.0",
 };
 
 //todo make a scrollable container

@@ -18,6 +18,8 @@ exports.data = {
     return `talks/${data.talk.slug}/`;
   },
   includeInSitemap: true,
+  sitemapChangeFreq: "monthly",
+  sitemapPriority: "0.7",
   eleventyComputed: {
     title: (data) => data.talk.title,
     metaDescription: (data) => data.talk.metaDescription,

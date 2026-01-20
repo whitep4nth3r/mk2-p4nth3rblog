@@ -27,6 +27,8 @@ exports.data = {
     return `activity/${trailing}`;
   },
   includeInSitemap: true,
+  sitemapChangeFreq: "weekly",
+  sitemapPriority: "0.5",
   eleventyComputed: {
     canonical: (data) => calculatePageUrl(data),
     openGraphUrl: (data) => calculatePageUrl(data),

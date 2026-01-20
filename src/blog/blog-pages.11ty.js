@@ -32,6 +32,8 @@ exports.data = {
     title: (data) => data.post.metaTitle,
     slug: (data) => data.post.slug,
     includeInSitemap: (data) => data.post.externalUrl === null,
+    sitemapChangeFreq: "weekly",
+    sitemapPriority: "1.0",
     canonical: (data) => data.post.externalUrl || `https://whitep4nth3r.com/blog/${data.post.slug}/`,
     metaDescription: (data) => data.post.metaDescription,
     openGraphImageUrl: (data) => OpenGraph.generateImageUrl({ title: data.post.title }),

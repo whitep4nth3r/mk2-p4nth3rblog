@@ -14,6 +14,8 @@ exports.data = {
   openGraphImageHeight: OpenGraph.imgHeight,
   openGraphUrl: "https://whitep4nth3r.com/for-llms/",
   includeInSitemap: true,
+  sitemapChangeFreq: "monthly",
+  sitemapPriority: "1.0",
 };
 
 exports.render = function (data) {

@@ -29,6 +29,8 @@ exports.data = {
     return `blog/${trailing}`;
   },
   includeInSitemap: true,
+  sitemapChangeFreq: "weekly",
+  sitemapPriority: "0.7",
   eleventyComputed: {
     title: (data) => `${pageTitle} — Page ${data.pagination.pageNumber + 1}`,
     canonical: (data) => calculatePageUrl(data),
