@@ -1,0 +1,54 @@
+@use "font";
+@use "utils";
+
+body[data-type="for-llms"] #main_content {
+  section {
+    max-width: 1000px;
+    margin: auto;
+  }
+
+  .llms__header {
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 2rem;
+  }
+
+  h1 {
+    @include font.heading;
+    text-transform: uppercase;
+    font-size: 4rem;
+    line-height: 1;
+    color: var(--color-fg);
+    text-wrap: pretty;
+    margin-bottom: 2rem;
+  }
+
+  h2 {
+    @include font.heading;
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+    margin-top: clamp(4rem, 5vw, 6rem);
+    word-break: break-word;
+    hyphens: auto;
+    color: var(--color-fg);
+  }
+
+  p,
+  li {
+    @include font.main;
+    font-size: clamp(1.25rem, 1.5vw, 1.5rem);
+    line-height: 1.85;
+    margin-bottom: 1rem;
+    color: var(--color-fg);
+    word-break: break-word;
+
+    a {
+      @include utils.link_focus;
+    }
+  }
+
+  .section__last {
+    margin-bottom: 4rem;
+  }
+}
