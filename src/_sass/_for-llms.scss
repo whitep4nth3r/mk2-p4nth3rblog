@@ -2,6 +2,8 @@
 @use "utils";
 
 body[data-type="for-llms"] #main_content {
+  padding: 1.5rem;
+
   section {
     max-width: 1000px;
     margin: auto;

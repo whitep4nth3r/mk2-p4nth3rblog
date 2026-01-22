@@ -18,10 +18,17 @@ function PersonStructuredData({ person }) {
       "@type": "Brand",
       name: "whitep4nth3r",
     },
+    sameAs: [
+      "https://github.com/whitep4nth3r",
+      "https://youtube.com/@whitep4nth3r",
+      "https://www.linkedin.com/in/salma-alam-naylor/",
+      "https://bsky.app/profile/whitep4nth3r.com",
+    ],
     image: person.imageBio.url,
     name: person.name,
     description: md.plainText,
-    jobTitle: "Software Engineer and Developer Educator",
+    jobTitle: "Head of Developer Education",
+    worksFor: "Nordcraft",
   });
 }
 
