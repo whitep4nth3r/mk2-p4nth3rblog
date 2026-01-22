@@ -8,14 +8,11 @@ const Card = require("../_components/card");
 const HeartIcon = require("../_components/svg/heartIcon");
 const StarIcon = require("../_components/svg/starIcon");
 const MarkdownIt = require("markdown-it");
-const plainText = require("markdown-it-plain-text");
+
+const md = new MarkdownIt();
 
 const PostStructuredData = require("../_components/postStructuredData");
 const OpenGraph = require("../../lib/openGraph");
-
-var md = require("markdown-it")({
-  html: true,
-});
 
 exports.data = {
   layout: "base.html",
@@ -72,10 +69,6 @@ function outOfDateWarning({ post }) {
 
 exports.render = async function (data) {
   const { post } = data;
-
-  const md = new MarkdownIt();
-  md.use(plainText);
-  const authorBio = md.render(post.author.bioShort);
 
   const openGraphImageUrl = await OpenGraph.generateImageUrl({
     title: post.title,
@@ -188,7 +181,6 @@ exports.render = async function (data) {
     <script type="application/ld+json">${PostStructuredData({
       post,
       imageUrl: openGraphImageUrl,
-      personBio: authorBio,
     })}</script>
     <script src="/js/bsky.js" type="module"></script>
     <script src="/js/copy_code.js"></script>
