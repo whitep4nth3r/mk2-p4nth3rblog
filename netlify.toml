@@ -23,10 +23,10 @@
   to = "https://discord.gg/GQbXUVCneJ"
   status = 301
 
-[[redirects]]
-  from = "/newsletter"
-  to = "https://buttondown.email/weirdwidewebhole"
-  status = 301
+# [[redirects]]
+#   from = "/newsletter"
+#   to = "https://buttondown.email/weirdwidewebhole"
+#   status = 301
 
 [[redirects]]
   from = "/keyboard"
