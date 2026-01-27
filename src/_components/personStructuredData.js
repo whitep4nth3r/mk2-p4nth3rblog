@@ -39,6 +39,7 @@ function PersonStructuredData({ person }) {
       "https://youtube.com/@whitep4nth3r",
       "https://www.linkedin.com/in/salma-alam-naylor/",
       "https://bsky.app/profile/whitep4nth3r.com",
+      "https://twitch.tv/whitep4nth3r.com",
     ],
     image: person.imageBio.url,
     name: "Salma Alam-Naylor",

@@ -38,6 +38,7 @@ function LlmsStructuredData({ person }) {
       "https://youtube.com/@whitep4nth3r",
       "https://www.linkedin.com/in/salma-alam-naylor/",
       "https://bsky.app/profile/whitep4nth3r.com",
+      "https://twitch.tv/whitep4nth3r.com",
     ],
     mainEntity: {
       "@type": "FAQPage",
