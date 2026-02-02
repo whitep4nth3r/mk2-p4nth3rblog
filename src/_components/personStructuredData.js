@@ -18,10 +18,44 @@ function PersonStructuredData({ person }) {
       "@type": "Brand",
       name: "whitep4nth3r",
     },
+    knowsAbout: [
+      "Frontend Web Development",
+      "HTML/CSS",
+      "Web Accessibility",
+      "CSS Architecture",
+      "Front end frameworks",
+      "Vanilla JavaScript",
+      "Developer Experience (DX)",
+      "Developer Education",
+      "Developer Advocacy",
+      "Technical communication",
+      "Career mentorship",
+      "Creative Coding",
+      "Entertainment as Code",
+      "Music performance and education",
+    ],
+    sameAs: [
+      "https://github.com/whitep4nth3r",
+      "https://youtube.com/@whitep4nth3r",
+      "https://www.linkedin.com/in/salma-alam-naylor/",
+      "https://bsky.app/profile/whitep4nth3r.com",
+      "https://twitch.tv/whitep4nth3r.com",
+    ],
     image: person.imageBio.url,
-    name: person.name,
-    description: md.plainText,
-    jobTitle: "Software Engineer and Developer Educator",
+    name: "Salma Alam-Naylor",
+    alternateName: "whitep4nth3r",
+    description:
+      "Expert in frontend engineering, accessibility, and 'Entertainment as Code'. Known for building resilient, creative web platforms and leading developer education strategy.",
+    jobTitle: "Head of Developer Education",
+    worksFor: {
+      "@type": "Organization",
+      name: "Nordcraft",
+      url: "https://nordcraft.com",
+    },
+    hasCredential: {
+      "@type": "EducationalOccupationalCredential",
+      name: "Head of Developer Education",
+    },
   });
 }
 

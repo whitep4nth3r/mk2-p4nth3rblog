@@ -7,13 +7,12 @@ const isSponsored = require("../_components/isSponsored");
 const Card = require("../_components/card");
 const HeartIcon = require("../_components/svg/heartIcon");
 const StarIcon = require("../_components/svg/starIcon");
+const MarkdownIt = require("markdown-it");
+
+const md = new MarkdownIt();
 
 const PostStructuredData = require("../_components/postStructuredData");
 const OpenGraph = require("../../lib/openGraph");
-
-var md = require("markdown-it")({
-  html: true,
-});
 
 exports.data = {
   layout: "base.html",
@@ -32,6 +31,8 @@ exports.data = {
     title: (data) => data.post.metaTitle,
     slug: (data) => data.post.slug,
     includeInSitemap: (data) => data.post.externalUrl === null,
+    sitemapChangeFreq: "weekly",
+    sitemapPriority: "1.0",
     canonical: (data) => data.post.externalUrl || `https://whitep4nth3r.com/blog/${data.post.slug}/`,
     metaDescription: (data) => data.post.metaDescription,
     openGraphImageUrl: (data) => OpenGraph.generateImageUrl({ title: data.post.title }),
@@ -134,8 +135,6 @@ exports.render = async function (data) {
 
           ${ExternalUrl({ url: post.externalUrl })}
         </div>
-
-
 
        ${
          post.blueskyPostId

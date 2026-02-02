@@ -20,6 +20,8 @@ exports.data = {
     addAllPagesToCollections: true,
   },
   includeInSitemap: true,
+  sitemapChangeFreq: "monthly",
+  sitemapPriority: "0.5",
   permalink: (data) => {
     const trailing = data.pagination.pageNumber === 0 ? `` : `${data.pagination.pageNumber + 1}/`;
     return `talks/${trailing}`;

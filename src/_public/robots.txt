@@ -3,9 +3,7 @@ User-agent: *
 Disallow: /api
 Disallow: /404
 Disallow: /key.pub
-
-# Host
-Host: https://whitep4nth3r.com
+Allow: /for-llms
 
 # Sitemaps
 Sitemap: https://whitep4nth3r.com/sitemap.xml

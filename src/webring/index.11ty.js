@@ -12,6 +12,8 @@ exports.data = {
   openGraphImageHeight: OpenGraph.imgHeight,
   openGraphUrl: "https://whitep4nth3r.com/webring/",
   includeInSitemap: true,
+  sitemapChangeFreq: "monthly",
+  sitemapPriority: "0.3",
 };
 
 exports.render = function (data) {

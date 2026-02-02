@@ -33,9 +33,9 @@ function buildItems(items) {
           const date = calculateDate(page);
           const url = `https://${Config.site.domain}${page.url}`;
 
-          return /*xml*/ `<url><loc>${removeUrlParamsFromLink(
-            url,
-          )}</loc><changefreq>daily</changefreq><lastmod>${date}</lastmod></url>`;
+          return /*xml*/ `<url><loc>${removeUrlParamsFromLink(url)}</loc><changefreq>${
+            page.data.sitemapChangeFreq
+          }</changefreq><priority>${page.data.sitemapPriority}</priority><lastmod>${date}</lastmod></url>`;
         }
       })
       .join("")}
