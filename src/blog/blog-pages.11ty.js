@@ -7,13 +7,12 @@ const isSponsored = require("../_components/isSponsored");
 const Card = require("../_components/card");
 const HeartIcon = require("../_components/svg/heartIcon");
 const StarIcon = require("../_components/svg/starIcon");
+const MarkdownIt = require("markdown-it");
+
+const md = new MarkdownIt();
 
 const PostStructuredData = require("../_components/postStructuredData");
 const OpenGraph = require("../../lib/openGraph");
-
-var md = require("markdown-it")({
-  html: true,
-});
 
 exports.data = {
   layout: "base.html",
@@ -136,8 +135,6 @@ exports.render = async function (data) {
 
           ${ExternalUrl({ url: post.externalUrl })}
         </div>
-
-
 
        ${
          post.blueskyPostId
