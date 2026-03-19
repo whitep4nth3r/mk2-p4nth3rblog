@@ -204,7 +204,8 @@
   margin-bottom: 2rem;
 }
 
-.post__h2 {
+.post__h2,
+.post__relatedVideoHeader {
   @include font.heading;
   font-size: clamp(2rem, 4vw, 4rem);
   line-height: 1.2;
