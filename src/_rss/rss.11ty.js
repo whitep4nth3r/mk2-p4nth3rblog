@@ -66,7 +66,7 @@ exports.render = function (data) {
   <title>Salma Alam-Naylor's RSS Feed</title>
   <atom:link href="https://${Config.site.domain}/feed.xml" rel="self" type="application/rss+xml" />
   <link>https://${Config.site.domain}</link>
-  <description>I'm Salma. Web developer. International speaker. Tech educator. Entertainer. Has a weird newsletter. Makes stuff on The Internet.</description>
+  <description>I'm Salma. Web developer. International speaker. Tech educator. Musician. Has a weird newsletter. Makes stuff on The Internet.</description>
     ${buildRssItems(sortedItems)}
     </channel>
     </rss>

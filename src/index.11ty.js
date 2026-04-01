@@ -12,7 +12,7 @@ exports.data = {
   activeNav: "home",
   canonical: "https://whitep4nth3r.com/",
   metaDescription:
-    "Web developer. International speaker. Tech educator. Entertainer. Has a weird newsletter. Makes stuff on The Internet.",
+    "Web developer. International speaker. Tech educator. Musician. Has a weird newsletter. Makes stuff on The Internet.",
   openGraphImageUrl: OpenGraph.generateImageUrl({
     title: pageTitle,
   }),
@@ -44,7 +44,7 @@ exports.render = function (data) {
           <h2>tech educator</h2>
         </span>
         <span class="hero__cloud__e">
-          <h2>entertainer</h2>
+          <h2>musician</h2>
         </span>
         <span class="hero__cloud__han">
           <h2 >has a <span>weird</span> newsletter</h2>
