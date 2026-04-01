@@ -8,6 +8,7 @@ const Card = require("../_components/card");
 const HeartIcon = require("../_components/svg/heartIcon");
 const StarIcon = require("../_components/svg/starIcon");
 const MarkdownIt = require("markdown-it");
+const VideoEmbed = require("../_components/videoEmbed");
 
 const md = new MarkdownIt();
 
@@ -69,6 +70,8 @@ function outOfDateWarning({ post }) {
 
 exports.render = async function (data) {
   const { post } = data;
+
+  console.log(post.relatedVideo);
 
   const openGraphImageUrl = await OpenGraph.generateImageUrl({
     title: post.title,
@@ -134,6 +137,19 @@ exports.render = async function (data) {
           ${post.isSponsored ? isSponsored() : ""}
 
           ${ExternalUrl({ url: post.externalUrl })}
+
+          ${
+            post.relatedVideo !== null
+              ? `<div class="post__relatedVideo">
+                  <hr class="post__hr" />
+                  <h2 class="post__relatedVideoHeader">Watch the video</h2>
+                  ${VideoEmbed({
+                    embedUrl: post.relatedVideo.embedUrl,
+                    title: post.relatedVideo.title,
+                  })}</div>`
+              : ""
+          }
+
         </div>
 
        ${

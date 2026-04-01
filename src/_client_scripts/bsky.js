@@ -150,9 +150,13 @@ function drawOnePost(post, author, text = "", createdAt, embed = null, replies =
   return `<${parentTagName} class="post__reply__listItem">
     <${innerTagName} class="post__reply__listItem__inner"${includeLink}>
       <div class="post__reply__avatar">
-        <img src="${author.avatar.replace("avatar", "avatar_thumbnail")}" alt="${
-    author.displayName
-  }" height="128" width="128" />
+        ${
+          author.avatar
+            ? `<img src="${author.avatar.replace("avatar", "avatar_thumbnail")}" alt="${
+                author.displayName
+              }" height="128" width="128" />`
+            : ""
+        }
     </div>
     <div class="post__reply__content">
       <p class="post__reply__author"><span class="post__reply__authorDisplay">${
