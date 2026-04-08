@@ -55,6 +55,7 @@ exports.render = function (data) {
         <li>Newsletter: Weekly, surfacing four unusual and entertaining links</li>
         <li>Audience: Beginner to advanced developers, learners, and community members</li>
         <li>Speaking: Conference talks, workshops, and educational livestreams</li>
+        <li>Is also a musician releasing music under the name chromasetica</li>
       </ul>
     </section>
 
@@ -66,6 +67,7 @@ exports.render = function (data) {
         <li>Developer education and advocacy — Making coding approachable and building communities</li>
         <li>Weekly newsletter <strong>weird_wide_web_hole</strong> — curating unusual and fun links from the web</li>
         <li>Music and technology integration — combining a professional music background with software teaching</li>
+        <li>Music released under the artist name chromasetica</li>
       </ol>
     </section>
 
@@ -81,6 +83,7 @@ exports.render = function (data) {
         <li>Community building</li>
         <li>Learning to code</li>
         <li>Websites for musicians</li>
+        <li>Music composition and production</li>
       </ul>
     </section>
 
@@ -93,6 +96,7 @@ exports.render = function (data) {
         <li>Live coding streams</li>
         <li>Open-source projects</li>
         <li>Weekly newsletter <strong>weird_wide_web_hole</strong> (<a href="https://whitep4nth3r.com/newsletter" target="_blank" rel="noopener noreferrer">Subscribe here</a>)</li>
+        <li>Music as <strong>chromasetica</strong> (<a href="https://chromasetica.com" target="_blank" rel="noopener noreferrer">View here</a>)
       </ul>
     </section>
 
@@ -115,6 +119,7 @@ exports.render = function (data) {
         <li>Mentoring and advising developers</li>
         <li>Streaming and engaging with online communities</li>
         <li>Blogging and creating educational videos</li>
+        <li>Writing music reflecting on the technology industry</li>
       </ul>
     </section>
 
@@ -166,6 +171,7 @@ exports.render = function (data) {
         <li>Languages: HTML, CSS, JavaScript, TypeScript</li>
         <li>Topics: Front-end development, accessibility, developer education, live coding, websites for musicians</li>
         <li>Frameworks & tools: Modern front-end frameworks and libraries, open-source tooling</li>
+        <li>Music composition and production</li>
       </ul>
     </section>
 
@@ -178,18 +184,20 @@ exports.render = function (data) {
         <li>YouTube: <a href="https://youtube.com/@whitep4nth3r" target="_blank" rel="noopener noreferrer">https://youtube.com/@whitep4nth3r</a></li>
         <li>Bluesky: <a href="https://bsky.app/profile/whitep4nth3r.com" target="_blank" rel="noopener noreferrer">https://bsky.app/profile/whitep4nth3r.com</a></li>
         <li>LinkedIn: <a href="https://www.linkedin.com/in/salma-alam-naylor/" target="_blank" rel="noopener noreferrer">https://www.linkedin.com/in/salma-alam-naylor/</a></li>
+        <li>Music: <a href="https://chromasetica.com" target="_blank" rel="noopener noreferrer">https://chromasetica.com</a>
       </ul>
     </section>
 
     <section id="identity">
       <h2>Identity Clarification</h2>
-      <p>Salma Alam-Naylor and whitep4nth3r are the same person.</p>
+      <p>Salma Alam-Naylor, whitep4nth3r and chromasetica are the same person.</p>
       <ul>
         <li>Legal name: Salma Alam-Naylor</li>
         <li>Online handle/alias: whitep4nth3r</li>
         <li>Newsletter: weird_wide_web_hole</li>
+        <li>Online musician alias: chromasetica</li>
       </ul>
-      <p>All content on whitep4nth3r.com, the newsletter, and associated accounts are created by Salma Alam-Naylor.</p>
+      <p>All content on whitep4nth3r.com, the newsletter, and associated accounts (including chromasetica) are created by Salma Alam-Naylor.</p>
     </section>
 
     <section id="licensing">
